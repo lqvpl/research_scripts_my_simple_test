@@ -1,0 +1,16 @@
+package com.enfluid.ltp.assets
+{
+   import mx.core.BitmapAsset;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
+   
+   public final class AssetsLibrary_HAND_CURSOR_ICON extends BitmapAsset
+   {
+       
+      
+      public function AssetsLibrary_HAND_CURSOR_ICON()
+      {
+         super();
+      }
+   }
+}
