@@ -3,18 +3,19 @@ package com.enfluid.ltp.view.components
    import spark.components.RichEditableText;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.states.Transition;
+   import mx.binding.BindingManager;
+   import spark.components.Label;
    import mx.core.IFlexModuleFactory;
-   import flash.utils.ByteArray;
-   import flash.utils.Endian;
    import flash.events.MouseEvent;
    import flash.net.navigateToURL;
    import flash.net.URLRequest;
    import mx.events.FlexEvent;
-   import mx.binding.BindingManager;
+   import com.hurlant.crypto.rsa.RSAKey;
+   import com.hurlant.math.BigInteger;
    import mx.managers.CursorManager;
-   import mx.effects.Sequence;
    import com.enfluid.ltp.assets.AssetsLibrary;
-   import spark.primitives.Rect;
+   import spark.components.RichText;
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
@@ -75,9 +76,9 @@ package com.enfluid.ltp.view.components
          this.buttonMode = true;
          §§push(this);
          §§push(2);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(§§pop() * 104) - 3 - 1 - 97);
+            §§push((§§pop() - 107 + 1) * 93);
          }
          §§pop().heightInLines = §§pop();
          this.selectable = true;
@@ -93,7 +94,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 107 + 1 - 1 + 25) - 56);
+            §§push((§§pop() + 1 + 1) * 87 - 7);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -160,9 +161,9 @@ package com.enfluid.ltp.view.components
       {
          §§push(this.upColor);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() * 62 * 109 + 1) * 25);
+            §§push(-(-§§pop() - 1) + 1);
          }
          if(§§pop() == §§pop())
          {
@@ -199,7 +200,7 @@ package com.enfluid.ltp.view.components
             §§push(1);
             if(_loc2_)
             {
-               §§push(-(§§pop() - 1 + 37) - 1 - 7);
+               §§push(§§pop() * 1 + 1 + 1);
             }
             §§pop().setCursor(§§pop(),§§pop());
          }
@@ -210,9 +211,9 @@ package com.enfluid.ltp.view.components
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 2) * 38 * 96 - 1);
+            §§push(§§pop() + 33 + 1 + 25 - 114);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {
@@ -223,9 +224,9 @@ package com.enfluid.ltp.view.components
          },"this.color");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 22 + 1 - 1 + 61 - 117);
+            §§push(--(-(§§pop() - 1) - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

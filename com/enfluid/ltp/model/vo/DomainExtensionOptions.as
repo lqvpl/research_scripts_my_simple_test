@@ -3,8 +3,11 @@ package com.enfluid.ltp.model.vo
    import flash.events.EventDispatcher;
    import flash.events.Event;
    import com.enfluid.ltp.model.constants.DomainExtensions;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import mx.events.PropertyChangeEvent;
-   import mx.graphics.SolidColor;
    
    public final class DomainExtensionOptions extends EventDispatcher
    {
@@ -12,13 +15,13 @@ package com.enfluid.ltp.model.vo
       
       private var _1731196175selectedExtensions:Array;
       
-      private var _671188013selectedGoDaddyExtensions:Array;
+      private var _126489926selectedUniregistryExtensions:Array;
       
       private var _1537572673selectedDomizeExtensions:Array;
       
       private var _1893057594numExtensions:int;
       
-      private var _1404787006numGodaddyExtensions:int;
+      private var _464278213numUniregistryExtensions:int;
       
       private var _501218772numDomizeExtensions:int;
       
@@ -47,7 +50,7 @@ package com.enfluid.ltp.model.vo
       public function DomainExtensionOptions()
       {
          this._1731196175selectedExtensions = [];
-         this._671188013selectedGoDaddyExtensions = [];
+         this._126489926selectedUniregistryExtensions = [];
          this._1537572673selectedDomizeExtensions = [];
          super();
          this.recalculate();
@@ -290,7 +293,7 @@ package com.enfluid.ltp.model.vo
          if(this._couk)
          {
             _loc1_.push(DomainExtensions.CO_UK);
-            _loc3_.push(DomainExtensions.CO_UK);
+            _loc2_.push(DomainExtensions.CO_UK);
          }
          if(this._comau)
          {
@@ -300,12 +303,12 @@ package com.enfluid.ltp.model.vo
          if(this._de)
          {
             _loc1_.push(DomainExtensions.DE);
-            _loc3_.push(DomainExtensions.DE);
+            _loc2_.push(DomainExtensions.DE);
          }
          if(this._nl)
          {
             _loc1_.push(DomainExtensions.NL);
-            _loc2_.push(DomainExtensions.NL);
+            _loc3_.push(DomainExtensions.NL);
          }
          if(this._dk)
          {
@@ -313,11 +316,11 @@ package com.enfluid.ltp.model.vo
             _loc3_.push(DomainExtensions.DK);
          }
          this.selectedExtensions = _loc1_;
-         this.selectedGoDaddyExtensions = _loc2_;
+         this.selectedUniregistryExtensions = _loc2_;
          this.selectedDomizeExtensions = _loc3_;
          this.numExtensions = _loc1_.length;
-         this.numGodaddyExtensions = _loc2_.length;
-         this.numDomizeExtensions = this.numExtensions - this.numGodaddyExtensions;
+         this.numUniregistryExtensions = _loc2_.length;
+         this.numDomizeExtensions = this.numExtensions - this.numUniregistryExtensions;
       }
       
       [Bindable(event="propertyChange")]
@@ -340,20 +343,20 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
-      public function get selectedGoDaddyExtensions() : Array
+      public function get selectedUniregistryExtensions() : Array
       {
-         return this._671188013selectedGoDaddyExtensions;
+         return this._126489926selectedUniregistryExtensions;
       }
       
-      public function set selectedGoDaddyExtensions(param1:Array) : void
+      public function set selectedUniregistryExtensions(param1:Array) : void
       {
-         var _loc2_:Object = this._671188013selectedGoDaddyExtensions;
+         var _loc2_:Object = this._126489926selectedUniregistryExtensions;
          if(_loc2_ !== param1)
          {
-            this._671188013selectedGoDaddyExtensions = param1;
+            this._126489926selectedUniregistryExtensions = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"selectedGoDaddyExtensions",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"selectedUniregistryExtensions",_loc2_,param1));
             }
          }
       }
@@ -397,20 +400,20 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
-      public function get numGodaddyExtensions() : int
+      public function get numUniregistryExtensions() : int
       {
-         return this._1404787006numGodaddyExtensions;
+         return this._464278213numUniregistryExtensions;
       }
       
-      public function set numGodaddyExtensions(param1:int) : void
+      public function set numUniregistryExtensions(param1:int) : void
       {
-         var _loc2_:Object = this._1404787006numGodaddyExtensions;
+         var _loc2_:Object = this._464278213numUniregistryExtensions;
          if(_loc2_ !== param1)
          {
-            this._1404787006numGodaddyExtensions = param1;
+            this._464278213numUniregistryExtensions = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"numGodaddyExtensions",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"numUniregistryExtensions",_loc2_,param1));
             }
          }
       }

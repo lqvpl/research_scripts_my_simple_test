@@ -1,14 +1,14 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import spark.effects.Resize;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.util.BlowFishUtil;
    import com.enfluid.ltp.util.Util;
    import flash.filesystem.File;
    import com.enfluid.ltp.controller.filesystem.SaveStringToDiskCommand;
    import com.enfluid.ltp.model.constants.Constants;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
    
    public final class SaveGoogleCredentialsCommand extends Command implements IPhotonCommand
    {

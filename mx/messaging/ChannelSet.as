@@ -150,6 +150,7 @@ package mx.messaging
          return this._channels;
       }
       
+      [ArrayElementType("mx.messaging.Channel")]
       public function set channels(param1:Array) : void
       {
          var _loc5_:String = null;

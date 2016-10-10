@@ -7,10 +7,13 @@ package com.enfluid.ltp.controller.competitoranalysis
    import mx.rpc.http.HTTPService;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
    import com.enfluid.ltp.util.KeywordUtil;
+   import spark.primitives.Rect;
+   import mx.binding.BindingManager;
+   import mx.collections.XMLListCollection;
    import mx.rpc.AsyncToken;
    import com.enfluid.ltp.util.Logger;
    import com.photon.controller.PhotonCommand;
-   import mx.effects.Sequence;
+   import com.hurlant.util.Memory;
    
    public final class StemKeywordsCommand extends Command implements IPhotonCommand, IResponder
    {
@@ -37,9 +40,9 @@ package com.enfluid.ltp.controller.competitoranalysis
          var _loc1_:String = "";
          _loc1_ = _loc1_ + (this.keyword.strippedKeyword + SECTION_SEPARATOR);
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(((§§pop() + 1 - 1) * 22 + 78) * 1 + 1);
+            §§push(§§pop() + 1 + 1 - 4);
          }
          for each(_loc2_ in this.keyword.competitorURLs)
          {
@@ -47,9 +50,9 @@ package com.enfluid.ltp.controller.competitoranalysis
          }
          _loc1_ = _loc1_ + SECTION_SEPARATOR;
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push((§§pop() + 1 - 77) * 10);
+            §§push(§§pop() + 1 - 97 - 1);
          }
          for each(_loc2_ in this.keyword.competitorURLs)
          {
@@ -66,10 +69,10 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(this.service);
          §§push("X-Mashape-Authorization");
          §§push(§_e_-----_§);
-         §§push(-1820302790);
+         §§push(-1820302794);
          if(_loc5_)
          {
-            §§push(-(§§pop() + 99) * 111);
+            §§push(((§§pop() - 9) * 67 + 11) * 31 * 91 + 1);
          }
          §§pop().headers = {§§pop():§§pop().§_e_-_-__-§(§§pop())};
          this.service.method = "POST";
@@ -91,7 +94,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 119 + 1) - 5);
+            §§push((§§pop() + 16 - 1) * 1 - 15);
          }
          if(§§pop() > §§pop())
          {
@@ -102,6 +105,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          else
          {
             Logger.log("KEYWORD STEMMER FAILED: " + param1.fault.faultDetail);
+            Logger.log(param1.message.body);
             done(PhotonCommand.FAILURE);
          }
       }
@@ -121,7 +125,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() + 76 - 1) * 19);
+            §§push(-(-(--§§pop() * 27) + 107));
          }
          §§pop().keywordStemmed = §§pop()[§§pop()];
          §§push();
@@ -129,7 +133,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(1);
          if(_loc9_)
          {
-            §§push(-(-(§§pop() * 34) - 32 - 1 + 1) + 1);
+            §§push((§§pop() - 50 - 26) * 30 * 23);
          }
          var _loc5_:Array = §§pop().String(§§pop()[§§pop()]).split(ITEM_SEPARATOR);
          §§push();
@@ -137,13 +141,13 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(2);
          if(_loc9_)
          {
-            §§push(§§pop() + 18 + 1 - 10);
+            §§push(-(§§pop() + 1) - 1);
          }
          var _loc6_:Array = §§pop().String(§§pop()[§§pop()]).split(ITEM_SEPARATOR);
          §§push(0);
          if(_loc9_)
          {
-            §§push(--(§§pop() * 65) * 83 + 87 + 1);
+            §§push(-(§§pop() + 38) - 1 + 1 - 1);
          }
          var _loc7_:* = §§pop();
          while(_loc7_ < _loc5_.length)

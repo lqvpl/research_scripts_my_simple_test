@@ -6,15 +6,18 @@ package com.enfluid.ltp.controller.competitoranalysis
    import flash.html.HTMLLoader;
    import mx.rpc.http.HTTPService;
    import flash.net.URLRequest;
+   import spark.layouts.VerticalLayout;
+   import mx.binding.BindingManager;
    import mx.rpc.events.ResultEvent;
    import mx.rpc.events.FaultEvent;
    import com.enfluid.ltp.util.GooglePageRankUtil;
+   import spark.primitives.Rect;
+   import mx.graphics.SolidColorStroke;
    import com.enfluid.ltp.model.constants.Values;
    import mx.utils.StringUtil;
    import flash.utils.setTimeout;
-   import com.adobe.cairngorm.observer.Observe;
-   import mx.binding.BindingManager;
-   import mx.controls.Spacer;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import mx.core.FlexGlobals;
    
    public final class FetchPageRankCommand extends Command implements IPhotonCommand
    {
@@ -78,9 +81,9 @@ package com.enfluid.ltp.controller.competitoranalysis
       {
          §§push(_loc2_);
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(§§pop() * 4 + 1 - 1 - 1 + 1);
+            §§push(§§pop() - 1 - 118 - 5);
          }
          var /*UnknownSlot*/:* = §§pop();
          var num:Number = NaN;
@@ -103,7 +106,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(2);
             if(_loc4_)
             {
-               §§push((§§pop() - 27 + 34 - 1) * 76 + 27);
+               §§push(§§pop() - 1 + 1 - 89);
             }
             var /*UnknownSlot*/:* = Number(§§pop().Number(§§pop()[§§pop()]));
             var rank:int = num;

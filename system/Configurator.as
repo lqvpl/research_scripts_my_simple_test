@@ -1,11 +1,12 @@
 package system
 {
-   import mx.graphics.SolidColor;
-   import spark.components.Scroller;
+   import spark.components.HGroup;
    import mx.binding.BindingManager;
    import mx.binding.Binding;
-   import flash.utils.Proxy;
-   import system.data.Iterator;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import flash.events.MouseEvent;
+   import spark.primitives.Rect;
+   import mx.graphics.GradientEntry;
    
    public class Configurator implements Serializable
    {
@@ -26,7 +27,7 @@ package system
          §§push(0);
          if(_loc6_)
          {
-            §§push(((§§pop() + 107) * 98 + 1 + 73) * 5);
+            §§push(-(§§pop() - 28 - 1) * 77 + 64);
          }
          for(_loc2_ in param1)
          {

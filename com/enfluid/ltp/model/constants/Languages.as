@@ -2,9 +2,11 @@ package com.enfluid.ltp.model.constants
 {
    import com.enfluid.ltp.model.vo.LanguageVO;
    import mx.collections.ArrayCollection;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
-   import mx.binding.BindingManager;
-   import com.enfluid.ltp.model.vo.KeywordVO;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
+   import flash.utils.ByteArray;
+   import com.enfluid.ltp.util.MajesticUtils;
+   import mx.rpc.http.HTTPService;
    
    public final class Languages
    {
@@ -26,7 +28,7 @@ package com.enfluid.ltp.model.constants
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(§§pop() + 1 + 65 - 116) + 1);
+            §§push((§§pop() * 75 - 1) * 27 + 1);
          }
          for each(_loc2_ in ALL)
          {
@@ -42,9 +44,9 @@ package com.enfluid.ltp.model.constants
       {
          var _loc2_:LanguageVO = null;
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(§§pop() - 26 - 30 - 81 + 1 - 56);
+            §§push(-(§§pop() - 1 - 95));
          }
          for each(_loc2_ in ALL)
          {

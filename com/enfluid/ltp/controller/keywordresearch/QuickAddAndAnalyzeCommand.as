@@ -6,16 +6,14 @@ package com.enfluid.ltp.controller.keywordresearch
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import com.photon.controller.PhotonCommandCompletionEvent;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass9;
+   import spark.effects.Fade;
    import mx.binding.BindingManager;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.MinimalFlatButtonSkin;
-   import spark.components.HGroup;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.util.KeywordUtil;
    import com.enfluid.ltp.util.Util;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import com.enfluid.ltp.controller.keywordresearch.keywordplanner.SubmitAndScrapeKeywordPlannerCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
    import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
    
    public final class QuickAddAndAnalyzeCommand extends PhotonComplexCommand implements IPhotonCommand
@@ -62,16 +60,26 @@ package com.enfluid.ltp.controller.keywordresearch
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() * 10 + 100) * 73 - 1) + 108 + 1);
+            §§push(§§pop() * 97 * 17 - 1);
          }
          §§pop().addItemAt(§§pop(),§§pop());
          this.keyword.quickAddedThisSession = true;
          this.keyword.isExpanded = true;
          this.keyword.isOwnKeyword = true;
+         this.keyword.source = "majestic";
          this.keyword.save();
-         addCommand(new SubmitAndScrapeKeywordPlannerCommand(null,[param1]),this.checkMeetsFilterCriteria,false);
-         addCommand(new AnalyzeCompetitionCommand(this.keyword),this.checkMeetsFilterCriteria);
+         if(this.model.selectedProject.source == "majestic")
+         {
+            addCommand(new SubmitAndScrapeKeywordPlannerCommand(null,[param1],false,true),this.checkMeetsFilterCriteria,false);
+            addCommand(new AnalyzeMajesticCompetitionCommand(this.keyword),this.checkMeetsFilterCriteria);
+         }
+         else
+         {
+            addCommand(new SubmitAndScrapeKeywordPlannerCommand(null,[param1],false,true),this.checkMeetsFilterCriteria,false);
+            addCommand(new AnalyzeCompetitionCommand(this.keyword),this.checkMeetsFilterCriteria);
+         }
          this.model.selectedKeywordCollection = this.model.selectedProject.ownKeywords;
+         this.model.selectedKeywordCollection = this.model.selectedKeywordCollection.cleanKeywords();
          this.viewModel.selectedKeywordsTab = this.viewModel.ownKeywordsTab;
          this.viewModel.resetKeywordScrollPosition = false;
          this.viewModel.resetKeywordScrollPosition = true;

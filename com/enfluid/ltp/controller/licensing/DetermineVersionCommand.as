@@ -4,10 +4,15 @@ package com.enfluid.ltp.controller.licensing
    import com.photon.controller.IPhotonCommand;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
-   import com.enfluid.ltp.controller.common.LoadRegistrationStatusCommand;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
    import flash.utils.setTimeout;
+   import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.controller.common.LoadRegistrationStatusCommand;
+   import com.dk.license.LicenceAppID;
+   import com.enfluid.ltp.model.constants.Constants;
+   import com.dk.license.LicenseUtil;
+   import com.enfluid.ltp.controller.calqio.SetUserIdentity;
+   import com.photon.controller.PhotonCommandCompletionEvent;
+   import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
    
    public final class DetermineVersionCommand extends PhotonComplexCommand implements IPhotonCommand
    {
@@ -26,10 +31,13 @@ package com.enfluid.ltp.controller.licensing
       
       override public function execute() : void
       {
+         var _loc1_:String = null;
          new LoadRegistrationStatusCommand().execute();
          if(this.model.isDK)
          {
-            addCommand(new ValidateDKLicenseCommand());
+            LicenceAppID.APP_ID = Constants.DK_APPLICATION_ID;
+            _loc1_ = LicenseUtil.getInstance().licenceKey;
+            addCommand(new ValidateSharifyLicenseCommand(this.model.userEmail,_loc1_),this.onDoneRegisteringDKLicenseOnSharify);
          }
          else
          {
@@ -47,14 +55,24 @@ package com.enfluid.ltp.controller.licensing
          }
          this.viewModel.versionDetermined = true;
          this.viewModel.startupText = "Loading Projects...";
+         new SetUserIdentity().execute();
          §§push();
          §§push(super.done);
          §§push(500);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 4 + 79);
+            §§push(§§pop() + 114 - 59 + 1 - 1 + 1 + 1);
          }
          §§pop().setTimeout(§§pop(),§§pop());
+      }
+      
+      private final function onDoneRegisteringDKLicenseOnSharify(param1:PhotonCommandCompletionEvent) : void
+      {
+         if(this.model.isSharifyRegistered)
+         {
+            this.model.isDK = false;
+            new SaveRegistrationStatusCommand().execute();
+         }
       }
    }
 }

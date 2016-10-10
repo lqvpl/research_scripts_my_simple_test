@@ -2,41 +2,56 @@ package com.enfluid.ltp.view.components
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.hurlant.util.Memory;
    import com.adobe.cairngorm.observer.Observe;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.view.skins.KeywordDataGridSkin;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import mx.collections.IList;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.model.vo.ProjectVO;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.events.FlexEvent;
    import com.enfluid.ltp.model.vo.KeywordColumnsVO;
-   import mx.binding.BindingManager;
-   import mx.collections.ArrayList;
-   import hr.binaria.asx3m.mapper.IMapper;
    import flash.events.MouseEvent;
+   import mx.graphics.SolidColor;
+   import mx.managers.CursorManager;
+   import com.hurlant.crypto.rsa.RSAKey;
+   import com.hurlant.math.BigInteger;
+   import mx.binding.BindingManager;
+   import flash.utils.ByteArray;
+   import mx.collections.ArrayList;
    import mx.core.ClassFactory;
-   import hr.binaria.asx3m.converters.ISingleValueConverter;
+   import mx.effects.Sequence;
+   import spark.components.Label;
    import com.enfluid.ltp.view.renderers.headers.CustomHeaderRenderer;
    import spark.primitives.Rect;
-   import spark.effects.Fade;
-   import flash.utils.ByteArray;
    import spark.components.Group;
-   import flash.utils.Endian;
-   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
-   import mx.binding.Binding;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import system.data.Map;
-   import system.data.Iterator;
-   import mx.graphics.SolidColor;
-   import com.enfluid.ltp.view.renderers.headers.SelectColumnsHeaderRenderer;
-   import mx.events.ResizeEvent;
+   import flash.utils.setTimeout;
+   import flash.events.Event;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
    import spark.components.TextInput;
    import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
+   import spark.components.DataGrid;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
+   import spark.components.TextArea;
+   import com.enfluid.ltp.util.Logger;
+   import spark.layouts.VerticalLayout;
+   import spark.components.HGroup;
+   import system.data.Collection;
+   import system.data.Iterator;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import mx.effects.Parallel;
+   import com.enfluid.ltp.view.renderers.headers.SelectColumnsHeaderRenderer;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.events.ResizeEvent;
    import spark.events.GridSelectionEvent;
-   import mx.graphics.RadialGradient;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import assets.TextAssets;
    import com.enfluid.ltp.view.renderers.headers.KeywordColumnHeaderContent;
@@ -45,6 +60,7 @@ package com.enfluid.ltp.view.components
    import com.enfluid.ltp.view.filterviews.LocalSearchesFilterView;
    import spark.components.Callout;
    import com.enfluid.ltp.view.missingdatacallouts.GlobalSearchesMissingDataCallout;
+   import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchMissingCommand;
    import com.enfluid.ltp.view.filterviews.GlobalSearchesFilterView;
    import com.enfluid.ltp.view.filterviews.AdvertizerCompetitionFilterView;
    import com.enfluid.ltp.view.filterviews.NumWordsFilterView;
@@ -54,11 +70,11 @@ package com.enfluid.ltp.view.components
    import com.enfluid.ltp.view.filterviews.BingTitleCompetitionFilterView;
    import com.enfluid.ltp.view.missingdatacallouts.DomainsMissingDataCallout;
    import com.enfluid.ltp.view.filterviews.DomainAvailabilityFilterView;
+   import com.enfluid.ltp.view.filterviews.AmazonKCFilterView;
+   import com.enfluid.ltp.view.missingdatacallouts.AmazonKCMissingDataCallout;
    import com.enfluid.ltp.view.filterviews.AvgKCFilterView;
-   import mx.collections.XMLListCollection;
-   import mx.core.mx_internal;
+   import com.enfluid.ltp.view.missingdatacallouts.AvgKCMissingDataCallout;
    import mx.events.PropertyChangeEvent;
-   import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
    
@@ -72,7 +88,11 @@ package com.enfluid.ltp.view.components
       
       public var _KeywordsDataGridHeader_Observe2:Observe;
       
+      public var _KeywordsDataGridHeader_Observe3:Observe;
+      
       private var _360563722advertiserCompetitionColumn:com.enfluid.ltp.view.components.FilterGridColumn;
+      
+      private var _1664952530amazonKCColumn:com.enfluid.ltp.view.components.FilterGridColumn;
       
       private var _1810362272avgKCColumn:com.enfluid.ltp.view.components.FilterGridColumn;
       
@@ -142,16 +162,16 @@ package com.enfluid.ltp.view.components
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() - 55 + 90 + 118 - 88);
+            §§push(-((§§pop() + 1) * 114) + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(41);
          if(_loc4_)
          {
-            §§push((§§pop() + 8) * 13 + 71 + 45 - 1 - 1 + 6);
+            §§push(-(§§pop() - 1 + 1 + 1));
          }
          §§pop().height = §§pop();
          this.resizableColumns = true;
@@ -159,14 +179,15 @@ package com.enfluid.ltp.view.components
          this.columns = this._KeywordsDataGridHeader_ArrayList1_c();
          this._KeywordsDataGridHeader_Observe1_i();
          this._KeywordsDataGridHeader_Observe2_i();
+         this._KeywordsDataGridHeader_Observe3_i();
          this.addEventListener("creationComplete",this.___KeywordsDataGridHeader_LTPCustomGrid1_creationComplete);
          this.addEventListener("resize",this.___KeywordsDataGridHeader_LTPCustomGrid1_resize);
          this.addEventListener("selectionChange",this.___KeywordsDataGridHeader_LTPCustomGrid1_selectionChange);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 1) * 104 - 8 + 1 - 1);
+            §§push(-(§§pop() + 1 - 1 + 1 - 1 + 1) - 12);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -223,19 +244,19 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() + 1 - 1) * 42 - 73);
+            §§push(-((-§§pop() - 1) * 35));
          }
          var _loc2_:Number = §§pop();
          §§push(1);
          if(_loc8_)
          {
-            §§push((§§pop() - 1 + 88) * 61);
+            §§push((§§pop() + 5) * 45 - 86);
          }
          var _loc3_:* = §§pop();
          §§push(0);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(((§§pop() - 18) * 110 + 69 - 95) * 56 * 38 + 1);
+            §§push(-(-(-§§pop() - 1 - 67 + 58) - 1));
          }
          for each(_loc4_ in _loc1_)
          {
@@ -249,7 +270,7 @@ package com.enfluid.ltp.view.components
                §§push(30);
                if(_loc8_)
                {
-                  §§push(-(§§pop() - 78) * 83 + 1 + 1);
+                  §§push(-(§§pop() * 56 * 38 + 1));
                }
                _loc5_ = (§§pop() - §§pop()) / (_loc1_.length - _loc3_);
                _loc4_.width = _loc5_ > _loc4_.minWidth?_loc5_:_loc4_.minWidth;
@@ -273,6 +294,7 @@ package com.enfluid.ltp.view.components
          _loc2_.bingTitleCompetition = this.bingTitleCompetitionColumn;
          _loc2_.domainAvailability = this.domainAvailabilityColumn;
          _loc2_.avgKC = this.avgKCColumn;
+         _loc2_.amazonKC = this.amazonKCColumn;
          this.viewModel.keywordDataGrid = this;
          this.setColumnsSize();
       }
@@ -292,7 +314,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc4_)
          {
-            §§push((-(-§§pop() * 44) * 11 + 76) * 72 - 95);
+            §§push(-(§§pop() - 1) - 1 - 1);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < columns.length)
@@ -304,6 +326,24 @@ package com.enfluid.ltp.view.components
             _loc2_++;
          }
          return _loc1_;
+      }
+      
+      private final function checkAdwordsRestricted(param1:Object = false) : void
+      {
+         if(this.viewModel.AdwordsRestricted === true)
+         {
+            this.localSearchesColumn.numericSort = false;
+            this.localSearchesColumn.dataField = "localSearchesRange";
+            this.globalSearchesColumn.numericSort = false;
+            this.globalSearchesColumn.dataField = "globalSearchesRange";
+         }
+         else
+         {
+            this.localSearchesColumn.numericSort = true;
+            this.localSearchesColumn.dataField = "localSearches";
+            this.globalSearchesColumn.numericSort = true;
+            this.globalSearchesColumn.dataField = "globalSearches";
+         }
       }
       
       private final function _KeywordsDataGridHeader_Observe1_i() : Observe
@@ -325,10 +365,19 @@ package com.enfluid.ltp.view.components
          return _loc1_;
       }
       
+      private final function _KeywordsDataGridHeader_Observe3_i() : Observe
+      {
+         var _loc1_:Observe = new Observe();
+         _loc1_.handler = this.checkAdwordsRestricted;
+         this._KeywordsDataGridHeader_Observe3 = _loc1_;
+         BindingManager.executeBindings(this,"_KeywordsDataGridHeader_Observe3",this._KeywordsDataGridHeader_Observe3);
+         return _loc1_;
+      }
+      
       private final function _KeywordsDataGridHeader_ArrayList1_c() : ArrayList
       {
          var _loc1_:ArrayList = new ArrayList();
-         _loc1_.source = [this._KeywordsDataGridHeader_FilterGridColumn1_i(),this._KeywordsDataGridHeader_FilterGridColumn2_i(),this._KeywordsDataGridHeader_FilterGridColumn3_i(),this._KeywordsDataGridHeader_FilterGridColumn4_i(),this._KeywordsDataGridHeader_FilterGridColumn5_i(),this._KeywordsDataGridHeader_FilterGridColumn6_i(),this._KeywordsDataGridHeader_FilterGridColumn7_i(),this._KeywordsDataGridHeader_FilterGridColumn8_i(),this._KeywordsDataGridHeader_FilterGridColumn9_i(),this._KeywordsDataGridHeader_FilterGridColumn10_i(),this._KeywordsDataGridHeader_FilterGridColumn11_i(),this._KeywordsDataGridHeader_FilterGridColumn12_i()];
+         _loc1_.source = [this._KeywordsDataGridHeader_FilterGridColumn1_i(),this._KeywordsDataGridHeader_FilterGridColumn2_i(),this._KeywordsDataGridHeader_FilterGridColumn3_i(),this._KeywordsDataGridHeader_FilterGridColumn4_i(),this._KeywordsDataGridHeader_FilterGridColumn5_i(),this._KeywordsDataGridHeader_FilterGridColumn6_i(),this._KeywordsDataGridHeader_FilterGridColumn7_i(),this._KeywordsDataGridHeader_FilterGridColumn8_i(),this._KeywordsDataGridHeader_FilterGridColumn9_i(),this._KeywordsDataGridHeader_FilterGridColumn10_i(),this._KeywordsDataGridHeader_FilterGridColumn11_i(),this._KeywordsDataGridHeader_FilterGridColumn12_i(),this._KeywordsDataGridHeader_FilterGridColumn13_i()];
          return _loc1_;
       }
       
@@ -339,7 +388,7 @@ package com.enfluid.ltp.view.components
          §§push(130);
          if(_loc2_)
          {
-            §§push(-((-§§pop() - 1 + 26 - 1 + 35) * 46));
+            §§push(-(§§pop() - 1) - 65 + 102 - 9);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "keyword";
@@ -363,7 +412,7 @@ package com.enfluid.ltp.view.components
          §§push(30);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1) * 23);
+            §§push(§§pop() + 1 - 1 - 94 - 1);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "projectTitle";
@@ -386,9 +435,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:com.enfluid.ltp.view.components.FilterGridColumn = new com.enfluid.ltp.view.components.FilterGridColumn();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 48 - 1 + 1) * 1);
+            §§push(-(§§pop() - 111 - 1 + 1 + 109 + 86) - 89);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "suggestedBid";
@@ -414,7 +463,7 @@ package com.enfluid.ltp.view.components
          §§push(30);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 - 1 - 89 + 0) * 80 * 21);
+            §§push(-((§§pop() - 33) * 42) + 1 + 1 - 60);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "localSearches";
@@ -440,7 +489,7 @@ package com.enfluid.ltp.view.components
          §§push(30);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 5 + 50) - 69 - 97) * 57);
+            §§push(§§pop() * 66 * 10 - 40 + 40 - 117 - 1);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "globalSearches";
@@ -464,9 +513,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:com.enfluid.ltp.view.components.FilterGridColumn = new com.enfluid.ltp.view.components.FilterGridColumn();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 39 - 81 + 1 + 1) * 99 * 98 * 57);
+            §§push(§§pop() + 63 - 1 - 38 + 55);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "advertiserCompetition";
@@ -489,9 +538,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:com.enfluid.ltp.view.components.FilterGridColumn = new com.enfluid.ltp.view.components.FilterGridColumn();
          §§push(_loc1_);
          §§push(30);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() * 13 * 3 - 1) * 119 - 59));
+            §§push((§§pop() * 76 + 1 + 1) * 31);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "numWords";
@@ -517,7 +566,7 @@ package com.enfluid.ltp.view.components
          §§push(30);
          if(_loc3_)
          {
-            §§push(--(§§pop() * 72 + 1 + 0 - 1) - 85);
+            §§push((§§pop() * 57 - 119) * 16);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "googleTitleCompetition";
@@ -541,9 +590,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:com.enfluid.ltp.view.components.FilterGridColumn = new com.enfluid.ltp.view.components.FilterGridColumn();
          §§push(_loc1_);
          §§push(30);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 35 - 1 + 72 - 41);
+            §§push(§§pop() + 1 - 1 - 1 - 19 - 1 + 1 + 1);
          }
          §§pop().minWidth = §§pop();
          _loc1_.dataField = "bingTitleCompetition";
@@ -567,9 +616,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:com.enfluid.ltp.view.components.FilterGridColumn = new com.enfluid.ltp.view.components.FilterGridColumn();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 87 - 51 - 8) + 106 + 16);
+            §§push((§§pop() - 24 + 35 - 79 + 1 - 60) * 54 * 38);
          }
          §§pop().minWidth = §§pop();
          _loc1_.headerRenderer = this._KeywordsDataGridHeader_ClassFactory10_c();
@@ -594,16 +643,16 @@ package com.enfluid.ltp.view.components
          §§push(30);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 58) * 8);
+            §§push(-(§§pop() - 1 - 1) - 62 - 1 - 102);
          }
          §§pop().minWidth = §§pop();
-         _loc1_.dataField = "avgKC";
+         _loc1_.dataField = "amazonKC";
          _loc1_.headerRenderer = this._KeywordsDataGridHeader_ClassFactory11_c();
-         _loc1_.headerText = "Avg Keyword Competitiveness";
+         _loc1_.headerText = "Avg. Amazon Reviews";
          _loc1_.resizable = false;
          _loc1_.numericSort = true;
-         this.avgKCColumn = _loc1_;
-         BindingManager.executeBindings(this,"avgKCColumn",this.avgKCColumn);
+         this.amazonKCColumn = _loc1_;
+         BindingManager.executeBindings(this,"amazonKCColumn",this.amazonKCColumn);
          return _loc1_;
       }
       
@@ -621,24 +670,51 @@ package com.enfluid.ltp.view.components
          §§push(30);
          if(_loc2_)
          {
-            §§push((-(-§§pop() * 96) + 58 - 1) * 63);
+            §§push((-(§§pop() * 16 + 78) - 1) * 10);
          }
-         §§pop().width = §§pop();
+         §§pop().minWidth = §§pop();
+         _loc1_.dataField = "avgKC";
+         _loc1_.headerRenderer = this._KeywordsDataGridHeader_ClassFactory12_c();
+         _loc1_.headerText = "Avg Keyword Competitiveness";
+         _loc1_.resizable = false;
+         _loc1_.numericSort = true;
+         this.avgKCColumn = _loc1_;
+         BindingManager.executeBindings(this,"avgKCColumn",this.avgKCColumn);
+         return _loc1_;
+      }
+      
+      private final function _KeywordsDataGridHeader_ClassFactory12_c() : ClassFactory
+      {
+         var _loc1_:ClassFactory = new ClassFactory();
+         _loc1_.generator = CustomHeaderRenderer;
+         return _loc1_;
+      }
+      
+      private final function _KeywordsDataGridHeader_FilterGridColumn13_i() : com.enfluid.ltp.view.components.FilterGridColumn
+      {
+         var _loc1_:com.enfluid.ltp.view.components.FilterGridColumn = new com.enfluid.ltp.view.components.FilterGridColumn();
          §§push(_loc1_);
          §§push(30);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 1) + 1 - 93 - 1 - 55);
+            §§push(§§pop() - 1 + 1 + 32 + 1 - 40);
+         }
+         §§pop().width = §§pop();
+         §§push(_loc1_);
+         §§push(30);
+         if(_loc3_)
+         {
+            §§push((§§pop() + 102 + 1) * 64 - 82);
          }
          §§pop().minWidth = §§pop();
-         _loc1_.headerRenderer = this._KeywordsDataGridHeader_ClassFactory12_c();
+         _loc1_.headerRenderer = this._KeywordsDataGridHeader_ClassFactory13_c();
          _loc1_.resizable = false;
          this.selectColumnsColumn = _loc1_;
          BindingManager.executeBindings(this,"selectColumnsColumn",this.selectColumnsColumn);
          return _loc1_;
       }
       
-      private final function _KeywordsDataGridHeader_ClassFactory12_c() : ClassFactory
+      private final function _KeywordsDataGridHeader_ClassFactory13_c() : ClassFactory
       {
          var _loc1_:ClassFactory = new ClassFactory();
          _loc1_.generator = SelectColumnsHeaderRenderer;
@@ -665,9 +741,9 @@ package com.enfluid.ltp.view.components
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 + 1 - 106);
+            §§push(--§§pop() - 30 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -675,9 +751,9 @@ package com.enfluid.ltp.view.components
          },null,"_KeywordsDataGridHeader_Observe1.source");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 2 + 1 + 1) * 52 - 32);
+            §§push((-(§§pop() * 107) - 77 + 1) * 76 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -687,7 +763,17 @@ package com.enfluid.ltp.view.components
          §§push(2);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 100) * 1 - 61 - 8 + 1) * 95);
+            §§push(--(§§pop() * 42) - 84 + 93 - 106 - 97);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Object
+         {
+            return viewModel.AdwordsRestricted;
+         },null,"_KeywordsDataGridHeader_Observe3.source");
+         §§push(result);
+         §§push(3);
+         if(_loc3_)
+         {
+            §§push((§§pop() - 1 + 99) * 45 - 62);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -697,10 +783,10 @@ package com.enfluid.ltp.view.components
             project = param1;
          },"project");
          §§push(result);
-         §§push(3);
-         if(_loc2_)
+         §§push(4);
+         if(_loc3_)
          {
-            §§push(-(((§§pop() + 86 - 13) * 16 - 1) * 35));
+            §§push(§§pop() + 1 - 10 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -708,10 +794,10 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"keywordColumn.helpTitle");
          §§push(result);
-         §§push(4);
+         §§push(5);
          if(_loc2_)
          {
-            §§push((§§pop() + 5) * 45 - 86);
+            §§push((§§pop() - 114) * 29 * 37 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -719,20 +805,20 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"keywordColumn.helpContent");
          §§push(result);
-         §§push(5);
-         if(_loc2_)
+         §§push(6);
+         if(_loc3_)
          {
-            §§push(-(-(-§§pop() - 1 - 67 + 58) - 1));
+            §§push(§§pop() - 94 - 1 - 12);
          }
          §§pop()[§§pop()] = new Binding(this,function():Group
          {
             return new KeywordColumnHeaderContent();
          },null,"keywordColumn.headerContent");
          §§push(result);
-         §§push(6);
+         §§push(7);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 56 * 38 + 1));
+            §§push(-(-((§§pop() + 1) * 32 - 21) * 58));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -740,20 +826,20 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"keywordColumn.headerText");
          §§push(result);
-         §§push(7);
-         if(_loc2_)
+         §§push(8);
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 110 + 63) - 1 - 1 - 1 + 92);
+            §§push(§§pop() - 24 - 74 - 71 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return true;
          },null,"keywordColumn.sortable");
          §§push(result);
-         §§push(8);
+         §§push(9);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 97) - 1) - 65 + 102);
+            §§push(--((-§§pop() + 95) * 13) * 91);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -761,10 +847,10 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"projectColumn.helpTitle");
          §§push(result);
-         §§push(9);
-         if(_loc2_)
+         §§push(10);
+         if(_loc3_)
          {
-            §§push((§§pop() - 1) * 36 - 38 - 1 - 94 - 1 - 111);
+            §§push((-§§pop() * 115 + 54 + 18) * 82);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -772,40 +858,40 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"projectColumn.helpContent");
          §§push(result);
-         §§push(10);
-         if(_loc2_)
+         §§push(11);
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 111 - 1 + 1 + 109 + 86) - 89);
+            §§push(-(§§pop() - 27 + 1 + 1) + 1 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return viewModel.selectedKeywordsTab.isFavoritesTab;
          },null,"projectColumn.visible");
          §§push(result);
-         §§push(11);
+         §§push(12);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) - 33);
+            §§push(-(-(§§pop() - 1 - 1) * 27 - 19 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Group
          {
             return new ProjectFilterView();
          },null,"projectColumn.headerContent");
          §§push(result);
-         §§push(12);
-         if(_loc2_)
+         §§push(13);
+         if(_loc3_)
          {
-            §§push(-(-§§pop() + 1 + 1 - 60));
+            §§push(-(§§pop() + 6 + 104 - 95 + 41 + 91 - 92));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return true;
          },null,"projectColumn.sortable");
          §§push(result);
-         §§push(13);
+         §§push(14);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 77 + 23) - 40 + 40 - 117 - 1);
+            §§push(-(-(-§§pop() + 1) + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -813,10 +899,10 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"suggestedBidColumn.helpTitle");
          §§push(result);
-         §§push(14);
-         if(_loc3_)
+         §§push(15);
+         if(_loc2_)
          {
-            §§push((§§pop() - 1) * 114 - 1 - 1 - 38);
+            §§push(§§pop() - 109 + 1 - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -824,40 +910,40 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"suggestedBidColumn.helpContent");
          §§push(result);
-         §§push(15);
+         §§push(16);
          if(_loc3_)
          {
-            §§push((§§pop() * 114 + 1) * 76);
+            §§push(-(§§pop() * 61) + 1 - 54);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return project.suggestedBidEnabled;
          },null,"suggestedBidColumn.visible");
          §§push(result);
-         §§push(16);
-         if(_loc2_)
+         §§push(17);
+         if(_loc3_)
          {
-            §§push((-(§§pop() * 31 - 1 - 32) * 57 - 119) * 16);
+            §§push(§§pop() + 1 + 1 + 37 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Group
          {
             return new SuggestedBidFilterView();
          },null,"suggestedBidColumn.headerContent");
          §§push(result);
-         §§push(17);
+         §§push(18);
          if(_loc2_)
          {
-            §§push(§§pop() * 54 + 1 - 1);
+            §§push(§§pop() - 1 + 21 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return true;
          },null,"suggestedBidColumn.sortable");
          §§push(result);
-         §§push(18);
-         if(_loc3_)
+         §§push(19);
+         if(_loc2_)
          {
-            §§push(§§pop() - 117 + 1 + 1 - 83 + 89);
+            §§push(-(-§§pop() - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -865,10 +951,10 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"localSearchesColumn.helpTitle");
          §§push(result);
-         §§push(19);
+         §§push(20);
          if(_loc3_)
          {
-            §§push((§§pop() + 35 - 79 + 1 - 60) * 54 * 38 * 101);
+            §§push(-((§§pop() + 32 + 61 - 1) * 43) * 85 * 94);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -876,307 +962,27 @@ package com.enfluid.ltp.view.components
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"localSearchesColumn.helpContent");
          §§push(result);
-         §§push(20);
-         if(_loc3_)
-         {
-            §§push(-(§§pop() - 1 - 1) - 62 - 1 - 102);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return project.localSearchesEnabled;
-         },null,"localSearchesColumn.visible");
-         §§push(result);
          §§push(21);
-         if(_loc2_)
-         {
-            §§push(-(-(§§pop() + 1 - 47) + 78));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Group
-         {
-            return new LocalSearchesFilterView();
-         },null,"localSearchesColumn.headerContent");
-         §§push(result);
-         §§push(22);
-         if(_loc3_)
-         {
-            §§push(--§§pop() * 1 - 51);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return true;
-         },null,"localSearchesColumn.sortable");
-         §§push(result);
-         §§push(23);
-         if(_loc3_)
-         {
-            §§push(§§pop() + 1 + 1 - 40 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_GLOBAL_SEARCEHES_TITLE;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"globalSearchesColumn.helpTitle");
-         §§push(result);
-         §§push(24);
-         if(_loc2_)
-         {
-            §§push((§§pop() + 44) * 64 - 82);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_GLOBAL_SEARCEHES_CONTENT;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"globalSearchesColumn.helpContent");
-         §§push(result);
-         §§push(25);
-         if(_loc3_)
-         {
-            §§push(-((§§pop() + 38) * 82 * 10));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Callout
-         {
-            return new GlobalSearchesMissingDataCallout();
-         },null,"globalSearchesColumn.missingDataCallout");
-         §§push(result);
-         §§push(26);
-         if(_loc3_)
-         {
-            §§push(§§pop() - 1 + 1 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return project.globalSearchesEnabled;
-         },null,"globalSearchesColumn.visible");
-         §§push(result);
-         §§push(27);
-         if(_loc3_)
-         {
-            §§push((§§pop() * 112 - 77 + 1) * 76);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            §§push(model.selectedKeywordCollection.missingGlobalSearchesCount);
-            §§push(0);
-            if(_loc1_)
-            {
-               §§push(-(§§pop() * 105 - 1 - 104) + 1 - 7 + 1);
-            }
-            return §§pop() > §§pop();
-         },null,"globalSearchesColumn.showWarningIcon");
-         §§push(result);
-         §§push(28);
-         if(_loc3_)
-         {
-            §§push(-(§§pop() + 83 + 82));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Group
-         {
-            return new GlobalSearchesFilterView();
-         },null,"globalSearchesColumn.headerContent");
-         §§push(result);
-         §§push(29);
-         if(_loc3_)
-         {
-            §§push((§§pop() + 93 - 106 - 97 + 76 - 1 + 99) * 45);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return model.isFetchingMissingGlobalSearches;
-         },null,"globalSearchesColumn.showProgressSpinner");
-         §§push(result);
-         §§push(30);
-         if(_loc2_)
-         {
-            §§push(((§§pop() + 1) * 74 - 10 + 1) * 76);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return true;
-         },null,"globalSearchesColumn.sortable");
-         §§push(result);
-         §§push(31);
-         if(_loc3_)
-         {
-            §§push(§§pop() * 29 * 37 - 1 + 30 - 94 - 1 - 12);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_ADVERTISER_COMPETITION_TITLE;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"advertiserCompetitionColumn.helpTitle");
-         §§push(result);
-         §§push(32);
-         if(_loc2_)
-         {
-            §§push(-(-((§§pop() + 1) * 32 - 21) * 58));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_ADVERTISER_COMPETITION_CONTENT;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"advertiserCompetitionColumn.helpContent");
-         §§push(result);
-         §§push(33);
-         if(_loc3_)
-         {
-            §§push(§§pop() - 24 - 74 - 71 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return project.advertiserCompEnabled;
-         },null,"advertiserCompetitionColumn.visible");
-         §§push(result);
-         §§push(34);
-         if(_loc2_)
-         {
-            §§push(--((-§§pop() + 95) * 13) * 91);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Group
-         {
-            return new AdvertizerCompetitionFilterView();
-         },null,"advertiserCompetitionColumn.headerContent");
-         §§push(result);
-         §§push(35);
-         if(_loc3_)
-         {
-            §§push((-§§pop() * 115 + 54 + 18) * 82);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return true;
-         },null,"advertiserCompetitionColumn.sortable");
-         §§push(result);
-         §§push(36);
-         if(_loc3_)
-         {
-            §§push(-(§§pop() - 27 + 1 + 1) + 1 - 1 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_NUM_WORDS_TITLE;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"numberofWordsColumn.helpTitle");
-         §§push(result);
-         §§push(37);
-         if(_loc3_)
-         {
-            §§push(-(-(§§pop() - 1 - 1) * 27 - 19 + 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_NUM_WORDS_CONTENT;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"numberofWordsColumn.helpContent");
-         §§push(result);
-         §§push(38);
-         if(_loc3_)
-         {
-            §§push(-(§§pop() + 6 + 104 - 95 + 41 + 91 - 92));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return project.numWordsEnabled;
-         },null,"numberofWordsColumn.visible");
-         §§push(result);
-         §§push(39);
-         if(_loc2_)
-         {
-            §§push(-(-(-§§pop() + 1) + 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Group
-         {
-            return new NumWordsFilterView();
-         },null,"numberofWordsColumn.headerContent");
-         §§push(result);
-         §§push(40);
-         if(_loc2_)
-         {
-            §§push(§§pop() - 109 + 1 - 1 - 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return true;
-         },null,"numberofWordsColumn.sortable");
-         §§push(result);
-         §§push(41);
-         if(_loc3_)
-         {
-            §§push(-(§§pop() * 61) + 1 - 54);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_GOOGLE_TITLE_COMPETITION_TITLE;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"googleTitleCompetitionColumn.helpTitle");
-         §§push(result);
-         §§push(42);
-         if(_loc3_)
-         {
-            §§push(§§pop() + 1 + 1 + 37 - 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = TextAssets.HELP_GOOGLE_TITLE_COMPETITION_CONTENT;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"googleTitleCompetitionColumn.helpContent");
-         §§push(result);
-         §§push(43);
-         if(_loc2_)
-         {
-            §§push(§§pop() - 1 + 21 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return project.googleTitleCompEnabled;
-         },null,"googleTitleCompetitionColumn.visible");
-         §§push(result);
-         §§push(44);
-         if(_loc2_)
-         {
-            §§push(-(-§§pop() - 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Callout
-         {
-            return new GoogleTitleCompMissingDataCallout();
-         },null,"googleTitleCompetitionColumn.missingDataCallout");
-         §§push(result);
-         §§push(45);
-         if(_loc3_)
-         {
-            §§push(-((§§pop() + 32 + 61 - 1) * 43) * 85 * 94);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Group
-         {
-            return new GoogleTitleCompetitionFilterView();
-         },null,"googleTitleCompetitionColumn.headerContent");
-         §§push(result);
-         §§push(46);
          if(_loc3_)
          {
             §§push((§§pop() - 1 + 1) * 97 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            §§push(model.selectedKeywordCollection.missingGoogleTitleCompCount);
-            §§push(0);
-            if(_loc1_)
-            {
-               §§push(-§§pop() + 103 - 8);
-            }
-            return §§pop() > §§pop();
-         },null,"googleTitleCompetitionColumn.showWarningIcon");
+            return project.localSearchesEnabled;
+         },null,"localSearchesColumn.visible");
          §§push(result);
-         §§push(47);
+         §§push(22);
          if(_loc3_)
          {
             §§push((§§pop() + 39 - 1) * 66 * 108);
          }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         §§pop()[§§pop()] = new Binding(this,function():Group
          {
-            return model.isFetchingMissingGoogleTitleCompetition;
-         },null,"googleTitleCompetitionColumn.showProgressSpinner");
+            return new LocalSearchesFilterView();
+         },null,"localSearchesColumn.headerContent");
          §§push(result);
-         §§push(48);
+         §§push(23);
          if(_loc2_)
          {
             §§push(-(§§pop() - 118 - 1) * 15);
@@ -1184,207 +990,201 @@ package com.enfluid.ltp.view.components
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return true;
-         },null,"googleTitleCompetitionColumn.sortable");
+         },null,"localSearchesColumn.sortable");
          §§push(result);
-         §§push(49);
+         §§push(24);
          if(_loc2_)
          {
             §§push(§§pop() + 23 + 55 + 87 - 59);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
-            var _loc1_:* = TextAssets.HELP_BING_TITLE_COMPETITION_TITLE;
+            var _loc1_:* = TextAssets.HELP_GLOBAL_SEARCEHES_TITLE;
             return _loc1_ == undefined?null:String(_loc1_);
-         },null,"bingTitleCompetitionColumn.helpTitle");
+         },null,"globalSearchesColumn.helpTitle");
          §§push(result);
-         §§push(50);
+         §§push(25);
          if(_loc3_)
          {
             §§push(-((§§pop() + 108 + 1 + 10 + 91) * 92) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
-            var _loc1_:* = TextAssets.HELP_BING_TITLE_COMPETITION_CONTENT;
+            var _loc1_:* = TextAssets.HELP_GLOBAL_SEARCEHES_CONTENT;
             return _loc1_ == undefined?null:String(_loc1_);
-         },null,"bingTitleCompetitionColumn.helpContent");
+         },null,"globalSearchesColumn.helpContent");
          §§push(result);
-         §§push(51);
+         §§push(26);
          if(_loc2_)
          {
             §§push(-(§§pop() - 39 - 1 - 1 + 1 - 1));
          }
-         §§pop()[§§pop()] = new Binding(this,function():Callout
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return new BingTitleCompMissingDataCallout();
-         },null,"bingTitleCompetitionColumn.missingDataCallout");
+            return project.globalSearchesEnabled;
+         },null,"globalSearchesColumn.visible");
          §§push(result);
-         §§push(52);
+         §§push(27);
          if(_loc2_)
          {
             §§push(-(-§§pop() + 110 - 17 - 1 + 1));
          }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         §§pop()[§§pop()] = new Binding(this,function():Callout
          {
-            return project.bingTitleCompEnabled;
-         },null,"bingTitleCompetitionColumn.visible");
+            return new GlobalSearchesMissingDataCallout();
+         },null,"globalSearchesColumn.missingDataCallout");
          §§push(result);
-         §§push(53);
+         §§push(28);
          if(_loc2_)
          {
             §§push(-((§§pop() - 1) * 106 + 115));
          }
-         §§pop()[§§pop()] = new Binding(this,function():Group
+         §§pop()[§§pop()] = new Binding(this,function():FetchMissingCommand
          {
-            return new BingTitleCompetitionFilterView();
-         },null,"bingTitleCompetitionColumn.headerContent");
+            return model.fetchMissingGlobalSearchesCommand;
+         },null,"globalSearchesColumn.missingAdditionalDataCommand");
          §§push(result);
-         §§push(54);
+         §§push(29);
          if(_loc2_)
          {
             §§push(-(§§pop() + 91) + 27);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            §§push(model.selectedKeywordCollection.missingBingTitleCompCount);
+            §§push(model.selectedKeywordCollection.missingGlobalSearchesCount);
             §§push(0);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push(§§pop() * 44 * 40 * 7);
+               §§push((§§pop() - 1 - 14) * 1 + 27 + 1);
             }
             return §§pop() > §§pop();
-         },null,"bingTitleCompetitionColumn.showWarningIcon");
+         },null,"globalSearchesColumn.showWarningIcon");
          §§push(result);
-         §§push(55);
+         §§push(30);
          if(_loc3_)
          {
             §§push(§§pop() - 1 + 1 - 1 - 1);
          }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         §§pop()[§§pop()] = new Binding(this,function():Group
          {
-            return model.isFetchingMissingBingTitleCompetition;
-         },null,"bingTitleCompetitionColumn.showProgressSpinner");
+            return new GlobalSearchesFilterView();
+         },null,"globalSearchesColumn.headerContent");
          §§push(result);
-         §§push(56);
+         §§push(31);
          if(_loc3_)
          {
             §§push(§§pop() - 37 - 6 - 25);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return true;
-         },null,"bingTitleCompetitionColumn.sortable");
+            return model.isFetchingMissingGlobalSearches;
+         },null,"globalSearchesColumn.showProgressSpinner");
          §§push(result);
-         §§push(57);
+         §§push(32);
          if(_loc3_)
          {
             §§push(-(§§pop() + 1 + 102 + 104 - 110) - 1 + 40);
          }
-         §§pop()[§§pop()] = new Binding(this,function():String
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            var _loc1_:* = TextAssets.HELP_DOMAIN_AVAILABILITY_TITLE;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"domainAvailabilityColumn.helpTitle");
+            return true;
+         },null,"globalSearchesColumn.sortable");
          §§push(result);
-         §§push(58);
+         §§push(33);
          if(_loc3_)
          {
             §§push(§§pop() + 63 + 8 + 1 - 1 + 28);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
-            var _loc1_:* = TextAssets.HELP_DOMAIN_AVAILABILITY_CONTENT;
+            var _loc1_:* = TextAssets.HELP_ADVERTISER_COMPETITION_TITLE;
             return _loc1_ == undefined?null:String(_loc1_);
-         },null,"domainAvailabilityColumn.helpContent");
+         },null,"advertiserCompetitionColumn.helpTitle");
          §§push(result);
-         §§push(59);
+         §§push(34);
          if(_loc3_)
          {
             §§push(§§pop() - 74 - 1 - 4 - 1 - 26 + 1 - 37);
          }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         §§pop()[§§pop()] = new Binding(this,function():String
          {
-            return project.domainsEnabled;
-         },null,"domainAvailabilityColumn.visible");
+            var _loc1_:* = TextAssets.HELP_ADVERTISER_COMPETITION_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"advertiserCompetitionColumn.helpContent");
          §§push(result);
-         §§push(60);
+         §§push(35);
          if(_loc2_)
          {
             §§push(-§§pop() - 105 - 1);
          }
-         §§pop()[§§pop()] = new Binding(this,function():Callout
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return new DomainsMissingDataCallout();
-         },null,"domainAvailabilityColumn.missingDataCallout");
+            return project.advertiserCompEnabled;
+         },null,"advertiserCompetitionColumn.visible");
          §§push(result);
-         §§push(61);
+         §§push(36);
          if(_loc3_)
          {
             §§push(-(§§pop() + 1 - 68));
          }
          §§pop()[§§pop()] = new Binding(this,function():Group
          {
-            return new DomainAvailabilityFilterView();
-         },null,"domainAvailabilityColumn.headerContent");
+            return new AdvertizerCompetitionFilterView();
+         },null,"advertiserCompetitionColumn.headerContent");
          §§push(result);
-         §§push(62);
+         §§push(37);
          if(_loc2_)
          {
             §§push(§§pop() - 1 + 76 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return model.isFetchingMissingDomains;
-         },null,"domainAvailabilityColumn.showProgressSpinner");
+            return true;
+         },null,"advertiserCompetitionColumn.sortable");
          §§push(result);
-         §§push(63);
+         §§push(38);
          if(_loc3_)
          {
             §§push(--(§§pop() + 42 + 1 + 1 + 76) - 1);
          }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         §§pop()[§§pop()] = new Binding(this,function():String
          {
-            §§push(model.selectedKeywordCollection.missingDomainAvailabilityCount);
-            §§push(0);
-            if(_loc1_)
-            {
-               §§push((§§pop() + 23 + 71 + 11 - 1 + 82 - 90) * 30);
-            }
-            return §§pop() > §§pop();
-         },null,"domainAvailabilityColumn.showWarningIcon");
+            var _loc1_:* = TextAssets.HELP_NUM_WORDS_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"numberofWordsColumn.helpTitle");
          §§push(result);
-         §§push(64);
+         §§push(39);
          if(_loc2_)
          {
             §§push(-((§§pop() - 1) * 48));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
-            var _loc1_:* = TextAssets.HELP_AVG_KEYWORD_COMPETITIVENESS_TITLE;
+            var _loc1_:* = TextAssets.HELP_NUM_WORDS_CONTENT;
             return _loc1_ == undefined?null:String(_loc1_);
-         },null,"avgKCColumn.helpTitle");
+         },null,"numberofWordsColumn.helpContent");
          §§push(result);
-         §§push(65);
+         §§push(40);
          if(_loc2_)
          {
             §§push(-((§§pop() + 1 + 1) * 6 - 1 - 101));
          }
-         §§pop()[§§pop()] = new Binding(this,function():String
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            var _loc1_:* = TextAssets.HELP_AVG_KEYWORD_COMPETITIVENESS_CONTENT;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"avgKCColumn.helpContent");
+            return project.numWordsEnabled;
+         },null,"numberofWordsColumn.visible");
          §§push(result);
-         §§push(66);
+         §§push(41);
          if(_loc3_)
          {
             §§push((§§pop() * 32 - 1) * 59 * 4);
          }
          §§pop()[§§pop()] = new Binding(this,function():Group
          {
-            return new AvgKCFilterView();
-         },null,"avgKCColumn.headerContent");
+            return new NumWordsFilterView();
+         },null,"numberofWordsColumn.headerContent");
          §§push(result);
-         §§push(67);
+         §§push(42);
          if(_loc3_)
          {
             §§push((-(§§pop() + 1) + 1) * 42);
@@ -1392,12 +1192,482 @@ package com.enfluid.ltp.view.components
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return true;
-         },null,"avgKCColumn.sortable");
+         },null,"numberofWordsColumn.sortable");
          §§push(result);
-         §§push(68);
+         §§push(43);
          if(_loc3_)
          {
             §§push(-(§§pop() * 19) * 114 - 26 - 1 + 0 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_GOOGLE_TITLE_COMPETITION_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"googleTitleCompetitionColumn.helpTitle");
+         §§push(result);
+         §§push(44);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 67 + 1 - 1 + 1 - 78);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_GOOGLE_TITLE_COMPETITION_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"googleTitleCompetitionColumn.helpContent");
+         §§push(result);
+         §§push(45);
+         if(_loc2_)
+         {
+            §§push(--((§§pop() - 1 + 9) * 42 + 80 - 17));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return project.googleTitleCompEnabled;
+         },null,"googleTitleCompetitionColumn.visible");
+         §§push(result);
+         §§push(46);
+         if(_loc3_)
+         {
+            §§push(-(-(-§§pop() - 1 - 66) - 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Callout
+         {
+            return new GoogleTitleCompMissingDataCallout();
+         },null,"googleTitleCompetitionColumn.missingDataCallout");
+         §§push(result);
+         §§push(47);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 1 - 104));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():FetchMissingCommand
+         {
+            return model.fetchMissingGoogleTitleCompetitionCommand;
+         },null,"googleTitleCompetitionColumn.missingAdditionalDataCommand");
+         §§push(result);
+         §§push(48);
+         if(_loc3_)
+         {
+            §§push((§§pop() - 44 - 1 - 83) * 67);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Group
+         {
+            return new GoogleTitleCompetitionFilterView();
+         },null,"googleTitleCompetitionColumn.headerContent");
+         §§push(result);
+         §§push(49);
+         if(_loc2_)
+         {
+            §§push(-((§§pop() - 1 + 1) * 92 + 11));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            §§push(model.selectedKeywordCollection.missingGoogleTitleCompCount);
+            §§push(0);
+            if(_loc2_)
+            {
+               §§push(-(§§pop() + 1 + 1 - 7) * 13);
+            }
+            return §§pop() > §§pop();
+         },null,"googleTitleCompetitionColumn.showWarningIcon");
+         §§push(result);
+         §§push(50);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 23 * 41 + 34 + 103 - 8 + 37);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return model.isFetchingMissingGoogleTitleCompetition;
+         },null,"googleTitleCompetitionColumn.showProgressSpinner");
+         §§push(result);
+         §§push(51);
+         if(_loc2_)
+         {
+            §§push((-(-(§§pop() * 119) + 1) + 17 + 1) * 40);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return true;
+         },null,"googleTitleCompetitionColumn.sortable");
+         §§push(result);
+         §§push(52);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 1 - 1 - 1 - 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_BING_TITLE_COMPETITION_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"bingTitleCompetitionColumn.helpTitle");
+         §§push(result);
+         §§push(53);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 79 + 1 - 114);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_BING_TITLE_COMPETITION_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"bingTitleCompetitionColumn.helpContent");
+         §§push(result);
+         §§push(54);
+         if(_loc3_)
+         {
+            §§push(§§pop() * 30 * 39 + 82 - 90);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return project.bingTitleCompEnabled;
+         },null,"bingTitleCompetitionColumn.visible");
+         §§push(result);
+         §§push(55);
+         if(_loc2_)
+         {
+            §§push(§§pop() - 1 - 95 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Callout
+         {
+            return new BingTitleCompMissingDataCallout();
+         },null,"bingTitleCompetitionColumn.missingDataCallout");
+         §§push(result);
+         §§push(56);
+         if(_loc3_)
+         {
+            §§push(-((§§pop() + 1 - 81) * 49 - 66 + 78) - 88);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():FetchMissingCommand
+         {
+            return model.fetchMissingBingTitleCompetitionCommand;
+         },null,"bingTitleCompetitionColumn.missingAdditionalDataCommand");
+         §§push(result);
+         §§push(57);
+         if(_loc3_)
+         {
+            §§push((§§pop() + 8) * 13 + 71 + 45 - 1 - 1 + 6);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Group
+         {
+            return new BingTitleCompetitionFilterView();
+         },null,"bingTitleCompetitionColumn.headerContent");
+         §§push(result);
+         §§push(58);
+         if(_loc2_)
+         {
+            §§push((§§pop() - 1) * 104 - 8 + 1 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            §§push(model.selectedKeywordCollection.missingBingTitleCompCount);
+            §§push(0);
+            if(_loc2_)
+            {
+               §§push(-(§§pop() + 51) + 22 + 1);
+            }
+            return §§pop() > §§pop();
+         },null,"bingTitleCompetitionColumn.showWarningIcon");
+         §§push(result);
+         §§push(59);
+         if(_loc3_)
+         {
+            §§push((-(§§pop() * 112 - 1 - 61) - 1 - 1) * 13);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return model.isFetchingMissingBingTitleCompetition;
+         },null,"bingTitleCompetitionColumn.showProgressSpinner");
+         §§push(result);
+         §§push(60);
+         if(_loc2_)
+         {
+            §§push((-§§pop() * 80 + 104 + 88) * 24);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return true;
+         },null,"bingTitleCompetitionColumn.sortable");
+         §§push(result);
+         §§push(61);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() - 1) + 6);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_DOMAIN_AVAILABILITY_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"domainAvailabilityColumn.helpTitle");
+         §§push(result);
+         §§push(62);
+         if(_loc2_)
+         {
+            §§push(--(-((§§pop() + 1) * 77) * 55));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_DOMAIN_AVAILABILITY_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"domainAvailabilityColumn.helpContent");
+         §§push(result);
+         §§push(63);
+         if(_loc3_)
+         {
+            §§push(§§pop() + 37 + 1 - 1 - 1 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return project.domainsEnabled;
+         },null,"domainAvailabilityColumn.visible");
+         §§push(result);
+         §§push(64);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 63 - 36 - 89);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Callout
+         {
+            return new DomainsMissingDataCallout();
+         },null,"domainAvailabilityColumn.missingDataCallout");
+         §§push(result);
+         §§push(65);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 30 - 72 - 1 + 19 - 74);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():FetchMissingCommand
+         {
+            return model.fetchMissingDomainsCommand;
+         },null,"domainAvailabilityColumn.missingAdditionalDataCommand");
+         §§push(result);
+         §§push(66);
+         if(_loc2_)
+         {
+            §§push(((§§pop() + 1) * 19 + 34 + 1 - 1) * 29 + 81);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Group
+         {
+            return new DomainAvailabilityFilterView();
+         },null,"domainAvailabilityColumn.headerContent");
+         §§push(result);
+         §§push(67);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 12 - 1 - 61 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return model.isFetchingMissingDomains;
+         },null,"domainAvailabilityColumn.showProgressSpinner");
+         §§push(result);
+         §§push(68);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() + 3 + 77) * 62 - 1 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            §§push(model.selectedKeywordCollection.missingDomainAvailabilityCount);
+            §§push(0);
+            if(_loc2_)
+            {
+               §§push(-§§pop() - 74 + 61 + 1 - 1 + 1);
+            }
+            return §§pop() > §§pop();
+         },null,"domainAvailabilityColumn.showWarningIcon");
+         §§push(result);
+         §§push(69);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 36 + 1 + 1 + 45 + 11 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return project.amazonKCEnabled;
+         },null,"amazonKCColumn.visible");
+         §§push(result);
+         §§push(70);
+         if(_loc2_)
+         {
+            §§push(-(--§§pop() + 1) + 1 - 55 - 75);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_AMAZON_KC_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"amazonKCColumn.helpTitle");
+         §§push(result);
+         §§push(71);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() + 57 + 1 + 69));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_AMAZON_KC_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"amazonKCColumn.helpContent");
+         §§push(result);
+         §§push(72);
+         if(_loc3_)
+         {
+            §§push((§§pop() * 35 * 61 + 1 - 79) * 81 + 1 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Group
+         {
+            return new AmazonKCFilterView();
+         },null,"amazonKCColumn.headerContent");
+         §§push(result);
+         §§push(73);
+         if(_loc3_)
+         {
+            §§push(-(-(§§pop() - 13) + 1 - 44 + 1) - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():FetchMissingCommand
+         {
+            return model.fetchMissingAmazonKCCommand;
+         },null,"amazonKCColumn.missingAdditionalDataCommand");
+         §§push(result);
+         §§push(74);
+         if(_loc3_)
+         {
+            §§push(§§pop() * 31 + 1 + 1 + 69);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Callout
+         {
+            return new AmazonKCMissingDataCallout();
+         },null,"amazonKCColumn.missingDataCallout");
+         §§push(result);
+         §§push(75);
+         if(_loc2_)
+         {
+            §§push((§§pop() * 4 - 1 + 1) * 45 + 1 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            §§push(model.selectedKeywordCollection.missingAmazonKCCount);
+            §§push(0);
+            if(_loc2_)
+            {
+               §§push(-§§pop() + 61 + 109);
+            }
+            return §§pop() > §§pop();
+         },null,"amazonKCColumn.showWarningIcon");
+         §§push(result);
+         §§push(76);
+         if(_loc2_)
+         {
+            §§push((-((-(§§pop() * 2) + 1) * 110) - 27) * 106);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return model.isFetchingMissingAmazonKC;
+         },null,"amazonKCColumn.showProgressSpinner");
+         §§push(result);
+         §§push(77);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 93 - 54 - 1 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return true;
+         },null,"amazonKCColumn.sortable");
+         §§push(result);
+         §§push(78);
+         if(_loc2_)
+         {
+            §§push(-§§pop() * 11 + 49 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_AVG_KEYWORD_COMPETITIVENESS_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"avgKCColumn.helpTitle");
+         §§push(result);
+         §§push(79);
+         if(_loc2_)
+         {
+            §§push(-§§pop() - 1 - 96 - 94 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_AVG_KEYWORD_COMPETITIVENESS_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"avgKCColumn.helpContent");
+         §§push(result);
+         §§push(80);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() * 63) - 1 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Group
+         {
+            return new AvgKCFilterView();
+         },null,"avgKCColumn.headerContent");
+         §§push(result);
+         §§push(81);
+         if(_loc2_)
+         {
+            §§push(§§pop() * 74 + 89 + 98 + 1 - 7);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():FetchMissingCommand
+         {
+            return model.fetchMissingAvgKCCommand;
+         },null,"avgKCColumn.missingAdditionalDataCommand");
+         §§push(result);
+         §§push(82);
+         if(_loc3_)
+         {
+            §§push((-§§pop() + 60) * 47);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Callout
+         {
+            return new AvgKCMissingDataCallout();
+         },null,"avgKCColumn.missingDataCallout");
+         §§push(result);
+         §§push(83);
+         if(_loc3_)
+         {
+            §§push((-§§pop() - 17 - 112 + 66) * 105);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            §§push(model.selectedKeywordCollection.missingAvgKCCount);
+            §§push(0);
+            if(_loc1_)
+            {
+               §§push(-(§§pop() - 91 - 58));
+            }
+            return §§pop() > §§pop();
+         },null,"avgKCColumn.showWarningIcon");
+         §§push(result);
+         §§push(84);
+         if(_loc3_)
+         {
+            §§push((§§pop() * 23 + 65 - 1 - 101) * 104 + 16 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return model.isFetchingMissingAvgKC;
+         },null,"avgKCColumn.showProgressSpinner");
+         §§push(result);
+         §§push(85);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() - 1 - 38 - 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return true;
+         },null,"avgKCColumn.sortable");
+         §§push(result);
+         §§push(86);
+         if(_loc2_)
+         {
+            §§push(§§pop() - 1 - 1 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1427,6 +1697,25 @@ package com.enfluid.ltp.view.components
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"advertiserCompetitionColumn",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get amazonKCColumn() : com.enfluid.ltp.view.components.FilterGridColumn
+      {
+         return this._1664952530amazonKCColumn;
+      }
+      
+      public function set amazonKCColumn(param1:com.enfluid.ltp.view.components.FilterGridColumn) : void
+      {
+         var _loc2_:Object = this._1664952530amazonKCColumn;
+         if(_loc2_ !== param1)
+         {
+            this._1664952530amazonKCColumn = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonKCColumn",_loc2_,param1));
             }
          }
       }

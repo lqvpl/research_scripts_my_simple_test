@@ -23,22 +23,38 @@ package com.enfluid.ltp.view.skins
    import mx.binding.BindingManager;
    import mx.states.Transition;
    import mx.effects.Sequence;
-   import spark.components.Grid;
-   import spark.components.DataGrid;
+   import com.enfluid.ltp.view.components.LTPComboBox;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import flash.events.Event;
+   import spark.components.CheckBox;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import flash.display.DisplayObject;
+   import mx.core.FlexGlobals;
    import mx.graphics.LinearGradient;
-   import com.enfluid.ltp.view.components.Link;
-   import mx.graphics.GradientEntry;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
-   import mx.binding.Binding;
-   import flash.utils.Proxy;
-   import mx.core.mx_internal;
-   import com.enfluid.ltp.view.containers.CompetitorAnalysisPanel;
-   import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
+   import mx.core.mx_internal;
    import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
    import mx.states.State;
    import mx.states.AddItems;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.view.components.WarningInformationLabel;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.model.constants.Values;
+   import mx.graphics.GradientEntry;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import spark.layouts.HorizontalLayout;
+   import flash.events.MouseEvent;
+   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import hr.binaria.asx3m.converters.IMarshallingContext;
+   import mx.collections.ArrayCollection;
+   import flash.utils.ByteArray;
+   import flash.utils.Proxy;
+   import com.enfluid.ltp.view.containers.CompetitorAnalysisPanel;
+   import mx.events.PropertyChangeEvent;
    
    use namespace mx_internal;
    
@@ -281,9 +297,9 @@ package com.enfluid.ltp.view.skins
          BindingManager.executeBindings(this,"_CompetitorAnalysisPanelSkin_SetProperty1",this._CompetitorAnalysisPanelSkin_SetProperty1);
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(---((§§pop() - 58) * 58));
+            §§push(-(-§§pop() + 1 + 85) * 62 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -328,9 +344,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Power = new Power();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((--§§pop() - 49) * 21);
+            §§push((§§pop() + 75 - 48) * 94 - 25 + 44);
          }
          §§pop().easeInFraction = §§pop();
          this.collapseEaser = _loc1_;
@@ -343,9 +359,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Power = new Power();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 - 36) * 79 + 1);
+            §§push((§§pop() + 1 - 79) * 44 * 41);
          }
          §§pop().easeInFraction = §§pop();
          this.uncollapseEaser = _loc1_;
@@ -376,7 +392,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 1 - 111 - 39) + 89 + 1);
+            §§push(-((§§pop() + 1 + 1) * 72) - 1);
          }
          §§pop().duration = §§pop();
          this._CompetitorAnalysisPanelSkin_Fade1 = _loc1_;
@@ -398,9 +414,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rotate = new Rotate();
          §§push(_loc1_);
          §§push(250);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 81 - 15);
+            §§push(-(-§§pop() - 82) * 11);
          }
          §§pop().duration = §§pop();
          this._CompetitorAnalysisPanelSkin_Rotate1 = _loc1_;
@@ -415,7 +431,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 71 - 85 - 110) - 1);
+            §§push(-(§§pop() * 13 * 118 - 17 - 22));
          }
          §§pop().duration = §§pop();
          this._CompetitorAnalysisPanelSkin_Resize1 = _loc1_;
@@ -453,9 +469,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rotate = new Rotate();
          §§push(_loc1_);
          §§push(250);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 100 - 1 - 14 + 18 - 1);
+            §§push((§§pop() - 118 + 1 - 40 + 1) * 4 * 46 - 87);
          }
          §§pop().duration = §§pop();
          this._CompetitorAnalysisPanelSkin_Rotate2 = _loc1_;
@@ -468,9 +484,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Resize = new Resize();
          §§push(_loc1_);
          §§push(250);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 1 + 81) - 1);
+            §§push(§§pop() * 52 + 1 + 56 - 1);
          }
          §§pop().duration = §§pop();
          this._CompetitorAnalysisPanelSkin_Resize2 = _loc1_;
@@ -485,7 +501,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc2_)
          {
-            §§push(§§pop() + 34 - 112 - 1);
+            §§push((§§pop() - 71) * 112 - 107 - 85 - 1);
          }
          §§pop().duration = §§pop();
          this._CompetitorAnalysisPanelSkin_Fade2 = _loc1_;
@@ -500,56 +516,56 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 76 - 1);
+            §§push(-(§§pop() - 1 + 52) + 2);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 49 - 54 + 1 + 102) * 77);
+            §§push(--(§§pop() + 1 + 43));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 - 8 - 65);
+            §§push(-(-§§pop() - 1));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1) - 5) + 91 - 1);
+            §§push(§§pop() * 99 * 16 + 51 + 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 13 - 1) * 13 - 75) + 1);
+            §§push(§§pop() * 105 * 82 - 1 + 60);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 107 - 1);
+            §§push(--§§pop() + 1);
          }
          §§pop().topRightRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 102) - 77 + 77 - 84 - 1 + 110);
+            §§push(-(§§pop() * 79 - 1 - 1 - 79) - 1);
          }
          §§pop().bottomLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1) * 114 + 36 - 102));
+            §§push((§§pop() * 22 - 1 - 1) * 99);
          }
          §§pop().bottomRightRadiusX = §§pop();
          _loc1_.fill = this._CompetitorAnalysisPanelSkin_SolidColor1_i();
@@ -566,7 +582,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 82 - 1));
+            §§push(-(§§pop() + 102 - 34 + 33));
          }
          §§pop().color = §§pop();
          this.bgFill = _loc1_;
@@ -581,35 +597,35 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 1));
+            §§push(--§§pop() + 1 - 10);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 + 1) + 1);
+            §§push((-§§pop() - 1 - 1) * 3 - 1 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() + 32) * 62);
+            §§push(-(-§§pop() * 53));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 45 - 1 + 1) * 71 * 112 - 1);
+            §§push(--(-§§pop() + 87 - 1) - 1 - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(35);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 57 - 12 + 1 + 1 - 84 - 1);
+            §§push(§§pop() * 68 - 112 + 89 - 99);
          }
          §§pop().maxHeight = §§pop();
          _loc1_.toolTip = "Collapse";
@@ -633,43 +649,43 @@ package com.enfluid.ltp.view.skins
          §§push(35);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 67) + 15 + 1 + 58 + 1 + 1);
+            §§push(-(-(§§pop() * 110 + 1) - 106) - 112);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 102 - 1);
+            §§push((§§pop() - 1 - 1 - 1) * 48 * 46 - 115 + 49);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() + 45 - 1 - 1 + 26) * 116 * 105);
+            §§push(--(§§pop() + 1) - 108 - 1 + 7 - 48);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 113 - 1 - 80 - 63) * 52 - 1);
+            §§push(§§pop() - 1 - 1 - 107);
          }
          §§pop().top = §§pop();
          _loc1_.alpha = 0.8;
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() - 1) + 96 - 1);
+            §§push(-§§pop() - 104 - 57 - 59 + 23);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) - 38 - 94);
+            §§push((§§pop() * 10 - 1) * 44);
          }
          §§pop().topRightRadiusX = §§pop();
          _loc1_.fill = this._CompetitorAnalysisPanelSkin_LinearGradient1_c();
@@ -682,9 +698,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:LinearGradient = new LinearGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 50 * 26 + 33);
+            §§push((§§pop() + 1) * 110 - 44 + 34 - 110);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._CompetitorAnalysisPanelSkin_GradientEntry1_c(),this._CompetitorAnalysisPanelSkin_GradientEntry2_c()];
@@ -698,7 +714,7 @@ package com.enfluid.ltp.view.skins
          §§push(14869218);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 19 + 115) + 101 - 23 - 1 - 37);
+            §§push(--((§§pop() - 1 - 93) * 81));
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -711,7 +727,7 @@ package com.enfluid.ltp.view.skins
          §§push(14277081);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 1));
+            §§push(§§pop() + 1 - 73 - 108);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -724,56 +740,56 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 1) * 81 + 10);
+            §§push(-(-(§§pop() + 1) - 1 - 1));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() - 1 - 59 - 20) * 10 + 4 + 60);
+            §§push((§§pop() - 35) * 52 * 110 + 21 + 62 + 95);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 82) * 34 - 1 + 108);
+            §§push((§§pop() - 1 + 15 - 37 - 1 - 1) * 0);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(36);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 29);
+            §§push(§§pop() * 65 + 58 + 16 + 71 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 1 - 1 - 9 - 1);
+            §§push((-(§§pop() + 1 + 1 - 1) - 1) * 37);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 13) + 1) + 1);
+            §§push(-(§§pop() * 104 * 98 - 1 - 33) - 1);
          }
          §§pop().topRightRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 1 + 1) - 1 - 101);
+            §§push((§§pop() + 108) * 33 * 70);
          }
          §§pop().bottomLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 65) * 50);
+            §§push(-(§§pop() - 51 + 113 - 1) * 41 + 1);
          }
          §§pop().bottomRightRadiusX = §§pop();
          _loc1_.fill = this._CompetitorAnalysisPanelSkin_SolidColor2_c();
@@ -788,9 +804,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(12632256);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 28 - 1 - 15 - 1) - 70);
+            §§push(-(§§pop() * 66 * 13) - 1);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -803,28 +819,28 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc2_)
          {
-            §§push(--(§§pop() * 118 - 1 - 56 - 1) * 106);
+            §§push((§§pop() + 1 + 1) * 15 * 37 * 71 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 85 + 1) * 87) - 1);
+            §§push((-((§§pop() - 10) * 56) - 9 - 1) * 71);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc2_)
          {
-            §§push(-(---§§pop() * 115));
+            §§push(-(-§§pop() - 17) + 93 - 1 - 66);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(--§§pop() - 30 + 1) - 5);
+            §§push(((§§pop() - 17) * 33 + 1) * 48 - 34 + 1);
          }
          §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -832,7 +848,7 @@ package com.enfluid.ltp.view.skins
          §§push(10);
          if(_loc2_)
          {
-            §§push((§§pop() + 1) * 102 + 64);
+            §§push(§§pop() + 28 - 31 + 1 - 50 + 1);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._CompetitorAnalysisPanelSkin_Label1_i(),this._CompetitorAnalysisPanelSkin_Spacer1_i(),this._CompetitorAnalysisPanelSkin_Group2_i()];
@@ -851,9 +867,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(30);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 64 - 62 - 1);
+            §§push(-((§§pop() - 9 + 0 - 80) * 26 + 1) - 1);
          }
          §§pop().height = §§pop();
          _loc1_.setStyle("fontWeight","bold");
@@ -876,7 +892,7 @@ package com.enfluid.ltp.view.skins
          §§push(10);
          if(_loc2_)
          {
-            §§push((-§§pop() + 1 - 1) * 70 * 54);
+            §§push(-§§pop() - 1 + 77);
          }
          §§pop().width = §§pop();
          _loc1_.id = "_CompetitorAnalysisPanelSkin_Spacer1";
@@ -894,16 +910,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 1 + 1 + 1 + 64 + 1);
+            §§push((§§pop() + 85 + 40 - 1) * 56 - 21);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 - 98 - 92) * 119 - 1);
+            §§push(((§§pop() + 56 - 19 - 1) * 68 - 106 + 1) * 52);
          }
          §§pop().height = §§pop();
          _loc1_.addEventListener("mouseOut",this.__searchInput_mouseOut);
@@ -933,16 +949,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(150);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 1) - 63);
+            §§push((§§pop() + 1 - 40) * 70 - 1 - 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc2_)
          {
-            §§push(§§pop() + 109 + 53 - 63 + 59);
+            §§push(-§§pop() + 42 + 88);
          }
          §§pop().height = §§pop();
          _loc1_.addEventListener("mouseOut",this.__searchButton_mouseOut);
@@ -1004,44 +1020,44 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 58 + 1 - 1 - 1 + 81));
+            §§push((§§pop() - 22 + 1) * 39 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 1);
+            §§push(-((§§pop() + 112 + 1 - 1) * 42 + 62));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 - 1 - 1 + 109);
+            §§push(§§pop() * 43 + 1 + 1 - 14 - 1 - 1 - 78);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 1) * 10 * 47));
+            §§push(-(-(((§§pop() + 1) * 103 + 1) * 46) + 101));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1 - 1 - 7) - 62) + 17);
+            §§push(§§pop() + 1 - 1 + 67);
          }
          §§pop().minHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((---(§§pop() + 1) - 75) * 13);
+            §§push((§§pop() + 32 + 87) * 24 * 35);
          }
          §§pop().minWidth = §§pop();
          _loc1_.id = "contentGroup";
@@ -1059,16 +1075,16 @@ package com.enfluid.ltp.view.skins
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1) * 109 + 1);
+            §§push((-(-§§pop() - 1) + 1) * 80);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CompetitorAnalysisPanelSkin_Fade1.target","contentGroup");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 1 - 1));
+            §§push(-((§§pop() - 1 + 1) * 59 * 52 + 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Array
          {
@@ -1077,16 +1093,16 @@ package com.enfluid.ltp.view.skins
          },null,"_CompetitorAnalysisPanelSkin_Parallel1.targets");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1) * 99 + 114 + 76);
+            §§push((§§pop() + 6 - 1) * 117 + 1 + 81);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CompetitorAnalysisPanelSkin_Rotate1.target","titleBarGroup");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(((§§pop() + 1) * 77 + 1) * 100 * 84));
+            §§push(-(-(§§pop() + 29) - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1096,14 +1112,14 @@ package com.enfluid.ltp.view.skins
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() * 78 + 1 - 105 - 1 - 1);
+            §§push(§§pop() - 1 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CompetitorAnalysisPanelSkin_Resize1.easer","collapseEaser");
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 118 + 2 + 1 + 37 - 111);
+            §§push(§§pop() - 1 - 51 - 1 + 59);
          }
          §§pop()[§§pop()] = new Binding(this,function():Array
          {
@@ -1114,14 +1130,14 @@ package com.enfluid.ltp.view.skins
          §§push(6);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 113));
+            §§push(-(§§pop() - 19) + 73 - 1 + 1 - 1 + 3);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CompetitorAnalysisPanelSkin_Rotate2.target","titleBarGroup");
          §§push(result);
          §§push(7);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 77) + 8);
+            §§push(((-§§pop() + 1) * 32 + 62) * 52 * 102);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1129,23 +1145,23 @@ package com.enfluid.ltp.view.skins
          },null,"_CompetitorAnalysisPanelSkin_Resize2.target");
          §§push(result);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 92 - 1 - 1) * 57);
+            §§push(§§pop() * 20 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CompetitorAnalysisPanelSkin_Resize2.easer","uncollapseEaser");
          §§push(result);
          §§push(9);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--((§§pop() + 1 - 92 + 108) * 114));
+            §§push(-(-§§pop() - 104 + 37) * 12 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CompetitorAnalysisPanelSkin_Fade2.target","contentGroup");
          §§push(result);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 92 + 1 + 72 - 1);
+            §§push(§§pop() - 1 - 1 - 1 + 102 - 98 + 114 + 119);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -1155,7 +1171,7 @@ package com.enfluid.ltp.view.skins
          §§push(11);
          if(_loc2_)
          {
-            §§push((§§pop() + 57 + 1) * 4);
+            §§push(--(§§pop() * 19 - 1 - 103));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1165,7 +1181,7 @@ package com.enfluid.ltp.view.skins
          §§push(12);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 1 - 13 - 101);
+            §§push(---((§§pop() * 20 - 116) * 65));
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -1175,7 +1191,7 @@ package com.enfluid.ltp.view.skins
          §§push(13);
          if(_loc3_)
          {
-            §§push((§§pop() + 106 - 56 + 1) * 15);
+            §§push(-(§§pop() - 1 + 113 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1185,7 +1201,7 @@ package com.enfluid.ltp.view.skins
          §§push(14);
          if(_loc3_)
          {
-            §§push(-((-§§pop() - 80) * 23 + 13) * 88 * 103);
+            §§push((-(-§§pop() + 34 + 11) - 24 + 55) * 37);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

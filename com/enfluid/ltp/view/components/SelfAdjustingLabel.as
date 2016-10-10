@@ -3,12 +3,13 @@ package com.enfluid.ltp.view.components
    import spark.components.Label;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import mx.core.IFlexModuleFactory;
    import spark.components.gridClasses.GridColumn;
    import com.enfluid.ltp.model.constants.Values;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.TabRenderer;
    import mx.binding.Binding;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -63,28 +64,28 @@ package com.enfluid.ltp.view.components
          §§push(35);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 - 106 + 83) * 58);
+            §§push(-((§§pop() + 1 - 1) * 45) + 1);
          }
          §§pop().height = §§pop();
          §§push(this);
          §§push(5);
          if(_loc4_)
          {
-            §§push((§§pop() - 1 + 79 - 89 - 1) * 50);
+            §§push(-(-((-§§pop() + 82 + 82) * 52) + 1));
          }
          §§pop().top = §§pop();
          §§push(this);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 34 + 1 - 1));
+            §§push(-(-§§pop() + 95 + 71) + 49 - 19 + 112);
          }
          §§pop().maxDisplayedLines = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((--(§§pop() * 66 + 1) * 94 + 80) * 32);
+            §§push(((§§pop() - 87) * 8 - 1 - 1) * 90 - 73);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -146,7 +147,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 49) - 64 + 1 + 26 + 1 - 1);
+            §§push(§§pop() + 43 + 1 - 55);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -155,7 +156,7 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc2_)
                {
-                  §§push(-(-(§§pop() - 26) * 14));
+                  §§push(-(§§pop() + 1 - 108));
                }
                §§push(Number(§§pop()));
             }
@@ -169,7 +170,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 1));
+            §§push((§§pop() - 33 + 18) * 101 * 33 + 80);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -177,9 +178,9 @@ package com.enfluid.ltp.view.components
          },null,"this.includeInLayout");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 33 + 28 - 49 - 112 - 35);
+            §§push(-(§§pop() + 117) + 90);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

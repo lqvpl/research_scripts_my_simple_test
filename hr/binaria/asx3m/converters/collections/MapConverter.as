@@ -33,9 +33,9 @@ package hr.binaria.asx3m.converters.collections
       override public function unmarshal(param1:IHierarchicalStreamReader, param2:IUnmarshallingContext) : Object
       {
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push(§§pop() + 45 + 118 - 65);
+            §§push(-(§§pop() * 43 - 1) - 113 + 1);
          }
          var _loc4_:* = §§pop();
          var _loc6_:XML = null;
@@ -51,7 +51,7 @@ package hr.binaria.asx3m.converters.collections
             §§push(0);
             if(_loc10_)
             {
-               §§push(§§pop() * 5 + 62 - 67 - 1 + 99 + 67 - 106);
+               §§push(§§pop() - 1 + 1 - 96 - 72);
             }
             _loc4_ = §§pop();
             while(param1.hasMoreChildren())
@@ -62,7 +62,7 @@ package hr.binaria.asx3m.converters.collections
                §§push(0);
                if(_loc10_)
                {
-                  §§push(--§§pop() - 1 + 20 + 14);
+                  §§push((§§pop() * 11 + 102 - 1) * 41 + 1 + 1);
                }
                if(§§pop() == §§pop())
                {
@@ -74,7 +74,7 @@ package hr.binaria.asx3m.converters.collections
                   §§push(1);
                   if(_loc10_)
                   {
-                     §§push(-((§§pop() - 35) * 30 + 1 - 95));
+                     §§push(-§§pop() * 103 * 61);
                   }
                   if(§§pop() == §§pop())
                   {

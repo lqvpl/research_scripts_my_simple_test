@@ -1,12 +1,12 @@
 package com.hurlant.math
 {
-   import system.errors.NoSuchElementError;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import hr.binaria.asx3m.converters.IUnmarshallingContext;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import spark.effects.RemoveAction;
+   import com.enfluid.ltp.model.vo.ProjectVO;
+   import mx.binding.utils.ChangeWatcher;
+   import spark.effects.easing.Power;
    import mx.binding.BindingManager;
+   import mx.graphics.SolidColor;
+   import flash.utils.ByteArray;
+   import com.enfluid.ltp.view.renderers.TabRenderer;
    
    use namespace bi_internal;
    
@@ -36,7 +36,7 @@ package com.hurlant.math
          §§push(32767);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 1 + 0 - 1) + 1);
+            §§push(-((§§pop() + 1) * 42) + 27 - 1 - 78);
          }
          §§pop().mpl = §§pop() & §§pop();
          §§push();
@@ -44,27 +44,27 @@ package com.hurlant.math
          §§push(15);
          if(_loc2_)
          {
-            §§push(§§pop() * 71 + 1 - 49 - 53 + 1 - 90 + 1);
+            §§push(-(§§pop() - 84 + 1 - 61 + 1 - 1));
          }
          §§pop().mph = §§pop() >> §§pop();
          §§push();
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 3 + 1 - 62) * 75 + 49);
+            §§push((§§pop() + 1 - 1) * 1 + 31 - 1);
          }
          §§push(com.hurlant.math.BigInteger.DB);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 11 - 71 + 30);
+            §§push(§§pop() - 1 - 1 + 107 - 97 - 1);
          }
          §§pop().um = §§pop() << §§pop() - §§pop() - 1;
          §§push();
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 88 + 113));
+            §§push((-(§§pop() - 86 + 49) + 1 - 1) * 12 + 12);
          }
          §§pop().mt2 = §§pop() * param1.t;
       }
@@ -76,9 +76,9 @@ package com.hurlant.math
          _loc2_.divRemTo(m,null,_loc2_);
          §§push(param1.s);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 - 105 - 1) - 94);
+            §§push(--(§§pop() - 1) - 1 - 1 + 3);
          }
          if(§§pop() < §§pop() && §§pop() > §§pop())
          {
@@ -104,15 +104,15 @@ package com.hurlant.math
       public function reduce(param1:com.hurlant.math.BigInteger) : void
       {
          §§push(0);
-         if(_loc8_)
+         if(_loc9_)
          {
-            §§push(-(-(-(§§pop() - 1) + 59 + 26) * 70));
+            §§push(((§§pop() + 96) * 71 + 1) * 21 - 95);
          }
          var _loc3_:* = §§pop();
          §§push(0);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-(-(§§pop() + 1 - 1) - 80 - 1));
+            §§push(§§pop() + 1 - 62 + 9 - 1 + 17);
          }
          var _loc4_:* = §§pop();
          while(param1.t <= mt2)
@@ -122,14 +122,14 @@ package com.hurlant.math
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() * 70 + 107 + 1 - 59);
+               §§push(-((§§pop() - 1) * 20));
             }
             §§pop()[§§pop()] = §§pop();
          }
          §§push(0);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-(§§pop() + 1) + 80 - 115 + 51 - 44);
+            §§push((-(§§pop() - 30) - 109) * 75);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < m.t)
@@ -138,22 +138,22 @@ package com.hurlant.math
             §§push(32767);
             if(_loc9_)
             {
-               §§push(-§§pop() - 1 + 1 + 1 + 54 + 118 - 1);
+               §§push((-(§§pop() + 1 - 73) + 4) * 9);
             }
             _loc3_ = §§pop() & §§pop();
             §§push(_loc3_ * mpl);
             §§push(_loc3_ * mph);
             §§push(param1.a[_loc2_]);
             §§push(15);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(-(-(§§pop() + 1) + 1 - 1 + 58));
+               §§push(-(-(§§pop() + 91 - 109) + 1) - 68);
             }
             §§push(§§pop() + (§§pop() >> §§pop()) * mpl & um);
             §§push(15);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((-§§pop() - 11) * 43);
+               §§push(--(§§pop() + 14 + 1) + 58 + 1);
             }
             _loc4_ = §§pop() + (§§pop() << §§pop()) & com.hurlant.math.BigInteger.DM;
             _loc3_ = int(_loc2_ + m.t);
@@ -164,15 +164,15 @@ package com.hurlant.math
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() * 116 - 1 - 9);
+               §§push(§§pop() * 0 + 31 - 1);
             }
             §§push(_loc4_);
             §§push(param1);
             §§push(_loc2_);
             §§push(0);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push(-(§§pop() * 61 + 1 - 27 - 5));
+               §§push(-(-(§§pop() * 43) - 89 - 30) * 9 - 40);
             }
             §§pop()[§§pop()] = §§pop() + §§pop().am(§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),m.t);
             while(param1.a[_loc3_] >= com.hurlant.math.BigInteger.DV)
@@ -188,7 +188,7 @@ package com.hurlant.math
          §§push(0);
          if(_loc8_)
          {
-            §§push(-((§§pop() - 25) * 17 + 119));
+            §§push(§§pop() - 1 + 1 - 28 - 1 - 1);
          }
          if(§§pop() >= §§pop())
          {

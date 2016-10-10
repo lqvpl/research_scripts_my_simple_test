@@ -3,15 +3,15 @@ package com.enfluid.ltp.view.components
    import spark.components.Group;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import mx.events.FlexEvent;
    import mx.core.IFlexModuleFactory;
    import spark.components.gridClasses.GridColumn;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass4;
-   import mx.binding.BindingManager;
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
+   import flash.events.MouseEvent;
+   import flash.net.navigateToURL;
+   import flash.net.URLRequest;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
@@ -63,16 +63,16 @@ package com.enfluid.ltp.view.components
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 12 - 48 - 76) - 1);
+            §§push(§§pop() + 6 - 1 - 1 + 41);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(-(-§§pop() - 56) + 81) + 66);
+            §§push(--(§§pop() * 109) - 27);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -116,9 +116,9 @@ package com.enfluid.ltp.view.components
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 70 - 1) - 108);
+            §§push(-(§§pop() - 1 - 90) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -127,7 +127,7 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc2_)
                {
-                  §§push(-(-(-§§pop() - 1) + 1) - 115);
+                  §§push(((§§pop() + 106) * 31 - 1 + 90) * 91 + 1);
                }
                §§push(Number(§§pop()));
             }
@@ -141,7 +141,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 86 - 5 - 83 - 118) * 68);
+            §§push(-(§§pop() - 1 - 1 - 1 - 1 - 17) - 76);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -149,9 +149,9 @@ package com.enfluid.ltp.view.components
          },null,"this.visible");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 53 + 1 - 22);
+            §§push(-(((§§pop() + 1) * 39 + 1 - 1 - 16) * 70));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

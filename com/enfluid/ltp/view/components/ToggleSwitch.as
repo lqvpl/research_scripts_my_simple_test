@@ -1,15 +1,7 @@
 package com.enfluid.ltp.view.components
 {
    import spark.components.CheckBox;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.model.ViewModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.headers.target;
-   import mx.binding.Binding;
    import spark.core.IDisplayText;
-   
-   use namespace mx_internal;
    
    public final class ToggleSwitch extends CheckBox
    {

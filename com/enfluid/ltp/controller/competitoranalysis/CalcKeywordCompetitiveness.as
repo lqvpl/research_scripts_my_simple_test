@@ -30,19 +30,19 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc25_)
          {
-            §§push((-(§§pop() - 1) - 1) * 16);
+            §§push((§§pop() - 58 + 1 + 105 + 1) * 30 + 55);
          }
          var _loc20_:* = §§pop();
          §§push(0);
          if(_loc25_)
          {
-            §§push(--(§§pop() + 93) * 68);
+            §§push((§§pop() - 1 - 1 - 78 - 61 - 92) * 11 - 1);
          }
          var _loc21_:* = §§pop();
          §§push(0);
-         if(_loc26_)
+         if(_loc25_)
          {
-            §§push(-((§§pop() + 1) * 117 - 3) * 117);
+            §§push(§§pop() + 55 + 105 - 58);
          }
          var _loc22_:* = §§pop();
          if(!this.competitorUrls.pageAuthority || !this.competitorUrls.pageAuthority || !this.keyword.keywordStemmed || !this.competitorUrls.title || !this.competitorUrls.titleStemmed || !this.competitorUrls.urlAsKeywordsStemmed || !this.competitorUrls.urlAsKeywords)
@@ -53,9 +53,9 @@ package com.enfluid.ltp.controller.competitoranalysis
          }
          §§push(this.competitorUrls.pageAuthority);
          §§push(1);
-         if(_loc25_)
+         if(_loc26_)
          {
-            §§push(-(§§pop() * 102 - 7));
+            §§push((§§pop() + 74 - 30 - 1 - 99) * 36);
          }
          if(§§pop() == §§pop())
          {
@@ -78,7 +78,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc26_)
          {
-            §§push((§§pop() - 1 - 1) * 62 - 54 + 1 - 1);
+            §§push(--(-§§pop() * 21 + 1 + 84));
          }
          for each(_loc11_ in _loc4_)
          {
@@ -87,7 +87,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(0);
             if(_loc26_)
             {
-               §§push(§§pop() + 1 + 1 + 1);
+               §§push(-(§§pop() - 84 + 1) * 62 - 30);
             }
             if(§§pop() == §§pop()[§§pop()])
             {
@@ -102,7 +102,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(0);
             if(_loc25_)
             {
-               §§push(-(-§§pop() + 1) - 1 - 79);
+               §§push(§§pop() - 81 + 50 - 1);
             }
             if(§§pop() == §§pop())
             {
@@ -116,7 +116,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(5);
             if(_loc26_)
             {
-               §§push(§§pop() - 1 - 118 - 1 - 1);
+               §§push(§§pop() - 113 - 117 + 1 + 1);
             }
             _loc1_ = §§pop() - §§pop();
          }
@@ -126,7 +126,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(2);
             if(_loc26_)
             {
-               §§push(-((-§§pop() + 1) * 16) + 1);
+               §§push(-(§§pop() - 1 + 1) - 89);
             }
             _loc1_ = §§pop() - §§pop();
          }
@@ -140,7 +140,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(3);
             if(_loc25_)
             {
-               §§push((-(§§pop() - 75) - 16) * 107);
+               §§push(--(-((§§pop() + 6) * 97 + 105) - 1));
             }
             _loc1_ = §§pop() - §§pop();
          }
@@ -148,9 +148,9 @@ package com.enfluid.ltp.controller.competitoranalysis
          var _loc17_:String = KeywordUtil.extractMainDomain(this.competitorUrls.url);
          §§push(_loc17_);
          §§push(0);
-         if(_loc25_)
+         if(_loc26_)
          {
-            §§push((§§pop() - 92 - 1 - 107 + 1 - 1) * 114);
+            §§push(-(§§pop() + 115 + 65 + 111));
          }
          _loc17_ = §§pop().substr(§§pop(),_loc17_.indexOf("."));
          if(_loc17_ == _loc16_)
@@ -159,7 +159,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(7);
             if(_loc26_)
             {
-               §§push(-((§§pop() - 56) * 118) + 1);
+               §§push((§§pop() + 1 - 1) * 107 * 15 * 114);
             }
             _loc1_ = §§pop() + §§pop();
          }
@@ -170,9 +170,9 @@ package com.enfluid.ltp.controller.competitoranalysis
             _loc22_ = int(Util.countKeywords(_loc2_,this.competitorUrls.urlAsKeywordsStemmed.split(" ")));
             §§push(_loc22_);
             §§push(0);
-            if(_loc25_)
+            if(_loc26_)
             {
-               §§push(§§pop() * 78 + 1 + 37 + 1 + 79);
+               §§push(-(§§pop() - 1) - 1);
             }
             if(§§pop() > §§pop())
             {
@@ -180,9 +180,9 @@ package com.enfluid.ltp.controller.competitoranalysis
                {
                   §§push(_loc1_);
                   §§push(5);
-                  if(_loc25_)
+                  if(_loc26_)
                   {
-                     §§push(-(-(§§pop() - 1 + 101 + 1 - 1) + 1));
+                     §§push(-(§§pop() - 1) - 38);
                   }
                   _loc1_ = §§pop() + §§pop();
                }
@@ -192,7 +192,7 @@ package com.enfluid.ltp.controller.competitoranalysis
                   §§push(4);
                   if(_loc26_)
                   {
-                     §§push((§§pop() - 105) * 8 * 108 * 22);
+                     §§push(§§pop() - 1 - 1 + 71);
                   }
                   _loc1_ = §§pop() + §§pop();
                }
@@ -202,7 +202,7 @@ package com.enfluid.ltp.controller.competitoranalysis
                   §§push(3);
                   if(_loc25_)
                   {
-                     §§push(§§pop() + 1 - 54 + 1);
+                     §§push(((§§pop() + 46) * 69 - 99 - 1) * 38 + 1);
                   }
                   _loc1_ = §§pop() + §§pop();
                }
@@ -213,15 +213,15 @@ package com.enfluid.ltp.controller.competitoranalysis
                   §§push(2);
                   if(_loc25_)
                   {
-                     §§push(--((--§§pop() + 71) * 99));
+                     §§push(-((§§pop() * 18 * 37 - 1 - 8) * 85) + 1);
                   }
                   if(§§pop() == §§pop() - §§pop())
                   {
                      §§push(_loc1_);
                      §§push(2);
-                     if(_loc25_)
+                     if(_loc26_)
                      {
-                        §§push(§§pop() - 47 - 79 + 1 + 1 - 1);
+                        §§push(-(-(§§pop() + 97) + 1));
                      }
                      _loc1_ = §§pop() + §§pop();
                   }
@@ -230,17 +230,17 @@ package com.enfluid.ltp.controller.competitoranalysis
                      §§push(_loc22_);
                      §§push(_loc20_);
                      §§push(3);
-                     if(_loc25_)
+                     if(_loc26_)
                      {
-                        §§push(((§§pop() + 58) * 102 - 1) * 108 - 1);
+                        §§push(-(§§pop() + 1 - 1 - 1) - 22);
                      }
                      if(§§pop() == §§pop() - §§pop())
                      {
                         §§push(_loc1_);
                         §§push(1);
-                        if(_loc26_)
+                        if(_loc25_)
                         {
-                           §§push(-((§§pop() + 110) * 114) + 1);
+                           §§push(-(-(§§pop() + 1 + 1) * 111) - 1 + 1);
                         }
                         _loc1_ = §§pop() + §§pop();
                      }
@@ -251,45 +251,45 @@ package com.enfluid.ltp.controller.competitoranalysis
          var _loc18_:int = this.competitorUrls.urlAsKeywords.split(" ").length;
          §§push(_loc18_);
          §§push(3);
-         if(_loc26_)
+         if(_loc25_)
          {
-            §§push(-((§§pop() + 1 + 89 + 1) * 80) - 1);
+            §§push(§§pop() - 1 + 72 - 112 + 103 + 72);
          }
          var _loc19_:* = int(§§pop() - §§pop());
          §§push(_loc19_);
          §§push(0);
-         if(_loc25_)
+         if(_loc26_)
          {
-            §§push(((§§pop() - 1) * 38 + 16) * 118 + 1);
+            §§push(-((§§pop() + 78) * 67 * 95 + 1) - 1 + 1);
          }
          if(§§pop() < §§pop())
          {
             §§push(0);
             if(_loc26_)
             {
-               §§push(§§pop() + 32 + 113 + 1);
+               §§push((-(§§pop() + 1) - 1 - 1) * 92 - 1 - 1);
             }
             _loc19_ = §§pop();
          }
          §§push(_loc1_);
          §§push(2);
-         if(_loc26_)
+         if(_loc25_)
          {
-            §§push(-(§§pop() - 1 + 1 + 1) - 23 - 110 + 106);
+            §§push((§§pop() - 3) * 37 * 117);
          }
          _loc1_ = §§pop() - §§pop() * _loc19_;
          §§push(_loc1_);
          §§push(100);
-         if(_loc26_)
+         if(_loc25_)
          {
-            §§push((-§§pop() - 1 - 1) * 95);
+            §§push(--§§pop() + 1 - 17 + 56);
          }
          if(§§pop() > §§pop())
          {
             §§push(100);
-            if(_loc26_)
+            if(_loc25_)
             {
-               §§push(-(§§pop() * 43 - 1 + 1 + 1));
+               §§push(-(§§pop() + 92 + 47 - 49));
             }
             _loc1_ = §§pop();
          }
@@ -297,14 +297,14 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc26_)
          {
-            §§push((--§§pop() + 99) * 55 + 1 + 1);
+            §§push(-§§pop() + 1 - 55 + 109);
          }
          if(§§pop() < §§pop())
          {
             §§push(0);
             if(_loc25_)
             {
-               §§push(-(§§pop() * 23 * 72 + 1) + 118 - 52 + 1);
+               §§push(-(§§pop() - 69 + 102) - 1);
             }
             _loc1_ = §§pop();
          }
@@ -312,15 +312,15 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(Math);
          §§push(_loc1_);
          §§push(100);
-         if(_loc26_)
+         if(_loc25_)
          {
-            §§push(-§§pop() - 93 + 101 + 62 + 61 - 75);
+            §§push(-(§§pop() - 1) * 12 + 1);
          }
          §§push(§§pop().round(§§pop() * §§pop()));
          §§push(100);
-         if(_loc26_)
+         if(_loc25_)
          {
-            §§push(-(§§pop() + 1) + 0 - 1 - 90 - 1);
+            §§push(-(§§pop() * 30 * 100) * 45 + 1 + 1);
          }
          §§pop().keywordCompetitiveness = §§pop() / §§pop();
          done();

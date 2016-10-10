@@ -1,20 +1,19 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
-   import flash.events.MouseEvent;
+   import spark.effects.easing.Power;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.util.KeywordUtil;
    import flash.events.Event;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.model.DataModel;
-   import com.hurlant.math.BigInteger;
-   import com.hurlant.math.bi_internal;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
+   import flash.utils.ByteArray;
+   import flash.utils.Endian;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.assets.AssetsLibrary;
+   import mx.events.FlexEvent;
    import mx.events.PropertyChangeEvent;
-   import mx.graphics.GradientEntry;
-   import com.enfluid.ltp.view.renderers.DomainRenderer;
-   
-   use namespace bi_internal;
+   import system.Char;
    
    [BelongsTo("seedKeyword",className="SeedKeywordVO")]
    [BelongsTo("project",className="ProjectVO")]
@@ -38,6 +37,14 @@ package com.enfluid.ltp.model.vo
       
       private var _1562596355isExpanded:Boolean;
       
+      private var _1232675822isFromCache:Boolean = false;
+      
+      private var _1752481143forceMozData:Boolean;
+      
+      private var _896505829source:String;
+      
+      private var _409666073showColumnSelection:Boolean = false;
+      
       private var _929099455projectTitle:String;
       
       private var _1215429740advertiserCompetition:String = "";
@@ -50,6 +57,12 @@ package com.enfluid.ltp.model.vo
       
       private var _549236511localSearches:int = -1;
       
+      private var _1445348556isGoogleRestrictedSearches:Boolean = false;
+      
+      private var _418239396globalSearchesRange:String = "";
+      
+      private var _988962012localSearchesRange:String = "";
+      
       private var _2025799520googleTitleCompetition:int = -1;
       
       private var _206268249bingTitleCompetition:int = -1;
@@ -59,6 +72,10 @@ package com.enfluid.ltp.model.vo
       private var _domainsHyphenated:com.enfluid.ltp.model.vo.DomainsVO;
       
       private var _133379673domainsTimestamp:Number;
+      
+      private var _1899323812amazonKC:int = -1;
+      
+      private var _218218834amazonResults:Array;
       
       private var _93198250avgKC:int = -1;
       
@@ -82,8 +99,21 @@ package com.enfluid.ltp.model.vo
       
       private var _strippedKeyword:String;
       
+      private var _12646550ExternalLinksColumnStatus:String = "show";
+      
+      private var _1918620647referringDomainsColumnStatus:String = "show";
+      
+      private var _666740996eduBackLinksColumnStatus:String = "show";
+      
+      private var _1082378236internalLinksColumnStatus:String = "show";
+      
+      private var _1219086589indexedUrlsColumnStatus:String = "show";
+      
+      private var _417489125trustRatioColumnStatus:String = "show";
+      
       public function KeywordVO()
       {
+         this._218218834amazonResults = [];
          this._902721954competitorAnalysisAverages = new com.enfluid.ltp.model.vo.CompetitorAnalysisAverageVO();
          this._1274954357competitorAnalysisColumns = new com.enfluid.ltp.model.vo.CompetitorColumnsVO();
          this._901024775filterState = new com.enfluid.ltp.model.vo.KeywordFilterStateVO();
@@ -113,6 +143,11 @@ package com.enfluid.ltp.model.vo
       public function get projectID() : int
       {
          return this.project_id;
+      }
+      
+      private function set _894832140projectID(param1:int) : void
+      {
+         this.project_id = param1;
       }
       
       [NotPersisted]
@@ -382,6 +417,96 @@ package com.enfluid.ltp.model.vo
          }
       }
       
+      [Bindable(event="propertyChange")]
+      public function get isFromCache() : Boolean
+      {
+         return this._1232675822isFromCache;
+      }
+      
+      public function set isFromCache(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1232675822isFromCache;
+         if(_loc2_ !== param1)
+         {
+            this._1232675822isFromCache = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFromCache",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get forceMozData() : Boolean
+      {
+         return this._1752481143forceMozData;
+      }
+      
+      public function set forceMozData(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1752481143forceMozData;
+         if(_loc2_ !== param1)
+         {
+            this._1752481143forceMozData = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"forceMozData",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get source() : String
+      {
+         return this._896505829source;
+      }
+      
+      public function set source(param1:String) : void
+      {
+         var _loc2_:Object = this._896505829source;
+         if(_loc2_ !== param1)
+         {
+            this._896505829source = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"source",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showColumnSelection() : Boolean
+      {
+         return this._409666073showColumnSelection;
+      }
+      
+      public function set showColumnSelection(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._409666073showColumnSelection;
+         if(_loc2_ !== param1)
+         {
+            this._409666073showColumnSelection = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showColumnSelection",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function set projectID(param1:int) : void
+      {
+         var _loc2_:Object = this.projectID;
+         if(_loc2_ !== param1)
+         {
+            this._894832140projectID = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"projectID",_loc2_,param1));
+            }
+         }
+      }
+      
       [NotPersisted]
       [Bindable(event="propertyChange")]
       public function get projectTitle() : String
@@ -498,6 +623,63 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
+      public function get isGoogleRestrictedSearches() : Boolean
+      {
+         return this._1445348556isGoogleRestrictedSearches;
+      }
+      
+      public function set isGoogleRestrictedSearches(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1445348556isGoogleRestrictedSearches;
+         if(_loc2_ !== param1)
+         {
+            this._1445348556isGoogleRestrictedSearches = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isGoogleRestrictedSearches",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get globalSearchesRange() : String
+      {
+         return this._418239396globalSearchesRange;
+      }
+      
+      public function set globalSearchesRange(param1:String) : void
+      {
+         var _loc2_:Object = this._418239396globalSearchesRange;
+         if(_loc2_ !== param1)
+         {
+            this._418239396globalSearchesRange = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"globalSearchesRange",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get localSearchesRange() : String
+      {
+         return this._988962012localSearchesRange;
+      }
+      
+      public function set localSearchesRange(param1:String) : void
+      {
+         var _loc2_:Object = this._988962012localSearchesRange;
+         if(_loc2_ !== param1)
+         {
+            this._988962012localSearchesRange = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"localSearchesRange",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get googleTitleCompetition() : int
       {
          return this._2025799520googleTitleCompetition;
@@ -578,6 +760,45 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domainsTimestamp",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get amazonKC() : int
+      {
+         return this._1899323812amazonKC;
+      }
+      
+      public function set amazonKC(param1:int) : void
+      {
+         var _loc2_:Object = this._1899323812amazonKC;
+         if(_loc2_ !== param1)
+         {
+            this._1899323812amazonKC = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonKC",_loc2_,param1));
+            }
+         }
+      }
+      
+      [NotPersisted]
+      [Bindable(event="propertyChange")]
+      public function get amazonResults() : Array
+      {
+         return this._218218834amazonResults;
+      }
+      
+      public function set amazonResults(param1:Array) : void
+      {
+         var _loc2_:Object = this._218218834amazonResults;
+         if(_loc2_ !== param1)
+         {
+            this._218218834amazonResults = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonResults",_loc2_,param1));
             }
          }
       }
@@ -770,6 +991,120 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"filterState",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get ExternalLinksColumnStatus() : String
+      {
+         return this._12646550ExternalLinksColumnStatus;
+      }
+      
+      public function set ExternalLinksColumnStatus(param1:String) : void
+      {
+         var _loc2_:Object = this._12646550ExternalLinksColumnStatus;
+         if(_loc2_ !== param1)
+         {
+            this._12646550ExternalLinksColumnStatus = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ExternalLinksColumnStatus",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get referringDomainsColumnStatus() : String
+      {
+         return this._1918620647referringDomainsColumnStatus;
+      }
+      
+      public function set referringDomainsColumnStatus(param1:String) : void
+      {
+         var _loc2_:Object = this._1918620647referringDomainsColumnStatus;
+         if(_loc2_ !== param1)
+         {
+            this._1918620647referringDomainsColumnStatus = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"referringDomainsColumnStatus",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get eduBackLinksColumnStatus() : String
+      {
+         return this._666740996eduBackLinksColumnStatus;
+      }
+      
+      public function set eduBackLinksColumnStatus(param1:String) : void
+      {
+         var _loc2_:Object = this._666740996eduBackLinksColumnStatus;
+         if(_loc2_ !== param1)
+         {
+            this._666740996eduBackLinksColumnStatus = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"eduBackLinksColumnStatus",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get internalLinksColumnStatus() : String
+      {
+         return this._1082378236internalLinksColumnStatus;
+      }
+      
+      public function set internalLinksColumnStatus(param1:String) : void
+      {
+         var _loc2_:Object = this._1082378236internalLinksColumnStatus;
+         if(_loc2_ !== param1)
+         {
+            this._1082378236internalLinksColumnStatus = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"internalLinksColumnStatus",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get indexedUrlsColumnStatus() : String
+      {
+         return this._1219086589indexedUrlsColumnStatus;
+      }
+      
+      public function set indexedUrlsColumnStatus(param1:String) : void
+      {
+         var _loc2_:Object = this._1219086589indexedUrlsColumnStatus;
+         if(_loc2_ !== param1)
+         {
+            this._1219086589indexedUrlsColumnStatus = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"indexedUrlsColumnStatus",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get trustRatioColumnStatus() : String
+      {
+         return this._417489125trustRatioColumnStatus;
+      }
+      
+      public function set trustRatioColumnStatus(param1:String) : void
+      {
+         var _loc2_:Object = this._417489125trustRatioColumnStatus;
+         if(_loc2_ !== param1)
+         {
+            this._417489125trustRatioColumnStatus = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"trustRatioColumnStatus",_loc2_,param1));
             }
          }
       }

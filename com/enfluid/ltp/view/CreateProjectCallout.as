@@ -22,7 +22,9 @@ package com.enfluid.ltp.view
    import mx.events.FlexMouseEvent;
    import com.enfluid.ltp.model.constants.Countries;
    import com.enfluid.ltp.model.constants.Languages;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.AddProjectCommand;
+   import flash.utils.ByteArray;
    import mx.controls.Alert;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.UpdateProjectCommand;
    import mx.events.FlexEvent;
@@ -34,16 +36,20 @@ package com.enfluid.ltp.view
    import spark.components.HGroup;
    import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
    import mx.controls.HRule;
+   import spark.primitives.RectangularDropShadow;
+   import spark.components.Image;
    import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
    import spark.events.DropDownEvent;
-   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
+   import spark.layouts.HorizontalLayout;
    import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
    import spark.events.PopUpEvent;
-   import spark.effects.AddAction;
+   import com.hurlant.crypto.symmetric.ISymmetricKey;
+   import com.hurlant.crypto.symmetric.IPad;
    import mx.binding.Binding;
    import mx.graphics.IFill;
    import mx.graphics.SolidColor;
    import mx.collections.IList;
+   import com.enfluid.ltp.model.constants.SearchNetworks;
    import com.enfluid.ltp.model.constants.Constants;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
@@ -174,31 +180,31 @@ package com.enfluid.ltp.view
             "name":"enabled",
             "value":true
          }));
-         §§push(this._CreateProjectCallout_SetProperty3 = SetProperty(new SetProperty().initializeFromObject({
-            "target":"cmbCountries",
-            "name":"selectedItem",
-            "value":undefined
-         })));
          §§push(new SetEventHandler().initializeFromObject({
             "target":"cmbCountries",
             "name":"change",
             "handlerFunction":this.__cmbCountries_change_create
          }));
+         §§push(this._CreateProjectCallout_SetProperty3 = SetProperty(new SetProperty().initializeFromObject({
+            "target":"cmbCountries",
+            "name":"selectedItem",
+            "value":undefined
+         })));
          §§push(new SetProperty().initializeFromObject({
             "target":"cmbLanguages",
             "name":"enabled",
             "value":true
+         }));
+         §§push(new SetEventHandler().initializeFromObject({
+            "target":"cmbLanguages",
+            "name":"change",
+            "handlerFunction":this.__cmbLanguages_change_create
          }));
          §§push(this._CreateProjectCallout_SetProperty5 = SetProperty(new SetProperty().initializeFromObject({
             "target":"cmbLanguages",
             "name":"selectedItem",
             "value":undefined
          })));
-         §§push(new SetEventHandler().initializeFromObject({
-            "target":"cmbLanguages",
-            "name":"change",
-            "handlerFunction":this.__cmbLanguages_change_create
-         }));
          §§push(new SetProperty().initializeFromObject({
             "target":"cmbSearchNetwork",
             "name":"enabled",
@@ -221,9 +227,9 @@ package com.enfluid.ltp.view
          §§push("fontSize");
          §§push("value");
          §§push(25);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() + 1 + 1) * 67);
+            §§push((§§pop() - 74) * 61 - 1);
          }
          §§pop().states = [new §§pop().State(null),new State({
             "name":"edit",
@@ -289,7 +295,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 27) * 45 + 54 + 1 - 1);
+            §§push(-(§§pop() - 1 + 1));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -352,6 +358,14 @@ package com.enfluid.ltp.view
          _loc1_.searchNetwork = this.cmbSearchNetwork.selectedItem;
          _loc1_.language = this.cmbLanguages.selectedItem;
          _loc1_.includeAdultAreas = this.includeAdultIdeas.selected;
+         _loc1_.source = "majestic";
+         new SetUserEvent("UserEvent.Project.Create",{
+            "Title":this.tiProjectTitle.text,
+            "Country":CountryVO(this.cmbCountries.selectedItem).code,
+            "Language":LanguageVO(this.cmbLanguages.selectedItem).code,
+            "Network":this.cmbSearchNetwork.selectedItem,
+            "AdultAreas":this.includeAdultIdeas.selected
+         }).execute();
          this.tiProjectTitle.text = "";
          new AddProjectCommand(_loc1_).execute();
       }
@@ -365,16 +379,16 @@ package com.enfluid.ltp.view
          Alert.okLabel = "OK";
          §§push(Alert);
          §§push(130);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 113 - 119) * 22 * 57) * 107 - 1);
+            §§push(-(--(-§§pop() - 115) + 1));
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 68 + 72) - 20);
+            §§push(-((§§pop() - 83 + 110 + 1 + 105 + 81) * 6));
          }
          §§pop().buttonHeight = §§pop();
          Alert.show("Please check project name"," Operation Failed ");
@@ -395,6 +409,10 @@ package com.enfluid.ltp.view
          this.project.includeAdultAreas = this.includeAdultIdeas.selected;
          this.tiProjectTitle.text = "";
          new UpdateProjectCommand().execute();
+         if(this.viewModel.selectedKeywordsTab.isFavoritesTab)
+         {
+            this.model.allFavoriteKeywords.refresh();
+         }
       }
       
       public final function __tiProjectTitle_enter_create(param1:FlexEvent) : void
@@ -449,30 +467,30 @@ package com.enfluid.ltp.view
          var _loc1_:VerticalLayout = new VerticalLayout();
          §§push(_loc1_);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(---(-(§§pop() - 31) + 101));
+            §§push(-(-((§§pop() + 1 + 77) * 19) * 58));
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(15);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 111 - 25) * 46);
+            §§push(-§§pop() - 1 - 112);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-((§§pop() + 1) * 95) + 1 - 1 + 57) * 50);
+            §§push(-((§§pop() - 1 + 1) * 117));
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 42 - 34);
+            §§push(§§pop() * 53 + 1 - 104 + 1 + 32);
          }
          §§pop().paddingTop = §§pop();
          return _loc1_;
@@ -491,7 +509,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 10) + 1);
+            §§push(-(§§pop() - 42 - 1 + 1 + 69 - 119 + 1));
          }
          §§pop().percentWidth = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -499,9 +517,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("fontSize");
          §§push(18);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 75 * 110 * 73));
+            §§push(--(-§§pop() - 30));
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -518,9 +536,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(1118481);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 112) * 40 * 75 + 1);
+            §§push((-§§pop() * 50 - 96 + 1 + 19) * 73 + 33);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -538,14 +556,14 @@ package com.enfluid.ltp.view
          §§push(200);
          if(_loc3_)
          {
-            §§push(-§§pop() - 1 + 1 + 1 - 93 + 1);
+            §§push(-§§pop() + 1 - 1 - 1 - 8);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(50);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 115) + 1) * 88);
+            §§push(-(§§pop() * 42 * 81 * 56) + 1 + 20 + 1);
          }
          §§pop().maxChars = §§pop();
          §§push(_loc1_);
@@ -553,7 +571,7 @@ package com.enfluid.ltp.view
          §§push(6710886);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 99 + 1);
+            §§push(§§pop() - 27 + 49 + 1 - 1 - 50);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",FlatTextInputSkinSolo);
@@ -574,7 +592,7 @@ package com.enfluid.ltp.view
          §§push(10);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 35 - 15 - 1);
+            §§push(§§pop() * 114 - 111 + 1 - 17 + 79 - 1);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -589,9 +607,9 @@ package com.enfluid.ltp.view
          var _loc1_:HRule = new HRule();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 98 - 1 - 62);
+            §§push((§§pop() - 1) * 42 * 62 - 107 + 1 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
@@ -599,15 +617,15 @@ package com.enfluid.ltp.view
          §§push(13158600);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 1 - 59) + 1);
+            §§push((§§pop() + 1 + 68 + 85) * 18 - 1 + 55);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("strokeWidth");
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() - 1 + 1 + 91) * 61);
+            §§push(-(§§pop() + 103 + 1 - 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -622,9 +640,9 @@ package com.enfluid.ltp.view
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 16 + 52 - 1);
+            §§push(-(-§§pop() + 1 - 1));
          }
          §§pop().height = §§pop();
          _loc1_.id = "_CreateProjectCallout_Spacer2";
@@ -644,7 +662,7 @@ package com.enfluid.ltp.view
          §§push(300);
          if(_loc3_)
          {
-            §§push((--§§pop() + 1) * 14);
+            §§push((-(§§pop() - 1 + 49) + 1) * 91);
          }
          §§pop().width = §§pop();
          _loc1_.text = "*Only Project Title can be changed after creating a project.  To change other settings, please create a new project.";
@@ -653,15 +671,15 @@ package com.enfluid.ltp.view
          §§push(1118481);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 72 - 1 + 1 + 40);
+            §§push(--(§§pop() - 1 + 106 + 1) * 28);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 119 - 1) - 24);
+            §§push((§§pop() - 1) * 72 + 58 - 105 - 1 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_CreateProjectCallout_Label2";
@@ -681,7 +699,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc2_)
          {
-            §§push((§§pop() * 41 - 1) * 16 + 1);
+            §§push((§§pop() + 1) * 111 - 1 + 1 - 18 - 1 - 21);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -698,18 +716,18 @@ package com.enfluid.ltp.view
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 33 + 84) + 1 - 48);
+            §§push((§§pop() + 1) * 23 + 37 - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "Country:";
          §§push(_loc1_);
          §§push("color");
          §§push(1118481);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 50 + 11 - 1));
+            §§push((-(§§pop() - 87) + 27 + 16) * 80);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -727,7 +745,7 @@ package com.enfluid.ltp.view
          §§push(200);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 1 - 116 + 1));
+            §§push(-(§§pop() - 38) + 93);
          }
          §§pop().width = §§pop();
          _loc1_.labelField = "name";
@@ -737,7 +755,7 @@ package com.enfluid.ltp.view
          §§push(6710886);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 16 + 24 + 93 - 1 + 103));
+            §§push(-(--§§pop() + 1 - 52 + 1 - 93));
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",GeneralComboboxSkin);
@@ -756,16 +774,16 @@ package com.enfluid.ltp.view
       {
          §§push(this.cmbCountries.dropDown);
          §§push(250);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1) * 29 + 1);
+            §§push(--(-§§pop() * 24 - 29) + 97);
          }
          §§pop().width = §§pop();
          §§push(this.cmbCountries.dropDown);
          §§push(600);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 102 - 35 + 1 - 22);
+            §§push(--(§§pop() + 1 + 1 - 47) + 1);
          }
          §§pop().height = §§pop();
       }
@@ -777,9 +795,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(6710886);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 - 1 - 1);
+            §§push(§§pop() - 1 + 91 - 23 - 1 + 1 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_CreateProjectCallout_HelpButton1";
@@ -799,7 +817,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1) + 58 + 50));
+            §§push(-(-(§§pop() * 116 - 83 - 42) + 15) - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -816,18 +834,18 @@ package com.enfluid.ltp.view
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 48 + 28 - 1));
+            §§push(-((§§pop() - 1 - 37) * 26 - 26 + 59 + 1));
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "Language:";
          §§push(_loc1_);
          §§push("color");
          §§push(1118481);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 30 * 52 + 21) * 8 - 6 - 90);
+            §§push(§§pop() - 11 + 1 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -846,16 +864,16 @@ package com.enfluid.ltp.view
          var _loc1_:ComboBox = new ComboBox();
          §§push(_loc1_);
          §§push(200);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 + 1) * 85 + 1);
+            §§push(-((-§§pop() - 100) * 107) * 103 * 75);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(--((§§pop() + 1) * 34) + 48 + 91);
+            §§push(§§pop() + 117 + 119 + 65 - 1 - 83 + 25);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.labelField = "name";
@@ -863,9 +881,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(6710886);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 91 + 1 + 1) * 72 + 1);
+            §§push(§§pop() + 10 + 61 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",GeneralComboboxSkin);
@@ -886,7 +904,7 @@ package com.enfluid.ltp.view
          §§push(400);
          if(_loc3_)
          {
-            §§push(§§pop() - 18 + 1 + 90 - 61 - 1);
+            §§push(§§pop() - 1 + 92 + 36 - 1 + 58);
          }
          §§pop().height = §§pop();
       }
@@ -900,7 +918,7 @@ package com.enfluid.ltp.view
          §§push(6710886);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 1 - 109 + 66);
+            §§push(-(§§pop() + 22 + 1 - 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_CreateProjectCallout_HelpButton2";
@@ -918,9 +936,9 @@ package com.enfluid.ltp.view
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() - 19) * 83 - 1 - 18 + 1 + 65);
+            §§push((§§pop() + 1 + 1) * 94 * 47 - 1 - 103 + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -937,9 +955,9 @@ package com.enfluid.ltp.view
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 103 - 20) - 1);
+            §§push(--((§§pop() + 1) * 53) - 86 + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "Search Network:";
@@ -948,7 +966,7 @@ package com.enfluid.ltp.view
          §§push(1118481);
          if(_loc2_)
          {
-            §§push((§§pop() - 99 + 59 - 1) * 81 + 86);
+            §§push(§§pop() + 1 + 58 + 1 - 76);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -964,16 +982,16 @@ package com.enfluid.ltp.view
          var _loc1_:ComboBox = new ComboBox();
          §§push(_loc1_);
          §§push(200);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 59 + 1) * 117);
+            §§push(-(§§pop() - 93 - 1) - 27);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(50);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 79) * 83));
+            §§push(-((§§pop() * 115 + 61) * 93));
          }
          §§pop().baseline = §§pop();
          §§push(_loc1_);
@@ -981,7 +999,7 @@ package com.enfluid.ltp.view
          §§push(6710886);
          if(_loc2_)
          {
-            §§push((§§pop() - 82) * 108 - 51 + 1 + 118);
+            §§push(§§pop() + 1 + 1 - 52 - 92);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",GeneralComboboxSkin);
@@ -1005,7 +1023,7 @@ package com.enfluid.ltp.view
          §§push(6710886);
          if(_loc3_)
          {
-            §§push((--§§pop() + 65) * 68);
+            §§push(-(§§pop() + 1 - 54) - 81);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -1020,9 +1038,9 @@ package com.enfluid.ltp.view
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(---(§§pop() - 107) - 99);
+            §§push((-(§§pop() + 1) + 27 + 4 + 69 + 67) * 117);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -1041,9 +1059,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(1118481);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 98 + 18) * 12 * 100);
+            §§push((§§pop() + 1 + 111) * 9 + 1 + 35);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -1064,7 +1082,7 @@ package com.enfluid.ltp.view
          §§push(22);
          if(_loc3_)
          {
-            §§push(-§§pop() + 72 - 65 + 92);
+            §§push(-§§pop() + 45 - 10);
          }
          §§pop().height = §§pop();
          _loc1_.styleName = "standardToggleSwitch";
@@ -1085,9 +1103,9 @@ package com.enfluid.ltp.view
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 + 1 - 1) * 87 * 91 + 18) * 97);
+            §§push(§§pop() * 34 * 63 - 8);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -1104,14 +1122,14 @@ package com.enfluid.ltp.view
          §§push(305);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 69);
+            §§push(-(-(§§pop() + 1) + 1 + 1));
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(40);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 38 + 1 + 68 + 15);
+            §§push(-(§§pop() + 1 - 1 + 1) + 1 + 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
@@ -1119,7 +1137,7 @@ package com.enfluid.ltp.view
          §§push(6710886);
          if(_loc2_)
          {
-            §§push(((§§pop() + 38) * 116 - 77) * 56 + 56);
+            §§push(((-§§pop() + 1) * 83 + 1) * 19);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",GeneralFlatButtonSkin);
@@ -1161,7 +1179,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(((-(§§pop() - 1) + 51) * 10 + 1) * 24);
+            §§push((§§pop() * 79 * 7 - 1) * 34);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1172,23 +1190,23 @@ package com.enfluid.ltp.view
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 49 + 1) * 59 + 47));
+            §§push(-(§§pop() - 1 + 112 + 54 - 1) * 7 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():IFill
          {
             §§push();
             §§push(16119542);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(-(§§pop() + 25 - 1) + 81 - 1);
+               §§push(§§pop() + 1 - 78 - 1);
             }
             return new §§pop().SolidColor(§§pop());
          },null,"_CreateProjectCallout_BorderContainer1.backgroundFill");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 25 - 1) * 51) - 1);
+            §§push(-(§§pop() + 1 - 1 + 30) + 41 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1196,9 +1214,9 @@ package com.enfluid.ltp.view
          },null,"_CreateProjectCallout_SetProperty1.value");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 + 1 + 26 + 1 + 1) * 117);
+            §§push(-(-(§§pop() * 11 + 119) - 1 + 42) + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {
@@ -1206,9 +1224,9 @@ package com.enfluid.ltp.view
          },null,"cmbCountries.dataProvider");
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1) * 49 - 1 + 1) * 65 * 107);
+            §§push(§§pop() * 34 * 0 + 5 + 55);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1218,7 +1236,7 @@ package com.enfluid.ltp.view
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 57) - 1 - 28 - 81 - 1);
+            §§push(-§§pop() * 43 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1228,7 +1246,7 @@ package com.enfluid.ltp.view
          §§push(6);
          if(_loc3_)
          {
-            §§push(-§§pop() - 45 + 1 + 1);
+            §§push(-(§§pop() * 112) - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1239,7 +1257,7 @@ package com.enfluid.ltp.view
          §§push(7);
          if(_loc2_)
          {
-            §§push((§§pop() - 72 + 1) * 43 - 3);
+            §§push(-(§§pop() + 1 + 53 + 58 - 1 + 1) + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {
@@ -1247,9 +1265,9 @@ package com.enfluid.ltp.view
          },null,"cmbLanguages.dataProvider");
          §§push(result);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 51 - 72 + 1);
+            §§push(§§pop() + 106 - 1 - 44 - 23 + 100 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1259,7 +1277,7 @@ package com.enfluid.ltp.view
          §§push(9);
          if(_loc3_)
          {
-            §§push(§§pop() - 9 - 1 - 13);
+            §§push(((§§pop() + 1 + 1) * 99 + 2) * 44);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1267,9 +1285,9 @@ package com.enfluid.ltp.view
          },null,"_CreateProjectCallout_SetProperty5.value");
          §§push(result);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 63 + 1 + 1);
+            §§push((§§pop() + 1 + 20 - 1 + 1) * 107);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1278,19 +1296,19 @@ package com.enfluid.ltp.view
          },null,"_CreateProjectCallout_HelpButton2.helpContent");
          §§push(result);
          §§push(11);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 24 + 1);
+            §§push((§§pop() - 1) * 89 + 55);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {
-            return Constants.NETWORKS;
+            return SearchNetworks.ALL;
          },null,"cmbSearchNetwork.dataProvider");
          §§push(result);
          §§push(12);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 + 103 - 14);
+            §§push((§§pop() * 106 - 1) * 12 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1298,9 +1316,9 @@ package com.enfluid.ltp.view
          },null,"_CreateProjectCallout_SetProperty6.value");
          §§push(result);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 12 - 85) * 37 * 33 + 102 + 1 - 47);
+            §§push((§§pop() + 1) * 98 + 48 - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -1308,9 +1326,9 @@ package com.enfluid.ltp.view
          },null,"_CreateProjectCallout_Label6.width");
          §§push(result);
          §§push(14);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 14 - 76 + 1 + 1) * 10);
+            §§push(§§pop() - 70 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1318,9 +1336,9 @@ package com.enfluid.ltp.view
          },null,"_CreateProjectCallout_SetProperty7.value");
          §§push(result);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 45 + 18 + 1) + 92 + 1);
+            §§push(-(§§pop() + 23) + 1 + 1 - 85 + 44);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

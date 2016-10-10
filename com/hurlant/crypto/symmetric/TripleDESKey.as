@@ -2,6 +2,7 @@ package com.hurlant.crypto.symmetric
 {
    import flash.utils.ByteArray;
    import com.hurlant.util.Memory;
+   import system.data.lists.ArrayList;
    
    public final class TripleDESKey extends DESKey
    {
@@ -23,9 +24,9 @@ package com.hurlant.crypto.symmetric
          §§push(false);
          §§push(param1);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() - 1 - 1 - 94) * 95 + 79) * 92);
+            §§push((§§pop() + 1 - 1) * 11);
          }
          §§pop().encKey2 = §§pop().generateWorkingKey(§§pop(),§§pop(),§§pop());
          §§push();
@@ -35,14 +36,14 @@ package com.hurlant.crypto.symmetric
          §§push(8);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 99 - 1));
+            §§push((§§pop() * 84 - 1 - 1 - 1) * 20);
          }
          §§pop().decKey2 = §§pop().generateWorkingKey(§§pop(),§§pop(),§§pop());
          §§push(param1.length);
          §§push(16);
          if(_loc2_)
          {
-            §§push((§§pop() + 110 - 75) * 7 - 95 + 1 - 1);
+            §§push(-(§§pop() * 50 - 1) - 1 - 1 - 1 + 1);
          }
          if(§§pop() > §§pop())
          {
@@ -53,7 +54,7 @@ package com.hurlant.crypto.symmetric
             §§push(16);
             if(_loc3_)
             {
-               §§push(---(§§pop() - 1 + 70 - 84));
+               §§push(--(§§pop() + 46) + 1 + 28 - 51 - 11);
             }
             §§pop().encKey3 = §§pop().generateWorkingKey(§§pop(),§§pop(),§§pop());
             §§push();
@@ -61,9 +62,9 @@ package com.hurlant.crypto.symmetric
             §§push(false);
             §§push(param1);
             §§push(16);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(--(§§pop() - 106 + 26 - 31) + 107);
+               §§push((§§pop() - 69) * 60 + 72 - 24 - 1 + 1);
             }
             §§pop().decKey3 = §§pop().generateWorkingKey(§§pop(),§§pop(),§§pop());
          }
@@ -87,15 +88,15 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 31 - 1 - 53) * 61);
+            §§push(((-(§§pop() - 1 + 1) - 1) * 57 + 1) * 6);
          }
          var _loc1_:uint = §§pop();
          if(encKey2 != null)
          {
             §§push(0);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(--(-(§§pop() + 108) + 48));
+               §§push(§§pop() + 1 - 105 - 39);
             }
             _loc1_ = §§pop();
             while(_loc1_ < encKey2.length)
@@ -105,7 +106,7 @@ package com.hurlant.crypto.symmetric
                §§push(0);
                if(_loc2_)
                {
-                  §§push(-§§pop() - 47 + 1);
+                  §§push(§§pop() + 117 + 99 + 1 - 1 - 40 + 99 + 8);
                }
                §§pop()[§§pop()] = §§pop();
                _loc1_++;
@@ -117,7 +118,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc3_)
             {
-               §§push(-(-§§pop() + 1) + 1);
+               §§push(-((§§pop() - 100 + 1) * 52 + 1 + 62) + 18);
             }
             _loc1_ = §§pop();
             while(_loc1_ < encKey3.length)
@@ -125,9 +126,9 @@ package com.hurlant.crypto.symmetric
                §§push(encKey3);
                §§push(_loc1_);
                §§push(0);
-               if(_loc3_)
+               if(_loc2_)
                {
-                  §§push(((§§pop() - 67 + 96) * 57 + 95 + 98) * 99 + 1);
+                  §§push((-(§§pop() - 1) + 1) * 63 + 95);
                }
                §§pop()[§§pop()] = §§pop();
                _loc1_++;
@@ -139,7 +140,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc2_)
             {
-               §§push(§§pop() * 3 - 1 - 47 + 1);
+               §§push((§§pop() + 86 - 112) * 116 * 1 + 1);
             }
             _loc1_ = §§pop();
             while(_loc1_ < decKey2.length)
@@ -149,7 +150,7 @@ package com.hurlant.crypto.symmetric
                §§push(0);
                if(_loc3_)
                {
-                  §§push(-(§§pop() + 102 - 55 + 3 + 1 + 1) + 69);
+                  §§push(--(--(§§pop() - 118 + 49) + 113));
                }
                §§pop()[§§pop()] = §§pop();
                _loc1_++;
@@ -159,9 +160,9 @@ package com.hurlant.crypto.symmetric
          if(decKey3 != null)
          {
             §§push(0);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(-(§§pop() * 115) + 1);
+               §§push(-(§§pop() + 25 - 29 + 1 - 1));
             }
             _loc1_ = §§pop();
             while(_loc1_ < decKey3.length)
@@ -169,9 +170,9 @@ package com.hurlant.crypto.symmetric
                §§push(decKey3);
                §§push(_loc1_);
                §§push(0);
-               if(_loc2_)
+               if(_loc3_)
                {
-                  §§push(§§pop() + 17 + 108 - 106 - 1);
+                  §§push(--(§§pop() * 68 * 10 * 90 * 49) - 103);
                }
                §§pop()[§§pop()] = §§pop();
                _loc1_++;

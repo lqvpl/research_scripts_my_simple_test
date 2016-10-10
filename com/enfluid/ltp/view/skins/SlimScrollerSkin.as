@@ -2,16 +2,16 @@ package com.enfluid.ltp.view.skins
 {
    import spark.skins.SparkSkin;
    import mx.core.ClassFactory;
+   import spark.skins.spark.DefaultItemRenderer;
    import mx.core.IFlexModuleFactory;
-   import spark.components.Group;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.model.vo.CompetitorColumnsVO;
    import mx.binding.BindingManager;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import spark.primitives.Rect;
+   import flash.utils.ByteArray;
    import com.enfluid.ltp.view.components.SlimScroller;
    import mx.events.PropertyChangeEvent;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import system.data.Map;
-   import system.data.Iterator;
+   import spark.primitives.BitmapImage;
    
    public final class SlimScrollerSkin extends SparkSkin
    {
@@ -53,16 +53,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Boolean = super.beginHighlightBitmapCapture();
          §§push(graphics);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 80 + 1 - 1 + 1) + 79);
+            §§push(-§§pop() - 1 + 1);
          }
          §§pop().beginFill(§§pop());
          §§push(graphics);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1 - 89) * 88 + 1 + 1);
+            §§push((§§pop() + 98 + 89 + 1) * 40);
          }
          §§pop().drawRect(§§pop(),§§pop(),width,height);
          graphics.endFill();

@@ -2,9 +2,14 @@ package com.photon.util
 {
    import flash.events.EventDispatcher;
    import flash.utils.getQualifiedClassName;
-   import spark.effects.Resize;
+   import mx.effects.Parallel;
    import mx.binding.BindingManager;
-   import mx.controls.Spacer;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import com.enfluid.ltp.util.MajesticUtils;
+   import mx.rpc.http.HTTPService;
+   import mx.rpc.Responder;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.DeferredInstanceFromFunction;
    
    public class PhotonSingleton extends EventDispatcher
    {

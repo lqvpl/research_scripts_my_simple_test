@@ -1,6 +1,6 @@
 package com.enfluid.ltp.util
 {
-   import spark.primitives.Rect;
+   import spark.components.Image;
    import mx.binding.BindingManager;
    
    public final class TextUtil
@@ -20,7 +20,7 @@ package com.enfluid.ltp.util
             §§push(0);
             if(_loc2_)
             {
-               §§push(-(-§§pop() - 1));
+               §§push(-((§§pop() - 1 - 77) * 66));
             }
             if(§§pop() < §§pop())
             {

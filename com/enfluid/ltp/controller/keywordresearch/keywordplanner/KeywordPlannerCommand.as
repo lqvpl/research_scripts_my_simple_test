@@ -3,6 +3,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
    import com.enfluid.ltp.controller.common.Command;
    import com.enfluid.ltp.util.Scraper;
    import flash.utils.setTimeout;
+   import com.enfluid.ltp.util.Logger;
    
    public class KeywordPlannerCommand extends Command
    {
@@ -66,7 +67,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(2);
          if(_loc6_)
          {
-            §§push((-(§§pop() * 76 * 119) - 1) * 63 + 116);
+            §§push((-§§pop() - 27) * 67 - 60 - 97 + 1 - 2);
          }
          var _loc4_:* = §§pop()[§§pop()].lastChild.firstChild;
          this.scraper.click(_loc4_);
@@ -111,9 +112,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push();
             §§push(this.callDoneAfterFinishedLoading);
             §§push(500);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push(-(-(§§pop() + 41 - 1) * 115 - 47));
+               §§push(-(§§pop() - 60 - 1) - 1 + 1 + 14 + 1);
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }
@@ -124,7 +125,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(500);
             if(_loc1_)
             {
-               §§push(§§pop() + 1 - 1 + 118);
+               §§push(-(-§§pop() * 3) * 114 - 1 + 1);
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }

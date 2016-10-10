@@ -2,24 +2,16 @@ package com.enfluid.ltp.view.filterviews
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import spark.effects.Fade;
+   import mx.binding.BindingManager;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
    import mx.core.IFlexModuleFactory;
    import mx.binding.Binding;
-   import assets.TextAssets;
-   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
-   import spark.components.HGroup;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.GeneralComboBoxButtonSkin;
-   import mx.binding.BindingManager;
-   import hr.binaria.asx3m.mapper.IMapper;
    import com.enfluid.ltp.model.DataModel;
+   import spark.components.Label;
    import mx.core.mx_internal;
-   import mx.core.DeferredInstanceFromFunction;
    import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.skins.target;
-   import mx.states.State;
-   import mx.states.AddItems;
-   import mx.states.SetProperty;
-   import spark.components.Group;
    
    use namespace mx_internal;
    
@@ -68,16 +60,16 @@ package com.enfluid.ltp.view.filterviews
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 108 - 27 + 1 + 47) * 4 - 1);
+            §§push(-((§§pop() + 1) * 90));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 1 + 11 - 6 - 1 - 1);
+            §§push((§§pop() - 1 + 1) * 32 - 12);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -112,9 +104,9 @@ package com.enfluid.ltp.view.filterviews
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() - 87) + 12 + 10 - 1);
+            §§push(((-§§pop() + 85) * 37 - 98) * 10 + 74 - 111);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -124,7 +116,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 32) - 1);
+            §§push(§§pop() + 63 + 1 + 1 - 1 - 20 - 67);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -132,9 +124,9 @@ package com.enfluid.ltp.view.filterviews
          },null,"this.max");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(((§§pop() - 1 + 95) * 103 + 1) * 30 + 1));
+            §§push(((-(§§pop() - 16) - 7) * 112 - 106) * 102);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -145,44 +137,44 @@ package com.enfluid.ltp.view.filterviews
          },"DataModel.instance.selectedKeywordCollection.project.avgKCFilterMin");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 60 + 58 + 36);
+            §§push(-(--((§§pop() - 29) * 32) - 30));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 88 + 1) * 52 - 1 + 87) + 1);
+            §§push((§§pop() + 8) * 52 - 71);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() + 49 + 1 + 1);
+            §§push((§§pop() * 33 - 1) * 88 - 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() * 60 + 7 + 1);
+            §§push(§§pop() - 105 - 75 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(((§§pop() + 107) * 66 + 18) * 52) - 1) * 42);
+            §§push(-§§pop() - 1 - 85);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 41 + 20);
+            §§push(-(§§pop() + 1) - 1 + 0 + 1 - 48 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -195,35 +187,35 @@ package com.enfluid.ltp.view.filterviews
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() + 58 + 1 + 81);
+            §§push(-(((§§pop() + 1 + 106) * 113 * 69 - 1) * 18));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() - 102) * 51 + 1);
+            §§push((§§pop() - 1 - 1) * 84);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) - 107 - 1 - 1);
+            §§push((§§pop() - 1 + 21) * 90);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 42 + 1 + 1));
+            §§push(-((§§pop() - 89) * 71) * 109);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 1 - 112 - 1 + 16));
+            §§push(-((§§pop() - 1) * 62 + 13 + 1 + 1 + 1));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

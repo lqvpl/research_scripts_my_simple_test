@@ -1,10 +1,6 @@
 package com.enfluid.ltp.model.vo
 {
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
-   import mx.graphics.LinearGradientStroke;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.BindingManager;
+   import com.enfluid.ltp.model.DataModel;
    
    public final class SEOMozKey
    {

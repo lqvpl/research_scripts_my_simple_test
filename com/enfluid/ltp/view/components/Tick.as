@@ -1,12 +1,9 @@
 package com.enfluid.ltp.view.components
 {
    import flash.display.Sprite;
-   import spark.components.Label;
-   import mx.binding.BindingManager;
+   import com.enfluid.ltp.model.DataModel;
    import mx.effects.Fade;
-   import spark.effects.Move;
-   import spark.components.ComboBox;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
+   import flash.utils.ByteArray;
    
    public final class Tick extends Sprite
    {
@@ -22,9 +19,9 @@ package com.enfluid.ltp.view.components
          §§push(param5);
          §§push(param6);
          §§push(1);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push(-(§§pop() + 99) - 10 - 1);
+            §§push(---(§§pop() + 1 - 12) - 1 - 48);
          }
          §§pop().lineStyle(§§pop(),§§pop(),§§pop(),false,"normal","rounded");
          this.graphics.moveTo(param1,param2);
@@ -35,9 +32,9 @@ package com.enfluid.ltp.view.components
       {
          §§push(this.tickFade);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 83 - 33);
+            §§push(--(-(-§§pop() * 27) - 1) + 70);
          }
          §§pop().alphaFrom = §§pop();
          this.tickFade.alphaTo = 0.1;

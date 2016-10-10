@@ -26,9 +26,9 @@ package com.hurlant.crypto.prng
       public function Random(param1:Class = null)
       {
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push(§§pop() - 1 + 57 - 81 - 112 - 97);
+            §§push(§§pop() - 24 - 73 - 1 - 103 - 60 + 1);
          }
          var _loc2_:uint = §§pop();
          super();
@@ -43,24 +43,24 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc7_)
          {
-            §§push((§§pop() - 54 + 111) * 63);
+            §§push(---§§pop() + 1 + 1);
          }
          §§pop().pptr = §§pop();
          while(pptr < psize)
          {
             §§push(65536);
-            if(_loc7_)
+            if(_loc8_)
             {
-               §§push((§§pop() - 15 - 1 + 1 + 116) * 93);
+               §§push(§§pop() - 33 + 104 + 1 - 1);
             }
             _loc2_ = §§pop() * Math.random();
             §§push(pool);
             §§push(_loc3_);
             §§push(_loc2_);
             §§push(8);
-            if(_loc7_)
+            if(_loc8_)
             {
-               §§push((-§§pop() - 15 - 76 - 1 + 1) * 115 * 110);
+               §§push(-(§§pop() + 1 - 1) + 84 - 1);
             }
             §§pop()[§§pop()] = §§pop() >>> §§pop();
             §§push(pool);
@@ -69,7 +69,7 @@ package com.hurlant.crypto.prng
             §§push(255);
             if(_loc7_)
             {
-               §§push((§§pop() + 1) * 109 * 73 - 1);
+               §§push((-§§pop() + 1 - 7) * 24);
             }
             §§pop()[§§pop()] = §§pop() & §§pop();
          }
@@ -77,7 +77,7 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc7_)
          {
-            §§push(-§§pop() + 1 + 21);
+            §§push(§§pop() + 1 - 1 + 1 + 13 - 1);
          }
          §§pop().pptr = §§pop();
          seed();
@@ -93,9 +93,9 @@ package com.hurlant.crypto.prng
          _loc1_.writeUnsignedInt(new Date().getTime());
          var _loc2_:Array = Font.enumerateFonts(true);
          §§push(0);
-         if(_loc7_)
+         if(_loc6_)
          {
-            §§push(§§pop() + 37 + 2 + 78 + 5);
+            §§push((§§pop() + 98 - 1) * 96 - 117 + 1);
          }
          for each(_loc3_ in _loc2_)
          {
@@ -107,16 +107,16 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc7_)
          {
-            §§push(-(-§§pop() + 83) + 1 + 1);
+            §§push(§§pop() - 80 + 14 + 1 - 0 - 100 + 1 + 1);
          }
          §§pop().position = §§pop();
          while(true)
          {
             §§push(_loc1_.bytesAvailable);
             §§push(4);
-            if(_loc7_)
+            if(_loc6_)
             {
-               §§push(((§§pop() + 1) * 93 + 105 + 1) * 116);
+               §§push(-(-(§§pop() - 44) - 1 + 1));
             }
             if(§§pop() < §§pop())
             {
@@ -132,7 +132,7 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() * 77 - 35 + 48 + 37) * 22 + 1);
+            §§push(--§§pop() - 23 - 15 + 113);
          }
          if(§§pop() == §§pop())
          {
@@ -144,9 +144,9 @@ package com.hurlant.crypto.prng
          §§push(pool[_loc2_]);
          §§push(param1);
          §§push(255);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-(§§pop() + 91) - 2 + 1);
+            §§push(-§§pop() * 28 + 1 + 86 - 63 + 1 + 91);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop() & §§pop();
          §§push(pool);
@@ -154,15 +154,15 @@ package com.hurlant.crypto.prng
          §§push(pool[_loc3_]);
          §§push(param1);
          §§push(8);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-((§§pop() - 65) * 44 + 30) + 1);
+            §§push(-(§§pop() + 38 - 1 - 1 + 102 - 1 - 1));
          }
          §§push(§§pop() >> §§pop());
          §§push(255);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(§§pop() * 80 * 31 - 1 - 1);
+            §§push(--(§§pop() * 13 - 1 + 29));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop() & §§pop();
          §§push(pool);
@@ -170,15 +170,15 @@ package com.hurlant.crypto.prng
          §§push(pool[_loc4_]);
          §§push(param1);
          §§push(16);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(--(§§pop() - 99) * 108 * 102 + 1 + 23);
+            §§push((-§§pop() - 1 + 106 + 1 + 1 - 86) * 41);
          }
          §§push(§§pop() >> §§pop());
          §§push(255);
          if(_loc8_)
          {
-            §§push(---((§§pop() + 1) * 88 * 42 - 116));
+            §§push((§§pop() - 6 + 29) * 91);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop() & §§pop();
          §§push(pool);
@@ -188,13 +188,13 @@ package com.hurlant.crypto.prng
          §§push(24);
          if(_loc9_)
          {
-            §§push(-((§§pop() * 17 - 14) * 86) - 1 - 90 + 1);
+            §§push(-((-(§§pop() + 18 + 85) + 80) * 27));
          }
          §§push(§§pop() >> §§pop());
          §§push(255);
          if(_loc8_)
          {
-            §§push((§§pop() - 1) * 115 * 66 * 38 + 1 - 105 - 1);
+            §§push(§§pop() - 1 - 0 - 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop() & §§pop();
          pptr = pptr % psize;
@@ -209,9 +209,9 @@ package com.hurlant.crypto.prng
       public final function dispose() : void
       {
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-(§§pop() + 1 - 100) + 31) * 8) - 1);
+            §§push(§§pop() * 22 - 1 + 1 - 39 + 89 + 77 + 64);
          }
          var _loc1_:uint = §§pop();
          while(_loc1_ < pool.length)
@@ -220,9 +220,9 @@ package com.hurlant.crypto.prng
             §§push(_loc1_);
             §§push(Math.random());
             §§push(256);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(-(§§pop() - 42 - 31) + 50 - 1);
+               §§push((§§pop() + 1 - 69 - 68) * 48 - 1 - 73);
             }
             §§pop()[§§pop()] = §§pop() * §§pop();
             _loc1_++;
@@ -231,7 +231,7 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(((§§pop() + 39) * 31 + 1) * 28) * 41);
+            §§push(-((§§pop() - 78) * 39 - 1 + 1 + 78 - 1));
          }
          §§pop().length = §§pop();
          pool = null;
@@ -239,16 +239,16 @@ package com.hurlant.crypto.prng
          state = null;
          §§push();
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-((§§pop() - 1) * 107 - 1) - 1));
+            §§push(--§§pop() - 86);
          }
          §§pop().psize = §§pop();
          §§push();
          §§push(0);
          if(_loc2_)
          {
-            §§push(((§§pop() + 27 + 11) * 21 - 1) * 70);
+            §§push(---§§pop() + 1);
          }
          §§pop().pptr = §§pop();
          Memory.gc();
@@ -275,14 +275,14 @@ package com.hurlant.crypto.prng
             §§push(0);
             if(_loc2_)
             {
-               §§push(-(§§pop() + 50 - 76) - 4 - 1);
+               §§push(-(§§pop() * 111 - 99) - 41 + 66);
             }
             §§pop().length = §§pop();
             §§push();
             §§push(0);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push((§§pop() + 72 + 1) * 13);
+               §§push(--((§§pop() + 1) * 46 - 25 + 30 - 1));
             }
             §§pop().pptr = §§pop();
             ready = true;

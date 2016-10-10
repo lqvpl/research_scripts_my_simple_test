@@ -39,9 +39,9 @@ package hr.binaria.asx3m.io.xml
       {
          §§push(_nodeStack.size());
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 38 + 1 - 6 + 25 + 1 + 1 + 1);
+            §§push(-(§§pop() * 77 + 0));
          }
          if(§§pop() == §§pop() && _nodeStack.peek() == <root_helper/>)
          {
@@ -58,9 +58,9 @@ package hr.binaria.asx3m.io.xml
          var _loc1_:XML = _nodeStack.pop();
          §§push(_nodeStack.size());
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 42 + 1 - 1 + 44);
+            §§push((§§pop() - 79) * 63 - 1 - 95);
          }
          if(§§pop() == §§pop())
          {

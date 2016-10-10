@@ -1,6 +1,9 @@
 package com.hurlant.crypto.symmetric
 {
+   import com.enfluid.ltp.model.constants.Values;
    import flash.utils.ByteArray;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
    
    public final class PKCS5 implements IPad
    {
@@ -20,7 +23,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(--(§§pop() * 108) * 36 + 38));
+            §§push(-(§§pop() - 1) + 1 + 5);
          }
          var _loc3_:uint = §§pop();
          while(_loc3_ < _loc2_)
@@ -40,7 +43,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc7_)
          {
-            §§push(-§§pop() - 1 + 56);
+            §§push(-((§§pop() - 1 - 110) * 117) * 98 + 1);
          }
          var _loc4_:uint = §§pop();
          var _loc2_:uint = param1.length % blockSize;
@@ -48,7 +51,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc8_)
          {
-            §§push(((§§pop() - 1) * 109 + 83 + 1 - 102) * 61);
+            §§push(-§§pop() - 7 - 1);
          }
          if(§§pop() != §§pop())
          {
@@ -60,9 +63,9 @@ package com.hurlant.crypto.symmetric
          {
             §§push(_loc3_);
             §§push(0);
-            if(_loc7_)
+            if(_loc8_)
             {
-               §§push(§§pop() - 1 - 1 + 1 + 1);
+               §§push(-((§§pop() - 58) * 40 + 1) + 1);
             }
             if(§§pop() <= §§pop())
             {

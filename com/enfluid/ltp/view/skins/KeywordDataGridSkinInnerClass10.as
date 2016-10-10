@@ -1,7 +1,6 @@
 package com.enfluid.ltp.view.skins
 {
    import spark.primitives.Rect;
-   import mx.states.Transition;
    import mx.graphics.SolidColor;
    import mx.events.PropertyChangeEvent;
    
@@ -24,7 +23,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(§§pop() * 86 + 38 - 41 + 64);
+            §§push(---(§§pop() + 1 - 117));
          }
          §§pop().color = §§pop();
          return _loc1_;

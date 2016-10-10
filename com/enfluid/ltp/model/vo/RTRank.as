@@ -1,11 +1,9 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.SlimHScrollBarTrackSkin;
-   import mx.binding.BindingManager;
    import mx.events.PropertyChangeEvent;
-   import spark.components.gridClasses.GridLayer;
+   import mx.states.Transition;
+   import flash.utils.ByteArray;
    
    [BelongsTo("keyword",className="RTKeyword")]
    public dynamic class RTRank extends ActiveRecord

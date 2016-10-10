@@ -1,8 +1,20 @@
 package hr.binaria.asx3m.mapper
 {
-   import spark.primitives.Rect;
-   import mx.controls.Spacer;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
+   import mx.binding.Binding;
+   import flash.utils.Timer;
+   import flash.events.TimerEvent;
+   import com.enfluid.ltp.view.components.Tick;
    import system.data.sets.HashSet;
+   import spark.primitives.Rect;
+   import spark.components.TextArea;
+   import mx.binding.BindingManager;
+   
+   use namespace mx_internal;
    
    public final class ImmutableTypesMapper extends MapperWrapper
    {

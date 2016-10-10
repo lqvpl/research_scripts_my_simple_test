@@ -43,6 +43,7 @@ package spark.components
          this.dropDownController = new DropDownController();
       }
       
+      [ArrayElementType("mx.core.IVisualElement")]
       public function get calloutContent() : Array
       {
          if(this.callout && this.callout.contentGroup)

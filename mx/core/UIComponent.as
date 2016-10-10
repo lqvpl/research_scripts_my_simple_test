@@ -2260,6 +2260,7 @@ package mx.core
          }
       }
       
+      [ArrayElementType("mx.states.State")]
       public function get states() : Array
       {
          return this._states;
@@ -2270,6 +2271,7 @@ package mx.core
          this._states = param1;
       }
       
+      [ArrayElementType("mx.states.Transition")]
       public function get transitions() : Array
       {
          return this._transitions;

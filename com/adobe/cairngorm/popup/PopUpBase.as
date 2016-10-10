@@ -5,6 +5,11 @@ package com.adobe.cairngorm.popup
    import mx.core.IFlexDisplayObject;
    import flash.display.DisplayObject;
    import mx.core.IFlexModuleFactory;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.CoustomComboBoxButtonSkin;
+   import mx.binding.BindingManager;
+   import spark.formatters.NumberFormatter;
+   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
    import mx.events.CloseEvent;
    import mx.managers.PopUpManager;
    import mx.core.IFlexModule;
@@ -32,6 +37,7 @@ package com.adobe.cairngorm.popup
       
       private var _open:Boolean = false;
       
+      [ArrayElementType("com.adobe.cairngorm.popup.IPopUpBehavior")]
       private var _behaviors:Array;
       
       public var _1569739006moduleFactory:IFlexModuleFactory;
@@ -110,7 +116,7 @@ package com.adobe.cairngorm.popup
          §§push(0);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 - 55 + 81);
+            §§push((§§pop() + 1 + 1) * 68 + 1 + 1);
          }
          §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop(),true);
          this.dispatchPopUpEvent(PopUpEvent.OPENING);
@@ -159,7 +165,7 @@ package com.adobe.cairngorm.popup
          §§push(0);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 + 1 - 1 - 1 - 18);
+            §§push(-§§pop() + 1 + 1);
          }
          if(§§pop() == §§pop())
          {
@@ -191,17 +197,17 @@ package com.adobe.cairngorm.popup
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() * 61 - 40) * 100 + 97 + 1 - 0);
+            §§push(-((§§pop() + 18) * 0 - 78));
          }
          if(§§pop() > §§pop())
          {
-            _loc1_.suspendedBehaviors = _loc1_.suspendedBehaviors - 1;
+            this.suspendedBehaviors--;
          }
          §§push(this.suspendedBehaviors);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 86 - 81 - 1) + 97 - 1);
+            §§push((§§pop() + 1 + 1) * 76 - 1);
          }
          if(§§pop() == §§pop())
          {

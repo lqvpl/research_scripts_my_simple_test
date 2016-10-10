@@ -3,35 +3,35 @@ package com.enfluid.ltp.view.missingdatacallouts
    import spark.components.Callout;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import com.enfluid.ltp.view.components.AvgDelayComponent;
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import flash.utils.ByteArray;
    import com.enfluid.ltp.model.DataModel;
    import flash.events.MouseEvent;
    import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchMissingBingTitleCompetitionCommand;
+   import com.hurlant.math.bi_internal;
    import spark.events.PopUpEvent;
    import flash.events.Event;
    import spark.layouts.VerticalLayout;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
    import mx.binding.BindingManager;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.Binding;
-   import flash.events.TimerEvent;
+   import spark.formatters.NumberFormatter;
+   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
    import mx.controls.HRule;
+   import mx.rpc.http.HTTPService;
    import spark.components.Button;
-   import spark.components.HGroup;
+   import mx.graphics.SolidColor;
+   import mx.graphics.GradientEntry;
    import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
-   import spark.primitives.Rect;
    import mx.events.FlexMouseEvent;
+   import spark.components.HGroup;
+   import mx.binding.Binding;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
+   use namespace bi_internal;
    use namespace mx_internal;
    
    public final class BingTitleCompMissingDataCallout extends Callout implements IBindingClient
@@ -39,8 +39,6 @@ package com.enfluid.ltp.view.missingdatacallouts
       
       private static var _watcherSetupUtil:IWatcherSetupUtil2;
        
-      
-      private var _1604619324_BingTitleCompMissingDataCallout_AvgDelayComponent1:AvgDelayComponent;
       
       public var _BingTitleCompMissingDataCallout_Label1:Label;
       
@@ -86,9 +84,9 @@ package com.enfluid.ltp.view.missingdatacallouts
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-§§pop() + 22 + 37);
+            §§push(-(-§§pop() * 94 + 58) - 1);
          }
          §§pop().percentWidth = §§pop();
          this.verticalPosition = "after";
@@ -100,7 +98,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(0);
          if(_loc3_)
          {
-            §§push(((§§pop() + 107) * 16 - 71) * 37 - 1 - 1);
+            §§push(----§§pop() * 32 - 1 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -148,28 +146,28 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(10);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 1 - 1);
+            §§push(-(§§pop() - 41 - 110 - 1 + 1 + 1) - 79);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 23 - 1) * 97) + 78 + 78 + 16);
+            §§push(-((§§pop() - 1 + 10 + 8 - 93) * 27));
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 7 + 1 + 1 + 45 + 82) * 11);
+            §§push(-((-§§pop() - 119) * 3 - 1));
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1) + 1));
+            §§push(§§pop() + 1 + 1 + 1);
          }
          §§pop().paddingTop = §§pop();
          return _loc1_;
@@ -177,7 +175,7 @@ package com.enfluid.ltp.view.missingdatacallouts
       
       private final function _BingTitleCompMissingDataCallout_Array1_c() : Array
       {
-         var _loc1_:Array = [this._BingTitleCompMissingDataCallout_Label1_i(),this._BingTitleCompMissingDataCallout_HRule1_c(),this._BingTitleCompMissingDataCallout_AvgDelayComponent1_i(),this._BingTitleCompMissingDataCallout_Button1_c()];
+         var _loc1_:Array = [this._BingTitleCompMissingDataCallout_Label1_i(),this._BingTitleCompMissingDataCallout_HRule1_c(),this._BingTitleCompMissingDataCallout_Button1_c()];
          return _loc1_;
       }
       
@@ -188,7 +186,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 3) + 1);
+            §§push((-(§§pop() + 13) - 1 - 1) * 8 * 26);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "_BingTitleCompMissingDataCallout_Label1";
@@ -208,7 +206,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(100);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 81) * 98 + 1));
+            §§push(§§pop() + 1 + 1 + 69 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
@@ -216,7 +214,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() - 20 - 116 - 38 - 95) * 53 - 71);
+            §§push((§§pop() - 1) * 75 - 1 - 32);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -226,43 +224,30 @@ package com.enfluid.ltp.view.missingdatacallouts
          return _loc1_;
       }
       
-      private final function _BingTitleCompMissingDataCallout_AvgDelayComponent1_i() : AvgDelayComponent
-      {
-         var _loc1_:AvgDelayComponent = new AvgDelayComponent();
-         _loc1_.id = "_BingTitleCompMissingDataCallout_AvgDelayComponent1";
-         if(!_loc1_.document)
-         {
-            _loc1_.document = this;
-         }
-         this._BingTitleCompMissingDataCallout_AvgDelayComponent1 = _loc1_;
-         BindingManager.executeBindings(this,"_BingTitleCompMissingDataCallout_AvgDelayComponent1",this._BingTitleCompMissingDataCallout_AvgDelayComponent1);
-         return _loc1_;
-      }
-      
       private final function _BingTitleCompMissingDataCallout_Button1_c() : Button
       {
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 75) * 10 + 107);
+            §§push((§§pop() + 1 + 1 + 1) * 30 - 49 + 105);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc2_)
          {
-            §§push(§§pop() + 15 + 1 + 86 - 75 - 118);
+            §§push(-(§§pop() + 1 + 1) + 115);
          }
          §§pop().height = §§pop();
          _loc1_.label = "Fetch Now";
          §§push(_loc1_);
          §§push("fontSize");
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 1 - 74 + 118) * 38 + 1);
+            §§push((§§pop() + 109 + 57 + 1 - 36) * 8 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -297,97 +282,14 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 62);
+            §§push(-(-(§§pop() - 1 + 50 - 86) * 105) + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
             var _loc1_:* = model.selectedKeywordCollection.missingBingTitleCompCount + " of " + (model.selectedKeywordCollection.length + " keywords are missing Bing Title Competition.");
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_BingTitleCompMissingDataCallout_Label1.text");
-         §§push(result);
-         §§push(1);
-         if(_loc3_)
-         {
-            §§push((§§pop() + 1 - 48 + 1) * 88 + 64 - 11);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():int
-         {
-            return model.selectedKeywordCollection.project.bingTitleCompAvgDelay;
-         },null,"_BingTitleCompMissingDataCallout_AvgDelayComponent1.avgDelay");
-         §§push(result);
-         §§push(2);
-         if(_loc3_)
-         {
-            §§push(-((§§pop() - 1) * 4 * 57 + 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():*
-         {
-            return _BingTitleCompMissingDataCallout_AvgDelayComponent1.avgDelay;
-         },function(param1:*):void
-         {
-            model.selectedKeywordCollection.project.bingTitleCompAvgDelay = param1;
-         },"model.selectedKeywordCollection.project.bingTitleCompAvgDelay");
-         §§push(result);
-         §§push(2);
-         if(_loc2_)
-         {
-            §§push(§§pop() + 1 - 21 - 84 - 66);
-         }
-         §§push(§§pop()[§§pop()]);
-         §§push(result);
-         §§push(1);
-         if(_loc3_)
-         {
-            §§push(§§pop() + 8 + 1 - 119 + 62);
-         }
-         §§pop().twoWayCounterpart = §§pop()[§§pop()];
-         §§push(result);
-         §§push(1);
-         if(_loc3_)
-         {
-            §§push(--(§§pop() * 75 - 1) - 26);
-         }
-         §§pop()[§§pop()].isTwoWayPrimary = true;
-         §§push(result);
-         §§push(1);
-         if(_loc3_)
-         {
-            §§push(((§§pop() * 26 - 1 + 1) * 46 + 1 - 21) * 93);
-         }
-         §§push(§§pop()[§§pop()]);
-         §§push(result);
-         §§push(2);
-         if(_loc3_)
-         {
-            §§push((-(§§pop() * 108 + 1) - 1 + 102) * 116 + 24);
-         }
-         §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;
-      }
-      
-      private final function _BingTitleCompMissingDataCallout_bindingExprs() : void
-      {
-         var _loc1_:* = undefined;
-         this.model.selectedKeywordCollection.project.bingTitleCompAvgDelay = this._BingTitleCompMissingDataCallout_AvgDelayComponent1.avgDelay;
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get _BingTitleCompMissingDataCallout_AvgDelayComponent1() : AvgDelayComponent
-      {
-         return this._1604619324_BingTitleCompMissingDataCallout_AvgDelayComponent1;
-      }
-      
-      public function set _BingTitleCompMissingDataCallout_AvgDelayComponent1(param1:AvgDelayComponent) : void
-      {
-         var _loc2_:Object = this._1604619324_BingTitleCompMissingDataCallout_AvgDelayComponent1;
-         if(_loc2_ !== param1)
-         {
-            this._1604619324_BingTitleCompMissingDataCallout_AvgDelayComponent1 = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_BingTitleCompMissingDataCallout_AvgDelayComponent1",_loc2_,param1));
-            }
-         }
       }
       
       [Bindable(event="propertyChange")]

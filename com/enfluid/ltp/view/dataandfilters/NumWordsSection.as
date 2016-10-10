@@ -3,18 +3,24 @@ package com.enfluid.ltp.view.dataandfilters
    import com.enfluid.ltp.view.containers.CheckBoxCollapsiblePanel;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
+   import flash.events.ContextMenuEvent;
+   import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
+   import flash.desktop.Clipboard;
+   import flash.desktop.ClipboardFormats;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.view.components.ToggleSwitch;
    import com.enfluid.ltp.view.filterviews.NumWordsFilterView;
+   import spark.components.DataGroup;
    import mx.binding.Binding;
    import assets.TextAssets;
-   import com.enfluid.ltp.model.ViewModel;
    import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.CompetitorAnalysisListItemRenderer;
-   import mx.states.State;
    import mx.events.PropertyChangeEvent;
+   import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
@@ -69,16 +75,17 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() * 52 + 1 + 1);
+            §§push(-(§§pop() + 75) + 33);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Num Words";
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._NumWordsSection_Array1_c);
+         this.addEventListener("creationComplete",this.___NumWordsSection_CheckBoxCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((-(§§pop() - 48) + 1 + 27) * 66));
+            §§push(§§pop() * 41 + 101 + 1 + 32);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -108,6 +115,22 @@ package com.enfluid.ltp.view.dataandfilters
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.NumWords.Checked").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.NumWords.Unchecked").execute();
+            }
+         });
+      }
+      
       private final function _NumWordsSection_Array1_c() : Array
       {
          var _loc1_:Array = [this._NumWordsSection_NumWordsFilterView1_c()];
@@ -125,6 +148,11 @@ package com.enfluid.ltp.view.dataandfilters
          return _loc1_;
       }
       
+      public final function ___NumWordsSection_CheckBoxCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _NumWordsSection_bindingsSetup() : Array
       {
          var result:Array = [];
@@ -132,7 +160,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 77 - 111 + 70 + 104 - 48 + 1 + 50);
+            §§push((§§pop() + 1 + 1) * 5 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -141,9 +169,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.helpTitle");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 1) - 1);
+            §§push(§§pop() - 34 - 14 + 1 - 1 - 84);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -152,9 +180,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.helpContent");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 87 - 1 - 95) - 1 - 86);
+            §§push((§§pop() - 0 - 1) * 57 - 42 + 1 - 1 + 2);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -162,9 +190,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.expanded");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 57 + 1 + 0 - 1) * 31);
+            §§push((-§§pop() - 1 - 28 - 96 + 1) * 37 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -175,37 +203,37 @@ package com.enfluid.ltp.view.dataandfilters
          },"model.selectedProject.numWordsEnabled");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 92 - 82 - 1 + 1 - 1 + 15);
+            §§push(-(§§pop() * 119) + 1 - 67);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 1) * 6) * 106);
+            §§push((§§pop() - 1 + 67 + 1) * 20);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push((-((§§pop() + 59 + 16) * 2) - 1 - 46) * 48);
+            §§push(-(§§pop() + 8 - 1) * 76 + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() + 90 + 1) * 10);
+            §§push(--((§§pop() - 1 + 72) * 2) - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(-(§§pop() - 21) * 44 + 1));
+            §§push(-(§§pop() * 43 * 67) + 1 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

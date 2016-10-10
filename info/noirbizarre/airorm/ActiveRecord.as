@@ -4,71 +4,97 @@ package info.noirbizarre.airorm
    import flash.events.IEventDispatcher;
    import mx.core.IUID;
    import info.noirbizarre.airorm.utils.sql_db;
+   import flash.utils.getQualifiedClassName;
+   import com.photon.util.PhotonSingleton;
+   import mx.effects.Parallel;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
    import mx.utils.UIDUtil;
    import flash.data.SQLConnection;
    import info.noirbizarre.airorm.utils.DB;
    import info.noirbizarre.airorm.utils.Reflection;
    import flash.events.EventDispatcher;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.data.SQLStatement;
-   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
-   import com.enfluid.ltp.controller.rankchecker.SaveRankItemsCommand;
-   import com.enfluid.ltp.model.constants.Constants;
-   import com.enfluid.ltp.model.constants.RankCheckConstants;
-   import com.enfluid.ltp.util.Util;
-   import flash.utils.setTimeout;
-   import mx.graphics.SolidColor;
    import flash.utils.flash_proxy;
    import flash.events.SQLEvent;
    import flash.data.SQLResult;
-   import com.enfluid.ltp.model.vo.RankCheckItemVO;
-   import com.enfluid.ltp.controller.rankchecker.DeleteRankEntryCommand;
-   import com.enfluid.ltp.controller.rankchecker.ReadRanksXMLCommand;
-   import spark.components.Scroller;
-   import mx.binding.BindingManager;
-   import flash.events.Event;
-   import mx.controls.Alert;
-   import system.data.List;
-   import com.enfluid.ltp.view.renderers.DomainRenderer;
-   import spark.components.Image;
-   import com.enfluid.ltp.util.Logger;
-   import mx.states.Transition;
-   import com.hurlant.math.BigInteger;
-   import spark.effects.Resize;
-   import system.data.Map;
-   import system.data.iterators.ArrayIterator;
-   import system.data.Iterator;
    import spark.primitives.Rect;
-   import spark.components.Group;
+   import com.enfluid.ltp.model.vo.AmazonResultVO;
+   import com.enfluid.ltp.util.KeywordUtil;
+   import spark.components.VGroup;
+   import mx.collections.ArrayCollection;
+   import mx.graphics.SolidColor;
+   import hr.binaria.asx3m.converters.reflection.ReflectionConverter;
+   import hr.binaria.asx3m.converters.basic.NullConverter;
+   import hr.binaria.asx3m.converters.basic.StringConverter;
+   import hr.binaria.asx3m.converters.basic.NumberConverter;
+   import hr.binaria.asx3m.converters.basic.BooleanConverter;
+   import hr.binaria.asx3m.converters.extended.DateConverter;
+   import hr.binaria.asx3m.converters.collections.MapConverter;
+   import hr.binaria.asx3m.converters.collections.ListConverter;
+   import hr.binaria.asx3m.converters.collections.ArrayConverter;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.dataandfilters.target;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import spark.components.Scroller;
+   import flash.utils.setTimeout;
+   import hr.binaria.asx3m.mapper.IMapper;
+   import system.data.maps.HashMap;
    import flash.utils.ByteArray;
+   import com.enfluid.ltp.view.components.ToggleSwitch;
+   import flash.filesystem.File;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRendererInnerClass0;
+   import flash.filesystem.FileStream;
+   import flash.errors.IOError;
+   import flash.filesystem.FileMode;
+   import mx.controls.Alert;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.gridClasses.GridColumn;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import com.enfluid.ltp.view.renderers.CalculatableValueGroup;
+   import com.enfluid.ltp.view.components.LTPProgressButton;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import spark.effects.AddAction;
+   import spark.events.PopUpEvent;
+   import com.hurlant.math.BigInteger;
+   import com.hurlant.math.bi_internal;
+   import spark.components.Label;
+   import mx.graphics.GradientEntry;
+   import mx.states.Transition;
+   import spark.formatters.NumberFormatter;
+   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
    import mx.core.FlexGlobals;
-   import com.enfluid.ltp.view.components.KeywordNotesCallout;
-   import flash.events.NativeWindowDisplayStateEvent;
-   import spark.effects.easing.Power;
-   import flash.events.MouseEvent;
-   import air.update.ApplicationUpdaterUI;
    import info.noirbizarre.airorm.utils.Inflector;
-   import mx.rpc.events.ResultEvent;
-   import flash.system.Capabilities;
-   import com.adobe.utils.StringUtil;
+   import spark.components.supportClasses.InteractionStateDetector;
+   import com.hurlant.crypto.symmetric.XTeaKey;
+   import spark.components.DataGrid;
+   import spark.components.GridColumnHeaderGroup;
+   import spark.components.gridClasses.IGridVisualElement;
    import flash.data.SQLColumnSchema;
+   import spark.components.Group;
+   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
    import flash.data.SQLTableSchema;
    import flash.data.SQLSchemaResult;
+   import com.enfluid.ltp.util.Logger;
    import flash.events.SQLErrorEvent;
-   import system.evaluators.MultiEvaluator;
-   import system.evaluators.EdenEvaluator;
-   import system.isValidChar;
-   import system.Strings;
-   import com.enfluid.ltp.util.ProgressBarUtil;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import mx.rpc.http.HTTPService;
-   import spark.effects.Rotate;
+   import mx.controls.Spacer;
+   import spark.components.Button;
+   import flash.errors.IllegalOperationError;
    import mx.events.PropertyChangeEvent;
-   import spark.layouts.HorizontalLayout;
-   import flash.utils.getDefinitionByName;
-   import flash.utils.getQualifiedClassName;
    
    use namespace sql_db;
    use namespace flash_proxy;
+   use namespace mx_internal;
+   use namespace bi_internal;
    
    public class ActiveRecord extends Proxy implements IEventDispatcher, IUID
    {
@@ -164,16 +190,16 @@ package info.noirbizarre.airorm
          §§push(1);
          if(_loc5_)
          {
-            §§push(--(-§§pop() - 117));
+            §§push(-(§§pop() + 1 + 41));
          }
          if(§§pop() == §§pop() && §§pop()[§§pop()] is Array)
          {
             §§push(_loc4_);
             §§push(params);
             §§push(0);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(-((§§pop() + 1 + 1 - 32) * 96) - 105 + 0);
+               §§push((§§pop() * 74 * 52 * 49 + 1 - 1 - 93) * 3);
             }
             var /*UnknownSlot*/:* = §§pop()[§§pop()];
          }
@@ -181,7 +207,7 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc6_)
          {
-            §§push((-(§§pop() - 115) - 68 - 1 - 16 + 0) * 92);
+            §§push(§§pop() + 110 + 1 + 11 - 73);
          }
          var /*UnknownSlot*/:* = §§pop();
          while(i < params.length)
@@ -195,9 +221,9 @@ package info.noirbizarre.airorm
             §§push();
             §§push(sql.toUpperCase().indexOf("SELECT "));
             §§push(0);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(-(-(§§pop() * 112 - 105) + 1 - 94 + 1));
+               §§push((-§§pop() - 1) * 43);
             }
             §§pop().resultFunction(§§pop() == §§pop()?_loc2_.data || []:_loc2_.rowsAffected);
             stmt.removeEventListener(SQLEvent.RESULT,listener);
@@ -216,9 +242,9 @@ package info.noirbizarre.airorm
          §§push(param1);
          §§push(null);
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push(-(§§pop() + 22 + 102) + 1);
+            §§push(§§pop() - 1 - 1 + 1);
          }
          _loc5_ = §§pop() + §§pop().assembleQuery(§§pop(),§§pop(),§§pop(),§§pop(),param3);
          if(param2)
@@ -235,16 +261,16 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc7_)
             {
-               §§push(-(§§pop() - 54 - 1) + 1);
+               §§push((§§pop() + 63 + 1 - 1) * 42);
             }
             §§push(uint(§§pop()[§§pop()]["COUNT(*)"]));
          }
          else
          {
             §§push(0);
-            if(_loc8_)
+            if(_loc7_)
             {
-               §§push(-(§§pop() * 71 - 63 - 1));
+               §§push(-(((§§pop() - 1) * 82 - 1 - 1 - 62) * 20));
             }
             §§push(uint(§§pop()));
          }
@@ -258,15 +284,15 @@ package info.noirbizarre.airorm
          {
             §§push(_loc3_);
             §§push(0);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push((-§§pop() + 1 + 1) * 5);
+               §§push((§§pop() * 52 + 1) * 34 + 1);
             }
             §§push(§§pop()[§§pop()]);
             §§push(0);
             if(_loc5_)
             {
-               §§push(-(§§pop() - 1 + 110) - 93);
+               §§push(-(§§pop() - 1 + 1 - 58) * 65 - 24);
             }
             §§push(uint(§§pop()[§§pop()]));
          }
@@ -275,7 +301,7 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc5_)
             {
-               §§push(-(§§pop() + 1 + 108) - 1 - 76);
+               §§push(--(§§pop() * 79) - 1);
             }
             §§push(uint(§§pop()));
          }
@@ -309,9 +335,9 @@ package info.noirbizarre.airorm
          var _loc3_:String = schemaTranslation.getPrimaryKey(this.className);
          §§push(this.query("DELETE FROM " + _loc2_ + " WHERE " + _loc3_ + " = ?",param1));
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(--(§§pop() - 1) + 8);
+            §§push(§§pop() + 36 + 1 - 119 + 1 + 4 - 1);
          }
          return §§pop() > §§pop();
       }
@@ -331,9 +357,9 @@ package info.noirbizarre.airorm
          var _loc2_:String = schemaTranslation.getPrimaryKey(this.className);
          §§push(this.count(_loc2_ + " = ?",[param1]));
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 10) * 53 - 93);
+            §§push(-(§§pop() + 1) + 65);
          }
          return §§pop() > §§pop();
       }
@@ -346,9 +372,9 @@ package info.noirbizarre.airorm
          {
             §§push(_loc3_);
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push(-§§pop() + 1 + 1 + 12 - 4);
+               §§push(§§pop() * 74 + 1 + 1);
             }
             §§push(§§pop()[§§pop()]);
          }
@@ -388,7 +414,7 @@ package info.noirbizarre.airorm
          §§push(1);
          if(_loc5_)
          {
-            §§push(§§pop() + 98 + 111 - 4);
+            §§push(--(§§pop() + 87 + 76 - 51) - 1);
          }
          var _loc4_:Array = §§pop().findAll(§§pop(),§§pop(),§§pop(),§§pop());
          if(_loc4_)
@@ -397,7 +423,7 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc6_)
             {
-               §§push(§§pop() - 1 + 29 + 86 + 14);
+               §§push(-(§§pop() * 56) * 11 + 1);
             }
             §§push(§§pop()[§§pop()]);
          }
@@ -433,7 +459,7 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(-(§§pop() - 1 - 1) + 112 - 75) + 1);
+            §§push(§§pop() - 1 - 13 - 1 - 61 + 1 + 82 + 1);
          }
          §§pop().setDBProperties(§§pop()[§§pop()]);
          return true;
@@ -450,9 +476,9 @@ package info.noirbizarre.airorm
          §§push(this);
          §§push(_loc4_);
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(((§§pop() - 0) * 106 + 26) * 85) + 1);
+            §§push(-(§§pop() - 1 - 1 - 1 - 94));
          }
          §§pop().setDBProperties(§§pop()[§§pop()]);
          return true;
@@ -461,9 +487,9 @@ package info.noirbizarre.airorm
       public final function query(param1:String, ... rest) : Object
       {
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(-(§§pop() * 27) + 53 + 106 + 1 + 46);
+            §§push((§§pop() * 106 - 109) * 57 * 52 + 80 - 1);
          }
          var _loc5_:* = §§pop();
          var _loc3_:SQLStatement = new SQLStatement();
@@ -473,7 +499,7 @@ package info.noirbizarre.airorm
          §§push(1);
          if(_loc7_)
          {
-            §§push(§§pop() - 1 - 1 + 1 + 1);
+            §§push(-((§§pop() + 21 - 74) * 73) - 1);
          }
          if(§§pop() == §§pop() && §§pop()[§§pop()] is Array)
          {
@@ -481,7 +507,7 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc7_)
             {
-               §§push(-(-(§§pop() - 1) - 1) * 48 * 13);
+               §§push((§§pop() - 1 - 72 + 1) * 63 + 1 + 1);
             }
             rest = §§pop()[§§pop()];
          }
@@ -490,7 +516,7 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc7_)
             {
-               §§push((§§pop() + 1) * 21 - 69 - 103);
+               §§push(--(--§§pop() * 55) - 116);
             }
             _loc5_ = §§pop();
             while(_loc5_ < rest.length)
@@ -505,7 +531,7 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc7_)
          {
-            §§push(--(§§pop() * 109 - 1 + 1) + 1);
+            §§push(-(§§pop() * 115 * 55 + 2) - 1);
          }
          return §§pop() == §§pop()?_loc4_.data || []:_loc4_.rowsAffected;
       }
@@ -520,9 +546,9 @@ package info.noirbizarre.airorm
          var _loc5_:* = null;
          var _loc8_:* = null;
          §§push(0);
-         if(_loc15_)
+         if(_loc14_)
          {
-            §§push(-(-(§§pop() + 6) - 1 + 1));
+            §§push((§§pop() * 29 - 1 - 110 + 35 + 1 - 1) * 37);
          }
          var _loc11_:uint = §§pop();
          var _loc1_:ActiveRecordEvent = new ActiveRecordEvent(ActiveRecordEvent.SAVING,true);
@@ -546,9 +572,9 @@ package info.noirbizarre.airorm
          delete _loc6_[_loc3_];
          var _loc7_:Array = [];
          §§push(0);
-         if(_loc14_)
+         if(_loc15_)
          {
-            §§push(((§§pop() + 1 - 1 + 1) * 91 - 55) * 36 * 79);
+            §§push(-((§§pop() + 1) * 73) + 100 - 32 - 1);
          }
          for(_loc8_ in _loc6_)
          {
@@ -566,7 +592,7 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc14_)
             {
-               §§push(-(§§pop() - 1 - 12 - 68 + 1) - 62);
+               §§push((§§pop() - 105 + 112 + 1 - 1) * 16 - 21 + 46);
             }
             _loc11_ = §§pop();
             while(_loc11_ < _loc7_.length - 1)
@@ -605,9 +631,9 @@ package info.noirbizarre.airorm
          }
          §§push(this.query("UPDATE " + _loc4_ + " SET " + param2 + " WHERE " + _loc5_ + " = ?",param3) as uint);
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(§§pop() * 83 + 1 - 48 + 23 - 33 - 17 + 31);
+            §§push((-(§§pop() + 109 + 1 + 1) - 79) * 41);
          }
          return §§pop() > §§pop();
       }
@@ -655,7 +681,7 @@ package info.noirbizarre.airorm
          §§push(1);
          if(_loc10_)
          {
-            §§push(§§pop() - 1 + 1 + 1);
+            §§push((§§pop() * 90 + 1) * 14 + 1);
          }
          var _loc4_:QName = new §§pop().QName(§§pop(),§§pop()[§§pop()] + "Related");
          if(!_loc3_ || !(this[_loc4_] is Function))
@@ -666,16 +692,16 @@ package info.noirbizarre.airorm
          §§push(Inflector);
          §§push(_loc3_);
          §§push(2);
-         if(_loc9_)
+         if(_loc10_)
          {
-            §§push((-§§pop() - 1 + 1) * 89);
+            §§push(-(§§pop() - 1 + 1 - 112));
          }
          var _loc6_:String = §§pop().lowerFirst(§§pop()[§§pop()]);
          §§push(Reflection.getMetadataByArg(this,"",_loc6_));
          §§push(0);
          if(_loc10_)
          {
-            §§push(§§pop() + 43 - 1 + 104 + 1);
+            §§push((-(§§pop() + 5) + 94 - 1) * 28);
          }
          var _loc7_:XML = §§pop()[§§pop()];
          if(!_loc7_)
@@ -716,9 +742,9 @@ package info.noirbizarre.airorm
          var foreignKeys:XMLList = Reflection.getMetadata(this,"BelongsTo") + Reflection.getMetadata(this,"HasOne");
          var dynamics:Object = {};
          §§push(0);
-         if(_loc10_)
+         if(_loc9_)
          {
-            §§push(-(§§pop() + 73 + 1 + 1 - 43) * 67);
+            §§push(-(§§pop() + 76 - 37 + 1) + 1 - 53);
          }
          for each(fkDef in foreignKeys)
          {
@@ -726,35 +752,35 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc9_)
             {
-               §§push(-(§§pop() + 70 - 1 + 1 + 1) * 33);
+               §§push((-((§§pop() - 1) * 78) + 1) * 105 * 99);
             }
             §§push(fkDef.arg.(@key == "className"));
             §§push(0);
             if(_loc9_)
             {
-               §§push(-(§§pop() * 42 + 1) - 119 + 1 - 1);
+               §§push(§§pop() * 66 * 4 - 14);
             }
             var /*UnknownSlot*/:* = §§pop()[§§pop()].@value;
             §§push(_loc1_);
             §§push(0);
             if(_loc9_)
             {
-               §§push(-(§§pop() + 1) + 109 + 49 - 114 + 1);
+               §§push(-(§§pop() * 102) - 1);
             }
             §§push(fkDef.arg.(@key == ""));
             §§push(0);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(§§pop() * 44 - 32 - 85);
+               §§push((§§pop() - 119 + 11 - 46) * 117 - 1 - 76 + 1);
             }
             var /*UnknownSlot*/:* = §§pop()[§§pop()].@value;
             fk = ActiveRecord.schemaTranslation.getForeignKey(otherClassName,propName);
             dynamics[fk] = propName;
          }
          §§push(0);
-         if(_loc10_)
+         if(_loc9_)
          {
-            §§push(-(§§pop() * 94 - 19) + 1 - 100 + 1);
+            §§push(§§pop() + 1 + 89 - 1 - 1 + 1 - 1);
          }
          for each(column in columns)
          {
@@ -810,7 +836,7 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc4_)
          {
-            §§push((-§§pop() + 38) * 55 - 1);
+            §§push(§§pop() * 88 * 71 - 1);
          }
          var _loc2_:XML = §§pop()[§§pop()];
          if(!_loc2_)
@@ -839,9 +865,9 @@ package info.noirbizarre.airorm
          if(_loc3_)
          {
             §§push(0);
-            if(_loc11_)
+            if(_loc10_)
             {
-               §§push(-(§§pop() + 50 - 36 - 28 + 98) + 1);
+               §§push(§§pop() + 108 - 1 - 100 + 1 + 119);
             }
             for each(_loc6_ in _loc3_.tables)
             {
@@ -862,7 +888,7 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc10_)
             {
-               §§push((-§§pop() + 42 + 97) * 32 + 109 - 70 - 40);
+               §§push(--(-§§pop() * 28) - 2);
             }
             for each(_loc7_ in _loc4_.columns)
             {
@@ -879,9 +905,9 @@ package info.noirbizarre.airorm
          param1 = param1.toString();
          §§push(Reflection.getMetadataByArg(this,"",param1));
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-((§§pop() - 1 - 1) * 77) - 1) * 45);
+            §§push(§§pop() + 1 - 26 - 1 + 46 - 1);
          }
          var _loc2_:XML = §§pop()[§§pop()];
          return _loc2_ != null;
@@ -895,9 +921,9 @@ package info.noirbizarre.airorm
          _loc4_.itemClass = param1;
          §§push(rest.length);
          §§push(1);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push((§§pop() + 1 + 1 + 43) * 40 * 60 - 74 + 48);
+            §§push(§§pop() + 1 + 70 - 1 - 1 - 29 + 1);
          }
          if(§§pop() == §§pop() && §§pop()[§§pop()] is Array)
          {
@@ -905,14 +931,14 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc8_)
             {
-               §§push(-((§§pop() * 41 - 1) * 50) - 1);
+               §§push((§§pop() + 1 + 42) * 102 + 98);
             }
             rest = §§pop()[§§pop()];
          }
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push((-§§pop() + 105 - 1) * 40 * 15 - 1 - 76);
+            §§push(-(-(§§pop() + 21) - 1) * 4);
          }
          var _loc5_:* = §§pop();
          while(_loc5_ < rest.length)
@@ -965,9 +991,9 @@ package info.noirbizarre.airorm
          var _loc3_:SQLColumnSchema = null;
          var _loc2_:Array = this.getSchema().columns;
          §§push(0);
-         if(_loc7_)
+         if(_loc6_)
          {
-            §§push((§§pop() * 119 - 1 - 1) * 27);
+            §§push(-((§§pop() + 24 + 107) * 106) + 14 + 81);
          }
          for each(_loc3_ in _loc2_)
          {

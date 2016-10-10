@@ -1,20 +1,26 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
+   import com.enfluid.ltp.model.vo.KeywordVO;
    import com.enfluid.ltp.model.vo.PreferencesVO;
-   import spark.components.ComboBox;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.CustomComboboxSkin;
-   import mx.binding.BindingManager;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import flash.filesystem.File;
    import com.enfluid.ltp.util.FileSystemOperations;
    import hr.binaria.asx3m.Asx3mer;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import mx.graphics.SolidColor;
+   import com.enfluid.ltp.model.vo.RankCheckItemVO;
+   import com.enfluid.ltp.util.KeywordUtil;
+   import spark.primitives.Rect;
+   import com.enfluid.ltp.util.Util;
+   import com.enfluid.ltp.model.constants.Constants;
+   import flash.net.URLRequest;
+   import flash.events.Event;
    import com.enfluid.ltp.model.constants.Countries;
+   import system.data.collections.ArrayCollection;
    import com.enfluid.ltp.model.constants.Languages;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.view.components.Link;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.view.components.majestic.CompetitorMajesticAnalysisHeaderComponent;
+   import mx.binding.BindingManager;
    
    public final class LoadPreferencesCommand extends Command implements IPhotonCommand
    {

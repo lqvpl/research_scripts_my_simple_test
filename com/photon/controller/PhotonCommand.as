@@ -1,12 +1,13 @@
 package com.photon.controller
 {
    import flash.events.EventDispatcher;
-   import com.enfluid.ltp.model.vo.DomainsVO;
-   import com.enfluid.ltp.util.Logger;
-   import com.enfluid.ltp.model.constants.DomainStatuses;
+   import mx.graphics.SolidColor;
+   import mx.states.State;
+   import mx.states.SetProperty;
    import avmplus.getQualifiedClassName;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.BindingManager;
+   import flash.utils.ByteArray;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
    
    public class PhotonCommand extends EventDispatcher
    {
@@ -76,7 +77,7 @@ package com.photon.controller
             §§push(0);
             if(_loc3_)
             {
-               §§push(§§pop() - 1 + 1 - 1 - 45);
+               §§push((§§pop() - 60) * 73 + 1);
             }
             if(§§pop()[§§pop()] == this)
             {
@@ -84,17 +85,17 @@ package com.photon.controller
             }
             §§push(this.queue.length);
             §§push(0);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(-(-(-§§pop() * 67) + 1 + 1) * 39);
+               §§push(-(§§pop() - 69) - 24 + 1);
             }
             if(§§pop() > §§pop())
             {
                §§push(this.queue);
                §§push(0);
-               if(_loc2_)
+               if(_loc3_)
                {
-                  §§push(-(§§pop() - 46) * 84 + 20);
+                  §§push(-§§pop() - 74 + 86);
                }
                _loc1_ = §§pop()[§§pop()] as PhotonCommand;
                if(_loc1_.isCancelled)

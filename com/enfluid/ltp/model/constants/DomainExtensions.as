@@ -1,5 +1,7 @@
 package com.enfluid.ltp.model.constants
 {
+   import mx.graphics.GradientEntry;
+   
    public final class DomainExtensions
    {
       

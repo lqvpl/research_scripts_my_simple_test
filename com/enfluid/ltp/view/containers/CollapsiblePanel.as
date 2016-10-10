@@ -1,18 +1,18 @@
 package com.enfluid.ltp.view.containers
 {
    import spark.components.Panel;
-   import spark.components.Button;
    import spark.components.Group;
+   import mx.binding.BindingManager;
+   import spark.components.Button;
    import spark.components.Image;
    import flash.events.Event;
    import flash.events.MouseEvent;
-   import spark.components.TextInput;
-   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
-   import mx.binding.BindingManager;
-   import com.hurlant.math.BigInteger;
-   import spark.components.VGroup;
-   import spark.effects.easing.Power;
+   import com.enfluid.ltp.view.skins.TransparentButtonSkin;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import flash.utils.setTimeout;
+   import spark.effects.Fade;
    import mx.events.PropertyChangeEvent;
+   import spark.components.Label;
    
    public class CollapsiblePanel extends Panel
    {

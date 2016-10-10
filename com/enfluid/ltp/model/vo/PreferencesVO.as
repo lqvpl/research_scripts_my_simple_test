@@ -1,20 +1,25 @@
 package com.enfluid.ltp.model.vo
 {
    import flash.events.IEventDispatcher;
-   import mx.core.DeferredInstanceFromFunction;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.skins.target;
-   import mx.states.State;
-   import mx.states.AddItems;
-   import mx.states.SetProperty;
-   import mx.binding.BindingManager;
-   import mx.binding.Binding;
+   import flash.events.Event;
    import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
-   import flash.events.Event;
-   import com.enfluid.ltp.util.KeywordUtil;
-   import system.errors.ConcurrencyError;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.FindKeywordsButtonSkin;
+   import flash.utils.setTimeout;
+   import flash.events.MouseEvent;
+   import mx.controls.Alert;
+   import flash.utils.ByteArray;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import mx.binding.BindingManager;
+   import spark.layouts.VerticalLayout;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.components.target;
+   import mx.binding.Binding;
    
    use namespace mx_internal;
    
@@ -47,6 +52,18 @@ package com.enfluid.ltp.model.vo
       private var _697385748eulaAccepted:Boolean = false;
       
       private var _635258332showHelpIcons:Boolean = true;
+      
+      private var _1685743097googleRequestAvgDelay:int = 5;
+      
+      private var _1777597248bingReqeustAvgDelay:int = 0;
+      
+      private var _1031491354addSeedKeywordsOpen:Boolean = false;
+      
+      private var _1508550195addMyOwnKeywordsOpen:Boolean = false;
+      
+      private var _937996120customizeDataPreFilterOpen:Boolean = false;
+      
+      private var _1234376248hasAvgAmazonReviewsStoredInAmazonKCProperty:Boolean = false;
       
       private var _bindingEventDispatcher:EventDispatcher;
       
@@ -299,6 +316,120 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showHelpIcons",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get googleRequestAvgDelay() : int
+      {
+         return this._1685743097googleRequestAvgDelay;
+      }
+      
+      public function set googleRequestAvgDelay(param1:int) : void
+      {
+         var _loc2_:Object = this._1685743097googleRequestAvgDelay;
+         if(_loc2_ !== param1)
+         {
+            this._1685743097googleRequestAvgDelay = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"googleRequestAvgDelay",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get bingReqeustAvgDelay() : int
+      {
+         return this._1777597248bingReqeustAvgDelay;
+      }
+      
+      public function set bingReqeustAvgDelay(param1:int) : void
+      {
+         var _loc2_:Object = this._1777597248bingReqeustAvgDelay;
+         if(_loc2_ !== param1)
+         {
+            this._1777597248bingReqeustAvgDelay = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bingReqeustAvgDelay",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get addSeedKeywordsOpen() : Boolean
+      {
+         return this._1031491354addSeedKeywordsOpen;
+      }
+      
+      public function set addSeedKeywordsOpen(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1031491354addSeedKeywordsOpen;
+         if(_loc2_ !== param1)
+         {
+            this._1031491354addSeedKeywordsOpen = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"addSeedKeywordsOpen",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get addMyOwnKeywordsOpen() : Boolean
+      {
+         return this._1508550195addMyOwnKeywordsOpen;
+      }
+      
+      public function set addMyOwnKeywordsOpen(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1508550195addMyOwnKeywordsOpen;
+         if(_loc2_ !== param1)
+         {
+            this._1508550195addMyOwnKeywordsOpen = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"addMyOwnKeywordsOpen",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get customizeDataPreFilterOpen() : Boolean
+      {
+         return this._937996120customizeDataPreFilterOpen;
+      }
+      
+      public function set customizeDataPreFilterOpen(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._937996120customizeDataPreFilterOpen;
+         if(_loc2_ !== param1)
+         {
+            this._937996120customizeDataPreFilterOpen = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"customizeDataPreFilterOpen",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get hasAvgAmazonReviewsStoredInAmazonKCProperty() : Boolean
+      {
+         return this._1234376248hasAvgAmazonReviewsStoredInAmazonKCProperty;
+      }
+      
+      public function set hasAvgAmazonReviewsStoredInAmazonKCProperty(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1234376248hasAvgAmazonReviewsStoredInAmazonKCProperty;
+         if(_loc2_ !== param1)
+         {
+            this._1234376248hasAvgAmazonReviewsStoredInAmazonKCProperty = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hasAvgAmazonReviewsStoredInAmazonKCProperty",_loc2_,param1));
             }
          }
       }

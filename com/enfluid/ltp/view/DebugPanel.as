@@ -4,11 +4,6 @@ package com.enfluid.ltp.view
    import mx.binding.IBindingClient;
    import flash.filesystem.FileStream;
    import mx.binding.IWatcherSetupUtil2;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.ProjectDropDownItemRenderer;
-   import mx.binding.Binding;
    import spark.components.ButtonBar;
    import mx.controls.HTML;
    import spark.components.TextArea;
@@ -18,18 +13,24 @@ package com.enfluid.ltp.view
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
    import flash.filesystem.File;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
    import flash.filesystem.FileMode;
    import mx.controls.Alert;
    import spark.components.Group;
-   import mx.binding.BindingManager;
+   import flash.utils.setTimeout;
+   import com.enfluid.ltp.util.Logger;
    import com.enfluid.ltp.view.components.Link;
    import flash.events.MouseEvent;
    import mx.core.UIComponentDescriptor;
    import mx.core.DeferredInstanceFromFunction;
    import mx.events.FlexEvent;
-   import spark.effects.Move;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
+   import mx.binding.Binding;
    import com.enfluid.ltp.model.constants.Constants;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
+   import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
    
@@ -43,13 +44,15 @@ package com.enfluid.ltp.view
       
       public var _DebugPanel_ButtonBar1:ButtonBar;
       
-      public var _DebugPanel_HTML3:HTML;
+      public var _DebugPanel_HTML2:HTML;
+      
+      public var _DebugPanel_HTML4:HTML;
       
       public var _DebugPanel_TextArea1:TextArea;
       
-      private var _121443418domainsHTML:HTML;
+      private var _2039167869domizeHTML:HTML;
       
-      private var _1579808106godaddyDomizeShell:NavigatorContent;
+      private var _1199526786domizeShell:NavigatorContent;
       
       private var _1680480187googleSearchResultsShell:NavigatorContent;
       
@@ -64,6 +67,8 @@ package com.enfluid.ltp.view
       private var _2086710821mozResultShell:NavigatorContent;
       
       private var _182637929myViewStack:ViewStack;
+      
+      private var _1073373949uniregistryShell:NavigatorContent;
       
       private var __moduleFactoryInitialized:Boolean = false;
       
@@ -110,25 +115,25 @@ package com.enfluid.ltp.view
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-(§§pop() - 1) * 5 - 1) * 30);
+            §§push((-§§pop() - 1 - 1) * 62 + 87);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(100);
          if(_loc3_)
          {
-            §§push((-(-§§pop() - 15) * 22 - 19) * 47 + 25);
+            §§push(-((§§pop() + 1 + 1) * 24) + 1 - 55);
          }
          §§pop().percentHeight = §§pop();
          this.horizontalAlign = "center";
          this.mxmlContent = [this._DebugPanel_Group1_c(),this._DebugPanel_ViewStack1_i()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 20 * 67 - 1) * 98);
+            §§push((§§pop() - 1 + 1 + 1 + 35) * 7);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -164,9 +169,13 @@ package com.enfluid.ltp.view
          {
             this.save(this.viewModel.keywordPlannerHTML.htmlLoader.window.document.body.outerHTML,"ltp-kwp.html");
          }
-         else if(this.myViewStack.selectedChild == this.godaddyDomizeShell)
+         else if(this.myViewStack.selectedChild == this.uniregistryShell)
          {
-            this.save(this.viewModel.goDaddyHTML.htmlLoader.window.document.body.outerHTML,"ltp-gd.html");
+            this.save(this.model.mostRecentFailedUniregistryResult,"ltp-u.html");
+         }
+         else if(this.myViewStack.selectedChild == this.domizeShell)
+         {
+            this.save(this.model.mostRecentFailedUniregistryResult,"ltp-d.html");
          }
          else if(this.myViewStack.selectedChild == this.googleSearchResultsShell)
          {
@@ -174,7 +183,7 @@ package com.enfluid.ltp.view
          }
          else if(this.myViewStack.selectedChild == this.mozResultShell)
          {
-            this.save(this.model.mostRecentGoogleSearchResult,"ltp-m.html");
+            this.save(this.model.mostRecentFailedSEOMozREsult,"ltp-m.html");
          }
          else if(this.myViewStack.selectedChild == this.logShell)
          {
@@ -198,14 +207,14 @@ package com.enfluid.ltp.view
          §§push(130);
          if(_loc5_)
          {
-            §§push(§§pop() * 16 * 74 * 84 * 69 - 117);
+            §§push(((§§pop() * 1 - 112) * 3 - 1 + 14 - 84) * 90);
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(--(§§pop() * 98 + 1) - 2));
+            §§push(--§§pop() - 110);
          }
          §§pop().buttonHeight = §§pop();
          Alert.show(param2 + " has been saved to your desktop");
@@ -218,7 +227,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc2_)
          {
-            §§push(§§pop() - 105 + 1 + 1 + 1 + 1 + 3);
+            §§push(§§pop() + 1 - 1 + 1 + 1 - 80);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.mxmlContent = [this._DebugPanel_ButtonBar1_i(),this._DebugPanel_Link1_c()];
@@ -236,14 +245,14 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 6 - 34);
+            §§push(§§pop() + 55 - 1 - 83 - 48);
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 118) * 2 * 25);
+            §§push(-(--§§pop() + 84 - 1) * 71 + 1);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.id = "_DebugPanel_ButtonBar1";
@@ -261,25 +270,25 @@ package com.enfluid.ltp.view
          var _loc1_:Link = new Link();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 22 - 23 + 1);
+            §§push(((§§pop() - 1) * 9 + 1) * 44 + 1 + 47);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() - 1 - 59);
+            §§push(-(§§pop() - 116 - 118 + 106) + 108 + 1);
          }
          §§pop().verticalCenter = §§pop();
-         _loc1_.text = "Save to Desktop";
+         _loc1_.text = "save to desktop";
          §§push(_loc1_);
          §§push("color");
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 19 - 1 - 1) * 4);
+            §§push(-(§§pop() + 1) + 12 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.addEventListener("click",this.___DebugPanel_Link1_click);
@@ -302,14 +311,14 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 82 + 1) * 78 - 1));
+            §§push(-((-§§pop() + 1) * 107 - 23 + 27) + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(temp);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 98) + 1 - 1) * 81 - 1);
+            §§push(-(-(§§pop() + 1 + 66) + 91 - 80));
          }
          §§pop().percentHeight = §§pop();
          temp.creationPolicy = "all";
@@ -331,34 +340,53 @@ package com.enfluid.ltp.view
                   {
                      §§push("percentWidth");
                      §§push(100);
-                     if(_loc1_)
+                     if(_loc2_)
                      {
-                        §§push((-(§§pop() - 68) + 1) * 25);
+                        §§push(§§pop() * 71 + 1 + 1 - 1);
                      }
                      §§push("percentHeight");
                      §§push(100);
                      if(_loc2_)
                      {
-                        §§push(§§pop() - 30 + 1 + 1);
+                        §§push(§§pop() - 1 - 81 + 102 - 85);
                      }
                      return null;
                   }
                }),new UIComponentDescriptor({
                   "type":NavigatorContent,
-                  "id":"godaddyDomizeShell",
+                  "id":"uniregistryShell",
                   "propertiesFactory":function():Object
                   {
                      §§push("percentWidth");
                      §§push(100);
-                     if(_loc2_)
+                     if(_loc1_)
                      {
-                        §§push(-(§§pop() - 90 - 103 + 1 - 81 + 44) + 72);
+                        §§push(§§pop() + 1 + 1 + 86 + 52 + 33 + 115);
                      }
                      §§push("percentHeight");
                      §§push(100);
                      if(_loc2_)
                      {
-                        §§push(((§§pop() - 1) * 0 + 74) * 40 - 95);
+                        §§push((§§pop() - 1 - 87 - 1 - 1) * 78 - 95 - 1);
+                     }
+                     return null;
+                  }
+               }),new UIComponentDescriptor({
+                  "type":NavigatorContent,
+                  "id":"domizeShell",
+                  "propertiesFactory":function():Object
+                  {
+                     §§push("percentWidth");
+                     §§push(100);
+                     if(_loc1_)
+                     {
+                        §§push(-((-(§§pop() - 73) - 28 + 1) * 37 + 111));
+                     }
+                     §§push("percentHeight");
+                     §§push(100);
+                     if(_loc2_)
+                     {
+                        §§push((§§pop() * 118 + 1 + 11 - 27 + 31 + 39) * 13);
                      }
                      return null;
                   }
@@ -369,15 +397,15 @@ package com.enfluid.ltp.view
                   {
                      §§push("percentWidth");
                      §§push(100);
-                     if(_loc2_)
+                     if(_loc1_)
                      {
-                        §§push(--§§pop() + 73 + 95 + 52 - 81 - 96);
+                        §§push(--((§§pop() * 47 + 96) * 89));
                      }
                      §§push("percentHeight");
                      §§push(100);
-                     if(_loc2_)
+                     if(_loc1_)
                      {
-                        §§push(-(-§§pop() + 113 + 71) + 93 - 60 + 1);
+                        §§push(-(-(§§pop() * 39) + 59 + 1 + 1) - 47);
                      }
                      return null;
                   }
@@ -390,13 +418,13 @@ package com.enfluid.ltp.view
                      §§push(100);
                      if(_loc2_)
                      {
-                        §§push((§§pop() + 18 - 1 + 1 + 1) * 106);
+                        §§push(-(-(§§pop() + 1) + 19) + 1 - 1);
                      }
                      §§push("percentHeight");
                      §§push(100);
                      if(_loc1_)
                      {
-                        §§push(-(§§pop() - 91 + 32 - 1 + 1));
+                        §§push(--§§pop() - 1 - 1 + 1 - 1);
                      }
                      return null;
                   }
@@ -409,13 +437,13 @@ package com.enfluid.ltp.view
                      §§push(100);
                      if(_loc1_)
                      {
-                        §§push(-(-§§pop() + 97 + 1 - 41 + 9));
+                        §§push(-(§§pop() + 59 - 55 - 1));
                      }
                      §§push("percentHeight");
                      §§push(100);
                      if(_loc2_)
                      {
-                        §§push((-§§pop() + 1 - 1) * 70);
+                        §§push(-(§§pop() * 94 * 78));
                      }
                      return null;
                   }
@@ -441,22 +469,22 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(--(§§pop() - 107) - 17 - 1 + 1);
+            §§push(§§pop() + 34 + 101 - 82 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 8) * 76) - 1 - 113);
+            §§push(§§pop() + 3 + 70 + 107 - 108);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push("paddingLeft");
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 119 - 1 + 1 + 1));
+            §§push((§§pop() - 114 + 0 - 37 - 1) * 69);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.addEventListener("creationComplete",this.__keywordPlannerHTML_creationComplete);
@@ -493,30 +521,24 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 89 - 1);
+            §§push(§§pop() * 107 * 119 - 24 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() - 100 - 1 - 14 + 17) - 43) * 33);
+            §§push(-((§§pop() + 1 + 1 - 1 - 25) * 112 - 33));
          }
          §§pop().percentHeight = §§pop();
-         _loc1_.addEventListener("creationComplete",this.__domainsHTML_creationComplete);
-         _loc1_.id = "domainsHTML";
+         _loc1_.id = "_DebugPanel_HTML2";
          if(!_loc1_.document)
          {
             _loc1_.document = this;
          }
-         this.domainsHTML = _loc1_;
-         BindingManager.executeBindings(this,"domainsHTML",this.domainsHTML);
+         this._DebugPanel_HTML2 = _loc1_;
+         BindingManager.executeBindings(this,"_DebugPanel_HTML2",this._DebugPanel_HTML2);
          return _loc1_;
-      }
-      
-      public final function __domainsHTML_creationComplete(param1:FlexEvent) : void
-      {
-         ViewModel.instance.goDaddyHTML = this.domainsHTML;
       }
       
       private final function _DebugPanel_Array5_c() : Array
@@ -530,26 +552,32 @@ package com.enfluid.ltp.view
          var _loc1_:HTML = new HTML();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() * 77) - 1 - 22 + 1);
+            §§push((-§§pop() + 1) * 118);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 55) + 1 - 1 - 1 + 16);
+            §§push(-§§pop() * 88 + 75);
          }
          §§pop().percentHeight = §§pop();
-         _loc1_.id = "_DebugPanel_HTML3";
+         _loc1_.addEventListener("creationComplete",this.__domizeHTML_creationComplete);
+         _loc1_.id = "domizeHTML";
          if(!_loc1_.document)
          {
             _loc1_.document = this;
          }
-         this._DebugPanel_HTML3 = _loc1_;
-         BindingManager.executeBindings(this,"_DebugPanel_HTML3",this._DebugPanel_HTML3);
+         this.domizeHTML = _loc1_;
+         BindingManager.executeBindings(this,"domizeHTML",this.domizeHTML);
          return _loc1_;
+      }
+      
+      public final function __domizeHTML_creationComplete(param1:FlexEvent) : void
+      {
+         ViewModel.instance.domizeHTML = this.domizeHTML;
       }
       
       private final function _DebugPanel_Array6_c() : Array
@@ -565,14 +593,47 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(((§§pop() * 9 + 52) * 16 - 1 + 1) * 41 - 47);
+            §§push((--§§pop() + 118 + 1) * 89);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 58 + 1 - 17 + 1) + 1);
+            §§push(-(§§pop() - 59) + 69);
+         }
+         §§pop().percentHeight = §§pop();
+         _loc1_.id = "_DebugPanel_HTML4";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this._DebugPanel_HTML4 = _loc1_;
+         BindingManager.executeBindings(this,"_DebugPanel_HTML4",this._DebugPanel_HTML4);
+         return _loc1_;
+      }
+      
+      private final function _DebugPanel_Array7_c() : Array
+      {
+         var _loc1_:Array = [this._DebugPanel_HTML5_i()];
+         return _loc1_;
+      }
+      
+      private final function _DebugPanel_HTML5_i() : HTML
+      {
+         var _loc1_:HTML = new HTML();
+         §§push(_loc1_);
+         §§push(100);
+         if(_loc3_)
+         {
+            §§push(§§pop() - 1 - 71 - 69);
+         }
+         §§pop().percentWidth = §§pop();
+         §§push(_loc1_);
+         §§push(100);
+         if(_loc3_)
+         {
+            §§push(--(-(§§pop() + 103) + 1 - 93) * 0);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.id = "mozHTML";
@@ -585,7 +646,7 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
-      private final function _DebugPanel_Array7_c() : Array
+      private final function _DebugPanel_Array8_c() : Array
       {
          var _loc1_:Array = [this._DebugPanel_TextArea1_i()];
          return _loc1_;
@@ -596,16 +657,16 @@ package com.enfluid.ltp.view
          var _loc1_:TextArea = new TextArea();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-§§pop() * 102 - 74) * 0));
+            §§push(-(-§§pop() - 62 + 89 - 1 - 1));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push((§§pop() - 83) * 100 + 1);
+            §§push(-(§§pop() - 65 - 1 + 15) + 7 - 1 + 1);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.id = "_DebugPanel_TextArea1";
@@ -625,14 +686,14 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(-§§pop() - 1 - 1) * 71 + 1) * 95);
+            §§push(-§§pop() + 113 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_DebugPanel_ButtonBar1.dataProvider","myViewStack");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 103 - 49 - 29 - 24 + 1 + 10);
+            §§push((-(-(§§pop() * 79) - 1) + 1) * 93);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -641,20 +702,31 @@ package com.enfluid.ltp.view
          },null,"keywordPlannerHTML.location");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--§§pop() + 1 + 48 + 11);
+            §§push(-(-(§§pop() - 1) - 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = model.mostRecentFailedUniregistryResult;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_DebugPanel_HTML2.htmlText");
+         §§push(result);
+         §§push(3);
+         if(_loc2_)
+         {
+            §§push(§§pop() - 1 + 72 - 1 - 62 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
             var _loc1_:* = model.mostRecentGoogleSearchResult;
             return _loc1_ == undefined?null:String(_loc1_);
-         },null,"_DebugPanel_HTML3.htmlText");
+         },null,"_DebugPanel_HTML4.htmlText");
          §§push(result);
-         §§push(3);
-         if(_loc2_)
+         §§push(4);
+         if(_loc3_)
          {
-            §§push(--(§§pop() * 73 + 1 - 1 - 91) - 9);
+            §§push(-§§pop() - 1 - 1 + 92 - 80);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -662,10 +734,10 @@ package com.enfluid.ltp.view
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"mozHTML.htmlText");
          §§push(result);
-         §§push(4);
+         §§push(5);
          if(_loc3_)
          {
-            §§push((§§pop() * 74 + 1 - 1) * 30);
+            §§push(-(§§pop() - 1 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -676,39 +748,39 @@ package com.enfluid.ltp.view
       }
       
       [Bindable(event="propertyChange")]
-      public function get domainsHTML() : HTML
+      public function get domizeHTML() : HTML
       {
-         return this._121443418domainsHTML;
+         return this._2039167869domizeHTML;
       }
       
-      public function set domainsHTML(param1:HTML) : void
+      public function set domizeHTML(param1:HTML) : void
       {
-         var _loc2_:Object = this._121443418domainsHTML;
+         var _loc2_:Object = this._2039167869domizeHTML;
          if(_loc2_ !== param1)
          {
-            this._121443418domainsHTML = param1;
+            this._2039167869domizeHTML = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domainsHTML",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domizeHTML",_loc2_,param1));
             }
          }
       }
       
       [Bindable(event="propertyChange")]
-      public function get godaddyDomizeShell() : NavigatorContent
+      public function get domizeShell() : NavigatorContent
       {
-         return this._1579808106godaddyDomizeShell;
+         return this._1199526786domizeShell;
       }
       
-      public function set godaddyDomizeShell(param1:NavigatorContent) : void
+      public function set domizeShell(param1:NavigatorContent) : void
       {
-         var _loc2_:Object = this._1579808106godaddyDomizeShell;
+         var _loc2_:Object = this._1199526786domizeShell;
          if(_loc2_ !== param1)
          {
-            this._1579808106godaddyDomizeShell = param1;
+            this._1199526786domizeShell = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"godaddyDomizeShell",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domizeShell",_loc2_,param1));
             }
          }
       }
@@ -842,6 +914,25 @@ package com.enfluid.ltp.view
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"myViewStack",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get uniregistryShell() : NavigatorContent
+      {
+         return this._1073373949uniregistryShell;
+      }
+      
+      public function set uniregistryShell(param1:NavigatorContent) : void
+      {
+         var _loc2_:Object = this._1073373949uniregistryShell;
+         if(_loc2_ !== param1)
+         {
+            this._1073373949uniregistryShell = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"uniregistryShell",_loc2_,param1));
             }
          }
       }

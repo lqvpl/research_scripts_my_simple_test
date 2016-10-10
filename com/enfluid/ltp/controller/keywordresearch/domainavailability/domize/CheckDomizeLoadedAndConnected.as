@@ -16,7 +16,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
       
       public function execute() : void
       {
-         viewModel.goDaddyHTML.location = "";
+         viewModel.domizeHTML.location = "";
          exactExtensions = model.selectedKeywordCollection.project.domainsExactMatchExtensions;
          hyphenatedExtensions = model.selectedKeywordCollection.project.domainsHyphenatedExtensions;
          §§push();
@@ -24,22 +24,22 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          §§push(500);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 + 64 - 1 + 1 - 43 - 43);
+            §§push(-(-(§§pop() * 57) + 1 + 35));
          }
          §§pop().callDelayed(§§pop(),§§pop());
       }
       
       private final function onComplete(param1:Event) : void
       {
-         viewModel.goDaddyHTML.removeEventListener(Event.COMPLETE,this.onComplete);
-         scraper.htmlLoader = viewModel.goDaddyHTML.htmlLoader;
+         viewModel.domizeHTML.removeEventListener(Event.COMPLETE,this.onComplete);
+         scraper.htmlLoader = viewModel.domizeHTML.htmlLoader;
          callDelayed(this.waitUntilDoneConnecting);
       }
       
       private final function setDomizeUrl() : void
       {
-         viewModel.goDaddyHTML.location = Constants.DOMIZE_URL;
-         viewModel.goDaddyHTML.addEventListener(Event.COMPLETE,this.onComplete);
+         viewModel.domizeHTML.location = Constants.DOMIZE_URL;
+         viewModel.domizeHTML.addEventListener(Event.COMPLETE,this.onComplete);
       }
       
       private final function waitUntilDoneConnecting() : void
@@ -49,9 +49,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
             §§push();
             §§push(this.waitUntilDoneConnecting);
             §§push(250);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(§§pop() * 31 - 1 + 93 - 70 - 72 - 1);
+               §§push(---(§§pop() + 1 - 1) - 23);
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }

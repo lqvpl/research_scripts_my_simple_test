@@ -23,7 +23,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          §§push(500);
          if(_loc1_)
          {
-            §§push(-(§§pop() - 1 + 1 + 57 + 80));
+            §§push(-(§§pop() * 2) - 21);
          }
          §§pop().callDelayed(§§pop(),§§pop());
       }
@@ -37,7 +37,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          §§push(500);
          if(_loc3_)
          {
-            §§push(-(-(-§§pop() + 4) + 94));
+            §§push((§§pop() + 1) * 60 - 38);
          }
          §§pop().setTimeout(§§pop(),§§pop());
       }
@@ -55,9 +55,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
       {
          §§push(this.extensions.indexOf(param1));
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() - 1 - 21 + 50) + 90) * 6 + 62);
+            §§push(§§pop() - 1 - 98 + 1 - 34);
          }
          return §§pop() >= §§pop();
       }
@@ -66,21 +66,23 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
       {
          this.selectCheckBox("asyoutype",true);
          this.selectCheckBox("rgrsel",false);
+         var _loc1_:* = scraper.getElementById("shownl");
+         var _loc2_:Boolean = this.hasExtension(DomainExtensions.NL);
          this.selectCheckBox("showcomau",this.hasExtension(DomainExtensions.COM_AU));
-         this.selectCheckBox("showcouk",this.hasExtension(DomainExtensions.CO_UK));
-         this.selectCheckBox("showde",this.hasExtension(DomainExtensions.DE));
+         this.selectCheckBox("shownl",this.hasExtension(DomainExtensions.NL));
          this.selectCheckBox("showdk",this.hasExtension(DomainExtensions.DK));
          this.selectCheckBox("showcom",false);
          this.selectCheckBox("showca",false);
          this.selectCheckBox("showco",false);
          this.selectCheckBox("showinfo",false);
          this.selectCheckBox("shownet",false);
-         this.selectCheckBox("shownl",false);
          this.selectCheckBox("showorg",false);
          this.selectCheckBox("showbiz",false);
          this.selectCheckBox("showus",false);
+         this.selectCheckBox("showcouk",false);
          this.selectCheckBox("showmobi",false);
          this.selectCheckBox("showio",false);
+         this.selectCheckBox("showde",false);
          this.selectCheckBox("showtv",false);
          this.selectCheckBox("showto",false);
          this.selectCheckBox("showit",false);

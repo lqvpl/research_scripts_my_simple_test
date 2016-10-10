@@ -1,14 +1,8 @@
 package system.serializers.eden
 {
-   import spark.filters.DropShadowFilter;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.skins.target;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.binding.Binding;
-   
-   use namespace mx_internal;
+   import spark.primitives.Rect;
+   import mx.binding.BindingManager;
+   import spark.components.TextArea;
    
    public final class strings
    {

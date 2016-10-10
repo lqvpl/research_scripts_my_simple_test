@@ -2,34 +2,29 @@ package com.enfluid.ltp.view.components
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import mx.controls.Alert;
+   import flash.utils.ByteArray;
    import com.enfluid.ltp.view.renderers.DomainRenderer;
    import spark.components.Group;
    import mx.core.IFlexModuleFactory;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import mx.rpc.http.HTTPService;
    import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.model.DataModel;
    import spark.events.PopUpEvent;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
    import flash.events.Event;
-   import mx.core.FlexGlobals;
-   import mx.events.FlexEvent;
-   import com.hurlant.crypto.rsa.RSAKey;
-   import com.hurlant.math.BigInteger;
-   import spark.effects.easing.Sine;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
+   import flash.events.MouseEvent;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import mx.binding.BindingManager;
    import spark.layouts.VerticalLayout;
-   import spark.components.Image;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import mx.binding.Binding;
    import mx.events.FlexMouseEvent;
-   import mx.graphics.LinearGradient;
-   import mx.collections.XMLListCollection;
    import com.enfluid.ltp.model.vo.DomainsVO;
    import com.enfluid.ltp.model.vo.DomainExtensionOptions;
-   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import flash.utils.getDefinitionByName;
+   import spark.primitives.Rect;
    import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
@@ -95,17 +90,15 @@ package com.enfluid.ltp.view.components
          },bindings,watchers);
          mx_internal::_bindings = mx_internal::_bindings.concat(bindings);
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
-         this.horizontalPosition = "start";
-         this.verticalPosition = "after";
+         this.horizontalPosition = "before";
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._DomainRendererCallout_Array1_c);
          this.addEventListener("mouseDownOutside",this.___DomainRendererCallout_CustomNoteCallout1_mouseDownOutside);
          this.addEventListener("close",this.___DomainRendererCallout_CustomNoteCallout1_close);
-         this.addEventListener("creationComplete",this.___DomainRendererCallout_CustomNoteCallout1_creationComplete);
          §§push(_loc1_);
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() - 1 + 1 - 82) - 34);
+            §§push(--(§§pop() + 87 + 81));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -150,37 +143,6 @@ package com.enfluid.ltp.view.components
          dispatchEvent(new Event("calloutCloseEvent"));
       }
       
-      private final function setCalloutPostion() : void
-      {
-         if(FlexGlobals.topLevelApplication.height < stage.mouseY + this.height)
-         {
-            §§push(this);
-            §§push(stage.mouseX);
-            §§push(5);
-            if(_loc2_)
-            {
-               §§push(---§§pop());
-            }
-            §§pop().move(§§pop() - §§pop(),stage.mouseY - this.height);
-         }
-         else
-         {
-            §§push(this);
-            §§push(stage.mouseX);
-            §§push(5);
-            if(_loc2_)
-            {
-               §§push(§§pop() * 18 * 64 + 49 - 19 + 112);
-            }
-            §§pop().move(§§pop() - §§pop(),stage.mouseY);
-         }
-      }
-      
-      protected final function callout1_creationCompleteHandler(param1:FlexEvent) : void
-      {
-         this.setCalloutPostion();
-      }
-      
       private final function _DomainRendererCallout_Array1_c() : Array
       {
          var _loc1_:Array = [this._DomainRendererCallout_Group1_i()];
@@ -192,16 +154,16 @@ package com.enfluid.ltp.view.components
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 - 1 - 1) * 90 - 73 - 99) * 39);
+            §§push(§§pop() * 114 * 78 - 18 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(--(§§pop() - 110 - 1 - 1 + 1));
+            §§push(§§pop() - 1 + 71 - 99);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.layout = this._DomainRendererCallout_VerticalLayout1_c();
@@ -222,9 +184,9 @@ package com.enfluid.ltp.view.components
          _loc1_.verticalAlign = "middle";
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() * 1) - 81);
+            §§push(-(§§pop() + 1 - 1));
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -237,7 +199,7 @@ package com.enfluid.ltp.view.components
          §§push(100);
          if(_loc3_)
          {
-            §§push(((§§pop() - 82) * 116 - 1 + 1) * 29 * 107 - 1);
+            §§push((-(§§pop() * 10) + 107) * 25 * 84 + 1 + 82);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "_DomainRendererCallout_DomainRenderer1";
@@ -255,9 +217,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:DomainRenderer = new DomainRenderer();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() - 1 - 1 + 1) + 1);
+            §§push((§§pop() - 71) * 108 + 1 + 97);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "_DomainRendererCallout_DomainRenderer2";
@@ -280,19 +242,14 @@ package com.enfluid.ltp.view.components
          this.calloutCloseHandler(param1);
       }
       
-      public final function ___DomainRendererCallout_CustomNoteCallout1_creationComplete(param1:FlexEvent) : void
-      {
-         this.callout1_creationCompleteHandler(param1);
-      }
-      
       private final function _DomainRendererCallout_bindingsSetup() : Array
       {
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 39 - 1);
+            §§push((§§pop() - 46 - 103) * 106);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainsVO
          {
@@ -302,7 +259,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() * 87 + 1 - 0);
+            §§push(-(§§pop() * 14) + 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {
@@ -312,7 +269,7 @@ package com.enfluid.ltp.view.components
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() + 23 + 1) * 102 + 1 - 112);
+            §§push((--§§pop() * 74 - 87) * 72 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainsVO
          {
@@ -322,7 +279,7 @@ package com.enfluid.ltp.view.components
          §§push(3);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1 - 33) * 37 - 22 + 1));
+            §§push(§§pop() + 22 - 92 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {

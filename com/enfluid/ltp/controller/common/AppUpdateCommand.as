@@ -1,14 +1,22 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import flash.utils.setTimeout;
+   import flash.system.Capabilities;
    import air.update.ApplicationUpdaterUI;
-   import com.hurlant.math.BigInteger;
-   import flash.errors.IllegalOperationError;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchSiteAgeCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.CalcAllMajesticCompetitorAverage;
+   import com.enfluid.ltp.controller.competitoranalysis.CalcAllCompetitorAnalysisAverages;
+   import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchPageRankCommand;
    import com.enfluid.ltp.model.constants.Constants;
    import air.update.events.UpdateEvent;
    import com.adobe.protocols.dict.events.ErrorEvent;
+   import mx.graphics.SolidColor;
    import mx.controls.Alert;
+   import mx.controls.Spacer;
    
    public final class AppUpdateCommand extends Command implements IPhotonCommand
    {
@@ -43,14 +51,14 @@ package com.enfluid.ltp.controller.common
          §§push(130);
          if(_loc3_)
          {
-            §§push(§§pop() - 90 - 54 - 1 + 1 + 8 - 1);
+            §§push(-(§§pop() - 1 - 1 + 1) * 110 + 1);
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 78 + 1) * 27 * 26 - 1 - 1 - 14);
+            §§push((§§pop() + 38 - 1) * 92);
          }
          §§pop().buttonHeight = §§pop();
          Alert.show(param1.toString());

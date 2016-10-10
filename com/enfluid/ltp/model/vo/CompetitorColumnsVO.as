@@ -4,14 +4,24 @@ package com.enfluid.ltp.model.vo
    import spark.components.gridClasses.GridColumn;
    import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
+   import com.enfluid.ltp.util.Scraper;
+   import mx.rpc.http.HTTPService;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.renderers.headers.target;
+   import mx.binding.Binding;
    import flash.events.Event;
-   import com.enfluid.ltp.util.KeywordUtil;
-   import mx.graphics.SolidColor;
+   import spark.components.Image;
    import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
-   import spark.layouts.HorizontalLayout;
+   import com.hurlant.math.BigInteger;
+   import system.data.Collection;
+   import system.data.Iterator;
+   import spark.components.Label;
+   import mx.effects.Sequence;
+   
+   use namespace mx_internal;
    
    public final class CompetitorColumnsVO implements IEventDispatcher
    {

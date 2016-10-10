@@ -7,18 +7,19 @@ package com.enfluid.ltp.controller.licensing
    import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
    import com.enfluid.ltp.util.Util;
    import com.enfluid.ltp.util.Logger;
-   import flash.events.MouseEvent;
+   import mx.events.FlexMouseEvent;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
    import mx.controls.Alert;
    import com.enfluid.ltp.controller.ranktracker.SuspendSRTAccountCommand;
-   import spark.layouts.HorizontalLayout;
-   import mx.core.mx_internal;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.constants.DomainStatuses;
    import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass2;
-   import mx.binding.BindingManager;
-   import flash.net.URLRequest;
-   import com.enfluid.ltp.model.constants.Constants;
-   
-   use namespace mx_internal;
+   import com.enfluid.ltp.view.renderers.headers.SelectColumnsHeaderRendererInnerClass0;
+   import mx.collections.IList;
+   import spark.components.gridClasses.GridColumn;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.CoustomComboBoxButtonSkin;
    
    public final class VerifyPlatinumSubscriptionCommand extends Command implements IPhotonCommand, IResponder
    {
@@ -38,10 +39,10 @@ package com.enfluid.ltp.controller.licensing
          §§push("67-27");
          §§push("77-27");
          §§push(§_e_-----_§);
-         §§push(-1820302801);
+         §§push(-1820302797);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 18) + 111) + 24 + 1);
+            §§push(-(§§pop() - 1 - 59 - 90 - 114));
          }
          §§push();
          §§push("197");
@@ -49,10 +50,10 @@ package com.enfluid.ltp.controller.licensing
          §§push("397");
          §§push("947");
          §§push(§_e_-----_§);
-         §§push(-1820302808);
+         §§push(-1820302799);
          if(_loc1_)
          {
-            §§push(((§§pop() - 1 - 1) * 69 * 85 * 67 - 70) * 33);
+            §§push(§§pop() * 36 + 1 - 1);
          }
       }
       
@@ -80,7 +81,7 @@ package com.enfluid.ltp.controller.licensing
          viewModel.startupText = "Determining Version...";
          if(!this.userEmail && !model.userEmail)
          {
-            model.isPlatinum = true;
+            model.isPlatinum = false;
             new SaveRegistrationStatusCommand().execute();
             this.done();
             return;
@@ -90,23 +91,23 @@ package com.enfluid.ltp.controller.licensing
          var _loc1_:String = CLICKBANK_URL;
          §§push();
          §§push(2015);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() + 32 + 63));
+            §§push(-(§§pop() * 90 + 83 + 89 - 37 - 79));
          }
          §§push(0);
          §§push(15);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((§§pop() + 1) * 109 * 59 - 1 + 2);
+            §§push(§§pop() - 1 - 1 - 1 + 1 + 1 - 69);
          }
          var _loc2_:Date = new §§pop().Date(§§pop(),§§pop(),§§pop());
          §§push(_loc2_);
          §§push(_loc2_.date);
          §§push(32);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(((§§pop() - 64) * 41 + 1 - 4 + 43) * 24);
+            §§push(§§pop() * 48 - 1 - 1 + 1);
          }
          §§pop().date = §§pop() - §§pop();
          _loc1_ = _loc1_ + ("?" + "email=" + (this.userEmail || model.userEmail) + "&endDate=" + Util.formatDate(new Date()) + "&startDate=" + Util.formatDate(_loc2_));
@@ -127,19 +128,19 @@ package com.enfluid.ltp.controller.licensing
          §§push(0);
          if(_loc11_)
          {
-            §§push(-(§§pop() * 84) + 28 - 1 - 59 + 1);
+            §§push(-§§pop() - 1 + 41 - 1 + 1 + 1 + 1);
          }
          var _loc5_:* = §§pop();
          §§push(0);
-         if(_loc12_)
+         if(_loc11_)
          {
-            §§push(§§pop() - 55 + 1 - 1 + 1 - 118 + 1);
+            §§push(-(§§pop() - 113 - 1) * 106 - 56 - 95);
          }
          var _loc6_:* = §§pop();
          §§push(0);
-         if(_loc12_)
+         if(_loc11_)
          {
-            §§push(§§pop() + 74 + 32 - 1);
+            §§push(§§pop() - 50 - 23 - 1 + 1 + 107 + 1 + 1);
          }
          var _loc7_:* = §§pop();
          var _loc8_:Date = null;
@@ -147,7 +148,7 @@ package com.enfluid.ltp.controller.licensing
          §§push(0);
          if(_loc12_)
          {
-            §§push((§§pop() - 1) * 74 * 93 - 1);
+            §§push(-(§§pop() + 1 + 0 - 52 - 77) * 16 + 10);
          }
          var _loc10_:* = §§pop();
          if(param1.status != "CANCELED")
@@ -171,7 +172,7 @@ package com.enfluid.ltp.controller.licensing
                         §§push(0);
                         if(_loc11_)
                         {
-                           §§push(-(§§pop() + 1) * 68 - 1 + 20 + 1);
+                           §§push((§§pop() - 1 + 107 - 1 - 1 - 1) * 70);
                         }
                         _loc3_ = §§pop()[§§pop()];
                         _loc4_ = _loc3_.split("-");
@@ -180,15 +181,15 @@ package com.enfluid.ltp.controller.licensing
                         §§push(0);
                         if(_loc11_)
                         {
-                           §§push(((§§pop() - 24) * 106 + 5 + 69 + 59 + 118) * 35);
+                           §§push((-((§§pop() - 106) * 92 + 15) + 7) * 8);
                         }
                         _loc5_ = int(§§pop().int(§§pop()[§§pop()]));
                         §§push();
                         §§push(_loc4_);
                         §§push(1);
-                        if(_loc12_)
+                        if(_loc11_)
                         {
-                           §§push((§§pop() + 97) * 31 - 119 + 1);
+                           §§push(((§§pop() - 1 + 17) * 95 - 1) * 6 * 74 - 1);
                         }
                         _loc6_ = int(§§pop().int(§§pop()[§§pop()]) - 1);
                         §§push();
@@ -196,35 +197,35 @@ package com.enfluid.ltp.controller.licensing
                         §§push(2);
                         if(_loc12_)
                         {
-                           §§push(-(§§pop() - 78) + 1);
+                           §§push(-(§§pop() - 1 + 1));
                         }
                         _loc7_ = int(§§pop().int(§§pop()[§§pop()]));
                         _loc8_ = new Date(_loc5_,_loc6_,_loc7_);
                         _loc9_ = new Date();
                         §§push(_loc9_.time - _loc8_.time);
                         §§push(1000);
-                        if(_loc12_)
+                        if(_loc11_)
                         {
-                           §§push((-(§§pop() * 45) - 1 + 1) * 39 - 42 - 30);
+                           §§push((§§pop() - 89 - 96) * 25 - 94 - 85);
                         }
                         §§push(§§pop() * 60);
                         §§push(60);
                         if(_loc12_)
                         {
-                           §§push(-(-(§§pop() + 45) - 1) - 15);
+                           §§push(-((§§pop() - 104 - 1) * 29 * 83) - 49 + 4);
                         }
                         §§push(§§pop() * §§pop());
                         §§push(24);
                         if(_loc11_)
                         {
-                           §§push(§§pop() + 1 - 106 - 1);
+                           §§push(-(§§pop() * 25 - 1) + 1 + 1 - 66);
                         }
                         _loc10_ = int(§§pop() / (§§pop() * §§pop()));
                         §§push(_loc10_);
                         §§push(32);
-                        if(_loc11_)
+                        if(_loc12_)
                         {
-                           §§push(-(-(§§pop() * 78) - 1 + 1));
+                           §§push(((§§pop() + 104) * 113 - 13) * 17 + 33);
                         }
                         if(§§pop() <= §§pop())
                         {
@@ -238,7 +239,7 @@ package com.enfluid.ltp.controller.licensing
                }
             }
          }
-         return true;
+         return false;
       }
       
       public final function refundExistsForReceipt(param1:String, param2:Array) : Boolean
@@ -251,7 +252,7 @@ package com.enfluid.ltp.controller.licensing
          §§push(0);
          if(_loc6_)
          {
-            §§push((§§pop() - 1 - 21) * 102);
+            §§push(§§pop() + 1 - 1 - 1 + 1 - 61);
          }
          for each(_loc3_ in param2)
          {
@@ -289,7 +290,7 @@ package com.enfluid.ltp.controller.licensing
          §§push(0);
          if(_loc9_)
          {
-            §§push(-(((§§pop() - 73 + 99) * 91 - 1) * 13));
+            §§push((-§§pop() - 1 + 33 - 1 + 89) * 17 - 47);
          }
          for each(_loc6_ in _loc5_)
          {
@@ -312,27 +313,27 @@ package com.enfluid.ltp.controller.licensing
             Alert.okLabel = "OK";
             §§push(Alert);
             §§push(130);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(-((§§pop() + 1) * 56 + 98 - 1 - 1 + 1));
+               §§push(-((§§pop() + 1 + 114) * 50));
             }
             §§pop().buttonWidth = §§pop();
             §§push(Alert);
             §§push(30);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(§§pop() - 94 + 62 - 1);
+               §§push(-((§§pop() * 118 + 25) * 80 + 37 - 1));
             }
             §§pop().buttonHeight = §§pop();
             if(model.isPlatinum)
             {
                Alert.show("It looks like your Platinum subscription has expired or your Platinum trial period has ended.  To continue using Long Tail Platinum, please subscribe at www.longtailpro.com.");
-               model.isPlatinum = true;
+               model.isPlatinum = false;
                new SuspendSRTAccountCommand().execute();
             }
             else if(this.receiptNo)
             {
-               viewModel.showUpgradeToPlatinumPopup = false;
+               viewModel.showUpgradeToPlatinumPopup = true;
                Alert.show("The email/receipt number combination you provided is not valid... Please try again.");
             }
          }
@@ -349,9 +350,9 @@ package com.enfluid.ltp.controller.licensing
       {
          var _loc2_:String = null;
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(-§§pop() * 29) + 1 + 62);
+            §§push((-§§pop() - 41) * 36 * 35 + 1 + 1);
          }
          for each(_loc2_ in PLATINUM_LIFETIME_IDS)
          {
@@ -360,7 +361,7 @@ package com.enfluid.ltp.controller.licensing
                return true;
             }
          }
-         return true;
+         return false;
       }
       
       private final function isPlatinumOrder(param1:String) : Boolean
@@ -369,7 +370,7 @@ package com.enfluid.ltp.controller.licensing
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(§§pop() - 12 + 62 - 1) + 1 - 4);
+            §§push(§§pop() + 59 - 1 + 1);
          }
          for each(_loc2_ in PLATINUM_MONTHLY_IDS)
          {
@@ -382,7 +383,7 @@ package com.enfluid.ltp.controller.licensing
          {
             return true;
          }
-         return true;
+         return false;
       }
    }
 }

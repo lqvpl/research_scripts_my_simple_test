@@ -3,62 +3,76 @@ package com.enfluid.ltp.view.popups
    import spark.components.TitleWindow;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.hurlant.crypto.symmetric.ICipher;
+   import flash.utils.ByteArray;
+   import com.hurlant.crypto.symmetric.IPad;
+   import com.hurlant.crypto.symmetric.IVMode;
+   import com.hurlant.crypto.symmetric.SimpleIVMode;
+   import com.hurlant.crypto.symmetric.AESKey;
+   import com.hurlant.crypto.symmetric.BlowFishKey;
+   import com.hurlant.crypto.symmetric.DESKey;
+   import com.hurlant.crypto.symmetric.TripleDESKey;
+   import com.hurlant.crypto.symmetric.XTeaKey;
+   import com.hurlant.crypto.prng.ARC4;
+   import spark.components.Label;
    import spark.components.FormHeading;
-   import com.enfluid.ltp.view.components.Link;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
-   import mx.collections.ArrayCollection;
-   import com.hurlant.math.BigInteger;
+   import system.Version;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
+   import flash.net.SharedObject;
    import mx.managers.PopUpManager;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
-   import mx.graphics.SolidColorStroke;
+   import com.enfluid.ltp.util.Logger;
    import com.enfluid.ltp.util.KeywordUtil;
-   import com.enfluid.ltp.controller.licensing.ActivateDKLicenseCommand;
    import com.enfluid.ltp.controller.licensing.ValidateSharifyLicenseCommand;
-   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.view.components.FilterGridColumn;
+   import mx.binding.BindingManager;
    import it.sharify.SharifyStatus;
+   import info.noirbizarre.airorm.utils.capitalize;
+   import com.enfluid.ltp.controller.licensing.ValidateUserInternalTrialCommand;
+   import com.enfluid.ltp.view.renderers.CalculatableValueGroup;
    import spark.layouts.VerticalLayout;
-   import spark.components.HGroup;
-   import com.enfluid.ltp.view.components.SelfAdjustingLabel;
+   import flash.events.Event;
+   import com.adobe.protocols.dict.events.ErrorEvent;
    import spark.components.Button;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.KeywordColumnRenderer;
-   import mx.binding.Binding;
+   import mx.effects.Parallel;
    import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
    import flash.events.MouseEvent;
    import flash.net.navigateToURL;
    import flash.net.URLRequest;
    import com.enfluid.ltp.model.constants.Constants;
    import spark.components.Form;
-   import mx.core.DeferredInstanceFromFunction;
-   import com.enfluid.ltp.view.renderers.ProjectDropDownItemRenderer;
-   import spark.components.FormItem;
-   import com.dk.license.LicenceAppID;
-   import flash.utils.ByteArray;
-   import mx.events.FlexEvent;
-   import com.enfluid.ltp.util.ProgressBarUtil;
-   import flash.events.Event;
-   import spark.effects.Resize;
-   import com.hurlant.crypto.symmetric.ISymmetricKey;
-   import com.hurlant.crypto.symmetric.IPad;
-   import com.hurlant.crypto.symmetric.PKCS5;
-   import com.enfluid.ltp.model.constants.Values;
-   import com.photon.controller.PhotonCommand;
-   import spark.components.Label;
    import spark.primitives.Rect;
-   import mx.collections.IList;
-   import spark.components.gridClasses.GridColumn;
+   import mx.core.DeferredInstanceFromFunction;
+   import spark.filters.DropShadowFilter;
+   import mx.binding.Binding;
+   import spark.components.FormItem;
+   import spark.events.GridSelectionEvent;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.Group;
+   import spark.components.HGroup;
+   import system.serializers.§eden:release§.debug;
+   import system.text.parser.GenericParser;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.EmptyTrashCommand;
+   import mx.events.FlexEvent;
+   import spark.components.NumericStepper;
+   import spark.primitives.Line;
+   import com.enfluid.ltp.model.vo.RTDomain;
+   import com.enfluid.ltp.model.vo.ProxyVO;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import com.enfluid.ltp.controller.rankchecker.DeleteRankCheckRecordCommand;
+   import com.enfluid.ltp.model.vo.RankCheckItemVO;
+   import system.data.Iterator;
+   import spark.components.Scroller;
+   import flash.filesystem.File;
+   import mx.core.mx_internal;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.CSSCondition;
    import mx.styles.CSSSelector;
    import mx.events.PropertyChangeEvent;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import com.enfluid.ltp.view.GenerateKeywordsCallout;
+   import mx.controls.HRule;
+   import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
    
@@ -68,9 +82,9 @@ package com.enfluid.ltp.view.popups
       private static var _watcherSetupUtil:IWatcherSetupUtil2;
        
       
-      public var _LicensePopup_FormHeading1:FormHeading;
+      public var _LicensePopup_Label1:Label;
       
-      public var _LicensePopup_Link1:Link;
+      private var _1877141797mainFormHeading:FormHeading;
       
       private var _1350627801tiEmail:TextInput;
       
@@ -84,6 +98,10 @@ package com.enfluid.ltp.view.popups
       
       private var _2058190590isError:Boolean = false;
       
+      private var _1012292027showTrialOptions:Boolean = true;
+      
+      private var userDataSO:SharedObject;
+      
       mx_internal var _LicensePopup_StylesInit_done:Boolean = false;
       
       mx_internal var _bindings:Array;
@@ -96,7 +114,7 @@ package com.enfluid.ltp.view.popups
       
       public function LicensePopup()
       {
-         var com.enfluid.ltp.view.popups.target:Object = null;
+         var target:Object = null;
          var watcherSetupUtilClass:Object = null;
          this._104069929model = DataModel.instance;
          this._1589792892viewModel = ViewModel.instance;
@@ -108,7 +126,7 @@ package com.enfluid.ltp.view.popups
          mx_internal::_document = this;
          var bindings:Array = this._LicensePopup_bindingsSetup();
          var watchers:Array = [];
-         com.enfluid.ltp.view.popups.target = this;
+         target = this;
          if(_watcherSetupUtil == null)
          {
             watcherSetupUtilClass = getDefinitionByName("_com_enfluid_ltp_view_popups_LicensePopupWatcherSetupUtil");
@@ -127,14 +145,14 @@ package com.enfluid.ltp.view.popups
          §§push(650);
          if(_loc4_)
          {
-            §§push(-(((§§pop() + 1) * 21 + 1) * 29));
+            §§push((§§pop() + 1) * 109 - 1 - 1 - 1 - 0 - 50);
          }
          §§pop().width = §§pop();
          §§push(this);
          §§push(400);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(-§§pop() + 1));
+            §§push((§§pop() - 1 - 1) * 55);
          }
          §§pop().height = §§pop();
          this.styleName = "myStyle";
@@ -146,7 +164,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() - 1 - 1 - 100 - 40 - 34));
+            §§push((§§pop() - 41 + 1 + 89 - 1) * 84);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -180,14 +198,22 @@ package com.enfluid.ltp.view.popups
       private final function onShow() : void
       {
          PopUpManager.centerPopUp(this);
+         this.userDataSO = SharedObject.getLocal("userDataCalq");
+         this.closeButton.visible = false;
+         if(this.userDataSO.data.activateInternalTrial != undefined && this.userDataSO.data.activateInternalTrial)
+         {
+            this.showTrialOptions = false;
+            this.closeButton.visible = true;
+         }
          §§push(this.model.trialDaysRemaining);
          §§push(0);
          if(_loc1_)
          {
-            §§push((§§pop() + 41 + 1) * 63);
+            §§push((§§pop() * 119 - 1 - 1) * 84);
          }
          if(§§pop() == §§pop())
          {
+            this.showTrialOptions = false;
             this.closeButton.visible = false;
          }
       }
@@ -195,20 +221,18 @@ package com.enfluid.ltp.view.popups
       private final function validateLicence() : void
       {
          this.tiLicenseKey.text = KeywordUtil.stripBeginningAndEndingSpaces(this.tiLicenseKey.text);
-         §§push(this.tiLicenseKey.text.toLocaleLowerCase().indexOf("ltpv3-"));
+         §§push(this.tiLicenseKey.text.length);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 1);
+            §§push(§§pop() + 95 - 1 + 53);
          }
          if(§§pop() == §§pop())
          {
-            new ActivateDKLicenseCommand(this.tiEmail.text,this.tiLicenseKey.text).execute();
+            this.validateFreeTrial();
+            return;
          }
-         else
-         {
-            new ValidateSharifyLicenseCommand(this.tiEmail.text,this.tiLicenseKey.text).execute();
-         }
+         new ValidateSharifyLicenseCommand(this.tiEmail.text,this.tiLicenseKey.text).execute();
       }
       
       private final function calcMessage(param1:int) : String
@@ -218,7 +242,7 @@ package com.enfluid.ltp.view.popups
             §§push(0);
             if(_loc3_)
             {
-               §§push(-((-§§pop() + 1 - 89) * 57) + 1);
+               §§push((§§pop() + 1 + 1) * 118 - 77);
             }
          }
          else if(SharifyStatus.STATUS_ERROR_REGISTRATION_REVOKED === _loc2_)
@@ -226,7 +250,7 @@ package com.enfluid.ltp.view.popups
             §§push(1);
             if(_loc4_)
             {
-               §§push((§§pop() - 1 + 1 + 1) * 43 - 51 - 26 - 44);
+               §§push(§§pop() * 61 * 2 * 10 + 1);
             }
          }
          else if(SharifyStatus.STATUS_ERROR_ALREADY_REGISTERED === _loc2_)
@@ -234,7 +258,7 @@ package com.enfluid.ltp.view.popups
             §§push(2);
             if(_loc3_)
             {
-               §§push(--(§§pop() + 1 - 107 - 1));
+               §§push(-§§pop() + 108 + 1 + 1 - 100);
             }
          }
          else if(SharifyStatus.STATUS_SERVER_UNAVAILABLE === _loc2_)
@@ -242,15 +266,31 @@ package com.enfluid.ltp.view.popups
             §§push(3);
             if(_loc3_)
             {
-               §§push(-(§§pop() + 12) + 81 + 10 - 66 - 22);
+               §§push(-(§§pop() + 76) - 1);
             }
          }
          else
          {
-            §§push(4);
+            §§push(1001);
             if(_loc3_)
             {
-               §§push(-(-§§pop() + 70 + 6 - 83 + 97 + 110));
+               §§push(§§pop() + 115 - 1 + 1 + 1);
+            }
+            if(§§pop() === _loc2_)
+            {
+               §§push(4);
+               if(_loc4_)
+               {
+                  §§push(-(§§pop() * 24) + 1 - 95 + 1);
+               }
+            }
+            else
+            {
+               §§push(5);
+               if(_loc3_)
+               {
+                  §§push(-(§§pop() + 34) + 85 - 1);
+               }
             }
          }
          switch(§§pop())
@@ -267,10 +307,46 @@ package com.enfluid.ltp.view.popups
             case 3:
                this.isError = true;
                return "The License servers could not be reached. Please try again.  If you are still unable to register your software after 24 hours, please contact support@longtailpro.com";
+            case 4:
+               this.isError = true;
+               return "The email is not valid, Please try again.";
             default:
                this.isError = false;
-               return "Please enter your Email and License Key";
+               return "If you received a license key in your activation email, \nplease enter your email and license key below.";
          }
+      }
+      
+      private final function validateFreeTrial() : void
+      {
+         var _loc1_:RegExp = /([a-z0-9._-]+?)@([a-z0-9.-]+)\.([a-z]{2,4})/;
+         var _loc2_:String = KeywordUtil.stripSpaces(this.tiEmail.text);
+         if(_loc1_.test(_loc2_))
+         {
+            this.saveTrialData(_loc2_);
+         }
+         else
+         {
+            this.showTrialError();
+         }
+      }
+      
+      private final function saveTrialData(param1:String) : void
+      {
+         this.viewModel.showLicensePopup = false;
+         new ValidateUserInternalTrialCommand(param1).execute();
+      }
+      
+      private final function showTrialError() : void
+      {
+         §§push(this.model);
+         §§push(1001);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 111 - 1 + 1 + 1 - 24 + 1);
+         }
+         §§pop().licenseStatus = §§pop();
+         this.model.isSharifyRegistered = false;
+         this.viewModel.showLicensePopup = true;
       }
       
       private final function _LicensePopup_VerticalLayout1_c() : VerticalLayout
@@ -279,30 +355,30 @@ package com.enfluid.ltp.view.popups
          _loc1_.horizontalAlign = "center";
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 10 - 53 + 1) * 82);
+            §§push((§§pop() - 1 - 86) * 34);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-(-((§§pop() - 1) * 112) - 1 + 14));
+            §§push(-(§§pop() + 9 - 1 - 1) + 107 + 35);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 63 + 1 + 27);
+            §§push(-(§§pop() + 1 - 1 - 1) + 1 + 1);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(20);
          if(_loc3_)
          {
-            §§push((-§§pop() + 1 + 1) * 30);
+            §§push(-((§§pop() - 1 - 68 - 10) * 52 * 34));
          }
          §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -310,7 +386,7 @@ package com.enfluid.ltp.view.popups
          §§push(15);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 1 - 28 - 85 - 1 - 46));
+            §§push(§§pop() + 1 - 103 - 1 - 29);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -318,20 +394,20 @@ package com.enfluid.ltp.view.popups
       
       private final function _LicensePopup_Array1_c() : Array
       {
-         var _loc1_:Array = [this._LicensePopup_Button1_c(),this._LicensePopup_Form1_c(),this._LicensePopup_Button2_c(),this._LicensePopup_Link1_i()];
+         var _loc1_:Array = [this._LicensePopup_Button1_c(),this._LicensePopup_Form1_c(),this._LicensePopup_Button2_c()];
          return _loc1_;
       }
       
       private final function _LicensePopup_Button1_c() : Button
       {
          var _loc1_:Button = new Button();
-         _loc1_.label = "Click Here to Purchase a License";
+         _loc1_.label = "Click Here to Purchase";
          §§push(_loc1_);
          §§push("fontSize");
          §§push(22);
          if(_loc2_)
          {
-            §§push((§§pop() + 1) * 8 - 1);
+            §§push((§§pop() + 1) * 115 * 55);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -356,7 +432,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push((§§pop() - 79 - 54 + 1) * 15);
+            §§push((§§pop() - 1 + 1) * 66);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.mxmlContentFactory = new DeferredInstanceFromFunction(this._LicensePopup_Array2_c);
@@ -369,7 +445,7 @@ package com.enfluid.ltp.view.popups
       
       private final function _LicensePopup_Array2_c() : Array
       {
-         var _loc1_:Array = [this._LicensePopup_FormHeading1_i(),this._LicensePopup_FormItem1_c(),this._LicensePopup_FormItem2_c()];
+         var _loc1_:Array = [this._LicensePopup_FormHeading1_i(),this._LicensePopup_Label1_i(),this._LicensePopup_FormItem1_c(),this._LicensePopup_FormItem2_c()];
          return _loc1_;
       }
       
@@ -380,7 +456,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 27) + 1 + 1 + 16 + 1);
+            §§push(§§pop() - 1 + 77 - 69 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
@@ -388,17 +464,48 @@ package com.enfluid.ltp.view.popups
          §§push(20);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 46 - 48);
+            §§push((§§pop() - 6) * 81 + 66 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","center");
-         _loc1_.id = "_LicensePopup_FormHeading1";
+         _loc1_.id = "mainFormHeading";
          if(!_loc1_.document)
          {
             _loc1_.document = this;
          }
-         this._LicensePopup_FormHeading1 = _loc1_;
-         BindingManager.executeBindings(this,"_LicensePopup_FormHeading1",this._LicensePopup_FormHeading1);
+         this.mainFormHeading = _loc1_;
+         BindingManager.executeBindings(this,"mainFormHeading",this.mainFormHeading);
+         return _loc1_;
+      }
+      
+      private final function _LicensePopup_Label1_i() : Label
+      {
+         var _loc1_:Label = new Label();
+         _loc1_.text = "Otherwise, please enter your email.";
+         §§push(_loc1_);
+         §§push(100);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 1 + 6 - 108 - 41));
+         }
+         §§pop().percentWidth = §§pop();
+         _loc1_.setStyle("textAlign","center");
+         _loc1_.setStyle("fontWeight","bold");
+         §§push(_loc1_);
+         §§push("fontSize");
+         §§push(14);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() + 93 - 48 - 60) + 1 + 94 - 89);
+         }
+         §§pop().setStyle(§§pop(),§§pop());
+         _loc1_.id = "_LicensePopup_Label1";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this._LicensePopup_Label1 = _loc1_;
+         BindingManager.executeBindings(this,"_LicensePopup_Label1",this._LicensePopup_Label1);
          return _loc1_;
       }
       
@@ -409,7 +516,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push((§§pop() + 98 - 1) * 49 * 49 * 97 * 95);
+            §§push(-((§§pop() - 42 - 87 + 20) * 11) + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.label = "Email :  ";
@@ -419,7 +526,7 @@ package com.enfluid.ltp.view.popups
          §§push(15);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 67 - 1 - 19 + 1));
+            §§push(-((§§pop() + 60) * 18 + 1 - 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -443,7 +550,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc2_)
          {
-            §§push(§§pop() * 111 - 1 + 57 - 105);
+            §§push((§§pop() + 1 + 109 - 51) * 78 - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "";
@@ -452,7 +559,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 22 * 50 - 40 - 1) - 1);
+            §§push((§§pop() - 114 + 23 - 1) * 33 * 37);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","start");
@@ -480,7 +587,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 - 71) + 83);
+            §§push((§§pop() + 1 - 1) * 117 - 1 - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.label = "License :  ";
@@ -490,7 +597,7 @@ package com.enfluid.ltp.view.popups
          §§push(15);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 36) * 31);
+            §§push(§§pop() + 1 + 1 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","right");
@@ -514,16 +621,16 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 30 + 110 + 1) * 59 + 71));
+            §§push(-(§§pop() + 1) - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "";
          §§push(_loc1_);
          §§push("color");
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 50) + 39 + 43 + 114 - 117);
+            §§push(-(§§pop() * 91) + 98 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","start");
@@ -550,24 +657,24 @@ package com.enfluid.ltp.view.popups
          §§push(400);
          if(_loc3_)
          {
-            §§push((§§pop() - 1 + 105) * 50 - 1 + 1 + 1);
+            §§push(-(-§§pop() - 1) * 37 - 67 + 12);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
-         §§push(50);
+         §§push(40);
          if(_loc2_)
          {
-            §§push(---(§§pop() + 24 - 1) + 1 - 1);
+            §§push(-(§§pop() - 13) - 1 - 73 + 1 + 110);
          }
          §§pop().height = §§pop();
-         _loc1_.label = "Register";
+         _loc1_.label = "Activate";
          _loc1_.useHandCursor = true;
          §§push(_loc1_);
          §§push("color");
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 + 47);
+            §§push(-(§§pop() + 18 + 1 - 34 - 1 + 1 + 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -575,15 +682,15 @@ package com.enfluid.ltp.view.popups
          §§push(8);
          if(_loc3_)
          {
-            §§push((§§pop() + 14 - 110 - 1 - 65) * 86);
+            §§push(-(((§§pop() - 1) * 23 - 106) * 15));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
-         §§push(35);
+         §§push(30);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 4) * 2 - 116 - 1 - 1);
+            §§push(((§§pop() - 68 - 1 - 1) * 112 - 1 - 1) * 71);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -599,26 +706,6 @@ package com.enfluid.ltp.view.popups
       public final function ___LicensePopup_Button2_click(param1:MouseEvent) : void
       {
          this.validateLicence();
-      }
-      
-      private final function _LicensePopup_Link1_i() : Link
-      {
-         var _loc1_:Link = new Link();
-         _loc1_.text = "register later";
-         _loc1_.addEventListener("click",this.___LicensePopup_Link1_click);
-         _loc1_.id = "_LicensePopup_Link1";
-         if(!_loc1_.document)
-         {
-            _loc1_.document = this;
-         }
-         this._LicensePopup_Link1 = _loc1_;
-         BindingManager.executeBindings(this,"_LicensePopup_Link1",this._LicensePopup_Link1);
-         return _loc1_;
-      }
-      
-      public final function ___LicensePopup_Link1_click(param1:MouseEvent) : void
-      {
-         this.viewModel.showLicensePopup = false;
       }
       
       public final function ___LicensePopup_TitleWindow1_show(param1:FlexEvent) : void
@@ -638,33 +725,33 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 + 73 + 36 - 112));
+            §§push(---§§pop() + 1 - 55 - 63);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
             §§push(model.trialDaysRemaining);
             §§push(0);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push((-(§§pop() + 1) + 75 - 1 + 1) * 59);
+               §§push((-§§pop() - 1) * 55 + 101 - 92);
             }
-            var _loc1_:* = §§pop() == §§pop()?"Trial Expired":"Register Long Tail Pro - " + model.trialDaysRemaining + " days remaining in trial";
+            var _loc1_:* = §§pop() == §§pop()?"Trial Expired":"Activate Long Tail Platinum";
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"this.title");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 107 - 1) * 15);
+            §§push((-§§pop() * 5 - 1) * 41 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {
             if(isError)
             {
                §§push(16711680);
-               if(_loc2_)
+               if(_loc1_)
                {
-                  §§push(-(§§pop() + 1 + 73));
+                  §§push(-§§pop() * 22 * 115 * 85);
                }
                §§push(uint(§§pop()));
             }
@@ -673,58 +760,36 @@ package com.enfluid.ltp.view.popups
                §§push(6710886);
                if(_loc1_)
                {
-                  §§push(§§pop() - 106 + 1 + 114);
+                  §§push(---(§§pop() - 4) - 1);
                }
                §§push(uint(§§pop()));
             }
             return §§pop();
          },function(param1:uint):void
          {
-            _LicensePopup_FormHeading1.setStyle("color",param1);
-         },"_LicensePopup_FormHeading1.color");
+            mainFormHeading.setStyle("color",param1);
+         },"mainFormHeading.color");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 91 + 1));
+            §§push(-(§§pop() + 114 + 1) - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
             var _loc1_:* = calcMessage(model.licenseStatus);
             return _loc1_ == undefined?null:String(_loc1_);
-         },null,"_LicensePopup_FormHeading1.label");
+         },null,"mainFormHeading.label");
          §§push(result);
          §§push(3);
-         if(_loc2_)
-         {
-            §§push((§§pop() - 46 - 27 + 103) * 3);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            §§push(model.trialDaysRemaining);
-            §§push(0);
-            if(_loc1_)
-            {
-               §§push((§§pop() + 62 - 66) * 5 - 81);
-            }
-            return §§pop() > §§pop();
-         },null,"_LicensePopup_Link1.includeInLayout");
-         §§push(result);
-         §§push(4);
          if(_loc3_)
          {
-            §§push(§§pop() + 22 - 4 - 1);
+            §§push(-(§§pop() + 4 + 23));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            §§push(model.trialDaysRemaining);
-            §§push(0);
-            if(_loc1_)
-            {
-               §§push(§§pop() - 53 + 1 - 1 - 0 + 112);
-            }
-            return §§pop() > §§pop();
-         },null,"_LicensePopup_Link1.visible");
+            return showTrialOptions;
+         },null,"_LicensePopup_Label1.visible");
          return result;
       }
       
@@ -758,19 +823,38 @@ package com.enfluid.ltp.view.popups
                this.modalTransparency = 0.4;
                §§push(this);
                §§push(15);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push(--(-§§pop() + 1));
+                  §§push((§§pop() + 1) * 23 - 1 + 1 - 1 - 8 + 1);
                }
                §§pop().modalTransparencyBlur = §§pop();
                §§push(this);
                §§push(16777215);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push(--(§§pop() + 1 + 1));
+                  §§push(-(-(§§pop() * 12 * 78) - 114) + 55);
                }
                §§pop().modalTransparencyColor = §§pop();
             };
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get mainFormHeading() : FormHeading
+      {
+         return this._1877141797mainFormHeading;
+      }
+      
+      public function set mainFormHeading(param1:FormHeading) : void
+      {
+         var _loc2_:Object = this._1877141797mainFormHeading;
+         if(_loc2_ !== param1)
+         {
+            this._1877141797mainFormHeading = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"mainFormHeading",_loc2_,param1));
+            }
          }
       }
       
@@ -865,6 +949,25 @@ package com.enfluid.ltp.view.popups
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isError",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      private function get showTrialOptions() : Boolean
+      {
+         return this._1012292027showTrialOptions;
+      }
+      
+      private function set showTrialOptions(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1012292027showTrialOptions;
+         if(_loc2_ !== param1)
+         {
+            this._1012292027showTrialOptions = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showTrialOptions",_loc2_,param1));
             }
          }
       }

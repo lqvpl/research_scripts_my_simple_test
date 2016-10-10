@@ -1,35 +1,19 @@
 package com.enfluid.ltp.util
 {
    import flash.net.URLLoader;
-   import spark.layouts.VerticalLayout;
-   import mx.graphics.SolidColor;
-   import mx.events.FlexEvent;
-   import spark.events.GridEvent;
-   import flash.filesystem.File;
-   import flash.filesystem.FileStream;
-   import flash.filesystem.FileMode;
-   import mx.controls.Alert;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.net.navigateToURL;
-   import flash.net.URLRequest;
-   import com.photon.controller.PhotonCommand;
-   import com.photon.controller.IPhotonCommand;
-   import com.photon.controller.PhotonCommandCompletionEvent;
-   import system.serializers.§eden:release§.debug;
-   import system.Reflection;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
-   import mx.binding.Binding;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane.FlatUIScrollBarDownButton;
+   import spark.components.Group;
+   import spark.components.TextArea;
    import mx.binding.BindingManager;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.EmptyTrashCommand;
+   import mx.core.DPIClassification;
+   import mx.binding.Binding;
+   import spark.filters.DropShadowFilter;
+   import spark.components.Label;
+   import flash.events.Event;
+   import system.data.lists.ArrayList;
+   import mx.events.FlexEvent;
+   import spark.components.gridClasses.GridColumn;
+   import flash.net.URLRequest;
    import flash.net.URLLoaderDataFormat;
-   
-   use namespace mx_internal;
    
    public final class CSV extends URLLoader
    {
@@ -195,9 +179,9 @@ package com.enfluid.ltp.util
             §§push(data);
             §§push(param2);
             §§push(0);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(-(§§pop() - 54 - 1 + 1) + 88);
+               §§push((§§pop() + 1) * 89 + 1 - 19 + 104 - 1);
             }
             §§pop().splice(§§pop(),§§pop(),param1);
          }
@@ -217,22 +201,22 @@ package com.enfluid.ltp.util
          var _loc4_:Array = null;
          var _loc5_:String = null;
          §§push(0);
-         if(_loc12_)
+         if(_loc13_)
          {
-            §§push((-§§pop() - 1 - 76) * 40 - 96 + 104 - 1);
+            §§push(--§§pop() - 44 - 1);
          }
          var _loc6_:* = §§pop();
          §§push(0);
-         if(_loc13_)
+         if(_loc12_)
          {
-            §§push(-(§§pop() + 1 + 1 + 88) - 5);
+            §§push((§§pop() + 12 + 106) * 50 - 1);
          }
          var _loc7_:* = §§pop();
          var _loc3_:Array = new Array();
          §§push(0);
          if(_loc13_)
          {
-            §§push(§§pop() - 109 - 23 - 98 + 1);
+            §§push(-(§§pop() + 56 + 13 + 117 - 99) - 28);
          }
          for each(_loc4_ in data)
          {
@@ -241,7 +225,7 @@ package com.enfluid.ltp.util
                §§push(0);
                if(_loc13_)
                {
-                  §§push(-((§§pop() - 64) * 61 * 81) + 37);
+                  §§push(-(§§pop() - 1 + 1 + 1) + 1 - 1);
                }
                for each(_loc5_ in param1)
                {
@@ -249,7 +233,7 @@ package com.enfluid.ltp.util
                   §§push(0);
                   if(_loc12_)
                   {
-                     §§push(-(§§pop() * 35) - 1 - 93 + 1 - 1 - 1);
+                     §§push((§§pop() - 58 + 1 - 1 - 1 + 99 + 1) * 84);
                   }
                   if(§§pop() >= §§pop())
                   {
@@ -263,7 +247,7 @@ package com.enfluid.ltp.util
                §§push(0);
                if(_loc12_)
                {
-                  §§push(((§§pop() + 1 + 55) * 24 + 25) * 10 - 95);
+                  §§push(-((§§pop() + 1 - 1 + 44 + 21) * 91));
                }
                if(§§pop() >= §§pop())
                {
@@ -285,9 +269,9 @@ package com.enfluid.ltp.util
                   §§push(_loc3_);
                   §§push(_loc7_);
                   §§push(1);
-                  if(_loc12_)
+                  if(_loc13_)
                   {
-                     §§push(-((§§pop() - 64) * 28 - 110));
+                     §§push(-(§§pop() + 1 - 67));
                   }
                   §§pop().splice(§§pop(),§§pop());
                }
@@ -318,7 +302,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc5_)
          {
-            §§push(-§§pop() + 1 - 34 - 92 - 1 - 113);
+            §§push((§§pop() * 79 - 1) * 4 - 95 + 1 + 1 - 1);
          }
          var _loc2_:uint = §§pop();
          var _loc3_:Array = new Array();
@@ -326,7 +310,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc6_)
          {
-            §§push((((-§§pop() + 1) * 61 - 1) * 41 + 1) * 17);
+            §§push(((§§pop() - 13) * 94 * 110 + 75) * 95);
          }
          var _loc4_:uint = §§pop();
          while(_loc4_ < data.length)
@@ -336,7 +320,7 @@ package com.enfluid.ltp.util
             §§push(2);
             if(_loc5_)
             {
-               §§push(--(§§pop() + 1) * 80 * 55);
+               §§push(§§pop() + 1 - 5 - 91);
             }
             if(!§§pop().Boolean(§§pop() % §§pop()))
             {
@@ -378,9 +362,9 @@ package com.enfluid.ltp.util
          if(this.dataHasValues)
          {
             §§push(0);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(§§pop() - 37 - 66 + 6);
+               §§push((§§pop() - 1 - 1 - 44) * 111 + 33 + 0 + 103);
             }
             for each(_loc2_ in data)
             {
@@ -393,25 +377,25 @@ package com.enfluid.ltp.util
       public final function dump() : String
       {
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(--§§pop() + 42);
+            §§push((-((§§pop() - 46) * 7) - 1) * 75);
          }
          var _loc3_:uint = §§pop();
          var _loc1_:* = "data:Array -> [\r";
          §§push(0);
          if(_loc4_)
          {
-            §§push(--(§§pop() - 1) + 51 + 56 + 95);
+            §§push(§§pop() - 37 + 19 + 1 + 1 + 1);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < data.length)
          {
             _loc1_ = _loc1_ + ("\t[" + _loc2_ + "]:Array -> [\r");
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push((§§pop() * 72 * 81 - 47 - 56 + 1 + 49) * 40);
+               §§push(§§pop() + 1 - 1 - 101 - 1 + 1);
             }
             _loc3_ = §§pop();
             while(_loc3_ < data[_loc2_].length)
@@ -429,9 +413,9 @@ package com.enfluid.ltp.util
       private final function fieldDetection(param1:*, param2:int, param3:Array) : void
       {
          §§push(0);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-((§§pop() * 45 + 1 + 1 - 1 - 1) * 18));
+            §§push((§§pop() + 1 + 1 - 70) * 107);
          }
          var _loc4_:uint = §§pop();
          var _loc5_:Array = new Array();
@@ -439,7 +423,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc8_)
          {
-            §§push((§§pop() + 91 + 1 + 1 + 25) * 89 - 1 + 66);
+            §§push(-((§§pop() + 1 + 54 + 1) * 106 - 1) * 27);
          }
          var _loc7_:uint = §§pop();
          while(_loc7_ < _loc6_.length)
@@ -449,7 +433,7 @@ package com.enfluid.ltp.util
             §§push(2);
             if(_loc9_)
             {
-               §§push(-(-(§§pop() + 1) + 33) + 1);
+               §§push((-(-(§§pop() + 1 + 71) - 1) + 1) * 64);
             }
             if(!§§pop().Boolean(§§pop() % §§pop()))
             {
@@ -468,9 +452,9 @@ package com.enfluid.ltp.util
       private final function sort2DArray(param1:Array, param2:Array) : Number
       {
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-(§§pop() * 85 * 9));
+            §§push(§§pop() - 13 + 27 - 90);
          }
          var _loc3_:* = §§pop();
          if(this.SortSequence == "ASC")
@@ -478,15 +462,15 @@ package com.enfluid.ltp.util
             §§push(-1);
             if(_loc6_)
             {
-               §§push((§§pop() - 1 + 58 - 1 - 1) * 83);
+               §§push((§§pop() + 1) * 103 * 103);
             }
          }
          else
          {
             §§push(1);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(-(-(§§pop() - 68) - 1 + 93) + 1 + 1);
+               §§push(-(((§§pop() + 85) * 39 + 1) * 95) - 1);
             }
          }
          var _loc4_:int = §§pop();
@@ -503,7 +487,7 @@ package com.enfluid.ltp.util
             §§push(0);
             if(_loc5_)
             {
-               §§push((-§§pop() + 86 - 62) * 16 - 1);
+               §§push(-(§§pop() - 1 - 1 + 62) + 76);
             }
             _loc3_ = §§pop();
          }

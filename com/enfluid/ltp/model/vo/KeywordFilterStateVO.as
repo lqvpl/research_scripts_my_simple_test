@@ -1,5 +1,11 @@
 package com.enfluid.ltp.model.vo
 {
+   import mx.graphics.SolidColor;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
+   
    public final class KeywordFilterStateVO
    {
        
@@ -33,6 +39,10 @@ package com.enfluid.ltp.model.vo
       public var meetsAvgKCMinFilter:Boolean = true;
       
       public var meetsAvgKCMaxFilter:Boolean = true;
+      
+      public var meetsAmazonKCMinFilter:Boolean = true;
+      
+      public var meetsAmazonKCMaxFilter:Boolean = true;
       
       public var meetsAdvertiserCompetitionFilter:Boolean = true;
       

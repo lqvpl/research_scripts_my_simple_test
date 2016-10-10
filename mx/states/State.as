@@ -18,8 +18,10 @@ package mx.states
       
       public var name:String;
       
+      [ArrayElementType("mx.states.IOverride")]
       public var overrides:Array;
       
+      [ArrayElementType("String")]
       public var stateGroups:Array;
       
       public function State(param1:Object = null)

@@ -6,27 +6,16 @@ package com.enfluid.ltp.view.skins
    import mx.graphics.GradientEntry;
    import spark.primitives.Rect;
    import mx.core.IFlexModuleFactory;
-   import com.hurlant.crypto.symmetric.ISymmetricKey;
-   import com.hurlant.crypto.symmetric.IPad;
-   import com.hurlant.crypto.symmetric.PKCS5;
-   import flash.events.MouseEvent;
+   import spark.components.Label;
    import mx.binding.BindingManager;
+   import mx.controls.HTML;
    import mx.graphics.SolidColor;
    import mx.graphics.SolidColorStroke;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.model.ViewModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.target;
-   import mx.binding.Binding;
    import mx.graphics.RadialGradient;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
-   import com.enfluid.ltp.view.dataandfilters.NumWordsSection;
    import mx.states.State;
    import mx.states.SetProperty;
-   
-   use namespace mx_internal;
    
    public final class GeneralComboBoxButtonSkin extends SparkSkin implements IStateClient2
    {
@@ -56,16 +45,16 @@ package com.enfluid.ltp.view.skins
          mx_internal::_document = this;
          §§push(this);
          §§push(19);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(-(-((§§pop() - 13) * 5) + 1) + 28));
+            §§push(-(§§pop() * 65 + 32 + 1));
          }
          §§pop().minWidth = §§pop();
          §§push(this);
          §§push(23);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 83 + 1 + 105 + 1);
+            §§push(-((-(-§§pop() + 1 - 17) + 1) * 78));
          }
          §§pop().minHeight = §§pop();
          this.mxmlContent = [this._GeneralComboBoxButtonSkin_Rect1_i(),this._GeneralComboBoxButtonSkin_Rect2_i(),this._GeneralComboBoxButtonSkin_Rect3_i(),this._GeneralComboBoxButtonSkin_Path1_i()];
@@ -96,7 +85,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc1_)
          {
-            §§push(-§§pop() - 1 - 71 + 1);
+            §§push(-(§§pop() - 11 - 27));
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -106,9 +95,9 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() * 9) + 110) + 81 - 66);
+            §§push((§§pop() - 1 + 35 - 1 + 77 - 1) * 47);
          }
          §§pop().states = null;
       }
@@ -147,30 +136,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 51 - 98 - 76 - 114 - 1));
+            §§push(§§pop() * 77 - 1 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 115) + 44) * 105);
+            §§push((§§pop() - 1 - 92 - 1 + 25) * 52 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 67 + 1);
+            §§push((§§pop() * 90 * 16 - 1 - 1 + 1) * 77);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(-§§pop() * 75 + 1 + 6 + 1 - 15));
+            §§push((-(§§pop() + 1) + 1) * 33);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._GeneralComboBoxButtonSkin_SolidColor1_c();
@@ -187,7 +176,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 81) - 45 - 83);
+            §§push((§§pop() + 1) * 104 - 84 - 44);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -200,28 +189,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 84 - 1 - 1 + 0);
+            §§push(-(§§pop() + 29 - 86) * 103 + 1 + 1 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 92 - 1));
+            §§push(-(§§pop() - 20 - 1 + 1) - 46);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() + 61));
+            §§push(§§pop() - 1 - 34 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 67 - 1 - 1);
+            §§push(-(§§pop() - 16 + 1));
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._GeneralComboBoxButtonSkin_SolidColor2_c();
@@ -236,9 +225,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 51 - 49 + 1) * 10);
+            §§push(-§§pop() * 27 + 1 + 1);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -251,28 +240,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(--(§§pop() * 73));
+            §§push(§§pop() - 111 + 1 + 1 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() + 1) * 95 + 1) * 79 + 1);
+            §§push(-(-§§pop() + 23 + 25 - 26) - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 98 + 1 + 1 + 95 - 1);
+            §§push(--(§§pop() + 1 - 66 + 29) - 53 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() * 26 + 101 + 82 - 83) * 44));
+            §§push(-(§§pop() + 1 + 57 - 40 + 1 + 5 - 63));
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._GeneralComboBoxButtonSkin_SolidColorStroke1_c();
@@ -287,16 +276,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColorStroke = new SolidColorStroke();
          §§push(_loc1_);
          §§push(15658734);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 + 1 + 1 - 1 + 1));
+            §§push((§§pop() + 1) * 58 * 33);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 31 - 1 + 112);
+            §§push(-((§§pop() - 1) * 23 * 28 * 66 + 70));
          }
          §§pop().weight = §§pop();
          return _loc1_;
@@ -307,16 +296,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Path = new Path();
          §§push(_loc1_);
          §§push(9);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--§§pop() - 96 - 1);
+            §§push((§§pop() - 34 - 55) * 43 - 74 + 14);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 - 76) + 1 - 54);
+            §§push(-(§§pop() - 1 - 1 + 6));
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.data = "M 0 0 L 15 0 L 8 10 L 0 0";
@@ -332,9 +321,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:RadialGradient = new RadialGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--((§§pop() + 1 + 82 + 117) * 1 - 58));
+            §§push((§§pop() + 115 + 48 - 17 - 63) * 46);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._GeneralComboBoxButtonSkin_GradientEntry1_i(),this._GeneralComboBoxButtonSkin_GradientEntry2_i()];
@@ -348,7 +337,7 @@ package com.enfluid.ltp.view.skins
          §§push(13158600);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 85 + 4 - 1 - 39);
+            §§push(-(§§pop() - 3) * 10);
          }
          §§pop().color = §§pop();
          this.arrowFill1 = _loc1_;
@@ -361,9 +350,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(13158600);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 64 + 1) * 16 + 49);
+            §§push(-(-(§§pop() - 36) + 1 - 1));
          }
          §§pop().color = §§pop();
          this.arrowFill2 = _loc1_;

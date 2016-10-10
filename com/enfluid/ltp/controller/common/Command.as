@@ -1,18 +1,12 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.PhotonCommand;
-   import mx.binding.Binding;
-   import flash.utils.Proxy;
-   import com.enfluid.ltp.assets.AssetsLibrary;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
    import mx.events.PropertyChangeEvent;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.Link;
-   
-   use namespace mx_internal;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import mx.binding.BindingManager;
    
    public class Command extends PhotonCommand
    {

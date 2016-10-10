@@ -11,11 +11,12 @@ package com.enfluid.ltp.view.components
    import mx.core.mx_internal;
    import spark.components.CalloutPosition;
    import flash.geom.Point;
-   import spark.components.Label;
+   import mx.graphics.GradientEntry;
    import mx.binding.BindingManager;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.model.constants.Values;
-   import com.enfluid.ltp.assets.AssetsLibrary;
+   import flash.events.ContextMenuEvent;
+   import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
+   import flash.desktop.Clipboard;
+   import flash.desktop.ClipboardFormats;
    
    use namespace mx_internal;
    
@@ -85,15 +86,15 @@ package com.enfluid.ltp.view.components
          var _loc9_:Number = arrow.getLayoutBoundsWidth();
          var _loc10_:Number = arrow.getLayoutBoundsHeight();
          §§push(0);
-         if(_loc22_)
+         if(_loc21_)
          {
-            §§push(-(§§pop() * 5 - 1) + 57 - 1 - 1 - 79);
+            §§push(-§§pop() - 81 - 1 + 1);
          }
          var _loc11_:Number = §§pop();
          §§push(0);
          if(_loc21_)
          {
-            §§push((§§pop() * 6 - 1) * 104 + 63 - 1 + 1);
+            §§push(-§§pop() * 116 - 1);
          }
          var _loc12_:Number = §§pop();
          var _loc13_:Number = _loc7_ - _loc9_;
@@ -109,7 +110,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc22_)
             {
-               §§push((§§pop() - 56) * 35 + 22 - 64 - 65);
+               §§push(-(§§pop() * 59 * 9 + 108));
             }
             if(§§pop() < §§pop() && _loc18_ < screen.width)
             {
@@ -118,7 +119,7 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc22_)
                {
-                  §§push(-(§§pop() - 113 - 100) + 1 - 61);
+                  §§push(-(--(§§pop() + 1) + 1));
                }
                _loc18_ = §§pop().max(§§pop(),§§pop());
             }
@@ -126,18 +127,18 @@ package com.enfluid.ltp.view.components
             {
                §§push(_loc17_);
                §§push(0);
-               if(_loc22_)
+               if(_loc21_)
                {
-                  §§push(-(§§pop() + 1 + 49));
+                  §§push(-(§§pop() + 1 - 5) - 39 - 1 + 70);
                }
                if(§§pop() >= §§pop() && _loc17_ + _loc18_ >= screen.width)
                {
                   §§push(Math);
                   §§push(screen.width - _loc17_);
                   §§push(0);
-                  if(_loc22_)
+                  if(_loc21_)
                   {
-                     §§push((§§pop() - 1 - 1 + 87 - 1 + 1) * 25 + 33);
+                     §§push((§§pop() + 1 - 0) * 27 + 23 + 1);
                   }
                   _loc18_ = §§pop().max(§§pop(),§§pop());
                }
@@ -149,7 +150,7 @@ package com.enfluid.ltp.view.components
                §§push(2);
                if(_loc22_)
                {
-                  §§push((-§§pop() + 1 + 56) * 38 + 28);
+                  §§push(§§pop() + 1 - 112 - 1 - 56 - 33);
                }
                _loc11_ = §§pop() / §§pop();
             }
@@ -159,14 +160,14 @@ package com.enfluid.ltp.view.components
                §§push(2);
                if(_loc21_)
                {
-                  §§push(§§pop() + 1 + 11 + 1);
+                  §§push(---(§§pop() - 22 + 1));
                }
                _loc11_ = §§pop() / §§pop();
                §§push(_loc17_);
                §§push(0);
                if(_loc22_)
                {
-                  §§push(-((§§pop() + 1) * 64));
+                  §§push(§§pop() + 42 - 1 + 1 - 1 + 1 - 82);
                }
                if(§§pop() > §§pop())
                {
@@ -180,9 +181,9 @@ package com.enfluid.ltp.view.components
             §§push(Math);
             §§push(Math.min(_loc13_,_loc11_));
             §§push(0);
-            if(_loc21_)
+            if(_loc22_)
             {
-               §§push(-§§pop() + 42 - 1 + 1 - 64 + 83);
+               §§push((--§§pop() + 41) * 11 * 60);
             }
             _loc11_ = §§pop().max(§§pop(),§§pop());
             if(_loc6_)
@@ -195,14 +196,14 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc22_)
                {
-                  §§push((§§pop() - 1 - 38 + 1) * 105 - 1);
+                  §§push(-(§§pop() - 1 - 92 - 1 + 5));
                }
                if(§§pop() < §§pop())
                {
                   §§push(0);
-                  if(_loc22_)
+                  if(_loc21_)
                   {
-                     §§push(-(§§pop() + 69 - 90) - 1 - 54);
+                     §§push((§§pop() + 50 - 11 + 1) * 109);
                   }
                   _loc11_ = §§pop();
                }
@@ -217,7 +218,7 @@ package com.enfluid.ltp.view.components
                   §§push(2);
                   if(_loc21_)
                   {
-                     §§push(-(§§pop() - 1 - 1 - 17));
+                     §§push(-((§§pop() - 89 - 83 - 1) * 102 - 1 + 37));
                   }
                   _loc11_ = §§pop() - §§pop() / §§pop();
                }
@@ -231,7 +232,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc22_)
             {
-               §§push((§§pop() + 94 + 1) * 39 + 1);
+               §§push(((§§pop() - 90) * 101 + 2) * 38);
             }
             if(§§pop() < §§pop() && _loc20_ < screen.height)
             {
@@ -240,7 +241,7 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc21_)
                {
-                  §§push(-(-§§pop() * 70));
+                  §§push(§§pop() - 1 + 1 + 1 - 22);
                }
                _loc20_ = §§pop().max(§§pop(),§§pop());
             }
@@ -250,7 +251,7 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc21_)
                {
-                  §§push(((§§pop() - 1 + 106) * 31 - 1 + 90) * 91 + 1);
+                  §§push(-(§§pop() + 61 - 117) - 1);
                }
                if(§§pop() >= §§pop() && _loc19_ + _loc20_ >= screen.height)
                {
@@ -259,7 +260,7 @@ package com.enfluid.ltp.view.components
                   §§push(0);
                   if(_loc21_)
                   {
-                     §§push(-(§§pop() + 80) - 66 + 9 - 1 + 41);
+                     §§push(-((§§pop() - 112 - 1 + 1) * 104) - 3);
                   }
                   _loc20_ = §§pop().max(§§pop(),§§pop());
                }
@@ -271,7 +272,7 @@ package com.enfluid.ltp.view.components
                §§push(2);
                if(_loc22_)
                {
-                  §§push(--(§§pop() * 109) - 27);
+                  §§push((§§pop() - 68 - 42) * 62 - 1 + 25);
                }
                _loc12_ = §§pop() / §§pop();
             }
@@ -281,14 +282,14 @@ package com.enfluid.ltp.view.components
                §§push(2);
                if(_loc22_)
                {
-                  §§push(-(§§pop() + 1 + 1 + 13 + 29));
+                  §§push(§§pop() + 1 + 1 - 52 - 1 + 1 - 1);
                }
                _loc12_ = §§pop() / §§pop();
                §§push(_loc19_);
                §§push(0);
                if(_loc21_)
                {
-                  §§push(§§pop() + 43 + 1 - 55);
+                  §§push(-((§§pop() - 1 + 1 - 1) * 55) + 1 - 1);
                }
                if(§§pop() > §§pop())
                {
@@ -302,9 +303,9 @@ package com.enfluid.ltp.view.components
             §§push(Math);
             §§push(Math.min(_loc14_,_loc12_));
             §§push(0);
-            if(_loc21_)
+            if(_loc22_)
             {
-               §§push((§§pop() - 33 + 18) * 101 * 33 + 80);
+               §§push(--(§§pop() * 47) + 1);
             }
             _loc12_ = §§pop().max(§§pop(),§§pop());
             if(_loc6_)
@@ -315,16 +316,16 @@ package com.enfluid.ltp.view.components
             {
                §§push(this._customArrowY);
                §§push(0);
-               if(_loc21_)
+               if(_loc22_)
                {
-                  §§push(-(§§pop() + 117) + 90);
+                  §§push(§§pop() + 111 - 1 + 15);
                }
                if(§§pop() < §§pop())
                {
                   §§push(0);
-                  if(_loc22_)
+                  if(_loc21_)
                   {
-                     §§push(-(§§pop() - 1 + 1 - 108) - 1 - 1);
+                     §§push(((§§pop() + 1) * 50 - 113) * 38);
                   }
                   _loc12_ = §§pop();
                }
@@ -339,7 +340,7 @@ package com.enfluid.ltp.view.components
                   §§push(2);
                   if(_loc22_)
                   {
-                     §§push(-(((§§pop() + 1) * 92 - 1) * 45) + 1);
+                     §§push(---§§pop() - 47 + 74 + 1);
                   }
                   _loc12_ = §§pop() - §§pop() / §§pop();
                }

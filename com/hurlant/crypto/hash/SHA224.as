@@ -1,10 +1,5 @@
 package com.hurlant.crypto.hash
 {
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import com.enfluid.ltp.util.TextUtil;
-   import com.enfluid.ltp.util.KeywordUtil;
-   import com.enfluid.ltp.util.Util;
-   
    public final class SHA224 extends SHA256
    {
        
@@ -17,15 +12,15 @@ package com.hurlant.crypto.hash
          §§push(914150663);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 103) + 1) * 63 * 119 * 70 - 1);
+            §§push(-(§§pop() * 36) - 52 + 108 + 30 + 1 + 66);
          }
          §§push(812702999);
          §§push(4144912697);
          §§push(4290775857);
          §§push(1750603025);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 1) - 1 - 1 - 1);
+            §§push(-(§§pop() + 41 - 46) - 1 + 1 - 107);
          }
          §§pop().h = null;
       }
@@ -33,9 +28,9 @@ package com.hurlant.crypto.hash
       override public function getHashSize() : uint
       {
          §§push(28);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() * 51 - 84 + 101) * 104 * 61);
+            §§push(-(§§pop() + 109 + 1) - 83 - 14);
          }
          return §§pop();
       }

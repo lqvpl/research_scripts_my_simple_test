@@ -12,6 +12,10 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
    {
        
       
+      private var isUsersOwnKeywordsQuickAdd:Boolean;
+      
+      private var isAdwordsRestrictedSearches:Boolean = false;
+      
       private var _keywordsTable;
       
       private var waitingForKeywordsCount:int = 0;
@@ -28,9 +32,12 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       
       private var isFirst:Boolean = true;
       
-      public function ScrapeKeywordsCommand(param1:Boolean = false)
+      private var alreadyOutputLog:Boolean = false;
+      
+      public function ScrapeKeywordsCommand(param1:Boolean = false, param2:Boolean = false)
       {
          this.fetchGlobalSearchVolume = param1;
+         this.isUsersOwnKeywordsQuickAdd = param2;
          super();
       }
       
@@ -38,7 +45,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       {
          if(!this._keywordsTable)
          {
-            this._keywordsTable = scraper.getVisibleElementContainingInnerText("table","Keyword (by relevance)");
+            this.reEvaluateKeywordsTable();
          }
          return this._keywordsTable;
       }
@@ -86,11 +93,16 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push();
          §§push(this.checkDataReady);
          §§push(1000);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1) + 1 - 1) + 95);
+            §§push((§§pop() - 1) * 47 * 9 + 82 + 52 + 1);
          }
          §§pop().callDelayed(§§pop(),§§pop());
+      }
+      
+      private final function reEvaluateKeywordsTable() : void
+      {
+         this._keywordsTable = scraper.getVisibleDataElementContainingInnerText("table","Keyword (by relevance)");
       }
       
       private final function checkForMoreKeyords() : void
@@ -103,11 +115,11 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          else
          {
             §§push();
-            §§push(done);
+            §§push(this.done);
             §§push(1000);
             if(_loc1_)
             {
-               §§push(§§pop() + 1 - 1 + 39 + 32 + 1);
+               §§push(-((§§pop() + 1) * 27) * 4 * 111 - 89 + 42);
             }
             §§pop().callDelayed(§§pop(),§§pop());
          }
@@ -135,9 +147,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push();
             §§push(this.checkDataReady);
             §§push(1000);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push((§§pop() + 1 + 1) * 69 * 110 - 76 + 1 + 1);
+               §§push(-((§§pop() * 3 - 1 + 63 - 1) * 87) + 1);
             }
             §§pop().callDelayed(§§pop(),§§pop());
             return;
@@ -145,6 +157,13 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          if(!this.keywordsTable && !this.searchTermsTable)
          {
             Logger.log("keywordsTable not found");
+            callDelayed(this.checkDataReady);
+            return;
+         }
+         if(this.keywordsTable && §§pop() == §§pop() && this.searchTermsTable && §§pop() == §§pop())
+         {
+            Logger.log("all table rows empty:  reEvaluating the Keywords Table reference");
+            this.reEvaluateKeywordsTable();
             callDelayed(this.checkDataReady);
             return;
          }
@@ -158,9 +177,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             this.waitingForKeywordsCount++;
             §§push(this.waitingForKeywordsCount);
             §§push(20);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push((-(§§pop() - 1) + 1 + 18) * 0 - 78);
+               §§push((§§pop() + 63 + 31) * 95 - 18 + 45 - 1 - 80);
             }
             if(§§pop() <= §§pop())
             {
@@ -169,12 +188,12 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                §§push(1000);
                if(_loc6_)
                {
-                  §§push((§§pop() - 1 + 1 + 1) * 76 - 1 - 63 + 55);
+                  §§push(§§pop() - 40 + 55 + 16 - 29 + 17 - 1);
                }
                §§pop().callDelayed(§§pop(),§§pop());
                return;
             }
-            done();
+            this.done();
          }
       }
       
@@ -184,7 +203,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(0);
          if(_loc7_)
          {
-            §§push((§§pop() - 69 + 1 - 10 + 1) * 4 + 1);
+            §§push(§§pop() + 1 + 34 + 105);
          }
          for each(_loc3_ in param2)
          {
@@ -194,7 +213,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                §§push(0);
                if(_loc7_)
                {
-                  §§push(-(§§pop() - 1) + 1);
+                  §§push((-(§§pop() - 1) - 82 - 104) * 3 + 1 - 38);
                }
                if(§§pop() >= §§pop())
                {
@@ -213,9 +232,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       {
          §§push(param1.outerHTML.indexOf("aria-disabled=\"false\""));
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 54 - 38) + 1);
+            §§push((--(§§pop() * 60) * 68 - 51) * 25);
          }
          if(§§pop() >= §§pop())
          {
@@ -236,32 +255,37 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          var _loc8_:* = undefined;
          var _loc9_:* = undefined;
          var _loc10_:Array = null;
-         var _loc11_:String = null;
-         var _loc12_:Boolean = false;
-         var _loc13_:KeywordVO = null;
+         var _loc11_:Boolean = false;
+         var _loc12_:String = null;
+         var _loc13_:String = null;
          var _loc14_:String = null;
          §§push(0);
-         if(_loc23_)
+         if(_loc28_)
          {
-            §§push((§§pop() - 1) * 66 - 1 - 67);
+            §§push(-§§pop() - 42 + 1 - 1);
          }
          var _loc15_:* = §§pop();
          var _loc16_:* = undefined;
          var _loc17_:* = undefined;
+         var _loc18_:Array = null;
+         var _loc19_:KeywordVO = null;
+         var _loc20_:Array = null;
+         var _loc21_:KeywordVO = null;
+         var _loc22_:KeywordVO = null;
          var _loc2_:Array = [];
          §§push(param1.tBodies);
          §§push(0);
-         if(_loc22_)
+         if(_loc27_)
          {
-            §§push(-(§§pop() - 1 - 1 - 1) - 1 + 1 - 1);
+            §§push((-§§pop() - 99) * 48 + 1);
          }
          var _loc3_:* = §§pop()[§§pop()];
          var _loc4_:Boolean = false;
          §§push(param1.innerText.indexOf("Competition"));
          §§push(0);
-         if(_loc22_)
+         if(_loc28_)
          {
-            §§push(-§§pop() - 22 - 5 - 117 - 1);
+            §§push(§§pop() + 77 + 1 + 115 - 1);
          }
          if(§§pop() < §§pop() && §§pop() < §§pop())
          {
@@ -269,35 +293,55 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             _loc8_ = param1.nextSibling.firstChild.firstChild;
             §§push(_loc8_.tBodies);
             §§push(0);
-            if(_loc22_)
+            if(_loc27_)
             {
-               §§push(((§§pop() - 117) * 97 - 1) * 81);
+               §§push(-(-§§pop() + 79 + 1) - 1);
             }
             _loc9_ = §§pop()[§§pop()];
          }
          var _loc5_:Boolean = true;
          §§push(0);
-         if(_loc22_)
+         if(_loc27_)
          {
-            §§push(-(§§pop() * 108) + 1 + 63 + 60 - 89);
+            §§push((-(§§pop() + 1 - 47 - 1) + 110) * 13 - 94);
          }
          var _loc6_:* = §§pop();
+         §§push(_loc3_.rows.length);
          §§push(0);
-         if(_loc22_)
+         if(_loc28_)
          {
-            §§push(-((-§§pop() + 1) * 12 - 1));
+            §§push(-(-(-§§pop() + 1 + 52) - 1));
+         }
+         if(§§pop() == §§pop() && param1.id != "gwt-debug-leftTable" && !this.alreadyOutputLog)
+         {
+            Logger.log("======================================================");
+            Logger.log("========= PLEASE SEND THIS LOG TO SUPPORT    =========");
+            Logger.log("======================================================");
+            Logger.log("We can find any rows in the keywords table");
+            Logger.log("The keywords table we are looking at is: " + param1.id);
+            Logger.log("Project Details:");
+            Logger.log("Country: " + model.selectedProject.countryCode);
+            Logger.log("Language: " + model.selectedProject.languageCode);
+            Logger.log("Keyword: " + model.currentSeedKeyword.keyword);
+            this.alreadyOutputLog = true;
+         }
+         §§push(0);
+         if(_loc27_)
+         {
+            §§push(§§pop() + 11 + 88 - 1);
          }
          for each(_loc7_ in _loc3_.rows)
          {
             try
             {
                _loc10_ = [];
+               _loc11_ = false;
                if(!_loc4_)
                {
                   §§push(0);
-                  if(_loc22_)
+                  if(_loc27_)
                   {
-                     §§push(-(§§pop() + 1) + 41);
+                     §§push(-(§§pop() - 21 - 41 + 65) + 56);
                   }
                   for each(_loc16_ in _loc7_.childNodes)
                   {
@@ -309,17 +353,17 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                   §§push(_loc10_);
                   §§push(_loc7_.childNodes);
                   §§push(0);
-                  if(_loc22_)
+                  if(_loc28_)
                   {
-                     §§push(§§pop() + 38 + 1 - 1);
+                     §§push(-(§§pop() + 35 + 1 + 1 + 70));
                   }
                   §§pop().push(§§pop()[§§pop()]);
                   _loc17_ = _loc9_.rows[_loc6_];
                   _loc6_++;
                   §§push(0);
-                  if(_loc23_)
+                  if(_loc28_)
                   {
-                     §§push(-((§§pop() - 97) * 32 - 1) - 17 - 1 - 1);
+                     §§push(§§pop() * 113 + 1 + 102);
                   }
                   for each(_loc16_ in _loc17_.childNodes)
                   {
@@ -329,71 +373,124 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                §§push(TextUtil);
                §§push(_loc10_);
                §§push(0);
-               if(_loc23_)
+               if(_loc28_)
                {
-                  §§push(§§pop() + 1 + 1 - 60 - 103);
+                  §§push((§§pop() + 1 + 1 + 1 - 1 - 95) * 20);
                }
-               _loc11_ = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
-               _loc11_ = KeywordUtil.stripBeginningAndEndingSpaces(_loc11_);
-               _loc12_ = false;
-               _loc13_ = Util.findKeywordVO(_loc11_,model.selectedProject.keywords);
-               if(!_loc13_)
-               {
-                  _loc12_ = true;
-                  _loc13_ = new KeywordVO();
-               }
+               _loc12_ = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
+               _loc12_ = KeywordUtil.stripBeginningAndEndingSpaces(_loc12_);
                §§push(TextUtil);
                §§push(_loc10_);
                §§push(1);
-               if(_loc23_)
+               if(_loc28_)
                {
-                  §§push((-§§pop() - 65) * 26 + 3 + 109);
+                  §§push((-(-§§pop() - 10 - 100 + 1) + 1) * 11);
                }
-               _loc14_ = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
-               _loc15_ = int(int(KeywordUtil.removeNonNumericChars(_loc14_)));
+               _loc13_ = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
+               _loc14_ = "";
+               §§push(_loc13_.length);
+               §§push(1);
+               if(_loc27_)
+               {
+                  §§push(-((-§§pop() - 1 + 48 + 1) * 83 - 10));
+               }
+               if(§§pop() > §§pop() && (§§pop() != §§pop() || §§pop() != §§pop()))
+               {
+                  _loc14_ = _loc13_;
+                  _loc13_ = "0";
+                  _loc11_ = true;
+                  this.isAdwordsRestrictedSearches = true;
+               }
+               _loc15_ = int(int(KeywordUtil.removeNonNumericChars(_loc13_)));
                if(this.fetchGlobalSearchVolume)
                {
-                  _loc13_.globalSearches = _loc15_;
-                  _loc13_.save();
+                  _loc18_ = Util.findKeywordVOs(_loc12_,model.selectedProject.keywords);
+                  §§push(0);
+                  if(_loc28_)
+                  {
+                     §§push(§§pop() + 25 + 27 + 1);
+                  }
+                  for each(_loc19_ in _loc18_)
+                  {
+                     _loc19_.globalSearches = _loc15_;
+                     _loc19_.globalSearchesRange = _loc14_;
+                     _loc19_.save();
+                  }
+               }
+               else if(this.isUsersOwnKeywordsQuickAdd)
+               {
+                  _loc20_ = Util.findKeywordVOs(_loc12_,model.selectedProject.keywords);
+                  §§push(0);
+                  if(_loc27_)
+                  {
+                     §§push((-§§pop() - 95) * 90);
+                  }
+                  for each(_loc21_ in _loc20_)
+                  {
+                     _loc21_.localSearches = _loc15_;
+                     _loc21_.localSearchesRange = _loc14_;
+                     §§push(_loc21_);
+                     §§push(TextUtil);
+                     §§push(_loc10_);
+                     §§push(2);
+                     if(_loc27_)
+                     {
+                        §§push(§§pop() - 30 - 1 - 5 + 46 + 27 - 43);
+                     }
+                     §§pop().advertiserCompetition = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
+                     §§push(_loc21_);
+                     §§push(TextUtil);
+                     §§push(_loc10_);
+                     §§push(3);
+                     if(_loc27_)
+                     {
+                        §§push(-§§pop() * 46 + 40);
+                     }
+                     §§pop().suggestedBidString = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
+                     _loc21_.suggestedBid = Number(KeywordUtil.removeNonNumericChars(_loc21_.suggestedBidString));
+                     _loc21_.save();
+                  }
                }
                else
                {
-                  _loc13_.keyword = _loc11_;
-                  _loc13_.localSearches = _loc15_;
-                  §§push(_loc13_);
+                  _loc22_ = new KeywordVO();
+                  _loc22_.keyword = _loc12_;
+                  _loc22_.localSearches = _loc15_;
+                  _loc22_.localSearchesRange = _loc14_;
+                  §§push(_loc22_);
                   §§push(TextUtil);
                   §§push(_loc10_);
                   §§push(2);
-                  if(_loc22_)
+                  if(_loc28_)
                   {
-                     §§push((§§pop() - 1 - 1 + 1) * 84 - 1 - 1 + 81);
+                     §§push(-§§pop() - 1 + 67);
                   }
                   §§pop().advertiserCompetition = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
-                  §§push(_loc13_);
+                  §§push(_loc22_);
                   §§push(TextUtil);
                   §§push(_loc10_);
                   §§push(3);
-                  if(_loc23_)
+                  if(_loc28_)
                   {
-                     §§push(§§pop() + 1 - 76 - 1 + 46 - 48);
+                     §§push(-((§§pop() + 1) * 29 + 14 - 70 + 76 - 1));
                   }
                   §§pop().suggestedBidString = §§pop().stripLineBreaks(§§pop()[§§pop()].innerText);
-                  _loc13_.suggestedBid = Number(KeywordUtil.removeNonNumericChars(_loc13_.suggestedBidString));
-                  if(_loc12_)
+                  _loc22_.suggestedBid = Number(KeywordUtil.removeNonNumericChars(_loc22_.suggestedBidString));
+                  _loc22_.project = model.selectedProject;
+                  _loc22_.seedKeyword = model.currentSeedKeyword;
+                  _loc22_.isGoogleRestrictedSearches = _loc11_;
+                  if(model.currentSeedKeyword)
                   {
-                     _loc13_.project = model.selectedProject;
-                     _loc13_.seedKeyword = model.currentSeedKeyword;
-                     if(model.currentSeedKeyword)
-                     {
-                        model.currentSeedKeyword.keywords.addItem(_loc13_);
-                     }
-                     else
-                     {
-                        model.selectedProject.ownKeywords.addItem(_loc13_);
-                     }
-                     model.selectedProject.keywords.addItem(_loc13_);
+                     model.currentSeedKeyword.keywords.addItem(_loc22_);
                   }
-                  _loc13_.save();
+                  else
+                  {
+                     model.selectedProject.ownKeywords.addItem(_loc22_);
+                  }
+                  model.selectedProject.keywords.addItem(_loc22_);
+                  _loc22_.source = "majestic";
+                  _loc22_.save();
+                  _loc22_.projectID = model.selectedProject.id;
                }
             }
             catch(err:Error)
@@ -405,6 +502,17 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          {
             model.currentSeedKeyword.save();
          }
+         model.selectedKeywordCollection.updateCounts();
+      }
+      
+      override protected function done(param1:String = "success") : void
+      {
+         model.selectedKeywordCollection.cleanKeywords();
+         if(this.isAdwordsRestrictedSearches)
+         {
+            viewModel.AdwordsRestricted = true;
+         }
+         super.done(param1);
       }
    }
 }

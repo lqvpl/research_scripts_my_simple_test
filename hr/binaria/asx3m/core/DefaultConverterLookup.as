@@ -1,13 +1,17 @@
 package hr.binaria.asx3m.core
 {
    import hr.binaria.asx3m.converters.IConverterLookup;
+   import flash.events.MouseEvent;
    import hr.binaria.asx3m.mapper.IMapper;
    import system.data.lists.ArrayList;
    import system.data.Map;
    import hr.binaria.asx3m.converters.IConverter;
+   import flash.utils.ByteArray;
    import system.data.Iterator;
-   import mx.controls.Spacer;
-   import flash.events.TimerEvent;
+   import com.enfluid.ltp.view.renderers.TabRenderer;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
+   import spark.components.HGroup;
    import system.data.maps.HashMap;
    
    public final class DefaultConverterLookup implements IConverterLookup
@@ -35,7 +39,7 @@ package hr.binaria.asx3m.core
          §§push(0);
          if(_loc6_)
          {
-            §§push(§§pop() - 19 + 1 + 1);
+            §§push(-(§§pop() + 16 - 1 - 1 - 65));
          }
          if(§§pop() < §§pop())
          {
@@ -44,7 +48,7 @@ package hr.binaria.asx3m.core
             §§push(1);
             if(_loc5_)
             {
-               §§push((--§§pop() + 32 + 57 + 1) * 73);
+               §§push(((§§pop() + 32) * 14 - 1 + 78) * 14 * 39 + 60);
             }
             §§pop().addAt(§§pop() + §§pop(),param1);
          }
@@ -54,7 +58,7 @@ package hr.binaria.asx3m.core
             §§push(0);
             if(_loc5_)
             {
-               §§push(--(§§pop() + 1 - 14 - 1 - 72));
+               §§push(-(§§pop() - 60 - 94));
             }
             §§pop().addAt(§§pop(),param1);
          }

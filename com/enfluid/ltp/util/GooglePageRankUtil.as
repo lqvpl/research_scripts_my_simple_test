@@ -1,8 +1,17 @@
 package com.enfluid.ltp.util
 {
-   import spark.events.PopUpEvent;
-   import spark.primitives.Rect;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.dataandfilters.target;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import spark.components.CheckBox;
    import mx.binding.BindingManager;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import system.data.Iterator;
+   
+   use namespace mx_internal;
    
    public final class GooglePageRankUtil
    {
@@ -19,21 +28,21 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc9_)
          {
-            §§push(-§§pop() * 101 - 97);
+            §§push((§§pop() - 119) * 62 + 10 + 1 - 78);
          }
          var _loc6_:* = §§pop();
          var _loc3_:String = "Mining PageRank is AGAINST GOOGLE\'S TERMS OF SERVICE. Yes, I\'m talking to you, scammer.";
          §§push(16909125);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-(§§pop() - 74 - 18) * 62);
+            §§push((§§pop() * 4 * 30 + 113) * 33);
          }
          var _loc4_:uint = §§pop();
          var _loc5_:int = param1.length;
          §§push(0);
          if(_loc9_)
          {
-            §§push(-§§pop() + 110 + 1 + 1);
+            §§push((-(§§pop() * 105 - 1 + 32) + 47) * 52);
          }
          var _loc7_:* = §§pop();
          while(_loc7_ < _loc5_)
@@ -45,14 +54,14 @@ package com.enfluid.ltp.util
             §§push(23);
             if(_loc9_)
             {
-               §§push((-(§§pop() * 77) + 118) * 21);
+               §§push(((-§§pop() - 1) * 87 + 45) * 83 + 41 - 64);
             }
             §§push(§§pop().ZeroFill(§§pop(),§§pop()));
             §§push(_loc4_);
             §§push(9);
             if(_loc8_)
             {
-               §§push(§§pop() + 1 - 1 - 1);
+               §§push(§§pop() - 1 - 1 + 74 + 1 + 63);
             }
             _loc4_ = §§pop() | §§pop() << §§pop();
             _loc7_++;
@@ -67,14 +76,14 @@ package com.enfluid.ltp.util
          §§push(16);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 80) + 1);
+            §§push(--(§§pop() * 32 - 8) + 1 - 1 - 1);
          }
          var _loc2_:String = §§pop().toString(§§pop());
          §§push(_loc2_.length);
          §§push(1);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 58 + 1 - 1 - 1 - 1 + 53) * 119);
+            §§push((§§pop() - 119 - 1) * 87);
          }
          if(§§pop() == §§pop())
          {
@@ -92,7 +101,7 @@ package com.enfluid.ltp.util
          §§push(24);
          if(_loc3_)
          {
-            §§push(§§pop() - 96 + 17 + 31 - 1);
+            §§push(§§pop() + 1 - 63 + 54 + 1);
          }
          _loc2_ = §§pop().Hex8(§§pop().ZeroFill(§§pop(),§§pop()));
          §§push(_loc2_);
@@ -102,13 +111,13 @@ package com.enfluid.ltp.util
          §§push(16);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 89 - 68);
+            §§push((-(§§pop() + 103 - 1) - 84) * 81);
          }
          §§push(§§pop().ZeroFill(§§pop(),§§pop()));
          §§push(255);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-§§pop() + 39 - 1 - 1);
+            §§push(-(-(§§pop() + 1) + 1 - 52 + 1 - 1));
          }
          _loc2_ = §§pop() + §§pop().Hex8(§§pop() & §§pop());
          §§push(_loc2_);
@@ -118,13 +127,13 @@ package com.enfluid.ltp.util
          §§push(8);
          if(_loc3_)
          {
-            §§push(-(---§§pop() * 95 + 97));
+            §§push((§§pop() - 118 - 93 + 113 - 1) * 34);
          }
          §§push(§§pop().ZeroFill(§§pop(),§§pop()));
          §§push(255);
          if(_loc3_)
          {
-            §§push((-§§pop() - 99) * 22 - 45);
+            §§push(-(-§§pop() - 1));
          }
          _loc2_ = §§pop() + §§pop().Hex8(§§pop() & §§pop());
          §§push(_loc2_);
@@ -133,7 +142,7 @@ package com.enfluid.ltp.util
          §§push(255);
          if(_loc3_)
          {
-            §§push((§§pop() + 10 + 1 + 1) * 48);
+            §§push(-(-§§pop() - 1 - 1 - 1) - 1);
          }
          _loc2_ = §§pop() + §§pop().Hex8(§§pop() & §§pop());
          return _loc2_;
@@ -148,15 +157,15 @@ package com.enfluid.ltp.util
             §§push(1);
             if(_loc5_)
             {
-               §§push(-(§§pop() * 117 + 61 - 32));
+               §§push((§§pop() + 41 - 1 + 1 + 103) * 14 - 104 + 1);
             }
             param1 = §§pop() >> §§pop();
             param1 = param1 & ~_loc3_;
             §§push(param1);
             §§push(1073741824);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push((§§pop() - 1) * 79 - 37);
+               §§push(-(§§pop() + 1 + 1) * 65 + 25 - 1);
             }
             param1 = §§pop() | §§pop();
             param1 = param1 >> param2 - 1;

@@ -1,18 +1,32 @@
 package hr.binaria.asx3m.mapper
 {
-   import hr.binaria.asx3m.converters.ISingleValueConverter;
-   import spark.layouts.VerticalLayout;
-   import flash.utils.getDefinitionByName;
-   import system.data.Iterator;
-   import flash.utils.getQualifiedClassName;
-   import flash.events.Event;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import system.Reflection;
-   import flash.net.URLRequest;
-   import com.enfluid.ltp.model.constants.Constants;
-   import flash.utils.ByteArray;
-   import com.enfluid.ltp.view.components.FormattedSelfAdjustingLabel;
+   import spark.events.TextOperationEvent;
+   import spark.components.CheckBox;
    import mx.binding.BindingManager;
+   import mx.graphics.SolidColor;
+   import hr.binaria.asx3m.converters.ISingleValueConverter;
+   import spark.primitives.Rect;
+   import com.enfluid.ltp.model.constants.Values;
+   import mx.graphics.SolidColorStroke;
+   import spark.components.Label;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.assets.AssetsLibrary;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.layouts.VerticalLayout;
+   import system.Reflection;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import mx.collections.ArrayCollection;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.ExportDataGridCSVCommand;
+   import com.enfluid.ltp.model.constants.Constants;
+   import mx.rpc.http.HTTPService;
+   import flash.system.ApplicationDomain;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
+   import mx.graphics.GradientEntry;
    
    public final class DefaultMapper implements IMapper
    {
@@ -117,16 +131,16 @@ package hr.binaria.asx3m.mapper
       private final function convertToFlexClassName(param1:String) : String
       {
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(-(§§pop() + 14 + 1) - 47));
+            §§push(-(-§§pop() + 60));
          }
          var _loc2_:* = §§pop();
          §§push(param1.indexOf("."));
          §§push(-1);
          if(_loc4_)
          {
-            §§push(§§pop() * 50 + 84 - 11);
+            §§push(-((-(§§pop() * 7) - 111) * 20) - 1);
          }
          if(§§pop() != §§pop() && §§pop() == §§pop())
          {
@@ -135,7 +149,7 @@ package hr.binaria.asx3m.mapper
             §§push(0);
             if(_loc4_)
             {
-               §§push(-(-§§pop() + 1));
+               §§push((-(§§pop() - 1) * 68 - 1) * 42);
             }
             §§push(§§pop().substring(§§pop(),_loc2_) + "::");
             §§push(param1);
@@ -143,7 +157,7 @@ package hr.binaria.asx3m.mapper
             §§push(1);
             if(_loc4_)
             {
-               §§push(-(§§pop() + 98 - 32 + 114 - 1) - 1 - 1);
+               §§push((§§pop() - 1 - 1 + 1 - 1) * 90 - 1);
             }
             param1 = §§pop() + §§pop().substring(§§pop() + §§pop(),param1.length);
          }

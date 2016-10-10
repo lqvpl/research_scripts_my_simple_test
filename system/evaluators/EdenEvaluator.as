@@ -1,12 +1,6 @@
 package system.evaluators
 {
    import system.eden;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.TransparentButtonSkin;
-   import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
-   import mx.graphics.SolidColor;
-   import spark.effects.AddAction;
    
    public final class EdenEvaluator implements Evaluable
    {

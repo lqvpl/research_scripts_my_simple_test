@@ -1,12 +1,12 @@
 package com.enfluid.ltp.view.containers
 {
    import spark.components.SkinnableContainer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import spark.components.Button;
    import flash.events.MouseEvent;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import hr.binaria.asx3m.converters.IUnmarshallingContext;
+   import com.hurlant.crypto.symmetric.ISymmetricKey;
+   import com.hurlant.crypto.symmetric.IPad;
+   import flash.utils.ByteArray;
    import mx.events.PropertyChangeEvent;
    
    public final class RankDrawer extends SkinnableContainer
@@ -36,6 +36,14 @@ package com.enfluid.ltp.view.containers
          {
             this._opened = param1;
             invalidateSkinState();
+            if(this._opened)
+            {
+               new SetUserEvent("UserEvent.RankChecker.Open").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.RankChecker.Close").execute();
+            }
          }
       }
       

@@ -1,6 +1,7 @@
 package com.hurlant.crypto.symmetric
 {
    import flash.utils.ByteArray;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
    
    public final class CTRMode extends IVMode implements IMode
    {
@@ -14,18 +15,18 @@ package com.hurlant.crypto.symmetric
       private final function core(param1:ByteArray, param2:ByteArray) : void
       {
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push(-((§§pop() - 48) * 1 - 1) - 1);
+            §§push(-(((§§pop() - 1 + 1) * 119 + 84) * 50));
          }
          var _loc6_:uint = §§pop();
          var _loc3_:ByteArray = new ByteArray();
          var _loc4_:ByteArray = new ByteArray();
          _loc3_.writeBytes(param2);
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push(§§pop() + 31 + 75 + 1 - 1 - 48 + 1 - 1);
+            §§push((-(-§§pop() - 43) - 1 + 1 - 96) * 5);
          }
          var _loc5_:uint = §§pop();
          while(_loc5_ < param1.length)
@@ -34,15 +35,15 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc10_)
             {
-               §§push(-(§§pop() + 1 - 3 + 107 - 22) - 81);
+               §§push(-((§§pop() + 1 + 1) * 39) - 1);
             }
             §§pop().position = §§pop();
             _loc4_.writeBytes(_loc3_);
             key.encrypt(_loc4_);
             §§push(0);
-            if(_loc11_)
+            if(_loc10_)
             {
-               §§push(-((§§pop() + 1) * 12 - 0));
+               §§push(((§§pop() + 1 - 17 + 1) * 15 - 36) * 43);
             }
             _loc6_ = §§pop();
             while(_loc6_ < blockSize)
@@ -57,7 +58,7 @@ package com.hurlant.crypto.symmetric
                §§push(0);
                if(_loc11_)
                {
-                  §§push(-(-(§§pop() - 105) - 105) + 1 + 1);
+                  §§push(§§pop() - 65 - 21 - 38 - 1);
                }
                if(§§pop() >= §§pop())
                {
@@ -66,7 +67,7 @@ package com.hurlant.crypto.symmetric
                   §§push(0);
                   if(_loc11_)
                   {
-                     §§push(-(§§pop() * 17 * 36 + 96 - 1 + 1) - 33);
+                     §§push(-(§§pop() * 71) * 8);
                   }
                   if(§§pop() != §§pop())
                   {

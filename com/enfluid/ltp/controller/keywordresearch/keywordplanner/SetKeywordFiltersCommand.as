@@ -73,22 +73,22 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(2);
          if(_loc5_)
          {
-            §§push(-((-(§§pop() + 45) - 1) * 71 - 1) - 28);
+            §§push(-§§pop() - 18 - 1 - 110 + 1);
          }
          var _loc2_:* = §§pop()[§§pop()];
          §§push(_loc2_.children);
          §§push(0);
          if(_loc6_)
          {
-            §§push((§§pop() - 1) * 106 + 112 + 1);
+            §§push(((-§§pop() - 1) * 25 - 1 + 43 - 53) * 68);
          }
          var _loc3_:* = §§pop()[§§pop()];
          _loc3_.value = "ATLEAST";
          §§push(_loc2_.children);
          §§push(2);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-§§pop() - 1 - 48 - 55);
+            §§push(-((§§pop() + 1) * 111) - 55 + 80 + 1);
          }
          var _loc4_:* = §§pop()[§§pop()];
          _loc4_.value = "0";

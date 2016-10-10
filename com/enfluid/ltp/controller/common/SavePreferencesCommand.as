@@ -1,12 +1,12 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import mx.core.mx_internal;
+   import com.enfluid.ltp.view.components.ToggleSwitch;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.controller.filesystem.SaveXMLToDiskCommand;
    import hr.binaria.asx3m.Asx3mer;
    import flash.filesystem.File;
-   
-   use namespace mx_internal;
+   import mx.events.FlexMouseEvent;
    
    public final class SavePreferencesCommand extends Command implements IPhotonCommand
    {

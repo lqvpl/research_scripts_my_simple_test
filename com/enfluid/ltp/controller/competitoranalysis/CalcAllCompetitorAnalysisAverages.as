@@ -33,27 +33,28 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(1);
             if(_loc2_)
             {
-               §§push((§§pop() - 1 + 96) * 11 * 5);
+               §§push((--§§pop() + 49) * 42 * 10);
             }
             §§pop().keywordCompetitivenessAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
             §§push(Util);
             §§push(this.keyword);
             §§push("pageAuthority");
+            §§push("domainAuthority");
             §§push(1);
             if(_loc1_)
             {
-               §§push((§§pop() + 94 - 54 + 1 - 83) * 110);
+               §§push(-((§§pop() - 1) * 2 - 1 - 1 - 1) - 1);
             }
-            §§pop().pageAuthorityAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
+            §§pop().pageAuthorityAvg = §§pop().calcPageAuthorityAvg(§§pop(),§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
             §§push(Util);
             §§push(this.keyword);
             §§push("seomozLinks");
             §§push(0);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push((§§pop() - 28 + 1) * 78 + 52);
+               §§push(§§pop() - 94 - 1 - 1 + 96 - 113);
             }
             §§pop().pageLinksAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
@@ -61,9 +62,9 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(this.keyword);
             §§push("juiceLinks");
             §§push(0);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(--(§§pop() * 1 + 1));
+               §§push((§§pop() + 1) * 83 + 91);
             }
             §§pop().juiceLinksAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
@@ -71,9 +72,9 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(this.keyword);
             §§push("domainAuthority");
             §§push(1);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push(§§pop() - 1 - 1 + 1 - 64 - 96 - 1 - 1);
+               §§push(-((§§pop() - 1 + 1 + 114) * 6 + 11 - 1));
             }
             §§pop().domainAuthorityAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
@@ -81,9 +82,9 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(this.keyword);
             §§push("mozRank");
             §§push(1);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push((-§§pop() - 1) * 116);
+               §§push(-((§§pop() + 41) * 84));
             }
             §§pop().mozRankAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
@@ -91,9 +92,9 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(this.keyword);
             §§push("pageRank");
             §§push(1);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(-(--((§§pop() - 1) * 45) + 1));
+               §§push(-(-(§§pop() + 1 - 82) + 6));
             }
             §§pop().pageRankAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
             §§push(this.keyword.competitorAnalysisAverages);
@@ -103,7 +104,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(1);
             if(_loc2_)
             {
-               §§push(-(-(§§pop() - 1) + 1) - 70);
+               §§push(((§§pop() - 27) * 89 + 114) * 116 - 15 + 1 - 95);
             }
             §§pop().siteAgeAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
          }

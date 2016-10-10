@@ -35,17 +35,17 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             _loc1_ = findTargetingDiv();
             §§push(_loc1_.children);
             §§push(1);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((-(§§pop() + 1 + 4 - 1) + 58) * 80 * 40);
+               §§push((§§pop() - 1 + 1 - 48 - 1) * 34 + 0 - 27);
             }
             _loc2_ = §§pop()[§§pop()];
             _loc3_ = String(_loc2_.innerText).split(", ");
             _loc4_ = false;
             §§push(0);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(§§pop() * 109 - 119 - 1 + 53 + 1 + 82);
+               §§push((-§§pop() + 84 + 82 - 100 - 1) * 100);
             }
             for each(_loc5_ in _loc3_)
             {
@@ -74,7 +74,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(0);
          if(_loc1_)
          {
-            §§push(-(§§pop() * 102 - 1));
+            §§push(--((§§pop() + 1 - 3 - 1) * 112));
          }
          if(§§pop() >= §§pop())
          {
@@ -93,9 +93,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          {
             §§push();
             §§push(1);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(-§§pop() - 51 + 1 - 1);
+               §§push((§§pop() + 1 - 1 + 1 + 1 - 1 + 1) * 104);
             }
             §§pop().findAndClickEditPencilUnderTargetingSection(§§pop());
          }
@@ -106,9 +106,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       {
          §§push();
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-§§pop() + 1 + 118);
+            §§push(-§§pop() + 48 + 1 + 27 - 62);
          }
          §§pop().findAndClickEditPencilUnderTargetingSection(§§pop());
       }
@@ -141,14 +141,14 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(130);
             if(_loc2_)
             {
-               §§push((§§pop() + 30 - 117) * 15);
+               §§push(-(§§pop() + 3) - 97);
             }
             §§pop().buttonWidth = §§pop();
             §§push(Alert);
             §§push(30);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push((§§pop() - 66 - 53 - 29 + 119) * 25 + 112 - 1);
+               §§push((§§pop() - 1) * 83 + 65 + 1 - 1 + 32 + 1);
             }
             §§pop().buttonHeight = §§pop();
             Alert.show("We could not find the language you selected on the Google Keyword Planner.  Please contact support.");

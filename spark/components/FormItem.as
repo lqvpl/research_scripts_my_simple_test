@@ -54,6 +54,7 @@ package spark.components
       }
       
       [Bindable("helpContentChanged")]
+      [ArrayElementType("mx.core.IVisualElement")]
       public function get helpContent() : Array
       {
          if(this.helpContentGroup)

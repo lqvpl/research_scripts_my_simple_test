@@ -5,11 +5,20 @@ package com.dk.license
    import com.hurlant.crypto.symmetric.ICipher;
    import com.hurlant.util.Base64;
    import com.hurlant.crypto.symmetric.PKCS5;
+   import mx.controls.HRule;
    import com.hurlant.crypto.symmetric.ECBMode;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.util.KeywordUtil;
    import com.hurlant.crypto.symmetric.BlowFishKey;
-   import spark.components.Label;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.components.target;
+   import com.enfluid.ltp.view.components.HelpButton;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.view.filterviews.BingTitleCompetitionFilterView;
+   import spark.events.DropDownEvent;
+   
+   use namespace mx_internal;
    
    public final class BlowFishUtil
    {
@@ -37,9 +46,9 @@ package com.dk.license
             $cipher.dispose();
             §§push($input);
             §§push(0);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push((§§pop() * 89 + 1) * 27);
+               §§push((§§pop() + 1 + 1 + 1 - 1 + 21) * 95);
             }
             §§pop().position = §§pop();
             return $input.readUTF();

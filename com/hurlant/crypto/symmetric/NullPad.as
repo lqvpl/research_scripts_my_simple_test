@@ -1,6 +1,8 @@
 package com.hurlant.crypto.symmetric
 {
    import flash.utils.ByteArray;
+   import com.enfluid.ltp.view.renderers.CalculatableValueGroup;
+   import mx.binding.BindingManager;
    
    public final class NullPad implements IPad
    {

@@ -3,16 +3,16 @@ package com.enfluid.ltp.view.dataandfilters
    import com.enfluid.ltp.view.containers.CheckBoxCollapsiblePanel;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import mx.graphics.SolidColor;
-   import system.numeric.Mathematics;
    import mx.core.IFlexModuleFactory;
+   import mx.rpc.http.HTTPService;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.view.filterviews.SuggestedBidFilterView;
-   import spark.effects.easing.Power;
+   import spark.effects.Fade;
    import mx.binding.BindingManager;
    import mx.binding.Binding;
    import assets.TextAssets;
-   import com.enfluid.ltp.view.components.HelpButton;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -70,16 +70,17 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() + 79 + 8 + 15 - 104 + 1 - 1 - 92);
+            §§push((-(§§pop() + 114 + 64 - 113) - 1) * 96 + 1);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Suggested Bid";
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._SuggestedBidSection_Array1_c);
+         this.addEventListener("creationComplete",this.___SuggestedBidSection_CheckBoxCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
          if(_loc4_)
          {
-            §§push(§§pop() - 21 - 1 - 90 - 1);
+            §§push(-(§§pop() - 37) * 52 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -109,6 +110,22 @@ package com.enfluid.ltp.view.dataandfilters
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.Bid.Checked").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.Bid.Unchecked").execute();
+            }
+         });
+      }
+      
       private final function _SuggestedBidSection_Array1_c() : Array
       {
          var _loc1_:Array = [this._SuggestedBidSection_SuggestedBidFilterView1_c()];
@@ -126,14 +143,19 @@ package com.enfluid.ltp.view.dataandfilters
          return _loc1_;
       }
       
+      public final function ___SuggestedBidSection_CheckBoxCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _SuggestedBidSection_bindingsSetup() : Array
       {
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 101) * 25) + 58);
+            §§push(-(§§pop() * 4 - 1 + 1 - 47 - 1) - 31);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -142,9 +164,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.helpTitle");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 100 * 101 - 1 + 1 + 88);
+            §§push((§§pop() + 83 - 1 - 27) * 39 - 1 + 59);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -153,9 +175,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.helpContent");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 104 + 1 + 27);
+            §§push((§§pop() + 1) * 119 - 89 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -165,7 +187,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() * 40 - 1 - 1 + 1 + 1 - 1 - 1);
+            §§push(-(§§pop() * 96 * 22) - 1 - 97 - 43);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -176,37 +198,37 @@ package com.enfluid.ltp.view.dataandfilters
          },"model.selectedProject.suggestedBidEnabled");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 61 + 38) * 91);
+            §§push(-(§§pop() - 52 + 1 + 1 - 23) * 114 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 36 + 86 - 90 - 1);
+            §§push((§§pop() + 43) * 97 + 1 - 54 + 12);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 1 + 1 + 1 - 82 - 81);
+            §§push(-(§§pop() + 73 + 1 + 100));
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--(§§pop() + 32 - 1) * 59 - 1));
+            §§push(§§pop() - 82 - 1 + 1 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push((--§§pop() + 1) * 116);
+            §§push((§§pop() - 110 - 1 + 1 + 102 + 1) * 104 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

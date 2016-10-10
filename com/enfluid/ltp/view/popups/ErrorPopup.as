@@ -3,44 +3,48 @@ package com.enfluid.ltp.view.popups
    import spark.components.TitleWindow;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.skins.SlimScrollerSkinInnerClass0;
+   import mx.binding.BindingManager;
+   import spark.primitives.Rect;
+   import flash.utils.ByteArray;
    import spark.components.VGroup;
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
-   import spark.layouts.VerticalLayout;
-   import com.hurlant.math.BigInteger;
-   import com.hurlant.math.bi_internal;
-   import mx.effects.Sequence;
-   import mx.events.FlexEvent;
-   import com.enfluid.ltp.view.components.AvgDelayComponent;
-   import mx.binding.BindingManager;
-   import spark.components.Scroller;
+   import flash.events.Event;
    import flash.events.MouseEvent;
-   import mx.core.DeferredInstanceFromFunction;
-   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.layouts.VerticalLayout;
    import com.enfluid.ltp.model.ViewModel;
+   import flash.utils.Dictionary;
+   import spark.components.Scroller;
    import mx.core.mx_internal;
    import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.target;
-   import com.enfluid.ltp.view.CreateProjectCallout;
-   import mx.states.State;
-   import mx.states.SetEventHandler;
-   import mx.states.SetProperty;
-   import mx.states.SetStyle;
-   import mx.states.AddItems;
+   import com.enfluid.ltp.view.components.target;
+   import com.enfluid.ltp.view.components.SelfAdjustingGroup;
    import mx.binding.Binding;
+   import flash.net.navigateToURL;
+   import flash.net.URLRequest;
+   import flash.utils.setTimeout;
    import spark.components.Button;
-   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.DataGrid;
    import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
    import flash.system.System;
-   import spark.components.HGroup;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.util.Logger;
    import mx.events.CloseEvent;
-   import mx.graphics.SolidColorStroke;
-   import mx.events.PropertyChangeEvent;
+   import spark.events.PopUpEvent;
+   import com.hurlant.crypto.symmetric.ISymmetricKey;
    import com.hurlant.crypto.symmetric.IPad;
-   import com.hurlant.crypto.symmetric.NullPad;
-   import com.hurlant.crypto.symmetric.PKCS5;
+   import mx.graphics.GradientEntry;
+   import mx.events.PropertyChangeEvent;
+   import assets.TextAssets;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import mx.graphics.LinearGradient;
+   import mx.core.DeferredInstanceFromFunction;
    
-   use namespace bi_internal;
    use namespace mx_internal;
    
    public final class ErrorPopup extends TitleWindow implements IBindingClient
@@ -65,7 +69,7 @@ package com.enfluid.ltp.view.popups
       
       public function ErrorPopup()
       {
-         var com.enfluid.ltp.view.popups.target:Object = null;
+         var target:Object = null;
          var watcherSetupUtilClass:Object = null;
          this._bindings = [];
          this._watchers = [];
@@ -75,7 +79,7 @@ package com.enfluid.ltp.view.popups
          mx_internal::_document = this;
          var bindings:Array = this._ErrorPopup_bindingsSetup();
          var watchers:Array = [];
-         com.enfluid.ltp.view.popups.target = this;
+         target = this;
          if(_watcherSetupUtil == null)
          {
             watcherSetupUtilClass = getDefinitionByName("_com_enfluid_ltp_view_popups_ErrorPopupWatcherSetupUtil");
@@ -92,9 +96,9 @@ package com.enfluid.ltp.view.popups
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(400);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1) * 52 + 1) * 28 + 82 + 63);
+            §§push(§§pop() + 9 + 32 + 1 + 1);
          }
          §§pop().height = §§pop();
          this.title = "An Error Occurred";
@@ -105,7 +109,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 67 + 35 - 18 + 1 + 1) * 23));
+            §§push(-(§§pop() + 1 - 1 + 1 - 70));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -143,7 +147,7 @@ package com.enfluid.ltp.view.popups
          §§push(10);
          if(_loc2_)
          {
-            §§push(§§pop() - 106 + 1 - 108 + 1 + 1);
+            §§push(-(-§§pop() + 16) - 101 - 76);
          }
          §§pop().paddingBottom = §§pop();
          return _loc1_;
@@ -160,16 +164,16 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Scroller = new Scroller();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() - 50) * 44 + 1) * 101 - 1);
+            §§push(§§pop() * 20 + 9 + 1 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 60 - 91 - 112) - 1 + 58);
+            §§push(-(§§pop() - 1) + 1 - 43 - 1 - 28);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.viewport = this._ErrorPopup_VGroup1_i();
@@ -185,37 +189,37 @@ package com.enfluid.ltp.view.popups
          var _loc1_:VGroup = new VGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 49 - 1 + 1);
+            §§push(-((§§pop() + 24 + 1) * 78 * 54 * 72));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc3_)
          {
-            §§push((-§§pop() + 1) * 13);
+            §§push(§§pop() - 1 - 1 - 79);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) + 27 - 30 + 46));
+            §§push(§§pop() + 78 + 1 - 106 + 1 - 108 + 1);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 1) + 33 - 57 + 1) * 18);
+            §§push(((§§pop() * 24 + 91 + 1) * 44 + 1) * 101);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 106 + 1 + 9 + 32);
+            §§push(--(§§pop() - 71 + 7 - 43));
          }
          §§pop().paddingTop = §§pop();
          _loc1_.mxmlContent = [this._ErrorPopup_Label1_i()];
@@ -270,9 +274,9 @@ package com.enfluid.ltp.view.popups
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 70) - 104) * 64 - 1);
+            §§push(-(§§pop() * 49 - 1 + 1) + 82);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -280,7 +284,7 @@ package com.enfluid.ltp.view.popups
             §§push(15);
             if(_loc1_)
             {
-               §§push(-(-(-§§pop() + 1 - 1) - 1 - 3));
+               §§push((-(§§pop() - 1) + 33 - 57 + 1) * 18);
             }
             return §§pop() + §§pop();
          },null,"this.width");
@@ -288,7 +292,7 @@ package com.enfluid.ltp.view.popups
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 36 + 119) - 1 + 1 + 1 - 77);
+            §§push(-(-(§§pop() - 45) - 1) + 27 - 30 + 46);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

@@ -2,14 +2,14 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import mx.states.Transition;
-   import mx.collections.ArrayCollection;
-   import flash.filesystem.File;
-   import flash.filesystem.FileStream;
-   import flash.filesystem.FileMode;
-   import spark.components.Image;
+   import spark.primitives.Rect;
    import mx.binding.BindingManager;
+   import mx.collections.ArrayCollection;
+   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
+   import com.enfluid.ltp.util.Util;
    import mx.utils.StringUtil;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.EditProjectCommand;
    
    public final class AddRankDomainCommand extends Command implements IPhotonCommand
    {
@@ -41,9 +41,9 @@ package com.enfluid.ltp.controller.rankchecker
          var _loc2_:String = null;
          var _loc1_:Boolean = true;
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(-(§§pop() * 36) - 83 + 1));
+            §§push((§§pop() * 88 - 1 - 1) * 38);
          }
          for each(_loc2_ in model.rankDomains)
          {

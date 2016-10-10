@@ -1,10 +1,9 @@
 package info.noirbizarre.airorm.utils
 {
-   import com.enfluid.ltp.view.popups.SettingsCallout;
-   import com.enfluid.ltp.view.renderers.TabRenderer;
+   import spark.effects.Rotate;
    import mx.binding.BindingManager;
-   import com.hurlant.crypto.prng.Random;
-   import com.hurlant.util.Memory;
+   import mx.events.FlexEvent;
+   import flash.utils.ByteArray;
    
    public final class Inflector
    {
@@ -35,7 +34,7 @@ package info.noirbizarre.airorm.utils
          §§push(0);
          if(_loc7_)
          {
-            §§push(§§pop() + 15 - 1 + 71);
+            §§push((-§§pop() - 108 + 18 + 1 + 38 + 22) * 48);
          }
          for each(_loc2_ in pluralRules)
          {
@@ -43,14 +42,14 @@ package info.noirbizarre.airorm.utils
             §§push(0);
             if(_loc8_)
             {
-               §§push(-§§pop() + 112 - 1);
+               §§push(-(§§pop() + 1) - 100 + 113);
             }
             _loc3_ = §§pop()[§§pop()];
             §§push(_loc2_);
             §§push(1);
             if(_loc8_)
             {
-               §§push(-(§§pop() + 1 + 75 - 1 + 1) * 66);
+               §§push((-(§§pop() * 15 * 25) + 16) * 111 + 117);
             }
             _loc4_ = §§pop()[§§pop()];
             if(_loc3_.test(param1))
@@ -69,22 +68,22 @@ package info.noirbizarre.airorm.utils
          §§push(0);
          if(_loc8_)
          {
-            §§push(§§pop() * 47 + 1 - 48 - 1 - 1);
+            §§push(-(§§pop() + 1 - 1 + 33 - 52));
          }
          for each(_loc2_ in singularRules)
          {
             §§push(_loc2_);
             §§push(0);
-            if(_loc7_)
+            if(_loc8_)
             {
-               §§push((-§§pop() - 1) * 100 + 1 - 30 + 105);
+               §§push(-(§§pop() + 81) * 116 + 99 + 94 + 97);
             }
             _loc3_ = §§pop()[§§pop()];
             §§push(_loc2_);
             §§push(1);
             if(_loc8_)
             {
-               §§push(-§§pop() * 13 * 10 - 1);
+               §§push(§§pop() - 65 + 1 - 94);
             }
             _loc4_ = §§pop()[§§pop()];
             if(_loc3_.test(param1))
@@ -141,16 +140,16 @@ package info.noirbizarre.airorm.utils
       {
          §§push(param1);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((--§§pop() - 1) * 30 - 26 + 1 - 96);
+            §§push(§§pop() - 26 + 67 + 1);
          }
          §§push(§§pop().charAt(§§pop()).toUpperCase());
          §§push(param1);
          §§push(1);
          if(_loc3_)
          {
-            §§push(((§§pop() + 1 - 14) * 17 - 1) * 75);
+            §§push(-§§pop() + 61 + 23 - 1);
          }
          return §§pop() + §§pop().substr(§§pop());
       }
@@ -159,16 +158,16 @@ package info.noirbizarre.airorm.utils
       {
          §§push(param1);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 27 - 91 - 1 + 110) * 59 + 37);
+            §§push(§§pop() - 83 - 1 - 1 + 38 - 1);
          }
          §§push(§§pop().charAt(§§pop()).toLowerCase());
          §§push(param1);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 42 - 92 + 1);
+            §§push(-(§§pop() * 108 * 33 - 2));
          }
          return §§pop() + §§pop().substr(§§pop());
       }

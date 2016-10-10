@@ -12,6 +12,12 @@ package com.enfluid.ltp.controller.competitoranalysis
    import com.enfluid.ltp.util.KeywordUtil;
    import com.enfluid.ltp.util.Logger;
    import com.photon.controller.PhotonCommand;
+   import mx.binding.Binding;
+   import spark.effects.easing.IEaser;
+   import spark.effects.easing.EaseInOutBase;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
+   import com.enfluid.ltp.view.dataandfilters.SuggestedBidSection;
    
    public final class SplitDomainsIntoKeywords extends Command implements IPhotonCommand, IResponder
    {
@@ -38,7 +44,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc7_)
          {
-            §§push(§§pop() - 1 + 1 - 86);
+            §§push((§§pop() + 38 - 102 + 1) * 3);
          }
          for each(_loc2_ in this.competitorUrls)
          {
@@ -73,9 +79,9 @@ package com.enfluid.ltp.controller.competitoranalysis
          var _loc2_:XMLList = XML(param1.result).term;
          §§push(_loc2_.length());
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push((§§pop() + 1) * 18 - 26);
+            §§push(-((§§pop() + 100) * 64 - 1));
          }
          if(§§pop() == §§pop())
          {
@@ -84,15 +90,15 @@ package com.enfluid.ltp.controller.competitoranalysis
             return;
          }
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push(-(-§§pop() + 57 + 1));
+            §§push((§§pop() + 42) * 28 - 1 + 19 - 1 - 91 + 1);
          }
          var _loc3_:* = §§pop();
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push((-§§pop() + 67 + 89 + 10) * 48 - 1 - 24);
+            §§push(-((§§pop() - 83 + 1) * 76 - 69) - 1 + 1);
          }
          for each(_loc4_ in _loc2_)
          {

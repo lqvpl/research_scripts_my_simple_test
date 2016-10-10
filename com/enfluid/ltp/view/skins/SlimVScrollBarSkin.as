@@ -7,6 +7,9 @@ package com.enfluid.ltp.view.skins
    import mx.binding.BindingManager;
    import spark.components.VScrollBar;
    import mx.events.PropertyChangeEvent;
+   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import hr.binaria.asx3m.converters.IMarshallingContext;
+   import mx.collections.ArrayCollection;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -30,16 +33,16 @@ package com.enfluid.ltp.view.skins
          mx_internal::_document = this;
          §§push(this);
          §§push(35);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1 - 37 + 58) - 44 + 0));
+            §§push((-(§§pop() - 47 + 1 - 1) + 74 + 11) * 10);
          }
          §§pop().minHeight = §§pop();
          §§push(this);
          §§push(6);
          if(_loc2_)
          {
-            §§push(-§§pop() + 1 + 1 + 1 - 1 - 26);
+            §§push(-(§§pop() - 74 + 21 - 1) + 110 - 1);
          }
          §§pop().minWidth = §§pop();
          this.mxmlContent = [this._SlimVScrollBarSkin_Button1_i(),this._SlimVScrollBarSkin_Button2_i()];
@@ -97,23 +100,23 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(54);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 39) - 1);
+            §§push(-(-(§§pop() - 1 + 118 - 1 + 1) * 29));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() * 6 + 1) * 50));
+            §§push(-(§§pop() + 38 - 1 + 74 - 85) * 27);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((((§§pop() + 1) * 8 + 79) * 37 - 1) * 119);
+            §§push(((-§§pop() + 4 - 76) * 85 + 1 + 58) * 85);
          }
          §§pop().bottom = §§pop();
          _loc1_.focusEnabled = false;

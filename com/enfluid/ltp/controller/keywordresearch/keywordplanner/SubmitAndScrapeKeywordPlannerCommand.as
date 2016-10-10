@@ -7,12 +7,15 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
    import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.model.constants.Constants;
    import com.enfluid.ltp.util.ProgressBarUtil;
+   import com.enfluid.ltp.controller.keywordresearch.SaveKeywordsToServerCommand;
    
    public final class SubmitAndScrapeKeywordPlannerCommand extends PhotonComplexCommand implements IPhotonCommand
    {
        
       
       private var fetchGlobalSearchVolume:Boolean;
+      
+      private var quickAdded:Boolean;
       
       private var model:DataModel;
       
@@ -22,7 +25,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       
       private var viewModel:ViewModel;
       
-      public function SubmitAndScrapeKeywordPlannerCommand(param1:SeedKeywordVO = null, param2:Array = null, param3:Boolean = false)
+      public function SubmitAndScrapeKeywordPlannerCommand(param1:SeedKeywordVO = null, param2:Array = null, param3:Boolean = false, param4:Boolean = false)
       {
          this.model = DataModel.instance;
          this.viewModel = ViewModel.instance;
@@ -30,6 +33,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          this.seedKeyword = param1;
          this.suppliedKeywords = param2;
          this.fetchGlobalSearchVolume = param3;
+         this.quickAdded = param4;
       }
       
       override public function execute() : void
@@ -63,17 +67,18 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          if(!_loc1_)
          {
             addCommand(new SelectLanguageCommand());
-            addCommand(new SelectKeywordOptionsCommand());
+            addCommand(new SelectKeywordOptionsCommand(this.seedKeyword));
             addCommand(new SetKeywordFiltersCommand());
             addCommand(new SetIncludeKeywordsCommand(this.seedKeyword));
-            addCommand(new SetNegativeKeywordsCommand(this.seedKeyword));
          }
+         addCommand(new SetNegativeKeywordsCommand(this.seedKeyword));
          addCommand(new SelectSearchNetworkCommand());
          addCommand(new InsertKeywordsCommand(_loc2_));
          addCommand(new ClickGetIdeasCommand(_loc1_));
          addCommand(new ClickKeywordIdeasTabCommand());
+         addCommand(new Select100ResultsPerPageCommand());
          addCommand(new CheckForDebugHtmlCommand("scrape.html"));
-         addCommand(new ScrapeKeywordsCommand(this.fetchGlobalSearchVolume));
+         addCommand(new ScrapeKeywordsCommand(this.fetchGlobalSearchVolume,_loc1_ && this.quickAdded));
          addCommand(new CheckForKeywordVolumeError());
          var _loc3_:String = !!this.seedKeyword?"Generating keyword ideas for \"" + this.seedKeyword.keyword + "\"":!!this.fetchGlobalSearchVolume?"Fetching Global Search Volume":"Fetching data for user submitted keywords";
          if(this.seedKeyword)
@@ -97,6 +102,15 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          {
             this.seedKeyword.save();
          }
+      }
+      
+      override protected function done(param1:String = "success") : void
+      {
+         if(!this.fetchGlobalSearchVolume)
+         {
+            new SaveKeywordsToServerCommand(this.seedKeyword).execute();
+         }
+         super.done(param1);
       }
    }
 }

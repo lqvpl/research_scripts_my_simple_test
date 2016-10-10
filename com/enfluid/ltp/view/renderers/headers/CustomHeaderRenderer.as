@@ -8,12 +8,14 @@ package com.enfluid.ltp.view.renderers.headers
    import spark.components.HGroup;
    import com.enfluid.ltp.view.components.HelpButton;
    import mx.graphics.SolidColor;
+   import spark.components.Image;
    import mx.core.ClassFactory;
    import spark.primitives.Rect;
    import spark.components.Group;
    import spark.components.Button;
    import com.enfluid.ltp.view.components.Spinner;
    import mx.core.IFlexModuleFactory;
+   import flash.utils.setTimeout;
    import mx.core.IFactory;
    import mx.core.IVisualElement;
    import spark.components.DataGrid;
@@ -23,14 +25,20 @@ package com.enfluid.ltp.view.renderers.headers
    import flash.events.MouseEvent;
    import com.enfluid.ltp.view.components.FilterGridColumn;
    import mx.events.FlexEvent;
+   import com.enfluid.ltp.view.filterviews.AvgKCFilterView;
+   import com.enfluid.ltp.model.ViewModel;
    import flash.events.Event;
    import mx.binding.BindingManager;
    import spark.components.Label;
    import mx.graphics.LinearGradient;
-   import spark.components.Scroller;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import system.data.Iterator;
    import spark.components.VGroup;
-   import com.enfluid.ltp.view.skins.MissingDataButtonSkin;
    import mx.binding.Binding;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import com.enfluid.ltp.view.skins.MissingDataButtonSkin;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -54,6 +62,8 @@ package com.enfluid.ltp.view.renderers.headers
       public var _CustomHeaderRenderer_HelpButton1:HelpButton;
       
       private var _1930526438_CustomHeaderRenderer_SolidColor1:SolidColor;
+      
+      private var _1888293395cancelIcon:Image;
       
       private var _783637168defaultSortIndicator:ClassFactory;
       
@@ -118,16 +128,16 @@ package com.enfluid.ltp.view.renderers.headers
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(21);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 20 + 1 + 90 - 1) * 97);
+            §§push(-(§§pop() + 1 - 1 + 106) - 27 + 84);
          }
          §§pop().minHeight = §§pop();
          §§push(this);
          §§push(21);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-(-§§pop() * 12) - 16 + 78) * 67 - 75);
+            §§push(§§pop() - 1 + 1 + 80);
          }
          §§pop().minWidth = §§pop();
          this.mxmlContent = [this._CustomHeaderRenderer_Rect1_i(),this._CustomHeaderRenderer_Rect2_i(),this._CustomHeaderRenderer_VGroup1_c()];
@@ -151,9 +161,9 @@ package com.enfluid.ltp.view.renderers.headers
          §§push("color");
          §§push("value");
          §§push(16645630);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 114 + 116 - 1) * 96 * 115));
+            §§push(§§pop() - 108 + 1 + 86);
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -167,9 +177,9 @@ package com.enfluid.ltp.view.renderers.headers
          §§push("color");
          §§push("value");
          §§push(16777215);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 62 - 101) * 8 * 102);
+            §§push((-§§pop() + 25 - 99) * 113 * 43 - 26);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -179,9 +189,9 @@ package com.enfluid.ltp.view.renderers.headers
          §§push("alpha");
          §§push("value");
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 15 - 81 + 91);
+            §§push(§§pop() + 1 - 70 + 1 + 1);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -193,14 +203,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 118 + 68) - 72 + 1 - 1 + 109);
+            §§push(§§pop() - 89 + 1 + 1 + 22);
          }
          §§pop().states = null;
          §§push(_loc1_);
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 12) * 54 * 95);
+            §§push((-§§pop() + 50) * 45 - 72);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -298,16 +308,16 @@ package com.enfluid.ltp.view.renderers.headers
                   this.sortIndicatorInstance = this.sortIndicator.newInstance();
                   §§push(this.sortIndicatorInstance);
                   §§push(4);
-                  if(_loc7_)
+                  if(_loc6_)
                   {
-                     §§push((-§§pop() + 77) * 51);
+                     §§push((§§pop() - 1 + 86) * 24);
                   }
                   §§pop().top = §§pop();
                   §§push(this.sortIndicatorInstance);
                   §§push(4);
                   if(_loc6_)
                   {
-                     §§push(-(§§pop() + 1 - 1 - 1) - 68 - 1);
+                     §§push(--(-§§pop() * 14 + 49) - 1);
                   }
                   §§pop().bottom = §§pop();
                   this.sortIndicatorGroup.addElement(this.sortIndicatorInstance);
@@ -319,9 +329,9 @@ package com.enfluid.ltp.view.renderers.headers
                   §§push(_loc5_);
                   §§push(_loc2_.grid);
                   §§push(-1);
-                  if(_loc6_)
+                  if(_loc7_)
                   {
-                     §§push((§§pop() + 1) * 45 + 1);
+                     §§push((-(-§§pop() + 104 + 1) - 14) * 71);
                   }
                   §§pop().prepareGridVisualElement(§§pop(),§§pop(),_loc2_.columnIndex);
                }
@@ -330,9 +340,9 @@ package com.enfluid.ltp.view.renderers.headers
                if(_loc2_.sortDescending)
                {
                   §§push(1);
-                  if(_loc7_)
+                  if(_loc6_)
                   {
-                     §§push(-(§§pop() + 50 + 1) + 31);
+                     §§push(-(§§pop() * 93 + 1) - 1);
                   }
                   §§push(Number(§§pop()));
                }
@@ -341,7 +351,7 @@ package com.enfluid.ltp.view.renderers.headers
                   §§push(-1);
                   if(_loc7_)
                   {
-                     §§push(§§pop() * 113 + 45 + 63 - 1);
+                     §§push(§§pop() * 46 + 1 - 1);
                   }
                   §§push(Number(§§pop()));
                }
@@ -390,11 +400,21 @@ package com.enfluid.ltp.view.renderers.headers
                §§push(0);
                if(_loc4_)
                {
-                  §§push((-§§pop() - 117 - 1) * 88);
+                  §§push((-§§pop() + 1 - 1 - 1 - 13) * 54 + 1);
                }
                §§pop().addElementAt(§§pop(),§§pop());
+               if(_loc3_ is AvgKCFilterView)
+               {
+                  ViewModel.instance.missingAvgKCIcon = this.missingDataIcon;
+               }
             }
          }
+      }
+      
+      protected final function cancelIconClickHandler(param1:MouseEvent) : void
+      {
+         FilterGridColumn(column).showCancelIcon = false;
+         FilterGridColumn(column).missingAdditionalDataCommand.cancelCommand();
       }
       
       private final function dispatchChangeEvent(param1:String) : void
@@ -422,49 +442,49 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(100);
          if(_loc3_)
          {
-            §§push(---§§pop() + 1 + 1);
+            §§push((§§pop() + 72 - 1) * 117 * 17);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((-((§§pop() + 35) * 109 * 110) * 77 - 63) * 36);
+            §§push(-(§§pop() - 17 + 14) - 118);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 101 - 1 + 51) + 1 - 1);
+            §§push((§§pop() - 49 + 1) * 33 + 27 - 8 - 76);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1) * 10 * 2 - 1 - 1);
+            §§push(§§pop() + 81 - 1 - 1 - 1 + 104 - 31 - 48);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 61 + 1 - 1 - 35);
+            §§push(§§pop() + 1 - 1 - 1 - 49);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--((§§pop() - 1) * 3));
+            §§push(-(§§pop() + 112) - 88 - 1 + 89 - 1);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(-§§pop() + 1 + 23) * 93 + 1);
+            §§push(-((§§pop() + 1) * 20 - 106) - 80);
          }
          §§pop().maxDisplayedLines = §§pop();
          _loc1_.showTruncationTip = true;
@@ -474,7 +494,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 1) * 74 + 1 - 1 + 1);
+            §§push(§§pop() * 102 * 45 * 10 + 1 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","start");
@@ -496,35 +516,35 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(-1);
          if(_loc2_)
          {
-            §§push(-(-(-(§§pop() * 97 + 95) * 94) + 77));
+            §§push(--(§§pop() + 1));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc3_)
          {
-            §§push((§§pop() - 38 + 1) * 32 * 54);
+            §§push(§§pop() * 63 + 75 - 5 - 9);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(-1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 93) - 1 - 1 - 25 + 1));
+            §§push(-§§pop() - 65 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc3_)
          {
-            §§push(((-§§pop() + 1) * 56 + 1) * 81 - 1 + 1);
+            §§push((§§pop() * 72 + 1) * 19 - 75 + 27);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) * 5 - 64);
+            §§push((§§pop() + 1 - 66) * 85 * 85 - 1);
          }
          §§pop().radiusX = §§pop();
          _loc1_.fill = this._CustomHeaderRenderer_LinearGradient1_c();
@@ -541,7 +561,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(90);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 4) - 1) * 23 + 1);
+            §§push(((-§§pop() + 1 - 1) * 19 - 1 + 1) * 112);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._CustomHeaderRenderer_GradientEntry1_i(),this._CustomHeaderRenderer_GradientEntry2_i()];
@@ -553,9 +573,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 1) * 85 * 95 - 16 + 1 - 28) * 39);
+            §§push((§§pop() * 113 + 71 + 19 + 99) * 76);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.01;
@@ -569,9 +589,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 6 + 89 + 1) * 34) - 1 - 1);
+            §§push((§§pop() * 40 - 1 - 1 - 35 - 92) * 56 + 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.07;
@@ -587,28 +607,28 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1) * 46);
+            §§push(§§pop() - 1 + 77 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((-§§pop() - 1 - 1 - 1) * 10);
+            §§push(-(§§pop() - 80 - 1) * 54);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() - 71 - 103);
+            §§push(§§pop() * 94 - 32 + 1 - 1 - 16);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 87) + 10 + 13) * 64);
+            §§push((§§pop() + 4 + 4 + 1 - 1) * 22);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._CustomHeaderRenderer_SolidColor1_i();
@@ -623,9 +643,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16645630);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 27 + 64) * 78 - 44 - 1);
+            §§push(-(§§pop() + 75) - 1 - 1);
          }
          §§pop().color = §§pop();
          this._CustomHeaderRenderer_SolidColor1 = _loc1_;
@@ -640,35 +660,35 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(100);
          if(_loc2_)
          {
-            §§push((§§pop() - 96 + 8) * 9 * 63 - 1 + 1);
+            §§push(--(§§pop() - 1 - 1 + 49) * 38 - 96);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 1 + 1 - 1 - 63));
+            §§push(-(-(§§pop() * 14) - 1));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 1 + 1 + 64) + 106 - 14);
+            §§push(§§pop() * 88 + 113 - 1 + 33 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 38 - 17);
+            §§push((--(§§pop() * 75 - 1) - 1 + 1) * 93);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() + 1) * 7 - 91) * 115);
+            §§push((§§pop() - 1) * 64 - 1 - 92 + 1 - 95);
          }
          §§pop().bottom = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -676,7 +696,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 1 - 1));
+            §§push(-(§§pop() - 1 - 1 - 21 + 1));
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._CustomHeaderRenderer_HGroup1_c(),this._CustomHeaderRenderer_HGroup2_i()];
@@ -694,14 +714,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 106 + 101 + 73 + 119);
+            §§push(-§§pop() * 19 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(((§§pop() * 79 - 100) * 43 + 14) * 91 * 70);
+            §§push(§§pop() * 39 * 77 + 1);
          }
          §§pop().paddingRight = §§pop();
          _loc1_.verticalAlign = "top";
@@ -721,9 +741,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 67 + 46) + 1);
+            §§push(-§§pop() + 1 - 63 - 1 - 1 - 38);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "labelDisplayGroup";
@@ -741,9 +761,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 1) - 1) * 52 + 59 + 13);
+            §§push((-(§§pop() - 25) + 6) * 81);
          }
          §§pop().width = §§pop();
          _loc1_.includeInLayout = false;
@@ -777,21 +797,21 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(100);
          if(_loc3_)
          {
-            §§push(((§§pop() + 63) * 7 - 77 + 1) * 86 * 16);
+            §§push(-(§§pop() - 1 - 52 + 1 - 50));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(17);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 59 + 100) + 1);
+            §§push(§§pop() - 52 + 1 - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 90 + 1);
+            §§push(--(-(§§pop() + 1) - 104));
          }
          §§pop().paddingRight = §§pop();
          _loc1_.verticalAlign = "top";
@@ -814,19 +834,19 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(14);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 1 + 35 - 1 - 1 + 1);
+            §§push((§§pop() - 71 - 39 - 41) * 119 + 58 + 1 - 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1) * 19 + 1 + 1);
+            §§push(§§pop() + 111 + 1 - 17);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.horizontalAlign = "center";
          _loc1_.verticalAlign = "middle";
-         _loc1_.mxmlContent = [this._CustomHeaderRenderer_Button1_i(),this._CustomHeaderRenderer_Spinner1_i()];
+         _loc1_.mxmlContent = [this._CustomHeaderRenderer_Button1_i(),this._CustomHeaderRenderer_Spinner1_i(),this._CustomHeaderRenderer_Image1_i()];
          _loc1_.id = "_CustomHeaderRenderer_HGroup3";
          if(!_loc1_.document)
          {
@@ -844,14 +864,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(13);
          if(_loc3_)
          {
-            §§push(-§§pop() * 33 + 29);
+            §§push(-(§§pop() - 1) - 28 + 117);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-((§§pop() + 1) * 67) + 42) * 15 - 1);
+            §§push(-(-§§pop() + 1 + 1));
          }
          §§pop().height = §§pop();
          _loc1_.buttonMode = true;
@@ -877,61 +897,62 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:Spinner = new Spinner();
          §§push(_loc1_);
          §§push(13);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 41 + 1 - 1 + 38 + 12 - 34);
+            §§push(-(§§pop() * 99 - 1 + 68 - 2) + 58);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(13);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 3) * 114);
+            §§push(-(§§pop() + 1 + 1) - 27 + 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(16);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 90) * 109 + 20);
+            §§push(-(§§pop() - 1 + 1) + 1);
          }
          §§pop().size = §§pop();
          §§push(_loc1_);
          §§push(12);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1) * 74 + 1) - 68);
+            §§push(-§§pop() + 17 - 24 - 108 - 69 + 1);
          }
          §§pop().numTicks = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 1 - 16);
+            §§push(-((§§pop() + 1) * 63) * 72 - 1 + 108 + 59);
          }
          §§pop().tickWidth = §§pop();
          §§push(_loc1_);
          §§push(600);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1) * 21 * 84);
+            §§push(-§§pop() + 1 + 9 + 70 + 1);
          }
          §§pop().speed = §§pop();
          §§push(_loc1_);
          §§push(1200);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 56 - 19 - 108) + 1 + 56);
+            §§push(--(§§pop() - 1 - 1) * 41 - 1 + 1);
          }
          §§pop().fadeSpeed = §§pop();
          §§push(_loc1_);
          §§push("tickColor");
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 20 - 108 - 53 - 49 + 1);
+            §§push(-(§§pop() - 1) + 52);
          }
          §§pop().setStyle(§§pop(),§§pop());
+         _loc1_.addEventListener("mouseOver",this.__spinner_mouseOver);
          _loc1_.id = "spinner";
          if(!_loc1_.document)
          {
@@ -940,6 +961,54 @@ package com.enfluid.ltp.view.renderers.headers
          this.spinner = _loc1_;
          BindingManager.executeBindings(this,"spinner",this.spinner);
          return _loc1_;
+      }
+      
+      public final function __spinner_mouseOver(param1:MouseEvent) : void
+      {
+         FilterGridColumn(column).showCancelIcon = true;
+      }
+      
+      private final function _CustomHeaderRenderer_Image1_i() : Image
+      {
+         var _loc1_:Image = new Image();
+         §§push(_loc1_);
+         §§push(15);
+         if(_loc3_)
+         {
+            §§push(-(-(§§pop() + 84 - 1 - 46 - 1) - 61));
+         }
+         §§pop().width = §§pop();
+         §§push(_loc1_);
+         §§push(15);
+         if(_loc2_)
+         {
+            §§push((§§pop() - 1) * 111 + 1 + 80);
+         }
+         §§pop().height = §§pop();
+         _loc1_.verticalAlign = "middle";
+         _loc1_.buttonMode = true;
+         _loc1_.useHandCursor = true;
+         _loc1_.addEventListener("click",this.__cancelIcon_click);
+         _loc1_.addEventListener("mouseOut",this.__cancelIcon_mouseOut);
+         _loc1_.id = "cancelIcon";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this.cancelIcon = _loc1_;
+         BindingManager.executeBindings(this,"cancelIcon",this.cancelIcon);
+         return _loc1_;
+      }
+      
+      public final function __cancelIcon_click(param1:MouseEvent) : void
+      {
+         this.cancelIconClickHandler(param1);
+         this.onClickWarningIcon(param1);
+      }
+      
+      public final function __cancelIcon_mouseOut(param1:MouseEvent) : void
+      {
+         FilterGridColumn(column).showCancelIcon = false;
       }
       
       public final function __secondLineHGroup_click(param1:MouseEvent) : void
@@ -959,7 +1028,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(-§§pop() + 68 - 1) - 1) * 27 * 61);
+            §§push((§§pop() - 83) * 101 + 118 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -968,9 +1037,9 @@ package com.enfluid.ltp.view.renderers.headers
          },null,"_CustomHeaderRenderer_HelpButton1.helpTitle");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 116) * 75 + 72 - 12);
+            §§push(-(§§pop() * 64 - 1) + 110 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -981,35 +1050,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(2);
          if(_loc3_)
          {
-            §§push((-((§§pop() - 60) * 40 - 94) + 1) * 6);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Number
-         {
-            if(FilterGridColumn(column).showProgressSpinner)
-            {
-               §§push(2);
-               if(_loc1_)
-               {
-                  §§push(-(§§pop() - 1 + 1) + 94 - 1);
-               }
-               §§push(Number(§§pop()));
-            }
-            else
-            {
-               §§push(0);
-               if(_loc1_)
-               {
-                  §§push(--(§§pop() - 77 - 1 - 50));
-               }
-               §§push(Number(§§pop()));
-            }
-            return §§pop();
-         },null,"_CustomHeaderRenderer_HGroup3.paddingBottom");
-         §§push(result);
-         §§push(3);
-         if(_loc2_)
-         {
-            §§push(-(§§pop() - 84) * 10 - 1 - 1 - 1);
+            §§push(-(§§pop() + 1 - 1 - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -1018,7 +1059,7 @@ package com.enfluid.ltp.view.renderers.headers
                §§push(2);
                if(_loc2_)
                {
-                  §§push(§§pop() + 1 + 76 - 86);
+                  §§push(§§pop() - 62 - 1 - 1 + 1);
                }
                §§push(Number(§§pop()));
             }
@@ -1027,7 +1068,35 @@ package com.enfluid.ltp.view.renderers.headers
                §§push(0);
                if(_loc1_)
                {
-                  §§push(§§pop() - 1 - 1 - 1);
+                  §§push(((§§pop() - 14 - 76) * 66 - 1) * 93 - 1 - 107);
+               }
+               §§push(Number(§§pop()));
+            }
+            return §§pop();
+         },null,"_CustomHeaderRenderer_HGroup3.paddingBottom");
+         §§push(result);
+         §§push(3);
+         if(_loc3_)
+         {
+            §§push(-§§pop() * 73 + 43 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Number
+         {
+            if(FilterGridColumn(column).showProgressSpinner)
+            {
+               §§push(2);
+               if(_loc2_)
+               {
+                  §§push(§§pop() + 40 + 1 - 41 + 1 + 1);
+               }
+               §§push(Number(§§pop()));
+            }
+            else
+            {
+               §§push(0);
+               if(_loc2_)
+               {
+                  §§push((§§pop() - 1 - 1) * 34 + 17 - 1);
                }
                §§push(Number(§§pop()));
             }
@@ -1035,59 +1104,59 @@ package com.enfluid.ltp.view.renderers.headers
          },null,"_CustomHeaderRenderer_HGroup3.paddingRight");
          §§push(result);
          §§push(4);
-         if(_loc2_)
-         {
-            §§push(-(-(§§pop() - 1 - 1) - 1) - 1 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return missingDataIcon.includeInLayout || spinner.includeInLayout;
-         },null,"_CustomHeaderRenderer_HGroup3.visible");
-         §§push(result);
-         §§push(5);
          if(_loc3_)
          {
-            §§push(§§pop() - 101 - 1 - 107);
+            §§push(§§pop() * 115 * 41 * 67 * 67 + 1 - 72 - 19);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return missingDataIcon.includeInLayout || spinner.includeInLayout;
+            return missingDataIcon.includeInLayout || spinner.includeInLayout || cancelIcon.includeInLayout;
          },null,"_CustomHeaderRenderer_HGroup3.includeInLayout");
          §§push(result);
-         §§push(6);
-         if(_loc3_)
-         {
-            §§push(§§pop() - 1 + 71 + 104 + 1 + 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return !spinner.includeInLayout && (FilterGridColumn(column).showWarningIcon || FilterGridColumn(column).showEditIcon);
-         },null,"missingDataIcon.visible");
-         §§push(result);
-         §§push(7);
+         §§push(5);
          if(_loc2_)
          {
-            §§push(---((§§pop() - 8 + 49 - 1) * 63));
+            §§push((-§§pop() + 68 - 67 - 1) * 69);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return !spinner.includeInLayout && (FilterGridColumn(column).showWarningIcon || FilterGridColumn(column).showEditIcon);
+            return missingDataIcon.includeInLayout || spinner.includeInLayout || cancelIcon.includeInLayout;
+         },null,"_CustomHeaderRenderer_HGroup3.visible");
+         §§push(result);
+         §§push(6);
+         if(_loc2_)
+         {
+            §§push(((§§pop() - 1) * 27 + 4) * 12 * 22 - 30 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return !spinner.includeInLayout && (FilterGridColumn(column).showWarningIcon || FilterGridColumn(column).showEditIcon) && !FilterGridColumn(column).showCancelIcon;
          },null,"missingDataIcon.includeInLayout");
          §§push(result);
-         §§push(8);
+         §§push(7);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() * 44 + 1) - 1 + 1) * 58);
+            §§push(-(-(§§pop() * 12) - 59 + 118 + 7) + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return FilterGridColumn(column).showProgressSpinner;
+            return !spinner.includeInLayout && (FilterGridColumn(column).showWarningIcon || FilterGridColumn(column).showEditIcon) && !FilterGridColumn(column).showCancelIcon;
+         },null,"missingDataIcon.visible");
+         §§push(result);
+         §§push(8);
+         if(_loc2_)
+         {
+            §§push((§§pop() + 1 + 1) * 25 * 79 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return FilterGridColumn(column).showProgressSpinner && !FilterGridColumn(column).showCancelIcon;
          },null,"spinner.includeInLayout");
          §§push(result);
          §§push(9);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 + 1 - 101);
+            §§push(-(§§pop() - 118) - 8 - 69);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1097,12 +1166,42 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(10);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 107 + 12);
+            §§push(§§pop() + 38 + 81 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
-            return FilterGridColumn(column).showProgressSpinner;
+            return FilterGridColumn(column).showProgressSpinner && !FilterGridColumn(column).showCancelIcon;
          },null,"spinner.visible");
+         §§push(result);
+         §§push(11);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 1 - 101 - 65 - 67);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return FilterGridColumn(column).showCancelIcon;
+         },null,"cancelIcon.includeInLayout");
+         §§push(result);
+         §§push(12);
+         if(_loc2_)
+         {
+            §§push(-(-§§pop() * 78 * 61));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Object
+         {
+            return AssetsLibrary.X_IMAGE;
+         },null,"cancelIcon.source");
+         §§push(result);
+         §§push(13);
+         if(_loc3_)
+         {
+            §§push(--(--§§pop() + 9) + 40);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return FilterGridColumn(column).showCancelIcon;
+         },null,"cancelIcon.visible");
          return result;
       }
       
@@ -1159,6 +1258,25 @@ package com.enfluid.ltp.view.renderers.headers
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_CustomHeaderRenderer_SolidColor1",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get cancelIcon() : Image
+      {
+         return this._1888293395cancelIcon;
+      }
+      
+      public function set cancelIcon(param1:Image) : void
+      {
+         var _loc2_:Object = this._1888293395cancelIcon;
+         if(_loc2_ !== param1)
+         {
+            this._1888293395cancelIcon = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"cancelIcon",_loc2_,param1));
             }
          }
       }

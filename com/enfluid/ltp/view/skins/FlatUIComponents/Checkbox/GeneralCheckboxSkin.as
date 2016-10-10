@@ -4,37 +4,43 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
+   import spark.primitives.BitmapImage;
+   import mx.binding.BindingManager;
    import mx.graphics.GradientEntry;
    import spark.primitives.Rect;
-   import spark.primitives.BitmapImage;
    import spark.components.Group;
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
-   import com.hurlant.math.BigInteger;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import com.adobe.cairngorm.observer.Observe;
    import spark.components.supportClasses.LabelPlacement;
-   import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.SaveProxiesCommand;
    import mx.graphics.LinearGradientStroke;
-   import hr.binaria.asx3m.converters.ISingleValueConverter;
-   import mx.graphics.SolidColor;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass5;
-   import system.numeric.Mathematics;
-   import com.enfluid.ltp.view.components.CustomRichEditableText;
-   import spark.components.ComboBox;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
+   import mx.events.FlexEvent;
+   import spark.events.PopUpEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import spark.components.HGroup;
-   import flash.utils.ByteArray;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.skins.target;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.binding.Binding;
+   import mx.graphics.SolidColor;
+   import mx.events.CloseEvent;
+   import mx.controls.Alert;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
+   import spark.components.Grid;
+   import spark.components.DataGrid;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import spark.components.CheckBox;
    import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
-   import mx.effects.Parallel;
-   import flash.utils.getDefinitionByName;
-   import mx.states.State;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass10;
    import mx.states.AddItems;
-   import mx.states.SetProperty;
    
    use namespace mx_internal;
    
@@ -195,9 +201,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push("color");
          §§push("value");
          §§push(12569557);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1) * 92 - 1 - 12);
+            §§push(-(§§pop() - 1) * 58);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty().initializeFromObject({
@@ -214,7 +220,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(12569557);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 80 - 1 - 72);
+            §§push(§§pop() + 1 - 1 + 29);
          }
          §§push(new §§pop().State(null));
          §§push(new State({
@@ -323,7 +329,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(12569557);
          if(_loc4_)
          {
-            §§push(§§pop() + 1 + 1 + 67 - 14 - 1 - 15);
+            §§push(§§pop() * 112 - 1 + 23);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty().initializeFromObject({
@@ -338,17 +344,17 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push("color");
          §§push("value");
          §§push(12569557);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() * 118 - 1 + 47 + 61);
+            §§push((§§pop() + 1 + 94 - 111 + 1 + 1) * 44);
          }
          §§pop().states = null;
          _GeneralCheckboxSkin_BitmapImage1_factory.getInstance();
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(((§§pop() - 84 - 1) * 34 - 50 + 95) * 18 * 88);
+            §§push((-§§pop() + 1 - 45 - 1) * 68 - 1 - 46);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -411,9 +417,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
       public final function updateLabelPlacement() : void
       {
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 1 - 1 + 2 + 1 - 46);
+            §§push(-(§§pop() - 47) - 1);
          }
          var _loc1_:* = §§pop();
          if(!this.checkDisplay || !this.labelDisplay)
@@ -425,7 +431,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
             §§push(5);
             if(_loc4_)
             {
-               §§push((-§§pop() - 96 + 1) * 37);
+               §§push((§§pop() - 1 - 1 - 1) * 11);
             }
             _loc1_ = §§pop();
          }
@@ -436,17 +442,17 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          if(LabelPlacement.BOTTOM === _loc2_)
          {
             §§push(0);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(-(§§pop() * 53 * 67) - 1);
+               §§push((-§§pop() - 1) * 103 + 48 + 21 - 80);
             }
          }
          else if(LabelPlacement.LEFT === _loc2_)
          {
             §§push(1);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(-(-(§§pop() + 1) - 1 - 107));
+               §§push(-(§§pop() + 1 - 1));
             }
          }
          else if(LabelPlacement.TOP === _loc2_)
@@ -454,7 +460,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
             §§push(2);
             if(_loc4_)
             {
-               §§push(-(-(-§§pop() + 1) - 1) * 79 + 64);
+               §§push((§§pop() - 1 - 8 - 100) * 64 * 66 * 98 - 1);
             }
          }
          else if(LabelPlacement.RIGHT === _loc2_)
@@ -462,7 +468,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
             §§push(3);
             if(_loc4_)
             {
-               §§push(--(-(§§pop() - 1) - 63) + 1 + 43);
+               §§push(§§pop() + 1 + 1 + 35 - 1);
             }
          }
          else
@@ -470,7 +476,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
             §§push(4);
             if(_loc4_)
             {
-               §§push((-(§§pop() - 1) - 115) * 49 - 1 - 34);
+               §§push((§§pop() + 104 - 49 + 1) * 6 + 1 + 1);
             }
          }
          switch(§§pop())
@@ -480,45 +486,45 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
                §§push(0);
                if(_loc3_)
                {
-                  §§push(-(-§§pop() * 119) + 1 - 67);
+                  §§push((-(§§pop() + 105) - 1 + 1 + 3 - 1) * 18);
                }
                §§pop().horizontalCenter = §§pop();
                this.labelDisplay.verticalCenter = undefined;
                this.labelDisplay.top = this.checkDisplay.height + _loc1_;
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push((§§pop() - 1 + 67 + 1) * 20);
+                  §§push(§§pop() - 1 - 1 - 13);
                }
                §§pop().bottom = §§pop();
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(-(§§pop() + 8 - 1) * 76 + 1);
+                  §§push((-§§pop() - 3 + 1) * 63 + 1 + 63);
                }
                §§pop().left = §§pop();
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc4_)
+               if(_loc3_)
                {
-                  §§push(--((§§pop() - 1 + 72) * 2) - 1);
+                  §§push(-(-§§pop() + 12) - 81 - 51 + 95);
                }
                §§pop().right = §§pop();
                §§push(this.checkDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(-(§§pop() * 43 * 67) + 1 - 1);
+                  §§push(-(§§pop() - 1 - 83 + 87) * 48 + 104 + 111);
                }
                §§pop().horizontalCenter = §§pop();
                this.checkDisplay.verticalCenter = undefined;
                §§push(this.checkDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(-((§§pop() + 1) * 32 - 1 - 1) - 90);
+                  §§push(§§pop() + 65 - 96 - 84);
                }
                §§pop().top = §§pop();
                this.checkDisplay.bottom = undefined;
@@ -529,84 +535,84 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
                §§push(2);
                if(_loc4_)
                {
-                  §§push(-§§pop() + 33 + 1);
+                  §§push(-(-(§§pop() + 1) - 57 + 1 - 18));
                }
                §§pop().verticalCenter = §§pop();
                §§push(this.labelDisplay);
                §§push(3);
                if(_loc3_)
                {
-                  §§push((§§pop() * 102 * 86 + 32) * 12 * 82);
+                  §§push(--((§§pop() + 100 - 3 + 75 + 1) * 101));
                }
                §§pop().top = §§pop();
                §§push(this.labelDisplay);
                §§push(3);
                if(_loc4_)
                {
-                  §§push((§§pop() - 1 - 6 + 1 + 1) * 81 - 1);
+                  §§push(-(§§pop() - 75 + 1) * 116 + 1);
                }
                §§pop().bottom = §§pop();
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push((§§pop() + 1 + 112 - 65) * 37 + 53);
+                  §§push((§§pop() * 39 - 1 - 101 + 35) * 93);
                }
                §§pop().left = §§pop();
                this.labelDisplay.right = this.checkDisplay.width + _loc1_;
                this.checkDisplay.horizontalCenter = undefined;
                §§push(this.checkDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(-(§§pop() + 76 - 69) - 24);
+                  §§push((§§pop() + 1) * 71 - 103 + 1 - 49 - 20 + 1);
                }
                §§pop().verticalCenter = §§pop();
                this.checkDisplay.left = undefined;
                §§push(this.checkDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(§§pop() - 112 - 74 + 86);
+                  §§push((§§pop() - 42 - 72 - 1 + 18 + 1 + 17) * 104);
                }
                §§pop().right = §§pop();
                break;
             case 2:
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(-§§pop() + 1 - 1);
+                  §§push((§§pop() - 1 + 1 - 1 + 1 + 1 - 50) * 63);
                }
                §§pop().horizontalCenter = §§pop();
                this.labelDisplay.verticalCenter = undefined;
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(§§pop() + 1 - 1 + 1 + 2 + 83 - 1);
+                  §§push(-(§§pop() + 51 + 1 - 53 - 45 - 8));
                }
                §§pop().top = §§pop();
                this.labelDisplay.bottom = this.checkDisplay.height + _loc1_;
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(-(§§pop() + 108 + 67 + 1) - 65 - 1);
+                  §§push((-§§pop() - 29 + 1) * 119 - 64);
                }
                §§pop().left = §§pop();
                §§push(this.labelDisplay);
                §§push(0);
-               if(_loc4_)
+               if(_loc3_)
                {
-                  §§push(-(-§§pop() - 1) + 1);
+                  §§push(-((§§pop() * 64 - 55) * 79 - 1 - 1 + 42));
                }
                §§pop().right = §§pop();
                §§push(this.checkDisplay);
                §§push(0);
                if(_loc3_)
                {
-                  §§push(-(§§pop() * 33) * 75 * 24);
+                  §§push(-(§§pop() - 1 + 1 - 59));
                }
                §§pop().horizontalCenter = §§pop();
                this.checkDisplay.verticalCenter = undefined;
@@ -615,7 +621,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
                §§push(0);
                if(_loc4_)
                {
-                  §§push(--((§§pop() + 92 + 51 + 53) * 34));
+                  §§push(-(-(-(§§pop() + 38) + 1) - 1 - 1));
                }
                §§pop().bottom = §§pop();
                break;
@@ -624,23 +630,23 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
                this.labelDisplay.horizontalCenter = undefined;
                §§push(this.labelDisplay);
                §§push(2);
-               if(_loc4_)
+               if(_loc3_)
                {
-                  §§push((-§§pop() * 79 + 25 + 102 + 0) * 52 + 1);
+                  §§push(-(-§§pop() - 1));
                }
                §§pop().verticalCenter = §§pop();
                §§push(this.labelDisplay);
                §§push(3);
                if(_loc3_)
                {
-                  §§push(((-§§pop() - 1 - 33 + 114) * 63 - 1) * 59);
+                  §§push((§§pop() + 1) * 8 + 78);
                }
                §§pop().top = §§pop();
                §§push(this.labelDisplay);
                §§push(3);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(§§pop() + 1 + 82 + 1 - 1 - 33);
+                  §§push(§§pop() + 1 + 1 + 107 - 47);
                }
                §§pop().bottom = §§pop();
                this.labelDisplay.left = this.checkDisplay.width + _loc1_;
@@ -648,22 +654,22 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
                §§push(0);
                if(_loc3_)
                {
-                  §§push(§§pop() + 1 - 25 - 1 + 75 + 1 + 58 + 103);
+                  §§push(§§pop() * 16 - 1 + 1 - 70 + 1 - 1);
                }
                §§pop().right = §§pop();
                this.checkDisplay.horizontalCenter = undefined;
                §§push(this.checkDisplay);
                §§push(0);
-               if(_loc4_)
+               if(_loc3_)
                {
-                  §§push(§§pop() - 1 - 1 - 1);
+                  §§push(-(§§pop() + 1) - 1);
                }
                §§pop().verticalCenter = §§pop();
                §§push(this.checkDisplay);
                §§push(0);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  §§push(§§pop() + 102 + 63 - 104 - 1 + 57 - 51 - 61);
+                  §§push(-§§pop() - 65 - 85);
                }
                §§pop().left = §§pop();
                this.checkDisplay.right = undefined;
@@ -677,21 +683,21 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(13);
          if(_loc2_)
          {
-            §§push((§§pop() * 117 + 97) * 72 + 4 - 1);
+            §§push(-(-(§§pop() + 44 - 1) * 87 - 0 - 1));
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(13);
          if(_loc3_)
          {
-            §§push((§§pop() - 19 + 61 - 46) * 102 + 1 + 1 - 17);
+            §§push(-(§§pop() + 50 + 1 + 1));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 102 + 11 + 4);
+            §§push(-§§pop() - 1 + 31 + 4 + 1 - 26);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.layoutDirection = "ltr";
@@ -711,30 +717,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 1 + 1 + 1);
+            §§push(-((§§pop() * 31 + 1) * 97 - 75) * 70);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 3 - 91 + 107 + 1 + 26);
+            §§push(-(§§pop() - 47 + 1) + 1 - 4);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 57 - 98 - 42 + 1);
+            §§push(-(§§pop() - 1 - 31 - 62) + 48 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 95 + 73);
+            §§push(-(§§pop() - 22) - 1 + 65 + 103);
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._GeneralCheckboxSkin_LinearGradientStroke1_c();
@@ -749,14 +755,14 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(90);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 + 1);
+            §§push(-((§§pop() + 80 + 1 - 1 + 1) * 48));
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 113 - 1) + 1);
+            §§push(-(-§§pop() - 1 + 1 - 1 - 1 + 1));
          }
          §§pop().weight = §§pop();
          _loc1_.entries = [this._GeneralCheckboxSkin_GradientEntry1_i(),this._GeneralCheckboxSkin_GradientEntry2_i()];
@@ -770,7 +776,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(12569557);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 45 - 60 + 67 + 91);
+            §§push((-(§§pop() + 1 - 1 - 1) + 48) * 94);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -786,7 +792,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(12569557);
          if(_loc2_)
          {
-            §§push((-§§pop() + 1 - 36 + 30) * 68);
+            §§push(§§pop() + 14 + 25 + 18 - 105 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -802,28 +808,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 97 - 1 + 104) + 1);
+            §§push(--(-(§§pop() + 67 + 86) - 26) * 43);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 6 - 115 + 1 - 96 + 5);
+            §§push(§§pop() - 1 + 1 + 53 + 113 + 33);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() * 81 + 113 + 1) * 55);
+            §§push(--§§pop() - 27 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 33 - 50 + 47) - 1);
+            §§push(-((§§pop() + 94 + 54 + 1) * 4 + 86));
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._GeneralCheckboxSkin_SolidColor1_c();
@@ -840,7 +846,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(15790320);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 13 - 101));
+            §§push((§§pop() + 1 + 1) * 97 + 119 - 16 + 1);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -853,28 +859,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(-§§pop() * 54) - 1) * 87 + 115 + 1);
+            §§push(-((§§pop() + 34 + 1 - 25) * 8 - 1) + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 77 + 75 - 1 + 1) * 79 * 39 * 51);
+            §§push(-((§§pop() - 1) * 28 + 1 + 1 - 71) - 66);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 77) + 15 - 1);
+            §§push(-(§§pop() - 1) - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 1 + 5) * 67);
+            §§push(((§§pop() - 1 - 91) * 17 + 1 + 1) * 106);
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._GeneralCheckboxSkin_LinearGradientStroke2_c();
@@ -889,16 +895,16 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:LinearGradientStroke = new LinearGradientStroke();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 1 - 1 - 93);
+            §§push(-(§§pop() + 1) - 1 + 99 - 1 - 1);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 - 1 + 1 + 118);
+            §§push(-((§§pop() - 1 + 1 - 1) * 114 + 69));
          }
          §§pop().weight = §§pop();
          _loc1_.entries = [this._GeneralCheckboxSkin_GradientEntry3_i(),this._GeneralCheckboxSkin_GradientEntry4_i()];
@@ -912,7 +918,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(12569557);
          if(_loc3_)
          {
-            §§push(-((-(§§pop() + 1 - 1) - 2) * 115 - 1));
+            §§push(-((§§pop() * 8 - 55) * 103 + 1 + 26));
          }
          §§pop().color = §§pop();
          this._GeneralCheckboxSkin_GradientEntry3 = _loc1_;
@@ -925,9 +931,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(12569557);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--((§§pop() - 1) * 91 - 38));
+            §§push(§§pop() * 92 - 1 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;
@@ -941,30 +947,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 1 + 1));
+            §§push(--§§pop() - 1 + 1 - 85);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 1 - 1 + 1);
+            §§push(--§§pop() - 118 + 1 - 1 - 64 - 111);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 70) - 75 - 1);
+            §§push(-(§§pop() + 1) + 70 - 1 - 32 + 60 + 66);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 81) * 17 - 1 + 1 + 1);
+            §§push(--((§§pop() + 1) * 111 * 66 * 89 + 105));
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._GeneralCheckboxSkin_SolidColor2_c();
@@ -979,9 +985,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() * 74 - 1) * 52);
+            §§push(-((§§pop() + 1 - 1 + 112) * 31));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.07;
@@ -993,30 +999,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 1) + 20 + 59 + 1 - 42);
+            §§push(-(§§pop() + 107 - 1) + 108);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 8 + 3 - 1) * 112);
+            §§push((§§pop() - 1 - 66 + 29) * 21 - 69);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 1) * 7 - 99 - 10 - 1 - 47);
+            §§push(-((§§pop() * 7 + 7) * 86 + 1) - 73);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() * 58 - 1 + 1 + 1);
+            §§push(-(§§pop() * 60 - 95 + 14));
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._GeneralCheckboxSkin_SolidColor3_c();
@@ -1031,9 +1037,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 10) * 65 - 1);
+            §§push((-(§§pop() + 99) + 1) * 62 - 1 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.07;
@@ -1045,30 +1051,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1 + 69) - 1) * 75);
+            §§push(§§pop() + 1 - 1 + 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(-(§§pop() - 59 + 1) * 22));
+            §§push((-(§§pop() + 89) + 1 + 1) * 76);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 4) - 29 - 1 + 36);
+            §§push(-((-§§pop() + 90 - 30) * 14));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() - 46 + 1 + 53) * 13 - 1);
+            §§push(-(§§pop() + 15 - 28) * 104);
          }
          §§pop().top = §§pop();
          _loc1_.fill = this._GeneralCheckboxSkin_SolidColor4_c();
@@ -1085,7 +1091,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() * 23 + 52 + 1 + 1 - 1);
+            §§push(§§pop() - 1 + 1 - 1 + 44);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.25;
@@ -1099,28 +1105,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 78 + 1) - 77);
+            §§push(-((§§pop() + 1) * 106));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(((§§pop() * 87 - 1 + 112) * 79 + 1) * 24 + 1);
+            §§push(--(§§pop() + 1 - 41));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 13) * 28);
+            §§push((-§§pop() + 1 + 113) * 10);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 34 + 1 + 67 - 73) + 10);
+            §§push(-§§pop() + 109 + 1 + 1);
          }
          §§pop().top = §§pop();
          _loc1_.fill = this._GeneralCheckboxSkin_SolidColor5_c();
@@ -1137,7 +1143,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 97));
+            §§push(-((§§pop() - 83) * 43 * 77 - 1));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.09;
@@ -1149,30 +1155,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          var _loc1_:BitmapImage = new BitmapImage();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-§§pop() - 106 - 18) * 74 - 70) + 1);
+            §§push((§§pop() + 1) * 46 * 45 + 1 - 78 + 6 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 105 + 1) - 1);
+            §§push(--(§§pop() - 1 - 1 + 1 - 1) + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 97 - 1));
+            §§push(-(§§pop() + 1) - 1 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1) * 79) * 111);
+            §§push(-((§§pop() - 57 - 1) * 118 - 30) + 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.smooth = true;
@@ -1191,42 +1197,42 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(18);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 + 1) * 61 * 109);
+            §§push(-((§§pop() + 72 + 21) * 91 * 8 + 24) * 82);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1) + 1 - 24 - 1);
+            §§push(-(§§pop() + 1 - 12) + 64 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 24 - 13 + 27 - 1) - 115);
+            §§push(-(§§pop() + 60 - 39));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-§§pop() * 111 - 87) * 51));
+            §§push(-(§§pop() + 1 - 90 + 32 - 1) + 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 55 + 1);
+            §§push(§§pop() * 70 * 114 * 8 * 115);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() - 1) * 36);
+            §§push(-§§pop() + 107 - 1);
          }
          §§pop().maxDisplayedLines = §§pop();
          _loc1_.setStyle("textAlign","start");
@@ -1248,7 +1254,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Checkbox
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 63 - 80 - 1);
+            §§push(§§pop() - 1 - 1 + 48 + 112);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

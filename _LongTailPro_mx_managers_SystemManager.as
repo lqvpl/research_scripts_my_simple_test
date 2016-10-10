@@ -72,7 +72,7 @@ package
                "applicationComplete":"setupErrorHandling()",
                "closing":"onExit(event)",
                "compiledLocales":["en_US"],
-               "compiledResourceBundleNames":["SharedResources","collections","components","containers","controls","core","effects","formatters","layout","logging","messaging","rpc","skins","sparkEffects","styles","textLayout","validators"],
+               "compiledResourceBundleNames":["SharedResources","collections","components","containers","controls","core","effects","formatters","layout","logging","messaging","rpc","skins","sparkEffects","styles","textLayout"],
                "creationComplete":"onCreationComplete()",
                "currentDomain":ApplicationDomain.currentDomain,
                "fontSize":"12",

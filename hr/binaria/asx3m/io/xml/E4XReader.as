@@ -1,12 +1,10 @@
 package hr.binaria.asx3m.io.xml
 {
    import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import flash.events.Event;
-   import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import flash.events.MouseEvent;
    import mx.collections.XMLListCollection;
    import system.data.Iterator;
+   import spark.primitives.RectangularDropShadow;
+   import mx.binding.BindingManager;
    import system.data.stacks.ArrayStack;
    
    public final class E4XReader implements IHierarchicalStreamReader
@@ -64,15 +62,15 @@ package hr.binaria.asx3m.io.xml
       {
          var _loc2_:XML = null;
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push((§§pop() + 0 - 90 + 1) * 45 * 76 - 1);
+            §§push(§§pop() * 31 + 1 + 1 + 57);
          }
          var _loc1_:* = §§pop();
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(-§§pop() + 48 + 9));
+            §§push((-§§pop() * 119 + 80) * 14 * 86 - 89 + 33);
          }
          for each(_loc2_ in _currentElement.attributes())
          {

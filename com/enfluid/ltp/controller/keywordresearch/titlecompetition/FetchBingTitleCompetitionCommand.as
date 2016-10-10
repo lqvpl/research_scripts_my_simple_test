@@ -3,21 +3,24 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
    import flash.html.HTMLLoader;
-   import mx.graphics.SolidColor;
+   import com.enfluid.ltp.util.Scraper;
    import com.enfluid.ltp.model.vo.KeywordVO;
-   import spark.primitives.Rect;
    import flash.events.Event;
    import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.util.KeywordUtil;
    import flash.net.URLRequest;
    import com.enfluid.ltp.util.Util;
    import flash.utils.setTimeout;
+   import mx.controls.Alert;
+   import flash.utils.ByteArray;
    
    public final class FetchBingTitleCompetitionCommand extends Command implements IPhotonCommand
    {
       
       private static var html:HTMLLoader = new HTMLLoader();
        
+      
+      private var scraper:Scraper;
       
       private var keyword:KeywordVO;
       
@@ -57,19 +60,32 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
       
       private final function parseHTML(param1:Event) : void
       {
+         var resultSpan:* = undefined;
          var result:String = null;
          var e:Event = param1;
          html.removeEventListener(Event.COMPLETE,this.parseHTML);
-         var string:String = html.window.document.body.innerHtml;
+         var string:String = html.window.document.body.innerHTML;
          try
          {
-            result = html.window.document.getElementById("count").innerText;
+            resultSpan = html.window.document.getElementById("count");
+            if(!resultSpan)
+            {
+               §§push(_loc2_);
+               §§push(html.window.document.getElementsByClassName("sb_count"));
+               §§push(0);
+               if(_loc5_)
+               {
+                  §§push(-(-§§pop() - 1));
+               }
+               var /*UnknownSlot*/:* = §§pop()[§§pop()];
+            }
+            result = resultSpan.innerText;
             §§push(_loc2_);
             §§push(result);
             §§push(0);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(-(-§§pop() + 1 - 7));
+               §§push(((§§pop() * 38 + 16) * 118 + 1 - 1) * 66 + 1);
             }
             var /*UnknownSlot*/:* = §§pop().substring(§§pop(),result.indexOf(" RESULTS"));
             result = result.replace(/\,/g,"");
@@ -80,7 +96,7 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
             §§push(-1);
             if(_loc4_)
             {
-               §§push(§§pop() * 37 + 20 - 1);
+               §§push(-(§§pop() + 1 - 1) - 1 + 1 + 1);
             }
             if(§§pop() != §§pop())
             {

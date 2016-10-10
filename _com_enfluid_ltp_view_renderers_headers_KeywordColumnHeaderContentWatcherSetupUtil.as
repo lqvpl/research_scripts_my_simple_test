@@ -21,22 +21,22 @@ package
       
       public function setup(param1:Object, param2:Function, param3:Function, param4:Array, param5:Array) : void
       {
-         param5[0] = new PropertyWatcher("model",{"propertyChange":true},[param4[0],param4[2],param4[4]],param2);
-         param5[1] = new PropertyWatcher("selectedKeywordCollection",{"propertyChange":true},[param4[0],param4[2],param4[4]],null);
-         param5[2] = new PropertyWatcher("project",{"propertyChange":true},[param4[0],param4[2],param4[4]],null);
-         param5[3] = new PropertyWatcher("specialFilter",{"propertyChange":true},[param4[0],param4[2],param4[4]],null);
-         param5[7] = new PropertyWatcher("viewModel",{"propertyChange":true},[param4[1],param4[3]],param2);
-         param5[8] = new PropertyWatcher("selectedKeywordsTab",{"propertyChange":true},[param4[1],param4[3]],null);
-         param5[10] = new PropertyWatcher("isTrashTab",{"propertyChange":true},[param4[1],param4[3]],null);
-         param5[9] = new PropertyWatcher("isFavoritesTab",{"propertyChange":true},[param4[1],param4[3]],null);
-         param5[0].updateParent(param1);
-         param5[0].addChild(param5[1]);
-         param5[1].addChild(param5[2]);
+         param5[2] = new PropertyWatcher("model",{"propertyChange":true},[param4[2],param4[4],param4[6]],param2);
+         param5[3] = new PropertyWatcher("selectedKeywordCollection",{"propertyChange":true},[param4[2],param4[4],param4[6]],null);
+         param5[4] = new PropertyWatcher("project",{"propertyChange":true},[param4[2],param4[4],param4[6]],null);
+         param5[5] = new PropertyWatcher("specialFilter",{"propertyChange":true},[param4[2],param4[4],param4[6]],null);
+         param5[9] = new PropertyWatcher("viewModel",{"propertyChange":true},[param4[3],param4[5]],param2);
+         param5[10] = new PropertyWatcher("selectedKeywordsTab",{"propertyChange":true},[param4[3],param4[5]],null);
+         param5[12] = new PropertyWatcher("isTrashTab",{"propertyChange":true},[param4[3],param4[5]],null);
+         param5[11] = new PropertyWatcher("isFavoritesTab",{"propertyChange":true},[param4[3],param4[5]],null);
+         param5[2].updateParent(param1);
          param5[2].addChild(param5[3]);
-         param5[7].updateParent(param1);
-         param5[7].addChild(param5[8]);
-         param5[8].addChild(param5[10]);
-         param5[8].addChild(param5[9]);
+         param5[3].addChild(param5[4]);
+         param5[4].addChild(param5[5]);
+         param5[9].updateParent(param1);
+         param5[9].addChild(param5[10]);
+         param5[10].addChild(param5[12]);
+         param5[10].addChild(param5[11]);
       }
    }
 }

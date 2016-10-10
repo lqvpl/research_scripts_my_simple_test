@@ -2,18 +2,11 @@ package hr.binaria.asx3m.core
 {
    import hr.binaria.asx3m.converters.IDataHolder;
    import system.data.Iterator;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.model.ViewModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.target;
-   import mx.binding.Binding;
    import system.data.Map;
-   import spark.effects.Rotate;
+   import flash.utils.ByteArray;
+   import spark.effects.Move;
    import mx.binding.BindingManager;
    import system.data.maps.HashMap;
-   
-   use namespace mx_internal;
    
    public final class MapBackedDataHolder implements IDataHolder
    {

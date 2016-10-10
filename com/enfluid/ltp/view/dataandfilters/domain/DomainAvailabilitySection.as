@@ -4,22 +4,23 @@ package com.enfluid.ltp.view.dataandfilters.domain
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
    import mx.core.IFlexModuleFactory;
+   import com.enfluid.ltp.util.Logger;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import spark.layouts.VerticalLayout;
-   import flash.events.MouseEvent;
    import com.enfluid.ltp.view.filterviews.DomainAvailabilityFilterView;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
    import mx.controls.Spacer;
-   import com.enfluid.ltp.view.AddYourOwnKeywordsSection;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
    import spark.components.Label;
-   import spark.components.GridColumnHeaderGroup;
-   import spark.components.HGroup;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.GeneralComboBoxButtonSkin;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import mx.graphics.LinearGradient;
    import mx.binding.Binding;
    import assets.TextAssets;
    import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import flash.utils.ByteArray;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -81,17 +82,18 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(100);
          if(_loc3_)
          {
-            §§push(((-(§§pop() - 48 + 1) - 110) * 25 + 1) * 61);
+            §§push(§§pop() + 1 + 1 + 77);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Domain Availability";
          this.layout = this._DomainAvailabilitySection_VerticalLayout1_c();
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._DomainAvailabilitySection_Array1_c);
+         this.addEventListener("creationComplete",this.___DomainAvailabilitySection_CheckBoxCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 35 + 58);
+            §§push(((§§pop() + 88 + 54) * 39 + 1) * 114);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -119,6 +121,22 @@ package com.enfluid.ltp.view.dataandfilters.domain
       override public function initialize() : void
       {
          super.initialize();
+      }
+      
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.DomainAvailability.Checked").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.DomainAvailability.Unchecked").execute();
+            }
+         });
       }
       
       private final function _DomainAvailabilitySection_VerticalLayout1_c() : VerticalLayout
@@ -151,7 +169,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 72) - 1 + 119);
+            §§push(§§pop() + 1 + 1 - 44 - 7);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -193,7 +211,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(5);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 61 + 1) + 102);
+            §§push(-((§§pop() + 1) * 15 * 4 + 90) * 113);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -228,6 +246,11 @@ package com.enfluid.ltp.view.dataandfilters.domain
          return _loc1_;
       }
       
+      public final function ___DomainAvailabilitySection_CheckBoxCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _DomainAvailabilitySection_bindingsSetup() : Array
       {
          var result:Array = [];
@@ -235,7 +258,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 42);
+            §§push((-(§§pop() - 1) * 107 - 1) * 99);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -244,9 +267,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"this.helpTitle");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--((-§§pop() - 1 + 1) * 99) + 1);
+            §§push(§§pop() * 92 - 37 + 1 - 1 - 1 - 1 - 23);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -255,9 +278,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"this.helpContent");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 117) + 1 - 16 - 7);
+            §§push(-(§§pop() + 67) * 61 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -265,9 +288,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"this.expanded");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 59 + 1 - 49 - 23);
+            §§push((--(§§pop() + 1) * 101 - 119) * 62);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {
@@ -277,7 +300,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() + 84 - 1 - 1 + 11 + 39 - 1);
+            §§push(-(-§§pop() - 55));
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {
@@ -285,9 +308,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"_DomainAvailabilitySection_DomainsGroup2.domainsHyphenatedExtensions");
          §§push(result);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--§§pop() + 1 + 84);
+            §§push(-((-(§§pop() * 87) - 41) * 54) - 78);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -300,35 +323,35 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 116) + 1);
+            §§push(--(-§§pop() + 79) * 19);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 - 63 + 83 - 1);
+            §§push((§§pop() - 1) * 119 * 49);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() + 80 - 1 + 1 + 1);
+            §§push(-(§§pop() + 1) - 93);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-((-§§pop() - 1 + 1) * 93 - 4) + 1);
+            §§push(-(§§pop() + 64 - 1));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 74 - 1) + 110);
+            §§push(§§pop() - 107 + 1 + 91 - 1 + 1 - 10);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

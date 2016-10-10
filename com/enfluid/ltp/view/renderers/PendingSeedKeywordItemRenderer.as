@@ -3,7 +3,9 @@ package com.enfluid.ltp.view.renderers
    import spark.components.supportClasses.ItemRenderer;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.view.containers.CollapsiblePanel;
+   import spark.components.CheckBox;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
@@ -11,8 +13,10 @@ package com.enfluid.ltp.view.renderers
    import flash.events.MouseEvent;
    import flash.events.Event;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
-   import mx.core.DeferredInstanceFromFunction;
+   import spark.components.Image;
    import mx.binding.BindingManager;
+   import mx.core.DeferredInstanceFromFunction;
+   import spark.components.VGroup;
    import spark.components.HGroup;
    import mx.binding.Binding;
    import com.enfluid.ltp.view.skins.CollapsiblePanelSkinWithDeleteButton;
@@ -29,6 +33,8 @@ package com.enfluid.ltp.view.renderers
        
       
       public var _PendingSeedKeywordItemRenderer_CollapsiblePanel1:CollapsiblePanel;
+      
+      private var _2031419142closelyrelated:CheckBox;
       
       private var _1686165967excludeTI:TextInput;
       
@@ -88,14 +94,14 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc4_)
          {
-            §§push(§§pop() * 114 + 107 + 103 - 1 + 1 + 1 - 89);
+            §§push((§§pop() - 54 + 55 + 77) * 3);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(30);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 100) * 27));
+            §§push((§§pop() - 103) * 4 + 1 - 105 - 105 - 1);
          }
          §§pop().minHeight = §§pop();
          this.autoDrawBackground = false;
@@ -104,9 +110,9 @@ package com.enfluid.ltp.view.renderers
          this.addEventListener("rollOver",this.___PendingSeedKeywordItemRenderer_ItemRenderer1_rollOver);
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() * 118 - 39 + 1) * 32));
+            §§push(((§§pop() + 1 + 1 - 50) * 110 + 8) * 45);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -177,9 +183,9 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:CollapsiblePanel = new CollapsiblePanel();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 114) - 22) * 86);
+            §§push(((§§pop() - 117 - 1 + 1) * 103 + 92) * 26 * 39);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.collapsed = true;
@@ -197,7 +203,60 @@ package com.enfluid.ltp.view.renderers
       
       private final function _PendingSeedKeywordItemRenderer_Array2_c() : Array
       {
-         var _loc1_:Array = [this._PendingSeedKeywordItemRenderer_HGroup1_c()];
+         var _loc1_:Array = [this._PendingSeedKeywordItemRenderer_VGroup1_c()];
+         return _loc1_;
+      }
+      
+      private final function _PendingSeedKeywordItemRenderer_VGroup1_c() : VGroup
+      {
+         var _loc1_:VGroup = new VGroup();
+         §§push(_loc1_);
+         §§push(100);
+         if(_loc2_)
+         {
+            §§push(§§pop() - 104 + 1 + 1 + 1 - 14);
+         }
+         §§pop().percentWidth = §§pop();
+         §§push(_loc1_);
+         §§push(5);
+         if(_loc3_)
+         {
+            §§push(-((§§pop() * 83 - 108) * 32) - 65 - 13);
+         }
+         §§pop().paddingBottom = §§pop();
+         §§push(_loc1_);
+         §§push(5);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() + 1 - 1));
+         }
+         §§pop().paddingLeft = §§pop();
+         §§push(_loc1_);
+         §§push(5);
+         if(_loc2_)
+         {
+            §§push(-(-(§§pop() - 86) - 25) * 83 + 1);
+         }
+         §§pop().paddingRight = §§pop();
+         §§push(_loc1_);
+         §§push(5);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 62) + 1 + 19);
+         }
+         §§pop().paddingTop = §§pop();
+         §§push(_loc1_);
+         §§push(3);
+         if(_loc3_)
+         {
+            §§push(-§§pop() - 1 + 1 + 1 + 51 - 76);
+         }
+         §§pop().gap = §§pop();
+         _loc1_.mxmlContent = [this._PendingSeedKeywordItemRenderer_HGroup1_c(),this._PendingSeedKeywordItemRenderer_CheckBox1_i()];
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
          return _loc1_;
       }
       
@@ -208,42 +267,14 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 111 - 1) - 1);
+            §§push(-(-(§§pop() * 78 * 117 + 96) - 79) * 51);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
-         §§push(5);
-         if(_loc3_)
-         {
-            §§push(-(((§§pop() - 1) * 64 * 85 - 82) * 64) * 79);
-         }
-         §§pop().paddingBottom = §§pop();
-         §§push(_loc1_);
-         §§push(5);
-         if(_loc2_)
-         {
-            §§push((-((§§pop() + 25 - 69) * 31) - 26) * 61 + 1);
-         }
-         §§pop().paddingLeft = §§pop();
-         §§push(_loc1_);
-         §§push(5);
-         if(_loc2_)
-         {
-            §§push(--((§§pop() - 1) * 112 * 50 - 1 + 112));
-         }
-         §§pop().paddingRight = §§pop();
-         §§push(_loc1_);
-         §§push(5);
-         if(_loc2_)
-         {
-            §§push(-(§§pop() * 50 + 1) * 10 - 1 - 1);
-         }
-         §§pop().paddingTop = §§pop();
-         §§push(_loc1_);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(-§§pop() + 81 + 1) * 15 - 65);
+            §§push((-§§pop() + 115 - 89) * 67);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._PendingSeedKeywordItemRenderer_TextInput1_i(),this._PendingSeedKeywordItemRenderer_TextInput2_i()];
@@ -259,25 +290,25 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(50);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-§§pop() - 1) * 83) * 85);
+            §§push(---§§pop() + 80 - 17);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(---(-§§pop() - 1 - 40 + 11));
+            §§push(-§§pop() + 44 + 20);
          }
          §§pop().minHeight = §§pop();
-         _loc1_.prompt = "Include...";
+         _loc1_.prompt = "Include Keywords (comma separated)";
          §§push(_loc1_);
          §§push("borderColor");
          §§push(13421772);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(----(-§§pop() + 1));
+            §§push((§§pop() - 12 + 1 + 30 - 1) * 97);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","normal");
@@ -296,25 +327,25 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(50);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 1) - 1);
+            §§push(---(§§pop() - 1) + 1 + 1 - 110);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc2_)
          {
-            §§push((§§pop() - 22 - 37) * 76 - 106 + 1);
+            §§push(§§pop() - 1 - 66 - 12 + 61 - 82);
          }
          §§pop().minHeight = §§pop();
-         _loc1_.prompt = "Exclude...";
+         _loc1_.prompt = "Exclude Keywords (comma separated)";
          §§push(_loc1_);
          §§push("borderColor");
          §§push(13421772);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--§§pop() + 1) - 1 + 32 + 95);
+            §§push(§§pop() - 1 + 1 - 29 - 9 + 102 + 1 + 59);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","normal");
@@ -325,6 +356,20 @@ package com.enfluid.ltp.view.renderers
          }
          this.excludeTI = _loc1_;
          BindingManager.executeBindings(this,"excludeTI",this.excludeTI);
+         return _loc1_;
+      }
+      
+      private final function _PendingSeedKeywordItemRenderer_CheckBox1_i() : CheckBox
+      {
+         var _loc1_:CheckBox = new CheckBox();
+         _loc1_.label = "Only generate keywords closely related to my seed keyword";
+         _loc1_.id = "closelyrelated";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this.closelyrelated = _loc1_;
+         BindingManager.executeBindings(this,"closelyrelated",this.closelyrelated);
          return _loc1_;
       }
       
@@ -350,7 +395,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 36 + 35 - 37 + 93 + 1);
+            §§push((§§pop() - 1) * 87 + 114);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -363,7 +408,7 @@ package com.enfluid.ltp.view.renderers
          §§push(1);
          if(_loc2_)
          {
-            §§push((-§§pop() - 85 + 1) * 90 - 44 + 110 - 1);
+            §§push(-(§§pop() + 1) - 25);
          }
          §§pop()[§§pop()] = new Binding(this,function():Class
          {
@@ -376,7 +421,7 @@ package com.enfluid.ltp.view.renderers
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() - 81 + 12 + 119);
+            §§push((-§§pop() - 67 - 66 + 1) * 31);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -385,9 +430,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_PendingSeedKeywordItemRenderer_CollapsiblePanel1.title");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 75));
+            §§push(-(-§§pop() * 58 * 92) + 64 - 51);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -398,7 +443,7 @@ package com.enfluid.ltp.view.renderers
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() + 2 + 1 - 1 - 1);
+            §§push(§§pop() + 1 + 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -407,9 +452,9 @@ package com.enfluid.ltp.view.renderers
          },null,"includeTI.toolTip");
          §§push(result);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 57) + 93);
+            §§push(§§pop() + 1 + 18 - 23);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -418,9 +463,9 @@ package com.enfluid.ltp.view.renderers
          },null,"excludeTI.text");
          §§push(result);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() * 81) * 60 * 9 + 29);
+            §§push(§§pop() - 68 - 84 + 69);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -431,7 +476,17 @@ package com.enfluid.ltp.view.renderers
          §§push(7);
          if(_loc2_)
          {
-            §§push(§§pop() - 0 - 1 - 69 + 25);
+            §§push(-§§pop() - 18 + 88 + 85);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return seedKeyword.isRelatedKeywordsOnly;
+         },null,"closelyrelated.selected");
+         §§push(result);
+         §§push(8);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 1) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -441,45 +496,45 @@ package com.enfluid.ltp.view.renderers
             seedKeyword.includeKeywords = param1;
          },"seedKeyword.includeKeywords");
          §§push(result);
-         §§push(7);
-         if(_loc2_)
+         §§push(8);
+         if(_loc3_)
          {
-            §§push((-§§pop() + 83) * 22);
+            §§push(--(-§§pop() + 106 - 1 + 20) + 15);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(-((§§pop() * 57 + 1) * 100));
+            §§push((§§pop() + 61 + 86 - 98 - 1) * 107 * 68);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(--(§§pop() - 12) * 107 - 1);
+            §§push(-((§§pop() + 1 + 1) * 52) + 1 - 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(3);
-         if(_loc2_)
-         {
-            §§push(-((§§pop() - 1) * 46 + 26 + 43 + 35));
-         }
-         §§push(§§pop()[§§pop()]);
-         §§push(result);
-         §§push(7);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 55 - 10 + 28 - 1);
+            §§push(-(-§§pop() - 1 + 1) + 63 - 1 + 9);
          }
-         §§pop().twoWayCounterpart = §§pop()[§§pop()];
+         §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(8);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 + 86 + 1) * 53 - 1);
+            §§push((§§pop() - 102 + 57) * 42);
+         }
+         §§pop().twoWayCounterpart = §§pop()[§§pop()];
+         §§push(result);
+         §§push(9);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() + 1 + 40 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -489,38 +544,86 @@ package com.enfluid.ltp.view.renderers
             seedKeyword.excludeKeywords = param1;
          },"seedKeyword.excludeKeywords");
          §§push(result);
-         §§push(8);
+         §§push(9);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 - 28 - 1) * 20 + 1 - 1 + 1);
+            §§push((§§pop() * 88 + 1) * 109 + 30 - 97);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 43 - 75 - 88 + 1) * 42 + 1 + 1);
+            §§push((-(§§pop() * 20) - 1 - 1) * 28 * 107);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(5);
          if(_loc2_)
          {
-            §§push((-§§pop() + 1 + 1 - 1) * 48 + 1);
+            §§push(§§pop() + 15 - 79 + 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(5);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 53 + 56 + 1) * 33 + 1) + 61);
+            §§push(-(-(§§pop() + 1) - 1 - 110) + 52 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(8);
+         §§push(9);
          if(_loc2_)
          {
-            §§push(-(-§§pop() * 46) * 82 - 1);
+            §§push(-(--§§pop() - 1) + 1 + 10);
+         }
+         §§pop().twoWayCounterpart = §§pop()[§§pop()];
+         §§push(result);
+         §§push(10);
+         if(_loc3_)
+         {
+            §§push((-(§§pop() + 82 - 1 + 1) - 1 + 48) * 73);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():*
+         {
+            return closelyrelated.selected;
+         },function(param1:*):void
+         {
+            seedKeyword.isRelatedKeywordsOnly = param1;
+         },"seedKeyword.isRelatedKeywordsOnly");
+         §§push(result);
+         §§push(10);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() + 94 - 1 - 61));
+         }
+         §§push(§§pop()[§§pop()]);
+         §§push(result);
+         §§push(7);
+         if(_loc2_)
+         {
+            §§push((§§pop() - 1 - 82 + 55) * 102);
+         }
+         §§pop().twoWayCounterpart = §§pop()[§§pop()];
+         §§push(result);
+         §§push(7);
+         if(_loc2_)
+         {
+            §§push(-((§§pop() + 1 + 4) * 36 - 1) + 71);
+         }
+         §§pop()[§§pop()].isTwoWayPrimary = true;
+         §§push(result);
+         §§push(7);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 1 + 2 + 1 + 1) - 48);
+         }
+         §§push(§§pop()[§§pop()]);
+         §§push(result);
+         §§push(10);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() + 92) * 44 * 6 * 7 * 113);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;
@@ -532,6 +635,26 @@ package com.enfluid.ltp.view.renderers
          this.showControls = this.expanded || this.includeTI.text || this.excludeTI.text;
          this.seedKeyword.includeKeywords = this.includeTI.text;
          this.seedKeyword.excludeKeywords = this.excludeTI.text;
+         this.seedKeyword.isRelatedKeywordsOnly = this.closelyrelated.selected;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get closelyrelated() : CheckBox
+      {
+         return this._2031419142closelyrelated;
+      }
+      
+      public function set closelyrelated(param1:CheckBox) : void
+      {
+         var _loc2_:Object = this._2031419142closelyrelated;
+         if(_loc2_ !== param1)
+         {
+            this._2031419142closelyrelated = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"closelyrelated",_loc2_,param1));
+            }
+         }
       }
       
       [Bindable(event="propertyChange")]

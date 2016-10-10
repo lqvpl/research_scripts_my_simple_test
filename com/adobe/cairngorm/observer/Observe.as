@@ -1,11 +1,5 @@
 package com.adobe.cairngorm.observer
 {
-   import mx.events.FlexEvent;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.SlimScrollerSkinInnerClass0;
-   import mx.binding.BindingManager;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   
    public final class Observe extends Observer
    {
        

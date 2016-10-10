@@ -1,8 +1,6 @@
 package com.enfluid.ltp.model.vo
 {
-   import spark.primitives.BitmapImage;
-   import mx.binding.BindingManager;
-   import mx.states.Transition;
+   import com.enfluid.ltp.util.Logger;
    import com.enfluid.ltp.model.DataModel;
    
    public final class SRTRequestDataVO

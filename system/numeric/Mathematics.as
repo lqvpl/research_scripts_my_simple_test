@@ -1,18 +1,16 @@
 package system.numeric
 {
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
+   import system.data.lists.ArrayList;
    import flash.errors.IllegalOperationError;
-   import spark.effects.Resize;
-   import com.enfluid.ltp.util.ProgressBarUtil;
-   import spark.primitives.BitmapImage;
+   import mx.graphics.SolidColorStroke;
+   import mx.effects.Sequence;
+   import flash.events.MouseEvent;
+   import spark.components.supportClasses.ToggleButtonBase;
+   import flash.events.Event;
+   import com.enfluid.ltp.view.settings.SettingsUserAccountsSection;
    import spark.components.Label;
-   import com.hurlant.util.Memory;
-   import flash.utils.setTimeout;
-   import com.enfluid.ltp.util.Logger;
-   import mx.binding.utils.BindingUtils;
-   import spark.components.Group;
-   import mx.collections.ArrayCollection;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
    
    public final class Mathematics
    {
@@ -43,23 +41,23 @@ package system.numeric
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 21 + 1 + 1) * 92 - 1 + 0 + 1);
+            §§push((§§pop() + 112 + 15) * 41 * 13 - 1);
          }
          if(§§pop() < §§pop())
          {
             §§push(-1);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push((§§pop() - 63 + 1) * 52 - 1);
+               §§push(-(§§pop() - 1) - 1);
             }
             §§push(Number(§§pop()));
          }
          else
          {
             §§push(1);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(-(§§pop() * 58 + 1) * 116 + 76 - 24);
+               §§push((-(§§pop() + 1 - 94) * 34 + 1) * 32);
             }
             §§push(Number(§§pop()));
          }
@@ -73,15 +71,15 @@ package system.numeric
             return NaN;
          }
          §§push(1);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() + 82 + 64 + 104 - 99));
+            §§push(-((§§pop() + 1 - 1) * 30) * 100);
          }
          var _loc3_:Number = §§pop();
          §§push(-1);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push((§§pop() + 74 + 85) * 5 - 1 - 1);
+            §§push(§§pop() + 1 - 1 - 1);
          }
          var _loc4_:Number = §§pop();
          while(++_loc4_ < param2)
@@ -90,7 +88,7 @@ package system.numeric
             §§push(10);
             if(_loc5_)
             {
-               §§push(((§§pop() + 1 + 1 + 20) * 35 - 98) * 36);
+               §§push(--§§pop() * 26 * 44);
             }
             _loc3_ = §§pop() * §§pop();
          }
@@ -100,16 +98,16 @@ package system.numeric
       public static function gcd(param1:int, param2:int) : int
       {
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(§§pop() * 58 + 1 - 68 + 38 + 106);
+            §§push(-(-(§§pop() + 1) * 15 - 110));
          }
          var _loc3_:* = §§pop();
          §§push(param2);
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 85 - 77 - 91);
+            §§push(--§§pop() - 1);
          }
          if(§§pop() == §§pop())
          {
@@ -123,9 +121,9 @@ package system.numeric
          {
             §§push(param2);
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push(§§pop() * 42 + 19 - 1);
+               §§push(-§§pop() + 1 + 93);
             }
             if(§§pop() == §§pop())
             {
@@ -142,9 +140,9 @@ package system.numeric
       {
          §§push(param1 / param2);
          §§push(100);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(-(§§pop() + 1 + 1) * 16));
+            §§push((-(§§pop() * 95 - 80 - 1 + 109) - 1) * 43);
          }
          var _loc3_:Number = §§pop() * §§pop();
          return isNaN(_loc3_) || !isFinite(_loc3_)?Number(NaN):Number(_loc3_);
@@ -174,24 +172,24 @@ package system.numeric
             return NaN;
          }
          §§push(1);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() - 1 + 35 + 1) - 2 + 31);
+            §§push(-(§§pop() - 1 - 1 + 1) + 58 + 1 + 69);
          }
          var _loc3_:Number = §§pop();
          §§push(-1);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-(§§pop() * 47 - 20 - 1 - 1) + 1 + 1);
+            §§push((-(§§pop() - 1) + 1 + 91) * 75 * 67);
          }
          var _loc4_:Number = §§pop();
          while(++_loc4_ < param2)
          {
             §§push(_loc3_);
             §§push(10);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(-(--((§§pop() - 103) * 48) - 1));
+               §§push(-(-((§§pop() * 48 + 74) * 73) * 87));
             }
             _loc3_ = §§pop() * §§pop();
          }
@@ -210,24 +208,24 @@ package system.numeric
             return NaN;
          }
          §§push(1);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push((§§pop() + 82) * 13 * 107 * 24 - 80 + 78);
+            §§push(§§pop() - 81 + 31 - 1 - 13);
          }
          var _loc3_:Number = §§pop();
          §§push(-1);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-(-(§§pop() + 119) + 16 - 1 - 1 + 92));
+            §§push(-§§pop() + 1 + 1 - 1);
          }
          var _loc4_:Number = §§pop();
          while(++_loc4_ < param2)
          {
             §§push(_loc3_);
             §§push(10);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(§§pop() - 1 - 1 + 106);
+               §§push(-(§§pop() * 53) * 3 + 14);
             }
             _loc3_ = §§pop() * §§pop();
          }

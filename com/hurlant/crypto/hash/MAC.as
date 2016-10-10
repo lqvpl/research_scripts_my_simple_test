@@ -1,6 +1,8 @@
 package com.hurlant.crypto.hash
 {
    import flash.utils.ByteArray;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
    
    public final class MAC implements IHMAC
    {
@@ -25,15 +27,15 @@ package com.hurlant.crypto.hash
       public function MAC(param1:com.hurlant.crypto.hash.IHash, param2:uint = 0)
       {
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() * 100 + 104) - 1);
+            §§push((§§pop() + 36 - 101) * 9);
          }
          var _loc3_:* = §§pop();
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-((-§§pop() + 1) * 88) + 47 + 29);
+            §§push(-(-§§pop() - 1));
          }
          var _loc4_:* = §§pop();
          super();
@@ -49,25 +51,25 @@ package com.hurlant.crypto.hash
             pad_1 = new ByteArray();
             pad_2 = new ByteArray();
             §§push(0);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(-§§pop() + 1 + 26);
+               §§push(--(-(§§pop() * 10) - 1 + 24));
             }
             _loc4_ = §§pop();
             while(_loc4_ < _loc3_)
             {
                §§push(pad_1);
                §§push(54);
-               if(_loc6_)
+               if(_loc5_)
                {
-                  §§push(§§pop() + 1 - 1 + 1 - 92 - 1 - 1 - 34);
+                  §§push(-(§§pop() * 101 + 33) + 87 + 84);
                }
                §§pop().writeByte(§§pop());
                §§push(pad_2);
                §§push(92);
-               if(_loc5_)
+               if(_loc6_)
                {
-                  §§push((§§pop() * 14 + 1) * 1 - 1);
+                  §§push(-(§§pop() - 61 + 1 + 90 + 1 + 1 + 50));
                }
                §§pop().writeByte(§§pop());
                _loc4_++;
@@ -81,15 +83,15 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc1_)
          {
-            §§push(§§pop() + 93 - 1 + 1 + 1 + 65);
+            §§push((§§pop() + 15) * 61 * 67 - 1);
          }
          if(§§pop() != §§pop())
          {
             §§push(bits);
             §§push(8);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push(-(§§pop() * 60 + 1) - 8 - 92);
+               §§push((§§pop() * 51 - 1) * 72 * 3 + 1 + 52);
             }
             return §§pop() / §§pop();
          }
@@ -103,7 +105,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(-§§pop() + 9 - 59));
+            §§push(§§pop() + 1 + 49 - 1 - 1 + 1);
          }
          §§pop().bits = §§pop();
       }
@@ -115,7 +117,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 1 - 1 - 1) * 49 * 14) - 1);
+            §§push(((§§pop() - 5 - 1) * 19 - 72) * 12 + 21);
          }
          return §§pop() + (§§pop() > §§pop()?bits + "-":"") + hash.toString();
       }
@@ -129,13 +131,13 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc5_)
          {
-            §§push(§§pop() + 1 - 7 - 2 - 99);
+            §§push((§§pop() * 66 + 1 + 19 - 1 + 1 - 1) * 42);
          }
          var _loc3_:* = §§pop();
          §§push(0);
          if(_loc6_)
          {
-            §§push(§§pop() * 37 - 1 + 99 + 1);
+            §§push(((§§pop() - 1) * 39 + 1) * 113 + 93);
          }
          var _loc4_:* = §§pop();
          if(pad_1 == null)
@@ -144,9 +146,9 @@ package com.hurlant.crypto.hash
             pad_1 = new ByteArray();
             pad_2 = new ByteArray();
             §§push(0);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(--(§§pop() - 8));
+               §§push(--§§pop() + 73 - 1 + 1);
             }
             _loc4_ = §§pop();
             while(_loc4_ < _loc3_)
@@ -155,14 +157,14 @@ package com.hurlant.crypto.hash
                §§push(54);
                if(_loc5_)
                {
-                  §§push(-§§pop() + 37 - 1);
+                  §§push((§§pop() + 1) * 36 + 1);
                }
                §§pop().writeByte(§§pop());
                §§push(pad_2);
                §§push(92);
                if(_loc6_)
                {
-                  §§push(-(-§§pop() + 57) - 60 - 1 - 86);
+                  §§push(§§pop() - 1 + 1 + 43 + 1 - 1 + 1 + 1);
                }
                §§pop().writeByte(§§pop());
                _loc4_++;
@@ -170,16 +172,16 @@ package com.hurlant.crypto.hash
          }
          §§push(innerKey);
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(§§pop() * 7 + 75 - 37);
+            §§push((§§pop() * 28 - 44 + 1 + 1 - 1) * 86 * 115);
          }
          §§pop().length = §§pop();
          §§push(outerKey);
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push((§§pop() + 46 + 77) * 63 + 114 + 90);
+            §§push(-(§§pop() + 23 - 1) * 58 + 1 + 1 - 31);
          }
          §§pop().length = §§pop();
          innerKey.writeBytes(param1);
@@ -192,18 +194,18 @@ package com.hurlant.crypto.hash
          outerHash = hash.hash(outerKey);
          §§push(bits);
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-(-(§§pop() - 1 - 85) + 48) - 78);
+            §§push((--(-§§pop() + 84) - 62) * 1);
          }
          if(§§pop() > §§pop() && §§pop() < §§pop() * outerHash.length)
          {
             §§push(outerHash);
             §§push(bits);
             §§push(8);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(((§§pop() + 1) * 115 + 1 + 1) * 43);
+               §§push((§§pop() - 11 - 1 - 1) * 3 + 96);
             }
             §§pop().length = §§pop() / §§pop();
          }

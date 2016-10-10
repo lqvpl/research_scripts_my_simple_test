@@ -6,6 +6,10 @@ package com.enfluid.ltp.view
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
+   import flash.events.ContextMenuEvent;
+   import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
+   import flash.desktop.Clipboard;
+   import flash.desktop.ClipboardFormats;
    import mx.containers.VDividedBox;
    import mx.core.UIComponentDescriptor;
    import mx.binding.Binding;
@@ -72,15 +76,15 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc4_)
          {
-            §§push(-§§pop() - 1 + 67);
+            §§push(--(§§pop() + 98 - 43) - 1 - 1);
          }
          §§pop().gap = §§pop();
          this.mxmlContent = [this._MainView_LeftRail1_c(),this._MainView_VDividedBox1_c()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-((§§pop() * 63 - 1) * 63 * 62 + 1) + 116);
+            §§push(-(§§pop() - 57) - 1 + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -115,30 +119,30 @@ package com.enfluid.ltp.view
          var _loc1_:LeftRail = new LeftRail();
          §§push(_loc1_);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 - 21 - 98) * 64);
+            §§push(-(--(§§pop() - 90 - 41) + 10) - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 42 - 66 - 99 + 65 + 57);
+            §§push(-(-(-§§pop() * 12) * 93) + 1 + 102);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(400);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 - 1);
+            §§push((§§pop() + 25) * 92 - 26 + 1 + 1);
          }
          §§pop().maxWidth = §§pop();
          §§push(_loc1_);
          §§push(225);
          if(_loc2_)
          {
-            §§push((-§§pop() - 66 - 15 - 1) * 103);
+            §§push((-§§pop() + 1) * 73);
          }
          §§pop().minWidth = §§pop();
          if(!_loc1_.document)
@@ -153,16 +157,16 @@ package com.enfluid.ltp.view
          var temp:VDividedBox = new VDividedBox();
          §§push(temp);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 29 - 33 - 12);
+            §§push(-(§§pop() * 72) - 14 + 99);
          }
          §§pop().percentWidth = §§pop();
          §§push(temp);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 1);
+            §§push(((§§pop() + 113) * 37 - 1 - 49) * 8);
          }
          §§pop().percentHeight = §§pop();
          §§push(temp);
@@ -170,7 +174,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(--§§pop() * 56);
+            §§push(---(§§pop() - 1) + 22 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!temp.document)
@@ -183,9 +187,9 @@ package com.enfluid.ltp.view
             {
                §§push(this);
                §§push(0);
-               if(_loc2_)
+               if(_loc1_)
                {
-                  §§push(§§pop() - 116 - 99 + 108);
+                  §§push(-(§§pop() * 4 - 1));
                }
                §§pop().paddingLeft = §§pop();
             },
@@ -200,19 +204,19 @@ package com.enfluid.ltp.view
                      §§push(100);
                      if(_loc2_)
                      {
-                        §§push(§§pop() - 1 - 1 + 1);
+                        §§push((§§pop() - 1 - 77 + 105 + 1) * 116);
                      }
                      §§push("percentHeight");
                      §§push(100);
                      if(_loc1_)
                      {
-                        §§push((§§pop() - 0 + 1) * 2 * 25 - 1 - 74);
+                        §§push(((§§pop() + 14 + 1) * 48 - 87) * 65);
                      }
                      §§push("minWidth");
                      §§push(150);
                      if(_loc2_)
                      {
-                        §§push(§§pop() + 1 - 1 + 85 - 95);
+                        §§push(§§pop() + 1 - 1 + 1);
                      }
                      return null;
                   }
@@ -223,15 +227,15 @@ package com.enfluid.ltp.view
                   {
                      §§push("percentWidth");
                      §§push(100);
-                     if(_loc1_)
+                     if(_loc2_)
                      {
-                        §§push(-(§§pop() - 85 - 1 + 58) - 1 - 21);
+                        §§push(-((§§pop() - 1 - 1) * 1) * 22);
                      }
                      §§push("percentHeight");
                      §§push(100);
-                     if(_loc1_)
+                     if(_loc2_)
                      {
-                        §§push(-((-(§§pop() + 1) + 0 - 90) * 101 + 1));
+                        §§push(-(-§§pop() - 1 + 50) * 90 + 102);
                      }
                      return null;
                   }
@@ -249,16 +253,16 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 107 - 1 + 28) + 30);
+            §§push(-(§§pop() * 91 + 19 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
             if(viewModel.showDomainCaptcha)
             {
                §§push(200);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push(-(§§pop() + 1) - 79 + 111);
+                  §§push(§§pop() + 1 - 27 - 1 - 1);
                }
                §§push(Number(§§pop()));
             }
@@ -270,9 +274,9 @@ package com.enfluid.ltp.view
          },null,"_MainView_KeywordsDataGrid1.maxHeight");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 1 + 4 - 66);
+            §§push((§§pop() - 1) * 53 - 1 + 29);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -282,7 +286,7 @@ package com.enfluid.ltp.view
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 28 - 1 + 1 + 46) - 1);
+            §§push(-(§§pop() + 1 - 1 - 73));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

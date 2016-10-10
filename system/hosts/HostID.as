@@ -1,6 +1,7 @@
 package system.hosts
 {
    import system.Enum;
+   import mx.graphics.SolidColor;
    
    public final class HostID extends Enum
    {
@@ -21,35 +22,35 @@ package system.hosts
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() * 38 * 51 + 1);
+            §§push(§§pop() + 20 + 1 - 1 + 31 + 1 + 71 - 57);
          }
          §§push();
          §§push(system.hosts.HostID);
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() + 1 - 15 - 1) * 84);
+            §§push(-§§pop() - 1 + 1);
          }
          §§push();
          §§push(system.hosts.HostID);
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() + 24 + 44 - 61 + 21);
+            §§push((§§pop() + 19 - 1) * 68);
          }
          §§push();
          §§push(system.hosts.HostID);
          §§push(3);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-§§pop() * 93));
+            §§push((§§pop() - 98) * 86 + 1);
          }
          §§push();
          §§push(system.hosts.HostID);
          §§push(4);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-(§§pop() * 104) + 1) - 86 + 48);
+            §§push(-(§§pop() - 111 + 110) - 32 - 57 - 1);
          }
       }
       

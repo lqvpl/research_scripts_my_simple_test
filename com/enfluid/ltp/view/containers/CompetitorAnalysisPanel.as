@@ -1,11 +1,12 @@
 package com.enfluid.ltp.view.containers
 {
-   import mx.graphics.SolidColor;
    import spark.components.Button;
    import spark.components.TextInput;
-   import spark.components.Group;
+   import spark.effects.Fade;
    import mx.binding.BindingManager;
-   import mx.graphics.SolidColorStroke;
+   import flash.net.URLRequest;
+   import com.enfluid.ltp.model.constants.Constants;
+   import spark.components.Group;
    import flash.events.MouseEvent;
    
    public final class CompetitorAnalysisPanel extends CollapsiblePanel

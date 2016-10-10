@@ -1,29 +1,26 @@
 package com.enfluid.ltp.model.vo
 {
    import flash.events.IEventDispatcher;
-   import mx.events.FlexEvent;
+   import com.enfluid.ltp.view.containers.CollapsiblePanel;
+   import mx.core.DeferredInstanceFromFunction;
    import com.enfluid.ltp.model.constants.DomainStatuses;
-   import mx.controls.Alert;
-   import mx.graphics.SolidColorStroke;
-   import spark.primitives.Rect;
+   import spark.components.DataGrid;
    import mx.binding.BindingManager;
-   import com.enfluid.ltp.util.ProgressBarUtil;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.EmptyTrashCommand;
-   import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
+   import spark.components.TextArea;
+   import flash.events.SQLEvent;
+   import flash.events.SQLErrorEvent;
+   import spark.components.VGroup;
+   import system.Char;
+   import mx.graphics.LinearGradientStroke;
+   import spark.components.Group;
    import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
-   import spark.effects.Fade;
+   import mx.events.FlexEvent;
    import flash.events.Event;
-   import spark.components.Label;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisHeaderComponent;
-   import mx.binding.Binding;
-   import flash.utils.ByteArray;
-   
-   use namespace mx_internal;
+   import mx.graphics.SolidColor;
+   import flash.events.MouseEvent;
+   import spark.components.HGroup;
+   import com.enfluid.ltp.controller.keywordresearch.SaveDomainsToServerCommand;
    
    public final class DomainsVO implements IEventDispatcher
    {
@@ -35,27 +32,27 @@ package com.enfluid.ltp.model.vo
       
       private var _1246368566hasMissingData:Boolean;
       
-      private var _98689com:int = 0;
+      private var _98689com:int;
       
-      private var _108957net:int = 0;
+      private var _108957net:int;
       
-      private var _110308org:int = 0;
+      private var _110308org:int;
       
-      private var _3180co:int = 0;
+      private var _3180co:int;
       
-      private var _3237038info:int = 0;
+      private var _3237038info:int;
       
-      private var _3166ca:int = 0;
+      private var _3166ca:int;
       
-      private var _3059714couk:int = 0;
+      private var _3059714couk:int;
       
-      private var _94843253comau:int = 0;
+      private var _94843253comau:int;
       
-      private var _3201de:int = 0;
+      private var _3201de:int;
       
-      private var _3518nl:int = 0;
+      private var _3518nl:int;
       
-      private var _3207dk:int = 0;
+      private var _3207dk:int;
       
       private var _keyword:com.enfluid.ltp.model.vo.KeywordVO;
       
@@ -63,6 +60,17 @@ package com.enfluid.ltp.model.vo
       
       public function DomainsVO()
       {
+         this._98689com = DomainStatuses.NOT_FETCHED;
+         this._108957net = DomainStatuses.NOT_FETCHED;
+         this._110308org = DomainStatuses.NOT_FETCHED;
+         this._3180co = DomainStatuses.NOT_FETCHED;
+         this._3237038info = DomainStatuses.NOT_FETCHED;
+         this._3166ca = DomainStatuses.NOT_FETCHED;
+         this._3059714couk = DomainStatuses.NOT_FETCHED;
+         this._94843253comau = DomainStatuses.NOT_FETCHED;
+         this._3201de = DomainStatuses.NOT_FETCHED;
+         this._3518nl = DomainStatuses.NOT_FETCHED;
+         this._3207dk = DomainStatuses.NOT_FETCHED;
          this._bindingEventDispatcher = new EventDispatcher(IEventDispatcher(this));
          super();
       }
@@ -71,9 +79,9 @@ package com.enfluid.ltp.model.vo
       {
          var _loc2_:String = null;
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-((§§pop() - 1 - 1) * 92) - 116 + 1);
+            §§push(§§pop() - 99 - 1 - 79);
          }
          for each(_loc2_ in param1)
          {
@@ -86,13 +94,17 @@ package com.enfluid.ltp.model.vo
          return false;
       }
       
-      public final function checkHasMissingData(param1:Array) : void
+      public final function checkHasMissingData(param1:Array = null) : void
       {
          var _loc2_:String = null;
+         if(!param1)
+         {
+            param1 = !!this.isHyphenated?ProjectVO(this._keyword.project).domainsHyphenatedExtensions.selectedExtensions:ProjectVO(this._keyword.project).domainsExactMatchExtensions.selectedExtensions;
+         }
          §§push(0);
          if(_loc6_)
          {
-            §§push(--(§§pop() - 81) + 1);
+            §§push(-(§§pop() - 112 + 1 - 101) + 1);
          }
          for each(_loc2_ in param1)
          {
@@ -112,9 +124,9 @@ package com.enfluid.ltp.model.vo
          var _loc4_:String = null;
          var _loc2_:Array = [];
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push((-§§pop() + 1) * 117);
+            §§push((§§pop() + 110 - 64) * 3 - 117 + 1);
          }
          for each(_loc3_ in param1)
          {
@@ -142,15 +154,14 @@ package com.enfluid.ltp.model.vo
          this.dk = DomainStatuses.NOT_FETCHED;
       }
       
-      public final function save() : void
-      {
-         this.checkHasMissingData(!!this.isHyphenated?ProjectVO(this._keyword.project).domainsHyphenatedExtensions.selectedExtensions:ProjectVO(this._keyword.project).domainsExactMatchExtensions.selectedExtensions);
-         this._keyword.save();
-      }
-      
       public final function setKeyword(param1:com.enfluid.ltp.model.vo.KeywordVO) : void
       {
          this._keyword = param1;
+      }
+      
+      public final function getKeyword() : com.enfluid.ltp.model.vo.KeywordVO
+      {
+         return this._keyword;
       }
       
       public final function fillFromJson(param1:String) : void

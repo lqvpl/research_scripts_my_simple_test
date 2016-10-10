@@ -3,10 +3,14 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
-   import mx.graphics.SolidColorStroke;
+   import mx.graphics.SolidColor;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
    import mx.controls.Alert;
    import mx.events.CloseEvent;
    import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
    
    public final class DeleteSeedKeywordCommand extends Command implements IPhotonCommand
    {
@@ -44,14 +48,14 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(130);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 68 - 1 - 1 - 28));
+            §§push(-(§§pop() + 1) + 49);
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 + 103 + 1 + 116);
+            §§push(§§pop() * 55 + 1 - 1 + 1 + 1 + 85);
          }
          §§pop().buttonHeight = §§pop();
          _loc1_ = "Deleting this Seed Keyword will also delete its Keywords.  Keywords marked as Favorites will be moved to the My Own Keywords Tab. Do you want to proceed?\n";
@@ -61,7 +65,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(3);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 115 - 37);
+            §§push(-(§§pop() + 1 - 1 - 92));
          }
          §§pop().show(§§pop(),§§pop(),§§pop(),null,this.confirmDeleteHandler);
       }
@@ -86,9 +90,9 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          }
          var _loc1_:Boolean = false;
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-(-((§§pop() - 1 - 1) * 110) + 73) + 71);
+            §§push(-((§§pop() + 1) * 119 + 50) + 10);
          }
          for each(_loc2_ in this.seedKeyword.keywords.source)
          {

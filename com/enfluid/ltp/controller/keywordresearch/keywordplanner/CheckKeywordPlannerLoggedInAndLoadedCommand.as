@@ -8,6 +8,10 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
    import mx.binding.utils.BindingUtils;
    import flash.net.URLRequest;
    import com.enfluid.ltp.model.constants.Constants;
+   import hr.binaria.asx3m.converters.IMarshallingContext;
+   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getQualifiedClassName;
    
    public final class CheckKeywordPlannerLoggedInAndLoadedCommand extends KeywordPlannerCommand implements IPhotonCommand
    {
@@ -101,8 +105,16 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                _loc1_.value = model.gUserName;
             }
             _loc2_ = scraper.getElementById("Passwd");
-            _loc2_.value = model.gPassword;
-            scraper.click(scraper.getElementById("signIn"));
+            if(_loc2_ != null)
+            {
+               _loc2_.value = model.gPassword;
+               scraper.click(scraper.getElementById("signIn"));
+            }
+            else
+            {
+               model.autoLoginGoogle = false;
+               this.checkIsLoggedIn();
+            }
          }
       }
       
@@ -120,7 +132,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(500);
             if(_loc5_)
             {
-               §§push(§§pop() * 70 * 16 + 31 - 1);
+               §§push(§§pop() + 1 + 1 - 61 + 1);
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }
@@ -136,7 +148,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                   §§push(3000);
                   if(_loc6_)
                   {
-                     §§push(-(§§pop() + 1 - 17 - 1 + 1) * 27);
+                     §§push(---(§§pop() * 64 - 106 + 40));
                   }
                   §§pop().callDelayed(§§pop(),§§pop());
                   return;
@@ -149,7 +161,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                §§push(6000);
                if(_loc6_)
                {
-                  §§push((§§pop() + 1) * 8 * 91);
+                  §§push(-((§§pop() - 1) * 46 - 99) - 100);
                }
                §§pop().callDelayed(§§pop(),§§pop());
                return;
@@ -158,7 +170,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(0);
             if(_loc5_)
             {
-               §§push(-(§§pop() * 67 + 1 + 1));
+               §§push(-§§pop() + 23 + 1 + 1 - 7);
             }
             for each(emailLink in emailLinks)
             {
@@ -166,9 +178,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                {
                   §§push(emailLink.innerText.indexOf(model.gUserName));
                   §§push(0);
-                  if(_loc6_)
+                  if(_loc5_)
                   {
-                     §§push(§§pop() + 1 - 11 - 1 - 32 + 109 - 1);
+                     §§push(-§§pop() * 63 + 1);
                   }
                   if(§§pop() >= §§pop())
                   {
@@ -177,9 +189,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                      §§push();
                      §§push(this.checkIsLoggedIn);
                      §§push(2000);
-                     if(_loc5_)
+                     if(_loc6_)
                      {
-                        §§push(-(--§§pop() - 1 + 57) + 109 - 1);
+                        §§push(§§pop() + 117 - 36 - 1);
                      }
                      §§pop().callDelayed(§§pop(),§§pop());
                      return;
@@ -197,9 +209,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                §§push();
                §§push(this.checkIsLoggedIn);
                §§push(4000);
-               if(_loc6_)
+               if(_loc5_)
                {
-                  §§push((§§pop() - 1 + 1) * 71 * 90 + 34 - 10);
+                  §§push(-(-(-§§pop() * 55 - 98) + 88) + 1);
                }
                §§pop().callDelayed(§§pop(),§§pop());
                return;
@@ -218,7 +230,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                      §§push(2000);
                      if(_loc5_)
                      {
-                        §§push(-(§§pop() + 1 - 1 + 54) - 1 + 67);
+                        §§push((-§§pop() + 72 - 69 + 72 + 1 - 1) * 102);
                      }
                      §§pop().callDelayed(§§pop(),§§pop());
                      return;
@@ -229,7 +241,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                   §§push(2000);
                   if(_loc6_)
                   {
-                     §§push(§§pop() * 24 - 1 + 1 - 55);
+                     §§push(-(-(§§pop() * 59) - 1) + 92);
                   }
                   §§pop().callDelayed(§§pop(),§§pop());
                }
@@ -248,9 +260,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                   §§push();
                   §§push(this.checkIsLoggedIn);
                   §§push(1000);
-                  if(_loc6_)
+                  if(_loc5_)
                   {
-                     §§push(§§pop() - 1 - 48 + 41 - 112 + 1 - 36);
+                     §§push(§§pop() - 55 - 106 + 118 - 65);
                   }
                   §§pop().callDelayed(§§pop(),§§pop());
                   return;
@@ -269,9 +281,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push();
             §§push(this.checkIsLoggedIn);
             §§push(2000);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(-(§§pop() + 24 + 1 + 1 - 70 + 1) - 1);
+               §§push(§§pop() - 98 - 1 + 1 + 15 - 1);
             }
             §§pop().callDelayed(§§pop(),§§pop());
          }
@@ -291,7 +303,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(1000);
             if(_loc2_)
             {
-               §§push(-(§§pop() - 46 - 1 + 1 - 1));
+               §§push((§§pop() + 1) * 105 + 81 + 54);
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }
@@ -303,7 +315,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(-1);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 1 - 1 + 1 - 1 + 57);
+            §§push(-(-(§§pop() + 117) - 91 - 1 - 1 + 1));
          }
          if(§§pop() == §§pop())
          {
@@ -311,9 +323,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push();
             §§push(this.checkIsLoggedIn);
             §§push(3000);
-            if(_loc1_)
+            if(_loc2_)
             {
-               §§push(-((§§pop() - 3) * 52 + 1 + 1));
+               §§push(-§§pop() + 1 - 12 - 70 + 1 + 10);
             }
             §§pop().callDelayed(§§pop(),§§pop());
             return;
@@ -347,7 +359,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
                §§push(1000);
                if(_loc2_)
                {
-                  §§push(§§pop() * 48 - 19 - 75 - 1);
+                  §§push(-(-§§pop() + 1 - 1));
                }
                §§pop().callDelayed(§§pop(),§§pop());
             }
@@ -359,7 +371,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(1000);
             if(_loc1_)
             {
-               §§push(§§pop() - 69 - 1 - 1);
+               §§push(-(§§pop() - 1 + 1 - 81 + 3) + 28);
             }
             §§pop().callDelayed(§§pop(),§§pop());
          }
@@ -377,9 +389,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push();
             §§push(done);
             §§push(1000);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(-(§§pop() - 30) - 1 - 0 - 29);
+               §§push((§§pop() * 12 + 56 + 1) * 7);
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }
@@ -408,7 +420,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(2000);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 28 + 1 - 1 - 1));
+            §§push(-(§§pop() * 30 + 39 - 84 + 1) - 1);
          }
          §§pop().callDelayed(§§pop(),§§pop());
       }

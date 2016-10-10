@@ -60,9 +60,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          var _loc3_:* = undefined;
          var _loc2_:* = scraper.getElementByInnerText("div",param1,true);
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push((§§pop() - 78 + 15) * 54 * 118 - 1);
+            §§push((§§pop() + 101 + 1 - 1 + 1 + 1 - 1) * 40);
          }
          for each(_loc3_ in _loc2_.parentElement.children)
          {

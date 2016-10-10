@@ -1,6 +1,8 @@
 package system.data.maps
 {
    import system.formatters.Formattable;
+   import mx.states.Transition;
+   import mx.binding.BindingManager;
    import system.data.Map;
    import system.data.iterators.ArrayIterator;
    import system.data.Iterator;

@@ -199,6 +199,7 @@ package spark.components
          }
       }
       
+      [ArrayElementType("mx.core.IVisualElement")]
       public function get controlBarContent() : Array
       {
          if(this.controlBarGroup)

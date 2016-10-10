@@ -2,13 +2,12 @@ package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
    import flash.filesystem.File;
+   import flash.events.Event;
+   import com.enfluid.ltp.util.CSVStringUtils;
    import com.enfluid.ltp.model.vo.ProjectVO;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.model.vo.KeywordVO;
-   import spark.effects.Resize;
-   import mx.binding.BindingManager;
-   import mx.controls.Spacer;
    
    public final class PurgeCorruptDataCommand extends Command implements IPhotonCommand
    {
@@ -42,9 +41,9 @@ package com.enfluid.ltp.controller.common
             _loc2_ = new SeedKeywordVO();
             _loc3_ = new ArrayCollection(_loc1_.findBySQLWithoutParams("SELECT * FROM ProjectVOs;"));
             §§push(0);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(-((§§pop() - 55 + 1) * 10 + 74 - 111) - 42);
+               §§push(-(-(§§pop() - 1 + 107) - 64 - 65) - 47);
             }
             for each(_loc1_ in _loc3_)
             {
@@ -62,7 +61,7 @@ package com.enfluid.ltp.controller.common
             §§push(0);
             if(_loc9_)
             {
-               §§push((§§pop() + 1 - 1 - 20 - 67 - 1) * 1);
+               §§push((§§pop() - 1) * 81 - 1 + 8 - 116 - 57 + 50);
             }
             for each(_loc2_ in _loc4_)
             {

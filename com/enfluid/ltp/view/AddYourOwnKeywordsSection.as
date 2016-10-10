@@ -6,8 +6,12 @@ package com.enfluid.ltp.view
    import spark.components.TextArea;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import flash.events.Event;
    import com.enfluid.ltp.util.KeywordUtil;
+   import flash.utils.ByteArray;
+   import flash.utils.Endian;
    import mx.binding.BindingManager;
    import mx.binding.Binding;
    import mx.core.mx_internal;
@@ -70,18 +74,19 @@ package com.enfluid.ltp.view
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 4 - 1 - 1 + 1 + 1 - 14);
+            §§push(-(§§pop() + 1) + 79 + 85 - 33 + 108 + 74);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Add My Own Keywords";
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._AddYourOwnKeywordsSection_Array1_c);
+         this.addEventListener("creationComplete",this.___AddYourOwnKeywordsSection_LockCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 101 + 1 - 1) * 27 + 4));
+            §§push(-§§pop() + 68 - 43);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -111,15 +116,31 @@ package com.enfluid.ltp.view
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.AddMyOwn.Opened").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.AddMyOwn.Closed").execute();
+            }
+         });
+      }
+      
       protected final function addOwnKeywordsTextAreaPasteHandler(param1:Event) : void
       {
          var _loc5_:String = null;
          var _loc2_:Array = this.model.selectedProject.pendingOwnKeywords.split("\n");
          var _loc3_:Array = new Array();
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(--(-((§§pop() + 1) * 98 * 115) + 1));
+            §§push(-((§§pop() * 17 - 14) * 86) - 1 - 90 + 1);
          }
          var _loc4_:* = §§pop();
          while(_loc4_ < _loc2_.length)
@@ -131,7 +152,7 @@ package com.enfluid.ltp.view
             §§push(0);
             if(_loc6_)
             {
-               §§push((§§pop() + 37 - 4) * 111 - 1 + 69 - 1);
+               §§push((§§pop() - 1) * 115 * 66 * 38 + 1 - 105 - 1);
             }
             if(§§pop() > §§pop())
             {
@@ -143,7 +164,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc6_)
          {
-            §§push(-((-§§pop() + 1) * 4) * 103 * 113 - 1);
+            §§push((-(§§pop() - 1 + 1 + 1 - 100) + 31) * 8);
          }
          if(§§pop() > §§pop())
          {
@@ -162,44 +183,44 @@ package com.enfluid.ltp.view
          var _loc1_:TextArea = new TextArea();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 1 + 56) * 111 - 117);
+            §§push(-(§§pop() - 42 - 31) + 50 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 1 - 32) * 0 - 3 - 1));
+            §§push(-(((§§pop() + 39) * 31 + 1) * 28) * 41);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((-(§§pop() * 56) + 53) * 59 - 61) * 116);
+            §§push(-(-((§§pop() - 1) * 107 - 1) - 1));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 119 + 1) * 16 + 91) - 76);
+            §§push(((§§pop() + 27 + 11) * 21 - 1) * 70);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 16 + 70) * 104);
+            §§push(-((§§pop() - 1) * 72 + 1 - 76) - 4 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(((§§pop() - 71) * 116 + 1 + 42 - 29) * 106);
+            §§push((§§pop() + 72 + 1) * 13);
          }
          §§pop().bottom = §§pop();
          _loc1_.prompt = "Enter up to 10,000 keywords, one per line.";
@@ -221,6 +242,11 @@ package com.enfluid.ltp.view
          this.addOwnKeywordsTextAreaPasteHandler(param1);
       }
       
+      public final function ___AddYourOwnKeywordsSection_LockCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _AddYourOwnKeywordsSection_bindingsSetup() : Array
       {
          var result:Array = [];
@@ -228,7 +254,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 + 45 - 82 - 1 - 1);
+            §§push(§§pop() + 57 - 81 - 112 - 97 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -236,9 +262,9 @@ package com.enfluid.ltp.view
          },null,"addOwnKeywordsTextArea.enabled");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 86 + 66 + 1 + 1 + 11);
+            §§push((§§pop() + 90 - 1) * 63 + 107 - 15);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -247,9 +273,9 @@ package com.enfluid.ltp.view
          },null,"addOwnKeywordsTextArea.text");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 115 + 1 - 29 + 1));
+            §§push(--((§§pop() + 116) * 93 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -260,37 +286,37 @@ package com.enfluid.ltp.view
          },"model.selectedProject.pendingOwnKeywords");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 25 - 57 + 1);
+            §§push(§§pop() - 76 - 1 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() * 59 + 75 + 1 + 42 + 1 + 1 - 15);
+            §§push(§§pop() * 110 + 1 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 89 - 38 + 70) * 32 * 49);
+            §§push(§§pop() - 107 - 45 + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 97 + 43 - 1));
+            §§push(§§pop() + 1 + 21 - 89);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 51 * 38));
+            §§push(§§pop() - 98 + 78 + 1 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

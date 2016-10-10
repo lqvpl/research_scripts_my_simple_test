@@ -2,18 +2,26 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
+   import spark.components.Image;
+   import mx.binding.BindingManager;
+   import flash.events.Event;
    import com.enfluid.ltp.util.Scraper;
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
    import flash.html.HTMLLoader;
-   import mx.collections.XMLListCollection;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
+   import mx.binding.Binding;
    import flash.net.URLRequest;
-   import flash.events.Event;
+   import com.enfluid.ltp.model.constants.Values;
    import com.enfluid.ltp.util.Util;
    import com.enfluid.ltp.model.constants.Constants;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.constants.RankCheckConstants;
-   import spark.layouts.VerticalLayout;
+   import io.calq.CalqClient;
+   import io.calq.analytics.ApiDispatcher;
+   import com.hurlant.crypto.symmetric.ISymmetricKey;
+   import com.hurlant.crypto.symmetric.IPad;
    
    public final class CheckBingRankCommand extends Command implements IPhotonCommand
    {
@@ -40,7 +48,7 @@ package com.enfluid.ltp.controller.rankchecker
          §§push(0);
          if(_loc3_)
          {
-            §§push(((§§pop() - 98) * 56 + 82 + 1) * 66);
+            §§push((--§§pop() + 74 + 85) * 5 - 1);
          }
          §§pop().currentSearchResult = §§pop();
          this.html = new HTMLLoader();
@@ -71,9 +79,9 @@ package com.enfluid.ltp.controller.rankchecker
          var tmp1:Object = null;
          §§push(_loc1_);
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(-(§§pop() + 70 + 1 + 1) - 1);
+            §§push(-(((§§pop() + 1 + 20) * 35 - 98) * 36));
          }
          var /*UnknownSlot*/:* = §§pop();
          var pageLink:String = null;
@@ -84,7 +92,7 @@ package com.enfluid.ltp.controller.rankchecker
             §§push(0);
             if(_loc7_)
             {
-               §§push((-§§pop() + 16) * 116 + 1 + 1);
+               §§push(§§pop() * 58 + 1 - 68 + 38 + 106);
             }
             for each(result in results)
             {
@@ -95,18 +103,18 @@ package com.enfluid.ltp.controller.rankchecker
                   anchors = result.getElementsByTagName("a");
                   §§push(anchors.length);
                   §§push(0);
-                  if(_loc6_)
+                  if(_loc7_)
                   {
-                     §§push(-§§pop() + 28 + 1 + 6 + 89 + 1);
+                     §§push(§§pop() + 85 - 77 - 91);
                   }
                   if(§§pop() > §§pop())
                   {
                      §§push(_loc1_);
                      §§push(anchors);
                      §§push(0);
-                     if(_loc7_)
+                     if(_loc6_)
                      {
-                        §§push(§§pop() + 87 + 1 - 90 - 1 - 108 - 78);
+                        §§push(§§pop() * 42 + 19 - 1);
                      }
                      var /*UnknownSlot*/:* = §§pop()[§§pop()].getAttribute("href");
                      if(Util.isRankCheckMatch(userUrl,pageUrl))
@@ -129,9 +137,9 @@ package com.enfluid.ltp.controller.rankchecker
                tmp1 = this.html.window.document.getElementsByTagName("a");
                §§push(_loc1_);
                §§push(0);
-               if(_loc7_)
+               if(_loc6_)
                {
-                  §§push(-(-(§§pop() + 1) * 0) - 113 - 1);
+                  §§push(-(-(§§pop() - 1 + 1 + 1) * 16));
                }
                var /*UnknownSlot*/:* = §§pop();
                while(k < tmp1.length)

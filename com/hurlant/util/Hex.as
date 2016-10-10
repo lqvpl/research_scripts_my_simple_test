@@ -1,9 +1,14 @@
 package com.hurlant.util
 {
    import flash.utils.ByteArray;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.headers.CustomHeaderRenderer;
-   import hr.binaria.asx3m.converters.ISingleValueConverter;
+   import spark.primitives.Rect;
+   import mx.binding.BindingManager;
+   import spark.layouts.VerticalLayout;
+   import mx.graphics.GradientEntry;
+   import spark.components.CheckBox;
+   import mx.graphics.SolidColor;
+   import spark.components.Grid;
+   import spark.components.DataGrid;
    
    public final class Hex
    {
@@ -33,9 +38,9 @@ package com.hurlant.util
          var _loc2_:ByteArray = new ByteArray();
          §§push(param1.length);
          §§push(1);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(-§§pop() - 96 + 12 - 118 - 1 + 62);
+            §§push((-(§§pop() - 112 + 1) - 1 + 1 + 1) * 6);
          }
          if(§§pop() & §§pop() == §§pop())
          {
@@ -44,7 +49,7 @@ package com.hurlant.util
          §§push(0);
          if(_loc4_)
          {
-            §§push(-§§pop() * 88 - 1 + 113);
+            §§push((§§pop() + 40) * 26 + 42 + 1);
          }
          var _loc3_:uint = §§pop();
          while(_loc3_ < param1.length)
@@ -54,29 +59,29 @@ package com.hurlant.util
             §§push(2);
             if(_loc4_)
             {
-               §§push((-(§§pop() - 34 - 1) - 113) * 75);
+               §§push((-((§§pop() - 77 - 1) * 91) + 65) * 99 * 52);
             }
             §§push(§§pop() / §§pop());
             §§push();
             §§push(param1);
             §§push(_loc3_);
             §§push(2);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push((§§pop() - 1) * 34 + 1 + 26 - 1 - 98);
+               §§push(-(-(§§pop() + 35 - 34) * 35));
             }
             §§push(§§pop().substr(§§pop(),§§pop()));
             §§push(16);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(§§pop() * 47 + 60 - 13 + 1 - 99);
+               §§push(-(-§§pop() - 1 + 1 + 1 + 1));
             }
             §§pop()[§§pop()] = §§pop().parseInt(§§pop(),§§pop());
             §§push(_loc3_);
             §§push(2);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push(§§pop() + 1 - 1 + 25);
+               §§push(§§pop() - 73 - 63 - 117);
             }
             _loc3_ = §§pop() + §§pop();
          }
@@ -87,9 +92,9 @@ package com.hurlant.util
       {
          var _loc3_:* = "";
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(§§pop() + 1 + 30 - 106 - 1);
+            §§push(-(§§pop() + 94 + 1 + 1 + 1) - 26);
          }
          var _loc4_:uint = §§pop();
          while(_loc4_ < param1.length)
@@ -100,13 +105,13 @@ package com.hurlant.util
             §§push(16);
             if(_loc5_)
             {
-               §§push(-(§§pop() + 111) * 72 + 79);
+               §§push(§§pop() - 1 + 1 - 59 + 66 + 1 + 1 + 1);
             }
             §§push(§§pop() + §§pop().toString(§§pop()));
             §§push(-2);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push((§§pop() - 11 - 8) * 46 * 93 - 57 + 11 + 1);
+               §§push((--(§§pop() + 68) - 38) * 10 * 3);
             }
             _loc3_ = §§pop() + §§pop().substr(§§pop(),2);
             if(param2)

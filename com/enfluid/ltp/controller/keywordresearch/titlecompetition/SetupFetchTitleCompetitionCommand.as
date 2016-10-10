@@ -3,9 +3,6 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
    import com.photon.controller.PhotonComplexCommand;
    import com.photon.controller.IPhotonCommand;
    import com.enfluid.ltp.model.DataModel;
-   import mx.graphics.SolidColor;
-   import mx.graphics.GradientEntry;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import com.enfluid.ltp.util.ProgressBarUtil;
    
@@ -33,13 +30,13 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
          §§push(0);
          if(_loc5_)
          {
-            §§push(--(§§pop() * 101));
+            §§push(§§pop() * 8 * 108 * 22);
          }
          var _loc1_:* = §§pop();
          §§push(0);
          if(_loc5_)
          {
-            §§push((§§pop() + 1) * 20 * 93 - 54 - 113 + 103 + 1);
+            §§push(§§pop() + 1 - 54 + 1);
          }
          for each(_loc2_ in this.model.selectedKeywordCollection.project.keywords)
          {
@@ -49,7 +46,7 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
                §§push(0);
                if(_loc5_)
                {
-                  §§push(--(§§pop() + 15 + 38 + 1) * 40);
+                  §§push(--((--§§pop() + 71) * 99));
                }
                if(§§pop() == §§pop() || §§pop() == §§pop())
                {
@@ -62,7 +59,7 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
                §§push(0);
                if(_loc5_)
                {
-                  §§push((§§pop() - 67) * 27 + 1 + 1 + 82);
+                  §§push(((§§pop() + 58) * 102 - 1) * 108 - 1);
                }
                if(§§pop() == §§pop() || §§pop() == §§pop())
                {

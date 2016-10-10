@@ -19,6 +19,8 @@ package com.enfluid.ltp.view.renderers.headers
       
       private var _88844982outerDocument:com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
       
+      public var linkeable:Boolean = false;
+      
       public function CompetitorAnalysisHeaderRendererInnerClass0()
       {
          super();
@@ -45,14 +47,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(90);
          if(_loc2_)
          {
-            §§push((§§pop() + 1) * 93 - 1);
+            §§push(-(-(-§§pop() * 13) - 24) + 1);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 10 - 1 + 35);
+            §§push(-(§§pop() + 1 + 102 + 1 + 1));
          }
          §§pop().focalPointRatio = §§pop();
          _loc1_.entries = [this._CompetitorAnalysisHeaderRendererInnerClass0_GradientEntry1_i(),this._CompetitorAnalysisHeaderRendererInnerClass0_GradientEntry2_i()];
@@ -64,9 +66,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 107 - 1 - 104 + 5));
+            §§push(-(§§pop() * 41 + 1) + 104 - 1 + 1 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.6;
@@ -80,9 +82,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 - 31);
+            §§push(-(§§pop() - 105 + 1));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.8;

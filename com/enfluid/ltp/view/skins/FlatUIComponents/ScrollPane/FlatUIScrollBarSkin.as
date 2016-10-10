@@ -4,11 +4,12 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
    import mx.core.IStateClient2;
    import spark.components.Button;
    import mx.core.IFlexModuleFactory;
+   import mx.core.ClassFactory;
+   import spark.skins.spark.DefaultGridItemRenderer;
    import mx.binding.BindingManager;
-   import mx.graphics.SolidColor;
-   import mx.graphics.GradientEntry;
    import spark.components.VScrollBar;
    import mx.events.PropertyChangeEvent;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -36,14 +37,14 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(15);
          if(_loc1_)
          {
-            §§push(§§pop() * 3 * 16 - 1);
+            §§push((§§pop() - 1) * 87 + 115 + 1);
          }
          §§pop().minWidth = §§pop();
          §§push(this);
          §§push(35);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1) * 116 - 112 - 1 + 1);
+            §§push((§§pop() - 77 + 75 - 1 + 1) * 79 * 39 * 51);
          }
          §§pop().minHeight = §§pop();
          this.mxmlContent = [this._FlatUIScrollBarSkin_Button1_i(),this._FlatUIScrollBarSkin_Button2_i(),this._FlatUIScrollBarSkin_Button3_i(),this._FlatUIScrollBarSkin_Button4_i()];
@@ -100,21 +101,21 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(16);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 69 + 17) - 1) * 26 - 1 - 119);
+            §§push(-(§§pop() + 1) + 57);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(15);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 80));
+            §§push(-(§§pop() - 1 + 104) + 1 - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(54);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 110 + 80) - 32) * 45 * 94);
+            §§push(§§pop() - 6 - 115 + 1 - 96 + 5 + 1 + 22);
          }
          §§pop().height = §§pop();
          _loc1_.focusEnabled = false;
@@ -151,9 +152,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 78 - 1);
+            §§push((§§pop() + 1) * 55 + 27 - 33 - 50 + 47);
          }
          §§pop().top = §§pop();
          _loc1_.focusEnabled = false;
@@ -174,9 +175,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 1) * 90 + 1 + 1 + 1) * 61);
+            §§push(-(§§pop() * 115 - 13 - 101) + 53 - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.focusEnabled = false;

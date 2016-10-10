@@ -1,7 +1,9 @@
 package system.hosts
 {
    import system.Enum;
-   import flash.utils.ByteArray;
+   import flash.utils.setTimeout;
+   import com.enfluid.ltp.util.Logger;
+   import com.adobe.cairngorm.popup.PopUpEvent;
    
    public final class PlatformID extends Enum
    {
@@ -22,44 +24,44 @@ package system.hosts
          §§push();
          §§push(system.hosts.PlatformID);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() - 83 - 1 + 72 + 1) - 28 - 1);
+            §§push(--§§pop() + 116);
          }
          §§push();
          §§push(system.hosts.PlatformID);
          §§push(1);
          if(_loc1_)
          {
-            §§push((§§pop() * 101 + 1 + 1 - 1) * 72 * 60 * 4);
+            §§push(-(§§pop() - 80 - 114 + 57) + 1 - 76 + 1);
          }
          §§push();
          §§push(system.hosts.PlatformID);
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() - 92 + 1 + 48) * 86);
+            §§push(-(§§pop() + 1 + 1) * 106);
          }
          §§push();
          §§push(system.hosts.PlatformID);
          §§push(3);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() + 103) - 1 - 1) - 1);
+            §§push(-(§§pop() - 1 + 1 + 59 + 119 + 63) * 56);
          }
          §§push();
          §§push(system.hosts.PlatformID);
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() + 115 - 1 + 1);
+            §§push(§§pop() - 1 + 25 - 54);
          }
          §§push();
          §§push(system.hosts.PlatformID);
          §§push(5);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 51) * 35 * 64 - 1 + 97 + 1) * 31);
+            §§push(§§pop() * 61 * 50 - 33 + 1 + 109);
          }
       }
       

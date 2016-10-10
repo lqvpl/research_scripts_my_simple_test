@@ -29,9 +29,9 @@ package com.enfluid.ltp.controller.competitoranalysis
             return;
          }
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() + 63 - 1 - 12) - 1);
+            §§push(-(§§pop() + 100 - 111 - 43 - 1 - 1) * 102);
          }
          for each(_loc1_ in this.keyword.competitorURLs)
          {
@@ -50,7 +50,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(1);
          if(_loc5_)
          {
-            §§push(§§pop() - 1 + 82 + 1);
+            §§push(-(§§pop() + 105 + 119) + 1 - 1 - 83);
          }
          §§pop().siteAgeAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
          if(this.saveOnDone)
@@ -58,7 +58,7 @@ package com.enfluid.ltp.controller.competitoranalysis
             §§push(0);
             if(_loc6_)
             {
-               §§push(-((-(§§pop() + 96 + 1) - 1) * 80) * 80);
+               §§push(§§pop() + 1 + 1 + 1);
             }
             for each(_loc2_ in this.keyword.competitorURLs)
             {

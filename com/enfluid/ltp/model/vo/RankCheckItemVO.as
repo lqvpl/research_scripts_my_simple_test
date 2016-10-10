@@ -1,18 +1,23 @@
 package com.enfluid.ltp.model.vo
 {
    import flash.events.IEventDispatcher;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
+   import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.controller.keywordresearch.SaveTopTenToServerCommand;
+   import com.enfluid.ltp.controller.keywordresearch.SaveAvgKCToServer;
+   import com.enfluid.ltp.view.components.Link;
    import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
-   import spark.layouts.HorizontalLayout;
    import flash.events.Event;
-   import spark.events.PopUpEvent;
-   import spark.primitives.Rect;
-   import com.enfluid.ltp.view.components.Link;
-   import flash.errors.IllegalOperationError;
+   import com.hurlant.math.BigInteger;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.components.DataGrid;
+   import spark.components.GridColumnHeaderGroup;
+   import spark.components.gridClasses.IGridVisualElement;
+   import spark.components.gridClasses.GridColumn;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    
    public final class RankCheckItemVO implements IEventDispatcher
    {

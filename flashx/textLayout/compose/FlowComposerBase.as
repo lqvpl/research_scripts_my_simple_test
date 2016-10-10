@@ -15,6 +15,7 @@ package flashx.textLayout.compose
    {
        
       
+      [ArrayElementType("text.elements.TextFlowLine")]
       private var _lines:Array;
       
       protected var _textFlow:TextFlow;

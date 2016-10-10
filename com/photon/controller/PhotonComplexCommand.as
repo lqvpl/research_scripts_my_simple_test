@@ -1,15 +1,18 @@
 package com.photon.controller
 {
-   import spark.layouts.VerticalLayout;
-   import spark.components.Label;
+   import spark.primitives.Path;
    import mx.binding.BindingManager;
+   import spark.layouts.VerticalLayout;
+   import mx.effects.Parallel;
+   import com.enfluid.ltp.view.components.Link;
    import flash.utils.setTimeout;
    import mx.core.FlexGlobals;
-   import flash.events.MouseEvent;
-   import flash.net.navigateToURL;
-   import flash.net.URLRequest;
-   import com.hurlant.crypto.rsa.RSAKey;
-   import com.hurlant.math.BigInteger;
+   import mx.core.ClassFactory;
+   import spark.skins.spark.DefaultItemRenderer;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.util.Util;
+   import com.enfluid.ltp.util.KeywordUtil;
+   import flash.utils.ByteArray;
    import mx.events.PropertyChangeEvent;
    
    public class PhotonComplexCommand extends PhotonCommand
@@ -40,9 +43,9 @@ package com.photon.controller
          var _loc1_:* = undefined;
          var _loc2_:PhotonCommand = null;
          §§push(0);
-         if(_loc10_)
+         if(_loc9_)
          {
-            §§push(§§pop() - 93 - 104 - 1);
+            §§push(§§pop() - 1 + 1 + 2 + 83 - 1);
          }
          for each(_loc1_ in this.commandList)
          {
@@ -51,7 +54,7 @@ package com.photon.controller
                §§push(0);
                if(_loc9_)
                {
-                  §§push(§§pop() - 1 + 57 - 1 - 111 - 1 - 108);
+                  §§push(-(§§pop() + 108 + 67 + 1) - 65 - 1);
                }
                for each(_loc2_ in _loc1_)
                {
@@ -76,9 +79,9 @@ package com.photon.controller
             if(this.currentlyExecutingCommand is Array)
             {
                §§push(0);
-               if(_loc4_)
+               if(_loc5_)
                {
-                  §§push(§§pop() + 6 + 66 + 75 - 42);
+                  §§push(-((-(-(§§pop() - 1) + 1) + 1) * 33));
                }
                for each(_loc1_ in this.currentlyExecutingCommand)
                {
@@ -91,9 +94,9 @@ package com.photon.controller
             }
          }
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() - 1 - 60) - 66);
+            §§push(§§pop() * 24 + 28 + 92);
          }
          for each(_loc1_ in this.nonWaitingExecutingCommands)
          {
@@ -112,7 +115,7 @@ package com.photon.controller
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(-§§pop() * 2 + 20));
+            §§push(--(§§pop() * 107));
          }
          var _loc3_:* = §§pop();
          if(!this.executing)
@@ -127,7 +130,7 @@ package com.photon.controller
                §§push(0);
                if(_loc7_)
                {
-                  §§push(-§§pop() + 1 + 106);
+                  §§push(-(§§pop() - 1) * 79);
                }
                for each(_loc2_ in this.currentlyExecutingCommand)
                {
@@ -183,9 +186,9 @@ package com.photon.controller
       {
          var _loc3_:PhotonCommand = null;
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push((-(§§pop() - 116 + 1 - 24) + 16) * 24);
+            §§push(-((§§pop() + 0) * 52 + 1) - 106);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < this.nonWaitingExecutingCommands.length)
@@ -196,9 +199,9 @@ package com.photon.controller
                §§push(this.nonWaitingExecutingCommands);
                §§push(_loc2_);
                §§push(1);
-               if(_loc7_)
+               if(_loc6_)
                {
-                  §§push((§§pop() - 1) * 111 + 72 + 62 - 1 + 1);
+                  §§push(((§§pop() - 1 + 114) * 63 - 1) * 59);
                }
                §§pop().splice(§§pop(),§§pop());
                break;
@@ -214,9 +217,9 @@ package com.photon.controller
       {
          §§push(this.commandList.length);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 91 - 1) * 93);
+            §§push(§§pop() + 82 + 1 - 1 - 33);
          }
          if(§§pop() == §§pop() && §§pop() == §§pop())
          {
@@ -233,7 +236,7 @@ package com.photon.controller
             §§push(-1);
             if(_loc4_)
             {
-               §§push(-((§§pop() * 52 + 1 + 27) * 93 - 1));
+               §§push((§§pop() - 1 + 57 - 51 - 61 - 1 + 53) * 95);
             }
             if(§§pop() > §§pop())
             {
@@ -242,9 +245,9 @@ package com.photon.controller
                   §§push(this.currentlyExecutingCommand);
                   §§push(_loc2_);
                   §§push(1);
-                  if(_loc4_)
+                  if(_loc3_)
                   {
-                     §§push(§§pop() + 47 - 38 - 1 - 42 - 1);
+                     §§push((§§pop() - 1 - 1 - 1) * 48 + 12 - 1);
                   }
                   §§pop().splice(§§pop(),§§pop());
                   break;
@@ -257,7 +260,7 @@ package com.photon.controller
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(-(§§pop() + 57) - 71) - 1) - 115);
+            §§push(-(§§pop() - 1 + 1) + 1);
          }
          if(§§pop() == §§pop())
          {
@@ -281,7 +284,7 @@ package com.photon.controller
             §§push(1);
             if(_loc5_)
             {
-               §§push(-(-(§§pop() + 100) * 25) * 72 - 75);
+               §§push(-(§§pop() * 58 * 119));
             }
             §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop());
          }
@@ -294,9 +297,9 @@ package com.photon.controller
             §§push(this.onCommandCompletion);
             §§push(false);
             §§push(0);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(§§pop() * 71 * 88 * 80 - 97 - 1 + 1);
+               §§push((-(§§pop() - 1) * 79 + 64) * 19);
             }
             §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop());
          }
@@ -307,9 +310,9 @@ package com.photon.controller
             §§push(this.onNonWaitingCommandCompletion);
             §§push(false);
             §§push(0);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(-(§§pop() - 1 + 1 + 1));
+               §§push(--(§§pop() - 63) + 1 + 43 - 113);
             }
             §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop());
          }
@@ -320,9 +323,9 @@ package com.photon.controller
       {
          var _loc2_:PhotonCommand = null;
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push((-§§pop() - 112) * 8 + 96 - 77 - 13);
+            §§push(-(§§pop() - 101 - 3 - 34) - 2);
          }
          for each(_loc2_ in param1)
          {
@@ -337,7 +340,7 @@ package com.photon.controller
             §§push(0);
             if(_loc5_)
             {
-               §§push(§§pop() * 68 + 48 - 1 + 1 - 1 + 77);
+               §§push(((§§pop() + 97) * 72 + 4 - 1) * 9);
             }
             §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop());
          }

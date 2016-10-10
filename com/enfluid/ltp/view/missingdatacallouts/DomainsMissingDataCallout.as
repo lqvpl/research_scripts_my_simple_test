@@ -4,46 +4,43 @@ package com.enfluid.ltp.view.missingdatacallouts
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
-   import flash.events.Event;
-   import flash.html.HTMLLoader;
+   import spark.layouts.VerticalLayout;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.components.target;
+   import mx.binding.Binding;
    import spark.components.Button;
    import com.enfluid.ltp.view.dataandfilters.domain.DomainsGroup;
    import mx.controls.HRule;
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
-   import spark.effects.Move;
-   import mx.binding.BindingManager;
-   import spark.components.ComboBox;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
    import com.enfluid.ltp.model.DataModel;
    import flash.events.MouseEvent;
    import com.enfluid.ltp.controller.keywordresearch.domainavailability.FetchMissingDomainsCommand;
-   import spark.events.PopUpEvent;
-   import mx.events.FlexEvent;
-   import spark.layouts.VerticalLayout;
-   import com.enfluid.ltp.util.KeywordUtil;
-   import spark.primitives.Rect;
-   import com.enfluid.ltp.model.constants.RankCheckConstants;
-   import mx.graphics.SolidColor;
    import com.hurlant.math.BigInteger;
-   import com.hurlant.math.bi_internal;
+   import spark.events.PopUpEvent;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
+   import flash.events.Event;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.model.constants.Values;
+   import spark.components.Image;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisGridColumn;
    import mx.controls.Spacer;
+   import system.data.Iterator;
    import spark.components.HGroup;
    import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
-   import com.hurlant.math.IReduction;
-   import com.hurlant.math.ClassicReduction;
-   import com.hurlant.math.MontgomeryReduction;
+   import io.calq.analytics.AbstractAnalyticsApiCall;
+   import flash.utils.Timer;
    import mx.events.FlexMouseEvent;
-   import mx.binding.Binding;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
    import com.enfluid.ltp.model.vo.DomainExtensionOptions;
-   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
-   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
    import mx.states.State;
    import mx.states.AddItems;
    
-   use namespace bi_internal;
    use namespace mx_internal;
    
    public final class DomainsMissingDataCallout extends Callout implements IBindingClient, IStateClient2
@@ -104,9 +101,9 @@ package com.enfluid.ltp.view.missingdatacallouts
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() + 1 + 1) * 65 * 7 - 1);
+            §§push(-(§§pop() + 25 + 1 - 1) + 1);
          }
          §§pop().percentWidth = §§pop();
          this.verticalPosition = "after";
@@ -139,9 +136,9 @@ package com.enfluid.ltp.view.missingdatacallouts
          })];
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(§§pop() - 1 - 1) + 16 - 1);
+            §§push(-(§§pop() + 1) * 22);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -189,28 +186,28 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(10);
          if(_loc3_)
          {
-            §§push((-§§pop() - 10 + 1) * 38);
+            §§push(§§pop() + 21 + 1 - 11);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() - 1));
+            §§push(--(§§pop() + 1 - 54 - 39));
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 69 - 1));
+            §§push(---§§pop());
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() * 78 * 3 - 1) * 18 + 1 + 1) * 76);
+            §§push(§§pop() + 82 - 28 + 1 - 48);
          }
          §§pop().paddingTop = §§pop();
          return _loc1_;
@@ -229,7 +226,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 113 - 87 + 113 - 1 - 42));
+            §§push((-§§pop() + 1) * 32 + 1 + 1 - 83 - 70);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.setStyle("textAlign","left");
@@ -250,15 +247,15 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(100);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 1 + 1 + 1) - 52) * 95 + 1);
+            §§push(§§pop() - 116 + 12 + 91);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push("strokeWidth");
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 91 + 66 + 30);
+            §§push(§§pop() + 51 + 22 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_DomainsMissingDataCallout_HRule1";
@@ -302,7 +299,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(5);
          if(_loc2_)
          {
-            §§push((§§pop() - 92) * 49 - 62 + 1);
+            §§push(-((§§pop() * 108 * 50 + 1) * 92 - 1) + 103);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -341,16 +338,16 @@ package com.enfluid.ltp.view.missingdatacallouts
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 48) - 1 - 86 - 1 - 1 + 68);
+            §§push((§§pop() + 26 - 1 + 1) * 45 + 35);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 37 + 40 - 1 - 57 + 1) * 13 - 56);
+            §§push(-(§§pop() + 68 - 1 - 1 - 28));
          }
          §§pop().height = §§pop();
          _loc1_.label = "Fetch Now";
@@ -359,7 +356,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(20);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 27 - 13 + 51 - 1) + 1);
+            §§push(-§§pop() + 1 + 103 + 1 + 116);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -395,17 +392,17 @@ package com.enfluid.ltp.view.missingdatacallouts
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() * 49 + 1 - 1 - 44));
+            §§push(§§pop() - 87 - 1 - 1 - 111 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
             §§push(model.selectedKeywordCollection.missingDomainAvailabilityCount);
             §§push(0);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push((§§pop() - 1 + 1) * 75 + 1 + 1);
+               §§push(-(§§pop() * 96) - 1 + 1 + 33 + 1);
             }
             var _loc1_:* = §§pop() > §§pop()?"missingData":"edit";
             return _loc1_ == undefined?null:String(_loc1_);
@@ -414,7 +411,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(1);
          if(_loc3_)
          {
-            §§push(-§§pop() - 28 + 36 - 1);
+            §§push(-(-§§pop() + 73));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -423,9 +420,9 @@ package com.enfluid.ltp.view.missingdatacallouts
          },null,"_DomainsMissingDataCallout_Label1.text");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--§§pop() + 1 + 1 + 6);
+            §§push(§§pop() - 1 - 53 + 69 + 111);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {
@@ -435,7 +432,7 @@ package com.enfluid.ltp.view.missingdatacallouts
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() * 89 * 70 - 1 + 1 + 93 + 1);
+            §§push(--(§§pop() + 1 + 0 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {

@@ -65,15 +65,15 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() + 91 - 61 + 1);
+               §§push(§§pop() - 1 - 99 - 1 - 1 - 73 + 1 + 94);
             }
             _loc2_ = §§pop()[§§pop()];
             _loc3_ = String(_loc2_.innerText).split(", ");
             _loc4_ = false;
             §§push(0);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push(§§pop() + 1 - 1 + 41 + 1 - 1 + 1);
+               §§push(-(-§§pop() + 1 - 63) - 67);
             }
             for each(_loc5_ in _loc3_)
             {
@@ -100,9 +100,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       {
          §§push();
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 57 + 22) * 101);
+            §§push(-((§§pop() - 1) * 100 * 117));
          }
          §§pop().findAndClickEditPencilUnderTargetingSection(§§pop());
       }

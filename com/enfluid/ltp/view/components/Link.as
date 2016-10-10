@@ -3,19 +3,30 @@ package com.enfluid.ltp.view.components
    import spark.components.RichText;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import mx.graphics.SolidColorStroke;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
    import mx.binding.BindingManager;
    import mx.core.IFlexModuleFactory;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
    import flash.events.MouseEvent;
    import flash.net.navigateToURL;
    import flash.net.URLRequest;
    import mx.events.FlexEvent;
+   import spark.primitives.Ellipse;
    import com.enfluid.ltp.model.DataModel;
-   import mx.graphics.GradientEntry;
-   import mx.binding.Binding;
+   import com.enfluid.ltp.model.ViewModel;
    import mx.core.mx_internal;
-   import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
+   import com.enfluid.ltp.view.KeywordsDataGrid;
+   import mx.binding.Binding;
+   import spark.components.CheckBox;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import spark.components.PopUpAnchor;
+   import mx.events.PropertyChangeEvent;
    
    use namespace mx_internal;
    
@@ -45,7 +56,7 @@ package com.enfluid.ltp.view.components
       
       public function Link()
       {
-         var target:Object = null;
+         var com.enfluid.ltp.view.components.target:Object = null;
          var watcherSetupUtilClass:Object = null;
          this._bindings = [];
          this._watchers = [];
@@ -54,7 +65,7 @@ package com.enfluid.ltp.view.components
          super();
          var bindings:Array = this._Link_bindingsSetup();
          var watchers:Array = [];
-         target = this;
+         com.enfluid.ltp.view.components.target = this;
          if(_watcherSetupUtil == null)
          {
             watcherSetupUtilClass = getDefinitionByName("_com_enfluid_ltp_view_components_LinkWatcherSetupUtil");
@@ -74,7 +85,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc4_)
          {
-            §§push(§§pop() + 1 + 1 + 45 + 11);
+            §§push(-(§§pop() - 1 - 1 - 13 - 88));
          }
          §§pop().maxDisplayedLines = §§pop();
          this.mouseChildren = false;
@@ -87,7 +98,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 88) + 1);
+            §§push((§§pop() * 90 + 47 + 1) * 104 - 85);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -144,9 +155,9 @@ package com.enfluid.ltp.view.components
       {
          §§push(this.upColor);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 1) * 63 - 36);
+            §§push((§§pop() * 43 * 63 + 22 - 59) * 39 + 1);
          }
          if(§§pop() == §§pop())
          {
@@ -187,7 +198,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc3_)
          {
-            §§push(((§§pop() + 111 + 19 - 74) * 104 + 1) * 19);
+            §§push(-(-(§§pop() * 3) - 1) - 44);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {
@@ -200,7 +211,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc2_)
          {
-            §§push(((§§pop() + 1 - 1) * 29 + 81) * 11 * 12 - 1);
+            §§push((§§pop() + 29 + 1 + 1 - 1 + 116) * 62);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -212,9 +223,9 @@ package com.enfluid.ltp.view.components
          },"this.textDecoration");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 - 98 + 3 + 77);
+            §§push((§§pop() - 29 - 1 + 1) * 99 * 70);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

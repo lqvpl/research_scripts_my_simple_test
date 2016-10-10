@@ -1,6 +1,7 @@
 package system.reflection
 {
    import system.Enum;
+   import mx.events.FlexEvent;
    
    public final class MemberType extends Enum
    {
@@ -19,28 +20,28 @@ package system.reflection
          §§push(1);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 1) - 1) * 43 + 1);
+            §§push((§§pop() * 98 + 1 + 78 - 1) * 93);
          }
          §§push();
          §§push(system.reflection.MemberType);
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() - 1 + 1 + 114);
+            §§push(§§pop() + 13 + 49 + 87 + 1 - 1 - 58 - 1);
          }
          §§push();
          §§push(system.reflection.MemberType);
          §§push(3);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() - 1 + 23) - 1 - 1 - 80 + 1);
+            §§push((§§pop() - 1) * 8 + 71);
          }
          §§push();
          §§push(system.reflection.MemberType);
          §§push(4);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 36 + 80) + 1 - 87 - 1);
+            §§push(-(§§pop() + 1 + 1 - 15));
          }
       }
       

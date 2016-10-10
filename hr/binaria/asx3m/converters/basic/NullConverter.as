@@ -5,6 +5,7 @@ package hr.binaria.asx3m.converters.basic
    import hr.binaria.asx3m.converters.IUnmarshallingContext;
    import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
    import hr.binaria.asx3m.converters.IMarshallingContext;
+   import spark.components.Scroller;
    
    public final class NullConverter implements IConverter
    {

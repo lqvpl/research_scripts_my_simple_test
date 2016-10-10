@@ -1,10 +1,14 @@
 package hr.binaria.asx3m.converters.basic
 {
-   import spark.components.Label;
-   import mx.graphics.GradientEntry;
+   import mx.states.Transition;
    import mx.binding.BindingManager;
-   import com.enfluid.ltp.view.renderers.DomainRenderer;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
+   import spark.components.Label;
+   import mx.binding.Binding;
+   import mx.collections.IList;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    
    public final class StringConverter extends AbstractSingleValueConverter
    {

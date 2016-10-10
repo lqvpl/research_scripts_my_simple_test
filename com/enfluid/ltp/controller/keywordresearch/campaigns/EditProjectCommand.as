@@ -2,12 +2,13 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import mx.graphics.LinearGradient;
    import com.enfluid.ltp.model.vo.ProjectVO;
-   import mx.graphics.SolidColor;
+   import mx.core.ClassFactory;
+   import spark.skins.spark.DefaultItemRenderer;
    import mx.core.FlexGlobals;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
-   import mx.controls.Spacer;
+   import com.enfluid.ltp.model.vo.RankCheckItemVO;
    
    public final class EditProjectCommand extends Command implements IPhotonCommand
    {

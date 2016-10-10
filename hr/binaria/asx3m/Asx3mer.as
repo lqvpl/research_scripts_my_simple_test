@@ -1,13 +1,11 @@
 package hr.binaria.asx3m
 {
-   import spark.effects.Resize;
+   import com.enfluid.ltp.view.components.FilterGridColumn;
    import mx.binding.BindingManager;
-   import com.enfluid.ltp.util.BlowFishUtil;
-   import com.enfluid.ltp.util.Util;
-   import com.enfluid.ltp.controller.filesystem.SaveStringToDiskCommand;
-   import com.enfluid.ltp.model.constants.Constants;
-   import flash.utils.ByteArray;
-   import mx.events.FlexEvent;
+   import spark.layouts.VerticalLayout;
+   import spark.components.HGroup;
+   import spark.components.Group;
+   import mx.effects.Parallel;
    
    public final class Asx3mer
    {

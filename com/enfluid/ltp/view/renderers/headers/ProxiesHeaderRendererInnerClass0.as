@@ -2,12 +2,11 @@ package com.enfluid.ltp.view.renderers.headers
 {
    import spark.primitives.Path;
    import spark.components.gridClasses.IGridVisualElement;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
    import mx.graphics.GradientEntry;
    import spark.components.Grid;
    import spark.components.DataGrid;
    import mx.graphics.RadialGradient;
+   import mx.binding.BindingManager;
    import mx.events.PropertyChangeEvent;
    
    public final class ProxiesHeaderRendererInnerClass0 extends Path implements IGridVisualElement
@@ -44,16 +43,16 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:RadialGradient = new RadialGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 1);
+            §§push((--(§§pop() - 1) - 110) * 65 - 1);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 28 - 1 - 1 - 1 - 114 + 88 + 87);
+            §§push(-(§§pop() + 1 + 1) - 1 - 81);
          }
          §§pop().focalPointRatio = §§pop();
          _loc1_.entries = [this._ProxiesHeaderRendererInnerClass0_GradientEntry1_i(),this._ProxiesHeaderRendererInnerClass0_GradientEntry2_i()];
@@ -65,9 +64,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 97) * 31 + 98 - 1);
+            §§push(§§pop() + 13 + 1 + 5);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.6;
@@ -81,9 +80,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 42 - 1 + 12 + 9 - 100 + 80);
+            §§push(-((-§§pop() - 53 + 1) * 117));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.8;

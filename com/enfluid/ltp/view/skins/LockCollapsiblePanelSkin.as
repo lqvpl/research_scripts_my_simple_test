@@ -4,6 +4,7 @@ package com.enfluid.ltp.view.skins
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.events.FlexEvent;
    import spark.effects.Fade;
    import spark.components.Group;
    import mx.effects.Parallel;
@@ -18,23 +19,33 @@ package com.enfluid.ltp.view.skins
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
    import mx.binding.BindingManager;
+   import spark.layouts.VerticalLayout;
    import mx.states.Transition;
    import mx.effects.Sequence;
-   import mx.binding.Binding;
-   import flash.utils.Proxy;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import com.enfluid.ltp.view.containers.LockCollapsiblePanel;
+   import com.enfluid.ltp.view.GenerateKeywordsCallout;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.components.HGroup;
    import mx.graphics.LinearGradient;
    import mx.graphics.GradientEntry;
-   import spark.components.HGroup;
-   import mx.controls.Spacer;
    import flash.events.MouseEvent;
+   import spark.components.CheckBox;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.assets.AssetsLibrary;
+   import flash.events.Event;
+   import mx.controls.Spacer;
+   import spark.components.Button;
    import com.enfluid.ltp.model.ViewModel;
+   import com.enfluid.ltp.model.DataModel;
    import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.settings.target;
+   import mx.core.DeferredInstanceFromFunction;
+   import flash.utils.Proxy;
+   import com.enfluid.ltp.view.containers.LockCollapsiblePanel;
    import com.enfluid.ltp.view.containers.CollapsiblePanel;
    import mx.events.PropertyChangeEvent;
-   import mx.core.DeferredInstanceFromFunction;
-   import flash.utils.getDefinitionByName;
+   import flash.utils.setTimeout;
    import mx.states.State;
    import mx.states.AddItems;
    
@@ -169,7 +180,7 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc3_)
          {
-            §§push((§§pop() - 111) * 30 - 1);
+            §§push(-(§§pop() + 1 - 4));
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -201,7 +212,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 94 - 1) * 82);
+            §§push(-((-(§§pop() - 79) - 1) * 77 * 46 * 52));
          }
          §§pop().states = null;
          BindingManager.executeBindings(this,"_LockCollapsiblePanelSkin_SetProperty1",this._LockCollapsiblePanelSkin_SetProperty1);
@@ -209,7 +220,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc4_)
          {
-            §§push(§§pop() - 1 + 8 + 1 - 1);
+            §§push(-(-(§§pop() - 83 + 40) + 20));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -256,7 +267,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc3_)
          {
-            §§push(-§§pop() - 70 - 38 + 86 + 1 + 1);
+            §§push((§§pop() + 1 - 1) * 112 * 45 + 33);
          }
          §§pop().easeInFraction = §§pop();
          this.collapseEaser = _loc1_;
@@ -271,7 +282,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 1 - 25) - 1);
+            §§push(((§§pop() - 1 + 1 - 16) * 1 - 8 - 1) * 50);
          }
          §§pop().easeInFraction = §§pop();
          this.uncollapseEaser = _loc1_;
@@ -300,9 +311,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Fade = new Fade();
          §§push(_loc1_);
          §§push(250);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--§§pop() + 1 + 78 - 1 + 33 - 2);
+            §§push(-(--(§§pop() - 1 - 69) * 39) + 1);
          }
          §§pop().duration = §§pop();
          this._LockCollapsiblePanelSkin_Fade1 = _loc1_;
@@ -326,7 +337,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 58) * 0);
+            §§push((-§§pop() + 1 - 68 - 90) * 80);
          }
          §§pop().duration = §§pop();
          this._LockCollapsiblePanelSkin_Rotate1 = _loc1_;
@@ -341,7 +352,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 58) * 2 * 104 + 64) + 92);
+            §§push(--(§§pop() + 97));
          }
          §§pop().duration = §§pop();
          this._LockCollapsiblePanelSkin_Resize1 = _loc1_;
@@ -379,9 +390,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rotate = new Rotate();
          §§push(_loc1_);
          §§push(250);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 4 - 3 + 1) * 53 - 11 - 1 + 1);
+            §§push((-(§§pop() * 90) + 1) * 6);
          }
          §§pop().duration = §§pop();
          this._LockCollapsiblePanelSkin_Rotate2 = _loc1_;
@@ -394,9 +405,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Resize = new Resize();
          §§push(_loc1_);
          §§push(250);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 79) * 53 + 106 - 1 + 31);
+            §§push(§§pop() - 1 - 1 - 0 + 1 + 1 + 73);
          }
          §§pop().duration = §§pop();
          this._LockCollapsiblePanelSkin_Resize2 = _loc1_;
@@ -411,7 +422,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc2_)
          {
-            §§push((§§pop() * 47 - 1 + 1 - 1) * 52 + 57 + 1);
+            §§push((-(§§pop() - 6 + 119) - 1 + 24) * 96);
          }
          §§pop().duration = §§pop();
          this._LockCollapsiblePanelSkin_Fade2 = _loc1_;
@@ -424,65 +435,65 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 118 - 48 - 0 + 1 + 38);
+            §§push(-§§pop() * 93 * 35);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() - 85 - 117);
+            §§push(--(§§pop() + 1) - 74 + 33);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() * 104 - 21) * 40 + 1 + 51) * 24);
+            §§push((-(§§pop() - 9 + 1) * 17 + 1 + 1) * 16);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() - 44 - 1 + 1);
+            §§push((§§pop() + 1) * 9 + 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 3 + 1) * 118 * 84 - 47 - 36);
+            §§push(-(§§pop() + 1 + 23 + 1) + 26 - 1);
          }
          §§pop().alpha = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 57 - 61 + 1 + 78));
+            §§push((-§§pop() * 10 + 1) * 54 - 13 + 1);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() - 1 + 6) * 60 - 47);
+            §§push(-(-§§pop() * 65 + 44 + 72 - 1));
          }
          §§pop().topRightRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((--(-§§pop() * 51 - 1) - 9) * 0);
+            §§push(§§pop() - 32 - 1 - 1);
          }
          §§pop().bottomLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() * 110 + 1) + 1 - 1 - 1);
+            §§push(§§pop() * 83 + 114 - 1);
          }
          §§pop().bottomRightRadiusX = §§pop();
          _loc1_.fill = this._LockCollapsiblePanelSkin_SolidColor1_i();
@@ -499,7 +510,7 @@ package com.enfluid.ltp.view.skins
          §§push(16119542);
          if(_loc2_)
          {
-            §§push(--(-(§§pop() + 1 + 12) + 93));
+            §§push(-(§§pop() + 1) - 1);
          }
          §§pop().color = §§pop();
          this.bgFill = _loc1_;
@@ -514,35 +525,35 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 63 + 82) * 101);
+            §§push(-(§§pop() - 1 + 112 + 78 - 1) - 37);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() * 24 - 76 - 1 - 88) * 112 - 0 + 0);
+            §§push(-(§§pop() - 1 + 96) * 54);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 80);
+            §§push(-(§§pop() + 1 + 1 - 88));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 22 + 64 - 1 - 1);
+            §§push(-((§§pop() - 76) * 63 + 52));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(32);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 106 + 1 - 1) * 22) * 57 + 1);
+            §§push(§§pop() * 24 + 26 + 55 + 45);
          }
          §§pop().maxHeight = §§pop();
          _loc1_.toolTip = "Collapse";
@@ -566,28 +577,28 @@ package com.enfluid.ltp.view.skins
          §§push(30);
          if(_loc3_)
          {
-            §§push(§§pop() * 98 * 63 + 21);
+            §§push(§§pop() + 1 + 52 + 53 - 91);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 39) * 64 * 88 - 36);
+            §§push(-§§pop() * 29 - 6 + 118);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 111 + 37);
+            §§push((§§pop() - 19 + 60 + 1 + 84) * 22);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 1 - 1);
+            §§push((-(§§pop() + 1 + 1) - 94) * 32);
          }
          §§pop().top = §§pop();
          _loc1_.alpha = 0.8;
@@ -595,14 +606,14 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 1 - 67) - 1 + 88);
+            §§push(-(§§pop() - 74 + 1 - 1 + 1));
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-(-(§§pop() - 40) * 21 - 1) + 1) * 78);
+            §§push((§§pop() + 50 - 1 - 1 + 1) * 58);
          }
          §§pop().topRightRadiusX = §§pop();
          _loc1_.fill = this._LockCollapsiblePanelSkin_LinearGradient1_c();
@@ -615,9 +626,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:LinearGradient = new LinearGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 75 + 103);
+            §§push(-((§§pop() - 1) * 62) * 0 * 24);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._LockCollapsiblePanelSkin_GradientEntry1_c(),this._LockCollapsiblePanelSkin_GradientEntry2_c()];
@@ -629,9 +640,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(15527405);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 0 + 14);
+            §§push((§§pop() - 70) * 32 * 92);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -642,9 +653,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(14737632);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 1 - 1 - 107) * 26 + 1 + 35) * 111);
+            §§push((§§pop() - 1 + 118 - 108 - 1) * 87);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -655,58 +666,58 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 9 + 116) * 21 - 56 - 1) * 19 + 1);
+            §§push(-(-(§§pop() - 1 + 1 + 60) * 92) - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 2) * 54 * 93 + 1) * 94);
+            §§push(--((§§pop() + 46 - 65) * 20) + 117);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-§§pop() - 95) * 50 - 25 + 9);
+            §§push(-(§§pop() - 1 + 80 - 1) + 1 + 1 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(31);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) - 1 - 28 - 15 + 1));
+            §§push(-((-(§§pop() * 78) + 42) * 39) + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 28 + 1) * 47 - 67);
+            §§push(§§pop() - 18 - 1 - 14 + 66);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 - 20) * 25 + 80);
+            §§push(§§pop() * 47 * 34 * 57);
          }
          §§pop().topRightRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(-(§§pop() + 81) * 107 + 1) + 3) * 32);
+            §§push(--(-§§pop() - 1) - 42);
          }
          §§pop().bottomLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) * 52 - 26);
+            §§push(§§pop() - 60 - 1 - 65);
          }
          §§pop().bottomRightRadiusX = §§pop();
          _loc1_.fill = this._LockCollapsiblePanelSkin_SolidColor2_c();
@@ -723,7 +734,7 @@ package com.enfluid.ltp.view.skins
          §§push(16119542);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 4 - 1 + 1);
+            §§push(-(§§pop() * 7 - 108 - 1 + 1 + 1 + 1));
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -734,38 +745,38 @@ package com.enfluid.ltp.view.skins
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 34 * 20 - 81 + 1 - 1 - 1);
+            §§push((-(§§pop() * 97) + 1 + 112) * 41 + 28 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 86) * 33 - 1) + 1 + 114);
+            §§push(-(§§pop() - 64 - 1));
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--((§§pop() - 65) * 8));
+            §§push(-(§§pop() - 1 + 1));
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 76) + 1 + 95) * 72);
+            §§push(--((§§pop() + 37) * 53 + 1) * 73);
          }
          §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "middle";
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 11) * 51 - 1 - 1 - 112 - 1 + 51);
+            §§push((-§§pop() + 119 + 96) * 102 - 1);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._LockCollapsiblePanelSkin_BitmapImage1_i(),this._LockCollapsiblePanelSkin_Label1_i(),this._LockCollapsiblePanelSkin_Group2_i(),this._LockCollapsiblePanelSkin_Spacer1_c(),this._LockCollapsiblePanelSkin_Image1_i()];
@@ -781,16 +792,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:BitmapImage = new BitmapImage();
          §§push(_loc1_);
          §§push(20);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() + 71 - 1));
+            §§push(§§pop() - 1 + 66 + 1 - 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(20);
          if(_loc3_)
          {
-            §§push(((§§pop() + 1) * 23 - 90 - 6) * 17 - 1 - 59);
+            §§push(((§§pop() * 2 + 1 - 1) * 105 + 64) * 23 + 109);
          }
          §§pop().height = §§pop();
          _loc1_.smooth = true;
@@ -807,7 +818,7 @@ package com.enfluid.ltp.view.skins
          §§push(30);
          if(_loc2_)
          {
-            §§push((--(§§pop() + 1) + 79 + 101 + 1) * 12);
+            §§push(-((§§pop() - 1) * 59 + 1 + 92));
          }
          §§pop().height = §§pop();
          _loc1_.setStyle("fontWeight","bold");
@@ -860,9 +871,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 44 + 111 + 52);
+            §§push(-(§§pop() - 12) - 56 - 74);
          }
          §§pop().percentWidth = §§pop();
          if(!_loc1_.document)
@@ -898,44 +909,44 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 118) - 5);
+            §§push(--(-(§§pop() * 50 + 27) * 18 + 1));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1) + 1) * 45 - 1 - 9);
+            §§push(--((§§pop() + 1 + 1) * 14));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(32);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 57 + 1) - 6);
+            §§push(§§pop() - 1 + 1 - 110 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() + 58 - 1 - 24 + 109);
+            §§push(-(-(§§pop() - 37) + 1 + 97 - 1) - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(--§§pop() - 24 - 1);
+            §§push(-(§§pop() - 51 + 54 - 44) + 20);
          }
          §§pop().minHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 3 - 109 + 1) * 15 + 1);
+            §§push(-(§§pop() - 106) - 1);
          }
          §§pop().minWidth = §§pop();
          _loc1_.id = "contentGroup";
@@ -955,14 +966,14 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 67 - 1 - 94) * 14);
+            §§push(§§pop() - 1 + 1 + 103 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_LockCollapsiblePanelSkin_Fade1.target","contentGroup");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 48 - 1 - 104 - 1) * 102);
+            §§push(-((§§pop() + 55) * 87 - 84 + 1) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Array
          {
@@ -971,16 +982,16 @@ package com.enfluid.ltp.view.skins
          },null,"_LockCollapsiblePanelSkin_Parallel1.targets");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 102 - 85) - 1 - 1);
+            §§push(-(§§pop() - 56 - 1 + 1) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_LockCollapsiblePanelSkin_Rotate1.target","titleBarGroup");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 13 + 3 + 118 + 82) * 96 - 1 + 11);
+            §§push((§§pop() * 108 - 48 - 1) * 17);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -990,14 +1001,14 @@ package com.enfluid.ltp.view.skins
          §§push(4);
          if(_loc2_)
          {
-            §§push((§§pop() * 96 - 21 - 63) * 0 + 1);
+            §§push((§§pop() - 1 + 1 - 51) * 78);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_LockCollapsiblePanelSkin_Resize1.easer","collapseEaser");
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 2) * 67 - 90 - 27));
+            §§push(§§pop() - 1 + 29 - 44 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Array
          {
@@ -1006,16 +1017,16 @@ package com.enfluid.ltp.view.skins
          },null,"_LockCollapsiblePanelSkin_Parallel2.targets");
          §§push(result);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 28 - 1 + 55 + 72) + 114);
+            §§push(-((§§pop() - 1 + 1) * 16));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_LockCollapsiblePanelSkin_Rotate2.target","titleBarGroup");
          §§push(result);
          §§push(7);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 102 - 70 - 75 - 1);
+            §§push(-(-§§pop() * 40));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1025,21 +1036,21 @@ package com.enfluid.ltp.view.skins
          §§push(8);
          if(_loc3_)
          {
-            §§push((-(-§§pop() * 113) - 1) * 28 - 1);
+            §§push(-((§§pop() - 39) * 42 - 22) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_LockCollapsiblePanelSkin_Resize2.easer","uncollapseEaser");
          §§push(result);
          §§push(9);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 102 + 1 + 1);
+            §§push(§§pop() * 40 + 46 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_LockCollapsiblePanelSkin_Fade2.target","contentGroup");
          §§push(result);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 15) - 50 + 15);
+            §§push(§§pop() - 1 - 18 - 43);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1049,7 +1060,7 @@ package com.enfluid.ltp.view.skins
          §§push(11);
          if(_loc3_)
          {
-            §§push((§§pop() - 1 - 1 + 1 - 32 - 17) * 90);
+            §§push((-(§§pop() - 54 + 1) + 79 - 1) * 39 - 41);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -1059,7 +1070,7 @@ package com.enfluid.ltp.view.skins
          §§push(12);
          if(_loc3_)
          {
-            §§push(§§pop() * 77 - 1 + 50 - 1 + 103 + 114 - 1);
+            §§push(-(§§pop() - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1067,9 +1078,9 @@ package com.enfluid.ltp.view.skins
          },null,"expandicon.source");
          §§push(result);
          §§push(13);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 44 + 99 + 118 - 1) * 19);
+            §§push(-(§§pop() + 70) * 102 - 53);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1079,7 +1090,7 @@ package com.enfluid.ltp.view.skins
          §§push(14);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 29 + 1 - 1 - 50 + 1);
+            §§push(-((§§pop() - 35 - 1) * 82 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1089,7 +1100,7 @@ package com.enfluid.ltp.view.skins
          §§push(15);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 89) * 53 - 1));
+            §§push(-(§§pop() - 96) + 17 + 110 + 1 + 1 + 66);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1097,9 +1108,9 @@ package com.enfluid.ltp.view.skins
          },null,"lockIcon.source");
          §§push(result);
          §§push(16);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 14) - 1 + 79 - 99);
+            §§push(-(§§pop() + 80) + 98 - 1 - 3);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

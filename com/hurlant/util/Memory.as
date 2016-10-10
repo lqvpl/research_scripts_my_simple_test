@@ -1,11 +1,10 @@
 package com.hurlant.util
 {
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
-   import com.enfluid.ltp.view.skins.ProjectDetailsItemSkin;
-   import mx.binding.BindingManager;
+   import flash.net.URLRequest;
+   import com.enfluid.ltp.model.constants.Constants;
    import flash.net.LocalConnection;
    import flash.system.System;
+   import mx.binding.Binding;
    
    public final class Memory
    {

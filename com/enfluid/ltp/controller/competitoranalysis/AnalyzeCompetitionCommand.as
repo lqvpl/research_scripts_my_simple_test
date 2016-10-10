@@ -4,8 +4,12 @@ package com.enfluid.ltp.controller.competitoranalysis
    import com.photon.controller.IPhotonCommand;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.model.vo.KeywordVO;
-   import com.enfluid.ltp.model.DataModel;
+   import spark.components.HGroup;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.model.ViewModel;
+   import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.vo.CountryVO;
    import com.enfluid.ltp.model.vo.LanguageVO;
    import com.enfluid.ltp.model.vo.ProjectVO;
@@ -13,8 +17,9 @@ package com.enfluid.ltp.controller.competitoranalysis
    import mx.controls.Alert;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteCompetitorUrlsCommand;
    import com.enfluid.ltp.controller.common.FetchCompetitorUrls;
-   import flash.utils.setTimeout;
+   import spark.events.PopUpEvent;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
+   import flash.events.Event;
    
    public final class AnalyzeCompetitionCommand extends PhotonComplexCommand implements IPhotonCommand
    {
@@ -46,7 +51,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc6_)
          {
-            §§push(-§§pop() * 50 - 37 - 35 - 1);
+            §§push(-(-(§§pop() + 1) - 108) * 33);
          }
          for each(_loc2_ in activeCommands)
          {
@@ -132,7 +137,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(-(§§pop() + 1) - 100 - 25 - 29) + 49);
+            §§push((-(-§§pop() * 55 * 54 - 52) - 55) * 116);
          }
          for each(_loc2_ in this.keyword.competitorURLs)
          {
@@ -142,8 +147,10 @@ package com.enfluid.ltp.controller.competitoranalysis
          {
             this.keyword.avgKC = Values.FETCHED;
          }
+         dispatchEvent(new Event("AnalyzerFinishedKeyword"));
          super.done(param1);
          activeCommands.removeItem(this);
+         this.model.selectedKeywordCollection.updateCounts();
       }
    }
 }

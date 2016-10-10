@@ -1,7 +1,13 @@
 package system.comparators
 {
    import system.Comparator;
-   import mx.states.Transition;
+   import mx.graphics.SolidColor;
+   import flash.events.MouseEvent;
+   import mx.binding.BindingManager;
+   import hr.binaria.asx3m.converters.IMarshallingContext;
+   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getQualifiedClassName;
    
    public final class StringComparator implements Comparator
    {
@@ -38,7 +44,7 @@ package system.comparators
             §§push(0);
             if(_loc5_)
             {
-               return (§§pop() * 8 + 78) * 71 + 1 + 1;
+               return (-(§§pop() * 93 - 4) + 1 - 1 + 1) * 74;
             }
          }
          if(param1.length == param2.length)
@@ -48,34 +54,34 @@ package system.comparators
             §§push(0);
             if(_loc6_)
             {
-               §§push((§§pop() - 47 - 118) * 16 - 1 + 1);
+               §§push(§§pop() + 110 - 1 + 43);
             }
             if(§§pop() == §§pop())
             {
                §§push(0);
-               if(_loc5_)
+               if(_loc6_)
                {
-                  return §§pop() + 1 - 1 - 1;
+                  return -(§§pop() - 27 - 30);
                }
             }
             §§push(_loc4_);
             §§push(0);
             if(_loc5_)
             {
-               §§push(-(-§§pop() - 1 + 100));
+               §§push(((-(§§pop() - 48 + 1) - 110) * 25 + 1) * 61);
             }
             if(§§pop() < §§pop())
             {
                §§push(1);
                if(_loc5_)
                {
-                  return §§pop() - 85 + 1 + 1;
+                  return (§§pop() - 1) * 35 + 58;
                }
             }
             §§push(-1);
             if(_loc5_)
             {
-               return -(§§pop() * 103 + 48 + 21 - 80);
+               return -(§§pop() + 1 - 74);
             }
          }
          if(param1.length > param2.length)
@@ -83,13 +89,13 @@ package system.comparators
             §§push(1);
             if(_loc5_)
             {
-               return -(§§pop() - 1) + 1 + 1 - 1 - 8 - 100;
+               return (-(§§pop() + 15) * 20 - 1 - 1) * 79;
             }
          }
          §§push(-1);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(§§pop() * 66 * 98 - 1 - 1 + 1 + 1 + 1);
+            §§push(-(-(§§pop() * 90) + 1));
          }
          return §§pop();
       }

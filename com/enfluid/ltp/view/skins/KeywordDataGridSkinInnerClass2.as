@@ -1,9 +1,14 @@
 package com.enfluid.ltp.view.skins
 {
    import spark.primitives.Line;
+   import spark.components.DataGrid;
+   import spark.components.GridColumnHeaderGroup;
+   import spark.components.gridClasses.IGridVisualElement;
+   import spark.components.gridClasses.GridColumn;
    import mx.graphics.SolidColorStroke;
    import mx.events.PropertyChangeEvent;
-   import mx.graphics.SolidColor;
+   import mx.binding.Binding;
+   import mx.effects.Sequence;
    
    public final class KeywordDataGridSkinInnerClass2 extends Line
    {
@@ -24,14 +29,14 @@ package com.enfluid.ltp.view.skins
          §§push(10790052);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 1) * 27 - 1) + 46);
+            §§push(-(§§pop() + 63 - 26) * 15);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(--§§pop() + 1 - 78) - 46);
+            §§push((§§pop() + 13 - 78 - 1 + 60) * 92);
          }
          §§pop().weight = §§pop();
          _loc1_.caps = "square";

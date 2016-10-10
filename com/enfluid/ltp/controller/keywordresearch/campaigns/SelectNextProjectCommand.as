@@ -2,23 +2,19 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import spark.components.Image;
+   import mx.effects.Parallel;
    import mx.binding.BindingManager;
-   import system.serializers.§eden:release§.debug;
-   import system.serializers.eden.config;
-   import system.Strings;
-   import system.serializers.eden.strings;
-   import mx.graphics.RadialGradient;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.model.vo.ProjectVO;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.headers.target;
-   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.binding.Binding;
-   
-   use namespace mx_internal;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.model.constants.SearchNetworks;
+   import com.enfluid.ltp.util.KeywordUtil;
+   import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.model.constants.Constants;
+   import mx.rpc.http.HTTPService;
+   import mx.graphics.GradientEntry;
    
    public final class SelectNextProjectCommand extends Command implements IPhotonCommand
    {
@@ -36,9 +32,9 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
       {
          var _loc2_:ProjectVO = null;
          §§push(-1);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 116 + 7) + 1));
+            §§push((-§§pop() - 31 + 1 + 1) * 58 + 91 + 1);
          }
          var _loc1_:* = §§pop();
          if(model.projects.length > this.lastProjectIndex)
@@ -53,9 +49,9 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          {
             §§push(model.projects.length);
             §§push(0);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(-(§§pop() - 1) + 105);
+               §§push(§§pop() - 1 - 1 + 41 - 0);
             }
             if(§§pop() > §§pop())
             {
@@ -66,7 +62,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(-1);
          if(_loc3_)
          {
-            §§push((--§§pop() - 116 - 0) * 71 - 1);
+            §§push(-(-(§§pop() * 102) - 1 - 1));
          }
          if(§§pop() > §§pop() && _loc1_ < model.projects.length)
          {

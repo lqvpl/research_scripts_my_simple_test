@@ -1,40 +1,43 @@
 package system
 {
-   import system.errors.NoSuchElementError;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.BindingManager;
-   import flash.display.Graphics;
-   import spark.components.HGroup;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
-   import com.hurlant.crypto.Crypto;
-   import com.hurlant.crypto.hash.IHash;
-   import com.hurlant.util.Hex;
-   import flash.utils.ByteArray;
-   import spark.events.TextOperationEvent;
-   import spark.components.Group;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import com.enfluid.ltp.view.filterviews.LocalSearchesFilterView;
-   import mx.rpc.http.HTTPService;
-   import com.dk.license.LicenseUtil;
-   import com.hurlant.crypto.prng.Random;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.states.AddItems;
+   import com.hurlant.math.BigInteger;
    import com.hurlant.math.bi_internal;
-   import com.hurlant.util.Memory;
-   import com.enfluid.ltp.view.components.FilterValueTextInput;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
-   import flash.filesystem.File;
-   import flash.filesystem.FileStream;
-   import flash.filesystem.FileMode;
-   import system.data.lists.ArrayList;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
+   import mx.events.FlexEvent;
+   import spark.components.HGroup;
+   import mx.controls.Spacer;
+   import hr.binaria.asx3m.io.xml.E4XWriter;
    import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import flash.filesystem.File;
+   import mx.effects.Parallel;
+   import mx.binding.BindingManager;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
    import flash.utils.getDefinitionByName;
    import flash.utils.getQualifiedClassName;
-   import com.enfluid.ltp.view.components.LTPComboBox;
-   import com.enfluid.ltp.view.skins.LTPComboBoxSkin;
-   import mx.effects.Parallel;
+   import system.data.maps.HashMap;
+   import mx.collections.ArrayCollection;
    import spark.layouts.VerticalLayout;
-   import mx.controls.Spacer;
+   import mx.graphics.GradientEntry;
+   import spark.primitives.Rect;
+   import com.hurlant.crypto.symmetric.ICipher;
+   import com.hurlant.crypto.symmetric.IPad;
+   import com.hurlant.crypto.symmetric.ECBMode;
+   import com.hurlant.crypto.symmetric.BlowFishKey;
+   import com.hurlant.util.Base64;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.util.KeywordUtil;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.components.TextArea;
+   import flash.events.EventDispatcher;
+   import system.serializers.§eden:release§.debug;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
+   import flash.utils.ByteArray;
    
    use namespace bi_internal;
    
@@ -299,17 +302,17 @@ package system
       public final function isASCII(param1:Boolean = false) : Boolean
       {
          §§push(128);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 34 + 23) + 107) * 82 + 104);
+            §§push(§§pop() - 1 + 1 + 38 - 1 + 1);
          }
          var _loc2_:uint = §§pop();
          if(param1)
          {
             §§push(255);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(((§§pop() - 9) * 94 - 1) * 4 * 69 + 43);
+               §§push(§§pop() + 86 + 1 - 1);
             }
             _loc2_ = §§pop();
          }
@@ -322,7 +325,7 @@ package system
          §§push(8);
          if(_loc3_)
          {
-            §§push((--§§pop() - 26) * 113);
+            §§push(-§§pop() * 38 + 1 - 1 + 1 + 9);
          }
          var _loc1_:String = §§pop().toString(§§pop());
          while(true)
@@ -331,7 +334,7 @@ package system
             §§push(3);
             if(_loc2_)
             {
-               §§push(--(--§§pop() - 37 + 1 - 24));
+               §§push(-((§§pop() * 99 - 1 + 1 - 89) * 68) - 1);
             }
             if(§§pop() >= §§pop())
             {
@@ -348,7 +351,7 @@ package system
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(-(§§pop() - 1) * 11 + 1) - 56);
+            §§push(§§pop() + 1 + 103 + 1);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < _loc1_)
@@ -371,15 +374,15 @@ package system
       {
          §§push(_c);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-((§§pop() + 1) * 39) + 1);
+            §§push(-(-(§§pop() + 1) + 46 + 67) * 27);
          }
          §§push(§§pop().charCodeAt(§§pop()));
          §§push(255);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() - 1 - 91 - 24 - 34));
+            §§push(-(§§pop() - 24) - 75 - 1 + 0 + 61);
          }
          return §§pop() > §§pop();
       }
@@ -411,7 +414,7 @@ package system
          §§push(0);
          if(_loc5_)
          {
-            §§push(§§pop() + 65 + 1 + 56 + 1 + 1);
+            §§push(§§pop() * 98 + 1 + 113 - 1 - 1);
          }
          var _loc3_:* = §§pop();
          while(_loc3_ < _loc2_)
@@ -437,9 +440,9 @@ package system
             return false;
          }
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(§§pop() + 26) - 8);
+            §§push(§§pop() + 1 - 1 + 84);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < param1.length)
@@ -484,7 +487,7 @@ package system
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1 - 1 - 89) * 100) - 56 - 1);
+            §§push(-§§pop() + 1 - 36 - 30 - 1);
          }
          var _loc2_:* = §§pop();
          while(_loc2_ < _loc1_)
@@ -519,14 +522,14 @@ package system
          §§push(16);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 55 - 1) * 15 - 1 + 1 + 2));
+            §§push(-§§pop() + 110 - 1 + 1 + 69);
          }
          var _loc1_:String = §§pop().toString(§§pop());
          §§push(_loc1_.length);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) * 23) + 1 - 1);
+            §§push(-(§§pop() + 112 + 1 - 58));
          }
          return §§pop() == §§pop()?"0" + _loc1_:_loc1_;
       }

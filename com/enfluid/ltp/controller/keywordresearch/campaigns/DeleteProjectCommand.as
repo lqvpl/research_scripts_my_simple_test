@@ -2,14 +2,24 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
+   import mx.binding.Binding;
+   import mx.collections.IList;
+   import mx.events.FlexEvent;
    import com.enfluid.ltp.model.vo.ProjectVO;
    import mx.controls.Alert;
    import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
    import mx.events.CloseEvent;
-   import mx.controls.HRule;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import hr.binaria.asx3m.annotations.Annotated;
+   import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.view.components.FilterGridColumn;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import com.enfluid.ltp.model.DataModel;
-   import flash.html.HTMLLoader;
+   import com.enfluid.ltp.view.dataandfilters.SuggestedBidSection;
    
    public final class DeleteProjectCommand extends Command implements IPhotonCommand
    {
@@ -31,14 +41,14 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(130);
          if(_loc2_)
          {
-            §§push((-§§pop() + 79) * 47);
+            §§push(--(§§pop() - 1 - 38 - 53) + 102 - 57);
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 84 - 1 - 3) + 1);
+            §§push(-§§pop() - 96 + 12 - 118 - 1 + 62);
          }
          §§pop().buttonHeight = §§pop();
          this.showChoice();
@@ -48,16 +58,16 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
       {
          §§push(Alert);
          §§push(130);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 78 + 47 + 28);
+            §§push(§§pop() * 88 - 1 + 113);
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
          if(_loc1_)
          {
-            §§push(-(§§pop() + 7 + 1 + 108) * 114 + 1 + 1);
+            §§push((-(§§pop() - 34 - 1) - 113) * 75);
          }
          §§pop().buttonHeight = §§pop();
          if(this.project)
@@ -70,7 +80,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
             §§push(3);
             if(_loc1_)
             {
-               §§push((§§pop() - 104 - 1 + 1) * 44 - 1);
+               §§push((§§pop() - 1) * 34 + 1 + 26 - 1 - 98);
             }
             §§pop().show(§§pop(),§§pop(),§§pop(),null,this.choiceHandler);
          }
@@ -85,6 +95,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
       {
          if(param1.detail == Alert.YES)
          {
+            new SetUserEvent("UserEvent.Project.Delete").execute();
             this.deleteProject();
          }
          done();
@@ -96,7 +107,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(0);
          if(_loc5_)
          {
-            §§push(§§pop() + 55 + 16 + 1 - 14 + 113);
+            §§push(§§pop() + 60 - 13 + 1 - 99 - 110);
          }
          var _loc2_:* = §§pop();
          this.project.keywords.deleteAllKeywords(true);
@@ -104,7 +115,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(0);
          if(_loc5_)
          {
-            §§push((-(§§pop() + 1 - 1 - 1) - 1) * 80);
+            §§push(§§pop() + 25 + 37 + 2 + 30 - 106 - 1 + 1);
          }
          for each(_loc1_ in this.project.seedKeywords)
          {
@@ -116,9 +127,9 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          model.selectedProject = null;
          §§push(model.projects.length);
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(§§pop() + 1 - 1 - 1 + 1);
+            §§push((-(-(§§pop() - 1) * 72 + 79) + 7) * 37);
          }
          if(§§pop() == §§pop())
          {

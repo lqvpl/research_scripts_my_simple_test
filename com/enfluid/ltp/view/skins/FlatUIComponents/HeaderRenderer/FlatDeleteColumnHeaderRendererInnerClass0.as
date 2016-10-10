@@ -4,18 +4,21 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
    import spark.components.gridClasses.IGridVisualElement;
    import mx.graphics.GradientEntry;
    import spark.components.Grid;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.model.ViewModel;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.view.components.SlimScroller;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import spark.components.DataGrid;
+   import mx.graphics.RadialGradient;
+   import spark.components.Group;
+   import flash.utils.ByteArray;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import mx.events.PropertyChangeEvent;
+   import spark.layouts.VerticalLayout;
    import mx.core.mx_internal;
    import flash.utils.getDefinitionByName;
    import com.enfluid.ltp.view.components.target;
    import mx.binding.Binding;
-   import spark.components.DataGrid;
-   import mx.graphics.RadialGradient;
-   import mx.binding.BindingManager;
-   import mx.events.PropertyChangeEvent;
-   import com.enfluid.ltp.view.components.CustomRect;
-   import spark.components.Group;
    
    use namespace mx_internal;
    
@@ -53,16 +56,16 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
          var _loc1_:RadialGradient = new RadialGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 21 - 1) * 0 - 1 - 30);
+            §§push((§§pop() * 105 + 67 + 1 - 85 - 1) * 43 * 55);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--((§§pop() + 1 + 59 + 1) * 95) * 104);
+            §§push((-(§§pop() + 67) + 67 - 36 + 43 + 16) * 33);
          }
          §§pop().focalPointRatio = §§pop();
          _loc1_.entries = [this._FlatDeleteColumnHeaderRendererInnerClass0_GradientEntry1_i(),this._FlatDeleteColumnHeaderRendererInnerClass0_GradientEntry2_i()];
@@ -74,9 +77,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 78) + 88 + 1);
+            §§push(-(((§§pop() + 91) * 12 + 8) * 103 * 99));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.6;
@@ -92,7 +95,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
          §§push(0);
          if(_loc2_)
          {
-            §§push((--(§§pop() - 1) - 1) * 22);
+            §§push(-(-§§pop() - 6));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.8;

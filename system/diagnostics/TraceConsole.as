@@ -1,12 +1,19 @@
 package system.diagnostics
 {
    import system.terminals.Console;
-   import mx.graphics.SolidColor;
-   import hr.binaria.asx3m.mapper.IMapper;
-   import system.Strings;
-   import spark.primitives.Rect;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.skins.SlimScrollerSkinInnerClass0;
    import mx.binding.BindingManager;
+   import spark.primitives.Rect;
+   import flash.utils.ByteArray;
+   import mx.effects.Parallel;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
+   import system.Strings;
    import flash.errors.IllegalOperationError;
+   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass2;
+   import com.photon.controller.PhotonCommand;
+   import mx.controls.Spacer;
    
    public final class TraceConsole implements Console
    {
@@ -25,7 +32,7 @@ package system.diagnostics
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1 - 118 - 52 - 1) * 12 - 1));
+            §§push((§§pop() + 1) * 60 + 95 - 3 + 44 - 9);
          }
          if(§§pop() == §§pop())
          {
@@ -36,7 +43,7 @@ package system.diagnostics
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 93));
+            §§push(((§§pop() + 1 + 18) * 77 - 1 - 39) * 22 - 70);
          }
          if(§§pop() == §§pop())
          {

@@ -3,24 +3,19 @@ package com.enfluid.ltp.view
    import com.enfluid.ltp.view.containers.CollapsiblePanel;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import spark.layouts.VerticalLayout;
    import com.enfluid.ltp.view.dataandfilters.SuggestedBidSection;
    import com.enfluid.ltp.view.dataandfilters.LocalSearchesSection;
    import com.enfluid.ltp.view.dataandfilters.AdvertiserCompetitionSection;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import hr.binaria.asx3m.converters.IUnmarshallingContext;
-   import system.data.maps.HashMap;
    import com.enfluid.ltp.view.dataandfilters.NumWordsSection;
    import mx.controls.Spacer;
    import spark.components.Label;
    import com.enfluid.ltp.view.dataandfilters.GlobalSearchVolumeSection;
    import com.enfluid.ltp.view.dataandfilters.domain.DomainAvailabilitySection;
    import com.enfluid.ltp.view.dataandfilters.GoogleTitleCompetitionSection;
-   import com.enfluid.ltp.model.vo.DomainsVO;
-   import mx.core.FlexGlobals;
    import com.enfluid.ltp.view.dataandfilters.BingTitleCompetitionSection;
-   import spark.components.HGroup;
-   import com.enfluid.ltp.util.ProgressBarUtil;
    import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
    
@@ -41,12 +36,13 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 11 - 1 - 1 - 72);
+            §§push(-(-§§pop() * 108 * 102 + 1 + 23) - 74);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Customize Data & Pre-Filter";
          this.layout = this._CustomizeDataAndPreFilterSection_VerticalLayout1_c();
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._CustomizeDataAndPreFilterSection_Array1_c);
+         this.addEventListener("creationComplete",this.___CustomizeDataAndPreFilterSection_CollapsiblePanel1_creationComplete);
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
@@ -73,35 +69,51 @@ package com.enfluid.ltp.view
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.CustomizeData.Opened").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.CustomizeData.Closed").execute();
+            }
+         });
+      }
+      
       private final function _CustomizeDataAndPreFilterSection_VerticalLayout1_c() : VerticalLayout
       {
          var _loc1_:VerticalLayout = new VerticalLayout();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() * 75));
+            §§push(§§pop() + 1 + 1 - 7);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() * 17) * 116 - 99) + 64);
+            §§push((§§pop() - 1 + 105 + 1) * 116);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 104 + 1) - 1 + 101);
+            §§push(((§§pop() + 1) * 77 - 35 + 48 + 37) * 22);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 6) * 9 * 0 + 1 + 1);
+            §§push(§§pop() + 66 - 88 - 2 + 1);
          }
          §§pop().paddingTop = §§pop();
          return _loc1_;
@@ -160,7 +172,7 @@ package com.enfluid.ltp.view
          §§push(15);
          if(_loc3_)
          {
-            §§push((§§pop() - 1 + 1) * 114 + 111);
+            §§push((-§§pop() + 1) * 101);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -229,6 +241,11 @@ package com.enfluid.ltp.view
             _loc1_.document = this;
          }
          return _loc1_;
+      }
+      
+      public final function ___CustomizeDataAndPreFilterSection_CollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
       }
       
       [Bindable(event="propertyChange")]

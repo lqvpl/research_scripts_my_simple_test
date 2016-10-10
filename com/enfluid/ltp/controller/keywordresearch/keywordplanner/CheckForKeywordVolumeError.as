@@ -50,7 +50,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(0);
          if(_loc7_)
          {
-            §§push(§§pop() * 50 + 1 + 1);
+            §§push(-(§§pop() + 43) - 68);
          }
          for each(_loc3_ in _loc1_)
          {
@@ -73,14 +73,14 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(130);
             if(_loc7_)
             {
-               §§push(-(§§pop() - 1) + 1);
+               §§push(-(§§pop() * 15) - 1 - 1);
             }
             §§pop().buttonWidth = §§pop();
             §§push(Alert);
             §§push(30);
-            if(_loc8_)
+            if(_loc7_)
             {
-               §§push(-(-(§§pop() + 1 - 75 - 1) * 85));
+               §§push(§§pop() + 33 - 27 - 69 + 69);
             }
             §§pop().buttonHeight = §§pop();
             Alert.show("Keyword Issues\n" + _loc2_);

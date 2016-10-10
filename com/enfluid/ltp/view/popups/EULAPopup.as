@@ -3,46 +3,48 @@ package com.enfluid.ltp.view.popups
    import spark.components.TitleWindow;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import spark.events.IndexChangeEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SelectProjectCommand;
+   import com.enfluid.ltp.model.vo.ProjectVO;
    import spark.components.TextArea;
    import mx.core.IFlexModuleFactory;
-   import spark.effects.RemoveAction;
-   import mx.binding.BindingManager;
+   import flash.events.Event;
    import com.enfluid.ltp.model.DataModel;
    import mx.events.FlexEvent;
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.renderers.headers.target;
+   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.binding.Binding;
    import mx.managers.PopUpManager;
-   import system.serializers.§eden:release§.debug;
-   import system.serializers.eden.config;
-   import system.Strings;
-   import system.serializers.eden.strings;
-   import mx.graphics.RadialGradient;
    import flash.events.MouseEvent;
-   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
-   import flash.events.Event;
-   import it.sharify.event.SharifyResponseEvent;
-   import flash.display.Sprite;
-   import mx.binding.utils.ChangeWatcher;
+   import hr.binaria.asx3m.mapper.IMapper;
    import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.controller.common.SavePreferencesCommand;
    import spark.components.VGroup;
-   import mx.graphics.GradientEntry;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
    import spark.components.Label;
-   import mx.graphics.SolidColor;
-   import com.enfluid.ltp.view.components.FilterGridColumn;
-   import mx.binding.Binding;
+   import mx.binding.BindingManager;
+   import spark.primitives.Rect;
+   import spark.components.Button;
+   import flash.display.LoaderInfo;
+   import flash.display.BitmapData;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import com.adobe.cairngorm.observer.Observe;
+   import spark.components.Group;
+   import com.enfluid.ltp.view.filterviews.FilterView;
    import flashx.textLayout.elements.TextFlow;
    import flashx.textLayout.conversion.TextConverter;
    import com.enfluid.ltp.view.components.EULA;
-   import mx.core.mx_internal;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.CSSCondition;
    import mx.styles.CSSSelector;
-   import flash.utils.ByteArray;
+   import com.enfluid.ltp.model.vo.SRTRequestDataVO;
+   import mx.rpc.http.HTTPService;
+   import com.enfluid.ltp.controller.services.Services;
    import mx.events.PropertyChangeEvent;
-   import flash.utils.getDefinitionByName;
+   import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
    
@@ -70,7 +72,7 @@ package com.enfluid.ltp.view.popups
       
       public function EULAPopup()
       {
-         var target:Object = null;
+         var com.enfluid.ltp.view.popups.target:Object = null;
          var watcherSetupUtilClass:Object = null;
          this._104069929model = DataModel.instance;
          this._bindings = [];
@@ -81,7 +83,7 @@ package com.enfluid.ltp.view.popups
          mx_internal::_document = this;
          var bindings:Array = this._EULAPopup_bindingsSetup();
          var watchers:Array = [];
-         target = this;
+         com.enfluid.ltp.view.popups.target = this;
          if(_watcherSetupUtil == null)
          {
             watcherSetupUtilClass = getDefinitionByName("_com_enfluid_ltp_view_popups_EULAPopupWatcherSetupUtil");
@@ -100,14 +102,14 @@ package com.enfluid.ltp.view.popups
          §§push(800);
          if(_loc4_)
          {
-            §§push(§§pop() - 1 + 1 - 73 - 1);
+            §§push(§§pop() - 59 + 1 - 72 + 23);
          }
          §§pop().width = §§pop();
          §§push(this);
          §§push(600);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 97 + 1 - 10);
+            §§push(§§pop() - 1 - 30 + 1 + 100);
          }
          §§pop().height = §§pop();
          this.title = "Licence Agreement";
@@ -116,9 +118,9 @@ package com.enfluid.ltp.view.popups
          this.addEventListener("show",this.___EULAPopup_TitleWindow1_show);
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) - 1);
+            §§push((-(§§pop() + 1) - 53) * 43 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -180,14 +182,14 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 1) * 37 - 67 + 12);
+            §§push(-(§§pop() * 34) - 1 - 83 - 72);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 13) - 1 - 73 + 1 + 110);
+            §§push(-(§§pop() * 30) + 112 - 90 - 1 + 31);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.horizontalAlign = "center";
@@ -195,28 +197,28 @@ package com.enfluid.ltp.view.popups
          §§push(40);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 18 + 1 - 34 - 1 + 1 + 1));
+            §§push((§§pop() - 76) * 41 - 87);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(40);
          if(_loc3_)
          {
-            §§push(-(((§§pop() - 1) * 23 - 106) * 15));
+            §§push(-(§§pop() - 71) - 14 - 1);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(40);
          if(_loc2_)
          {
-            §§push(((§§pop() - 68 - 1 - 1) * 112 - 1 - 1) * 71);
+            §§push((-(§§pop() + 110) + 1) * 33 + 119 + 35);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(40);
          if(_loc3_)
          {
-            §§push(--(-(-§§pop() - 1) * 28) + 1);
+            §§push(-(-(§§pop() - 92) + 1 + 87 + 1));
          }
          §§pop().paddingTop = §§pop();
          _loc1_.mxmlContent = [this._EULAPopup_TextArea1_i(),this._EULAPopup_Button1_c()];
@@ -234,31 +236,31 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) * 94 * 5 - 1);
+            §§push(§§pop() + 1 - 70 - 1 + 1 + 75 + 1 - 9);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 1) + 114);
+            §§push(§§pop() + 1 + 1 + 54);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.editable = false;
          §§push(_loc1_);
          §§push("paddingLeft");
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1) * 40 + 4);
+            §§push(§§pop() - 1 - 1 - 1 - 105);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingRight");
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-((-§§pop() - 1) * 57) - 1) * 55);
+            §§push((-(§§pop() * 39) + 1) * 93 + 80 - 44 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -266,7 +268,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc3_)
          {
-            §§push(((§§pop() - 92) * 0 - 34) * 22);
+            §§push(-§§pop() + 43 - 15 - 95 + 1 + 50);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -274,15 +276,15 @@ package com.enfluid.ltp.view.popups
          §§push(5);
          if(_loc3_)
          {
-            §§push(§§pop() * 85 + 1 - 1);
+            §§push(-(§§pop() + 1 - 1) + 107 + 79 - 1 + 3);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paragraphSpaceAfter");
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--§§pop() - 1 - 68 - 1) * 25);
+            §§push(-(§§pop() - 28) + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","justify");
@@ -301,16 +303,16 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 69 + 1 - 1 - 8 + 1);
+            §§push((§§pop() - 72 - 107 + 1) * 110);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() * 12 * 78) - 114) + 55);
+            §§push((-§§pop() + 45 - 1) * 76 * 102);
          }
          §§pop().height = §§pop();
          _loc1_.label = "Agree to Terms";
@@ -320,23 +322,23 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() * 69 + 1) * 109 - 1);
+            §§push(-(-(-§§pop() - 1 - 115 - 1) - 56));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("cornerRadius");
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 0 - 50 - 105 - 1 - 1);
+            §§push(§§pop() - 8 - 1 - 56);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(16);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 - 41);
+            §§push(-((§§pop() + 113 + 56 - 63) * 41) * 59 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -371,7 +373,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push((-§§pop() * 73 + 1 + 103 + 1) * 51 + 1);
+            §§push(-(-§§pop() - 1 + 1) - 73 + 99);
          }
          §§pop()[§§pop()] = new Binding(this,function():TextFlow
          {
@@ -410,16 +412,16 @@ package com.enfluid.ltp.view.popups
                this.modalTransparency = 0.4;
                §§push(this);
                §§push(15);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push(-(§§pop() + 38 + 84 - 15) - 1 - 1);
+                  §§push(-(§§pop() - 36 - 88) + 8 - 1 - 1);
                }
                §§pop().modalTransparencyBlur = §§pop();
                §§push(this);
                §§push(16777215);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push((-(§§pop() * 21 - 114) - 53) * 2 * 118);
+                  §§push(§§pop() - 1 + 70 - 118 - 1 + 80 + 1);
                }
                §§pop().modalTransparencyColor = §§pop();
             };

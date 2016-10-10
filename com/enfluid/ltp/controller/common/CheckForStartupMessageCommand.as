@@ -2,15 +2,21 @@ package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
    import mx.rpc.http.HTTPService;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.constants.Constants;
    import mx.rpc.events.ResultEvent;
    import mx.rpc.events.FaultEvent;
    import com.enfluid.ltp.util.Logger;
-   import spark.components.HGroup;
+   import mx.binding.Binding;
+   import mx.collections.IList;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.core.mx_internal;
+   import mx.events.FlexMouseEvent;
    import flash.system.Capabilities;
    import com.adobe.utils.StringUtil;
+   
+   use namespace mx_internal;
    
    public final class CheckForStartupMessageCommand extends Command implements IPhotonCommand
    {
@@ -65,7 +71,7 @@ package com.enfluid.ltp.controller.common
             §§push(0);
             if(_loc5_)
             {
-               §§push((-§§pop() * 34 + 1) * 32 + 1 - 17 + 1);
+               §§push(-(-(§§pop() * 11) * 2));
             }
             if(§§pop() == §§pop())
             {
@@ -75,7 +81,7 @@ package com.enfluid.ltp.controller.common
             §§push(0);
             if(_loc6_)
             {
-               §§push((§§pop() + 70) * 100 + 1);
+               §§push((§§pop() - 1 + 29 - 1 - 7) * 74 - 62);
             }
             for each(message in messages)
             {
@@ -96,7 +102,7 @@ package com.enfluid.ltp.controller.common
                         §§push(0);
                         if(_loc6_)
                         {
-                           §§push((§§pop() * 44 - 1 + 1) * 56);
+                           §§push(-(§§pop() - 114 + 1) - 57);
                         }
                         var /*UnknownSlot*/:* = §§pop() + §§pop().trim(§§pop()[§§pop()]);
                         text = text + "<br/><br/><br/>";

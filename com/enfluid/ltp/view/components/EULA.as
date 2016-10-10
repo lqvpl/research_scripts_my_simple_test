@@ -1,5 +1,7 @@
 package com.enfluid.ltp.view.components
 {
+   import mx.graphics.SolidColor;
+   
    public final class EULA
    {
       

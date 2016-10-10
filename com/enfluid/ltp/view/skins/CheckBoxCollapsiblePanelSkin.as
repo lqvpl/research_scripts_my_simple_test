@@ -4,7 +4,6 @@ package com.enfluid.ltp.view.skins
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
-   import mx.effects.Parallel;
    import spark.components.CheckBox;
    import spark.effects.Fade;
    import com.enfluid.ltp.view.components.HelpButton;
@@ -19,9 +18,15 @@ package com.enfluid.ltp.view.skins
    import mx.binding.BindingManager;
    import mx.states.Transition;
    import mx.effects.Sequence;
-   import com.enfluid.ltp.util.ProgressBarUtil;
+   import com.enfluid.ltp.view.components.FormattedSelfAdjustingLabel;
+   import spark.components.Button;
+   import mx.collections.XMLListCollection;
    import mx.graphics.LinearGradient;
    import mx.graphics.GradientEntry;
+   import com.enfluid.ltp.util.MajesticUtils;
+   import mx.rpc.http.HTTPService;
+   import mx.rpc.Responder;
+   import spark.layouts.VerticalLayout;
    import mx.binding.Binding;
    import flash.utils.Proxy;
    import com.enfluid.ltp.view.containers.CheckBoxCollapsiblePanel;
@@ -29,8 +34,6 @@ package com.enfluid.ltp.view.skins
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
-   import com.hurlant.crypto.symmetric.XTeaKey;
-   import flash.utils.ByteArray;
    import flash.utils.getDefinitionByName;
    import mx.states.State;
    import mx.states.AddItems;
@@ -88,6 +91,7 @@ package com.enfluid.ltp.view.skins
       
       public function CheckBoxCollapsiblePanelSkin()
       {
+         var bindings:Array = null;
          var target:Object = null;
          var watcherSetupUtilClass:Object = null;
          this._bindings = [];
@@ -96,7 +100,7 @@ package com.enfluid.ltp.view.skins
          this._bindingsBeginWithWord = {};
          super();
          mx_internal::_document = this;
-         var bindings:Array = this._CheckBoxCollapsiblePanelSkin_bindingsSetup();
+         bindings = this._CheckBoxCollapsiblePanelSkin_bindingsSetup();
          var watchers:Array = [];
          target = this;
          if(_watcherSetupUtil == null)
@@ -139,9 +143,9 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 56 - 1 - 1);
+            §§push(--§§pop() - 72);
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -155,16 +159,16 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 100 + 52);
+            §§push((§§pop() * 33 - 51 + 1 - 1) * 16 - 34);
          }
          §§pop().states = null;
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 28 + 21 + 115 - 99) * 29 - 1 - 1);
+            §§push((-(§§pop() + 1 + 83) + 69) * 104);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -204,9 +208,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Power = new Power();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 0 * 24 + 1) * 37);
+            §§push(-((§§pop() - 54 - 1 - 89 + 11 + 96) * 56));
          }
          §§pop().easeInFraction = §§pop();
          this.collapseEaser = _loc1_;
@@ -219,9 +223,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Power = new Power();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 92 - 28 + 1 - 1 + 118);
+            §§push(-(§§pop() - 1 + 1 + 6) - 1);
          }
          §§pop().easeInFraction = §§pop();
          this.uncollapseEaser = _loc1_;
@@ -250,9 +254,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Fade = new Fade();
          §§push(_loc1_);
          §§push(250);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 4 + 1 - 1 + 1 + 60);
+            §§push(§§pop() + 45 + 1 + 1 - 1 + 79 - 1 - 76);
          }
          §§pop().duration = §§pop();
          this._CheckBoxCollapsiblePanelSkin_Fade1 = _loc1_;
@@ -265,9 +269,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Resize = new Resize();
          §§push(_loc1_);
          §§push(250);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 - 8 + 46 - 65);
+            §§push(-(§§pop() + 24 - 55) - 101);
          }
          §§pop().duration = §§pop();
          this._CheckBoxCollapsiblePanelSkin_Resize1 = _loc1_;
@@ -306,7 +310,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) - 1 + 80 - 1);
+            §§push(§§pop() * 56 + 1 - 21);
          }
          §§pop().duration = §§pop();
          this._CheckBoxCollapsiblePanelSkin_Resize2 = _loc1_;
@@ -321,7 +325,7 @@ package com.enfluid.ltp.view.skins
          §§push(250);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 93 * 78));
+            §§push((-§§pop() - 1) * 23 + 109);
          }
          §§pop().duration = §§pop();
          this._CheckBoxCollapsiblePanelSkin_Fade2 = _loc1_;
@@ -342,44 +346,44 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 - 1 - 109 + 57 - 14 + 66);
+            §§push(-(§§pop() * 12 - 1 + 25) - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 47 * 34 * 57);
+            §§push((--§§pop() - 66 - 15 - 1) * 103 * 97);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(-§§pop() - 1) - 42);
+            §§push(§§pop() + 29 - 33 - 12);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 60 - 1 - 65);
+            §§push(-(§§pop() + 1) + 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() * 113 - 91 + 9 + 1);
+            §§push(--§§pop() * 56);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 119 + 107 - 100);
+            §§push(§§pop() * 79 + 1 - 99 + 108 - 1);
          }
          §§pop().topRightRadiusX = §§pop();
          _loc1_.fill = this._CheckBoxCollapsiblePanelSkin_LinearGradient1_c();
@@ -394,9 +398,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:LinearGradient = new LinearGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 41 + 28 - 1 - 65 - 64);
+            §§push(§§pop() - 1 - 1 + 1);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._CheckBoxCollapsiblePanelSkin_GradientEntry1_c(),this._CheckBoxCollapsiblePanelSkin_GradientEntry2_c()];
@@ -408,9 +412,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(14869218);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((-(§§pop() * 9 + 1) - 1) * 102 - 53) * 20);
+            §§push((§§pop() + 116) * 2 * 25 - 1 - 74);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -423,7 +427,7 @@ package com.enfluid.ltp.view.skins
          §§push(14277081);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 80 - 1) + 119);
+            §§push(§§pop() - 1 + 85 - 95 - 1 - 68 - 85);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -434,65 +438,65 @@ package com.enfluid.ltp.view.skins
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 117 - 99 + 1);
+            §§push(-((-§§pop() - 1 - 21) * 69 + 1));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(25);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 8 - 1 - 1);
+            §§push((§§pop() - 90) * 101 + 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 1);
+            §§push((-§§pop() - 89) * 93);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 64) * 23 + 109);
+            §§push(-((-§§pop() + 30) * 81) - 1 + 4);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 69) * 59 + 1 + 92) - 1);
+            §§push(-(-§§pop() * 48) - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 - 91 + 88 - 56 - 74);
+            §§push(--§§pop() - 1);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 27 - 101 + 1 + 27));
+            §§push(-(§§pop() + 1 + 1) - 79 + 111);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(----(§§pop() + 1) + 1);
+            §§push((§§pop() + 64 + 1 - 106 - 1 + 67) * 24);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 1) + 91 - 1 + 1);
+            §§push(-((§§pop() - 1) * 63 * 62 + 1) + 116);
          }
          §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "baseline";
@@ -500,7 +504,7 @@ package com.enfluid.ltp.view.skins
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 13);
+            §§push(-(-(§§pop() + 1 - 16 + 79) * 40 * 41));
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._CheckBoxCollapsiblePanelSkin_CheckBox1_i(),this._CheckBoxCollapsiblePanelSkin_Label1_i(),this._CheckBoxCollapsiblePanelSkin_HelpButton1_i()];
@@ -532,9 +536,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() - 111) - 1) * 92 - 51);
+            §§push(§§pop() - 22 - 1 + 93 + 94 - 1 + 6);
          }
          §§pop().height = §§pop();
          _loc1_.setStyle("fontWeight","bold");
@@ -568,44 +572,44 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(25);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--(-§§pop() + 20) - 106) - 1);
+            §§push(§§pop() * 81 - 1 - 13 - 1 - 74 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 1 + 103);
+            §§push((--((§§pop() + 1) * 44 + 49) - 45) * 100);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(25);
          if(_loc3_)
          {
-            §§push(-((-§§pop() + 55) * 87 - 84 + 1));
+            §§push(((§§pop() - 1) * 42 + 24) * 95 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 97 + 1 - 1 + 1));
+            §§push((§§pop() - 15 + 1) * 103 - 19 - 1 - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 41 + 37 + 45) * 17));
+            §§push((-(§§pop() + 1 + 16) - 1) * 92);
          }
          §§pop().minHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1 - 51) * 78) + 33 + 29);
+            §§push((§§pop() - 68) * 15 - 1 - 1 + 1);
          }
          §§pop().minWidth = §§pop();
          _loc1_.id = "contentGroup";
@@ -623,9 +627,9 @@ package com.enfluid.ltp.view.skins
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 1 + 1 - 1 + 1) * 16);
+            §§push(§§pop() * 103 * 42 * 62 + 64 - 1 + 88 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Array
          {
@@ -634,16 +638,16 @@ package com.enfluid.ltp.view.skins
          },null,"_CheckBoxCollapsiblePanelSkin_Fade1.targets");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(--§§pop() * 40) - 1) * 37);
+            §§push(-((§§pop() + 1) * 60 * 108 - 8) - 1 - 49);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Fade1.easer","collapseEaser");
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 109));
+            §§push((-§§pop() - 1) * 60);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -651,23 +655,23 @@ package com.enfluid.ltp.view.skins
          },null,"_CheckBoxCollapsiblePanelSkin_Resize1.target");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 71) + 46 - 1 + 65 - 1);
+            §§push((-(§§pop() + 1) - 0 - 1 + 98) * 32 + 25);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Resize1.easer","collapseEaser");
          §§push(result);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() - 43) - 54 + 1));
+            §§push(§§pop() * 47 - 46 - 115 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Move1.target","titleBarGroup");
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 1) * 39 - 41 - 40 - 1 + 1));
+            §§push(-(§§pop() + 91 + 23 - 85) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -677,35 +681,35 @@ package com.enfluid.ltp.view.skins
          §§push(6);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 70) * 102 - 53);
+            §§push(--(§§pop() - 114 + 1) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Resize2.easer","uncollapseEaser");
          §§push(result);
          §§push(7);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 35 - 1) * 82 + 1));
+            §§push(-(--(§§pop() - 14) * 28 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Fade2.target","contentGroup");
          §§push(result);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 96) + 17 + 110 + 1 + 1 + 66);
+            §§push(-(§§pop() - 1 + 2) * 42 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Fade2.easer","uncollapseEaser");
          §§push(result);
          §§push(9);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 80) + 98 - 1 - 3);
+            §§push(-(--§§pop() + 1) - 71 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_CheckBoxCollapsiblePanelSkin_Move2.target","titleBarGroup");
          §§push(result);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 30) + 1 - 103 - 1 + 1);
+            §§push(§§pop() - 1 + 1 + 11 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -713,9 +717,9 @@ package com.enfluid.ltp.view.skins
          },null,"_CheckBoxCollapsiblePanelSkin_CheckBox1.selected");
          §§push(result);
          §§push(11);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 1 - 1 + 1 - 4));
+            §§push(-(§§pop() + 8 + 1 + 1) + 58);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -725,7 +729,7 @@ package com.enfluid.ltp.view.skins
          §§push(12);
          if(_loc2_)
          {
-            §§push(-((-(§§pop() - 79) - 1) * 77 * 46 * 52));
+            §§push((-(§§pop() + 32 + 109) + 111) * 113 + 72);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -735,7 +739,7 @@ package com.enfluid.ltp.view.skins
          §§push(13);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 83 + 40) + 20));
+            §§push(§§pop() - 14 + 12 + 13 + 39 - 17 - 35);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -746,7 +750,7 @@ package com.enfluid.ltp.view.skins
          §§push(14);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 111 * 96));
+            §§push(--§§pop() + 87 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

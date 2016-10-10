@@ -3,27 +3,28 @@ package com.enfluid.ltp.view.filterviews
    import spark.components.HGroup;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.primitives.Rect;
    import spark.primitives.BitmapImage;
    import mx.core.IFlexModuleFactory;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import mx.rpc.http.HTTPService;
-   import com.enfluid.ltp.model.DataModel;
-   import flash.net.URLRequest;
-   import flash.net.URLLoaderDataFormat;
+   import it.sharify.SharifyFactory;
    import flash.events.Event;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.EmptyTrashCommand;
-   import spark.components.Label;
+   import spark.components.CheckBox;
    import mx.binding.BindingManager;
-   import mx.events.FlexEvent;
+   import com.enfluid.ltp.model.DataModel;
    import mx.binding.Binding;
    import com.enfluid.ltp.assets.AssetsLibrary;
+   import com.hurlant.crypto.symmetric.ISymmetricKey;
+   import com.hurlant.crypto.symmetric.IPad;
+   import com.hurlant.crypto.symmetric.PKCS5;
+   import com.hurlant.crypto.prng.Random;
+   import flash.utils.ByteArray;
+   import mx.core.DeferredInstanceFromFunction;
    import mx.core.mx_internal;
-   import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.Link;
+   import com.enfluid.ltp.view.skins.target;
+   import mx.states.State;
+   import mx.states.AddItems;
+   import mx.states.SetProperty;
+   import mx.events.PropertyChangeEvent;
    
    use namespace mx_internal;
    
@@ -79,18 +80,18 @@ package com.enfluid.ltp.view.filterviews
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1 + 103) * 44 - 1);
+            §§push(-(§§pop() * 69 + 1 - 1 + 1 - 86) - 1);
          }
          §§pop().percentWidth = §§pop();
          this.verticalAlign = "top";
          this.mxmlContent = [this._FilterView_BitmapImage1_i()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 110 - 109) * 66 + 32 - 1 + 1 - 24);
+            §§push(-((§§pop() + 1) * 103) * 9);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -157,7 +158,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(17);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 13) + 80 + 1 + 119);
+            §§push(§§pop() - 1 + 12 + 1);
          }
          §§pop().height = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -172,9 +173,9 @@ package com.enfluid.ltp.view.filterviews
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 83 - 0) * 32 + 1 + 1);
+            §§push(((§§pop() + 87) * 116 + 79) * 16 + 3);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

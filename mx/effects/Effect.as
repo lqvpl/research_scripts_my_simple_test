@@ -315,6 +315,7 @@ package mx.effects
          }
       }
       
+      [ArrayElementType("Object")]
       public function get targets() : Array
       {
          return this._targets;

@@ -2,23 +2,13 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
 {
    import spark.primitives.Path;
    import spark.components.gridClasses.IGridVisualElement;
-   import com.enfluid.ltp.view.LeftRail;
    import mx.graphics.GradientEntry;
    import spark.components.Grid;
    import spark.components.DataGrid;
    import mx.graphics.RadialGradient;
-   import com.enfluid.ltp.model.ViewModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisFooterComponent;
-   import mx.core.DeferredInstanceFromFunction;
-   import mx.binding.Binding;
-   import spark.components.Label;
+   import spark.layouts.VerticalLayout;
    import mx.binding.BindingManager;
    import mx.events.PropertyChangeEvent;
-   
-   use namespace mx_internal;
    
    public final class FlatHeaderRendererInnerClass0 extends Path implements IGridVisualElement
    {
@@ -54,16 +44,16 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
          var _loc1_:RadialGradient = new RadialGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 1 - 14) + 1 - 1);
+            §§push(-(§§pop() - 1 + 108) - 85 + 1);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((-§§pop() + 11 + 56) * 62) + 1);
+            §§push(-((§§pop() + 111 + 16) * 55 - 103) - 54);
          }
          §§pop().focalPointRatio = §§pop();
          _loc1_.entries = [this._FlatHeaderRendererInnerClass0_GradientEntry1_i(),this._FlatHeaderRendererInnerClass0_GradientEntry2_i()];
@@ -75,9 +65,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 - 83 + 73 + 1 - 1 + 1);
+            §§push(-(§§pop() * 57 - 1) + 61);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.6;
@@ -93,7 +83,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 47 - 1) * 59) + 5);
+            §§push(-(§§pop() * 24) * 8);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.8;

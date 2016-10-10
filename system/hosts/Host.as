@@ -1,11 +1,7 @@
 package system.hosts
 {
-   import spark.layouts.VerticalLayout;
-   import mx.binding.BindingManager;
    import flash.system.Capabilities;
-   import com.enfluid.ltp.view.components.Link;
    import system.Version;
-   import spark.effects.AddAction;
    
    public final class Host
    {
@@ -44,7 +40,7 @@ package system.hosts
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() * 17 - 21 + 94 + 1);
+            §§push(-§§pop() - 39 + 10 + 1 - 96);
          }
          return §§pop() + §§pop().toString(§§pop());
       }

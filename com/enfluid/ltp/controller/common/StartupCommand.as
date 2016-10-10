@@ -1,13 +1,21 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.PhotonComplexCommand;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane.FlatUIScrollBarTrack;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.DataModel;
    import flash.utils.setTimeout;
-   import mx.binding.Binding;
-   import hr.binaria.asx3m.mapper.IMapper;
+   import system.serializers.§eden:release§.debug;
+   import system.Reflection;
+   import system.serializers.eden.BuiltinSerializer;
+   import com.enfluid.ltp.util.KeywordUtil;
    import com.enfluid.ltp.model.ViewModel;
-   import mx.collections.ArrayCollection;
+   import spark.layouts.VerticalLayout;
+   import spark.primitives.Rect;
+   import io.calq.CalqClient;
    import com.enfluid.ltp.controller.services.Services;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.controller.licensing.DetermineVersionCommand;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.LoadProjectsCommand;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.SelectRecentProjectCommand;
@@ -25,7 +33,9 @@ package com.enfluid.ltp.controller.common
       {
          this.model = DataModel.instance;
          super();
+         var _loc1_:CalqClient = new CalqClient("def155c1e25fef66689cd192c68e1c34");
          Services.init();
+         new SetUserEvent("UserEvent.StartApp").execute();
          addCommand(new DetermineVersionCommand(),null,false);
          addCommand(new LoadPreferencesCommand());
          addCommand(new SetupDBCommand());
@@ -39,6 +49,7 @@ package com.enfluid.ltp.controller.common
          addCommand(new LoadAllFavoritesAndTrashCommand());
          addCommand(new LoadRanksCommand());
          addCommand(new CheckForStartupMessageCommand());
+         addCommand(new ShowTipsCommand());
       }
       
       override protected function done(param1:String = "success") : void
@@ -48,7 +59,7 @@ package com.enfluid.ltp.controller.common
          §§push(1000);
          if(_loc2_)
          {
-            §§push(---(-(§§pop() - 1 + 76) + 1));
+            §§push(-(§§pop() * 47 + 1) - 112);
          }
          §§pop().setTimeout(§§pop(),§§pop(),param1);
       }

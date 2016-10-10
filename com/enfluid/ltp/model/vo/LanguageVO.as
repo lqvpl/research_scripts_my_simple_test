@@ -1,8 +1,7 @@
 package com.enfluid.ltp.model.vo
 {
-   import spark.components.HGroup;
+   import spark.components.Group;
    import mx.binding.BindingManager;
-   import it.sharify.ISharify;
    
    public final class LanguageVO
    {

@@ -3,25 +3,24 @@ package com.enfluid.ltp.view.dataandfilters
    import com.enfluid.ltp.view.containers.CheckBoxCollapsiblePanel;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.effects.Fade;
-   import mx.binding.BindingManager;
-   import com.enfluid.ltp.view.components.AvgDelayComponent;
    import mx.core.IFlexModuleFactory;
-   import system.numeric.Mathematics;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import system.data.Iterator;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import spark.layouts.VerticalLayout;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
-   import flash.events.MouseEvent;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.Binding;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.view.filterviews.BingTitleCompetitionFilterView;
+   import mx.binding.Binding;
    import assets.TextAssets;
+   import system.data.ListIterator;
+   import system.data.iterators.ArrayListIterator;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass11;
+   import com.enfluid.ltp.view.components.majestic.CompetitorMajesticAnalysisContentComponent;
+   import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
@@ -31,8 +30,6 @@ package com.enfluid.ltp.view.dataandfilters
       
       private static var _watcherSetupUtil:IWatcherSetupUtil2;
        
-      
-      private var _1410889605_BingTitleCompetitionSection_AvgDelayComponent1:AvgDelayComponent;
       
       private var __moduleFactoryInitialized:Boolean = false;
       
@@ -76,19 +73,20 @@ package com.enfluid.ltp.view.dataandfilters
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 87 + 75 - 1) * 60);
+            §§push(-(§§pop() * 53 - 1) - 1);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Bing Title Competition";
          this.layout = this._BingTitleCompetitionSection_VerticalLayout1_c();
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._BingTitleCompetitionSection_Array1_c);
+         this.addEventListener("creationComplete",this.___BingTitleCompetitionSection_CheckBoxCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 73 - 1) * 1 * 21 + 101 - 38);
+            §§push(-(-(§§pop() - 1) - 1) - 7 + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -118,6 +116,22 @@ package com.enfluid.ltp.view.dataandfilters
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.BingTitleComp.Checked").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.BingTitleComp.Unchecked").execute();
+            }
+         });
+      }
+      
       private final function _BingTitleCompetitionSection_VerticalLayout1_c() : VerticalLayout
       {
          var _loc1_:VerticalLayout = new VerticalLayout();
@@ -126,7 +140,7 @@ package com.enfluid.ltp.view.dataandfilters
       
       private final function _BingTitleCompetitionSection_Array1_c() : Array
       {
-         var _loc1_:Array = [this._BingTitleCompetitionSection_BingTitleCompetitionFilterView1_c(),this._BingTitleCompetitionSection_AvgDelayComponent1_i()];
+         var _loc1_:Array = [this._BingTitleCompetitionSection_BingTitleCompetitionFilterView1_c()];
          return _loc1_;
       }
       
@@ -141,17 +155,9 @@ package com.enfluid.ltp.view.dataandfilters
          return _loc1_;
       }
       
-      private final function _BingTitleCompetitionSection_AvgDelayComponent1_i() : AvgDelayComponent
+      public final function ___BingTitleCompetitionSection_CheckBoxCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
       {
-         var _loc1_:AvgDelayComponent = new AvgDelayComponent();
-         _loc1_.id = "_BingTitleCompetitionSection_AvgDelayComponent1";
-         if(!_loc1_.document)
-         {
-            _loc1_.document = this;
-         }
-         this._BingTitleCompetitionSection_AvgDelayComponent1 = _loc1_;
-         BindingManager.executeBindings(this,"_BingTitleCompetitionSection_AvgDelayComponent1",this._BingTitleCompetitionSection_AvgDelayComponent1);
-         return _loc1_;
+         this.initPanel(param1);
       }
       
       private final function _BingTitleCompetitionSection_bindingsSetup() : Array
@@ -159,9 +165,9 @@ package com.enfluid.ltp.view.dataandfilters
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 1 - 1);
+            §§push(§§pop() + 19 - 34 + 1 - 97 + 75 + 1 + 100);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -170,9 +176,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.helpTitle");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 29 - 1 - 1);
+            §§push((§§pop() - 92 + 12 - 1) * 90 - 35);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -183,7 +189,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(2);
          if(_loc2_)
          {
-            §§push(-§§pop() + 78 + 23);
+            §§push(§§pop() - 73 + 1 - 45 + 117);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -193,17 +199,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 19) * 118 + 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():int
-         {
-            return model.selectedProject.bingTitleCompAvgDelay;
-         },null,"_BingTitleCompetitionSection_AvgDelayComponent1.avgDelay");
-         §§push(result);
-         §§push(4);
-         if(_loc3_)
-         {
-            §§push((§§pop() - 30) * 41 - 47);
+            §§push((§§pop() + 47 + 21) * 43 * 87 - 111);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -213,86 +209,38 @@ package com.enfluid.ltp.view.dataandfilters
             model.selectedProject.bingTitleCompEnabled = param1;
          },"model.selectedProject.bingTitleCompEnabled");
          §§push(result);
-         §§push(4);
+         §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 2 - 29) + 6 - 1 - 8);
+            §§push(§§pop() - 1 - 1 + 21);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 54 + 1 + 105 + 87);
+            §§push(-§§pop() + 74 + 1 - 87 - 1 + 119 - 119);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() + 109 - 1 + 1 + 1);
+            §§push((-(§§pop() - 1) + 1) * 86 - 1 - 95);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push((-§§pop() - 108 - 73) * 97);
-         }
-         §§push(§§pop()[§§pop()]);
-         §§push(result);
-         §§push(4);
-         if(_loc3_)
-         {
-            §§push(-(-§§pop() * 66 + 1) + 1 - 1);
-         }
-         §§pop().twoWayCounterpart = §§pop()[§§pop()];
-         §§push(result);
-         §§push(5);
-         if(_loc2_)
-         {
-            §§push(-(-(§§pop() + 0 + 1) - 1 - 6 - 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():*
-         {
-            return _BingTitleCompetitionSection_AvgDelayComponent1.avgDelay;
-         },function(param1:*):void
-         {
-            model.selectedProject.bingTitleCompAvgDelay = param1;
-         },"model.selectedProject.bingTitleCompAvgDelay");
-         §§push(result);
-         §§push(5);
-         if(_loc3_)
-         {
-            §§push(-§§pop() + 1 - 89 + 1 - 1 - 1 + 1);
+            §§push(-(§§pop() - 1 - 1));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(--((-§§pop() + 1) * 54));
-         }
-         §§pop().twoWayCounterpart = §§pop()[§§pop()];
-         §§push(result);
-         §§push(3);
-         if(_loc2_)
-         {
-            §§push(-§§pop() + 1 + 9 - 1 - 1);
-         }
-         §§pop()[§§pop()].isTwoWayPrimary = true;
-         §§push(result);
-         §§push(3);
-         if(_loc2_)
-         {
-            §§push(-(§§pop() * 69 * 25) * 117 * 84);
-         }
-         §§push(§§pop()[§§pop()]);
-         §§push(result);
-         §§push(5);
-         if(_loc2_)
-         {
-            §§push(-(§§pop() * 50 * 63));
+            §§push((§§pop() + 1) * 40 * 62 - 97);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;
@@ -302,26 +250,6 @@ package com.enfluid.ltp.view.dataandfilters
       {
          var _loc1_:* = undefined;
          this.model.selectedProject.bingTitleCompEnabled = this.expanded;
-         this.model.selectedProject.bingTitleCompAvgDelay = this._BingTitleCompetitionSection_AvgDelayComponent1.avgDelay;
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get _BingTitleCompetitionSection_AvgDelayComponent1() : AvgDelayComponent
-      {
-         return this._1410889605_BingTitleCompetitionSection_AvgDelayComponent1;
-      }
-      
-      public function set _BingTitleCompetitionSection_AvgDelayComponent1(param1:AvgDelayComponent) : void
-      {
-         var _loc2_:Object = this._1410889605_BingTitleCompetitionSection_AvgDelayComponent1;
-         if(_loc2_ !== param1)
-         {
-            this._1410889605_BingTitleCompetitionSection_AvgDelayComponent1 = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_BingTitleCompetitionSection_AvgDelayComponent1",_loc2_,param1));
-            }
-         }
       }
       
       [Bindable(event="propertyChange")]

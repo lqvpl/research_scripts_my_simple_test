@@ -1,14 +1,14 @@
 package com.enfluid.ltp.view.skins
 {
    import spark.skins.SparkSkin;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.model.constants.Values;
-   import com.enfluid.ltp.assets.AssetsLibrary;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.SaveProxiesCommand;
    import mx.core.IFlexModuleFactory;
    import spark.primitives.Rect;
+   import mx.binding.BindingManager;
    import mx.graphics.LinearGradient;
    import mx.graphics.GradientEntry;
-   import flash.events.MouseEvent;
+   import spark.effects.Fade;
    
    public final class ScrapingProgressTrackSkin extends SparkSkin
    {
@@ -24,7 +24,7 @@ package com.enfluid.ltp.view.skins
          §§push(9);
          if(_loc1_)
          {
-            §§push((§§pop() * 96 + 1 - 1 - 27 - 80) * 95);
+            §§push((§§pop() - 1 - 1) * 41 - 1 - 109);
          }
          §§pop().minHeight = §§pop();
          this.mxmlContent = [this._ScrapingProgressTrackSkin_Rect1_c()];
@@ -58,42 +58,42 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) + 1 - 1 - 1 + 65);
+            §§push((§§pop() + 1 - 119) * 53 - 1 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 21 + 1 + 1 + 38 - 74 - 1);
+            §§push(-(§§pop() * 17) + 1 + 1 - 1 - 30);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((-§§pop() + 1) * 68 - 1);
+            §§push(§§pop() - 1 + 1 + 106 - 64);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 36) + 1 - 1 + 86 + 15);
+            §§push(-((§§pop() + 68) * 83) - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 94 + 74 + 1);
+            §§push((-(§§pop() - 79 + 1) + 32) * 53 - 1 - 1);
          }
          §§pop().radiusX = §§pop();
          §§push(_loc1_);
          §§push(3);
          if(_loc3_)
          {
-            §§push(--((-§§pop() - 89) * 119 - 1 + 1));
+            §§push(§§pop() - 112 - 1 - 118 - 91);
          }
          §§pop().radiusY = §§pop();
          _loc1_.fill = this._ScrapingProgressTrackSkin_LinearGradient1_c();
@@ -108,7 +108,7 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 99 + 30 - 1 - 25);
+            §§push(-(§§pop() + 1) * 47 * 11);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._ScrapingProgressTrackSkin_GradientEntry1_c(),this._ScrapingProgressTrackSkin_GradientEntry2_c()];
@@ -120,16 +120,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 51) * 108 + 46);
+            §§push(§§pop() * 48 * 114 - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() + 73 - 1 - 1 - 1);
+            §§push(-(§§pop() - 1) + 25 + 1 - 75);
          }
          §§pop().alpha = §§pop();
          return _loc1_;
@@ -142,14 +142,14 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 102 - 117) + 38) * 1);
+            §§push(§§pop() - 1 + 72 - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 108 - 1 - 68 + 33) * 20 + 20 - 1);
+            §§push((-(§§pop() + 71 - 1) + 12) * 26);
          }
          §§pop().alpha = §§pop();
          return _loc1_;

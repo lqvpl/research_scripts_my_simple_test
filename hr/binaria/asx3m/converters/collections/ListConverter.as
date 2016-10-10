@@ -55,7 +55,7 @@ package hr.binaria.asx3m.converters.collections
          §§push(0);
          if(_loc8_)
          {
-            §§push(§§pop() - 1 + 90 + 1 - 1 - 6);
+            §§push(-(-§§pop() + 1 - 7) * 33);
          }
          for each(_loc5_ in _loc4_)
          {

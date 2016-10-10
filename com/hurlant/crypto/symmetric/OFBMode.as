@@ -16,13 +16,13 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc8_)
          {
-            §§push(-(§§pop() + 42 - 1 + 1));
+            §§push(§§pop() - 46 + 1 + 60);
          }
          var _loc6_:uint = §§pop();
          §§push(0);
          if(_loc9_)
          {
-            §§push(-§§pop() - 32 - 1 + 1 + 51);
+            §§push(-§§pop() - 1 + 6 - 3 - 51 - 2 + 1);
          }
          var _loc7_:uint = §§pop();
          var _loc3_:uint = param1.length;
@@ -30,7 +30,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc9_)
          {
-            §§push(-((§§pop() * 97 + 1) * 110 - 1));
+            §§push(§§pop() + 1 - 1 + 118);
          }
          var _loc5_:uint = §§pop();
          while(_loc5_ < param1.length)
@@ -40,7 +40,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() + 1 - 44 + 59 - 95);
+               §§push((§§pop() * 55 - 1) * 48 * 98);
             }
             §§pop().position = §§pop();
             _loc4_.writeBytes(param2);
@@ -48,7 +48,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc8_)
             {
-               §§push(-(§§pop() - 2) + 1 - 110);
+               §§push((-§§pop() + 2) * 89);
             }
             _loc7_ = §§pop();
             while(_loc7_ < _loc6_)
@@ -58,9 +58,9 @@ package com.hurlant.crypto.symmetric
             }
             §§push(param2);
             §§push(0);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(-(§§pop() * 81) - 1 - 1);
+               §§push(-(-(§§pop() * 23 - 30 + 1 - 106) + 1));
             }
             §§pop().position = §§pop();
             param2.writeBytes(_loc4_);

@@ -18,12 +18,20 @@ package com.enfluid.ltp.view.renderers.headers
    import spark.components.gridClasses.IGridVisualElement;
    import spark.components.gridClasses.GridColumn;
    import flash.events.Event;
+   import flash.events.ContextMenuEvent;
+   import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
+   import flash.desktop.Clipboard;
+   import flash.desktop.ClipboardFormats;
+   import flash.net.URLRequest;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisGridColumn;
+   import flash.net.navigateToURL;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import mx.binding.BindingManager;
    import spark.components.Label;
+   import flash.events.MouseEvent;
    import mx.graphics.LinearGradient;
    import spark.components.HGroup;
    import mx.binding.Binding;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisGridColumn;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -101,16 +109,16 @@ package com.enfluid.ltp.view.renderers.headers
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(21);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 1 - 98) * 36 + 1) * 54 * 84);
+            §§push(-(§§pop() - 1) - 1);
          }
          §§pop().minHeight = §§pop();
          §§push(this);
          §§push(21);
          if(_loc4_)
          {
-            §§push(((§§pop() + 93) * 64 + 1 - 1 + 1 + 1) * 100);
+            §§push(-(-§§pop() - 34 - 94) + 1);
          }
          §§pop().minWidth = §§pop();
          this.mxmlContent = [this._CompetitorAnalysisHeaderRenderer_Rect1_i(),this._CompetitorAnalysisHeaderRenderer_Rect2_i(),this._CompetitorAnalysisHeaderRenderer_HGroup1_c(),this._CompetitorAnalysisHeaderRenderer_HelpButton1_i()];
@@ -133,9 +141,9 @@ package com.enfluid.ltp.view.renderers.headers
          §§push("color");
          §§push("value");
          §§push(6526128);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 1 - 88 + 13 + 74 - 1) * 116);
+            §§push((§§pop() + 82 + 37 + 1 - 1 + 1 + 11) * 15);
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -151,7 +159,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(16777215);
          if(_loc4_)
          {
-            §§push((§§pop() - 108) * 108 - 110 - 1);
+            §§push(§§pop() + 90 - 74 + 13);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -163,7 +171,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(-§§pop() + 110) * 95) * 118 + 49);
+            §§push((-(§§pop() + 36) + 1 + 1) * 19);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -175,14 +183,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(16777215);
          if(_loc4_)
          {
-            §§push(§§pop() + 114 + 1 + 1);
+            §§push(-(-(-§§pop() * 67) * 59 - 36));
          }
          §§pop().states = null;
          §§push(_loc1_);
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() * 14) + 1);
+            §§push((§§pop() + 60 + 1 + 45 + 1 - 8) * 39);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -287,9 +295,9 @@ package com.enfluid.ltp.view.renderers.headers
                   §§push(_loc5_);
                   §§push(_loc2_.grid);
                   §§push(-1);
-                  if(_loc7_)
+                  if(_loc6_)
                   {
-                     §§push((-(§§pop() - 1 + 1 + 31) * 67 - 1) * 110);
+                     §§push((§§pop() + 1 + 1 + 1) * 3 + 1);
                   }
                   §§pop().prepareGridVisualElement(§§pop(),§§pop(),_loc2_.columnIndex);
                }
@@ -300,16 +308,16 @@ package com.enfluid.ltp.view.renderers.headers
                   §§push(1);
                   if(_loc7_)
                   {
-                     §§push(-(-(§§pop() - 1) + 1) - 48 + 81);
+                     §§push(--((§§pop() - 1) * 87 - 45) * 101 + 1);
                   }
                   §§push(Number(§§pop()));
                }
                else
                {
                   §§push(-1);
-                  if(_loc6_)
+                  if(_loc7_)
                   {
-                     §§push(--(§§pop() * 52));
+                     §§push(§§pop() + 1 + 83 + 99);
                   }
                   §§push(Number(§§pop()));
                }
@@ -332,6 +340,17 @@ package com.enfluid.ltp.view.renderers.headers
          }
       }
       
+      private final function validateLinkable() : void
+      {
+         var _loc1_:URLRequest = null;
+         if(CompetitorAnalysisGridColumn(column).linkable)
+         {
+            _loc1_ = new URLRequest(CompetitorAnalysisGridColumn(column).url);
+            navigateToURL(_loc1_,"_blank");
+            new SetUserEvent("User.Event.Majestic.External.Link").execute();
+         }
+      }
+      
       private final function _CompetitorAnalysisHeaderRenderer_ClassFactory1_i() : ClassFactory
       {
          var _loc1_:ClassFactory = new ClassFactory();
@@ -344,69 +363,76 @@ package com.enfluid.ltp.view.renderers.headers
       
       private final function _CompetitorAnalysisHeaderRenderer_Label1_i() : Label
       {
-         var _loc1_:Label = null;
-         _loc1_ = new Label();
-         §§push(_loc1_);
-         §§push(0);
-         if(_loc3_)
-         {
-            §§push(--§§pop() + 51 + 11);
-         }
-         §§pop().left = §§pop();
-         §§push(_loc1_);
-         §§push(0);
-         if(_loc3_)
-         {
-            §§push((§§pop() + 17 + 1 + 111 + 1) * 21);
-         }
-         §§pop().right = §§pop();
+         var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() * 28 + 1 + 1 - 75) * 105);
+            §§push(-(-§§pop() + 64 + 53 + 1));
+         }
+         §§pop().left = §§pop();
+         §§push(_loc1_);
+         §§push(5);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() + 92 + 1 + 1));
+         }
+         §§pop().right = §§pop();
+         §§push(_loc1_);
+         §§push(0);
+         if(_loc3_)
+         {
+            §§push(§§pop() - 63 + 1 + 21 - 1 - 1 - 43);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((--(§§pop() - 31) + 1) * 113);
+            §§push(-(§§pop() + 1 + 1));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 45 + 1 - 1);
+            §§push(§§pop() - 45 + 1 - 1);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 26 - 1 - 1 - 1 - 1) * 46);
+            §§push(-((§§pop() * 117 + 101 - 85) * 77) * 7 + 48);
          }
          §§pop().maxDisplayedLines = §§pop();
          _loc1_.showTruncationTip = true;
          §§push(_loc1_);
          §§push("color");
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 27) * 96));
+            §§push(-(§§pop() * 97) + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(12);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() - 31) + 1) * 98 * 102);
+            §§push(-§§pop() + 1 + 5 - 111 - 34 - 58);
          }
          §§pop().setStyle(§§pop(),§§pop());
-         _loc1_.setStyle("fontWeight","bold");
+         §§push(_loc1_);
+         §§push("lineHeight");
+         §§push(14);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 103 - 1) + 1 + 1 - 1);
+         }
+         §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("verticalAlign","middle");
+         _loc1_.addEventListener("click",this.__labelDisplay_click);
          _loc1_.id = "labelDisplay";
          if(!_loc1_.document)
          {
@@ -417,6 +443,11 @@ package com.enfluid.ltp.view.renderers.headers
          return _loc1_;
       }
       
+      public final function __labelDisplay_click(param1:MouseEvent) : void
+      {
+         this.validateLinkable();
+      }
+      
       private final function _CompetitorAnalysisHeaderRenderer_Rect1_i() : Rect
       {
          var _loc1_:Rect = new Rect();
@@ -424,35 +455,35 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(-1);
          if(_loc3_)
          {
-            §§push((§§pop() - 1 - 84 - 1 + 79) * 40);
+            §§push(--(§§pop() + 1) * 23 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 + 1 - 1);
+            §§push(--(-§§pop() + 1 + 1) - 10 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc2_)
          {
-            §§push((§§pop() + 31) * 64 - 1 - 1);
+            §§push((§§pop() + 1) * 52 - 1 + 1 - 0);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(-1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 56) * 81 * 32 + 88 - 44);
+            §§push(-((§§pop() - 10) * 2));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(---(§§pop() * 25 + 101) - 106 + 110);
+            §§push((§§pop() + 112 - 80) * 23 + 1);
          }
          §§pop().radiusX = §§pop();
          _loc1_.fill = this._CompetitorAnalysisHeaderRenderer_LinearGradient1_c();
@@ -469,7 +500,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(90);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 0 * 46 + 111);
+            §§push(§§pop() - 5 - 13 - 1);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._CompetitorAnalysisHeaderRenderer_GradientEntry1_i(),this._CompetitorAnalysisHeaderRenderer_GradientEntry2_i()];
@@ -483,7 +514,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 80) * 50 + 1) - 102 + 1);
+            §§push(§§pop() + 1 + 69 - 1 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.01;
@@ -499,7 +530,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 24) + 1 + 89 - 37));
+            §§push(-§§pop() * 11 * 32 + 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.07;
@@ -513,30 +544,30 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 1 + 1) * 113 * 49 - 1));
+            §§push(((§§pop() + 1) * 103 + 1) * 20);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 119 - 19 - 1 + 15);
+            §§push(--((§§pop() + 1) * 89 * 94) - 42);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 18) * 6 * 76 * 112 - 60 - 1);
+            §§push((§§pop() * 47 - 1) * 80 * 31 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 22) + 69 - 67) * 65);
+            §§push(-(§§pop() + 91) * 40 - 18 - 24);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._CompetitorAnalysisHeaderRenderer_SolidColor1_i();
@@ -553,7 +584,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(6526128);
          if(_loc2_)
          {
-            §§push(§§pop() + 69 + 46 - 86 - 1);
+            §§push(-(§§pop() - 1 - 95) - 1 - 1 + 1);
          }
          §§pop().color = §§pop();
          this._CompetitorAnalysisHeaderRenderer_SolidColor1 = _loc1_;
@@ -566,38 +597,38 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(7);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(((§§pop() * 20 + 1) * 12 + 80) * 48));
+            §§push((§§pop() - 63 + 46) * 16 * 102);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(7);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 59 - 1);
+            §§push((§§pop() * 24 - 1 + 108) * 11 - 1 + 105);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc2_)
          {
-            §§push(--(-(§§pop() - 1) + 1));
+            §§push((--(§§pop() * 99) - 42) * 91);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 51 - 1);
+            §§push(§§pop() * 28 * 94 + 4);
          }
          §§pop().bottom = §§pop();
          _loc1_.verticalAlign = "middle";
          §§push(_loc1_);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 38 - 84 + 1 + 77);
+            §§push((-§§pop() * 85 + 1) * 96);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._CompetitorAnalysisHeaderRenderer_Group1_i(),this._CompetitorAnalysisHeaderRenderer_Group2_i()];
@@ -613,9 +644,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 30 - 1);
+            §§push(§§pop() * 95 - 99 + 57 + 12 + 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "labelDisplayGroup";
@@ -649,14 +680,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(4);
          if(_loc3_)
          {
-            §§push(((§§pop() - 87) * 54 + 1 - 109 - 38 + 1) * 116);
+            §§push((§§pop() + 15 + 1 + 27 + 1) * 115 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1) * 76);
+            §§push(----§§pop() * 117 - 100 - 111);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
@@ -664,7 +695,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 91 - 1);
+            §§push(-(-§§pop() + 33 - 31 - 97) + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_CompetitorAnalysisHeaderRenderer_HelpButton1";
@@ -684,7 +715,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 42 - 77 + 1 + 87 + 43));
+            §§push((§§pop() * 96 + 1 + 1 + 1 - 1) * 110 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -696,9 +727,33 @@ package com.enfluid.ltp.view.renderers.headers
          },"labelDisplay.textAlign");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1 + 22) - 69) + 1);
+            §§push(((§§pop() + 1 + 28 - 1) * 7 + 104 + 8) * 57);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = !!CompetitorAnalysisGridColumn(column).linkable?"underline":"normal";
+            return _loc1_ == undefined?null:String(_loc1_);
+         },function(param1:String):void
+         {
+            labelDisplay.setStyle("textDecoration",param1);
+         },"labelDisplay.textDecoration");
+         §§push(result);
+         §§push(2);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 84 - 1 - 1 - 1) * 43 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return CompetitorAnalysisGridColumn(column).linkable;
+         },null,"labelDisplay.buttonMode");
+         §§push(result);
+         §§push(3);
+         if(_loc2_)
+         {
+            §§push((§§pop() + 48 - 32) * 115 * 59);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -706,10 +761,10 @@ package com.enfluid.ltp.view.renderers.headers
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_CompetitorAnalysisHeaderRenderer_HelpButton1.helpTitle");
          §§push(result);
-         §§push(2);
-         if(_loc2_)
+         §§push(4);
+         if(_loc3_)
          {
-            §§push(-§§pop() + 1 - 30);
+            §§push(§§pop() + 1 - 1 + 40 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

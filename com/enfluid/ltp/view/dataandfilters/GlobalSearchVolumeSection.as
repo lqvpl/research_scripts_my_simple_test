@@ -3,17 +3,22 @@ package com.enfluid.ltp.view.dataandfilters
    import com.enfluid.ltp.view.containers.CheckBoxCollapsiblePanel;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.effects.Parallel;
+   import mx.binding.BindingManager;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
    import mx.core.IFlexModuleFactory;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.view.filterviews.GlobalSearchesFilterView;
-   import spark.primitives.Rect;
    import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.view.filterviews.GlobalSearchesFilterView;
+   import flash.utils.ByteArray;
    import mx.binding.Binding;
    import assets.TextAssets;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.ProjectDropDownItemRenderer;
+   import spark.primitives.Rect;
    import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
@@ -67,18 +72,19 @@ package com.enfluid.ltp.view.dataandfilters
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() * 63 * 95 + 45);
+            §§push(-(-§§pop() * 34 - 64));
          }
          §§pop().percentWidth = §§pop();
          this.title = "Global Search Volume";
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._GlobalSearchVolumeSection_Array1_c);
+         this.addEventListener("creationComplete",this.___GlobalSearchVolumeSection_CheckBoxCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-§§pop() - 1) * 77 - 1 + 1);
+            §§push(§§pop() * 71 * 22 * 5 - 76);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -108,6 +114,22 @@ package com.enfluid.ltp.view.dataandfilters
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.GoogleSearchVolume.Checked").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.GoogleSearchVolume.Unchecked").execute();
+            }
+         });
+      }
+      
       private final function _GlobalSearchVolumeSection_Array1_c() : Array
       {
          var _loc1_:Array = [this._GlobalSearchVolumeSection_GlobalSearchesFilterView1_c()];
@@ -125,6 +147,11 @@ package com.enfluid.ltp.view.dataandfilters
          return _loc1_;
       }
       
+      public final function ___GlobalSearchVolumeSection_CheckBoxCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _GlobalSearchVolumeSection_bindingsSetup() : Array
       {
          var result:Array = [];
@@ -132,7 +159,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 12 + 73) + 1 - 55 - 1);
+            §§push(§§pop() - 1 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -143,7 +170,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 10 + 2 + 26) - 53 - 79);
+            §§push((-(§§pop() - 76) - 1 + 20 - 48 + 1) * 65);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -154,7 +181,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 29) * 103 * 97) + 12);
+            §§push(-(§§pop() + 1) + 24 - 1 + 109);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -162,9 +189,9 @@ package com.enfluid.ltp.view.dataandfilters
          },null,"this.expanded");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-(§§pop() + 1) - 1 + 1 + 1) * 69));
+            §§push((§§pop() * 32 - 1) * 70 + 12 - 22 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -177,35 +204,35 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 1);
+            §§push((§§pop() - 1 + 48) * 27 + 1 - 89 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 53 + 91 + 99 + 1);
+            §§push((§§pop() + 1) * 55 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--§§pop() * 2 + 43 + 112);
+            §§push(-(§§pop() * 68 * 115 - 79) + 1 - 1 - 72);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 71 + 1 - 1) + 1 - 102);
+            §§push(§§pop() * 40 * 89 * 32 * 95);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 1 + 1 + 1) * 46 + 1);
+            §§push(((§§pop() - 1) * 39 - 1) * 113 - 99);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

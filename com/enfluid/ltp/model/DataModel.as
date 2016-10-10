@@ -18,6 +18,14 @@ package com.enfluid.ltp.model
    import com.enfluid.ltp.model.vo.RTDomain;
    import com.enfluid.ltp.controller.keywordresearch.GenerateKeywordsCommand;
    import com.enfluid.ltp.controller.rankchecker.CheckAllRanksCommand;
+   import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchMissingBingTitleCompetitionCommand;
+   import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchMissingGoogleTitleCompetitionCommand;
+   import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchMissingGlobalSearchesCommand;
+   import com.enfluid.ltp.controller.keywordresearch.domainavailability.FetchMissingDomainsCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.FetchMissingAvgKCCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.FetchMissingAmazonKCCommand;
+   import com.enfluid.ltp.view.components.Spinner;
+   import com.enfluid.ltp.model.settings.TipSettings;
    import mx.events.PropertyChangeEvent;
    
    public final class DataModel extends PhotonModel
@@ -26,15 +34,17 @@ package com.enfluid.ltp.model
       private static var _staticBindingEventDispatcher:EventDispatcher = new EventDispatcher();
        
       
+      private var _1932616190isFirstTimeUser:Boolean = false;
+      
       private var _308889716proxies:ArrayCollection;
       
       private var _1210095332mostRecentGoogleSearchResult:String = "";
       
       private var _1134868115mostRecentFailedSEOMozREsult:String = "";
       
-      private var _1290599891autoLoginGoogle:Boolean = false;
+      private var _1321209009mostRecentFailedUniregistryResult:String = "";
       
-      private var _946442764avgDelayBetweenGoogleRequests:Number = 2;
+      private var _1290599891autoLoginGoogle:Boolean = false;
       
       private var _998696838projects:IList;
       
@@ -138,9 +148,31 @@ package com.enfluid.ltp.model
       
       private var _2055529203isFetchingMissingGlobalSearches:Boolean = false;
       
+      private var _639093450isFetchingMissingAvgKC:Boolean = false;
+      
+      private var _832505168isFetchingMissingAmazonKC:Boolean = false;
+      
       private var _403636995isCheckingRanks:Boolean = false;
       
       private var _3240753isDK:Boolean = false;
+      
+      private var _1071566920fetchMissingBingTitleCompetitionCommand:FetchMissingBingTitleCompetitionCommand;
+      
+      private var _1805211807fetchMissingGoogleTitleCompetitionCommand:FetchMissingGoogleTitleCompetitionCommand;
+      
+      private var _387226106fetchMissingGlobalSearchesCommand:FetchMissingGlobalSearchesCommand;
+      
+      private var _1518597256fetchMissingDomainsCommand:FetchMissingDomainsCommand;
+      
+      private var _1568146515fetchMissingAvgKCCommand:FetchMissingAvgKCCommand;
+      
+      private var _177651101fetchMissingAmazonKCCommand:FetchMissingAmazonKCCommand;
+      
+      private var _463799507competitorSpinner:Spinner;
+      
+      private var _519170594tipSettings:TipSettings;
+      
+      private var _387229920isFetchingBatchMissingMajesticKC:Boolean = false;
       
       public function DataModel()
       {
@@ -152,6 +184,7 @@ package com.enfluid.ltp.model
          this._720643868rankCheckItems = new ArrayCollection();
          this._823114141rankDomains = new ArrayCollection();
          this._323866915rankTrackerDomains = new ArrayCollection();
+         this._519170594tipSettings = new TipSettings();
          super();
       }
       
@@ -223,6 +256,25 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
+      public function get isFetchingMissingAvgKC() : Boolean
+      {
+         return this._639093450isFetchingMissingAvgKC;
+      }
+      
+      public function set isFetchingMissingAvgKC(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._639093450isFetchingMissingAvgKC;
+         if(_loc2_ !== param1)
+         {
+            this._639093450isFetchingMissingAvgKC = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFetchingMissingAvgKC",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get gridDataChanged() : Boolean
       {
          return this._933663612gridDataChanged;
@@ -237,6 +289,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"gridDataChanged",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get fetchMissingGoogleTitleCompetitionCommand() : FetchMissingGoogleTitleCompetitionCommand
+      {
+         return this._1805211807fetchMissingGoogleTitleCompetitionCommand;
+      }
+      
+      public function set fetchMissingGoogleTitleCompetitionCommand(param1:FetchMissingGoogleTitleCompetitionCommand) : void
+      {
+         var _loc2_:Object = this._1805211807fetchMissingGoogleTitleCompetitionCommand;
+         if(_loc2_ !== param1)
+         {
+            this._1805211807fetchMissingGoogleTitleCompetitionCommand = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"fetchMissingGoogleTitleCompetitionCommand",_loc2_,param1));
             }
          }
       }
@@ -280,6 +351,25 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
+      public function get tipSettings() : TipSettings
+      {
+         return this._519170594tipSettings;
+      }
+      
+      public function set tipSettings(param1:TipSettings) : void
+      {
+         var _loc2_:Object = this._519170594tipSettings;
+         if(_loc2_ !== param1)
+         {
+            this._519170594tipSettings = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"tipSettings",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get skipCBank() : Boolean
       {
          return this._2067288832skipCBank;
@@ -294,6 +384,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"skipCBank",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get fetchMissingGlobalSearchesCommand() : FetchMissingGlobalSearchesCommand
+      {
+         return this._387226106fetchMissingGlobalSearchesCommand;
+      }
+      
+      public function set fetchMissingGlobalSearchesCommand(param1:FetchMissingGlobalSearchesCommand) : void
+      {
+         var _loc2_:Object = this._387226106fetchMissingGlobalSearchesCommand;
+         if(_loc2_ !== param1)
+         {
+            this._387226106fetchMissingGlobalSearchesCommand = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"fetchMissingGlobalSearchesCommand",_loc2_,param1));
             }
          }
       }
@@ -451,6 +560,25 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
+      public function get competitorSpinner() : Spinner
+      {
+         return this._463799507competitorSpinner;
+      }
+      
+      public function set competitorSpinner(param1:Spinner) : void
+      {
+         var _loc2_:Object = this._463799507competitorSpinner;
+         if(_loc2_ !== param1)
+         {
+            this._463799507competitorSpinner = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"competitorSpinner",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get favorites() : ArrayCollection
       {
          return this._1785238953favorites;
@@ -465,6 +593,44 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"favorites",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get fetchMissingAmazonKCCommand() : FetchMissingAmazonKCCommand
+      {
+         return this._177651101fetchMissingAmazonKCCommand;
+      }
+      
+      public function set fetchMissingAmazonKCCommand(param1:FetchMissingAmazonKCCommand) : void
+      {
+         var _loc2_:Object = this._177651101fetchMissingAmazonKCCommand;
+         if(_loc2_ !== param1)
+         {
+            this._177651101fetchMissingAmazonKCCommand = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"fetchMissingAmazonKCCommand",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get isFirstTimeUser() : Boolean
+      {
+         return this._1932616190isFirstTimeUser;
+      }
+      
+      public function set isFirstTimeUser(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1932616190isFirstTimeUser;
+         if(_loc2_ !== param1)
+         {
+            this._1932616190isFirstTimeUser = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFirstTimeUser",_loc2_,param1));
             }
          }
       }
@@ -603,6 +769,25 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
+      public function get fetchMissingDomainsCommand() : FetchMissingDomainsCommand
+      {
+         return this._1518597256fetchMissingDomainsCommand;
+      }
+      
+      public function set fetchMissingDomainsCommand(param1:FetchMissingDomainsCommand) : void
+      {
+         var _loc2_:Object = this._1518597256fetchMissingDomainsCommand;
+         if(_loc2_ !== param1)
+         {
+            this._1518597256fetchMissingDomainsCommand = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"fetchMissingDomainsCommand",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get selectedCountryRankTracker() : CountryVO
       {
          return this._585003535selectedCountryRankTracker;
@@ -674,6 +859,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"autoLoginGoogle",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get isFetchingBatchMissingMajesticKC() : Boolean
+      {
+         return this._387229920isFetchingBatchMissingMajesticKC;
+      }
+      
+      public function set isFetchingBatchMissingMajesticKC(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._387229920isFetchingBatchMissingMajesticKC;
+         if(_loc2_ !== param1)
+         {
+            this._387229920isFetchingBatchMissingMajesticKC = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFetchingBatchMissingMajesticKC",_loc2_,param1));
             }
          }
       }
@@ -769,6 +973,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"projectTitle",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get mostRecentFailedUniregistryResult() : String
+      {
+         return this._1321209009mostRecentFailedUniregistryResult;
+      }
+      
+      public function set mostRecentFailedUniregistryResult(param1:String) : void
+      {
+         var _loc2_:Object = this._1321209009mostRecentFailedUniregistryResult;
+         if(_loc2_ !== param1)
+         {
+            this._1321209009mostRecentFailedUniregistryResult = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"mostRecentFailedUniregistryResult",_loc2_,param1));
             }
          }
       }
@@ -888,20 +1111,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get avgDelayBetweenGoogleRequests() : Number
+      public function get fetchMissingAvgKCCommand() : FetchMissingAvgKCCommand
       {
-         return this._946442764avgDelayBetweenGoogleRequests;
+         return this._1568146515fetchMissingAvgKCCommand;
       }
       
-      public function set avgDelayBetweenGoogleRequests(param1:Number) : void
+      public function set fetchMissingAvgKCCommand(param1:FetchMissingAvgKCCommand) : void
       {
-         var _loc2_:Object = this._946442764avgDelayBetweenGoogleRequests;
+         var _loc2_:Object = this._1568146515fetchMissingAvgKCCommand;
          if(_loc2_ !== param1)
          {
-            this._946442764avgDelayBetweenGoogleRequests = param1;
+            this._1568146515fetchMissingAvgKCCommand = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"avgDelayBetweenGoogleRequests",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"fetchMissingAvgKCCommand",_loc2_,param1));
             }
          }
       }
@@ -1078,25 +1301,6 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get logText() : String
-      {
-         return this._341711505logText;
-      }
-      
-      public function set logText(param1:String) : void
-      {
-         var _loc2_:Object = this._341711505logText;
-         if(_loc2_ !== param1)
-         {
-            this._341711505logText = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"logText",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get defaultConfiguration() : DefaultConfigVO
       {
          return this._2105196597defaultConfiguration;
@@ -1116,6 +1320,25 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
+      public function get logText() : String
+      {
+         return this._341711505logText;
+      }
+      
+      public function set logText(param1:String) : void
+      {
+         var _loc2_:Object = this._341711505logText;
+         if(_loc2_ !== param1)
+         {
+            this._341711505logText = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"logText",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get isSharifyRegistered() : Boolean
       {
          return this._1604442894isSharifyRegistered;
@@ -1130,6 +1353,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isSharifyRegistered",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get fetchMissingBingTitleCompetitionCommand() : FetchMissingBingTitleCompetitionCommand
+      {
+         return this._1071566920fetchMissingBingTitleCompetitionCommand;
+      }
+      
+      public function set fetchMissingBingTitleCompetitionCommand(param1:FetchMissingBingTitleCompetitionCommand) : void
+      {
+         var _loc2_:Object = this._1071566920fetchMissingBingTitleCompetitionCommand;
+         if(_loc2_ !== param1)
+         {
+            this._1071566920fetchMissingBingTitleCompetitionCommand = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"fetchMissingBingTitleCompetitionCommand",_loc2_,param1));
             }
          }
       }
@@ -1206,6 +1448,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFetchingMissingDomains",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get isFetchingMissingAmazonKC() : Boolean
+      {
+         return this._832505168isFetchingMissingAmazonKC;
+      }
+      
+      public function set isFetchingMissingAmazonKC(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._832505168isFetchingMissingAmazonKC;
+         if(_loc2_ !== param1)
+         {
+            this._832505168isFetchingMissingAmazonKC = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFetchingMissingAmazonKC",_loc2_,param1));
             }
          }
       }

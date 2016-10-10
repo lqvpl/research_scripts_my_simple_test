@@ -1,13 +1,11 @@
 package hr.binaria.asx3m.converters.basic
 {
    import hr.binaria.asx3m.converters.ISingleValueConverter;
-   import mx.graphics.GradientEntry;
+   import com.hurlant.util.Memory;
+   import spark.effects.Fade;
    import mx.binding.BindingManager;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import hr.binaria.asx3m.converters.IUnmarshallingContext;
-   import flash.utils.Dictionary;
-   import spark.components.Button;
-   import spark.primitives.Rect;
+   import flash.net.URLRequest;
+   import com.enfluid.ltp.model.constants.Constants;
    
    public class AbstractSingleValueConverter implements ISingleValueConverter
    {

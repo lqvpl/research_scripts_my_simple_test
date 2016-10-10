@@ -13,6 +13,9 @@ package com.enfluid.ltp.view
    import mx.binding.BindingManager;
    import mx.effects.Sequence;
    import mx.effects.Parallel;
+   import com.enfluid.ltp.view.containers.CollapsiblePanel;
+   import mx.core.DeferredInstanceFromFunction;
+   import spark.components.Image;
    import com.enfluid.ltp.view.components.Link;
    import flash.events.MouseEvent;
    import spark.components.Label;
@@ -22,7 +25,6 @@ package com.enfluid.ltp.view
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import mx.core.DeferredInstanceFromFunction;
    import flash.utils.getDefinitionByName;
    import mx.states.State;
    import mx.states.AddItems;
@@ -97,7 +99,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc4_)
          {
-            §§push(§§pop() - 1 + 1 - 36 + 13 + 1);
+            §§push((§§pop() * 64 + 33 - 1 - 1 + 1 - 106) * 82);
          }
          §§pop().percentWidth = §§pop();
          this.horizontalAlign = "center";
@@ -105,14 +107,14 @@ package com.enfluid.ltp.view
          §§push(3);
          if(_loc4_)
          {
-            §§push((§§pop() * 0 + 95 + 31 + 90) * 17 - 50);
+            §§push((§§pop() - 1 - 83 - 62) * 108 * 37 + 1 - 1);
          }
          §§pop().paddingBottom = §§pop();
          §§push(this);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) - 1 + 1 - 88);
+            §§push(-§§pop() - 1 - 112 - 1);
          }
          §§pop().paddingTop = §§pop();
          this.transitions = [this._SetDefaultSection_Transition1_i()];
@@ -141,7 +143,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 103));
+            §§push(--(§§pop() * 8 * 52) - 33 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -187,7 +189,7 @@ package com.enfluid.ltp.view
          §§push(1000);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 39 - 1 - 1 + 15 + 102 + 2));
+            §§push(--§§pop() * 60 * 84 * 93);
          }
          §§pop().duration = §§pop();
          _loc1_.children = [this._SetDefaultSection_Parallel1_c(),this._SetDefaultSection_RemoveAction1_i()];
@@ -207,9 +209,9 @@ package com.enfluid.ltp.view
          _loc1_.applyChangesPostLayout = true;
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 118 + 88 + 1);
+            §§push((§§pop() + 1) * 97 - 114 + 1);
          }
          §§pop().xFrom = §§pop();
          this._SetDefaultSection_Move1 = _loc1_;
@@ -231,9 +233,9 @@ package com.enfluid.ltp.view
          _loc1_.applyChangesPostLayout = true;
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 80) * 113 * 100);
+            §§push(§§pop() - 1 - 1 + 26 + 5 - 63);
          }
          §§pop().xTo = §§pop();
          this._SetDefaultSection_Move2 = _loc1_;
@@ -254,19 +256,26 @@ package com.enfluid.ltp.view
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1) - 1 + 1) + 104 - 1);
+            §§push(-(§§pop() - 40 - 71 - 1 + 1) - 2 - 117);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 29 - 1) * 11));
+            §§push(§§pop() * 36 - 1 - 7);
          }
          §§pop().height = §§pop();
          _loc1_.horizontalAlign = "center";
+         §§push(_loc1_);
+         §§push(8);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() - 74 - 73 + 1 - 1) * 109);
+         }
+         §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "middle";
          _loc1_.mxmlContent = [this._SetDefaultSection_Link1_c()];
          _loc1_.id = "normalGroup";
@@ -282,7 +291,7 @@ package com.enfluid.ltp.view
       private final function _SetDefaultSection_Link1_c() : Link
       {
          var _loc1_:Link = new Link();
-         _loc1_.text = "Use these settings on new project";
+         _loc1_.text = "Use these settings on new projects";
          _loc1_.addEventListener("click",this.___SetDefaultSection_Link1_click);
          if(!_loc1_.document)
          {
@@ -303,17 +312,24 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(-§§pop() - 21 - 57 + 73 + 1);
+            §§push(-(-(§§pop() - 1 - 1) + 111 - 44));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(15);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 1 + 1) - 77 + 1);
+            §§push(-(§§pop() * 9 * 19 * 31 * 26 * 55));
          }
          §§pop().height = §§pop();
          _loc1_.horizontalAlign = "right";
+         §§push(_loc1_);
+         §§push(8);
+         if(_loc3_)
+         {
+            §§push((§§pop() - 1 + 1 + 77) * 6);
+         }
+         §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "middle";
          _loc1_.mxmlContent = [this._SetDefaultSection_Label1_c(),this._SetDefaultSection_Button1_c(),this._SetDefaultSection_Button2_c()];
          _loc1_.id = "confirmGroup";
@@ -341,14 +357,14 @@ package com.enfluid.ltp.view
       private final function _SetDefaultSection_Button1_c() : Button
       {
          var _loc1_:Button = new Button();
-         _loc1_.label = "Yes, Set Default";
          §§push(_loc1_);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() - 21 - 1 + 67 - 31 + 64));
+            §§push(-(-§§pop() + 86) - 1 - 107);
          }
          §§pop().height = §§pop();
+         _loc1_.label = "Yes, Set Default";
          _loc1_.setStyle("skinClass",GeneralFlatButtonSkin);
          _loc1_.addEventListener("click",this.___SetDefaultSection_Button1_click);
          if(!_loc1_.document)
@@ -367,14 +383,14 @@ package com.enfluid.ltp.view
       private final function _SetDefaultSection_Button2_c() : Button
       {
          var _loc1_:Button = new Button();
-         _loc1_.label = "Cancel";
          §§push(_loc1_);
          §§push(15);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 45 - 1 + 1) + 51) * 24);
+            §§push(-(§§pop() - 1 - 1 - 1) - 26 + 75 + 103);
          }
          §§pop().height = §§pop();
+         _loc1_.label = "Cancel";
          _loc1_.setStyle("skinClass",GeneralFlatButtonSkin);
          _loc1_.addEventListener("click",this.___SetDefaultSection_Button2_click);
          if(!_loc1_.document)
@@ -396,7 +412,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 113 - 1 + 1) * 47 + 1) - 1);
+            §§push((-((§§pop() * 53 - 111) * 8 - 1) + 1) * 73);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -407,7 +423,7 @@ package com.enfluid.ltp.view
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() - 43 + 1 - 23);
+            §§push((§§pop() * 55 + 1) * 2 - 1 - 26 + 49);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -416,44 +432,44 @@ package com.enfluid.ltp.view
          },null,"_SetDefaultSection_Transition1.toState");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((--(§§pop() - 21) * 76 + 1) * 59 + 45);
+            §§push(-(-§§pop() + 1));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_SetDefaultSection_Move1.target","normalGroup");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 29 * 115 - 60);
+            §§push((-(§§pop() * 103 - 1 + 1 - 1) - 68) * 43);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_SetDefaultSection_Move1.xTo","width");
          §§push(result);
          §§push(4);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 82 - 1) + 2) + 20 - 89);
+            §§push(§§pop() * 44 + 1 + 104 + 6 - 99 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_SetDefaultSection_AddAction1.target","confirmGroup");
          §§push(result);
          §§push(5);
          if(_loc3_)
          {
-            §§push(§§pop() * 79 + 1 + 86 - 46 + 1 + 69);
+            §§push(-(---§§pop() - 24 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_SetDefaultSection_Move2.target","confirmGroup");
          §§push(result);
          §§push(6);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 34 + 88) * 18 * 108));
+            §§push((§§pop() - 1 + 1) * 112);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_SetDefaultSection_Move2.xFrom","width");
          §§push(result);
          §§push(7);
          if(_loc2_)
          {
-            §§push(--(§§pop() * 111 - 1));
+            §§push(-(§§pop() - 54 + 1 - 88 + 113 + 25) + 50);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_SetDefaultSection_RemoveAction1.target","confirmGroup");
          return result;

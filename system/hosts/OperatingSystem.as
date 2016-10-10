@@ -1,5 +1,7 @@
 package system.hosts
 {
+   import mx.states.Transition;
+   import mx.binding.BindingManager;
    import system.Version;
    
    public final class OperatingSystem

@@ -1,9 +1,5 @@
 package hr.binaria.asx3m.core
 {
-   import mx.effects.Sequence;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
-   
    public final class ConversionException extends Error
    {
        

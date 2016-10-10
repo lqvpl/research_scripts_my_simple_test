@@ -1,9 +1,13 @@
 package com.enfluid.ltp.view.components
 {
    import spark.components.gridClasses.GridColumn;
+   import spark.components.Label;
    import spark.components.Group;
    import spark.components.Callout;
+   import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchMissingCommand;
    import mx.events.PropertyChangeEvent;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
    
    public final class FilterGridColumn extends GridColumn
    {
@@ -15,6 +19,8 @@ package com.enfluid.ltp.view.components
       
       private var _525799023showProgressSpinner:Boolean = false;
       
+      private var _812584720showCancelIcon:Boolean = false;
+      
       public var headerContent:Group;
       
       public var missingDataCallout:Callout;
@@ -24,6 +30,8 @@ package com.enfluid.ltp.view.components
       private var _1286914967helpTitle:String;
       
       private var _2033484280helpContent:String;
+      
+      public var missingAdditionalDataCommand:FetchMissingCommand;
       
       public function FilterGridColumn(param1:String = null)
       {
@@ -83,6 +91,25 @@ package com.enfluid.ltp.view.components
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showProgressSpinner",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showCancelIcon() : Boolean
+      {
+         return this._812584720showCancelIcon;
+      }
+      
+      public function set showCancelIcon(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._812584720showCancelIcon;
+         if(_loc2_ !== param1)
+         {
+            this._812584720showCancelIcon = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showCancelIcon",_loc2_,param1));
             }
          }
       }

@@ -2,12 +2,19 @@ package com.enfluid.ltp.util
 {
    import mx.controls.ProgressBar;
    import com.enfluid.ltp.model.ViewModel;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import mx.events.FlexEvent;
-   import spark.primitives.Rect;
+   import flash.events.MouseEvent;
+   import mx.graphics.SolidColor;
+   import com.photon.controller.PhotonCommand;
+   import mx.effects.Parallel;
    import mx.binding.BindingManager;
-   import spark.components.Group;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import spark.components.supportClasses.InteractionStateDetector;
+   import flash.events.Event;
+   import com.hurlant.crypto.prng.ARC4;
+   import com.hurlant.crypto.prng.IPRNG;
+   import flash.utils.ByteArray;
    
    public final class ProgressBarUtil
    {
@@ -66,7 +73,7 @@ package com.enfluid.ltp.util
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 54 + 82) * 49 - 1 - 1) - 1);
+            §§push(--§§pop() - 16 - 1 + 49 + 50);
          }
          §§pop().setCurrentCount(§§pop() + §§pop(),param1);
       }
@@ -77,14 +84,14 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) + 68 - 1) + 99);
+            §§push(-(-(§§pop() + 18) * 114 - 107 + 1));
          }
          §§pop().currentStep = §§pop();
          §§push();
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--§§pop() - 70 + 1 + 1 + 87 - 36);
+            §§push((-§§pop() - 100) * 90);
          }
          §§pop()._currentCount = §§pop();
          maxSteps = param1;
@@ -92,12 +99,12 @@ package com.enfluid.ltp.util
       
       public static function startProgressBarStep(param1:String, param2:int) : void
       {
-         currentStep = currentStep + 1;
+         currentStep = _loc4_;
          §§push();
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push((§§pop() + 1 + 21 + 48 - 22) * 34 - 47 - 1);
+            §§push(-((§§pop() - 1 - 1) * 110 - 1 + 1 + 46));
          }
          §§pop()._currentCount = §§pop();
          maxCount = param2;
@@ -132,7 +139,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(§§pop() + 1 + 64 + 59 - 57) + 46 + 92);
+            §§push(-(§§pop() * 66 + 57 - 1 + 105 - 52) * 53);
          }
          §§pop()._currentCount = §§pop();
          _stepDescription = param1;

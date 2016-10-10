@@ -2,9 +2,12 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import flash.events.MouseEvent;
+   import com.photon.controller.PhotonCommandCompletionEvent;
+   import com.enfluid.ltp.controller.keywordresearch.domainavailability.uniregistry.CheckDomainsOnUniregistryCommand;
    import com.enfluid.ltp.model.vo.KeywordVO;
-   import system.data.lists.ArrayList;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
    
    public final class ToggleFavoriteCommand extends Command implements IPhotonCommand
    {
@@ -28,10 +31,12 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          if(this.keyword.isFavorite)
          {
             model.allFavoriteKeywords.addItemInPlace(this.keyword);
+            new SetUserEvent("UserEvent.Keyword.AddedToFavorites",{"keyword":this.keyword.keyword}).execute();
          }
          else
          {
             model.allFavoriteKeywords.removeItem(this.keyword);
+            new SetUserEvent("UserEvent.Keyword.RemovedFromFavorites",{"keyword":this.keyword.keyword}).execute();
          }
          this.keyword.save();
       }

@@ -3,13 +3,17 @@ package com.enfluid.ltp.view
    import spark.components.HGroup;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.view.components.Link;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
    import mx.binding.BindingManager;
    import flash.events.MouseEvent;
+   import flash.utils.ByteArray;
    import mx.controls.Spacer;
+   import com.hurlant.crypto.prng.Random;
+   import com.hurlant.util.Memory;
    import flash.net.navigateToURL;
    import flash.net.URLRequest;
    import mx.binding.Binding;
@@ -74,25 +78,25 @@ package com.enfluid.ltp.view
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(§§pop() - 1 + 2) * 42 - 1 + 1);
+            §§push((§§pop() + 6) * 9 * 0 + 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(20);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(--§§pop() + 1) - 71 - 1);
+            §§push((§§pop() - 1 - 63 - 87 + 33 + 1) * 114);
          }
          §§pop().height = §§pop();
          this.verticalAlign = "middle";
          this.mxmlContent = [this._Footer_Link1_i(),this._Footer_Link2_i(),this._Footer_Spacer1_c(),this._Footer_Link3_c()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 + 11 - 1);
+            §§push(-§§pop() + 116 + 1 + 91);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -130,7 +134,7 @@ package com.enfluid.ltp.view
          §§push(16693504);
          if(_loc2_)
          {
-            §§push(--§§pop() + 1 + 1);
+            §§push(-§§pop() - 19 + 114);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -138,7 +142,7 @@ package com.enfluid.ltp.view
          §§push(15);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 1 + 93 + 94 - 1 + 6));
+            §§push(§§pop() + 28 + 1 - 1 + 21);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -147,7 +151,7 @@ package com.enfluid.ltp.view
          §§push(3);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 81 - 1 - 13 - 1);
+            §§push(-(--§§pop() * 27) * 96 - 1 + 116);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.addEventListener("click",this.___Footer_Link1_click);
@@ -173,25 +177,25 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(16693504);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--((§§pop() - 104) * 44 + 49));
+            §§push(-(-§§pop() + 69) * 21);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 100 - 1) * 15);
+            §§push(§§pop() * 67 * 1 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingTop");
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 24) * 95 + 1 - 1 + 85);
+            §§push(((§§pop() - 16) * 19 - 35 - 65 - 1) * 38 * 77);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.addEventListener("click",this.___Footer_Link2_click);
@@ -217,7 +221,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 19 - 1 - 1 - 82 + 1 + 16);
+            §§push(-§§pop() * 116 - 2 + 1 + 43 + 13 - 1);
          }
          §§pop().percentWidth = §§pop();
          if(!_loc1_.document)
@@ -234,17 +238,17 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(16693504);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1 - 77 - 68) * 15 - 1 - 1);
+            §§push(-(-§§pop() - 76 + 100));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 99 * 103 * 42);
+            §§push(-(-(§§pop() - 1 - 8) + 112));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -252,7 +256,7 @@ package com.enfluid.ltp.view
          §§push(3);
          if(_loc2_)
          {
-            §§push(§§pop() + 64 - 1 + 88 + 1 - 1);
+            §§push((§§pop() + 1 + 1) * 102 + 1 - 20 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.addEventListener("click",this.___Footer_Link3_click);
@@ -275,7 +279,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 108 - 8));
+            §§push(-(§§pop() - 113) + 73);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -285,7 +289,7 @@ package com.enfluid.ltp.view
          §§push(1);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 72 - 1) - 1) * 60 + 1 + 44);
+            §§push((§§pop() + 1 - 78) * 70);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -294,16 +298,16 @@ package com.enfluid.ltp.view
             §§push(1);
             if(_loc2_)
             {
-               §§push(-((--(§§pop() + 1) - 1) * 83 - 14));
+               §§push(-§§pop() - 8 - 1 - 104);
             }
             var _loc1_:* = §§pop() + (§§pop() == §§pop()?"":"s") + " Remaining.  Register Now!";
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_Footer_Link1.text");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 45 + 98) * 32 + 25) * 96 * 47);
+            §§push(-(§§pop() * 116) - 6);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -311,9 +315,9 @@ package com.enfluid.ltp.view
          },null,"_Footer_Link1.visible");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 115 + 1) + 1);
+            §§push(-§§pop() + 1 + 1 - 1 + 1 + 70 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -321,9 +325,9 @@ package com.enfluid.ltp.view
          },null,"_Footer_Link2.includeInLayout");
          §§push(result);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 23 - 85) - 1);
+            §§push((-(§§pop() * 75) - 1 + 95) * 34 * 116);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

@@ -42,7 +42,7 @@ package
          param5[27] = new PropertyWatcher("fadeInRankDrawer",{"propertyChange":true},[param4[22]],param2);
          param5[0] = new StaticPropertyWatcher("instance",null,[param4[0],param4[1],param4[2],param4[3],param4[4],param4[5],param4[6],param4[7],param4[8]],null);
          param5[1] = new PropertyWatcher("showNotificationMessage",{"propertyChange":true},[param4[0]],null);
-         param5[4] = new PropertyWatcher("showProxiesPopup",{"propertyChange":true},[param4[3]],null);
+         param5[4] = new PropertyWatcher("showMigrationPopup",{"propertyChange":true},[param4[3]],null);
          param5[2] = new PropertyWatcher("showSEOMozPopup",{"propertyChange":true},[param4[1]],null);
          param5[5] = new PropertyWatcher("showKeywordPlannerLoginPopup",{"propertyChange":true},[param4[4]],null);
          param5[6] = new PropertyWatcher("showConvertingDBPopup",{"propertyChange":true},[param4[5]],null);

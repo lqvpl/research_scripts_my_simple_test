@@ -1,16 +1,13 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
    import mx.collections.ArrayCollection;
    import mx.collections.ArrayList;
    import com.enfluid.ltp.model.constants.SearchEngines;
-   import spark.components.Image;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteProjectCommand;
    import com.enfluid.ltp.model.DataModel;
-   import mx.graphics.RadialGradient;
    import mx.events.PropertyChangeEvent;
-   import com.hurlant.math.BigInteger;
    
    [BelongsTo("domain",className="RTDomain")]
    [HasMany("ranks",property="keyword",className="RTRank")]
@@ -53,19 +50,19 @@ package com.enfluid.ltp.model.vo
          §§push(1000);
          if(_loc4_)
          {
-            §§push(-((§§pop() + 1) * 30 - 49 + 105) + 74);
+            §§push(-(§§pop() - 1 + 1) + 1 - 82 - 1);
          }
          §§push(§§pop().round(§§pop() / §§pop()));
          §§push(60);
          if(_loc5_)
          {
-            §§push((§§pop() + 115 - 93 + 109 + 57 + 1 - 36) * 8);
+            §§push(-((-§§pop() - 1) * 7) * 69 + 1);
          }
          §§push(§§pop() * §§pop());
          §§push(24);
          if(_loc4_)
          {
-            §§push(-§§pop() - 60 - 1 - 93 + 50 - 86);
+            §§push(§§pop() - 39 + 1 - 1 + 94 - 52);
          }
          var _loc3_:int = §§pop() - §§pop() * §§pop() * DataModel.instance.preferences.rankTrackerDaysToLoad;
          return new ArrayList(_loc2_.findBySQLWithoutParams("SELECT * FROM RTRanks WHERE keyword_id = " + this.id + " AND dateTime > " + _loc3_ + " AND searchengine = \'" + param1 + "\';"));

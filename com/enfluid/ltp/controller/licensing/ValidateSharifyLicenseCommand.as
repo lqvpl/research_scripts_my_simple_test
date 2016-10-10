@@ -2,28 +2,38 @@ package com.enfluid.ltp.controller.licensing
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.dataandfilters.target;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import flash.net.SharedObject;
    import it.sharify.ISharify;
    import it.sharify.SharifyFactory;
-   import mx.states.Transition;
+   import spark.components.CheckBox;
+   import mx.binding.BindingManager;
    import flash.events.Event;
    import it.sharify.SharifyStatus;
    import mx.controls.Alert;
    import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
-   import com.enfluid.ltp.model.constants.Values;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.BindingManager;
-   import flash.utils.setTimeout;
+   import spark.components.BorderContainer;
+   import mx.graphics.SolidColorStroke;
+   import com.enfluid.ltp.view.GenerateKeywordsCallout;
    import it.sharify.event.SharifyResponseEvent;
-   import spark.components.TextInput;
-   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
+   import spark.components.gridClasses.GridLayer;
    import com.enfluid.ltp.util.Logger;
-   import spark.components.Button;
    import com.enfluid.ltp.model.constants.Constants;
+   import flash.utils.setTimeout;
    import com.enfluid.ltp.util.KeywordUtil;
+   
+   use namespace mx_internal;
    
    public final class ValidateSharifyLicenseCommand extends Command implements IPhotonCommand
    {
        
+      
+      private var userDataSO:SharedObject;
       
       private var email:String;
       
@@ -36,6 +46,7 @@ package com.enfluid.ltp.controller.licensing
       public function ValidateSharifyLicenseCommand(param1:String = null, param2:String = null)
       {
          super();
+         this.userDataSO = SharedObject.getLocal("userDataCalq");
          this.email = KeywordUtil.stripSpaces(param1);
          this.licenseKey = KeywordUtil.stripSpaces(param2);
       }
@@ -52,10 +63,10 @@ package com.enfluid.ltp.controller.licensing
          §§push(0);
          if(_loc1_)
          {
-            §§push(--((§§pop() + 1 - 103) * 0 - 1));
+            §§push(--(-(§§pop() - 1) + 94) - 68);
          }
          §§pop().trialDaysRemaining = §§pop();
-         viewModel.showLicensePopup = false;
+         viewModel.showLicensePopup = true;
          model.allowUserIn = true;
          model.licenseStatus = SharifyStatus.STATUS_SERVER_UNAVAILABLE;
          Alert.okLabel = "OK";
@@ -63,14 +74,14 @@ package com.enfluid.ltp.controller.licensing
          §§push(130);
          if(_loc2_)
          {
-            §§push(-(-§§pop() * 34 + 39 - 32));
+            §§push(-((§§pop() + 80) * 97 * 118 + 1 + 44 + 1));
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() - 52 + 79 + 11);
+            §§push(-((§§pop() - 37 + 106) * 67 * 32));
          }
          §§pop().buttonHeight = §§pop();
          Alert.show("The Long Tail Pro license server could not be reached.  Please check your interet connection and try again.","Server Unavailable");
@@ -100,85 +111,88 @@ package com.enfluid.ltp.controller.licensing
          }
          else
          {
-            model.isPlatinum = true;
+            model.isPlatinum = false;
          }
       }
       
       private final function onSharifyResponse(param1:SharifyResponseEvent) : void
       {
+         var _loc2_:Array = null;
+         var _loc3_:String = null;
+         var _loc4_:String = null;
          this.sa.removeEventListener(SharifyResponseEvent.SHARIFY_RESPONSE,this.onSharifyResponse);
          model.isTrial = true;
          model.licenseStatus = param1.status;
-         if(SharifyStatus.STATUS_REGISTERED === _loc2_)
+         if(SharifyStatus.STATUS_REGISTERED === _loc5_)
          {
-            §§push(1);
-            if(_loc3_)
+            §§push(0);
+            if(_loc6_)
             {
-               §§push(((§§pop() + 114 - 1 + 23 - 108) * 103 - 1) * 26);
+               §§push((§§pop() - 1 + 104 - 65 - 109 - 1) * 52 + 1);
             }
          }
-         else if(SharifyStatus.STATUS_REGISTRATION_SUCCESS === _loc2_)
+         else if(SharifyStatus.STATUS_REGISTRATION_SUCCESS === _loc5_)
          {
             §§push(1);
-            if(_loc4_)
+            if(_loc6_)
             {
-               §§push(-§§pop() - 14 + 1 - 1);
+               §§push(§§pop() - 96 + 109 + 1 + 1 - 1);
             }
          }
-         else if(SharifyStatus.STATUS_TRIAL === _loc2_)
+         else if(SharifyStatus.STATUS_TRIAL === _loc5_)
          {
-            §§push(1);
-            if(_loc3_)
+            §§push(2);
+            if(_loc6_)
             {
-               §§push(-(§§pop() + 20 - 1 - 85 + 78 - 18 - 1));
+               §§push(-(§§pop() + 49 + 1 + 7 + 1));
             }
          }
-         else if(SharifyStatus.STATUS_TRIAL_TIMED_OUT === _loc2_)
+         else if(SharifyStatus.STATUS_TRIAL_TIMED_OUT === _loc5_)
          {
-            §§push(1);
-            if(_loc4_)
+            §§push(3);
+            if(_loc6_)
             {
-               §§push(-(-§§pop() + 1) + 1 - 32 + 1);
+               §§push(-(-(§§pop() + 1) - 91 + 1 + 28) - 1);
             }
          }
-         else if(SharifyStatus.STATUS_SERVER_UNAVAILABLE === _loc2_)
+         else if(SharifyStatus.STATUS_SERVER_UNAVAILABLE === _loc5_)
          {
-            §§push(1);
-            if(_loc4_)
+            §§push(4);
+            if(_loc7_)
             {
-               §§push(-§§pop() + 90 + 1 + 75 - 115);
+               §§push(-(§§pop() - 1 + 1 + 1) - 31);
             }
          }
-         else if(SharifyStatus.STATUS_ERROR_KEY_NOT_FOUND === _loc2_)
+         else if(SharifyStatus.STATUS_ERROR_KEY_NOT_FOUND === _loc5_)
          {
-            §§push(1);
-            if(_loc3_)
+            §§push(5);
+            if(_loc7_)
             {
-               §§push(-(-§§pop() + 64 + 112 + 1 - 78 - 1));
+               §§push((§§pop() * 109 + 1 + 1 + 1) * 105 * 64);
             }
          }
-         else if(SharifyStatus.STATUS_ERROR_ALREADY_REGISTERED === _loc2_)
+         else if(SharifyStatus.STATUS_ERROR_ALREADY_REGISTERED === _loc5_)
          {
-            §§push(1);
-            if(_loc4_)
+            §§push(6);
+            if(_loc6_)
             {
-               §§push(--§§pop() - 1 - 1 + 1 + 61);
+               §§push(-(--(§§pop() - 1 + 116) + 81));
             }
          }
-         else if(SharifyStatus.STATUS_ERROR_REGISTRATION_REVOKED === _loc2_)
+         else if(SharifyStatus.STATUS_ERROR_REGISTRATION_REVOKED === _loc5_)
          {
-            §§push(1);
-            if(_loc4_)
+            §§push(7);
+            if(_loc6_)
             {
-               §§push(--(-(§§pop() + 1) - 1) - 1);
+               §§push(-(§§pop() + 1 + 1 - 39));
             }
          }
          else
          {
             §§push(8);
-            if(_loc4_)
+            if(_loc6_)
             {
-               §§push(§§pop() + 85 + 1 - 1 - 1 + 1);
+               §§push(§§pop() + 79 + 71 - 7 + 1 - 1 + 1);
             }
          }
          switch(§§pop())
@@ -195,22 +209,42 @@ package com.enfluid.ltp.controller.licensing
                model.isTrial = false;
                viewModel.showLicensePopup = false;
                model.allowUserIn = true;
-               this.setVersion(param1.data);
+               _loc2_ = param1.data.split(",");
+               §§push(_loc2_);
+               §§push(0);
+               if(_loc7_)
+               {
+                  §§push(§§pop() * 50 - 75 - 118);
+               }
+               _loc3_ = §§pop()[§§pop()];
+               §§push(_loc2_);
+               §§push(1);
+               if(_loc7_)
+               {
+                  §§push(§§pop() - 39 - 1 + 85 - 35 - 1);
+               }
+               _loc4_ = §§pop()[§§pop()];
+               this.setVersion(_loc3_);
+               if(_loc4_ && _loc4_ != null)
+               {
+                  model.userEmail = _loc4_;
+                  new SaveRegistrationStatusCommand().execute();
+               }
                break;
             case 2:
                model.isTrial = true;
                model.trialDaysRemaining = int(param1.data);
-               viewModel.showLicensePopup = true;
                model.isSharifyRegistered = false;
                model.allowUserIn = true;
+               viewModel.showLicensePopup = this.userDataSO.data.activateInternalTrial != undefined && this.userDataSO.data.activateInternalTrial?false:true;
                break;
             case 3:
                model.isTrial = true;
                §§push(model);
                §§push(0);
-               if(_loc3_)
+               if(_loc7_)
                {
-                  §§push((-(§§pop() - 41 + 37) - 59 + 87) * 41);
+                  §§push((§§pop() + 1 - 1 - 1 - 1 + 102) * 50);
                }
                §§pop().trialDaysRemaining = §§pop();
                model.isSharifyRegistered = false;
@@ -221,6 +255,7 @@ package com.enfluid.ltp.controller.licensing
                break;
             case 5:
                model.isSharifyRegistered = false;
+               viewModel.showLicensePopup = true;
                break;
             case 6:
                model.isTrial = false;
@@ -236,6 +271,10 @@ package com.enfluid.ltp.controller.licensing
                model.licenseStatus = SharifyStatus.STATUS_ERROR_KEY_NOT_FOUND;
                model.isSharifyRegistered = false;
                viewModel.showLicensePopup = true;
+         }
+         if(model.isTrial)
+         {
+            model.isPlatinum = true;
          }
          this.cleanup();
       }
@@ -258,9 +297,9 @@ package com.enfluid.ltp.controller.licensing
             §§push();
             §§push(onSharifyResponse);
             §§push(2000);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(-(--§§pop() - 1 + 1 - 1 - 1));
+               §§push(-§§pop() + 74 + 1 - 1 + 101 + 1);
             }
             §§pop().setTimeout(§§pop(),§§pop(),[e]);
          }

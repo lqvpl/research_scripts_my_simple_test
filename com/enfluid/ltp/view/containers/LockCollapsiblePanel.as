@@ -2,6 +2,7 @@ package com.enfluid.ltp.view.containers
 {
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.view.skins.LockCollapsiblePanelSkin;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import mx.events.PropertyChangeEvent;
    
    public class LockCollapsiblePanel extends CollapsiblePanel

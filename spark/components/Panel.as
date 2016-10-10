@@ -47,6 +47,7 @@ package spark.components
          return getBaselinePositionForPart(this.titleDisplay as IVisualElement);
       }
       
+      [ArrayElementType("mx.core.IVisualElement")]
       public function get controlBarContent() : Array
       {
          if(this.controlBarGroup)

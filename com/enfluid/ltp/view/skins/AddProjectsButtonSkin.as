@@ -4,15 +4,15 @@ package com.enfluid.ltp.view.skins
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
+   import spark.components.HGroup;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import spark.primitives.BitmapImage;
    import mx.core.IFlexModuleFactory;
-   import flash.events.MouseEvent;
    import spark.components.Group;
+   import spark.components.TextArea;
    import spark.primitives.Rect;
-   import mx.events.FlexEvent;
    import mx.graphics.SolidColor;
-   import mx.graphics.GradientEntry;
-   import mx.binding.BindingManager;
    import mx.binding.Binding;
    import assets.LibraryAssets;
    import mx.core.mx_internal;
@@ -94,16 +94,16 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((-(-§§pop() * 85) - 1 + 58) * 102 - 98);
+            §§push((-§§pop() * 93 + 32) * 59 - 7 + 104 - 1);
          }
          §§pop().states = null;
          §§push(_loc1_);
          §§push(0);
          if(_loc4_)
          {
-            §§push(--(§§pop() * 14 - 1 - 1) + 1);
+            §§push(§§pop() * 119 - 1 + 46 - 12 - 1 + 97 + 17);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -146,14 +146,14 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 1));
+            §§push((-(§§pop() * 28 + 2) + 1) * 96);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(--(§§pop() - 1) * 20);
+            §§push(§§pop() * 17 + 93 - 1 - 1 - 1);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.mxmlContent = [this._AddProjectsButtonSkin_Rect1_c(),this._AddProjectsButtonSkin_BitmapImage1_i()];
@@ -171,28 +171,28 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1 - 103 + 1) * 12) - 51);
+            §§push(§§pop() + 42 + 1 - 70);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-§§pop() - 86 + 1);
+            §§push((§§pop() - 94) * 92 - 27);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 46 - 92 + 89 - 1);
+            §§push(§§pop() * 49 * 40 - 9 - 28 - 32 + 1);
          }
          §§pop().radiusX = §§pop();
          §§push(_loc1_);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 4) - 42) * 42);
+            §§push(-(§§pop() + 1 + 1) - 104 - 13 - 75);
          }
          §§pop().radiusY = §§pop();
          _loc1_.fill = this._AddProjectsButtonSkin_SolidColor1_c();
@@ -205,9 +205,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(4028582);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 57 - 1 + 1);
+            §§push(((§§pop() + 1 + 24 + 51) * 1 + 1) * 107);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -220,14 +220,14 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc2_)
          {
-            §§push((-(((§§pop() - 109) * 80 + 1) * 61) + 1) * 27);
+            §§push(§§pop() - 29 + 1 - 61 - 79 + 13 - 58 - 114);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1 + 105 - 1) - 18));
+            §§push((§§pop() - 55 - 1) * 65);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.initialized(this,"_AddProjectsButtonSkin_BitmapImage1");
@@ -243,7 +243,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 1 - 29) - 11 + 1);
+            §§push((-(§§pop() - 109) + 1 - 1) * 117);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

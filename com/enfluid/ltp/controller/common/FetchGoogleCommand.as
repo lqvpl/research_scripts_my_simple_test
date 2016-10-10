@@ -2,39 +2,40 @@ package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
    import mx.rpc.IResponder;
-   import com.enfluid.ltp.util.Util;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.gridClasses.GridColumn;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import com.enfluid.ltp.view.renderers.CalculatableValueGroup;
    import com.enfluid.ltp.util.Scraper;
    import com.enfluid.ltp.view.popups.CaptchaPopup;
-   import mx.rpc.http.HTTPService;
-   import spark.components.CheckBox;
+   import com.enfluid.ltp.model.vo.ProxyVO;
+   import com.enfluid.ltp.util.ServiceFacade;
+   import spark.components.Image;
    import mx.binding.BindingManager;
    import com.enfluid.ltp.model.constants.Times;
    import flash.utils.setTimeout;
    import com.enfluid.ltp.util.Logger;
-   import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.constants.Constants;
+   import com.enfluid.ltp.util.Util;
    import flash.events.Event;
-   import com.hurlant.math.BigInteger;
-   import com.photon.controller.PhotonCommandCompletionEvent;
-   import com.photon.controller.PhotonCommand;
-   import com.hurlant.math.bi_internal;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.model.vo.ProxyHTTPResponseVO;
+   import spark.primitives.Rect;
+   import com.enfluid.ltp.util.KeywordUtil;
    import mx.graphics.SolidColor;
-   import mx.core.IFlexDisplayObject;
-   import com.enfluid.ltp.view.popups.SettingsCallout;
+   import com.enfluid.ltp.view.components.KeywordsDataGridList;
    import mx.managers.PopUpManager;
    import flash.display.DisplayObject;
    import mx.core.FlexGlobals;
-   
-   use namespace bi_internal;
+   import flash.utils.ByteArray;
    
    public class FetchGoogleCommand extends Command implements IPhotonCommand, IResponder
    {
-      
-      private static var lastNCRReqeustTime:Number;
        
       
       protected var scraper:Scraper;
-      
-      protected var ownComputerLastUsedAsProxyTimestamp:Number;
       
       private const NUM_RETRIES_ALLOWED:int = 2;
       
@@ -42,110 +43,144 @@ package com.enfluid.ltp.controller.common
       
       private var numRetries:int = 0;
       
-      private var service:HTTPService;
+      private var proxy:ProxyVO;
+      
+      private var service:ServiceFacade;
+      
+      private var captchaDomain:String;
       
       public function FetchGoogleCommand()
       {
          this.scraper = new Scraper();
-         this.service = new HTTPService();
          super();
+      }
+      
+      protected function get httpPrefix() : String
+      {
+         return !!this.proxy.isUsersIP?"https://":"http://";
       }
       
       public function execute() : void
       {
-         if(!lastNCRReqeustTime || lastNCRReqeustTime + Times.ONE_HOUR < new Date().time)
+         this.proxy = ProxyVO.getNext();
+         this.service = new ServiceFacade(this.proxy);
+         if(!this.proxy.lastNCRReqeustTime || this.proxy.lastNCRReqeustTime + Times.ONE_DAY < new Date().time)
          {
             this.makeNCRRequest();
             §§push();
             §§push(this.execute);
-            §§push(1000);
-            if(_loc1_)
+            §§push(2000);
+            if(_loc3_)
             {
-               §§push((§§pop() + 1) * 52 - 71);
+               §§push(--(§§pop() - 109));
             }
             §§pop().setTimeout(§§pop(),§§pop());
             return;
          }
-         this.service.url = this.calcUrl();
+         this.service.url = this.calcUrl(this.proxy.isUsersIP);
          Logger.log("Fetching Google Url: " + this.service.url);
-         this.service.method = "GET";
-         this.service.resultFormat = "text";
-         this.service.send().addResponder(this);
-      }
-      
-      public final function fault(param1:Object) : void
-      {
-         var _loc2_:String = null;
-         try
-         {
-            _loc2_ = param1.fault.rootCause.target.data;
-            §§push(_loc2_.indexOf("id=\"captcha\""));
-            §§push(0);
-            if(_loc5_)
-            {
-               §§push(-((§§pop() - 1 - 1) * 88 - 1 - 1 + 1));
-            }
-            if(§§pop() >= §§pop())
-            {
-               this.scraper.setHtmlContent(_loc2_,this.handleGoogleCaptcha);
-            }
-            return;
-         }
-         catch(err:Error)
-         {
-            return;
-         }
+         var _loc1_:Number = model.proxies && §§pop() > §§pop()?Number(Constants.GOOGLE_AVG_DELAY_WHEN_USING_PROXIES):Number(Number(model.preferences.googleRequestAvgDelay));
+         var _loc2_:Number = Util.getDelay(_loc1_);
+         this.service.send(this,_loc2_);
       }
       
       public final function onEnterCaptcha(param1:Event) : void
       {
+         new SetUserEvent("UserEvent.GoogleCaptcha.Entered").execute();
+         this.proxy.captchaBitmapData = null;
+         this.proxy.captchaImageUrl = null;
          var _loc2_:String = this.captchaPopup.enteredCaptcha;
          this.captchaPopup.removeEventListener(CaptchaPopup.CAPTCHA_ENTERED,this.onEnterCaptcha);
          this.captchaPopup = null;
          §§push(this.scraper.getElementsByName("continue"));
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(-(§§pop() - 1 - 1) - 4 - 1 - 85 + 1);
+            §§push(--(§§pop() * 43) - 105 + 78 - 6);
          }
          var _loc3_:String = §§pop()[§§pop()].getAttribute("value");
          §§push(this.scraper.getElementsByName("id"));
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(-§§pop() - 1 + 0 + 1 - 48 + 1);
+            §§push(-(-(§§pop() + 16) - 62));
          }
          var _loc4_:String = §§pop()[§§pop()].getAttribute("value");
          §§push(this.scraper.getElementsByName("submit"));
          §§push(0);
          if(_loc7_)
          {
-            §§push(-(((§§pop() + 1 + 106) * 113 * 69 - 1) * 18));
+            §§push(-§§pop() + 67 - 22);
          }
          var _loc5_:String = §§pop()[§§pop()].getAttribute("value");
          this.service.url = this.calcCaptchaUrl() + "/sorry/Captcha?continue=" + _loc3_ + "&id=" + _loc4_ + "&captcha=" + _loc2_ + "&submit=" + _loc5_;
-         this.service.send().addResponder(this);
+         this.service.send(this);
       }
       
       public final function result(param1:Object) : void
       {
-         §§push(param1.result.indexOf("Redirecting you to http://"));
-         §§push(0);
-         if(_loc3_)
+         var _loc2_:String = null;
+         if(param1 is ProxyHTTPResponseVO)
          {
-            §§push(((§§pop() - 1) * 84 * 15 - 1 + 21) * 90);
+            _loc2_ = ProxyHTTPResponseVO(param1).contentText;
+         }
+         else
+         {
+            _loc2_ = param1.result;
+         }
+         §§push(_loc2_.indexOf("Redirecting you to"));
+         §§push(0);
+         if(_loc4_)
+         {
+            §§push((§§pop() - 41) * 82 + 1);
          }
          if(§§pop() >= §§pop())
          {
             this.execute();
             return;
          }
-         this.scraper.setHtmlContent(param1.result,this.parseResult);
+         _loc2_ = this.stripAllScriptTags(_loc2_);
+         this.scraper.setHtmlContent(_loc2_,this.parseResult);
       }
       
-      protected function calcUrl() : String
+      public final function fault(param1:Object) : void
       {
-         return null;
+         var _loc2_:String = null;
+         var _loc3_:String = null;
+         try
+         {
+            if(param1 is ProxyHTTPResponseVO)
+            {
+               _loc2_ = ProxyHTTPResponseVO(param1).contentText;
+               this.captchaDomain = KeywordUtil.extractFullDomainWithPrefix(ProxyHTTPResponseVO(param1).url);
+            }
+            else
+            {
+               _loc2_ = param1.fault.content;
+               this.captchaDomain = "http://ipv4.google.com";
+            }
+            §§push(_loc2_.indexOf("id=\"captcha\""));
+            §§push(0);
+            if(_loc5_)
+            {
+               §§push(§§pop() - 1 - 1 + 1);
+            }
+            if(§§pop() >= §§pop())
+            {
+               if(!this.proxy.isUsersIP)
+               {
+               }
+               this.proxy.lastCaptchaTime = new Date().time;
+               this.scraper.setHtmlContent(_loc2_,this.handleGoogleCaptcha);
+            }
+            return;
+         }
+         catch(err:Error)
+         {
+         }
+         Logger.log("GOOGLE FAULT:");
+         Logger.log("message: " + param1.message);
+         Logger.log("content: " + param1.fault.content);
       }
       
       protected function calcCaptchaUrl() : String
@@ -153,45 +188,83 @@ package com.enfluid.ltp.controller.common
          return "http://www.google.com";
       }
       
-      protected function captchaImageUrl() : String
+      protected function calcUrl(param1:Boolean) : String
       {
-         return "http://sorry.google.com";
+         return null;
       }
       
       protected function parseResult() : void
       {
       }
       
+      private final function stripAllScriptTags(param1:String) : String
+      {
+         §§push(0);
+         if(_loc6_)
+         {
+            §§push(((§§pop() * 77 + 68) * 14 * 53 - 49) * 90);
+         }
+         var _loc4_:* = §§pop();
+         §§push(0);
+         if(_loc6_)
+         {
+            §§push(§§pop() * 36 + 15 + 47 - 1 - 1 - 1 - 94);
+         }
+         var _loc5_:* = §§pop();
+         var _loc2_:String = "<script ";
+         var _loc3_:String = "</script>";
+         while(true)
+         {
+            §§push(param1.indexOf(_loc2_));
+            §§push(0);
+            if(_loc6_)
+            {
+               §§push((-§§pop() - 1 - 1) * 23 - 1 + 1);
+            }
+            if(§§pop() < §§pop())
+            {
+               break;
+            }
+            _loc4_ = int(param1.indexOf(_loc2_));
+            _loc5_ = int(param1.indexOf(_loc3_,_loc4_) + _loc3_.length);
+            §§push(param1);
+            §§push(0);
+            if(_loc7_)
+            {
+               §§push(---§§pop() - 7);
+            }
+            param1 = §§pop().substring(§§pop(),_loc4_) + param1.substring(_loc5_);
+         }
+         return param1;
+      }
+      
       private final function makeNCRRequest() : void
       {
-         var _loc1_:HTTPService = new HTTPService();
-         _loc1_.url = "https://www.google.com/ncr";
+         var _loc1_:ServiceFacade = new ServiceFacade(this.proxy);
+         _loc1_.url = this.httpPrefix + "www.google.com/ncr";
          _loc1_.send();
-         lastNCRReqeustTime = new Date().time;
+         this.proxy.lastNCRReqeustTime = new Date().time;
       }
       
       private final function handleGoogleCaptcha() : void
       {
+         new SetUserEvent("UserEvent.GoogleCaptcha.Show").execute();
          §§push(this.scraper.getElementsByTagName("img"));
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 31 - 1 - 1) * 62 + 13 + 1 + 1);
+            §§push(---(§§pop() - 1 + 74 + 8));
          }
          var _loc1_:String = §§pop()[§§pop()].getAttribute("src");
-         viewModel.captchaImageUrl = this.captchaImageUrl() + _loc1_;
+         this.proxy.captchaImageUrl = this.captchaDomain + _loc1_;
          this.captchaPopup = CaptchaPopup(PopUpManager.createPopUp(DisplayObject(FlexGlobals.topLevelApplication),CaptchaPopup,true));
-         PopUpManager.centerPopUp(this.captchaPopup);
-         §§push(this.captchaPopup);
-         §§push(CaptchaPopup.CAPTCHA_ENTERED);
-         §§push(this.onEnterCaptcha);
-         §§push(false);
-         §§push(0);
-         if(_loc2_)
+         if(!this.proxy.isUsersIP)
          {
-            §§push(---(-(§§pop() + 1) * 7));
+            this.service.fetchCaptchaImage();
          }
-         §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop(),true);
+         this.captchaPopup.proxy = this.proxy;
+         PopUpManager.centerPopUp(this.captchaPopup);
+         this.captchaPopup.addEventListener(CaptchaPopup.CAPTCHA_ENTERED,this.onEnterCaptcha);
          PopUpManager.centerPopUp(this.captchaPopup);
       }
    }

@@ -1,6 +1,11 @@
 package com.hurlant.crypto.hash
 {
+   import mx.core.ClassFactory;
+   import spark.skins.spark.DefaultItemRenderer;
    import flash.utils.ByteArray;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import flash.utils.Endian;
    
    public class SHABase implements IHash
@@ -19,7 +24,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc1_)
          {
-            §§push((§§pop() + 1 + 1) * 93 + 1 + 116 + 102 - 1);
+            §§push(§§pop() - 1 - 7 + 111 + 1);
          }
          return §§pop();
       }
@@ -36,9 +41,9 @@ package com.hurlant.crypto.hash
          param1.endian = Endian.BIG_ENDIAN;
          §§push(_loc2_);
          §§push(8);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(§§pop() - 40 + 1 + 1 - 82 + 7 - 1 - 30);
+            §§push((§§pop() - 99) * 116 * 37 - 1 + 99);
          }
          var _loc4_:uint = §§pop() * §§pop();
          while(true)
@@ -47,13 +52,13 @@ package com.hurlant.crypto.hash
             §§push(4);
             if(_loc10_)
             {
-               §§push(§§pop() + 1 + 21 - 71);
+               §§push(-§§pop() + 37 - 1);
             }
             §§push(§§pop() % §§pop());
             §§push(0);
             if(_loc11_)
             {
-               §§push(§§pop() - 28 - 32 + 1 + 39 - 40);
+               §§push(-(-§§pop() + 57) - 60 - 1 - 86);
             }
             if(§§pop() == §§pop())
             {
@@ -62,9 +67,9 @@ package com.hurlant.crypto.hash
             §§push(param1);
             §§push(param1.length);
             §§push(0);
-            if(_loc10_)
+            if(_loc11_)
             {
-               §§push(((§§pop() + 0) * 70 - 1) * 14 * 78);
+               §§push(--(§§pop() - 1 - 8));
             }
             §§pop()[§§pop()] = §§pop();
          }
@@ -72,14 +77,14 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc10_)
          {
-            §§push(---(§§pop() + 1 + 1) - 47);
+            §§push(§§pop() * 7 + 75 - 37);
          }
          §§pop().position = §§pop();
          var _loc5_:Array = [];
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push((§§pop() + 95) * 118 + 1 - 118);
+            §§push((§§pop() + 46 + 77) * 63 + 114 + 90);
          }
          var _loc6_:uint = §§pop();
          while(_loc6_ < param1.length)
@@ -87,9 +92,9 @@ package com.hurlant.crypto.hash
             _loc5_.push(param1.readUnsignedInt());
             §§push(_loc6_);
             §§push(4);
-            if(_loc11_)
+            if(_loc10_)
             {
-               §§push(§§pop() - 1 + 1 + 1 + 53 - 17);
+               §§push(-(-(§§pop() - 1 - 85) + 48) - 78);
             }
             _loc6_ = §§pop() + §§pop();
          }
@@ -97,15 +102,15 @@ package com.hurlant.crypto.hash
          var _loc8_:ByteArray = new ByteArray();
          §§push(getHashSize());
          §§push(4);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(-(§§pop() + 1 - 40 - 1 + 1) - 78);
+            §§push(---§§pop());
          }
          var _loc9_:uint = §§pop() / §§pop();
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push(§§pop() - 1 - 107 + 1 - 1);
+            §§push(((§§pop() + 1) * 115 + 1 + 1) * 43);
          }
          _loc6_ = §§pop();
          while(_loc6_ < _loc9_)
@@ -126,9 +131,9 @@ package com.hurlant.crypto.hash
       public function getInputSize() : uint
       {
          §§push(64);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 73 + 1 - 97 + 43);
+            §§push(-(§§pop() * 100 + 104) - 1);
          }
          return §§pop();
       }

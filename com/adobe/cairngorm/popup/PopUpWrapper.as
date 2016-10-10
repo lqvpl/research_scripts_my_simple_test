@@ -1,20 +1,7 @@
 package com.adobe.cairngorm.popup
 {
-   import flash.utils.setTimeout;
-   import com.enfluid.ltp.util.Logger;
-   import mx.binding.utils.BindingUtils;
    import mx.core.ITransientDeferredInstance;
    import mx.core.IFlexDisplayObject;
-   import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.model.ViewModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.KeywordColumnRenderer;
-   import mx.binding.Binding;
-   import flash.events.MouseEvent;
-   
-   use namespace mx_internal;
    
    public final class PopUpWrapper extends PopUpBase
    {
@@ -38,7 +25,7 @@ package com.adobe.cairngorm.popup
             §§push(-50);
             if(_loc1_)
             {
-               §§push(((§§pop() + 1 + 67) * 100 + 1) * 78 + 56 + 1);
+               §§push(-§§pop() + 1 + 17);
             }
             throw new §§pop().Error(§§pop(),§§pop());
          }

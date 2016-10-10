@@ -3,43 +3,36 @@ package com.enfluid.ltp.view.popups
    import spark.components.BorderContainer;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.components.Group;
-   import flash.events.MouseEvent;
+   import spark.effects.Move;
+   import mx.binding.BindingManager;
    import spark.components.Label;
    import com.adobe.cairngorm.observer.Observe;
    import mx.controls.ProgressBar;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.ViewModel;
-   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
-   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
-   import flash.events.Event;
-   import it.sharify.event.SharifyResponseEvent;
-   import mx.events.FlexEvent;
-   import flash.display.Sprite;
-   import mx.binding.utils.ChangeWatcher;
-   import mx.binding.BindingManager;
    import spark.layouts.VerticalLayout;
-   import system.errors.NoSuchElementError;
-   import mx.controls.Spacer;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
-   import com.enfluid.ltp.model.vo.RankCheckItemVO;
-   import com.enfluid.ltp.util.CSV;
-   import com.enfluid.ltp.util.KeywordArrayCollection;
-   import mx.collections.ArrayCollection;
-   import com.enfluid.ltp.model.constants.Constants;
-   import com.enfluid.ltp.util.FileSystemOperations;
-   import spark.components.gridClasses.GridColumn;
-   import flash.data.SQLConnection;
-   import flash.filesystem.File;
-   import info.noirbizarre.airorm.AOError;
+   import spark.components.Group;
+   import flash.events.Event;
+   import mx.states.Transition;
    import com.hurlant.math.BigInteger;
-   import mx.binding.Binding;
+   import com.hurlant.math.bi_internal;
    import mx.core.mx_internal;
-   import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
    import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import mx.graphics.GradientEntry;
+   import mx.controls.Spacer;
+   import com.photon.controller.PhotonCommand;
+   import mx.effects.Parallel;
+   import com.enfluid.ltp.model.constants.Countries;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
+   import com.enfluid.ltp.util.Util;
+   import com.enfluid.ltp.model.constants.Constants;
+   import flash.net.URLRequest;
+   import mx.events.PropertyChangeEvent;
    
+   use namespace bi_internal;
    use namespace mx_internal;
    
    public final class ConvertingDBPopup extends BorderContainer implements IBindingClient
@@ -98,16 +91,16 @@ package com.enfluid.ltp.view.popups
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(700);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-((§§pop() - 1) * 78 - 1) + 19 + 6) * 63);
+            §§push(-§§pop() + 42 + 1);
          }
          §§pop().width = §§pop();
          §§push(this);
          §§push(500);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() * 37 + 49 - 1 + 104 - 1) * 117);
+            §§push(§§pop() + 107 + 1 + 83 - 1 + 2 + 1);
          }
          §§pop().height = §§pop();
          this.layout = this._ConvertingDBPopup_VerticalLayout1_c();
@@ -115,9 +108,9 @@ package com.enfluid.ltp.view.popups
          this._ConvertingDBPopup_Observe1_i();
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 100 + 1 + 1 - 1 + 1);
+            §§push(-(-(§§pop() + 1 - 56) * 114));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -191,9 +184,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(80);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 1 + 1 - 100 + 1) * 72));
+            §§push(-§§pop() + 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "Yikes!  We\'ve detected a problem with the data we pulled over from Version 2.  We\'re re-converting that data to fix the issue.  Thanks for your patience!";
@@ -202,7 +195,7 @@ package com.enfluid.ltp.view.popups
          §§push(16711680);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 - 12 - 99 + 1 + 1 + 57) * 24);
+            §§push((§§pop() + 67) * 76 - 73 - 1 - 1 - 22);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -210,15 +203,15 @@ package com.enfluid.ltp.view.popups
          §§push(20);
          if(_loc3_)
          {
-            §§push((§§pop() - 95 + 1) * 61 + 34);
+            §§push(-((-(-§§pop() + 84) - 1 + 1) * 91));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingBottom");
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 27 + 42) * 20);
+            §§push(-(-§§pop() + 114 - 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","center");
@@ -240,15 +233,15 @@ package com.enfluid.ltp.view.popups
          §§push(30);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 1 - 24);
+            §§push((--(§§pop() - 11 + 1) + 1) * 101 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingBottom");
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 0 - 1 - 86) * 34 + 63 + 9 - 1);
+            §§push(§§pop() + 1 + 57 + 60 - 36 + 72);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("textAlign","center");
@@ -269,9 +262,9 @@ package com.enfluid.ltp.view.popups
          §§push(_loc1_);
          §§push("fontSize");
          §§push(18);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 48 * 62 + 1 + 1);
+            §§push(--§§pop() * 75 * 98);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -286,9 +279,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 1));
+            §§push(-((§§pop() - 1 - 1) * 14 * 60 - 1) + 10);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -303,16 +296,16 @@ package com.enfluid.ltp.view.popups
          var _loc1_:ProgressBar = new ProgressBar();
          §§push(_loc1_);
          §§push(80);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 1 - 10) * 52 * 34) - 1);
+            §§push(§§pop() * 106 * 119 + 76);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc2_)
          {
-            §§push(§§pop() - 103 - 1 - 29);
+            §§push(-§§pop() + 111 + 32);
          }
          §§pop().height = §§pop();
          _loc1_.mode = "manual";
@@ -321,7 +314,7 @@ package com.enfluid.ltp.view.popups
          §§push(20);
          if(_loc3_)
          {
-            §§push((§§pop() * 10 + 1) * 115 * 55);
+            §§push((§§pop() - 10) * 16 - 1 - 1 - 1 - 110);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "progressbar";
@@ -341,7 +334,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() * 21 + 1) * 66 - 27 - 71 - 1 + 77);
+            §§push((§§pop() + 85) * 79 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -351,7 +344,7 @@ package com.enfluid.ltp.view.popups
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 96 - 6) * 81 + 66 + 1 + 22);
+            §§push(-((-§§pop() - 1) * 79 * 115 + 88 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Function
          {
@@ -359,9 +352,9 @@ package com.enfluid.ltp.view.popups
          },null,"_ConvertingDBPopup_Observe1.handler");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 6 - 108 - 41));
+            §§push(--(§§pop() + 68 + 19));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -371,7 +364,7 @@ package com.enfluid.ltp.view.popups
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 93 - 48 - 60) + 1 + 94 - 89);
+            §§push(§§pop() + 1 - 1 + 118);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -379,9 +372,9 @@ package com.enfluid.ltp.view.popups
          },null,"_ConvertingDBPopup_Label1.visible");
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1 - 42 - 87 + 20) * 11);
+            §§push(§§pop() - 1 + 16 - 1 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -390,9 +383,9 @@ package com.enfluid.ltp.view.popups
          },null,"_ConvertingDBPopup_Label2.text");
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 52 + 60) * 18 + 1);
+            §§push(-(-(-§§pop() - 1) * 69) - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

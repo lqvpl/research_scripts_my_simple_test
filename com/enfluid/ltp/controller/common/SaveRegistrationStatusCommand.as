@@ -1,11 +1,16 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import flash.utils.ByteArray;
+   import io.calq.analytics.ProfileApiCall;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.controller.keywordresearch.amazonkc.GetAmazonKCCommand;
    import com.enfluid.ltp.util.BlowFishUtil;
    import com.enfluid.ltp.util.Util;
    import com.enfluid.ltp.controller.filesystem.SaveStringToDiskCommand;
    import com.enfluid.ltp.model.constants.Constants;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.rankchecker.SaveRankItemsCommand;
+   import com.enfluid.ltp.model.constants.Values;
    
    public final class SaveRegistrationStatusCommand extends Command implements IPhotonCommand
    {

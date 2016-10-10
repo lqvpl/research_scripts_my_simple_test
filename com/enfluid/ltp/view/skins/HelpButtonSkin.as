@@ -4,15 +4,15 @@ package com.enfluid.ltp.view.skins
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
-   import mx.graphics.GradientEntry;
-   import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
+   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
    import mx.graphics.SolidColor;
    import mx.graphics.SolidColorStroke;
    import mx.core.IFlexModuleFactory;
    import spark.primitives.Ellipse;
+   import mx.binding.BindingManager;
    import spark.components.Label;
-   import spark.primitives.Rect;
+   import flash.events.MouseEvent;
+   import mx.events.FlexEvent;
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import flash.utils.getDefinitionByName;
@@ -74,30 +74,30 @@ package com.enfluid.ltp.view.skins
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(13);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 26) * 51 * 90);
+            §§push((§§pop() + 52 + 60) * 40);
          }
          §§pop().width = §§pop();
          §§push(this);
          §§push(13);
          if(_loc3_)
          {
-            §§push(-§§pop() - 32 + 1);
+            §§push(§§pop() - 9 - 80 - 31 + 1);
          }
          §§pop().height = §§pop();
          §§push(this);
          §§push(13);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 106 - 1) + 71 - 36);
+            §§push((§§pop() - 1 - 1 - 1) * 40 * 102 + 1 + 64);
          }
          §§pop().minHeight = §§pop();
          §§push(this);
          §§push(13);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1) * 18 + 1 - 64 + 40 + 1);
+            §§push(§§pop() - 95 - 1 + 1 - 34);
          }
          §§pop().minWidth = §§pop();
          this.mxmlContent = [this._HelpButtonSkin_Ellipse1_c(),this._HelpButtonSkin_Label1_c()];
@@ -122,7 +122,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 12) * 61 + 26 - 1);
+            §§push(§§pop() + 1 + 6 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -180,28 +180,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 59 - 1 - 1));
+            §§push(--(§§pop() + 69 - 1) + 91);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 19) * 38 * 32 + 1 + 80);
+            §§push((§§pop() + 1 + 49 - 10) * 106 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 98 - 1 - 1 - 1 - 90 - 1 - 66);
+            §§push(-((§§pop() - 119 + 1) * 19));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 112 - 119 + 96);
+            §§push((-(§§pop() * 48 * 6) + 6 - 1) * 89 * 40);
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._HelpButtonSkin_SolidColorStroke1_i();
@@ -215,9 +215,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColorStroke = new SolidColorStroke();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 18) * 81 + 1 - 1 + 1 + 48);
+            §§push(-(§§pop() * 105) - 1 - 16 - 39 + 1);
          }
          §§pop().weight = §§pop();
          this._HelpButtonSkin_SolidColorStroke1 = _loc1_;
@@ -230,9 +230,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() + 1) - 1 + 1) * 55 - 1);
+            §§push(-(§§pop() + 85) + 1 + 81);
          }
          §§pop().alpha = §§pop();
          this._HelpButtonSkin_SolidColor1 = _loc1_;
@@ -247,14 +247,14 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 3 + 1) + 1 - 2 - 107);
+            §§push(((§§pop() + 1) * 92 * 12 + 34 - 1) * 68 * 10);
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1) * 62 - 1 - 1);
+            §§push(§§pop() - 55 - 36 - 48 + 1);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.text = "?";
@@ -262,9 +262,9 @@ package com.enfluid.ltp.view.skins
          §§push(_loc1_);
          §§push("fontSize");
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 17 - 1 + 1) * 48 - 91);
+            §§push((§§pop() - 1 - 29 - 29) * 105 - 23);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -281,7 +281,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 62);
+            §§push(((§§pop() - 79 - 16) * 14 - 95) * 51);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {
@@ -291,7 +291,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 32 + 89);
+            §§push((§§pop() + 28 + 93 + 1) * 25 - 38);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {

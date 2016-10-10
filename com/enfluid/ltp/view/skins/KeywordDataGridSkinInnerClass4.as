@@ -3,8 +3,6 @@ package com.enfluid.ltp.view.skins
    import spark.primitives.Line;
    import mx.graphics.SolidColorStroke;
    import mx.events.PropertyChangeEvent;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
    
    public final class KeywordDataGridSkinInnerClass4 extends Line
    {
@@ -23,16 +21,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColorStroke = new SolidColorStroke();
          §§push(_loc1_);
          §§push(10790052);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 83 + 1 + 33);
+            §§push(-((§§pop() - 0 - 64) * 96) - 1 + 1 + 18);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 1);
+            §§push(-((§§pop() - 1 + 104) * 8) * 18 - 1);
          }
          §§pop().weight = §§pop();
          _loc1_.caps = "square";

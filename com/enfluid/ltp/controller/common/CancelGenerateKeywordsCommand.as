@@ -1,10 +1,10 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import hr.binaria.asx3m.core.MapBackedDataHolder;
-   import mx.graphics.GradientEntry;
-   import mx.states.Transition;
+   import spark.components.DataGroup;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.constants.Constants;
+   import spark.components.Image;
    
    public final class CancelGenerateKeywordsCommand extends Command implements IPhotonCommand
    {

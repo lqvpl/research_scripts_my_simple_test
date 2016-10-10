@@ -13,7 +13,6 @@ package com.enfluid.ltp.view.renderers
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
    import spark.components.HGroup;
    import mx.binding.BindingManager;
-   import mx.events.FlexEvent;
    import mx.binding.Binding;
    import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
@@ -69,9 +68,9 @@ package com.enfluid.ltp.view.renderers
          this.mxmlContent = [this._DeleteColumnRenderer_HGroup1_c()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 44) * 79) - 71 - 35 + 16 - 1);
+            §§push(-((§§pop() + 90) * 6 + 62 - 46 + 67));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -127,9 +126,9 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 1) * 91 - 1);
+            §§push(-(§§pop() + 1) + 4);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.horizontalAlign = "center";
@@ -171,7 +170,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 - 76) * 20 + 1 + 1);
+            §§push(-§§pop() + 29 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

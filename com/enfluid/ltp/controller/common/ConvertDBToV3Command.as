@@ -2,43 +2,58 @@ package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
    import com.enfluid.ltp.model.vo.DomainExtensionOptions;
-   import flash.events.Event;
-   import it.sharify.event.SharifyResponseEvent;
-   import mx.events.FlexEvent;
-   import flash.display.Sprite;
-   import mx.binding.utils.ChangeWatcher;
-   import com.enfluid.ltp.util.ProgressBarUtil;
+   import com.enfluid.ltp.util.Logger;
+   import mx.graphics.SolidColor;
    import flash.filesystem.File;
    import flash.data.SQLConnection;
-   import com.enfluid.ltp.util.Logger;
-   import mx.controls.Spacer;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.states.AddItems;
+   import mx.binding.Binding;
+   import assets.TextAssets;
+   import spark.components.DataGroup;
    import mx.binding.BindingManager;
-   import mx.graphics.GradientEntry;
+   import spark.components.VGroup;
    import flash.events.SQLEvent;
    import flash.events.SQLErrorEvent;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
    import flash.utils.setTimeout;
+   import flash.events.Event;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
    import flash.errors.SQLError;
+   import mx.collections.IList;
+   import com.enfluid.ltp.model.DataModel;
    import flash.data.SQLStatement;
    import flash.net.Responder;
    import flash.data.SQLResult;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass2;
    import com.enfluid.ltp.model.vo.ProjectVO;
    import com.enfluid.ltp.model.constants.Languages;
    import com.enfluid.ltp.model.constants.Countries;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
-   import spark.components.Label;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.components.target;
+   import com.enfluid.ltp.view.components.SelfAdjustingLabel;
+   import mx.graphics.GradientEntry;
+   import com.enfluid.ltp.view.components.FilterValueTextInput;
+   import flash.utils.ByteArray;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import flash.display.Graphics;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import mx.core.FlexGlobals;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import com.enfluid.ltp.model.constants.Values;
    import com.enfluid.ltp.util.KeywordUtil;
-   import flash.ui.Keyboard;
-   import flash.utils.ByteArray;
-   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass0;
-   import com.enfluid.ltp.model.vo.DomainsVO;
+   import spark.components.Group;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.model.constants.DomainStatuses;
-   import mx.core.IFlexDisplayObject;
-   import mx.core.FlexGlobals;
+   
+   use namespace mx_internal;
    
    public final class ConvertDBToV3Command extends Command implements IPhotonCommand
    {
@@ -102,43 +117,43 @@ package com.enfluid.ltp.controller.common
          §§push(_loc2_);
          §§push(param1);
          §§push(1);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 1 + 5 - 1 - 1 - 1) * 94 - 1);
+            §§push((§§pop() * 26 - 90 + 98) * 59);
          }
          §§push(§§pop() & §§pop());
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 78 - 1 - 10) - 1 - 1);
+            §§push(-§§pop() * 14 * 64 * 90);
          }
          §§pop().ca = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(2);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 109 - 1) + 1 - 25 - 1) * 81);
+            §§push(-((§§pop() - 30) * 37 + 1 - 15 + 118 - 82));
          }
          §§push(§§pop() & §§pop());
          §§push(2);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() + 1 + 1 + 108) * 107 + 1);
+            §§push(§§pop() + 1 - 34 - 1);
          }
          §§pop().co = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(4);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() - 0) - 71);
+            §§push(§§pop() - 66 - 22 - 1 - 1 + 1);
          }
          §§push(§§pop() & §§pop());
          §§push(4);
          if(_loc4_)
          {
-            §§push((-(§§pop() + 24) + 1) * 19 - 34 - 79);
+            §§push(-(§§pop() - 1) + 93 - 95 - 117 - 32);
          }
          §§pop().com = §§pop() == §§pop();
          §§push(_loc2_);
@@ -146,41 +161,41 @@ package com.enfluid.ltp.controller.common
          §§push(8);
          if(_loc4_)
          {
-            §§push(-(§§pop() * 78 + 1 + 96 + 20 - 1 + 18));
+            §§push(-(§§pop() - 118 - 1 + 1));
          }
          §§push(§§pop() & §§pop());
          §§push(8);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() + 72));
+            §§push(§§pop() - 1 - 1 - 1 + 111);
          }
          §§pop().comau = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(16);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() + 1));
+            §§push(--(§§pop() * 28 + 53) + 39);
          }
          §§push(§§pop() & §§pop());
          §§push(16);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(§§pop() + 112 + 1));
+            §§push((§§pop() * 53 - 106 - 26 - 96) * 85 - 39 - 1);
          }
          §§pop().couk = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(32);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((---(§§pop() - 27) - 1) * 103 + 1);
+            §§push(-§§pop() * 39 + 1 - 3 + 111 - 51);
          }
          §§push(§§pop() & §§pop());
          §§push(32);
          if(_loc3_)
          {
-            §§push(§§pop() * 39 + 95 - 79);
+            §§push(-§§pop() - 27 - 31 - 1);
          }
          §§pop().de = §§pop() == §§pop();
          §§push(_loc2_);
@@ -188,27 +203,27 @@ package com.enfluid.ltp.controller.common
          §§push(64);
          if(_loc4_)
          {
-            §§push((--(§§pop() - 1) + 19 + 59) * 26 + 108);
+            §§push(-(-§§pop() - 1 + 58) - 27);
          }
          §§push(§§pop() & §§pop());
          §§push(64);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() - 1 + 116 + 1 + 83 + 1);
+            §§push(-(§§pop() + 80 - 82 - 3) - 1);
          }
          §§pop().dk = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(128);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() + 53 + 100 + 28) * 110 + 13 + 102 + 1);
+            §§push((§§pop() + 1 - 1 - 70 - 1) * 54);
          }
          §§push(§§pop() & §§pop());
          §§push(128);
          if(_loc4_)
          {
-            §§push((§§pop() * 105 + 1 - 48 + 94) * 14 - 16 - 1);
+            §§push(-(§§pop() + 22 - 1 - 1 - 1 + 71));
          }
          §§pop().info = §§pop() == §§pop();
          §§push(_loc2_);
@@ -216,41 +231,41 @@ package com.enfluid.ltp.controller.common
          §§push(256);
          if(_loc4_)
          {
-            §§push(§§pop() * 1 - 40 + 49 + 39);
+            §§push(§§pop() * 114 + 1 - 57);
          }
          §§push(§§pop() & §§pop());
          §§push(256);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 1) * 102 + 1 + 30 + 1);
+            §§push(§§pop() * 70 + 1 + 1);
          }
          §§pop().net = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(512);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 95 - 1 - 62);
+            §§push(-§§pop() - 49 - 74 - 92);
          }
          §§push(§§pop() & §§pop());
          §§push(512);
          if(_loc4_)
          {
-            §§push((§§pop() * 35 + 28) * 19);
+            §§push(-(§§pop() - 64 - 119) + 33 - 1 - 80);
          }
          §§pop().nl = §§pop() == §§pop();
          §§push(_loc2_);
          §§push(param1);
          §§push(1024);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() * 103 + 61) * 105);
+            §§push(-(-(§§pop() - 11 + 44) - 85 - 1 + 1));
          }
          §§push(§§pop() & §§pop());
          §§push(1024);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 81) + 1 - 88);
+            §§push(-((§§pop() * 117 - 9 - 1) * 35) * 85);
          }
          §§pop().org = §§pop() == §§pop();
          return _loc2_;
@@ -298,17 +313,17 @@ package com.enfluid.ltp.controller.common
          viewModel.conversionText = param1;
          §§push(viewModel);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() - 1));
+            §§push(§§pop() - 7 - 1 + 16 + 1 - 1);
          }
          §§pop().dataConverted = §§pop();
          §§push();
          §§push(param2);
          §§push(500);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 1 + 93 - 1);
+            §§push(§§pop() + 1 - 40 - 70 - 1 + 23 - 1);
          }
          §§pop().setTimeout(§§pop(),§§pop());
       }
@@ -333,9 +348,9 @@ package com.enfluid.ltp.controller.common
          _loc2_.text = "SELECT * FROM main.Campaigns ORDER BY CampaignId ASC";
          §§push(_loc2_);
          §§push(-1);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-((-(§§pop() + 1 - 1 + 109) - 1) * 43));
+            §§push(-(§§pop() - 85 - 100) * 16 - 67 + 1);
          }
          §§pop().execute(§§pop(),new Responder(this.onFetchCampaigns,this.onError));
       }
@@ -354,7 +369,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc8_)
          {
-            §§push(§§pop() - 11 - 81 + 31 - 1 - 13 - 1 + 4);
+            §§push(-((§§pop() + 1 + 1) * 37 * 48) - 38 - 1);
          }
          for each(_loc2_ in param1.data)
          {
@@ -379,9 +394,9 @@ package com.enfluid.ltp.controller.common
             _loc3_.bingTitleCompEnabled = _loc2_["FetchTitleCompetitionBing"];
             §§push(_loc2_["CampaignId"] as int);
             §§push(1000);
-            if(_loc7_)
+            if(_loc8_)
             {
-               §§push((§§pop() - 1 + 1 + 59) * 100 * 3 + 14);
+               §§push(--((§§pop() - 1 + 1) * 46) * 36 + 52);
             }
             if(§§pop() == §§pop())
             {
@@ -404,7 +419,7 @@ package com.enfluid.ltp.controller.common
          §§push(-1);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 13 - 1 - 61);
+            §§push((-((-§§pop() - 1) * 62 * 15) + 1) * 58);
          }
          §§pop().execute(§§pop(),new Responder(this.onFetchFilters,this.onError));
       }
@@ -422,7 +437,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc8_)
          {
-            §§push(§§pop() - 1 + 92 - 95);
+            §§push((§§pop() - 29) * 66 - 1);
          }
          for each(_loc3_ in param1.data)
          {
@@ -434,9 +449,9 @@ package com.enfluid.ltp.controller.common
             if("bingTitleCompetition" === _loc7_)
             {
                §§push(0);
-               if(_loc9_)
+               if(_loc8_)
                {
-                  §§push(§§pop() + 60 - 1 + 12 + 1 + 1);
+                  §§push(§§pop() + 106 - 1 - 54);
                }
             }
             else if("cpc" === _loc7_)
@@ -444,31 +459,31 @@ package com.enfluid.ltp.controller.common
                §§push(1);
                if(_loc9_)
                {
-                  §§push(((§§pop() + 87) * 116 + 79) * 16 + 3);
+                  §§push(§§pop() + 1 - 55 - 56 + 22 - 1);
                }
             }
             else if("globalSearches" === _loc7_)
             {
                §§push(2);
-               if(_loc8_)
+               if(_loc9_)
                {
-                  §§push((-§§pop() + 89) * 69 + 1);
+                  §§push((§§pop() - 23 + 91 - 104 + 1 + 1) * 33);
                }
             }
             else if("titleCompetition" === _loc7_)
             {
                §§push(3);
-               if(_loc9_)
+               if(_loc8_)
                {
-                  §§push(-(§§pop() - 86) - 1);
+                  §§push(-(§§pop() - 1) - 14 + 57);
                }
             }
             else if("hasAvailableDomain" === _loc7_)
             {
                §§push(4);
-               if(_loc9_)
+               if(_loc8_)
                {
-                  §§push(-((§§pop() + 1) * 103) * 9);
+                  §§push(§§pop() + 58 + 1 - 71);
                }
             }
             else if("localSearches" === _loc7_)
@@ -476,7 +491,7 @@ package com.enfluid.ltp.controller.common
                §§push(5);
                if(_loc9_)
                {
-                  §§push(-§§pop() * 76 - 74 - 53 + 1 - 1);
+                  §§push(--(§§pop() - 1 + 50) + 29);
                }
             }
             else if("numKeywords" === _loc7_)
@@ -484,15 +499,15 @@ package com.enfluid.ltp.controller.common
                §§push(6);
                if(_loc8_)
                {
-                  §§push(-((-(§§pop() + 33) + 31) * 16 - 14));
+                  §§push((-(§§pop() * 54) - 57) * 51 + 1);
                }
             }
             else
             {
                §§push(7);
-               if(_loc8_)
+               if(_loc9_)
                {
-                  §§push((-§§pop() - 9) * 116);
+                  §§push(-((§§pop() - 49) * 66) - 1 + 1 - 94);
                }
             }
             switch(§§pop())
@@ -559,9 +574,9 @@ package com.enfluid.ltp.controller.common
          _loc1_.save();
          §§push(this.projectsToSave.length);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 1 - 1 - 86 - 1 - 1);
+            §§push(-((§§pop() - 1) * 11));
          }
          if(§§pop() == §§pop())
          {
@@ -583,7 +598,7 @@ package com.enfluid.ltp.controller.common
          §§push(-1);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 1 - 88);
+            §§push(---§§pop() + 1 + 1 - 1);
          }
          §§pop().execute(§§pop(),new Responder(this.onFetchSeedKeywords,this.onError));
       }
@@ -619,7 +634,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(§§pop() * 106 - 1 + 1));
+            §§push(-((§§pop() - 1 - 1) * 3) - 39);
          }
          if(§§pop() == §§pop())
          {
@@ -639,9 +654,9 @@ package com.enfluid.ltp.controller.common
          _loc2_.text = "SELECT * FROM main.Keywords ORDER BY KeywordId ASC";
          §§push(_loc2_);
          §§push(-1);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(--(-§§pop() - 0));
+            §§push((((§§pop() + 58) * 62 + 1) * 7 * 103 + 1) * 2);
          }
          §§pop().execute(§§pop(),new Responder(this.onFetchKeywords,this.onError));
       }
@@ -673,7 +688,7 @@ package com.enfluid.ltp.controller.common
             §§push(0);
             if(_loc10_)
             {
-               §§push(--(§§pop() - 117) * 53 * 54);
+               §§push((§§pop() + 1) * 80 * 107);
             }
             for each(_loc6_ in this.projectsToSave)
             {
@@ -695,7 +710,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() * 41 + 77 - 1) * 64);
+            §§push(-(--§§pop() + 65 + 21 + 1));
          }
          if(§§pop() == §§pop())
          {
@@ -724,7 +739,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc10_)
          {
-            §§push(-(-((§§pop() * 64 - 1 + 1) * 37) * 15));
+            §§push((§§pop() + 114 + 1 - 53) * 46 - 106);
          }
          if(§§pop() == §§pop())
          {
@@ -734,15 +749,15 @@ package com.enfluid.ltp.controller.common
          {
             §§push(this.keywordConversionCount);
             §§push(50);
-            if(_loc10_)
+            if(_loc9_)
             {
-               §§push((§§pop() * 20 - 1) * 59);
+               §§push(§§pop() - 1 + 1 - 1);
             }
             §§push(§§pop() % §§pop());
             §§push(0);
             if(_loc10_)
             {
-               §§push((§§pop() + 1 + 1 + 19) * 5);
+               §§push(§§pop() - 1 - 36 + 1 - 72 + 1 + 1);
             }
             if(§§pop() == §§pop())
             {
@@ -774,9 +789,9 @@ package com.enfluid.ltp.controller.common
          _loc1_.text = "SELECT * FROM main.Domains";
          §§push(_loc1_);
          §§push(-1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(((§§pop() + 6) * 58 + 93) * 30) + 3);
+            §§push(-(-§§pop() + 1 - 1) + 71 - 1 - 68);
          }
          §§pop().execute(§§pop(),new Responder(this.onFetchDomains,this.onError));
       }
@@ -815,7 +830,7 @@ package com.enfluid.ltp.controller.common
                §§push(0);
                if(_loc11_)
                {
-                  §§push(§§pop() * 6 * 8 - 17 + 1 - 106);
+                  §§push(((§§pop() + 1 + 95 + 111) * 47 + 88) * 36 + 1);
                }
                _loc5_ = §§pop() >= §§pop();
                _loc6_ = !!_loc5_?_loc2_.domainsHyphenated:_loc2_.domainsExact;
@@ -825,41 +840,41 @@ package com.enfluid.ltp.controller.common
                if("Available" === _loc9_)
                {
                   §§push(0);
-                  if(_loc11_)
+                  if(_loc12_)
                   {
-                     §§push(-(§§pop() + 63 + 46 - 90 + 18) + 1);
+                     §§push(-(§§pop() + 0) - 3);
                   }
                }
                else if("Unavailable" === _loc9_)
                {
                   §§push(1);
-                  if(_loc11_)
+                  if(_loc12_)
                   {
-                     §§push(-(§§pop() * 36 - 52) - 1 + 1);
+                     §§push((-§§pop() + 1) * 56 + 1);
                   }
                }
                else if("Error" === _loc9_)
                {
                   §§push(2);
-                  if(_loc12_)
+                  if(_loc11_)
                   {
-                     §§push(-§§pop() - 98 + 1 + 1 - 51);
+                     §§push(-(((§§pop() - 1) * 29 * 118 + 1 - 1) * 15));
                   }
                }
                else if("NotFetched" === _loc9_)
                {
                   §§push(3);
-                  if(_loc12_)
+                  if(_loc11_)
                   {
-                     §§push(-((§§pop() + 36) * 60 + 46 - 1 - 1) - 94);
+                     §§push(-((§§pop() - 74 - 1 - 1) * 69) + 41);
                   }
                }
                else if("Premium" === _loc9_)
                {
                   §§push(4);
-                  if(_loc12_)
+                  if(_loc11_)
                   {
-                     §§push(-(§§pop() - 1 + 1 + 17) * 43);
+                     §§push(§§pop() + 1 - 38 - 1 - 26 - 46 - 1 - 1);
                   }
                }
                else
@@ -867,7 +882,7 @@ package com.enfluid.ltp.controller.common
                   §§push(5);
                   if(_loc11_)
                   {
-                     §§push(--(((§§pop() + 1) * 44 - 1) * 29) + 87);
+                     §§push((§§pop() - 50 + 1) * 109);
                   }
                }
                switch(§§pop())
@@ -905,7 +920,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc12_)
          {
-            §§push((§§pop() * 88 - 1) * 119 - 72);
+            §§push(§§pop() + 110 + 100 + 111);
          }
          if(§§pop() == §§pop())
          {
@@ -918,13 +933,13 @@ package com.enfluid.ltp.controller.common
             §§push(100);
             if(_loc12_)
             {
-               §§push((§§pop() + 52) * 61 - 1 + 69 + 102);
+               §§push(--(§§pop() - 103 - 1) + 56);
             }
             §§push(§§pop() % §§pop());
             §§push(0);
             if(_loc12_)
             {
-               §§push(-(§§pop() + 57 + 1 - 1));
+               §§push(-((-(§§pop() - 13) - 1) * 83));
             }
             if(§§pop() == §§pop())
             {
@@ -944,7 +959,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 114 + 1 - 1) * 88 + 106 - 50);
+            §§push(((§§pop() - 81 - 1) * 68 - 1) * 38);
          }
          if(§§pop() == §§pop())
          {
@@ -953,12 +968,12 @@ package com.enfluid.ltp.controller.common
          }
          var _loc1_:KeywordVO = this.keywordsToSave.shift();
          _loc1_.save();
-         _loc2_.keywordSavedCount = _loc2_.keywordSavedCount + 1;
+         this.keywordSavedCount++;
          §§push(this.keywordsToSave.length);
          §§push(0);
          if(_loc4_)
          {
-            §§push(-§§pop() - 64 + 1);
+            §§push((--(§§pop() - 1) - 1) * 75 * 90);
          }
          if(§§pop() == §§pop())
          {
@@ -970,13 +985,13 @@ package com.enfluid.ltp.controller.common
             §§push(10);
             if(_loc4_)
             {
-               §§push(-(-§§pop() - 1 + 62));
+               §§push(-(§§pop() + 119) + 49 + 1);
             }
             §§push(§§pop() % §§pop());
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push((-§§pop() - 1) * 36 + 1 + 1 - 89);
+               §§push(-(§§pop() - 1 + 1 - 1));
             }
             if(§§pop() == §§pop())
             {

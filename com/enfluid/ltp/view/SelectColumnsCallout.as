@@ -3,24 +3,30 @@ package com.enfluid.ltp.view
    import spark.components.Callout;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import flash.filesystem.FileStream;
+   import flash.filesystem.File;
+   import flash.filesystem.FileMode;
+   import flash.utils.setTimeout;
    import spark.components.CheckBox;
+   import spark.components.Label;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import spark.layouts.VerticalLayout;
    import spark.components.Scroller;
    import spark.components.VGroup;
    import mx.binding.BindingManager;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.headers.target;
-   import com.enfluid.ltp.view.renderers.headers.CustomHeaderRenderer;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.binding.Binding;
+   import flash.events.Event;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.model.constants.Values;
+   import spark.primitives.Rect;
    import mx.events.FlexMouseEvent;
-   import flash.events.MouseEvent;
+   import mx.binding.Binding;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
+   import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
@@ -46,6 +52,10 @@ package com.enfluid.ltp.view
       private var _1808391811_SelectColumnsCallout_CheckBox7:CheckBox;
       
       private var _1808391812_SelectColumnsCallout_CheckBox8:CheckBox;
+      
+      private var _1808391813_SelectColumnsCallout_CheckBox9:CheckBox;
+      
+      public var _SelectColumnsCallout_Label1:Label;
       
       private var __moduleFactoryInitialized:Boolean = false;
       
@@ -88,22 +98,21 @@ package com.enfluid.ltp.view
          mx_internal::_bindings = mx_internal::_bindings.concat(bindings);
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
-         §§push(200);
+         §§push(250);
          if(_loc4_)
          {
-            §§push(-(§§pop() - 63 + 1));
+            §§push(-(§§pop() * 99 - 118));
          }
          §§pop().width = §§pop();
          this.verticalPosition = "after";
          this.layout = this._SelectColumnsCallout_VerticalLayout1_c();
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._SelectColumnsCallout_Array1_c);
          this.addEventListener("mouseDownOutside",this.___SelectColumnsCallout_Callout1_mouseDownOutside);
-         this.addEventListener("mouseUp",this.___SelectColumnsCallout_Callout1_mouseUp);
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 110 - 1 + 1 - 109 + 73) * 82);
+            §§push(-((§§pop() - 1) * 9) - 3 - 28);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -133,9 +142,24 @@ package com.enfluid.ltp.view
          super.initialize();
       }
       
-      private final function onMouseUp() : void
+      protected final function onChanged() : void
       {
+         this.model.selectedKeywordCollection.refresh();
          this.model.selectedKeywordCollection.project.save();
+      }
+      
+      protected final function verifyUserClick(param1:MouseEvent) : void
+      {
+         var _loc2_:CheckBox = CheckBox(param1.target);
+         var _loc3_:String = _loc2_.label.split(" ").join("");
+         if(_loc2_.selected)
+         {
+            new SetUserEvent("UserEvent.HeaderColums." + _loc3_ + "Actived").execute();
+         }
+         else
+         {
+            new SetUserEvent("UserEvent.HeaderColums." + _loc3_ + "Deactived").execute();
+         }
       }
       
       private final function _SelectColumnsCallout_VerticalLayout1_c() : VerticalLayout
@@ -143,30 +167,30 @@ package com.enfluid.ltp.view
          var _loc1_:VerticalLayout = new VerticalLayout();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 - 1 + 1 + 1) * 72);
+            §§push((§§pop() - 108 - 41 - 1 - 1 - 1) * 72);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 108) + 1);
+            §§push(-(-§§pop() + 80));
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push((-((§§pop() - 1) * 26) + 114 - 10) * 15 - 69);
+            §§push(§§pop() * 102 + 25 + 1);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 28) * 115 + 62 + 1));
+            §§push((§§pop() * 42 + 1) * 32);
          }
          §§pop().paddingTop = §§pop();
          return _loc1_;
@@ -183,16 +207,16 @@ package com.enfluid.ltp.view
          var _loc1_:Scroller = new Scroller();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 113 + 76 + 1 - 112);
+            §§push(-§§pop() - 17 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push((§§pop() + 7 + 106 + 1 + 40 - 1) * 37);
+            §§push(-(-(-(§§pop() - 80) + 1) + 1));
          }
          §§pop().percentHeight = §§pop();
          _loc1_.viewport = this._SelectColumnsCallout_VGroup1_c();
@@ -210,10 +234,10 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 59 - 1 + 1 - 118);
+            §§push(-(§§pop() - 109) - 1);
          }
          §§pop().percentWidth = §§pop();
-         _loc1_.mxmlContent = [this._SelectColumnsCallout_CheckBox1_i(),this._SelectColumnsCallout_CheckBox2_i(),this._SelectColumnsCallout_CheckBox3_i(),this._SelectColumnsCallout_CheckBox4_i(),this._SelectColumnsCallout_CheckBox5_i(),this._SelectColumnsCallout_CheckBox6_i(),this._SelectColumnsCallout_CheckBox7_i(),this._SelectColumnsCallout_CheckBox8_i()];
+         _loc1_.mxmlContent = [this._SelectColumnsCallout_CheckBox1_i(),this._SelectColumnsCallout_CheckBox2_i(),this._SelectColumnsCallout_CheckBox3_i(),this._SelectColumnsCallout_CheckBox4_i(),this._SelectColumnsCallout_CheckBox5_i(),this._SelectColumnsCallout_CheckBox6_i(),this._SelectColumnsCallout_CheckBox7_i(),this._SelectColumnsCallout_CheckBox8_i(),this._SelectColumnsCallout_CheckBox9_i(),this._SelectColumnsCallout_Label1_i()];
          if(!_loc1_.document)
          {
             _loc1_.document = this;
@@ -225,6 +249,8 @@ package com.enfluid.ltp.view
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Suggested Bid";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox1_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox1_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox1";
          if(!_loc1_.document)
          {
@@ -235,10 +261,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox1_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox1_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox2_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Local Searches";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox2_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox2_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox2";
          if(!_loc1_.document)
          {
@@ -249,10 +287,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox2_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox2_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox3_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Global Searches";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox3_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox3_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox3";
          if(!_loc1_.document)
          {
@@ -263,10 +313,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox3_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox3_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox4_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Advertiser Competition";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox4_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox4_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox4";
          if(!_loc1_.document)
          {
@@ -277,10 +339,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox4_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox4_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox5_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Num Words";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox5_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox5_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox5";
          if(!_loc1_.document)
          {
@@ -291,10 +365,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox5_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox5_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox6_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Google Title Competition";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox6_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox6_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox6";
          if(!_loc1_.document)
          {
@@ -305,10 +391,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox6_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox6_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox7_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Bing Title Competition";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox7_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox7_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox7";
          if(!_loc1_.document)
          {
@@ -319,10 +417,22 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox7_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox7_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
       private final function _SelectColumnsCallout_CheckBox8_i() : CheckBox
       {
          var _loc1_:CheckBox = new CheckBox();
          _loc1_.label = "Domain Availability";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox8_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox8_click);
          _loc1_.id = "_SelectColumnsCallout_CheckBox8";
          if(!_loc1_.document)
          {
@@ -333,14 +443,74 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___SelectColumnsCallout_CheckBox8_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox8_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
+      private final function _SelectColumnsCallout_CheckBox9_i() : CheckBox
+      {
+         var _loc1_:CheckBox = new CheckBox();
+         _loc1_.label = "Amazon Keyword Competitiveness";
+         _loc1_.addEventListener("change",this.___SelectColumnsCallout_CheckBox9_change);
+         _loc1_.addEventListener("click",this.___SelectColumnsCallout_CheckBox9_click);
+         _loc1_.id = "_SelectColumnsCallout_CheckBox9";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this._SelectColumnsCallout_CheckBox9 = _loc1_;
+         BindingManager.executeBindings(this,"_SelectColumnsCallout_CheckBox9",this._SelectColumnsCallout_CheckBox9);
+         return _loc1_;
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox9_change(param1:Event) : void
+      {
+         this.onChanged();
+      }
+      
+      public final function ___SelectColumnsCallout_CheckBox9_click(param1:MouseEvent) : void
+      {
+         this.verifyUserClick(param1);
+      }
+      
+      private final function _SelectColumnsCallout_Label1_i() : Label
+      {
+         var _loc1_:Label = new Label();
+         §§push(_loc1_);
+         §§push(100);
+         if(_loc3_)
+         {
+            §§push(-(-(§§pop() - 1 - 97) - 1 - 1));
+         }
+         §§pop().percentWidth = §§pop();
+         _loc1_.text = "*Amazon does not operate in the country you selected for this project.";
+         §§push(_loc1_);
+         §§push("paddingLeft");
+         §§push(16);
+         if(_loc3_)
+         {
+            §§push(-(-(§§pop() + 51 + 27) * 30));
+         }
+         §§pop().setStyle(§§pop(),§§pop());
+         _loc1_.id = "_SelectColumnsCallout_Label1";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this._SelectColumnsCallout_Label1 = _loc1_;
+         BindingManager.executeBindings(this,"_SelectColumnsCallout_Label1",this._SelectColumnsCallout_Label1);
+         return _loc1_;
+      }
+      
       public final function ___SelectColumnsCallout_Callout1_mouseDownOutside(param1:FlexMouseEvent) : void
       {
          this.close();
-      }
-      
-      public final function ___SelectColumnsCallout_Callout1_mouseUp(param1:MouseEvent) : void
-      {
-         this.onMouseUp();
       }
       
       private final function _SelectColumnsCallout_bindingsSetup() : Array
@@ -348,9 +518,9 @@ package com.enfluid.ltp.view
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 52));
+            §§push((-§§pop() - 5) * 97 - 114);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -358,9 +528,9 @@ package com.enfluid.ltp.view
          },null,"_SelectColumnsCallout_CheckBox1.selected");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 62 - 1 - 1 - 1) - 1);
+            §§push((-§§pop() - 113 - 1 - 64) * 68);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -370,7 +540,7 @@ package com.enfluid.ltp.view
          §§push(2);
          if(_loc2_)
          {
-            §§push(-§§pop() - 52 - 99 + 1);
+            §§push((-§§pop() - 36 + 3 - 1) * 111);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -378,9 +548,9 @@ package com.enfluid.ltp.view
          },null,"_SelectColumnsCallout_CheckBox3.selected");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() + 1) - 1));
+            §§push(§§pop() - 110 + 1 - 118);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -388,9 +558,9 @@ package com.enfluid.ltp.view
          },null,"_SelectColumnsCallout_CheckBox4.selected");
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 1 + 78) * 109 * 81));
+            §§push(§§pop() + 39 - 93 - 1 + 29 - 47 + 55 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -400,7 +570,7 @@ package com.enfluid.ltp.view
          §§push(5);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 18) - 1 + 1) * 34);
+            §§push(--(§§pop() - 20 + 1) - 1 + 98 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -410,7 +580,7 @@ package com.enfluid.ltp.view
          §§push(6);
          if(_loc3_)
          {
-            §§push(-§§pop() * 50 * 70 * 119);
+            §§push(§§pop() + 96 - 1 - 97 + 7 - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -420,7 +590,7 @@ package com.enfluid.ltp.view
          §§push(7);
          if(_loc2_)
          {
-            §§push(-(--(§§pop() * 13) * 112 + 1));
+            §§push(-(-(§§pop() + 46) - 1 - 1) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -430,7 +600,47 @@ package com.enfluid.ltp.view
          §§push(8);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) + 0));
+            §§push(§§pop() - 17 - 1 + 1 + 10 + 77);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return Boolean(model.selectedKeywordCollection.project.country.amazonSite);
+         },null,"_SelectColumnsCallout_CheckBox9.enabled");
+         §§push(result);
+         §§push(9);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 36 + 15) * 77 - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return model.selectedKeywordCollection.project.amazonKCEnabled;
+         },null,"_SelectColumnsCallout_CheckBox9.selected");
+         §§push(result);
+         §§push(10);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 1 - 1 + 1 + 39);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return !model.selectedKeywordCollection.project.country.amazonSite;
+         },null,"_SelectColumnsCallout_Label1.includeInLayout");
+         §§push(result);
+         §§push(11);
+         if(_loc2_)
+         {
+            §§push(-((§§pop() - 1) * 117 + 1) - 45);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return !model.selectedKeywordCollection.project.country.amazonSite;
+         },null,"_SelectColumnsCallout_Label1.visible");
+         §§push(result);
+         §§push(12);
+         if(_loc2_)
+         {
+            §§push(-(-(§§pop() + 1) * 119 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -440,45 +650,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.suggestedBidEnabled = param1;
          },"model.selectedKeywordCollection.project.suggestedBidEnabled");
          §§push(result);
-         §§push(8);
-         if(_loc2_)
+         §§push(12);
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 56 + 1) - 59 + 1 - 57);
+            §§push(-((-§§pop() + 1 + 55) * 6) - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 40 + 1 - 1 + 107 - 1 - 1);
+            §§push(§§pop() + 1 - 1 - 1 + 45 + 1 + 14);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 56) * 1 - 68);
+            §§push(§§pop() + 116 - 2 + 1 + 35 - 1 - 5);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) * 82 - 88) + 1 - 17);
+            §§push(§§pop() + 1 - 1 + 19 - 92 - 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(8);
-         if(_loc3_)
+         §§push(12);
+         if(_loc2_)
          {
-            §§push(§§pop() * 103 * 61 + 51 - 1 + 26);
+            §§push(§§pop() * 93 + 35 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(9);
-         if(_loc3_)
+         §§push(13);
+         if(_loc2_)
          {
-            §§push(§§pop() * 89 * 95 + 1);
+            §§push(-(§§pop() + 1 + 12 - 1) + 112 + 19 - 90);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -488,45 +698,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.localSearchesEnabled = param1;
          },"model.selectedKeywordCollection.project.localSearchesEnabled");
          §§push(result);
-         §§push(9);
+         §§push(13);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 14 + 1 - 95));
+            §§push((-(§§pop() * 30) + 15) * 73 + 49 - 93);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() * 19 - 1 + 1) * 104 + 14));
+            §§push(--((§§pop() + 24 - 109) * 76 + 16));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 68 - 1 - 1) - 113 + 1);
+            §§push((§§pop() + 1 + 1 + 1) * 100);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 35 - 1 - 78 + 1 - 97);
+            §§push((§§pop() + 1) * 35 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(9);
-         if(_loc2_)
+         §§push(13);
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1) * 88 + 42) * 80 + 1 + 1 + 93);
+            §§push(((§§pop() - 1) * 55 + 1) * 70);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(10);
+         §§push(14);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 98);
+            §§push(§§pop() * 49 + 1 - 75 + 70 - 95 + 1 - 3);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -536,45 +746,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.globalSearchesEnabled = param1;
          },"model.selectedKeywordCollection.project.globalSearchesEnabled");
          §§push(result);
-         §§push(10);
+         §§push(14);
          if(_loc2_)
          {
-            §§push((§§pop() + 62 + 80) * 30 + 1);
+            §§push(§§pop() + 30 - 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 108 + 14) + 72);
+            §§push(-((-(-§§pop() + 12 + 1) - 13) * 18));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 43 - 1));
+            §§push((--§§pop() - 76) * 20 * 10 * 92);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(-§§pop() + 90) - 91);
+            §§push((§§pop() * 114 - 1) * 52 - 103);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(10);
-         if(_loc3_)
+         §§push(14);
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 113 + 1 - 1 - 67 - 33 + 1);
+            §§push(-(-(§§pop() * 23 * 54) + 77 - 42));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(11);
-         if(_loc3_)
+         §§push(15);
+         if(_loc2_)
          {
-            §§push(-(-§§pop() - 1 + 1 + 1 - 1 + 1));
+            §§push(-§§pop() + 1 + 10 - 1 + 1 - 95);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -584,45 +794,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.advertiserCompEnabled = param1;
          },"model.selectedKeywordCollection.project.advertiserCompEnabled");
          §§push(result);
-         §§push(11);
+         §§push(15);
          if(_loc2_)
          {
-            §§push((-§§pop() * 37 - 31) * 6);
+            §§push(-((§§pop() + 1 + 108) * 5 * 80));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(§§pop() * 30 * 109 + 27);
+            §§push(§§pop() - 30 - 1 + 1 + 104 + 66);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 22 + 1 - 1 + 1);
+            §§push((-§§pop() + 1) * 64 + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 68 + 1 - 103));
+            §§push((§§pop() - 103) * 83 - 41 - 1 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(11);
-         if(_loc2_)
+         §§push(15);
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 57) + 20 + 1 - 1));
+            §§push((§§pop() - 1 + 12) * 79);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(12);
-         if(_loc3_)
+         §§push(16);
+         if(_loc2_)
          {
-            §§push(-§§pop() - 57 + 1 - 118);
+            §§push(-((-§§pop() - 47) * 103) * 43 * 101 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -632,45 +842,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.numWordsEnabled = param1;
          },"model.selectedKeywordCollection.project.numWordsEnabled");
          §§push(result);
-         §§push(12);
+         §§push(16);
          if(_loc2_)
          {
-            §§push((-§§pop() + 101 + 1 + 27 + 1) * 85 + 5);
+            §§push(§§pop() * 51 + 1 - 1 - 41);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 - 1 + 93);
+            §§push(§§pop() * 34 + 46 + 1 - 18);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 47 + 18 + 1);
+            §§push(§§pop() * 20 + 24 + 1 - 1 - 70 + 109);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(4);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 53 * 119 - 1 - 66 + 1);
+            §§push(§§pop() * 109 + 114 + 35);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(12);
+         §§push(16);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 64 + 91) - 1 + 36 + 80);
+            §§push(§§pop() + 1 + 1 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(13);
-         if(_loc2_)
+         §§push(17);
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 + 1 - 42 + 41);
+            §§push((-(-§§pop() + 51 + 1) + 1) * 69);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -680,45 +890,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.googleTitleCompEnabled = param1;
          },"model.selectedKeywordCollection.project.googleTitleCompEnabled");
          §§push(result);
-         §§push(13);
+         §§push(17);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1) - 1 - 1) - 37);
+            §§push(-(§§pop() - 87) - 46 + 1 + 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(5);
          if(_loc2_)
          {
-            §§push(--(-§§pop() + 1));
+            §§push(-(-§§pop() * 96 + 1 + 32 - 1 + 1));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(5);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 64 - 1 + 1);
+            §§push(§§pop() - 1 - 50 + 53 + 1 - 76);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 31 + 1);
+            §§push(-((§§pop() * 92 + 34) * 15));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(13);
-         if(_loc3_)
+         §§push(17);
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 48) + 1 - 1 + 89);
+            §§push(§§pop() * 51 * 36 * 107 * 77 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(14);
-         if(_loc2_)
+         §§push(18);
+         if(_loc3_)
          {
-            §§push((§§pop() * 68 - 61 - 1 + 1 - 1) * 66 - 1);
+            §§push((§§pop() + 68 + 1 + 1) * 92);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -728,45 +938,45 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.bingTitleCompEnabled = param1;
          },"model.selectedKeywordCollection.project.bingTitleCompEnabled");
          §§push(result);
-         §§push(14);
-         if(_loc2_)
+         §§push(18);
+         if(_loc3_)
          {
-            §§push((§§pop() + 116) * 61 - 1 - 72);
+            §§push(§§pop() - 1 - 117 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 70 + 1) * 64 - 74 + 26 + 1);
+            §§push(-((§§pop() - 1 + 39) * 94 * 42) * 116);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(6);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 9) - 1);
+            §§push((§§pop() + 1 - 38 + 78) * 84 + 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(6);
          if(_loc3_)
          {
-            §§push(-§§pop() + 1 + 91 - 95 - 36);
+            §§push((-§§pop() - 8 + 1) * 40 + 73);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(14);
-         if(_loc2_)
+         §§push(18);
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 109 - 108 + 1 - 82);
+            §§push((-(§§pop() + 15) - 1 + 85) * 113 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
-         §§push(15);
-         if(_loc2_)
+         §§push(19);
+         if(_loc3_)
          {
-            §§push(§§pop() + 49 - 1 + 45 - 91);
+            §§push(-(-(§§pop() + 8 + 1 - 8 + 1) * 107));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -776,38 +986,86 @@ package com.enfluid.ltp.view
             model.selectedKeywordCollection.project.domainsEnabled = param1;
          },"model.selectedKeywordCollection.project.domainsEnabled");
          §§push(result);
-         §§push(15);
+         §§push(19);
          if(_loc2_)
          {
-            §§push(-§§pop() * 69 + 69);
+            §§push(§§pop() + 53 - 86 + 1 - 1 - 1 + 42 + 104);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(7);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 70) - 1);
+            §§push((-(§§pop() + 54) + 1) * 119);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(7);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 69 + 1 + 67);
+            §§push(-(§§pop() + 1) - 1 + 42);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(7);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1 + 83 + 1 + 1) * 28));
+            §§push(-(§§pop() + 1 + 1 + 1 + 112 - 1 - 1));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
-         §§push(15);
+         §§push(19);
          if(_loc2_)
          {
-            §§push(§§pop() - 4 + 1 + 60);
+            §§push(-§§pop() + 1 + 1 - 1 + 1);
+         }
+         §§pop().twoWayCounterpart = §§pop()[§§pop()];
+         §§push(result);
+         §§push(20);
+         if(_loc3_)
+         {
+            §§push(-(-(§§pop() + 1) + 10));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():*
+         {
+            return _SelectColumnsCallout_CheckBox9.selected;
+         },function(param1:*):void
+         {
+            model.selectedKeywordCollection.project.amazonKCEnabled = param1;
+         },"model.selectedKeywordCollection.project.amazonKCEnabled");
+         §§push(result);
+         §§push(20);
+         if(_loc3_)
+         {
+            §§push(§§pop() - 1 - 1 + 1);
+         }
+         §§push(§§pop()[§§pop()]);
+         §§push(result);
+         §§push(9);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 1 + 95 - 1 + 33);
+         }
+         §§pop().twoWayCounterpart = §§pop()[§§pop()];
+         §§push(result);
+         §§push(9);
+         if(_loc3_)
+         {
+            §§push((§§pop() * 24 - 1 + 1) * 107 - 29);
+         }
+         §§pop()[§§pop()].isTwoWayPrimary = true;
+         §§push(result);
+         §§push(9);
+         if(_loc3_)
+         {
+            §§push((-§§pop() - 1 + 103) * 83 + 55);
+         }
+         §§push(§§pop()[§§pop()]);
+         §§push(result);
+         §§push(20);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() * 111 * 35 * 108 * 16));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;
@@ -824,6 +1082,7 @@ package com.enfluid.ltp.view
          this.model.selectedKeywordCollection.project.googleTitleCompEnabled = this._SelectColumnsCallout_CheckBox6.selected;
          this.model.selectedKeywordCollection.project.bingTitleCompEnabled = this._SelectColumnsCallout_CheckBox7.selected;
          this.model.selectedKeywordCollection.project.domainsEnabled = this._SelectColumnsCallout_CheckBox8.selected;
+         this.model.selectedKeywordCollection.project.amazonKCEnabled = this._SelectColumnsCallout_CheckBox9.selected;
       }
       
       [Bindable(event="propertyChange")]
@@ -974,6 +1233,25 @@ package com.enfluid.ltp.view
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_SelectColumnsCallout_CheckBox8",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get _SelectColumnsCallout_CheckBox9() : CheckBox
+      {
+         return this._1808391813_SelectColumnsCallout_CheckBox9;
+      }
+      
+      public function set _SelectColumnsCallout_CheckBox9(param1:CheckBox) : void
+      {
+         var _loc2_:Object = this._1808391813_SelectColumnsCallout_CheckBox9;
+         if(_loc2_ !== param1)
+         {
+            this._1808391813_SelectColumnsCallout_CheckBox9 = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_SelectColumnsCallout_CheckBox9",_loc2_,param1));
             }
          }
       }

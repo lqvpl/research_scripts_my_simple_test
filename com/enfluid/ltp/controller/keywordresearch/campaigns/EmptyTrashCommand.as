@@ -2,15 +2,15 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import com.hurlant.math.BigInteger;
-   import com.hurlant.math.bi_internal;
-   import spark.components.HGroup;
-   import mx.binding.BindingManager;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.states.AddItems;
    import mx.controls.Alert;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.CalcAllMajesticCompetitorAverage;
    import mx.events.CloseEvent;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
-   
-   use namespace bi_internal;
    
    public final class EmptyTrashCommand extends Command implements IPhotonCommand
    {
@@ -29,14 +29,14 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(130);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) * 22);
+            §§push(-(§§pop() - 25 - 1 - 83 - 89 - 31 - 42));
          }
          §§pop().buttonWidth = §§pop();
          §§push(Alert);
          §§push(30);
          if(_loc3_)
          {
-            §§push(((§§pop() + 67) * 64 + 1 - 5 + 1) * 8);
+            §§push(-(-(§§pop() - 1 - 118 + 1) + 1));
          }
          §§pop().buttonHeight = §§pop();
          var _loc1_:String = "All keywords in your trash will be permanently deleted. Are you sure you want to continue?";
@@ -44,9 +44,9 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(_loc1_);
          §§push("Confirm Delete");
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-(§§pop() - 92) - 1) * 33 - 45));
+            §§push(-§§pop() * 27 + 1 - 1 - 70);
          }
          §§pop().show(§§pop(),§§pop(),§§pop(),null,this.confirmDeleteHandler);
       }
@@ -58,16 +58,17 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          {
             model.allTrashKeywords.deleteAllKeywords();
             model.selectedProject.keywords.trashKeywords.removeDeletedKeywords();
+            model.selectedKeywordCollection.removeDeletedKeywords();
             if(model.selectedProject.seedKeywords && §§pop() > §§pop())
             {
                §§push(0);
-               if(_loc5_)
+               if(_loc6_)
                {
-                  §§push(§§pop() * 96 * 75 + 92);
+                  §§push(-(-(§§pop() - 1 - 115) + 68));
                }
-               for each(_loc2_ in model.selectedProject)
+               for each(_loc2_ in model.selectedProject.seedKeywords)
                {
-                  _loc2_.trashKeywords.removeDeletedKeywords();
+                  _loc2_.keywords.trashKeywords.removeDeletedKeywords();
                }
             }
             model.selectedProject.ownKeywords.trashKeywords.removeDeletedKeywords();

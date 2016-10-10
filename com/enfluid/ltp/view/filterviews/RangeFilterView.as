@@ -2,24 +2,32 @@ package com.enfluid.ltp.view.filterviews
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.view.components.FilterValueTextInput;
    import mx.core.IFlexModuleFactory;
-   import mx.binding.BindingManager;
-   import spark.events.TextOperationEvent;
-   import com.hurlant.math.BigInteger;
+   import mx.effects.Parallel;
+   import flash.utils.ByteArray;
    import com.hurlant.math.bi_internal;
+   import mx.collections.ArrayCollection;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.controller.common.ExportDataGridCSVCommand;
+   import spark.events.TextOperationEvent;
+   import spark.components.Group;
    import spark.components.Label;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
-   import flash.events.Event;
-   import com.enfluid.ltp.util.KeywordUtil;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import com.enfluid.ltp.view.components.Link;
+   import spark.components.CheckBox;
    import mx.graphics.SolidColor;
-   import spark.primitives.Rect;
+   import spark.components.HGroup;
    import mx.binding.Binding;
+   import spark.layouts.VerticalLayout;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import mx.states.State;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.model.vo.CompetitorColumnsVO;
    import flash.utils.getDefinitionByName;
    
    use namespace bi_internal;
@@ -83,7 +91,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(--(§§pop() + 1) - 85 + 1) + 1);
+            §§push((§§pop() - 25 - 1) * 81 - 77 + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -120,14 +128,14 @@ package com.enfluid.ltp.view.filterviews
          §§push(17);
          if(_loc3_)
          {
-            §§push((-(§§pop() + 110) - 1) * 115 * 94);
+            §§push(--(§§pop() * 81 + 37 - 1));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(150);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 72 - 42 - 75) * 116);
+            §§push(((§§pop() * 54 - 96) * 41 + 77 - 1) * 64);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.prompt = "Min";
@@ -156,15 +164,15 @@ package com.enfluid.ltp.view.filterviews
          §§push(11);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 73 + 100 - 1));
+            §§push(-(-((§§pop() - 1 + 1) * 37) * 15) + 60);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingTop");
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1 + 29) - 13 + 1) - 1);
+            §§push((§§pop() - 1) * 59 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -181,14 +189,14 @@ package com.enfluid.ltp.view.filterviews
          §§push(17);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1) - 87));
+            §§push(-(((§§pop() + 19) * 5 * 118 - 1) * 96 + 53));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(150);
          if(_loc2_)
          {
-            §§push(--((§§pop() - 1) * 20 * 75));
+            §§push(-(-(§§pop() * 30) + 3) - 1 + 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.prompt = "Max";
@@ -215,35 +223,35 @@ package com.enfluid.ltp.view.filterviews
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 20 - 1 + 1 - 1 - 115);
+            §§push(§§pop() + 1 - 17 + 1 - 106 + 48);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_RangeFilterView_FilterValueTextInput1.value","min");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 1) * 119 - 28 - 0 - 1);
+            §§push(-(§§pop() + 46 - 90 + 18) + 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_RangeFilterView_FilterValueTextInput1.decimalsAllowed","decimalsAllowed");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 75) - 1 - 1 + 37) * 1);
+            §§push(--(§§pop() + 73));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_RangeFilterView_FilterValueTextInput2.value","max");
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(§§pop() * 45 - 1 - 68);
+            §§push(-(§§pop() - 37) - 98 + 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_RangeFilterView_FilterValueTextInput2.decimalsAllowed","decimalsAllowed");
          §§push(result);
          §§push(4);
          if(_loc2_)
          {
-            §§push(((§§pop() + 1) * 97 - 61 - 74 + 1) * 73);
+            §§push((§§pop() + 104 + 36) * 60 + 46);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -256,42 +264,42 @@ package com.enfluid.ltp.view.filterviews
          §§push(4);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 48);
+            §§push(-§§pop() - 94 - 1 + 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 1);
+            §§push(§§pop() * 70 * 43 + 104 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 116) * 52 * 104);
+            §§push((--((§§pop() - 1) * 29) + 87 + 66) * 88);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 47) * 43 - 1);
+            §§push(-((§§pop() * 37 + 80) * 12));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() + 1 + 65) - 1);
+            §§push(§§pop() - 1 + 69 + 102 - 71);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 74 - 1 + 119 + 113 + 28 + 1 + 1);
+            §§push(-(-(§§pop() + 1 - 1) - 86));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -304,35 +312,35 @@ package com.enfluid.ltp.view.filterviews
          §§push(5);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 90) + 83);
+            §§push(-((§§pop() + 1 - 1) * 88 + 106 - 50 - 35));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(-§§pop() + 19) - 1));
+            §§push(-(-(§§pop() + 1 + 1 - 1) - 1 + 62));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push((§§pop() - 67 + 28) * 6 + 13);
+            §§push((-§§pop() - 1) * 36 + 1 + 1 - 89);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 95 - 1 + 1 - 1 - 1) + 27);
+            §§push(§§pop() - 57 + 5 - 1 - 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 37 + 1 + 1 - 91 - 1 - 101 - 1);
+            §§push(-(§§pop() - 1 + 1 - 1 - 78 - 1 - 10));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

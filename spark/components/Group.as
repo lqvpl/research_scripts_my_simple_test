@@ -245,6 +245,7 @@ package spark.components
          this.mxmlContent = param1;
       }
       
+      [ArrayElementType("mx.core.IVisualElement")]
       public function set mxmlContent(param1:Array) : void
       {
          if(this.createChildrenCalled)

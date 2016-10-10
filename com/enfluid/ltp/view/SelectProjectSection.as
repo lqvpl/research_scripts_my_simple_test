@@ -8,28 +8,27 @@ package com.enfluid.ltp.view
    import spark.components.Button;
    import com.enfluid.ltp.view.components.LTPComboBox;
    import mx.core.IFlexModuleFactory;
-   import spark.events.IndexChangeEvent;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.SelectProjectCommand;
-   import com.enfluid.ltp.model.vo.ProjectVO;
+   import spark.components.Scroller;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
    import flash.utils.setTimeout;
-   import mx.binding.BindingManager;
    import mx.graphics.SolidColor;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
    import com.enfluid.ltp.view.skins.LTPComboBoxSkin;
    import mx.core.ClassFactory;
    import com.enfluid.ltp.view.renderers.ProjectDropDownItemRenderer;
+   import spark.events.IndexChangeEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SelectProjectCommand;
+   import com.enfluid.ltp.model.vo.ProjectVO;
    import com.enfluid.ltp.view.skins.AddProjectsButtonSkin;
    import flash.events.MouseEvent;
-   import com.hurlant.crypto.hash.IHash;
-   import flash.utils.ByteArray;
+   import hr.binaria.asx3m.annotations.Annotation;
    import mx.binding.Binding;
    import mx.collections.IList;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import system.data.List;
-   import system.Reflection;
-   import system.data.lists.ArrayList;
    import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
@@ -95,37 +94,37 @@ package com.enfluid.ltp.view
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(---(-(§§pop() - 1) + 40) * 16);
+            §§push(--(§§pop() - 70 - 55 + 116));
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-§§pop() + 21 - 1 + 1);
+            §§push(-((§§pop() + 1 + 44) * 55 * 30) - 43 - 1);
          }
          §§pop().paddingBottom = §§pop();
          §§push(this);
          §§push(10);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(-((§§pop() - 110) * 43) - 1 + 1));
+            §§push(-(§§pop() + 1 - 105 + 1) + 38);
          }
          §§pop().paddingLeft = §§pop();
          §§push(this);
          §§push(10);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 1 + 1 - 29 + 60 + 40 - 1 + 49);
+            §§push((§§pop() + 57 - 62) * 82 - 96 + 47 + 1 + 1);
          }
          §§pop().paddingRight = §§pop();
          §§push(this);
          §§push(10);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 27) * 30 + 1 - 1 - 1);
+            §§push((§§pop() + 11 + 1 - 1 + 1) * 23);
          }
          §§pop().paddingTop = §§pop();
          this.mxmlContent = [this._SelectProjectSection_Rect1_i(),this._SelectProjectSection_LTPComboBox1_i(),this._SelectProjectSection_Button1_i()];
@@ -134,7 +133,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() * 20 - 110 - 0) * 106 + 111 + 49);
+            §§push(§§pop() * 87 + 1 - 1 + 83);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -177,9 +176,9 @@ package com.enfluid.ltp.view
                §§push();
                §§push(this.onChangeShowCreateProjectCallout);
                §§push(500);
-               if(_loc3_)
+               if(_loc2_)
                {
-                  §§push((§§pop() - 1) * 24 * 32 - 80 + 117 + 1);
+                  §§push(-(§§pop() - 1 - 1) + 55 + 115 - 1 - 6);
                }
                §§pop().setTimeout(§§pop(),§§pop(),[param1]);
                return;
@@ -216,9 +215,9 @@ package com.enfluid.ltp.view
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(15856629);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 15 + 1 - 1));
+            §§push(--(§§pop() + 1 + 1 - 1) * 110);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -231,14 +230,14 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1) - 1 - 1) + 31);
+            §§push(-§§pop() * 60 - 1 - 2);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 79 + 24) * 77 - 1);
+            §§push(-((§§pop() + 1) * 63));
          }
          §§pop().height = §§pop();
          _loc1_.labelField = "title";
@@ -248,9 +247,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(3355443);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 43 - 1));
+            §§push(§§pop() - 1 + 44 - 81);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -258,7 +257,7 @@ package com.enfluid.ltp.view
          §§push(12);
          if(_loc2_)
          {
-            §§push(((§§pop() + 85) * 55 - 99) * 34 + 114);
+            §§push(-((§§pop() - 109) * 74 + 4) - 1 - 1 + 17);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -266,7 +265,7 @@ package com.enfluid.ltp.view
          §§push(16777215);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1 - 1) * 43 + 75);
+            §§push(((-§§pop() - 71) * 82 + 1) * 51 - 10 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -274,7 +273,7 @@ package com.enfluid.ltp.view
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 15) + 118 + 1);
+            §§push(-(-§§pop() - 56) + 70 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("verticalScrollPolicy","auto");
@@ -283,15 +282,15 @@ package com.enfluid.ltp.view
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(§§pop() + 58 + 36 + 81);
+            §§push(-(§§pop() - 96) - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("buttonColor");
          §§push(13158600);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 117 - 1) * 44 - 18 - 107 - 100);
+            §§push(§§pop() * 45 * 34 - 29 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",LTPComboBoxSkin);
@@ -325,21 +324,21 @@ package com.enfluid.ltp.view
          §§push(32);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) - 80);
+            §§push((-(§§pop() + 1 + 63 - 1) - 59 + 84) * 108);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 1) * 34);
+            §§push(-(§§pop() + 35) - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 26 - 1 + 74) - 1);
+            §§push(§§pop() + 1 + 19 + 21 - 1);
          }
          §§pop().right = §§pop();
          _loc1_.toolTip = "Create a New Project";
@@ -368,7 +367,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 50 + 1 - 14 + 57 - 1 - 10);
+            §§push(-(§§pop() - 1 - 1 + 90) - 103 + 80 - 3);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -376,9 +375,9 @@ package com.enfluid.ltp.view
          },null,"_SelectProjectSection_Observe1.source");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 84) * 92 + 52 - 1 - 111 - 1);
+            §§push((-§§pop() * 94 + 89 - 1) * 26);
          }
          §§pop()[§§pop()] = new Binding(this,function():Function
          {
@@ -388,7 +387,7 @@ package com.enfluid.ltp.view
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 46) + 1 + 17 + 1);
+            §§push(--(((§§pop() * 29 + 65) * 114 - 1) * 61));
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -396,9 +395,9 @@ package com.enfluid.ltp.view
          },null,"_SelectProjectSection_Rect1.width");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 101) - 1 - 1) * 24);
+            §§push(-(§§pop() + 1 + 111) + 73);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -406,9 +405,9 @@ package com.enfluid.ltp.view
          },null,"_SelectProjectSection_Rect1.height");
          §§push(result);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 11));
+            §§push(-(-§§pop() - 25 - 1) + 1 - 30 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Class
          {
@@ -419,9 +418,9 @@ package com.enfluid.ltp.view
          },"projectsCombo.focusSkin");
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 40 + 82 + 3 - 83) + 27);
+            §§push(-(--(§§pop() - 7) + 1) - 64);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {
@@ -429,9 +428,9 @@ package com.enfluid.ltp.view
          },null,"projectsCombo.dataProvider");
          §§push(result);
          §§push(6);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 36 - 1 - 54 - 17 - 44 - 75);
+            §§push(-((§§pop() + 84) * 90 - 1 - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {

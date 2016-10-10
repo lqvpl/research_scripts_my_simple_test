@@ -1,11 +1,11 @@
 package com.adobe.utils
 {
-   import spark.components.TextInput;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
+   import mx.collections.ArrayList;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.common.SaveGoogleCredentialsCommand;
+   import flash.events.MouseEvent;
+   import mx.graphics.SolidColor;
    import mx.binding.BindingManager;
-   import spark.primitives.BitmapImage;
-   import spark.components.Group;
-   import spark.components.Scroller;
    
    public final class StringUtil
    {
@@ -21,9 +21,9 @@ package com.adobe.utils
          §§push(param2);
          §§push(param1);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() - 1 + 1 + 1) - 74);
+            §§push(-((§§pop() - 0 - 1) * 71));
          }
          return §§pop() == §§pop().substring(§§pop(),param2.length);
       }
@@ -57,7 +57,7 @@ package com.adobe.utils
             §§push(0);
             if(_loc5_)
             {
-               §§push((§§pop() + 1) * 84 + 1 + 1 - 1 - 1 + 39);
+               §§push((-§§pop() - 1) * 82 + 1);
             }
             if(§§pop() <= §§pop())
             {
@@ -65,9 +65,9 @@ package com.adobe.utils
             }
             §§push(param1.charCodeAt(_loc3_ - 1));
             §§push(32);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(-((§§pop() + 90) * 100 + 1 - 1) - 1);
+               §§push(-§§pop() * 28 + 1 - 1);
             }
             if(§§pop() > §§pop())
             {
@@ -75,7 +75,7 @@ package com.adobe.utils
                §§push(0);
                if(_loc4_)
                {
-                  §§push((§§pop() - 82 - 72) * 35 * 70 * 116 - 37);
+                  §§push(§§pop() - 1 + 29 - 63);
                }
                return §§pop().substring(§§pop(),_loc3_);
             }
@@ -105,7 +105,7 @@ package com.adobe.utils
          §§push(0);
          if(_loc5_)
          {
-            §§push(§§pop() * 11 * 46 + 74 + 6 - 1);
+            §§push((§§pop() + 1 + 72 + 111 + 1) * 65);
          }
          var _loc3_:Number = §§pop();
          while(_loc3_ < _loc2_)
@@ -114,7 +114,7 @@ package com.adobe.utils
             §§push(32);
             if(_loc5_)
             {
-               §§push(§§pop() * 19 + 68 - 1 - 1 + 1);
+               §§push((§§pop() - 81 + 32 + 1) * 7 * 7);
             }
             if(§§pop() > §§pop())
             {

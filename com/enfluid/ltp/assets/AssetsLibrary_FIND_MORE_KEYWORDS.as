@@ -1,13 +1,9 @@
 package com.enfluid.ltp.assets
 {
    import mx.core.BitmapAsset;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
-   import spark.layouts.HorizontalLayout;
-   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
-   import com.enfluid.ltp.util.Scraper;
-   import mx.rpc.http.HTTPService;
-   import flash.events.MouseEvent;
+   import mx.binding.Binding;
+   import flashx.textLayout.elements.TextFlow;
+   import flashx.textLayout.conversion.TextConverter;
    
    public final class AssetsLibrary_FIND_MORE_KEYWORDS extends BitmapAsset
    {

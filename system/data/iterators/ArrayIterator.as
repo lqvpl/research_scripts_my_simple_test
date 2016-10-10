@@ -1,13 +1,11 @@
 package system.data.iterators
 {
    import system.data.Iterator;
-   import com.enfluid.ltp.model.vo.SeedKeywordVO;
-   import mx.states.Transition;
+   import spark.components.Label;
+   import spark.primitives.Rect;
    import system.numeric.Mathematics;
-   import spark.components.Group;
+   import mx.graphics.SolidColor;
    import mx.binding.BindingManager;
-   import mx.graphics.SolidColorStroke;
-   import flash.events.MouseEvent;
    
    public final class ArrayIterator implements Iterator
    {
@@ -27,28 +25,28 @@ package system.data.iterators
          _a = param1;
          §§push();
          §§push(-1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) + 1);
+            §§push((-(-(-§§pop() + 4) - 17) - 1) * 90);
          }
          §§pop()._k = §§pop();
       }
       
       public function remove() : *
       {
-         _k = Number(_k) - 1;
+         _k = _loc2_;
          §§push(_a);
          §§push(Number(_k));
          §§push(1);
          if(_loc4_)
          {
-            §§push(§§pop() + 1 + 90 + 105 - 22 - 1 + 24 + 1);
+            §§push(-((§§pop() - 10 + 1 + 1) * 18 - 26 + 26));
          }
          §§push(§§pop().splice(§§pop(),§§pop()));
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 51 + 73) * 118 * 17 + 1);
+            §§push(-(--(§§pop() + 1) - 1));
          }
          return §§pop()[§§pop()];
       }
@@ -64,7 +62,7 @@ package system.data.iterators
          §§push(-1);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 1 - 85) - 1 + 1);
+            §§push(((§§pop() + 10) * 48 - 1 - 24) * 27 * 49 + 4);
          }
          §§pop()._k = §§pop();
       }
@@ -75,9 +73,9 @@ package system.data.iterators
          §§push(Mathematics);
          §§push(param1 - 1);
          §§push(-1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 77) - 99 + 1 - 1 - 1 + 42);
+            §§push(§§pop() + 1 - 1 - 1 + 1);
          }
          §§pop()._k = §§pop().clamp(§§pop(),§§pop(),_a.length);
       }

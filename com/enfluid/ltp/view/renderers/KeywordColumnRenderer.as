@@ -12,15 +12,18 @@ package com.enfluid.ltp.view.renderers
    import com.enfluid.ltp.view.components.KeywordNotesCallout;
    import flash.events.Event;
    import flash.events.NativeWindowDisplayStateEvent;
-   import com.enfluid.ltp.controller.competitoranalysis.CalcAllCompetitorAnalysisAverages;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchSiteAgeCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.CalcAllMajesticCompetitorAverage;
+   import com.enfluid.ltp.controller.competitoranalysis.CalcAllCompetitorAnalysisAverages;
    import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
    import com.enfluid.ltp.controller.competitoranalysis.SetupFetchPageRankCommand;
-   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchSiteAgeCommand;
    import spark.layouts.HorizontalLayout;
    import mx.binding.BindingManager;
    import flash.events.MouseEvent;
-   import com.enfluid.ltp.util.ProgressBarUtil;
+   import spark.components.Label;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.ToggleIsInTrashCommand;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.ToggleFavoriteCommand;
    import mx.events.ResizeEvent;
@@ -104,9 +107,9 @@ package com.enfluid.ltp.view.renderers
          this.addEventListener("resize",this.___KeywordColumnRenderer_SelfAdjustingGroup1_resize);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() - 110 - 30 - 106 + 40);
+            §§push((-§§pop() - 1 - 1 - 54 - 1 - 109) * 73);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -152,9 +155,9 @@ package com.enfluid.ltp.view.renderers
          §§push(this.viewModel.keywordDataGrid.width);
          §§push(this.viewModel.keywordColumns.keywords.width);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 27 + 1 - 1));
+            §§push((-((§§pop() - 1) * 46) + 89) * 51 + 1);
          }
          if(§§pop() < §§pop() + §§pop())
          {
@@ -167,9 +170,9 @@ package com.enfluid.ltp.view.renderers
             §§push(this.noteButton.x);
             §§push(this.noteButton.width);
             §§push(2);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(--§§pop() + 12 + 8);
+               §§push((§§pop() + 1 + 40) * 4 * 19);
             }
             §§pop().customArrowX = §§pop() + §§pop() / §§pop();
             §§push(this.keywordNotesCallout);
@@ -177,14 +180,14 @@ package com.enfluid.ltp.view.renderers
             §§push(600);
             if(_loc2_)
             {
-               §§push(§§pop() + 1 + 91 + 1 - 22 - 1);
+               §§push(§§pop() - 11 + 44 - 1);
             }
             if(§§pop() > §§pop())
             {
                §§push(600);
-               if(_loc2_)
+               if(_loc3_)
                {
-                  §§push(-((§§pop() * 30 - 1) * 28 + 103) - 72);
+                  §§push(((§§pop() - 99) * 98 + 69 - 1 - 1) * 116 - 110);
                }
                §§push(Number(§§pop()));
             }
@@ -199,6 +202,7 @@ package com.enfluid.ltp.view.renderers
             stage.nativeWindow.addEventListener(NativeWindowDisplayStateEvent.DISPLAY_STATE_CHANGE,this.closeCallout);
             this.viewModel.keywordDataGrid.addEventListener(Event.RESIZE,this.keyWordCalloutResizeHandler);
             this.viewModel.keywordDataGrid.addEventListener("keyWordCalloutResize",this.keyWordCalloutResizeHandler);
+            new SetUserEvent("UserEvent.Keyword.AddNote").execute();
          }
          else
          {
@@ -223,16 +227,16 @@ package com.enfluid.ltp.view.renderers
             §§push(this.keywordNotesCallout);
             §§push(this.viewModel.keywordDataGrid.width);
             §§push(600);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(--((-§§pop() + 74) * 8));
+               §§push(-(-§§pop() + 13 - 17 + 1) + 54);
             }
             if(§§pop() > §§pop())
             {
                §§push(600);
                if(_loc3_)
                {
-                  §§push(-§§pop() - 1 + 1 + 1 + 2);
+                  §§push(-(-§§pop() - 112 + 1));
                }
                §§push(Number(§§pop()));
             }
@@ -246,9 +250,9 @@ package com.enfluid.ltp.view.renderers
             §§push(this.noteButton.x);
             §§push(this.noteButton.width);
             §§push(2);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(-§§pop() * 69 + 108 - 25 + 1);
+               §§push(§§pop() + 1 + 1 - 95);
             }
             §§pop().customArrowX = §§pop() + §§pop() / §§pop();
          }
@@ -270,15 +274,55 @@ package com.enfluid.ltp.view.renderers
          §§push(-1);
          if(_loc1_)
          {
-            §§push(-(§§pop() - 46 + 3 - 74 + 0 - 1));
+            §§push((§§pop() + 42 + 1 + 1) * 19);
          }
          if(§§pop() > §§pop() && §§pop() > §§pop() && this.keywordLabel.selectionAnchorPosition != this.keywordLabel.selectionActivePosition)
+         {
+            return;
+         }
+         if(!this.keyword)
          {
             return;
          }
          this.keyword.isExpanded = !this.keyword.isExpanded;
          if(this.keyword.isExpanded)
          {
+            new SetUserEvent("UserEvent.Keyword.OpenDetails").execute();
+            if(this.keyword.source == "majestic")
+            {
+               if(this.keyword.avgKC == Values.NOT_FETCHED)
+               {
+                  this.keyword.isFromCache = false;
+                  new AnalyzeMajesticCompetitionCommand(this.keyword).execute();
+                  return;
+               }
+               if(this.keyword.competitorURLs && §§pop() > §§pop())
+               {
+                  §§push(this.keyword.competitorAnalysisAverages.siteAgeAvg);
+                  §§push(0);
+                  if(_loc1_)
+                  {
+                     §§push(§§pop() - 1 - 1 - 1 + 95 - 1);
+                  }
+                  if(§§pop() < §§pop() || isNaN(this.keyword.competitorAnalysisAverages.siteAgeAvg))
+                  {
+                     new SetupFetchSiteAgeCommand(this.keyword,true).execute();
+                  }
+                  new CalcAllMajesticCompetitorAverage(this.keyword).execute();
+               }
+               this.keyword.save();
+               return;
+            }
+            if(this.keyword.isFromCache)
+            {
+               this.keyword.isFromCache = false;
+               this.keyword.forceMozData = true;
+               this.keyword.avgKC = Values.NOT_FETCHED;
+            }
+            else
+            {
+               this.keyword.forceMozData = true;
+            }
             new CalcAllCompetitorAnalysisAverages(this.keyword).execute();
             if(this.keyword.avgKC == Values.NOT_FETCHED || !this.model.isPlatinum && this.keyword.competitorURLs && §§pop() > §§pop())
             {
@@ -288,9 +332,9 @@ package com.enfluid.ltp.view.renderers
             {
                §§push(this.keyword.competitorAnalysisAverages.pageRankAvg);
                §§push(0);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push(-§§pop() - 48 + 68);
+                  §§push((§§pop() - 1) * 83 + 94 - 1 + 1);
                }
                if(§§pop() < §§pop() || isNaN(this.keyword.competitorAnalysisAverages.pageRankAvg))
                {
@@ -298,15 +342,19 @@ package com.enfluid.ltp.view.renderers
                }
                §§push(this.keyword.competitorAnalysisAverages.siteAgeAvg);
                §§push(0);
-               if(_loc1_)
+               if(_loc2_)
                {
-                  §§push(-(§§pop() * 14 - 11 - 1) - 103);
+                  §§push(§§pop() - 8 + 1 - 1 + 1);
                }
                if(§§pop() < §§pop() || isNaN(this.keyword.competitorAnalysisAverages.siteAgeAvg))
                {
                   new SetupFetchSiteAgeCommand(this.keyword,true).execute();
                }
             }
+         }
+         else
+         {
+            new SetUserEvent("UserEvent.Keyword.CloseDetails").execute();
          }
          this.keyword.save();
       }
@@ -319,7 +367,7 @@ package com.enfluid.ltp.view.renderers
          §§push(8);
          if(_loc3_)
          {
-            §§push(-§§pop() - 3 - 1);
+            §§push(-(§§pop() + 23 - 1 + 1) - 100 + 1);
          }
          §§pop().paddingRight = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -327,7 +375,7 @@ package com.enfluid.ltp.view.renderers
          §§push(2);
          if(_loc2_)
          {
-            §§push((-§§pop() - 38) * 5 - 1 + 1 + 114);
+            §§push(-(§§pop() * 14) - 60);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -338,18 +386,20 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:Image = new Image();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 1));
+            §§push(-((§§pop() + 14 - 105 + 68) * 8) + 16);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 115 + 1 + 1 + 1 - 11));
+            §§push(-(((§§pop() - 63) * 60 + 107 + 1) * 32));
          }
          §§pop().height = §§pop();
+         _loc1_.buttonMode = true;
+         _loc1_.useHandCursor = true;
          _loc1_.addEventListener("click",this.__expandButton_click);
          _loc1_.id = "expandButton";
          if(!_loc1_.document)
@@ -371,9 +421,9 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:CustomRichEditableText = new CustomRichEditableText();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 1));
+            §§push((-§§pop() - 73) * 53);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.useHandCursor = true;
@@ -468,7 +518,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 63 + 113 - 50 + 37 - 1);
+            §§push(((§§pop() - 1) * 78 + 35 + 4) * 93);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -478,7 +528,7 @@ package com.enfluid.ltp.view.renderers
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 78 - 43 - 1 + 71) - 1);
+            §§push((§§pop() + 6 - 96 - 9 + 1) * 70);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -487,9 +537,9 @@ package com.enfluid.ltp.view.renderers
          },null,"keywordLabel.text");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 88 - 1) + 67) * 45 - 1);
+            §§push(-(§§pop() + 1 + 20 + 58 - 0));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -497,9 +547,9 @@ package com.enfluid.ltp.view.renderers
          },null,"trashButton.source");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1) * 66 * 110);
+            §§push((§§pop() + 105 - 1 - 25 - 1 - 44 + 1) * 108);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -507,9 +557,9 @@ package com.enfluid.ltp.view.renderers
          },null,"trashButton.visible");
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 66 + 1 + 1 + 1);
+            §§push(--(--§§pop() + 67) + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -519,7 +569,7 @@ package com.enfluid.ltp.view.renderers
          §§push(5);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 109 - 12 - 92);
+            §§push(--(§§pop() * 109 + 1) - 58);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -527,9 +577,9 @@ package com.enfluid.ltp.view.renderers
          },null,"favoriteButton.visible");
          §§push(result);
          §§push(6);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((--§§pop() * 45 - 1 + 1 - 54) * 63);
+            §§push((§§pop() - 94 + 1 + 1 + 115) * 64);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -539,7 +589,7 @@ package com.enfluid.ltp.view.renderers
          §§push(7);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 22 - 1 - 1) - 1 - 1);
+            §§push(-(-(§§pop() + 8) * 83 - 15 + 27));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

@@ -12,12 +12,13 @@ package com.enfluid.ltp.view.renderers
    import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteProjectCommand;
    import spark.layouts.HorizontalLayout;
    import mx.binding.BindingManager;
+   import mx.binding.Binding;
+   import flashx.textLayout.elements.TextFlow;
+   import flashx.textLayout.conversion.TextConverter;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import flash.events.MouseEvent;
    import mx.controls.Spacer;
-   import mx.graphics.SolidColor;
-   import mx.binding.Binding;
    import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -81,7 +82,7 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc4_)
          {
-            §§push(§§pop() + 1 - 1 + 1);
+            §§push((§§pop() - 19 - 1 - 1) * 113);
          }
          §§pop().percentWidth = §§pop();
          this.autoDrawBackground = true;
@@ -91,9 +92,9 @@ package com.enfluid.ltp.view.renderers
          this.addEventListener("rollOver",this.___ProjectDropDownItemRenderer_ItemRenderer1_rollOver);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-((§§pop() - 1) * 61) - 72 - 94 - 78);
+            §§push(-(-(§§pop() + 1 + 1) - 71 - 15) + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -147,28 +148,28 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 17 + 36 + 1 - 1 + 1 - 1);
+            §§push(-(§§pop() - 1 + 64) - 5 - 93 + 93);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() * 100 + 1) * 12 + 98 + 40));
+            §§push(§§pop() - 72 - 1 + 1);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-(§§pop() * 17) + 87 + 86 - 1 - 52) * 67);
+            §§push(---(§§pop() + 52 - 85));
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-§§pop() * 103 + 1) * 118 - 30 + 1 - 13);
+            §§push((§§pop() - 1 - 109) * 11 + 1 - 1 - 1 + 1);
          }
          §§pop().paddingTop = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -176,7 +177,7 @@ package com.enfluid.ltp.view.renderers
          §§push(-5);
          if(_loc3_)
          {
-            §§push((§§pop() + 98) * 113 - 96 + 1 - 1 + 1);
+            §§push(§§pop() - 1 - 10 + 24 - 90 - 1 - 1 + 16);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -187,9 +188,9 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 1) * 29 - 1);
+            §§push(§§pop() * 86 - 1 - 84 - 1 - 24 + 6 - 41);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
@@ -197,15 +198,15 @@ package com.enfluid.ltp.view.renderers
          §§push(3355443);
          if(_loc3_)
          {
-            §§push(((§§pop() - 83) * 110 - 1 - 1) * 108);
+            §§push((§§pop() - 1 + 63) * 93);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-§§pop() - 18 + 1) * 72 - 1) * 89);
+            §§push(§§pop() - 1 + 1 + 88 + 1 + 93 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_ProjectDropDownItemRenderer_Label1";
@@ -225,21 +226,21 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc2_)
          {
-            §§push(§§pop() + 115 + 17 + 1);
+            §§push(-(-§§pop() + 1 + 19) - 96);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) + 88 + 1);
+            §§push(-(§§pop() + 1 + 10));
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 116 - 1 - 105);
+            §§push(-((§§pop() - 48 - 60) * 52) + 1 - 77);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.buttonMode = true;
@@ -267,7 +268,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 74 - 1 - 13 - 1);
+            §§push((-(§§pop() - 91) + 1 + 60 - 82) * 102 - 1);
          }
          §§pop().width = §§pop();
          if(!_loc1_.document)
@@ -284,14 +285,14 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 + 1);
+            §§push((§§pop() + 1) * 43 - 1 + 11);
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(--(§§pop() + 84) + 1));
+            §§push((§§pop() * 50 - 86) * 69 * 12 * 25 + 1);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.buttonMode = true;
@@ -329,7 +330,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 40 * 19 + 89));
+            §§push(-(§§pop() + 1) - 1 + 98);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -341,9 +342,9 @@ package com.enfluid.ltp.view.renderers
          },"_ProjectDropDownItemRenderer_Label1.fontWeight");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) * 57);
+            §§push(--(§§pop() - 49 - 1 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -354,7 +355,7 @@ package com.enfluid.ltp.view.renderers
          §§push(2);
          if(_loc2_)
          {
-            §§push(---(§§pop() - 2 - 1 + 1));
+            §§push(-(§§pop() + 1) + 1 + 57 + 1 - 4);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -364,7 +365,7 @@ package com.enfluid.ltp.view.renderers
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 19 + 8 + 78) - 1);
+            §§push(-(§§pop() * 51 + 1 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -372,9 +373,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_ProjectDropDownItemRenderer_Image1.visible");
          §§push(result);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 19);
+            §§push(§§pop() + 80 - 59 - 34 + 1 - 112 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -384,7 +385,7 @@ package com.enfluid.ltp.view.renderers
          §§push(5);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 78 + 92) * 32) - 59 + 34 - 1);
+            §§push(-(§§pop() - 37 + 1 - 1 - 90 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

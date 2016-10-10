@@ -2,18 +2,25 @@ package com.enfluid.ltp.view.filterviews
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.controller.keywordresearch.titlecompetition.FetchBingTitleCompetitionCommand;
+   import com.enfluid.ltp.util.MajesticUtils;
+   import mx.rpc.http.HTTPService;
    import spark.components.CheckBox;
    import mx.core.IFlexModuleFactory;
-   import mx.binding.BindingManager;
    import flash.events.Event;
-   import mx.states.State;
-   import mx.states.SetProperty;
+   import hr.binaria.asx3m.converters.IConverter;
+   import hr.binaria.asx3m.core.ConversionException;
+   import spark.components.VGroup;
+   import mx.binding.BindingManager;
    import mx.binding.Binding;
    import com.enfluid.ltp.model.DataModel;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import mx.events.FlexEvent;
-   import spark.components.HGroup;
+   import spark.components.DataGrid;
+   import flash.utils.ByteArray;
    import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
@@ -68,7 +75,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 1 + 111 - 50) * 42);
+            §§push(§§pop() - 45 + 1 - 65 + 35);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -105,7 +112,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(100);
          if(_loc3_)
          {
-            §§push((§§pop() * 59 - 114 - 1) * 87 - 91);
+            §§push((§§pop() * 14 + 1) * 57 - 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.label = "Has Available Domain";
@@ -130,9 +137,9 @@ package com.enfluid.ltp.view.filterviews
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 29 - 41 - 33) * 58 - 54);
+            §§push((§§pop() - 1 - 107) * 39 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -140,9 +147,9 @@ package com.enfluid.ltp.view.filterviews
          },null,"_DomainAvailabilityFilterView_CheckBox1.selected");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 65 + 1) * 50 + 1 - 20 - 20);
+            §§push(§§pop() + 1 - 16 + 99);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -155,35 +162,35 @@ package com.enfluid.ltp.view.filterviews
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 87 - 1 - 1 - 13));
+            §§push((-§§pop() + 1 - 108 - 1 + 1) * 46);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() - 0 + 1 - 1 - 17) * 16 - 39);
+            §§push(((§§pop() + 46) * 41 + 109 - 113) * 94 * 51 - 84);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 + 57);
+            §§push((§§pop() - 1 - 1 + 96) * 2 + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 58 + 85 + 41 - 95 - 55 + 1));
+            §§push((§§pop() + 1 - 1) * 68 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 + 35);
+            §§push(-(§§pop() - 1 + 1 + 70) * 61);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

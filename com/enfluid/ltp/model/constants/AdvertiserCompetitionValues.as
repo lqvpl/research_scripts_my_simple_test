@@ -1,7 +1,9 @@
 package com.enfluid.ltp.model.constants
 {
-   import spark.components.PopUpAnchor;
+   import mx.controls.HTML;
    import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
    
    public final class AdvertiserCompetitionValues
    {

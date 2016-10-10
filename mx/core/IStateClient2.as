@@ -6,10 +6,12 @@ package mx.core
    {
        
       
+      [ArrayElementType("mx.states.State")]
       function get states() : Array;
       
       function set states(param1:Array) : void;
       
+      [ArrayElementType("mx.states.Transition")]
       function get transitions() : Array;
       
       function set transitions(param1:Array) : void;

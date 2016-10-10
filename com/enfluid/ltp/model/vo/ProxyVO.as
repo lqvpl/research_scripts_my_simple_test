@@ -1,22 +1,23 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.skins.target;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.binding.Binding;
+   import spark.components.DataGrid;
+   import spark.components.GridColumnHeaderGroup;
+   import spark.components.gridClasses.IGridVisualElement;
+   import spark.components.gridClasses.GridColumn;
+   import com.enfluid.ltp.model.constants.Values;
+   import spark.primitives.Rect;
+   import mx.binding.BindingManager;
+   import mx.graphics.SolidColorStroke;
    import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.util.Util;
    import flash.events.IEventDispatcher;
    import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
-   import flash.filesystem.File;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   
-   use namespace mx_internal;
+   import flash.display.BitmapData;
+   import com.enfluid.ltp.model.constants.Times;
+   import mx.controls.Alert;
+   import com.enfluid.ltp.controller.ranktracker.SuspendSRTAccountCommand;
+   import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
    
    public dynamic class ProxyVO extends ActiveRecord
    {
@@ -38,9 +39,13 @@ package com.enfluid.ltp.model.vo
          §§push(0);
          if(_loc1_)
          {
-            §§push(-(§§pop() - 1) - 39 - 1 - 1 + 1 - 1);
+            §§push(-(§§pop() - 8 + 1));
          }
       }
+      
+      private var _1579045811cookiesMap:Object;
+      
+      private var _1226320203lastNCRReqeustTime:Number;
       
       private var _3208616host:String;
       
@@ -52,43 +57,44 @@ package com.enfluid.ltp.model.vo
       
       private var _810407011authPassword:String;
       
-      private var _679968672recentFailureCount:int = 0;
+      private var _2139949878numRecentFailures:int = 0;
       
       private var _1459374221lastUsed:Number;
       
       private var _35987711lastFailureTime:Number;
       
+      private var _1029949455lastCaptchaTime:Number;
+      
+      private var _74961234captchaImageUrl:String;
+      
+      private var _684929939captchaBitmapData:BitmapData;
+      
       public function ProxyVO(param1:String = null)
       {
+         this._1579045811cookiesMap = {};
          super();
          this.host = param1;
       }
       
       public static function getNext() : com.enfluid.ltp.model.vo.ProxyVO
       {
-         if(!initialized)
-         {
-            DataModel.instance.proxies.source.sort(Util.randomSort);
-            initialized = true;
-         }
-         if(proxyIndex == DataModel.instance.proxies.length)
-         {
-            proxyIndex++;
-            return OWN_IP_PROXY;
-         }
-         if(proxyIndex > DataModel.instance.proxies.length)
+         var _loc1_:com.enfluid.ltp.model.vo.ProxyVO = null;
+         return OWN_IP_PROXY;
+      }
+      
+      private static function incrementProxyIndex() : void
+      {
+         proxyIndex = _loc2_;
+         if(proxyIndex >= DataModel.instance.proxies.length)
          {
             §§push();
             §§push(0);
-            if(_loc5_)
+            if(_loc3_)
             {
-               §§push(((§§pop() - 1) * 4 + 48 + 1) * 22 - 1 - 37);
+               §§push((-§§pop() * 41 + 85) * 67 + 49);
             }
             §§pop().proxyIndex = §§pop();
          }
-         var _loc1_:com.enfluid.ltp.model.vo.ProxyVO = com.enfluid.ltp.model.vo.ProxyVO(DataModel.instance.proxies.getItemAt(proxyIndex));
-         proxyIndex++;
-         return _loc1_;
       }
       
       [Bindable(event="propertyChange")]
@@ -115,6 +121,72 @@ package com.enfluid.ltp.model.vo
       public static function get staticEventDispatcher() : IEventDispatcher
       {
          return _staticBindingEventDispatcher;
+      }
+      
+      public function get isUsersIP() : Boolean
+      {
+         return this.host == USE_USERS_IP;
+      }
+      
+      public function get isGettingCaptchas() : Boolean
+      {
+         return new Date().time - this.lastCaptchaTime < Times.TWO_HOURS;
+      }
+      
+      public function get isFailing() : Boolean
+      {
+         return new Date().time - this.lastCaptchaTime < Times.ONE_HOUR;
+      }
+      
+      [NotPersisted]
+      public function get cookies() : String
+      {
+         var _loc2_:String = null;
+         var _loc1_:Array = [];
+         for each(_loc2_ in this.cookiesMap)
+         {
+            _loc1_.push(_loc2_);
+         }
+         return _loc1_.join("; ");
+      }
+      
+      [NotPersisted]
+      [Bindable(event="propertyChange")]
+      public function get cookiesMap() : Object
+      {
+         return this._1579045811cookiesMap;
+      }
+      
+      public function set cookiesMap(param1:Object) : void
+      {
+         var _loc2_:Object = this._1579045811cookiesMap;
+         if(_loc2_ !== param1)
+         {
+            this._1579045811cookiesMap = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"cookiesMap",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get lastNCRReqeustTime() : Number
+      {
+         return this._1226320203lastNCRReqeustTime;
+      }
+      
+      public function set lastNCRReqeustTime(param1:Number) : void
+      {
+         var _loc2_:Object = this._1226320203lastNCRReqeustTime;
+         if(_loc2_ !== param1)
+         {
+            this._1226320203lastNCRReqeustTime = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"lastNCRReqeustTime",_loc2_,param1));
+            }
+         }
       }
       
       [Bindable(event="propertyChange")]
@@ -213,20 +285,20 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
-      public function get recentFailureCount() : int
+      public function get numRecentFailures() : int
       {
-         return this._679968672recentFailureCount;
+         return this._2139949878numRecentFailures;
       }
       
-      public function set recentFailureCount(param1:int) : void
+      public function set numRecentFailures(param1:int) : void
       {
-         var _loc2_:Object = this._679968672recentFailureCount;
+         var _loc2_:Object = this._2139949878numRecentFailures;
          if(_loc2_ !== param1)
          {
-            this._679968672recentFailureCount = param1;
+            this._2139949878numRecentFailures = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"recentFailureCount",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"numRecentFailures",_loc2_,param1));
             }
          }
       }
@@ -265,6 +337,65 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"lastFailureTime",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get lastCaptchaTime() : Number
+      {
+         return this._1029949455lastCaptchaTime;
+      }
+      
+      public function set lastCaptchaTime(param1:Number) : void
+      {
+         var _loc2_:Object = this._1029949455lastCaptchaTime;
+         if(_loc2_ !== param1)
+         {
+            this._1029949455lastCaptchaTime = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"lastCaptchaTime",_loc2_,param1));
+            }
+         }
+      }
+      
+      [NotPersisted]
+      [Bindable(event="propertyChange")]
+      public function get captchaImageUrl() : String
+      {
+         return this._74961234captchaImageUrl;
+      }
+      
+      public function set captchaImageUrl(param1:String) : void
+      {
+         var _loc2_:Object = this._74961234captchaImageUrl;
+         if(_loc2_ !== param1)
+         {
+            this._74961234captchaImageUrl = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"captchaImageUrl",_loc2_,param1));
+            }
+         }
+      }
+      
+      [NotPersisted]
+      [Bindable(event="propertyChange")]
+      public function get captchaBitmapData() : BitmapData
+      {
+         return this._684929939captchaBitmapData;
+      }
+      
+      public function set captchaBitmapData(param1:BitmapData) : void
+      {
+         var _loc2_:Object = this._684929939captchaBitmapData;
+         if(_loc2_ !== param1)
+         {
+            this._684929939captchaBitmapData = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"captchaBitmapData",_loc2_,param1));
             }
          }
       }

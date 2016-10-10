@@ -1,29 +1,23 @@
 package hr.binaria.asx3m.core
 {
    import hr.binaria.asx3m.converters.IMarshallingContext;
-   import spark.primitives.Rect;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
+   import com.enfluid.ltp.view.renderers.TabRenderer;
+   import mx.binding.BindingManager;
    import hr.binaria.asx3m.mapper.IMapper;
    import hr.binaria.asx3m.converters.IConverterLookup;
-   import spark.effects.Fade;
-   import mx.binding.BindingManager;
+   import spark.components.Label;
    import hr.binaria.asx3m.converters.IConverter;
-   import spark.components.Group;
+   import com.adobe.cairngorm.observer.Observe;
    import flash.utils.getDefinitionByName;
    import flash.utils.getQualifiedClassName;
    import hr.binaria.asx3m.converters.IDataHolder;
-   import spark.components.Label;
    import hr.binaria.asx3m.annotations.AnnotatedWrapper;
    import hr.binaria.asx3m.annotations.Annotation;
    import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
    import system.data.Iterator;
-   import mx.core.mx_internal;
-   import com.enfluid.ltp.view.skins.target;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.binding.Binding;
    import spark.components.PopUpAnchor;
-   
-   use namespace mx_internal;
    
    public final class TreeMarshaller implements IMarshallingContext
    {

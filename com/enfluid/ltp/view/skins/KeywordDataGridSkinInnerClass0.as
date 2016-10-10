@@ -41,7 +41,7 @@ package com.enfluid.ltp.view.skins
             §§push(16777215);
             if(_loc7_)
             {
-               §§push(-(§§pop() + 1 - 65));
+               §§push(§§pop() - 16 + 2 + 1 + 1 - 30 + 1);
             }
             §§pop().color = §§pop();
          }
@@ -52,9 +52,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 17 - 1 - 1);
+            §§push(-(§§pop() + 1 + 1 + 1 + 1 + 1));
          }
          §§pop().color = §§pop();
          this.rowBackgroundFillColor = _loc1_;

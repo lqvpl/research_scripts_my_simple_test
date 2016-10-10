@@ -3,38 +3,46 @@ package com.enfluid.ltp.view.popups
    import spark.components.TitleWindow;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
    import spark.components.VGroup;
    import spark.components.CheckBox;
    import mx.core.IFlexModuleFactory;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.model.DataModel;
    import mx.controls.HTML;
    import mx.events.FlexEvent;
-   import mx.core.IFlexModule;
-   import mx.managers.PopUpManager;
    import com.enfluid.ltp.controller.common.LoadGoogleCredentialsCommand;
-   import com.enfluid.ltp.model.ViewModel;
    import flash.events.Event;
-   import flash.events.MouseEvent;
    import flash.events.KeyboardEvent;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
-   import com.enfluid.ltp.controller.keywordresearch.keywordplanner.CheckSaveGoogleLoginDetails;
-   import spark.components.Label;
-   import spark.components.BorderContainer;
-   import spark.components.Group;
-   import mx.core.DeferredInstanceFromFunction;
-   import mx.binding.Binding;
-   import assets.TextAssets;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
    import flash.utils.ByteArray;
-   import com.enfluid.ltp.view.components.FilterValueTextInput;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
+   import com.hurlant.crypto.symmetric.IPad;
+   import com.hurlant.crypto.symmetric.ICipher;
+   import com.hurlant.crypto.symmetric.PKCS5;
+   import com.hurlant.util.Base64;
+   import com.enfluid.ltp.controller.keywordresearch.keywordplanner.CheckSaveGoogleLoginDetails;
+   import spark.components.HGroup;
+   import mx.graphics.SolidColor;
+   import spark.components.BorderContainer;
    import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.skins.target;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.binding.Binding;
+   import mx.core.DeferredInstanceFromFunction;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.layouts.HorizontalLayout;
+   import assets.LibraryAssets;
+   import spark.layouts.FormLayout;
+   import mx.controls.Spacer;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.CSSCondition;
    import mx.styles.CSSSelector;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
    import mx.events.PropertyChangeEvent;
-   import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
    
@@ -94,16 +102,16 @@ package com.enfluid.ltp.view.popups
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(450);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1) * 76 * 29);
+            §§push(§§pop() - 32 - 1 + 0);
          }
          §§pop().width = §§pop();
          §§push(this);
          §§push(630);
          if(_loc4_)
          {
-            §§push(-(-§§pop() - 1) + 112);
+            §§push(-(-((§§pop() - 1) * 8 - 1) - 92));
          }
          §§pop().height = §§pop();
          this.visible = true;
@@ -112,9 +120,9 @@ package com.enfluid.ltp.view.popups
          this.addEventListener("creationComplete",this.___KeywordPlannerLoginPopup_TitleWindow1_creationComplete);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((--§§pop() - 77) * 88);
+            §§push((§§pop() - 112 + 1 + 1 - 99 - 1) * 45 * 28);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -163,7 +171,7 @@ package com.enfluid.ltp.view.popups
          §§push(-1);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 33 - 1 + 86 - 9 - 1));
+            §§push((§§pop() - 1 + 1 - 1) * 110 - 1 - 84);
          }
          if(§§pop() != §§pop())
          {
@@ -196,16 +204,16 @@ package com.enfluid.ltp.view.popups
          var _loc1_:VGroup = new VGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() * 26 - 76 - 1 - 1 - 43));
+            §§push(-§§pop() * 99 + 25 + 56 - 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() * 35 + 1 - 1 - 27 + 118 + 1);
+            §§push(-((§§pop() * 18 + 118) * 71 * 27 - 1 - 1));
          }
          §§pop().percentHeight = §§pop();
          _loc1_.mxmlContent = [this._KeywordPlannerLoginPopup_BorderContainer1_c()];
@@ -226,14 +234,14 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc2_)
          {
-            §§push((§§pop() + 51 + 5) * 10 + 1 + 7);
+            §§push((§§pop() - 56 + 83 - 1) * 82);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(50);
          if(_loc2_)
          {
-            §§push(---§§pop() - 1);
+            §§push((§§pop() * 74 + 114 - 22) * 67 - 1);
          }
          §§pop().height = §§pop();
          _loc1_.mxmlContentFactory = new DeferredInstanceFromFunction(this._KeywordPlannerLoginPopup_Array3_c);
@@ -242,7 +250,7 @@ package com.enfluid.ltp.view.popups
          §§push(15709483);
          if(_loc3_)
          {
-            §§push(((§§pop() - 1) * 60 - 110) * 91 - 73);
+            §§push((§§pop() + 34 + 1) * 31 * 98);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("borderVisible",false);
@@ -264,16 +272,16 @@ package com.enfluid.ltp.view.popups
          var _loc1_:CheckBox = new CheckBox();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() + 58) * 108 + 36 - 1) * 67);
+            §§push((§§pop() + 89 + 87 - 1 + 16) * 3 + 51);
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() * 89 - 92 - 1 - 1);
+            §§push(§§pop() * 116 * 1 - 48 + 1 - 1 + 1);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.label = "Save Google login credentials and auto-login next time";
@@ -300,7 +308,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(-(§§pop() + 51) + 114 - 1) - 1);
+            §§push((-§§pop() * 69 + 1) * 107);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -308,9 +316,9 @@ package com.enfluid.ltp.view.popups
          },null,"saveCred.selected");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 67 + 1 - 78 - 8) + 1);
+            §§push(§§pop() - 1 + 1 - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -321,37 +329,37 @@ package com.enfluid.ltp.view.popups
          },"model.autoLoginGoogle");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 92 + 114);
+            §§push((§§pop() - 112) * 29 + 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(---(-§§pop() + 10) - 1);
+            §§push(§§pop() + 1 - 30 + 5 + 1 - 119 - 64 - 33);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 50 * 47) + 1);
+            §§push(§§pop() * 103 - 1 + 58 - 35 - 1 + 108 - 21);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() + 1 + 1 + 6 + 19 + 36);
+            §§push(-(-(((§§pop() - 1) * 105 + 41) * 20) - 1));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() * 59 - 1 - 118);
+            §§push(-(§§pop() - 0) - 21 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

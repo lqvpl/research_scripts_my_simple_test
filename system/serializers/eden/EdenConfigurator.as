@@ -1,15 +1,10 @@
 package system.serializers.eden
 {
    import system.Configurator;
-   import flash.utils.Dictionary;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
-   import mx.binding.Binding;
-   import flash.utils.Proxy;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import com.enfluid.ltp.view.containers.LockCollapsiblePanel;
+   import com.enfluid.ltp.view.settings.SettingsDebugSection;
    import system.eden;
-   import mx.graphics.GradientEntry;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.DeferredInstanceFromFunction;
    
    public final class EdenConfigurator extends Configurator
    {
@@ -35,13 +30,13 @@ package system.serializers.eden
          §§push(0);
          if(_loc6_)
          {
-            §§push(-§§pop() - 1 - 38 + 114 - 59 + 1);
+            §§push((-§§pop() + 119) * 83 - 1 - 88);
          }
          var _loc3_:* = §§pop();
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(§§pop() + 1 - 1 - 81) - 44 + 1);
+            §§push(--((§§pop() - 34) * 55 * 2) + 19);
          }
          var _loc4_:* = §§pop();
          var _loc2_:Array = _config.authorized as Array;
@@ -49,18 +44,18 @@ package system.serializers.eden
          {
             _loc3_ = int(rest.length);
             §§push(0);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(-(-(-(§§pop() + 1 + 88) - 1) + 94));
+               §§push(-((§§pop() - 5) * 40 - 80));
             }
             _loc4_ = §§pop();
             while(_loc4_ < _loc3_)
             {
                §§push(!_loc2_.indexOf(rest[_loc4_]));
                §§push(-1);
-               if(_loc5_)
+               if(_loc6_)
                {
-                  §§push((-(§§pop() + 1) + 1 + 80) * 97 * 118 + 1);
+                  §§push(§§pop() + 1 - 1 - 82 - 81);
                }
                if(§§pop() > §§pop())
                {
@@ -130,7 +125,7 @@ package system.serializers.eden
          §§push(0);
          if(_loc7_)
          {
-            §§push(-§§pop() - 12 - 37 + 106);
+            §§push(§§pop() - 54 - 1 + 89 + 9 + 1);
          }
          var _loc3_:* = §§pop();
          var _loc4_:* = undefined;
@@ -139,7 +134,7 @@ package system.serializers.eden
          §§push(0);
          if(_loc7_)
          {
-            §§push((-(§§pop() * 32) + 80) * 101 - 1);
+            §§push(§§pop() + 96 - 65 + 46 - 1 - 1);
          }
          _loc3_ = §§pop();
          while(_loc3_ < _loc5_)
@@ -147,9 +142,9 @@ package system.serializers.eden
             _loc4_ = _config.authorized.indexOf(_loc2_[_loc3_]);
             §§push(_loc4_);
             §§push(-1);
-            if(_loc6_)
+            if(_loc7_)
             {
-               §§push(§§pop() + 1 - 75 - 118);
+               §§push(--(§§pop() - 1) + 78 - 1);
             }
             if(§§pop() > §§pop())
             {
@@ -158,7 +153,7 @@ package system.serializers.eden
                §§push(1);
                if(_loc7_)
                {
-                  §§push(§§pop() - 39 - 1 + 85 - 35 - 1);
+                  §§push(--(§§pop() + 46) - 98);
                }
                §§pop().splice(§§pop(),§§pop());
             }

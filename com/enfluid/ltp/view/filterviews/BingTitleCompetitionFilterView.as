@@ -2,19 +2,18 @@ package com.enfluid.ltp.view.filterviews
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import com.hurlant.math.BigInteger;
-   import com.hurlant.math.bi_internal;
-   import mx.core.IFlexModuleFactory;
-   import mx.graphics.SolidColor;
+   import com.enfluid.ltp.view.components.HelpButton;
    import mx.binding.BindingManager;
+   import mx.core.IFlexModuleFactory;
+   import spark.filters.DropShadowFilter;
+   import com.enfluid.ltp.util.Logger;
    import mx.binding.Binding;
    import com.enfluid.ltp.model.DataModel;
+   import spark.components.CheckBox;
+   import spark.layouts.VerticalLayout;
    import mx.core.mx_internal;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
-   import mx.graphics.LinearGradient;
    import flash.utils.getDefinitionByName;
    
-   use namespace bi_internal;
    use namespace mx_internal;
    
    public final class BingTitleCompetitionFilterView extends RangeFilterView implements IBindingClient
@@ -64,7 +63,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(0);
          if(_loc4_)
          {
-            §§push(§§pop() - 1 + 29 + 67 - 67);
+            §§push(-(§§pop() + 34) * 94 * 61 + 19);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -101,7 +100,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(((§§pop() - 64 - 98 - 78) * 71 + 73) * 54));
+            §§push((§§pop() - 91 + 1) * 47);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -111,7 +110,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 29 - 57 + 58));
+            §§push((-(§§pop() + 83 - 1 + 45) + 1) * 58);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -119,9 +118,9 @@ package com.enfluid.ltp.view.filterviews
          },null,"this.max");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() + 1 + 1) + 52 + 12) * 71);
+            §§push(§§pop() + 65 - 55 + 43 + 111);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -134,42 +133,42 @@ package com.enfluid.ltp.view.filterviews
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 118) + 95 - 29));
+            §§push(-(§§pop() * 108 - 75) + 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 83 - 1));
+            §§push(-(§§pop() * 37 - 40) - 98);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 84) * 90 + 1 - 1);
+            §§push(-§§pop() - 1 + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-§§pop() * 33 - 1 + 61 + 1));
+            §§push(-(§§pop() + 113 - 56 + 1) + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 62) * 42);
+            §§push(-(-(§§pop() + 1 + 1) + 1));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 40);
+            §§push(-(§§pop() * 117) + 1 + 2 + 119);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -182,35 +181,35 @@ package com.enfluid.ltp.view.filterviews
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 + 1 - 15);
+            §§push(§§pop() + 1 - 5 - 1 + 32 + 41 + 75);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push((-§§pop() + 64) * 67 + 1 - 83 - 1);
+            §§push(§§pop() - 17 + 113 + 18 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 105 - 47 - 114 + 93);
+            §§push(-(§§pop() - 1 - 1 - 1 + 1) + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 1 - 69 - 1 + 1 - 1) * 12));
+            §§push((§§pop() - 4 + 1) * 82 * 9 + 54 - 103);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 + 1 - 1);
+            §§push((-(-§§pop() - 1) * 90 - 33) * 15);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

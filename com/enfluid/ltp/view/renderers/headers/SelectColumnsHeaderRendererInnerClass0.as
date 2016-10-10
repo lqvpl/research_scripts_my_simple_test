@@ -45,14 +45,14 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(90);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 18 + 1 - 1 + 22 + 101 - 9);
+            §§push(-§§pop() - 1 + 84);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() + 15 + 1 + 1 + 112) * 91);
+            §§push(((§§pop() + 10) * 48 + 38 - 4 + 17) * 11);
          }
          §§pop().focalPointRatio = §§pop();
          _loc1_.entries = [this._SelectColumnsHeaderRendererInnerClass0_GradientEntry1_i(),this._SelectColumnsHeaderRendererInnerClass0_GradientEntry2_i()];
@@ -66,7 +66,7 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 82) + 1 - 1 + 1);
+            §§push((§§pop() + 78 - 1) * 103);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.6;
@@ -80,9 +80,9 @@ package com.enfluid.ltp.view.renderers.headers
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 81 + 73 - 101 + 1);
+            §§push(-(§§pop() + 52 - 1) + 117 + 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.8;

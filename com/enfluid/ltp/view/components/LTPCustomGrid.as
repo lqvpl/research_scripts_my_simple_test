@@ -1,17 +1,20 @@
 package com.enfluid.ltp.view.components
 {
    import spark.components.DataGrid;
-   import mx.states.State;
-   import mx.states.SetProperty;
    import spark.components.gridClasses.GridColumn;
    import spark.events.GridEvent;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
+   import mx.rpc.http.HTTPService;
+   import flash.utils.Dictionary;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import flash.events.MouseEvent;
    import mx.collections.IList;
-   import com.enfluid.ltp.view.dataandfilters.domain.DomainsGroup;
+   import mx.controls.Spacer;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import spark.components.Grid;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRendererInnerClass0;
+   import mx.binding.BindingManager;
    
    public class LTPCustomGrid extends DataGrid
    {
@@ -43,7 +46,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc8_)
          {
-            §§push((-(§§pop() + 1 - 47) + 1) * 18 + 37);
+            §§push(-(-(§§pop() - 97) * 57) + 13 - 47 - 1);
          }
          var _loc5_:* = §§pop();
          var _loc6_:GridColumn = null;
@@ -68,9 +71,9 @@ package com.enfluid.ltp.view.components
          }
          var _loc3_:int = this.resizeColumn.columnIndex;
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push((§§pop() - 43) * 60 + 1);
+            §§push((§§pop() + 1 + 1) * 99 * 98);
          }
          var _loc4_:* = §§pop();
          while(_loc4_ < _loc3_)
@@ -97,7 +100,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc7_)
             {
-               §§push((-§§pop() + 1) * 90 + 1 + 41 + 47);
+               §§push(§§pop() + 49 - 11 - 29 - 1);
             }
             §§push(Number(§§pop()));
          }
@@ -115,7 +118,7 @@ package com.enfluid.ltp.view.components
                §§push(0);
                if(_loc8_)
                {
-                  §§push(((§§pop() + 1) * 10 - 1) * 103 - 1 + 1 - 66);
+                  §§push(-(§§pop() * 1 * 16 - 5) + 1);
                }
                §§push(Number(§§pop()));
             }
@@ -157,14 +160,14 @@ package com.enfluid.ltp.view.components
          §§push(-1);
          if(_loc7_)
          {
-            §§push(-§§pop() + 117 - 8);
+            §§push(--(§§pop() + 21) - 85);
          }
          if(§§pop() < §§pop() || §§pop() == §§pop())
          {
             §§push(-1);
             if(_loc7_)
             {
-               return §§pop() - 1 + 115 + 1 + 36;
+               return §§pop() - 1 - 87 - 51 - 8;
             }
          }
          _loc2_ = this.columns;
@@ -177,7 +180,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc6_)
             {
-               §§push((§§pop() - 49 + 1) * 106 + 1 + 110 + 1);
+               §§push(-§§pop() + 16 - 1 - 76 + 1);
             }
          }
          var _loc3_:int = §§pop();
@@ -194,7 +197,7 @@ package com.enfluid.ltp.view.components
          §§push(-1);
          if(_loc7_)
          {
-            §§push((§§pop() - 1) * 97 + 11 - 1);
+            §§push(-§§pop() * 8 - 96 - 1);
          }
          return §§pop();
       }
@@ -207,14 +210,14 @@ package com.enfluid.ltp.view.components
          §§push(-1);
          if(_loc6_)
          {
-            §§push((§§pop() * 18 - 1) * 72 - 108 - 79);
+            §§push((§§pop() + 28 + 58 - 1) * 63);
          }
          if(§§pop() < §§pop())
          {
             §§push(-1);
             if(_loc6_)
             {
-               return -((§§pop() + 21 + 1 - 1 + 1) * 57) - 1;
+               return -(§§pop() - 1 + 1) + 1 - 93 - 1 - 55;
             }
          }
          _loc2_ = this.columns;
@@ -227,15 +230,15 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc7_)
             {
-               §§push(-(§§pop() - 1) + 1 - 1 + 50 + 19 + 1);
+               §§push(-((§§pop() - 1) * 37 + 46) - 1 + 1);
             }
          }
          var _loc3_:int = §§pop();
          §§push(param1);
          §§push(1);
-         if(_loc7_)
+         if(_loc6_)
          {
-            §§push(§§pop() * 97 * 61 - 77 + 92 + 14 + 29 + 114);
+            §§push(§§pop() + 72 + 2 + 1 + 1);
          }
          var _loc4_:int = §§pop() + §§pop();
          while(_loc4_ < _loc3_)
@@ -248,9 +251,9 @@ package com.enfluid.ltp.view.components
             _loc4_++;
          }
          §§push(-1);
-         if(_loc7_)
+         if(_loc6_)
          {
-            §§push(--(-(-(§§pop() * 23) - 50) - 20));
+            §§push((§§pop() - 32 + 1 + 1 - 100) * 1);
          }
          return §§pop();
       }
@@ -267,7 +270,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc5_)
          {
-            §§push(--(§§pop() - 1 - 1 - 1 - 107) * 42);
+            §§push(-(§§pop() + 1 + 1) * 95);
          }
          return §§pop() >= §§pop() && param1 < _loc3_.length?_loc3_.getItemAt(param1) as GridColumn:null;
       }

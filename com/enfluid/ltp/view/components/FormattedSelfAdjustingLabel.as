@@ -1,12 +1,10 @@
 package com.enfluid.ltp.view.components
 {
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import mx.rpc.http.HTTPService;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
    import spark.formatters.NumberFormatter;
    import mx.core.IFlexModuleFactory;
    import mx.binding.Binding;
-   import mx.collections.IList;
-   import spark.components.HGroup;
    import mx.binding.BindingManager;
    import mx.events.PropertyChangeEvent;
    

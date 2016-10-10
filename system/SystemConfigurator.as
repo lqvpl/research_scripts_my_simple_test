@@ -1,8 +1,7 @@
 package system
 {
-   import com.enfluid.ltp.view.components.FilterGridColumn;
+   import spark.primitives.Rect;
    import mx.binding.BindingManager;
-   import flash.events.MouseEvent;
    
    public final class SystemConfigurator extends Configurator
    {

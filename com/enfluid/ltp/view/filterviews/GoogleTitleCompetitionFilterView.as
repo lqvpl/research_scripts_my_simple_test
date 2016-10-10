@@ -2,18 +2,15 @@ package com.enfluid.ltp.view.filterviews
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.primitives.BitmapImage;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
    import mx.binding.BindingManager;
-   import mx.states.Transition;
    import mx.core.IFlexModuleFactory;
-   import com.enfluid.ltp.model.constants.RankCheckConstants;
-   import spark.primitives.Rect;
+   import spark.layouts.VerticalLayout;
    import mx.binding.Binding;
    import com.enfluid.ltp.model.DataModel;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane.FlatUIScrollBarDownButton;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
    import mx.core.mx_internal;
-   import flash.utils.ByteArray;
    import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
@@ -65,7 +62,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(0);
          if(_loc4_)
          {
-            §§push((--§§pop() + 70 + 1) * 14 * 11);
+            §§push(§§pop() + 1 + 81 - 1 - 3 - 57 + 1 + 88);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -100,9 +97,9 @@ package com.enfluid.ltp.view.filterviews
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1) + 1 + 58 + 13);
+            §§push((§§pop() - 35) * 104 * 27 + 1 + 3 - 95 - 56);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -112,7 +109,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 - 1) * 16);
+            §§push((-(§§pop() - 28) + 1) * 108);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -122,7 +119,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 111 - 6 + 74 - 1) + 1);
+            §§push(((-§§pop() - 1) * 17 + 28) * 6);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -133,44 +130,44 @@ package com.enfluid.ltp.view.filterviews
          },"DataModel.instance.selectedKeywordCollection.project.googleTitleCompFilterMin");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 1 + 36) * 72 + 1 + 48) - 1);
+            §§push(-(§§pop() - 0 - 1));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 97 + 1 - 1);
+            §§push((§§pop() + 98 + 1) * 58);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 48 + 1) - 1) * 83 - 1);
+            §§push(-(§§pop() - 1 - 1 - 53 + 1) * 19);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 85) - 119);
+            §§push(-(§§pop() - 1) * 94);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 79 + 1 - 90) * 24);
+            §§push((§§pop() + 1 - 54) * 75 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push((-§§pop() + 26 - 1 - 7 + 1) * 33 + 1);
+            §§push(§§pop() * 115 - 64 - 48 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -181,37 +178,37 @@ package com.enfluid.ltp.view.filterviews
          },"DataModel.instance.selectedKeywordCollection.project.googleTitleCompFilterMax");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 100 - 1 + 1 - 10);
+            §§push(-(§§pop() + 28) + 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 79) * 8);
+            §§push((§§pop() - 1) * 112 - 11 - 1 + 19);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() + 95 + 1 + 81 - 1 + 1);
+            §§push(-(-§§pop() - 37) + 1 - 1 - 1 + 86);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 108 + 1) * 9 - 1 + 6 + 1 + 87);
+            §§push(§§pop() * 50 * 60 + 35 + 1 - 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-§§pop() * 17 * 109 + 1 + 1);
+            §§push(-(§§pop() - 65 - 1 + 5 - 1 - 52));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

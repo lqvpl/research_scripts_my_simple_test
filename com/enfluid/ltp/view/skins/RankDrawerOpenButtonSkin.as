@@ -4,20 +4,23 @@ package com.enfluid.ltp.view.skins
    import mx.binding.IBindingClient;
    import mx.core.IStateClient2;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.components.Image;
-   import mx.binding.BindingManager;
    import spark.primitives.BitmapImage;
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
    import spark.components.Group;
+   import spark.effects.Resize;
+   import mx.binding.BindingManager;
    import spark.primitives.Rect;
-   import spark.components.HGroup;
    import mx.graphics.SolidColor;
+   import spark.components.HGroup;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
    import mx.binding.Binding;
    import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
+   import spark.primitives.Path;
    import flash.utils.getDefinitionByName;
    import mx.states.State;
    
@@ -77,14 +80,14 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 - 1) + 1 - 1 + 1 + 7);
+            §§push(--§§pop() + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(100);
          if(_loc4_)
          {
-            §§push(--§§pop() * 5);
+            §§push(-(§§pop() + 1 - 80 + 2 - 1 + 0) - 1);
          }
          §§pop().percentHeight = §§pop();
          this.mxmlContent = [this._RankDrawerOpenButtonSkin_Group1_c()];
@@ -106,7 +109,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(((§§pop() + 9 - 1) * 94 + 1) * 11) - 118);
+            §§push(§§pop() + 89 + 77 + 99 + 2 + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -141,23 +144,23 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 + 103 + 7);
+            §§push(-(§§pop() + 60) * 44 - 8);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 40 + 1 + 1);
+            §§push(-(-(§§pop() - 31) - 1 - 40));
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 60 - 66) * 61 + 1);
+            §§push(§§pop() + 87 + 7 - 1 + 1);
          }
          §§pop().horizontalCenter = §§pop();
          _loc1_.mxmlContent = [this._RankDrawerOpenButtonSkin_Rect1_c(),this._RankDrawerOpenButtonSkin_HGroup1_c()];
@@ -175,42 +178,42 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 0 - 1));
+            §§push(§§pop() - 90 - 105 + 50);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() + 85 + 76 + 1 + 94);
+            §§push((§§pop() * 51 + 1) * 62 + 1 - 9 + 1 - 1);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(8);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 112) - 77) * 3 + 63 + 1 - 28);
+            §§push(((§§pop() + 18) * 79 - 74) * 82 - 1);
          }
          §§pop().topLeftRadiusX = §§pop();
          §§push(_loc1_);
          §§push(8);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 70);
+            §§push(-(§§pop() + 70) - 18 + 1 + 98 + 1);
          }
          §§pop().topLeftRadiusY = §§pop();
          §§push(_loc1_);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 59 + 1 + 1);
+            §§push(-(§§pop() - 87 + 35 - 1 + 1) - 1 + 71);
          }
          §§pop().topRightRadiusX = §§pop();
          §§push(_loc1_);
          §§push(8);
          if(_loc3_)
          {
-            §§push(§§pop() + 16 - 37 + 1);
+            §§push(-(§§pop() + 1) - 25);
          }
          §§pop().topRightRadiusY = §§pop();
          _loc1_.fill = this._RankDrawerOpenButtonSkin_SolidColor1_c();
@@ -223,9 +226,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16760088);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 20) * 1) + 76 - 1 + 80 + 98);
+            §§push(-((§§pop() - 20 + 1) * 47 * 67) - 69);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -236,31 +239,31 @@ package com.enfluid.ltp.view.skins
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 22 - 59 - 31) * 104 * 96);
+            §§push((-(§§pop() * 60 * 74) * 69 - 1) * 52 + 74);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 42 + 108) + 9);
+            §§push(-(-§§pop() * 91 + 83) - 49 - 20);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.horizontalAlign = "center";
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 92 * 34 * 114 - 1 - 1);
+            §§push(-(-§§pop() * 81 - 111 - 94));
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push((§§pop() * 94 + 95 + 1 - 8 - 1) * 100 - 49);
+            §§push(--§§pop() + 1);
          }
          §§pop().paddingRight = §§pop();
          _loc1_.verticalAlign = "middle";
@@ -277,23 +280,23 @@ package com.enfluid.ltp.view.skins
          var _loc1_:BitmapImage = new BitmapImage();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 1) * 96 + 28) * 17 - 64 - 1);
+            §§push(--((§§pop() + 86 + 103) * 46) + 1 + 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(((§§pop() - 1 + 1) * 5 + 103) * 32));
+            §§push(-(§§pop() - 1) + 85 - 1 + 1 - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(180);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 78 - 1 + 1);
+            §§push(--(§§pop() - 6) + 1 + 1);
          }
          §§pop().rotation = §§pop();
          _loc1_.smooth = true;
@@ -309,25 +312,25 @@ package com.enfluid.ltp.view.skins
          _loc1_.alpha = 0.75;
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 86 - 61 + 84);
+            §§push(§§pop() + 67 - 12 + 1 - 1);
          }
          §§pop().maxDisplayedLines = §§pop();
          §§push(_loc1_);
          §§push("color");
          §§push(2236962);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 58 + 1 - 1 - 1 + 1 - 11) * 11);
+            §§push(-(§§pop() + 1) * 2 * 6 - 33);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("fontSize");
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 85 - 1 - 92 - 91 + 1) * 90);
+            §§push((§§pop() + 97 - 1) * 84 - 67 + 44 - 49 + 100);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "labelDisplay";
@@ -345,9 +348,9 @@ package com.enfluid.ltp.view.skins
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 109 + 1 - 53 - 115);
+            §§push(--(-§§pop() * 6));
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

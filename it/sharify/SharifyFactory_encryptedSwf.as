@@ -1,7 +1,7 @@
 package it.sharify
 {
    import mx.core.ByteArrayAsset;
-   import flash.utils.ByteArray;
+   import spark.components.HGroup;
    
    public final class SharifyFactory_encryptedSwf extends ByteArrayAsset
    {

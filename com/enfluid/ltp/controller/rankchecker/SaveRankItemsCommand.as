@@ -2,12 +2,12 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
    import hr.binaria.asx3m.Asx3mer;
-   import mx.events.FlexEvent;
-   import com.enfluid.ltp.model.vo.KeywordColumnsVO;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.controller.filesystem.SaveXMLToDiskCommand;
    import flash.filesystem.File;
-   import spark.layouts.VerticalLayout;
    
    public final class SaveRankItemsCommand extends Command implements IPhotonCommand
    {

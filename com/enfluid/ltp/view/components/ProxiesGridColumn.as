@@ -2,8 +2,9 @@ package com.enfluid.ltp.view.components
 {
    import spark.components.gridClasses.GridColumn;
    import mx.events.PropertyChangeEvent;
-   import mx.collections.ArrayCollection;
-   import mx.rpc.http.HTTPService;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.MinimalFlatButtonSkin;
+   import mx.binding.BindingManager;
    
    public final class ProxiesGridColumn extends GridColumn
    {

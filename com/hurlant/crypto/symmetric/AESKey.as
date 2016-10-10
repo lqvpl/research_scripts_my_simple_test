@@ -1,10 +1,12 @@
 package com.hurlant.crypto.symmetric
 {
    import flash.utils.ByteArray;
+   import mx.events.FlexEvent;
+   import flash.ui.ContextMenuItem;
+   import flash.events.ContextMenuEvent;
+   import flash.ui.ContextMenu;
    import com.hurlant.crypto.prng.Random;
    import com.hurlant.util.Memory;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
    
    public final class AESKey implements ISymmetricKey
    {
@@ -80,7 +82,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1) * 109);
+            §§push((§§pop() - 58) * 100 + 7 - 1);
          }
          var _loc1_:uint = §§pop();
          if(!_inited)
@@ -98,7 +100,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc2_)
             {
-               §§push(-(-(§§pop() + 1) + 114 + 115 + 1));
+               §§push((-(§§pop() - 73) * 109 + 1) * 110 + 1 + 78);
             }
             _loc1_ = §§pop();
             while(true)
@@ -107,7 +109,7 @@ package com.hurlant.crypto.symmetric
                §§push(256);
                if(_loc2_)
                {
-                  §§push((§§pop() + 1 - 1 + 1) * 84 - 2 + 32);
+                  §§push((§§pop() + 1) * 59 - 1 - 1 + 1);
                }
                if(§§pop() >= §§pop())
                {
@@ -128,7 +130,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc2_)
             {
-               §§push(--(-(§§pop() * 72) + 1) * 35 * 108);
+               §§push((§§pop() + 1) * 32 * 1 - 1);
             }
             _loc1_ = §§pop();
             while(_loc1_ < _Rcon.length)
@@ -203,9 +205,9 @@ package com.hurlant.crypto.symmetric
       {
          §§push("aes");
          §§push(8);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 69) * 18 + 1);
+            §§push(-(§§pop() - 1 + 55 - 1 - 1));
          }
          return §§pop() + §§pop() * keyLength;
       }
@@ -213,16 +215,16 @@ package com.hurlant.crypto.symmetric
       public function decrypt(param1:ByteArray, param2:uint = 0) : void
       {
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 91 + 84 - 1 - 90 - 104);
+            §§push(--(§§pop() - 1));
          }
          var _loc3_:uint = §§pop();
          §§push(state);
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((§§pop() + 78 + 51 + 49 + 36) * 89);
+            §§push(-(§§pop() + 1 - 5 - 1 + 40 + 7));
          }
          §§pop().position = §§pop();
          §§push(state);
@@ -230,9 +232,9 @@ package com.hurlant.crypto.symmetric
          §§push(param2);
          §§push(Nb);
          §§push(4);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((-§§pop() - 74 - 85 + 119) * 27 + 1 - 1);
+            §§push(--(-(§§pop() * 94) + 70) * 104 - 119);
          }
          §§pop().writeBytes(§§pop(),§§pop(),§§pop() * §§pop());
          §§push();
@@ -241,7 +243,7 @@ package com.hurlant.crypto.symmetric
          §§push(4);
          if(_loc4_)
          {
-            §§push(-(-(§§pop() - 1 - 1 + 88) + 13) - 1);
+            §§push(§§pop() - 1 - 106 + 59);
          }
          §§pop().addRoundKey(§§pop(),§§pop() * §§pop());
          invShiftRows();
@@ -254,7 +256,7 @@ package com.hurlant.crypto.symmetric
             §§push(4);
             if(_loc4_)
             {
-               §§push(--(§§pop() - 1 - 91 + 1 - 1) + 25);
+               §§push(-(§§pop() + 52) * 13 - 59);
             }
             §§pop().addRoundKey(§§pop(),§§pop() * §§pop());
             if(_loc3_)
@@ -271,36 +273,36 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() + 1 + 1 + 86 - 115 - 1);
+            §§push(-(-§§pop() - 34));
          }
          var _loc1_:uint = §§pop();
          §§push(tmp);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 97) * 15 + 1 + 62) * 65 + 1);
+            §§push((§§pop() + 1 + 1 - 11 - 1 - 1) * 65);
          }
          §§pop().length = §§pop();
          §§push(tmp);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1) * 0 + 111 - 93 + 1);
+            §§push(-(-(§§pop() + 1) * 105) * 39 + 58);
          }
          §§push(XtimeE);
          §§push(state);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 11 + 8) * 50 - 90 + 103 + 21));
+            §§push((-(§§pop() + 1) + 1 + 1) * 25 * 68 + 61);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 55) - 1 - 1 + 1 + 1);
+            §§push((-((§§pop() - 94 - 10) * 7) + 56) * 111);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
@@ -308,29 +310,29 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() * 62 - 1 + 71 - 1);
+            §§push(-(((§§pop() + 1) * 83 * 35 + 84) * 40) + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
          §§push(state);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 18 - 20 + 1 + 116);
+            §§push((§§pop() - 1 + 1 + 1) * 58 - 54 - 91);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(5);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 93 + 52);
+            §§push((§§pop() - 1) * 64 + 1 - 1);
          }
          §§push(Xtime9);
          §§push(state);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1) * 24);
+            §§push((§§pop() * 103 - 1 - 94 - 1) * 95);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -338,7 +340,7 @@ package com.hurlant.crypto.symmetric
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 114 - 1 - 1 - 73);
+            §§push(§§pop() - 1 - 1 - 45);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
@@ -346,7 +348,7 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 48 - 30));
+            §§push(---(§§pop() - 20 + 1));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
@@ -354,21 +356,21 @@ package com.hurlant.crypto.symmetric
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 110 + 88 - 1);
+            §§push(-(§§pop() - 1) - 46 + 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 87 + 1) - 69 - 18);
+            §§push((§§pop() + 109) * 104 + 67 + 1 + 68 - 39);
          }
          §§push(XtimeD);
          §§push(state);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 14 * 34 - 1 - 1 - 50) * 35);
+            §§push(§§pop() - 1 + 73 + 1 - 24);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -376,7 +378,7 @@ package com.hurlant.crypto.symmetric
          §§push(1);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 30) + 74 - 1 + 93) * 67);
+            §§push(-§§pop() + 74 - 19 + 54 + 23);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -384,37 +386,37 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 38 + 1 + 4 - 16));
+            §§push(§§pop() - 18 + 110 - 1 - 7 + 1 - 1 + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1 + 1 - 1) * 85 - 1);
+            §§push(-(-(§§pop() + 38) + 77 - 1));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(15);
          if(_loc2_)
          {
-            §§push((-§§pop() + 1 + 35) * 17 + 1 - 51 + 15);
+            §§push(§§pop() - 1 - 1 - 1 - 1);
          }
          §§push(XtimeB);
          §§push(state);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) * 84 * 102);
+            §§push((§§pop() + 4 + 85 - 95 - 1) * 90);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
          §§push(state);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 + 72);
+            §§push((§§pop() + 13) * 31 + 1 - 27);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -422,7 +424,7 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() * 86 * 101 + 70 + 1 - 1 + 22 - 1);
+            §§push((§§pop() - 91 - 1 - 77) * 73 + 72 + 55 + 54);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -430,21 +432,21 @@ package com.hurlant.crypto.symmetric
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() - 26 - 92 + 78 + 40 + 1 + 16);
+            §§push(-§§pop() * 72 - 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 1) + 1);
+            §§push(-(-((§§pop() + 19) * 13) + 1) * 112);
          }
          §§push(XtimeE);
          §§push(state);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 80 - 1) * 99);
+            §§push(-(§§pop() - 1) - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
@@ -452,7 +454,7 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 62) * 67 + 1 + 1);
+            §§push(-(-(§§pop() * 19) - 1) * 40 * 43);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
@@ -460,7 +462,7 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 86 - 89) * 94);
+            §§push(-(§§pop() + 6 + 1) - 1 + 43 + 47);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -468,21 +470,21 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1 - 72) * 110);
+            §§push((-§§pop() - 58 + 1) * 37);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(9);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 44 - 43) + 1) - 40);
+            §§push(-§§pop() + 1 + 113 - 1 - 19 - 1);
          }
          §§push(Xtime9);
          §§push(state);
          §§push(4);
          if(_loc3_)
          {
-            §§push(-§§pop() + 1 + 103);
+            §§push(§§pop() * 75 * 74 - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -490,15 +492,15 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 73) - 103);
+            §§push(§§pop() + 86 + 59 - 2);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 55) * 102 - 50 + 85);
+            §§push(§§pop() * 61 - 1 - 9 + 25 - 56 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
@@ -506,21 +508,21 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1 - 6) * 1));
+            §§push(§§pop() + 1 - 1 - 7 + 70 + 1 - 111);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(14);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 86 * 23 + 1 + 4) * 70);
+            §§push(-(-(§§pop() + 1 - 79 + 1) - 32) + 1);
          }
          §§push(XtimeD);
          §§push(state);
          §§push(4);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 1 - 22 - 49);
+            §§push(--(§§pop() + 1 + 23 + 23));
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -528,7 +530,7 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) * 110);
+            §§push(§§pop() - 114 + 1 + 55);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -536,7 +538,7 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc3_)
          {
-            §§push(§§pop() + 72 - 1 - 1 - 1);
+            §§push(--§§pop() * 79 - 104);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
@@ -544,21 +546,21 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc2_)
          {
-            §§push((§§pop() * 10 + 42 - 74 - 24 + 1) * 103 * 37);
+            §§push(-(-§§pop() - 72) + 59 - 1 + 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(3);
          if(_loc3_)
          {
-            §§push((-(§§pop() + 1) + 1) * 83 - 1 + 48 - 43);
+            §§push((§§pop() - 40) * 86 * 20 + 113 - 1);
          }
          §§push(XtimeB);
          §§push(state);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 91 + 85 - 35);
+            §§push((§§pop() - 35) * 82 - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
@@ -566,7 +568,7 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 92) * 103 - 53);
+            §§push(-(§§pop() - 53) - 68 - 89);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -574,7 +576,7 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc3_)
          {
-            §§push(((§§pop() - 92) * 112 - 1 + 101) * 106 + 1);
+            §§push((§§pop() * 98 - 1) * 46 - 53);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -582,59 +584,59 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc3_)
          {
-            §§push((--(§§pop() - 88) - 1) * 79);
+            §§push(((§§pop() + 80) * 71 - 13 + 1 + 21) * 112);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 66 - 50 + 1));
+            §§push((§§pop() + 1 + 1 + 1) * 25 + 22);
          }
          §§push(XtimeE);
          §§push(state);
          §§push(8);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 17) * 104);
+            §§push((§§pop() - 106 - 94) * 103 + 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(9);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() + 1 + 1 + 4) * 101 * 81);
+            §§push((§§pop() - 1 - 1 + 1 + 1) * 116 + 68);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
          §§push(state);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 88) * 21) + 46);
+            §§push(-(-(§§pop() - 1 - 7 + 1) + 1 + 1));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
          §§push(state);
          §§push(11);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() * 37 + 28) - 14) * 112);
+            §§push(-§§pop() - 1 - 1 - 26);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(13);
          if(_loc2_)
          {
-            §§push(§§pop() * 20 + 85 - 1 - 85 - 25);
+            §§push(--(-§§pop() + 1 + 44) - 61);
          }
          §§push(Xtime9);
          §§push(state);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 46 - 55 + 41) * 55 + 25 + 1 - 11);
+            §§push(-(§§pop() - 1 - 1 - 1 + 41) - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -642,15 +644,15 @@ package com.hurlant.crypto.symmetric
          §§push(9);
          if(_loc2_)
          {
-            §§push(-(-(-(§§pop() + 28) * 56 + 66) + 52));
+            §§push(-(-(§§pop() + 28 + 68 - 1 - 46) + 1));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 5) + 15);
+            §§push(--(-(§§pop() * 11 - 102 - 1) + 14));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
@@ -658,21 +660,21 @@ package com.hurlant.crypto.symmetric
          §§push(11);
          if(_loc2_)
          {
-            §§push(§§pop() * 35 - 3 + 1);
+            §§push(§§pop() - 111 + 108 - 73);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() - 1 + 16);
+            §§push(§§pop() - 91 - 1 + 112 - 50);
          }
          §§push(XtimeD);
          §§push(state);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 58 - 1 - 22 + 1) * 107);
+            §§push(-(§§pop() * 75 - 1 + 107 + 1 + 40));
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -680,7 +682,7 @@ package com.hurlant.crypto.symmetric
          §§push(9);
          if(_loc2_)
          {
-            §§push(§§pop() + 56 - 1 + 1 - 66 + 1);
+            §§push(---((§§pop() - 1) * 18 - 1) - 26);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -688,7 +690,7 @@ package com.hurlant.crypto.symmetric
          §§push(10);
          if(_loc2_)
          {
-            §§push((§§pop() + 25 + 1 + 25 + 101 + 79) * 45);
+            §§push(§§pop() - 1 + 1 - 1 - 14 - 119);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
@@ -696,29 +698,29 @@ package com.hurlant.crypto.symmetric
          §§push(11);
          if(_loc3_)
          {
-            §§push((--(§§pop() - 1) + 12 + 1) * 63);
+            §§push(-((-§§pop() + 1) * 2) * 7);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(7);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 64 + 79) + 1 - 45 + 1);
+            §§push(§§pop() * 0 + 1 - 1);
          }
          §§push(XtimeB);
          §§push(state);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() - 1 - 1 - 6) * 7 * 102);
+            §§push(-(-(§§pop() + 1 + 78 - 1) + 1 + 10));
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
          §§push(state);
          §§push(9);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1 + 1 + 1 + 1) - 1));
+            §§push(-(§§pop() - 89) + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -726,7 +728,7 @@ package com.hurlant.crypto.symmetric
          §§push(10);
          if(_loc3_)
          {
-            §§push(-§§pop() - 1 + 43);
+            §§push(-(§§pop() - 1 + 102 - 87) * 97 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -734,59 +736,59 @@ package com.hurlant.crypto.symmetric
          §§push(11);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 109 + 1 - 1) - 43);
+            §§push(-((§§pop() - 83 + 39 + 1) * 79));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 111 + 1));
+            §§push(-(-(§§pop() + 8) - 47 - 1 - 8));
          }
          §§push(XtimeE);
          §§push(state);
          §§push(12);
          if(_loc3_)
          {
-            §§push(-(--(§§pop() - 1 - 1) - 1));
+            §§push(-(§§pop() + 1 - 54 + 4 - 1 + 109) - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(-(§§pop() + 73 - 1) + 1) + 117) * 5);
+            §§push(-(§§pop() * 116) + 1 - 1 - 119);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
          §§push(state);
          §§push(14);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 13 + 104);
+            §§push(-((-§§pop() - 18 - 1) * 51) + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
          §§push(state);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 82) * 10 - 52);
+            §§push(§§pop() - 18 - 26 - 46);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(1);
          if(_loc3_)
          {
-            §§push(--§§pop() - 58 + 1 - 60 - 12 - 1);
+            §§push(--(§§pop() - 46 + 1 + 101 + 1 - 68));
          }
          §§push(Xtime9);
          §§push(state);
          §§push(12);
          if(_loc2_)
          {
-            §§push((§§pop() * 55 * 46 + 1 + 1) * 51 + 1 - 1);
+            §§push((§§pop() + 1) * 34 - 32);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -794,7 +796,7 @@ package com.hurlant.crypto.symmetric
          §§push(13);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1 + 81) * 32 * 50));
+            §§push(-(-§§pop() - 15 - 1) + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
@@ -802,29 +804,29 @@ package com.hurlant.crypto.symmetric
          §§push(14);
          if(_loc2_)
          {
-            §§push((-§§pop() + 43 - 1) * 19 - 107 - 73 - 83);
+            §§push((§§pop() - 35 - 45 - 1 + 1) * 44 + 106);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
          §§push(state);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 39) * 46 * 34);
+            §§push(--(§§pop() - 55 + 1));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 76) + 1);
+            §§push(--(§§pop() - 1) + 29 - 33 - 10);
          }
          §§push(XtimeD);
          §§push(state);
          §§push(12);
          if(_loc3_)
          {
-            §§push(§§pop() + 46 - 1 - 119);
+            §§push((-(§§pop() - 1) - 1) * 48);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
@@ -832,53 +834,53 @@ package com.hurlant.crypto.symmetric
          §§push(13);
          if(_loc3_)
          {
-            §§push((§§pop() - 20 - 1) * 16 * 2);
+            §§push(-(§§pop() - 88 + 106) * 1 + 1 - 118 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
          §§push(state);
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 41) * 104 - 1 - 1);
+            §§push(-(-(§§pop() - 14 + 33) + 22 + 37));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeB);
          §§push(state);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 34) * 49 + 1 - 1 + 1);
+            §§push((§§pop() - 1 - 82) * 88);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(11);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 36 + 1) + 1 - 1);
+            §§push((§§pop() - 83 - 1) * 78 - 1 - 1);
          }
          §§push(XtimeB);
          §§push(state);
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 54 * 95 - 1 - 116) + 32);
+            §§push(§§pop() - 115 - 1 + 1 - 1 + 1 + 109);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(XtimeD);
          §§push(state);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 113 - 1 - 1 - 1);
+            §§push((§§pop() + 57 + 96 + 99) * 114 + 10 - 4 + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime9);
          §§push(state);
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--§§pop() * 97 - 48) + 1);
+            §§push(§§pop() * 60 - 1 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(XtimeE);
@@ -886,13 +888,13 @@ package com.hurlant.crypto.symmetric
          §§push(15);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 108 - 1);
+            §§push(-(§§pop() * 51) - 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(0);
          if(_loc2_)
          {
-            §§push((-((§§pop() - 1) * 33 - 1) + 82) * 11);
+            §§push(§§pop() + 1 + 1 - 1 - 1 + 1 + 1);
          }
          _loc1_ = §§pop();
          while(true)
@@ -901,7 +903,7 @@ package com.hurlant.crypto.symmetric
             §§push(4);
             if(_loc2_)
             {
-               §§push(-((§§pop() * 117 + 1) * 119) - 114 + 1 - 60);
+               §§push(§§pop() - 1 + 1 - 108 - 42);
             }
             if(§§pop() >= §§pop() * Nb)
             {
@@ -917,120 +919,120 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 66 - 1 + 86 - 1);
+            §§push((-(§§pop() - 41 + 1) + 1) * 63);
          }
          var _loc1_:uint = §§pop();
          §§push(state);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-§§pop() - 1 - 1 + 1 - 61) * 64 - 18);
+            §§push(§§pop() + 68 + 53 + 1 + 1 + 1 + 1 + 89);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() * 71 * 37 - 100 - 90 + 1);
+            §§push(-(§§pop() + 72 - 1 - 1) - 111);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(4);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 103 + 1) * 113);
+            §§push((-((§§pop() + 46) * 17 - 43) + 38) * 92);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 54 + 1));
+            §§push(-(§§pop() * 108 + 1 + 1 - 1 - 1) * 0);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
-         §§push(state);
-         §§push(8);
-         if(_loc2_)
-         {
-            §§push(§§pop() * 97 * 100 + 112 + 118 - 1);
-         }
-         §§push(InvSbox);
          §§push(state);
          §§push(8);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() * 77 - 20) + 1 + 112 + 1));
+            §§push(§§pop() + 1 + 1 - 35);
+         }
+         §§push(InvSbox);
+         §§push(state);
+         §§push(8);
+         if(_loc2_)
+         {
+            §§push((-(§§pop() - 1) - 1 + 1) * 90 * 114);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(12);
          if(_loc2_)
          {
-            §§push((§§pop() * 12 - 24 + 1) * 117);
+            §§push(-(§§pop() * 14 + 55) + 98 + 25);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1) - 1 + 90 - 1) * 95);
+            §§push(-(§§pop() - 1 - 1 + 1) * 18 * 119 - 16);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(InvSbox);
          §§push(state);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 50 * 40);
+            §§push(-(§§pop() - 1 + 83 - 1 - 94) + 1);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 + 104) * 12 - 109) * 80 - 112);
+            §§push((§§pop() + 32 + 53) * 9 * 87 - 111 + 37);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(9);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 18 + 28));
+            §§push(-(§§pop() - 35) + 1 + 1 + 47 - 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(9);
          if(_loc2_)
          {
-            §§push(-§§pop() * 51 - 1 + 1);
+            §§push((-(-§§pop() - 1 + 1) + 64) * 53);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(5);
          if(_loc3_)
          {
-            §§push((§§pop() * 62 - 71 - 1 - 40 + 84 - 1) * 17);
+            §§push(-(§§pop() - 53 - 35 - 1) - 115 - 45 + 104);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() * 95 * 33) - 1) * 76);
+            §§push(§§pop() * 87 - 2 + 1 - 1 + 1);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-§§pop() + 97 + 1 - 1 + 33);
+            §§push(((§§pop() - 1) * 103 * 118 - 12 - 36 - 2) * 62);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-((§§pop() + 1) * 47) - 39) * 57);
+            §§push(§§pop() + 1 - 1 + 1 - 1);
          }
          §§pop()[§§pop()] = _loc1_;
          §§push(InvSbox);
@@ -1038,57 +1040,57 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 60 + 75);
+            §§push(§§pop() + 33 + 34 - 75 - 1 + 119 - 1);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 10 * 32);
+            §§push(((§§pop() + 6 - 1 + 1) * 50 - 1) * 21 - 89);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(10);
          if(_loc2_)
          {
-            §§push(((§§pop() + 1) * 66 + 1) * 76 - 28 + 1);
+            §§push(§§pop() + 27 - 1 + 1 + 82 + 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(10);
          if(_loc3_)
          {
-            §§push(§§pop() * 58 - 1 - 1 + 31 - 5);
+            §§push((-(§§pop() + 1 - 1) + 1) * 41);
          }
          §§pop()[§§pop()] = _loc1_;
          §§push(InvSbox);
          §§push(state);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 7) * 27 * 97);
+            §§push(--(§§pop() * 74 + 41 - 65) * 39 - 84);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 63) * 13 + 1);
+            §§push((-((-§§pop() + 22) * 17) - 62) * 48 * 26);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 109 + 70 - 74 - 87);
+            §§push(-§§pop() + 67 + 5);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 1) * 38 + 1);
+            §§push(-(§§pop() - 1 + 1 - 23));
          }
          §§pop()[§§pop()] = _loc1_;
          §§push(InvSbox);
@@ -1096,56 +1098,56 @@ package com.hurlant.crypto.symmetric
          §§push(3);
          if(_loc2_)
          {
-            §§push((--§§pop() + 102 - 83) * 62);
+            §§push((§§pop() - 1 - 83 + 96) * 80 - 42 + 69);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 62) * 14 - 1 + 1);
+            §§push((§§pop() + 1) * 38 - 105 - 1 - 106 + 33);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(7);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 1) + 87 + 40);
+            §§push(-§§pop() * 41 - 34);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(7);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 89) * 43);
+            §§push(-(-(§§pop() - 26) + 113) + 1 - 1);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(11);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 1) - 1 + 98);
+            §§push(§§pop() - 103 - 114 + 88 - 71);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(11);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1 - 1) * 0 - 1));
+            §§push((§§pop() + 79) * 59 - 97 - 80);
          }
          §§push(InvSbox);
          §§push(state);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 1 + 1) * 69 * 61 - 1);
+            §§push(-(((§§pop() * 63 + 1) * 78 - 1) * 91) - 106);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(15);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 46 + 1 - 116);
+            §§push(§§pop() - 49 - 1 + 1);
          }
          §§pop()[§§pop()] = _loc1_;
       }
@@ -1155,14 +1157,14 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 94) - 27 - 61 + 8));
+            §§push(-(§§pop() + 91 - 1) * 70 + 28 + 118);
          }
          var _loc1_:uint = §§pop();
          var _loc2_:Random = new Random();
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(--(-§§pop() - 1));
+            §§push((§§pop() - 65 + 20) * 101 - 77 + 1 + 1);
          }
          _loc1_ = §§pop();
          while(_loc1_ < key.length)
@@ -1172,9 +1174,9 @@ package com.hurlant.crypto.symmetric
          }
          Nr = _loc2_.nextByte();
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() * 21 * 35 - 1 - 59 + 98);
+            §§push(--(§§pop() * 116) + 1);
          }
          _loc1_ = §§pop();
          while(_loc1_ < state.length)
@@ -1183,9 +1185,9 @@ package com.hurlant.crypto.symmetric
             _loc1_++;
          }
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 1 - 1 - 29);
+            §§push(§§pop() - 108 - 1 + 61 - 23 + 1);
          }
          _loc1_ = §§pop();
          while(_loc1_ < tmp.length)
@@ -1197,28 +1199,28 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc3_)
          {
-            §§push((-§§pop() + 1 - 1) * 91 * 40 * 69);
+            §§push(--((§§pop() - 1 + 70 - 51) * 37));
          }
          §§pop().length = §§pop();
          §§push();
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() + 1 - 1) + 76 + 1 - 31);
+            §§push((§§pop() * 99 + 16) * 88);
          }
          §§pop().keyLength = §§pop();
          §§push(state);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() - 48) * 23 - 64 - 1);
+            §§push(-(§§pop() + 58 + 66 + 1) * 79);
          }
          §§pop().length = §§pop();
          §§push(tmp);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 7 - 100 - 110 + 83 + 1);
+            §§push(-(§§pop() - 38 - 1 + 53 - 1 + 1 - 106));
          }
          §§pop().length = §§pop();
          key = null;
@@ -1228,7 +1230,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1 - 1) - 109) - 1);
+            §§push(-(((§§pop() - 106) * 67 + 46 + 1 + 1) * 28));
          }
          §§pop().Nr = §§pop();
          Memory.gc();
@@ -1237,46 +1239,46 @@ package com.hurlant.crypto.symmetric
       private final function expandKey() : void
       {
          §§push(0);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(§§pop() + 44 - 1 + 66 - 2 + 3);
+            §§push(-(§§pop() * 0 + 40) - 1 - 101);
          }
          var _loc1_:uint = §§pop();
          §§push(0);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push((-§§pop() - 22) * 93 - 116);
+            §§push(--§§pop() + 1 - 33 - 74);
          }
          var _loc2_:uint = §§pop();
          §§push(0);
          if(_loc8_)
          {
-            §§push((§§pop() + 64 - 107) * 80);
+            §§push(§§pop() * 115 - 1 + 23 - 73);
          }
          var _loc3_:uint = §§pop();
          §§push(0);
-         if(_loc8_)
+         if(_loc9_)
          {
-            §§push(§§pop() * 12 + 84 - 36);
+            §§push(§§pop() + 1 + 29 + 1);
          }
          var _loc4_:uint = §§pop();
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() * 20 - 94 + 34) * 96);
+            §§push(§§pop() * 13 + 29 + 40);
          }
          var _loc5_:uint = §§pop();
          §§push(0);
          if(_loc8_)
          {
-            §§push(-(-(-(§§pop() + 42) + 42) + 1) - 1);
+            §§push(§§pop() + 67 - 1 + 1 + 1 + 1 + 1);
          }
          var _loc6_:uint = §§pop();
          §§push(key.length);
          §§push(4);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(-(§§pop() * 23 + 118) + 10);
+            §§push((§§pop() - 1) * 40 + 1);
          }
          var _loc7_:uint = §§pop() / §§pop();
          §§push();
@@ -1284,7 +1286,7 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc9_)
          {
-            §§push(-(-(§§pop() * 53) + 86 + 1 + 26 + 1));
+            §§push(§§pop() + 1 + 1 + 1);
          }
          §§pop().Nr = §§pop() + §§pop();
          _loc6_ = _loc7_;
@@ -1294,9 +1296,9 @@ package com.hurlant.crypto.symmetric
             §§push(Nb);
             §§push(Nr);
             §§push(1);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((§§pop() * 105 - 1) * 110);
+               §§push(-(§§pop() - 1 + 1 + 1));
             }
             if(§§pop() >= §§pop() * (§§pop() + §§pop()))
             {
@@ -1306,46 +1308,46 @@ package com.hurlant.crypto.symmetric
             §§push(4);
             if(_loc9_)
             {
-               §§push(§§pop() + 89 - 1 - 88 + 1);
+               §§push(-((§§pop() + 1) * 116 - 119 + 107) - 115);
             }
             §§push(§§pop() * _loc6_);
             §§push(4);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push(§§pop() - 51 + 1 + 84);
+               §§push((§§pop() + 1 - 1 + 114 + 1) * 11 - 66 - 29);
             }
             _loc1_ = §§pop()[§§pop() - §§pop()];
             §§push(key);
             §§push(4);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(((--§§pop() + 67) * 1 - 60 - 1) * 43);
+               §§push((§§pop() + 1 - 79) * 6 + 1);
             }
             §§push(§§pop() * _loc6_);
             §§push(3);
             if(_loc9_)
             {
-               §§push(-((§§pop() - 38) * 117 * 47 + 1) * 53 - 1);
+               §§push(--(-(§§pop() + 46 - 1) * 34) + 67);
             }
             _loc2_ = §§pop()[§§pop() - §§pop()];
             §§push(key);
             §§push(4);
             if(_loc8_)
             {
-               §§push(-(§§pop() - 66 - 101 - 1 + 1));
+               §§push((§§pop() * 103 * 59 + 1 - 64 + 1) * 16 + 1);
             }
             §§push(§§pop() * _loc6_);
             §§push(2);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push((§§pop() + 1 - 1 - 1 - 1 - 12 + 13) * 45);
+               §§push(--((§§pop() + 1) * 86 * 82 + 96 - 1));
             }
             _loc3_ = §§pop()[§§pop() - §§pop()];
             §§push(key);
             §§push(4);
             if(_loc8_)
             {
-               §§push(----§§pop() - 5);
+               §§push(((§§pop() - 1) * 105 - 1 - 57) * 2 - 1 - 54);
             }
             _loc4_ = §§pop()[§§pop() * _loc6_ - 1];
             if(!(_loc6_ % _loc7_))
@@ -1360,9 +1362,9 @@ package com.hurlant.crypto.symmetric
             {
                §§push(_loc7_);
                §§push(6);
-               if(_loc9_)
+               if(_loc8_)
                {
-                  §§push(§§pop() * 46 + 1 + 1 - 1);
+                  §§push(-(§§pop() - 39) + 1 + 1 - 106);
                }
                if(§§pop() > §§pop() && §§pop() == §§pop())
                {
@@ -1374,130 +1376,130 @@ package com.hurlant.crypto.symmetric
             }
             §§push(key);
             §§push(4);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((§§pop() * 85 - 1 + 22) * 59 + 1 + 63 - 1);
+               §§push(§§pop() + 42 - 50 - 45 + 27 - 111);
             }
             §§push(§§pop() * _loc6_);
             §§push(0);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((-(§§pop() - 1 + 1 - 69) + 81) * 93);
+               §§push(-(§§pop() + 1 - 1));
             }
             §§push(§§pop() + §§pop());
             §§push(key);
             §§push(4);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((§§pop() * 70 + 1 - 55 - 1 - 23 + 55) * 36);
+               §§push(§§pop() + 1 + 1 + 1);
             }
             §§push(§§pop() * _loc6_);
             §§push(4);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(§§pop() + 108 - 65 + 1 + 9 + 1 - 1);
+               §§push(-(-(§§pop() + 14) - 25 + 47 + 106));
             }
             §§push(§§pop() - §§pop() * _loc7_);
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() + 61 - 1 - 103 - 53 + 3);
+               §§push(-(§§pop() - 1 - 41) + 103 + 9);
             }
             §§pop()[§§pop()] = §§pop()[§§pop() + §§pop()] ^ _loc1_;
             §§push(key);
             §§push(4);
             if(_loc8_)
             {
-               §§push(-((§§pop() - 1 + 56) * 45 + 1));
+               §§push(-(§§pop() + 54 - 87) + 75);
             }
             §§push(§§pop() * _loc6_);
             §§push(1);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push(-(§§pop() + 1 + 1 + 92 - 1));
+               §§push(-(-§§pop() + 1) - 1 - 84);
             }
             §§push(§§pop() + §§pop());
             §§push(key);
             §§push(4);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push(--(§§pop() - 20) - 106 - 17 + 1 - 112);
+               §§push(-(§§pop() - 53 + 1 - 33 + 41) * 57 * 20);
             }
             §§push(§§pop() * _loc6_);
             §§push(4);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push((-(-(§§pop() * 62) - 6) + 119) * 93);
+               §§push(§§pop() + 11 - 50 - 19);
             }
             §§push(§§pop() - §§pop() * _loc7_);
             §§push(1);
             if(_loc8_)
             {
-               §§push(--(-(§§pop() - 98) - 1));
+               §§push(((§§pop() - 73) * 69 + 61) * 89 - 59);
             }
             §§pop()[§§pop()] = §§pop()[§§pop() + §§pop()] ^ _loc2_;
             §§push(key);
             §§push(4);
             if(_loc9_)
             {
-               §§push(§§pop() + 1 + 1 + 0 - 1);
+               §§push(--(-§§pop() + 1) * 7 + 1);
             }
             §§push(§§pop() * _loc6_);
             §§push(2);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((-(§§pop() - 5) - 89) * 101 + 1);
+               §§push(§§pop() * 6 + 111 + 76 - 1);
             }
             §§push(§§pop() + §§pop());
             §§push(key);
             §§push(4);
             if(_loc9_)
             {
-               §§push(-((§§pop() + 42) * 79 - 1));
+               §§push(-§§pop() + 51 + 1 + 1 - 1 + 42);
             }
             §§push(§§pop() * _loc6_);
             §§push(4);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((§§pop() + 1 + 53) * 48 - 1 + 1 + 1);
+               §§push(-(§§pop() * 37 * 91) * 87);
             }
             §§push(§§pop() - §§pop() * _loc7_);
             §§push(2);
             if(_loc8_)
             {
-               §§push(§§pop() + 1 + 53 + 1 + 119 - 1);
+               §§push(§§pop() - 77 + 1 + 31 - 114 - 111);
             }
             §§pop()[§§pop()] = §§pop()[§§pop() + §§pop()] ^ _loc3_;
             §§push(key);
             §§push(4);
             if(_loc8_)
             {
-               §§push(((§§pop() - 1) * 29 * 17 - 29 - 90 - 1) * 112);
+               §§push((§§pop() - 1 + 1 + 103 - 1) * 111);
             }
             §§push(§§pop() * _loc6_);
             §§push(3);
             if(_loc9_)
             {
-               §§push(-(§§pop() + 1 - 103 + 56) * 3);
+               §§push(-((-(-§§pop() - 1) + 1) * 83 + 1));
             }
             §§push(§§pop() + §§pop());
             §§push(key);
             §§push(4);
             if(_loc9_)
             {
-               §§push(-(--§§pop() - 1));
+               §§push(--§§pop() * 81 + 1);
             }
             §§push(§§pop() * _loc6_);
             §§push(4);
             if(_loc9_)
             {
-               §§push((-(§§pop() * 26 * 28 + 99 + 75) - 1) * 73);
+               §§push(((§§pop() - 1) * 118 - 1 - 1 + 1) * 35);
             }
             §§push(§§pop() - §§pop() * _loc7_);
             §§push(3);
             if(_loc8_)
             {
-               §§push(§§pop() + 1 - 26 - 1);
+               §§push(§§pop() - 1 + 1 + 1);
             }
             §§pop()[§§pop()] = §§pop()[§§pop() + §§pop()] ^ _loc4_;
             _loc6_++;
@@ -1509,13 +1511,13 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(-§§pop() * 100) + 1 + 1);
+            §§push(§§pop() * 76 * 0 - 16 - 1);
          }
          var _loc3_:uint = §§pop();
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() * 10) - 1 - 80 - 1);
+            §§push(§§pop() + 1 - 1 - 89);
          }
          _loc3_ = §§pop();
          while(true)
@@ -1524,7 +1526,7 @@ package com.hurlant.crypto.symmetric
             §§push(16);
             if(_loc4_)
             {
-               §§push(--((§§pop() + 111 + 15 - 59) * 46) - 119);
+               §§push(§§pop() * 95 + 83 + 1 + 116);
             }
             if(§§pop() >= §§pop())
             {
@@ -1540,14 +1542,14 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() - 1 - 27 - 4 - 1));
+            §§push(---(-(§§pop() - 1) + 1) * 75);
          }
          var _loc3_:uint = §§pop();
          §§push(state);
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(-§§pop() + 62 - 54) * 104);
+            §§push(§§pop() + 1 - 17 + 1 + 1 + 73 - 1);
          }
          §§pop().position = §§pop();
          §§push(state);
@@ -1555,23 +1557,23 @@ package com.hurlant.crypto.symmetric
          §§push(param2);
          §§push(Nb);
          §§push(4);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(-(-(§§pop() * 43) + 1));
+            §§push((§§pop() + 1 + 1) * 16 * 65);
          }
          §§pop().writeBytes(§§pop(),§§pop(),§§pop() * §§pop());
          §§push();
          §§push(key);
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(§§pop() + 104 - 1 + 1 - 76 + 1 - 6);
+            §§push(-(-(§§pop() - 1) + 117) + 104);
          }
          §§pop().addRoundKey(§§pop(),§§pop());
          §§push(1);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((§§pop() * 9 + 1 - 3 - 106 - 1) * 100);
+            §§push(-(--(§§pop() * 72) + 6) * 98);
          }
          _loc3_ = §§pop();
          while(true)
@@ -1579,9 +1581,9 @@ package com.hurlant.crypto.symmetric
             §§push(_loc3_);
             §§push(Nr);
             §§push(1);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push(§§pop() - 88 + 27 - 115 + 95 + 103 - 1);
+               §§push((§§pop() - 12 - 1) * 60);
             }
             if(§§pop() >= §§pop() + §§pop())
             {
@@ -1601,7 +1603,7 @@ package com.hurlant.crypto.symmetric
             §§push(4);
             if(_loc4_)
             {
-               §§push(§§pop() + 109 - 1 + 1);
+               §§push(-(§§pop() - 66 - 36) - 1 - 1 - 1);
             }
             §§pop().addRoundKey(§§pop(),§§pop() * §§pop());
             _loc3_++;
@@ -1616,21 +1618,21 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 + 1 - 7 + 2 + 1 + 75);
+            §§push(-(§§pop() - 1 + 1) - 1);
          }
          §§pop().length = §§pop();
          §§push(tmp);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 63 + 21 - 92) * 10) * 67);
+            §§push(-(§§pop() + 61) + 1 + 1);
          }
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(0);
          if(_loc2_)
          {
-            §§push(((§§pop() * 73 + 1 + 42) * 54 + 85 - 1) * 78);
+            §§push(--(§§pop() + 90 + 102));
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -1638,15 +1640,15 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 41 + 65);
+            §§push(§§pop() + 99 + 24 + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(10);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 1) * 100 - 1));
+            §§push(-((-§§pop() + 1) * 86) * 14 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1654,21 +1656,21 @@ package com.hurlant.crypto.symmetric
          §§push(15);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 39) + 110 + 105 - 73 - 119);
+            §§push(§§pop() * 80 * 63 + 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(1);
          if(_loc1_)
          {
-            §§push(-(§§pop() - 1 + 1) - 76 - 51 + 1);
+            §§push(-(-§§pop() + 41) + 62 - 1 + 1 - 50);
          }
          §§push(Sbox);
          §§push(state);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 110 + 1 - 1 - 1 - 1 + 83 - 1);
+            §§push(--§§pop() + 58 - 49);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
@@ -1676,15 +1678,15 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 98 - 1 - 1 - 65 - 86);
+            §§push(-(§§pop() + 64 - 7 - 1 - 1));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(10);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((---(§§pop() - 46) - 11) * 32);
+            §§push(-(§§pop() + 1 + 1) * 55 * 62 - 1 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1692,21 +1694,21 @@ package com.hurlant.crypto.symmetric
          §§push(15);
          if(_loc1_)
          {
-            §§push((§§pop() * 45 * 104 - 22 - 1) * 73 - 1);
+            §§push(§§pop() + 1 - 22 + 1 - 1 - 1 + 1 - 84);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(2);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 22 + 1 + 88));
+            §§push(-(-(§§pop() * 41) + 1) * 20 + 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 9) - 1 + 1 - 1 - 1 - 1);
+            §§push(---§§pop() * 91 + 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1714,53 +1716,53 @@ package com.hurlant.crypto.symmetric
          §§push(5);
          if(_loc1_)
          {
-            §§push(--(§§pop() + 81 - 1));
+            §§push(-((§§pop() + 1 - 107) * 98 + 1) + 105);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(10);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(((§§pop() + 103 - 82 + 73) * 119 - 39) * 66 + 20);
+            §§push((§§pop() + 50) * 9 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(15);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() - 51 + 5 - 1 + 89 - 1 + 11);
+            §§push((§§pop() - 1) * 40 - 77);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(3);
          if(_loc1_)
          {
-            §§push((-§§pop() * 31 + 1 + 48 + 65) * 94 + 1);
+            §§push(-(§§pop() + 1) * 112 - 39);
          }
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(--(-§§pop() * 59 * 59 - 1));
+            §§push((§§pop() - 117 - 3) * 73);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(5);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 13 + 70 - 1 + 1) - 97);
+            §§push((§§pop() * 54 - 1) * 18 - 42);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(10);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-(§§pop() + 79) + 67 - 1 + 99) + 1);
+            §§push((-(§§pop() + 1) - 77) * 30 + 92 - 1 - 66);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
@@ -1768,21 +1770,21 @@ package com.hurlant.crypto.symmetric
          §§push(15);
          if(_loc1_)
          {
-            §§push(-(§§pop() * 40 - 1) - 99);
+            §§push(-(§§pop() * 92 - 1 + 97 + 104));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(4);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1) + 105);
+            §§push((§§pop() - 1) * 57 + 1 - 87 + 20 - 75);
          }
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(4);
          if(_loc1_)
          {
-            §§push(-(§§pop() - 42 + 1 - 46 + 1 - 52) * 38);
+            §§push(-(§§pop() * 117) - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -1790,7 +1792,7 @@ package com.hurlant.crypto.symmetric
          §§push(9);
          if(_loc1_)
          {
-            §§push(-((§§pop() * 9 + 1 + 1) * 74 + 1 - 1));
+            §§push(§§pop() - 94 + 16 + 94 + 1 + 1 - 59);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1798,7 +1800,7 @@ package com.hurlant.crypto.symmetric
          §§push(14);
          if(_loc1_)
          {
-            §§push(§§pop() * 2 - 1 + 1 - 1);
+            §§push((§§pop() + 1 + 69) * 30 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1806,21 +1808,21 @@ package com.hurlant.crypto.symmetric
          §§push(3);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 10 + 65) * 46);
+            §§push(§§pop() + 23 - 1 + 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(5);
          if(_loc1_)
          {
-            §§push((-(§§pop() - 1) - 1 + 19) * 65);
+            §§push(-(-§§pop() - 35) - 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(4);
          if(_loc1_)
          {
-            §§push((§§pop() * 28 + 1 + 106) * 80 - 5 - 1 - 9);
+            §§push(-§§pop() + 1 + 114);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
@@ -1828,7 +1830,7 @@ package com.hurlant.crypto.symmetric
          §§push(9);
          if(_loc1_)
          {
-            §§push(-(-(§§pop() + 1) + 1 - 12) + 1);
+            §§push(-(§§pop() + 30) - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -1836,7 +1838,7 @@ package com.hurlant.crypto.symmetric
          §§push(14);
          if(_loc2_)
          {
-            §§push(-§§pop() + 69 + 1 - 1 + 1);
+            §§push((§§pop() + 21 + 74 - 16 - 1) * 11);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1844,21 +1846,21 @@ package com.hurlant.crypto.symmetric
          §§push(3);
          if(_loc1_)
          {
-            §§push(-(-§§pop() * 90 + 8 + 12 - 77));
+            §§push(---(§§pop() - 1 + 1 + 1) + 100);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(6);
          if(_loc2_)
          {
-            §§push(-((-(-§§pop() + 1 + 1) - 1) * 97));
+            §§push((§§pop() * 19 * 77 * 86 - 1) * 99);
          }
          §§push(Sbox);
          §§push(state);
          §§push(4);
          if(_loc2_)
          {
-            §§push(--(§§pop() - 1 - 1 + 1 - 88));
+            §§push(§§pop() + 49 + 1 + 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1866,37 +1868,37 @@ package com.hurlant.crypto.symmetric
          §§push(9);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 115) + 1);
+            §§push((§§pop() + 1 + 1) * 74);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(14);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() * 103) + 1 - 1 - 1);
+            §§push(§§pop() + 88 - 39 - 1 - 85);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(3);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 1 - 3) - 94);
+            §§push((-§§pop() - 1 + 51) * 32 - 114);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(7);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 104 - 100);
+            §§push(§§pop() + 1 - 101 + 1 - 1 - 1 - 40);
          }
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(4);
          if(_loc1_)
          {
-            §§push((§§pop() + 1 - 1 + 1 - 118) * 45);
+            §§push(--(§§pop() * 58) + 1 + 1 + 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1904,15 +1906,15 @@ package com.hurlant.crypto.symmetric
          §§push(9);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 72 + 53);
+            §§push(-(-§§pop() - 85 - 16) - 92 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(14);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 107 - 88) * 41 + 34);
+            §§push(-(§§pop() * 45 - 119) + 1 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
@@ -1920,21 +1922,21 @@ package com.hurlant.crypto.symmetric
          §§push(3);
          if(_loc1_)
          {
-            §§push(-((§§pop() - 55) * 47) - 14);
+            §§push(-(§§pop() - 13 - 1) - 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(8);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(--§§pop() - 1);
+            §§push(-(§§pop() * 54 + 0 + 1 + 1) * 29 + 45);
          }
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(8);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 - 1) * 93);
+            §§push(-(§§pop() - 1) * 51);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -1942,7 +1944,7 @@ package com.hurlant.crypto.symmetric
          §§push(13);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 106 - 28) * 90 + 1) + 108 + 69);
+            §§push(§§pop() - 1 + 1 + 1 + 88);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1950,7 +1952,7 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc1_)
          {
-            §§push(-(-§§pop() - 1) - 1 + 87 + 34);
+            §§push(§§pop() * 59 - 1 - 95 - 1 - 83 - 20);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -1958,21 +1960,21 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc1_)
          {
-            §§push(((§§pop() + 1 + 1) * 12 - 1) * 47);
+            §§push(-(§§pop() * 15 * 77) + 50 - 69);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(9);
          if(_loc1_)
          {
-            §§push((§§pop() + 1 + 1) * 76);
+            §§push(§§pop() + 102 - 1 - 31 + 8 - 2);
          }
          §§push(Sbox);
          §§push(state);
          §§push(8);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 17 + 1 - 1 + 56 + 1 - 1);
+            §§push(-(§§pop() - 1 - 1) - 10 + 59 + 1 + 78);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
@@ -1980,53 +1982,53 @@ package com.hurlant.crypto.symmetric
          §§push(13);
          if(_loc2_)
          {
-            §§push((§§pop() * 68 + 105) * 73 * 62 * 20 - 1);
+            §§push((§§pop() * 114 + 1 + 92) * 76 + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((-(§§pop() - 1 + 1 + 96) - 1 + 66) * 87);
+            §§push(-(§§pop() * 70 - 2 - 30) * 118 + 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(7);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() * 51 - 24 + 1) - 67);
+            §§push(§§pop() - 13 - 1 + 106);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(10);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(--§§pop() - 1);
+            §§push(§§pop() * 70 + 4 - 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(8);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 63) + 36);
+            §§push(§§pop() + 71 - 45 - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(13);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(((-§§pop() + 38) * 47 + 110 - 1) * 20 - 2);
+            §§push(-(--§§pop() - 1 + 1 + 88 + 119));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() - 1 - 1) - 1 + 88);
+            §§push(-(§§pop() + 1 - 1) * 35);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -2034,29 +2036,29 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc2_)
          {
-            §§push(§§pop() + 20 + 1 + 1 - 86);
+            §§push(-(-(§§pop() + 1) * 104 - 1));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(11);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 + 1 + 1);
+            §§push((-(§§pop() + 1) + 89) * 38);
          }
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(8);
          if(_loc1_)
          {
-            §§push(§§pop() + 67 - 106 - 1 - 19 - 1 + 1);
+            §§push(-§§pop() * 0 - 1 - 49 - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(13);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() - 1 + 1 - 88);
+            §§push(§§pop() * 53 + 1 - 1 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -2064,7 +2066,7 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 1) + 15) * 111 + 1);
+            §§push(§§pop() + 1 - 119 + 35 + 112);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
@@ -2072,21 +2074,21 @@ package com.hurlant.crypto.symmetric
          §§push(7);
          if(_loc1_)
          {
-            §§push(-(-(-§§pop() + 1) - 1 + 29) - 1);
+            §§push((§§pop() + 62 + 7 - 1) * 20 + 23);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(12);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 55 + 1 - 90 + 36) - 1);
+            §§push(§§pop() + 40 + 1 + 1 - 119 - 43);
          }
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(12);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 15 + 1) * 105 + 1 + 42);
+            §§push(-§§pop() + 58 - 61 + 65);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -2094,7 +2096,7 @@ package com.hurlant.crypto.symmetric
          §§push(1);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 1 + 89 - 1 + 1));
+            §§push(§§pop() * 22 - 37 + 1 + 43);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -2102,7 +2104,7 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc1_)
          {
-            §§push((§§pop() + 9) * 10 - 1);
+            §§push(§§pop() - 1 + 1 - 59 + 1 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -2110,29 +2112,29 @@ package com.hurlant.crypto.symmetric
          §§push(11);
          if(_loc1_)
          {
-            §§push(-(§§pop() - 1) - 1);
+            §§push((-(§§pop() - 1) * 23 + 15 + 1) * 33 - 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(13);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() - 1 - 41) * 40 + 1 + 41);
+            §§push(§§pop() - 1 + 1 + 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(12);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 42) - 1 - 51 + 118) * 37 - 104);
+            §§push(-(§§pop() * 63) + 1 - 86);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(1);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 25 - 1) * 56 * 44 * 37);
+            §§push(-(§§pop() + 1) - 1 + 20);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
@@ -2140,75 +2142,75 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 + 1 + 1);
+            §§push((§§pop() + 1) * 25 * 108);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(11);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(--(§§pop() * 5 - 78) - 26 - 3);
+            §§push(-(-(-(§§pop() - 1) + 81 - 1) + 31));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(14);
          if(_loc1_)
          {
-            §§push(-§§pop() - 53 - 7);
+            §§push(§§pop() + 85 - 71 + 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(12);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((-§§pop() - 1) * 4 + 58);
+            §§push(-(-(§§pop() + 1) - 88 + 15) + 45 - 1);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(1);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 42));
+            §§push((-(§§pop() + 42) + 1 - 1) * 109 + 74);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(6);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 3 + 7 - 117);
+            §§push((§§pop() - 56 + 106 + 105 + 98 + 1 - 51) * 66);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(11);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() + 1 + 1 + 1 - 24) * 8 - 113);
+            §§push(-(§§pop() - 7 - 1 + 18) + 1 + 28 - 1);
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(tmp);
          §§push(15);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 1 + 59));
+            §§push(-§§pop() * 90 * 112 - 1 - 48);
          }
          §§push(Xtime3Sbox);
          §§push(state);
          §§push(12);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() * 54 * 23 - 1 + 1) * 119 + 1));
+            §§push(-§§pop() + 67 + 31);
          }
          §§push(§§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
          §§push(state);
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 1 + 1) - 14);
+            §§push(-(§§pop() + 14 + 1));
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Sbox);
@@ -2216,36 +2218,36 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 + 58 + 67 - 1 - 1 - 1 + 50);
+            §§push(-(§§pop() + 13 + 74 + 1) * 117 - 1);
          }
          §§push(§§pop() ^ §§pop()[§§pop()[§§pop()]]);
          §§push(Xtime2Sbox);
          §§push(state);
          §§push(11);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1 - 1 + 1 + 1) * 101 - 41);
+            §§push(-(-(§§pop() + 49) + 73));
          }
          §§pop()[§§pop()] = §§pop() ^ §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(0);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 - 19 - 1 - 1 + 52);
+            §§push(-(-(-§§pop() - 55) - 108 - 1 + 1));
          }
          §§pop().position = §§pop();
          §§push(state);
          §§push(tmp);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() * 52 - 1 - 1 - 1 + 1);
+            §§push(§§pop() - 1 - 118 + 44 + 1);
          }
          §§push(Nb);
          §§push(4);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-§§pop() - 1 + 1) + 1 + 54);
+            §§push(((§§pop() + 1 + 18) * 76 + 1) * 69 + 1);
          }
          §§pop().writeBytes(§§pop(),§§pop(),§§pop() * §§pop());
       }
@@ -2255,120 +2257,120 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() - 84 + 1 + 1 + 42);
+            §§push((§§pop() + 9) * 72 + 114);
          }
          var _loc1_:uint = §§pop();
          §§push(state);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 91) * 42 + 118 + 1 + 1);
+            §§push(--(§§pop() + 1));
          }
          §§push(Sbox);
          §§push(state);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() * 92 - 21 + 1);
+            §§push(-(§§pop() * 19 - 1 + 72) * 17);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(4);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 7) + 1 + 1) * 84);
+            §§push((§§pop() + 1 - 1 - 1) * 15 - 1 + 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 17 + 1) * 104 + 1) * 36 - 69);
+            §§push((-(§§pop() + 94) + 1) * 118 + 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(8);
          if(_loc3_)
          {
-            §§push(§§pop() * 119 + 1 - 1);
+            §§push(§§pop() - 1 + 1 + 49);
          }
          §§push(Sbox);
          §§push(state);
          §§push(8);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1 + 54) - 1 + 1));
+            §§push((§§pop() - 5) * 46 + 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 - 1) * 49 - 116) * 68);
+            §§push(-§§pop() + 65 - 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(12);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-(§§pop() - 1 - 53) * 36 - 74) * 111));
+            §§push(-(§§pop() * 106) - 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(Sbox);
          §§push(state);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 118 + 1) - 18) * 99 + 1);
+            §§push((§§pop() + 1 - 1 + 1 + 1) * 95);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(1);
          if(_loc2_)
          {
-            §§push((--(§§pop() + 1 + 1 + 74) + 64) * 104);
+            §§push((§§pop() + 22) * 45 * 54 + 1 + 71);
          }
          §§push(Sbox);
          §§push(state);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 4 - 29 - 9 + 1 - 88);
+            §§push(-(§§pop() - 64 - 49 - 1));
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 112 - 1 - 1);
+            §§push((-§§pop() + 1) * 103);
          }
          §§push(Sbox);
-         §§push(state);
-         §§push(9);
-         if(_loc2_)
-         {
-            §§push(§§pop() + 69 + 114 - 58 - 1 + 10);
-         }
-         §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(9);
          if(_loc3_)
          {
-            §§push((§§pop() + 62 - 1) * 106);
+            §§push(-(§§pop() - 1 - 62) - 1 + 1);
+         }
+         §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
+         §§push(state);
+         §§push(9);
+         if(_loc2_)
+         {
+            §§push((--(-§§pop() - 1) + 1) * 92 - 47);
          }
          §§push(Sbox);
          §§push(state);
          §§push(13);
          if(_loc2_)
          {
-            §§push((§§pop() - 93 - 1 + 1 + 1) * 44);
+            §§push((§§pop() + 110 + 105 - 18) * 28);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(13);
          if(_loc3_)
          {
-            §§push((--(§§pop() + 1 - 1) - 32 + 1) * 49);
+            §§push((--§§pop() + 69 + 107 + 1) * 14);
          }
          §§pop()[§§pop()] = _loc1_;
          §§push(Sbox);
@@ -2376,28 +2378,28 @@ package com.hurlant.crypto.symmetric
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() + 88 + 82 + 1);
+            §§push(-(§§pop() + 1 - 1));
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 - 56 + 11 + 85 + 1 + 1 + 53);
+            §§push(§§pop() * 82 + 1 + 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 1 + 1 - 1 + 1) * 4 - 1);
+            §§push(--(§§pop() * 39) + 31 - 85);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 30 - 18) - 1) * 32 - 20 + 1);
+            §§push(§§pop() + 51 + 47 - 11 - 30);
          }
          §§pop()[§§pop()] = _loc1_;
          §§push(Sbox);
@@ -2405,28 +2407,28 @@ package com.hurlant.crypto.symmetric
          §§push(6);
          if(_loc3_)
          {
-            §§push((§§pop() - 105 + 31) * 59);
+            §§push((§§pop() - 1) * 5 + 1);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(6);
          if(_loc2_)
          {
-            §§push(---(§§pop() + 1 - 30) * 29 + 69);
+            §§push(-(§§pop() - 1) + 1 + 100);
          }
          §§push(Sbox);
          §§push(state);
          §§push(14);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 1 + 58) - 1) * 104 + 73);
+            §§push(-(§§pop() + 107 + 1 + 1) + 1 - 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(14);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 116 - 117));
+            §§push(-(§§pop() - 104) - 62);
          }
          §§pop()[§§pop()] = _loc1_;
          §§push(Sbox);
@@ -2434,56 +2436,56 @@ package com.hurlant.crypto.symmetric
          §§push(15);
          if(_loc2_)
          {
-            §§push(--§§pop() - 109 - 70 + 97 - 1);
+            §§push(-(-(§§pop() - 1) + 20) + 1);
          }
          _loc1_ = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(15);
          if(_loc2_)
          {
-            §§push(§§pop() - 103 + 94 + 1 - 1 + 1);
+            §§push(--((§§pop() + 44 + 1) * 56) - 1 + 1);
          }
          §§push(Sbox);
          §§push(state);
          §§push(11);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 1 - 1 + 1 + 63 + 36));
+            §§push((§§pop() - 1) * 102 - 1 + 1 - 1 + 25 + 56);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(11);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 68) * 90 - 61);
+            §§push(-(-(§§pop() * 51 - 1 - 1) - 1) * 86);
          }
          §§push(Sbox);
          §§push(state);
          §§push(7);
          if(_loc3_)
          {
-            §§push(-(--§§pop() * 14 - 83 + 1));
+            §§push(-(§§pop() - 32 + 1 + 113 - 36 - 1) - 1);
          }
          §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(7);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 113 - 1);
+            §§push(-(§§pop() * 26) + 1 - 1);
          }
          §§push(Sbox);
-         §§push(state);
-         §§push(3);
-         if(_loc3_)
-         {
-            §§push((§§pop() + 1 + 47 + 43 + 1) * 56);
-         }
-         §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
          §§push(state);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-§§pop() * 4 + 1 + 108 - 1 + 1);
+            §§push((§§pop() - 1) * 38 - 1);
+         }
+         §§pop()[§§pop()] = §§pop()[§§pop()[§§pop()]];
+         §§push(state);
+         §§push(3);
+         if(_loc3_)
+         {
+            §§push(§§pop() - 1 + 98 - 38 + 40);
          }
          §§pop()[§§pop()] = _loc1_;
       }
@@ -2493,7 +2495,7 @@ package com.hurlant.crypto.symmetric
          §§push(16);
          if(_loc1_)
          {
-            §§push(-§§pop() + 102 + 74 + 1 - 1 - 1);
+            §§push(§§pop() - 92 + 1 - 1);
          }
          return §§pop();
       }

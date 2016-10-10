@@ -17,6 +17,7 @@ package flashx.textLayout.compose
          super();
       }
       
+      [ArrayElementType("text.IVerticalJustificationLine")]
       public static function applyVerticalAlignmentToColumn(param1:ContainerController, param2:String, param3:Array, param4:int, param5:int, param6:int, param7:int) : Number
       {
          var _loc8_:IVerticalAdjustmentHelper = null;
@@ -191,6 +192,7 @@ class TB_VJHelper implements IVerticalAdjustmentHelper
       param1.y = param1.y + this.adj;
    }
    
+   [ArrayElementType("text.compose.IVerticalJustificationLine")]
    public function computeJustifyAdjustment(param1:Array, param2:int, param3:int) : Number
    {
       this.adj = 0;
@@ -212,6 +214,7 @@ class TB_VJHelper implements IVerticalAdjustmentHelper
       return this.adj;
    }
    
+   [ArrayElementType("text.compose.IVerticalJustificationLine")]
    public function applyJustifyAdjustment(param1:Array, param2:int, param3:int) : void
    {
       var _loc7_:IVerticalJustificationLine = null;
@@ -308,6 +311,7 @@ class RL_VJHelper implements IVerticalAdjustmentHelper
       param1.x = param1.x - this.adj;
    }
    
+   [ArrayElementType("text.compose.IVerticalJustificationLine")]
    public function computeJustifyAdjustment(param1:Array, param2:int, param3:int) : Number
    {
       this.adj = 0;
@@ -329,6 +333,7 @@ class RL_VJHelper implements IVerticalAdjustmentHelper
       return -this.adj;
    }
    
+   [ArrayElementType("text.IVerticalJustificationLine")]
    public function applyJustifyAdjustment(param1:Array, param2:int, param3:int) : void
    {
       var _loc7_:IVerticalJustificationLine = null;

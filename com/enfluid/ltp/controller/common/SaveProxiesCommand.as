@@ -1,13 +1,6 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.HeaderRenderer.FlatHeaderRenderer;
-   import mx.graphics.SolidColor;
-   import flash.events.Event;
-   import spark.components.TextInput;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.vo.ProxyVO;
    import com.enfluid.ltp.util.Util;
    
@@ -33,9 +26,9 @@ package com.enfluid.ltp.controller.common
          var _loc1_:String = this.proxiesString;
          var _loc2_:Array = _loc1_.split("\n");
          §§push(0);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(-(§§pop() - 1) * 78);
+            §§push((-§§pop() - 1 + 98) * 24);
          }
          for each(_loc3_ in _loc2_)
          {
@@ -45,9 +38,9 @@ package com.enfluid.ltp.controller.common
                _loc5_ = _loc3_.split(",");
                §§push(_loc5_);
                §§push(0);
-               if(_loc10_)
+               if(_loc11_)
                {
-                  §§push(--(--§§pop() - 68) - 1);
+                  §§push(§§pop() * 32 - 1 + 104 - 1 + 1 - 53);
                }
                _loc6_ = §§pop()[§§pop()].split(":");
                §§push(_loc4_);
@@ -55,7 +48,7 @@ package com.enfluid.ltp.controller.common
                §§push(0);
                if(_loc11_)
                {
-                  §§push(-(§§pop() - 1) - 56 - 51);
+                  §§push((-§§pop() + 93) * 11);
                }
                §§pop().host = §§pop()[§§pop()];
                §§push(_loc4_);
@@ -63,29 +56,29 @@ package com.enfluid.ltp.controller.common
                §§push(1);
                if(_loc11_)
                {
-                  §§push(-(§§pop() + 1) * 89 + 1 + 1);
+                  §§push((§§pop() + 57 + 21) * 62 - 1);
                }
                §§pop().port = §§pop()[§§pop()];
                §§push(_loc5_);
                §§push(1);
-               if(_loc11_)
+               if(_loc10_)
                {
-                  §§push(-(§§pop() * 68 + 55 - 1) - 98 + 46);
+                  §§push(§§pop() + 57 - 1 - 40 - 1);
                }
                if(§§pop()[§§pop()])
                {
                   §§push(_loc5_);
                   §§push(1);
-                  if(_loc11_)
+                  if(_loc10_)
                   {
-                     §§push(-((§§pop() - 1) * 86 * 50 - 35 + 34));
+                     §§push(-(-(§§pop() + 1 - 1) * 71) + 1);
                   }
                   _loc7_ = §§pop()[§§pop()].split(":");
                   §§push(_loc7_);
                   §§push(0);
                   if(_loc11_)
                   {
-                     §§push(--§§pop() + 1);
+                     §§push(§§pop() - 1 - 46 - 63);
                   }
                   if(§§pop()[§§pop()] && §§pop()[§§pop()])
                   {
@@ -94,17 +87,17 @@ package com.enfluid.ltp.controller.common
                   §§push(_loc4_);
                   §§push(_loc7_);
                   §§push(0);
-                  if(_loc10_)
+                  if(_loc11_)
                   {
-                     §§push(-(§§pop() - 1 - 1 + 1) + 37);
+                     §§push(-(§§pop() - 103 + 21 - 1) * 56);
                   }
                   §§pop().authUserName = §§pop()[§§pop()];
                   §§push(_loc4_);
                   §§push(_loc7_);
                   §§push(1);
-                  if(_loc11_)
+                  if(_loc10_)
                   {
-                     §§push(-(§§pop() + 13 + 105) + 1);
+                     §§push(-(§§pop() - 113) - 1 + 1);
                   }
                   §§pop().authPassword = §§pop()[§§pop()];
                }

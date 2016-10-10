@@ -2,6 +2,7 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.photon.controller.PhotonComplexCommand;
    import com.photon.controller.IPhotonCommand;
+   import com.hurlant.util.Memory;
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
    import com.enfluid.ltp.model.DataModel;
    
@@ -14,9 +15,9 @@ package com.enfluid.ltp.controller.rankchecker
          var _loc1_:RankCheckItemVO = null;
          super();
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push((§§pop() + 105 + 1 - 2) * 59 + 59);
+            §§push((--§§pop() + 89 - 1) * 11 - 24 + 1);
          }
          for each(_loc1_ in DataModel.instance.rankCheckItems)
          {

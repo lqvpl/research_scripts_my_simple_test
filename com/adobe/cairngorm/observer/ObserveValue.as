@@ -1,9 +1,13 @@
 package com.adobe.cairngorm.observer
 {
-   import spark.primitives.Rect;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.TransparentButtonSkin;
    import mx.binding.BindingManager;
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
+   import mx.effects.Sequence;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.constants.DomainStatuses;
+   import mx.graphics.SolidColor;
+   import mx.events.ResizeEvent;
    
    public final class ObserveValue extends Observer
    {

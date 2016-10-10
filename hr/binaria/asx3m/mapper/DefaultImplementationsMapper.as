@@ -1,21 +1,21 @@
 package hr.binaria.asx3m.mapper
 {
-   import spark.effects.easing.Sine;
-   import mx.binding.BindingManager;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.components.majestic.target;
+   import com.enfluid.ltp.view.components.majestic.CompetitorMajesticAnalysisHeaderComponent;
    import mx.binding.Binding;
-   import assets.TextAssets;
-   import spark.components.Image;
-   import system.serializers.§eden:release§.debug;
-   import system.serializers.eden.config;
-   import system.Strings;
-   import system.serializers.eden.strings;
-   import system.hosts.PlatformID;
-   import system.Version;
+   import mx.controls.HTML;
+   import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
    import system.data.Map;
-   import com.enfluid.ltp.view.components.CustomRect;
-   import spark.components.Group;
    import spark.primitives.Path;
+   import flash.utils.ByteArray;
    import system.data.maps.HashMap;
+   
+   use namespace mx_internal;
    
    public final class DefaultImplementationsMapper extends MapperWrapper
    {

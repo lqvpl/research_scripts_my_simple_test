@@ -2,20 +2,22 @@ package info.noirbizarre.airorm.utils
 {
    import flash.utils.Dictionary;
    import flash.data.SQLConnection;
-   import flash.filesystem.File;
-   import spark.effects.Move;
+   import spark.components.VGroup;
    import mx.binding.BindingManager;
+   import flash.filesystem.File;
    import flash.data.SQLSchemaResult;
    import info.noirbizarre.airorm.AOError;
    import flash.errors.SQLError;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
    import flash.data.SQLTableSchema;
-   import spark.primitives.Rect;
-   import mx.graphics.SolidColor;
+   import com.enfluid.ltp.util.KeywordUtil;
    import mx.binding.Binding;
-   import flash.utils.Proxy;
+   import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.assets.AssetsLibrary;
-   import com.enfluid.ltp.view.containers.LockCollapsiblePanel;
+   import mx.rpc.http.HTTPService;
+   import mx.rpc.events.ResultEvent;
+   import mx.rpc.events.FaultEvent;
+   import com.enfluid.ltp.util.GooglePageRankUtil;
+   import spark.layouts.VerticalLayout;
    
    public final class DB
    {
@@ -111,7 +113,7 @@ package info.noirbizarre.airorm.utils
             §§push(0);
             if(_loc7_)
             {
-               §§push((§§pop() - 1) * 86 - 0 - 1);
+               §§push(-(-(§§pop() + 1 + 99 - 40) - 12 - 1));
             }
             for each(_loc4_ in _loc3_.tables)
             {
@@ -149,7 +151,7 @@ package info.noirbizarre.airorm.utils
             §§push(0);
             if(_loc10_)
             {
-               §§push(-(-(§§pop() - 7) + 106));
+               §§push(-§§pop() * 56 + 23 - 1 - 15 + 1 - 81);
             }
             for(_loc5_ in cache)
             {

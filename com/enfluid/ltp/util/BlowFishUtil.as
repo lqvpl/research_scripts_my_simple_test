@@ -6,8 +6,13 @@ package com.enfluid.ltp.util
    import com.hurlant.util.Base64;
    import com.hurlant.crypto.symmetric.PKCS5;
    import com.hurlant.crypto.symmetric.ECBMode;
+   import spark.primitives.Rect;
    import com.hurlant.crypto.symmetric.BlowFishKey;
-   import spark.components.VGroup;
+   import com.enfluid.ltp.view.containers.CollapsiblePanel;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.BindingManager;
+   import spark.components.Image;
+   import spark.components.Group;
    
    public final class BlowFishUtil
    {
@@ -35,9 +40,9 @@ package com.enfluid.ltp.util
             $cipher.dispose();
             §§push($input);
             §§push(0);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(--(§§pop() - 1) - 1);
+               §§push(-(§§pop() * 43) + 1 - 1);
             }
             §§pop().position = §§pop();
             return $input.readUTF();

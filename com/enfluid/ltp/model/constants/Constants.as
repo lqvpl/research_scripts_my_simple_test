@@ -2,7 +2,9 @@ package com.enfluid.ltp.model.constants
 {
    import mx.collections.ArrayList;
    import mx.collections.ArrayCollection;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
+   import mx.utils.StringUtil;
+   import com.enfluid.ltp.util.KeywordUtil;
+   import com.enfluid.ltp.controller.rankchecker.AddRankCheckItemCommand;
    
    public final class Constants
    {
@@ -16,8 +18,6 @@ package com.enfluid.ltp.model.constants
       public static const DOMIZE_URL:String = "http://domize.com";
       
       public static const FULL_PERMALICENCE:String = "34c1e31622h2174d8c28541eb6652023";
-      
-      public static const GODADDY_BULK_TOOL_URL:String = "http://www.godaddy.com/domains/searchbulk.aspx";
       
       public static const GOOGLE_CREDENTIALS_FILE_NAME:String = "GWMC-I92M";
       
@@ -39,8 +39,6 @@ package com.enfluid.ltp.model.constants
       
       public static const MONTHS:Object = null;
       
-      public static const NETWORKS:ArrayList = new ArrayList(["Google","Google and search partners"]);
-      
       public static const NOTIFICATION_XML_URL:String = "http://www.longtailpro.com/new/updates/messages.xml";
       
       public static const OLD_BLOWFISH_KEY:String = "9!3!#y6TY87!VW2669eb%68w5R$Pg*";
@@ -59,7 +57,7 @@ package com.enfluid.ltp.model.constants
       
       public static const TARGETED_DEVICES:Object = null;
       
-      public static const UPGRADE_PAGE:String = "http://www.longtailpro.com/long-tail-pro-software/";
+      public static const UPGRADE_PAGE:String = "http://www.longtailpro.com/";
       
       public static const OWN_KEYWORD_ID:int = -1;
       
@@ -77,83 +75,99 @@ package com.enfluid.ltp.model.constants
       
       public static const MAX_RANKS_TO_CHECK:int = 250;
       
+      public static const GOOGLE_AVG_DELAY_WHEN_USING_PROXIES:int = 0;
+      
       public static const COMPETITOR:String = "competitor";
       
       public static const RANK_CHECKER:String = "rank_checker";
+      
+      public static const CACHE_API_URL:String = "http://cache.longtailpro.com/api/";
+      
+      public static const SOCIAL_API_URL:String = "https://count.donreach.com";
+      
+      public static const MAJESTIC_HOSTNAME:String = "api.majestic.com";
+      
+      public static const MAJESTIC_PATH:String = "api/json";
+      
+      public static const MAJESTIC_DATA_SOURCE:String = "fresh";
+      
+      public static const MAJESTIC_API_KEY:String = "98B8561562EA3915355BCBA1F5518E52";
+      
+      public static const MAJESTIC_TIMEOUT:uint = 5;
       
       {
          §§push();
          §§push("January");
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 80) + 1);
+            §§push(-(§§pop() - 54 - 1) + 1);
          }
          §§push("February");
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 42 + 72) * 86) * 8 + 32 + 1);
+            §§push(-(§§pop() * 71 - 63 - 1));
          }
          §§push("March");
          §§push(2);
          if(_loc1_)
          {
-            §§push(-(§§pop() + 1 - 112 - 1));
+            §§push(§§pop() + 10 + 1 + 1);
          }
          §§push("April");
          §§push(3);
          if(_loc1_)
          {
-            §§push(§§pop() + 1 + 1 - 1);
+            §§push(-§§pop() - 51 + 110);
          }
          §§push("May");
          §§push(4);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(--(§§pop() - 42 + 15) * 114);
+            §§push((§§pop() - 1 + 1) * 110);
          }
          §§push("June");
          §§push(5);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() * 42 - 102 + 1 + 104);
+            §§push((-§§pop() - 1 - 76) * 119 - 1 + 89);
          }
          §§push("July");
          §§push(6);
          if(_loc1_)
          {
-            §§push(((§§pop() - 31) * 19 - 1) * 13 - 109);
+            §§push(--(--§§pop() + 8) + 108 + 49);
          }
          §§push("August");
          §§push(7);
          if(_loc2_)
          {
-            §§push(§§pop() + 84 - 29 + 106 + 1);
+            §§push((§§pop() * 53 - 93) * 112 * 58 + 1 + 1 + 12);
          }
          §§push("September");
          §§push(8);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 23 - 86) * 116 + 106);
+            §§push((§§pop() + 32) * 19 + 1 - 1 + 98 + 111 - 4);
          }
          §§push("October");
          §§push(9);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 87) * 50 + 1 + 1 - 1);
+            §§push(§§pop() - 1 + 29 + 86 + 14);
          }
          §§push("November");
          §§push(10);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() * 70 + 94) * 79 * 114);
+            §§push(-(§§pop() * 92 * 99 - 1) + 112);
          }
          §§push("December");
          §§push(11);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-§§pop() - 102) - 1);
+            §§push(-(-§§pop() + 1));
          }
          §§push();
          §§push();
@@ -163,52 +177,52 @@ package com.enfluid.ltp.model.constants
          §§push(1);
          if(_loc2_)
          {
-            §§push(-§§pop() - 28 + 14);
+            §§push(-((§§pop() - 1) * 27) + 53 + 106 + 1);
          }
          §§push(null);
          §§push("value");
          §§push("Inform me of a failing proxy - keep on list");
          §§push("code");
          §§push(2);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 106) + 1 + 1 + 70 - 39));
+            §§push(§§pop() - 36 - 1 - 1 + 1);
          }
          §§push(null);
          §§push("value");
          §§push("Remove failing proxy and try another one.");
          §§push("code");
          §§push(3);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-(§§pop() * 99 * 15) - 1 + 36 - 1));
+            §§push((§§pop() - 50 - 1 - 91) * 106 + 96);
          }
          §§push();
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 111 + 40) * 26 + 42);
+            §§push(--(§§pop() * 109 - 1 + 1) + 1);
          }
          §§push(String(§§pop()));
          §§push("Desktop and laptop devices");
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-§§pop() - 77 - 1);
+            §§push(-(-(§§pop() - 22 + 6) - 1 + 1) - 1);
          }
          §§push(String(§§pop()));
          §§push("All mobile devices");
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((-§§pop() + 65) * 99 * 52);
+            §§push(((§§pop() - 1 + 1) * 91 - 55) * 36);
          }
          §§push(String(§§pop()));
          §§push("Mobile WAP devices");
          §§push(3);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-(§§pop() + 35 - 34) * 35));
+            §§push(-(§§pop() - 118 - 1 - 12 - 68 + 1) - 62);
          }
       }
       

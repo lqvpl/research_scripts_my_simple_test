@@ -1,10 +1,25 @@
 package com.enfluid.ltp.model.vo
 {
    import flash.events.IEventDispatcher;
+   import com.hurlant.crypto.symmetric.ISymmetricKey;
+   import com.hurlant.crypto.symmetric.IPad;
+   import com.hurlant.crypto.symmetric.PKCS5;
+   import com.hurlant.crypto.prng.Random;
+   import flash.utils.ByteArray;
    import spark.components.gridClasses.GridColumn;
    import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
    import flash.events.Event;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.filterviews.target;
+   import mx.binding.Binding;
+   import flash.events.MouseEvent;
+   import mx.events.FlexEvent;
+   
+   use namespace mx_internal;
    
    public final class KeywordColumnsVO implements IEventDispatcher
    {
@@ -35,6 +50,8 @@ package com.enfluid.ltp.model.vo
       private var _2063743039domainAvailability:GridColumn;
       
       private var _93198250avgKC:GridColumn;
+      
+      private var _1899323812amazonKC:GridColumn;
       
       private var _bindingEventDispatcher:EventDispatcher;
       
@@ -287,6 +304,25 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"avgKC",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get amazonKC() : GridColumn
+      {
+         return this._1899323812amazonKC;
+      }
+      
+      public function set amazonKC(param1:GridColumn) : void
+      {
+         var _loc2_:Object = this._1899323812amazonKC;
+         if(_loc2_ !== param1)
+         {
+            this._1899323812amazonKC = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonKC",_loc2_,param1));
             }
          }
       }

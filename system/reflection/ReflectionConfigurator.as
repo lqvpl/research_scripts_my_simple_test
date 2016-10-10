@@ -1,6 +1,8 @@
 package system.reflection
 {
    import system.Configurator;
+   import spark.primitives.Rect;
+   import flash.events.Event;
    
    public final class ReflectionConfigurator extends Configurator
    {

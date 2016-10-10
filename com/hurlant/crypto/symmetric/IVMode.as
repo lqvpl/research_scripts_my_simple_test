@@ -70,9 +70,9 @@ package com.hurlant.crypto.symmetric
          }
          §§push(lastIV);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 7 + 1 + 1 + 62 - 15 + 46);
+            §§push((§§pop() * 118 - 35 + 1) * 70 * 5 * 47 * 78);
          }
          §§pop().length = §§pop();
          lastIV.writeBytes(_loc1_);
@@ -87,9 +87,9 @@ package com.hurlant.crypto.symmetric
       public final function dispose() : void
       {
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 74 - 1 + 98) - 1));
+            §§push((§§pop() + 1) * 34 - 94);
          }
          var _loc1_:uint = §§pop();
          if(iv != null)
@@ -97,7 +97,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc2_)
             {
-               §§push(-((§§pop() - 45) * 61) - 1 + 73 + 33 + 1);
+               §§push(-(-§§pop() - 64) * 117);
             }
             _loc1_ = §§pop();
             while(_loc1_ < iv.length)
@@ -109,7 +109,7 @@ package com.hurlant.crypto.symmetric
             §§push(0);
             if(_loc3_)
             {
-               §§push(§§pop() + 1 + 6 + 109);
+               §§push(-(§§pop() + 1 + 1) * 79 + 92);
             }
             §§pop().length = §§pop();
             iv = null;
@@ -117,9 +117,9 @@ package com.hurlant.crypto.symmetric
          if(lastIV != null)
          {
             §§push(0);
-            if(_loc3_)
+            if(_loc2_)
             {
-               §§push(-(§§pop() * 109 - 1 - 76) * 1 + 1);
+               §§push(-(§§pop() + 88 + 1) + 54 - 1);
             }
             _loc1_ = §§pop();
             while(_loc1_ < iv.length)
@@ -129,9 +129,9 @@ package com.hurlant.crypto.symmetric
             }
             §§push(lastIV);
             §§push(0);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(-(§§pop() - 110 + 1) + 1 + 100);
+               §§push(--((§§pop() * 61 - 1) * 20));
             }
             §§pop().length = §§pop();
             lastIV = null;

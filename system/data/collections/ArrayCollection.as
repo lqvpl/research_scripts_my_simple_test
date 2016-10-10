@@ -2,15 +2,21 @@ package system.data.collections
 {
    import system.data.Collection;
    import system.Equatable;
+   import hr.binaria.asx3m.annotations.Annotation;
    import system.data.Iterator;
-   import flash.utils.ByteArray;
-   import spark.effects.easing.Power;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.view.components.FilterGridColumn;
+   import mx.graphics.GradientEntry;
    import mx.binding.BindingManager;
-   import mx.controls.Spacer;
+   import spark.components.gridClasses.GridLayer;
+   import spark.filters.DropShadowFilter;
+   import com.hurlant.math.BigInteger;
+   import spark.primitives.BitmapImage;
    import system.data.iterators.ArrayIterator;
+   import com.enfluid.ltp.util.KeywordUtil;
    import system.Reflection;
    import system.serializers.eden.BuiltinSerializer;
-   import spark.primitives.Rect;
+   import flash.utils.ByteArray;
    import system.data.Iterable;
    
    public class ArrayCollection implements Collection, Equatable
@@ -57,9 +63,9 @@ package system.data.collections
          }
          §§push(param1.size());
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-((§§pop() + 1) * 65 + 1 - 30) + 79);
+            §§push(§§pop() - 1 + 1 - 1 - 23);
          }
          if(§§pop() > §§pop())
          {
@@ -97,7 +103,7 @@ package system.data.collections
          §§push(0);
          if(_loc1_)
          {
-            §§push(-(§§pop() + 38) - 5 - 1);
+            §§push(-((§§pop() - 1) * 57) - 47);
          }
          return §§pop() == §§pop();
       }
@@ -141,9 +147,9 @@ package system.data.collections
       {
          §§push(_a);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 85 + 104);
+            §§push((-§§pop() * 78 + 1 - 1 - 1 + 116) * 57);
          }
          §§pop().splice(§§pop());
       }
@@ -179,7 +185,7 @@ package system.data.collections
          §§push(-1);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 22) - 1 - 1);
+            §§push((-§§pop() + 88 - 1) * 44);
          }
          return §§pop() > §§pop();
       }
@@ -215,9 +221,9 @@ package system.data.collections
          var _loc3_:Array = toArray();
          §§push(_loc3_.length);
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(-(-(§§pop() + 18) - 1 + 96) * 17);
+            §§push(-(§§pop() + 62) * 116);
          }
          if(§§pop() > §§pop())
          {

@@ -1,9 +1,12 @@
 package com.hurlant.math
 {
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import spark.components.DataGroup;
-   import mx.binding.BindingManager;
-   import spark.primitives.Rect;
+   import mx.controls.Spacer;
+   import spark.layouts.VerticalLayout;
+   import spark.components.HGroup;
+   import flash.events.MouseEvent;
+   import flash.net.FileReference;
+   import flash.net.FileFilter;
+   import flash.events.Event;
    
    use namespace bi_internal;
    
@@ -47,7 +50,7 @@ package com.hurlant.math
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 3 + 1 - 30);
+            §§push((§§pop() + 1 - 1 + 51) * 9 - 34 - 93 - 63);
          }
          if(§§pop() < §§pop() || §§pop() >= §§pop())
          {

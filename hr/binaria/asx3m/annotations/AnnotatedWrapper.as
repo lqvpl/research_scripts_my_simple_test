@@ -1,5 +1,7 @@
 package hr.binaria.asx3m.annotations
 {
+   import com.enfluid.ltp.util.Logger;
+   
    public final class AnnotatedWrapper
    {
        

@@ -1,11 +1,13 @@
 package com.enfluid.ltp.view.skins
 {
    import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import mx.events.FlexEvent;
    import mx.core.IFlexModuleFactory;
    import mx.events.PropertyChangeEvent;
+   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
+   import com.enfluid.ltp.model.constants.Values;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.keywordresearch.SaveTopTenToServerCommand;
+   import flash.events.MouseEvent;
    
    public final class KeywordDataGridSkinInnerClass5 extends CompetitorAnalysisHeaderRenderer
    {

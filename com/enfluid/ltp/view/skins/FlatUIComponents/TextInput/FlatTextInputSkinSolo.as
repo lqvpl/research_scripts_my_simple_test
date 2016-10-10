@@ -2,26 +2,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
 {
    import spark.skins.SparkSkin;
    import mx.core.IStateClient2;
+   import mx.graphics.SolidColorStroke;
+   import mx.effects.Sequence;
    import spark.primitives.Rect;
    import mx.graphics.SolidColor;
-   import mx.graphics.SolidColorStroke;
    import spark.components.Label;
    import spark.components.RichEditableText;
    import mx.core.IFlexModuleFactory;
+   import mx.states.State;
+   import mx.states.SetProperty;
    import mx.core.FlexVersion;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.EmptyTrashCommand;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.FindKeywordsButtonSkin;
+   import com.enfluid.ltp.view.components.FilterGridColumn;
    import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
-   import spark.layouts.HorizontalLayout;
-   import spark.components.Group;
+   import mx.events.FlexEvent;
+   import flash.display.Sprite;
+   import mx.binding.utils.ChangeWatcher;
+   import system.serializers.§eden:release§.debug;
+   import system.serializers.eden.config;
+   import system.Strings;
+   import system.serializers.eden.strings;
+   import system.Reflection;
+   import spark.filters.DropShadowFilter;
    import spark.components.TextInput;
    import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
-   import mx.states.State;
-   import mx.states.SetProperty;
    import mx.states.AddItems;
    
    public final class FlatTextInputSkinSolo extends SparkSkin implements IStateClient2
@@ -162,9 +166,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
             §§push(this.background);
             §§push(this.background);
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push((§§pop() * 9 + 1 + 1 + 115 - 1) * 44);
+               §§push(-(§§pop() - 29) - 1 + 99 + 31);
             }
             §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             §§push(this.textDisplay);
@@ -172,9 +176,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
             §§push(this.textDisplay);
             §§push(this.textDisplay);
             §§push(0);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(§§pop() - 42 + 0 + 112);
+               §§push(-(§§pop() + 13) + 80 + 1 + 119);
             }
             §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             if(this.promptDisplay)
@@ -182,9 +186,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
                this.promptDisplay.setLayoutBoundsSize(param1,param2);
                §§push(this.promptDisplay);
                §§push(1);
-               if(_loc5_)
+               if(_loc4_)
                {
-                  §§push(-§§pop() * 28 + 15 + 1 + 106);
+                  §§push(-((§§pop() + 102) * 103 + 41 + 1 + 1 + 1));
                }
                §§pop().setLayoutBoundsPosition(§§pop(),§§pop());
             }
@@ -198,7 +202,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
             §§push(0);
             if(_loc4_)
             {
-               §§push(-(§§pop() * 81) + 1 - 69 - 1);
+               §§push((§§pop() - 111 + 1 + 103) * 44);
             }
             §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             §§push(this.textDisplay);
@@ -206,9 +210,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
             §§push(this.textDisplay);
             §§push(this.textDisplay);
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push((§§pop() - 61 - 3 - 57) * 21);
+               §§push((§§pop() * 109 + 1 - 109) * 66 + 32 - 1 + 1);
             }
             §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             if(this.promptDisplay)
@@ -218,7 +222,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
                §§push(0);
                if(_loc4_)
                {
-                  §§push(---§§pop() - 1);
+                  §§push(-(--(§§pop() * 88) - 1) - 1 - 1);
                }
                §§pop().setLayoutBoundsPosition(§§pop(),§§pop());
             }
@@ -289,44 +293,44 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) - 38 + 1 - 1);
+            §§push((§§pop() + 1) * 78 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1) * 47 - 1 - 68 - 119 - 45 + 1);
+            §§push((-(§§pop() - 26 + 26 - 75) + 58) * 113);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 60 * 0 - 1);
+            §§push(§§pop() - 33 - 1 + 1 - 63 - 97);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-§§pop() - 23 - 1);
+            §§push(-((§§pop() - 1) * 82 + 85));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() - 1) * 58);
+            §§push(§§pop() * 63 - 1 + 1 + 1 + 1 + 86);
          }
          §§pop().radiusX = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 44 - 44) - 2);
+            §§push(--§§pop() * 112 + 1 - 93 - 1);
          }
          §§pop().radiusY = §§pop();
          _loc1_.fill = this._FlatTextInputSkinSolo_SolidColor1_i();
@@ -343,7 +347,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 0) + 1 + 1 - 1);
+            §§push(--(§§pop() - 1) - 1);
          }
          §§pop().color = §§pop();
          this.bgFill = _loc1_;
@@ -358,28 +362,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 52 - 1 - 104 + 1);
+            §§push(-(§§pop() + 1) - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 102) - 1);
+            §§push(-(§§pop() * 94 + 1));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 1) - 90 + 1 - 1 + 1);
+            §§push((§§pop() + 109 + 91 - 1) * 116 + 118);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 114) * 40));
+            §§push(-(§§pop() * 73 + 100 - 1));
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._FlatTextInputSkinSolo_SolidColorStroke1_i();
@@ -396,7 +400,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
          §§push(14540253);
          if(_loc2_)
          {
-            §§push(§§pop() + 107 - 1 - 59 - 1 + 52 + 79);
+            §§push(-(-(§§pop() + 29) - 13 + 1) - 1 + 1);
          }
          §§pop().color = §§pop();
          _loc1_.weight = 0.5;
@@ -413,35 +417,35 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1 - 95 + 29) + 23) - 59);
+            §§push(-(-§§pop() - 87) - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1 - 1) * 9) - 1 + 16);
+            §§push(-(§§pop() * 20 * 75));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() - 19 - 1) + 3) + 1 + 68);
+            §§push(-(§§pop() - 21) - 20 - 1 + 1 - 1 - 115);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1) - 1 + 1) + 1 - 108);
+            §§push((-§§pop() + 1) * 119 - 28 - 0 - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 27 + 96));
+            §§push((-(§§pop() * 75) - 1 - 1 + 37) * 1);
          }
          §§pop().widthInChars = §§pop();
          _loc1_.setStyle("verticalAlign","middle");
@@ -461,9 +465,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.TextInput
          _loc1_.includeInLayout = false;
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() * 79) * 15 - 1 - 85 + 119));
+            §§push(§§pop() - 1 - 1 - 68);
          }
          §§pop().maxDisplayedLines = §§pop();
          _loc1_.mouseEnabled = false;

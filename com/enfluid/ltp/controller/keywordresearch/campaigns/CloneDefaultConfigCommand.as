@@ -2,11 +2,11 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import mx.events.FlexEvent;
    import com.enfluid.ltp.model.vo.ProjectVO;
-   import flash.utils.ByteArray;
-   import spark.layouts.HorizontalLayout;
-   import mx.graphics.SolidColor;
+   import mx.graphics.LinearGradient;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
+   import mx.binding.BindingManager;
    
    public final class CloneDefaultConfigCommand extends Command implements IPhotonCommand
    {

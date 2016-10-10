@@ -3,13 +3,12 @@ package com.enfluid.ltp.view.skins
    import spark.skins.SparkSkin;
    import mx.core.IStateClient2;
    import mx.core.IFlexModuleFactory;
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
-   import mx.binding.BindingManager;
    import spark.primitives.Rect;
    import mx.graphics.SolidColorStroke;
    import mx.graphics.SolidColor;
-   import spark.layouts.HorizontalLayout;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
+   import spark.effects.Fade;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
    import mx.states.State;
@@ -71,42 +70,42 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 85) - 1 - 1 - 98);
+            §§push(§§pop() * 71 - 1 - 1 - 1 - 1 - 9);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 71 + 1 + 1 - 1 + 1) * 97));
+            §§push((§§pop() * 21 - 56 - 1) * 19);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(---§§pop() + 70 - 1 - 1));
+            §§push(((§§pop() + 30 + 1) * 54 * 93 + 1) * 94);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(--§§pop() - 0);
+            §§push((-§§pop() - 95) * 50 - 25 + 9);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc2_)
          {
-            §§push((-§§pop() + 1) * 71 + 1 + 1 - 102);
+            §§push(-(-(§§pop() - 1) - 1 - 28 - 15 + 1));
          }
          §§pop().minWidth = §§pop();
          §§push(_loc1_);
          §§push(14);
          if(_loc3_)
          {
-            §§push((--§§pop() + 1) * 17 * 116);
+            §§push((§§pop() + 28 + 1) * 47 - 67);
          }
          §§pop().minHeight = §§pop();
          _loc1_.stroke = this._SlimVScrollBarTrackSkin_SolidColorStroke1_c();
@@ -122,14 +121,14 @@ package com.enfluid.ltp.view.skins
          §§push(6842472);
          if(_loc3_)
          {
-            §§push(----(§§pop() + 81) - 83);
+            §§push((§§pop() - 20) * 25 + 80 + 59);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1 + 1) + 1) - 1);
+            §§push(-(-§§pop() * 107 + 1));
          }
          §§pop().weight = §§pop();
          return _loc1_;
@@ -142,7 +141,7 @@ package com.enfluid.ltp.view.skins
          §§push(13290186);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 12) * 28 - 1 + 24 + 88 + 93));
+            §§push(-((§§pop() + 1) * 36 + 1));
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -155,28 +154,28 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1 - 36) * 94) + 32 - 8);
+            §§push(§§pop() + 1 + 56 + 1 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 35) * 119 + 1) * 6 - 1);
+            §§push(-(§§pop() - 1 + 1 - 1 + 1) * 34 * 20);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 119 - 1 + 1 + 73 + 61);
+            §§push(§§pop() + 1 - 1 - 1 - 23);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() - 25 + 87 + 1) * 13 + 31);
+            §§push(-(§§pop() * 33 - 1) + 1);
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._SlimVScrollBarTrackSkin_SolidColor2_c();
@@ -191,7 +190,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() - 1 + 1 + 18);
+            §§push(-((-§§pop() - 65) * 8));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.24;
@@ -203,30 +202,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 104) * 8) * 18 - 1);
+            §§push((-(§§pop() - 76) + 1 + 95) * 72);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() - 1 + 25 - 76) * 96 + 1 + 1);
+            §§push((§§pop() - 11) * 51 - 1 - 1 - 112 - 1 + 51);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--§§pop() - 1 - 1));
+            §§push(-(-(§§pop() - 1) + 71 - 1));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 1 - 109 - 78);
+            §§push(((§§pop() + 1) * 23 - 90 - 6) * 17 - 1 - 59);
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._SlimVScrollBarTrackSkin_SolidColor3_c();
@@ -239,9 +238,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 103) * 102 * 54 * 88 - 16 + 2 + 1);
+            §§push((--(§§pop() + 1) + 79 + 101 + 1) * 12);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;
@@ -255,28 +254,28 @@ package com.enfluid.ltp.view.skins
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 66));
+            §§push(§§pop() + 81 - 1 + 44 + 111 + 52 - 62);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 1 + 1 + 1) + 32);
+            §§push(-((§§pop() - 68) * 118) - 5 + 1 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 2 + 1 + 1);
+            §§push(-(§§pop() + 1) * 45 - 1 - 9);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 58) - 1) + 1);
+            §§push(-(§§pop() + 57 + 1) - 6);
          }
          §§pop().height = §§pop();
          _loc1_.fill = this._SlimVScrollBarTrackSkin_SolidColor4_c();
@@ -291,7 +290,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(--((§§pop() - 19 - 71) * 14) + 1);
+            §§push(-((-§§pop() - 1 - 24 + 109 - 1) * 118));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;
@@ -305,28 +304,28 @@ package com.enfluid.ltp.view.skins
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 74) - 42);
+            §§push((§§pop() - 82 + 3 - 109 + 1) * 15 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) * 15 + 1 + 1);
+            §§push(-((§§pop() + 36 - 57 - 94) * 14) - 1 + 48);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 78 - 1 + 60) * 92 - 107));
+            §§push(-((§§pop() + 1 - 1) * 102) - 1 + 102 - 85);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 98));
+            §§push(-(§§pop() - 1) - 1 - 13 + 3 + 118);
          }
          §§pop().height = §§pop();
          _loc1_.fill = this._SlimVScrollBarTrackSkin_SolidColor5_c();
@@ -339,9 +338,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--(§§pop() + 16) + 1 - 1) + 99);
+            §§push(§§pop() + 15 + 11 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;

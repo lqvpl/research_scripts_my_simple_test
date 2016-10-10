@@ -1,11 +1,12 @@
 package com.dk.license
 {
-   import spark.components.gridClasses.GridColumn;
-   import mx.binding.BindingManager;
+   import mx.effects.Sequence;
    import flash.utils.ByteArray;
-   import spark.components.TextInput;
-   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
-   import mx.controls.HTML;
+   import com.adobe.utils.StringUtil;
+   import it.sharify.event.SharifyResponseEvent;
+   import com.enfluid.ltp.model.constants.Constants;
+   import com.enfluid.ltp.util.Logger;
+   import flash.utils.setTimeout;
    
    public final class UID
    {
@@ -15,51 +16,51 @@ package com.dk.license
       {
          §§push();
          §§push(48);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(--§§pop() * 88 + 56 + 55);
+            §§push(-(§§pop() + 52 - 47 - 1) + 21 - 49);
          }
          §§push(49);
          §§push(50);
          if(_loc1_)
          {
-            §§push(-((§§pop() * 9 - 1) * 32 - 1) + 94);
+            §§push(-(§§pop() + 75) + 1 - 1 + 76 + 1 - 44);
          }
          §§push(51);
          §§push(52);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() + 89 - 1) * 11);
+            §§push((§§pop() + 1 - 36 + 111 + 1) * 72 + 44);
          }
          §§push(53);
          §§push(54);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 - 86 - 44) * 16 - 1 + 42 + 1);
+            §§push(--(-(§§pop() - 1 + 21) * 78 + 53));
          }
          §§push(55);
          §§push(56);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 39 + 24 - 103) * 13 - 1);
+            §§push(-((--§§pop() - 1) * 1 - 1));
          }
          §§push(57);
          §§push(65);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 29) * 103 - 1 + 87) * 3);
+            §§push(-(§§pop() - 51 + 47 + 1));
          }
          §§push(66);
          §§push(67);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 87 - 76 - 1);
+            §§push(-((§§pop() + 1 + 1 - 58) * 68 + 55 - 1));
          }
          §§push(68);
          §§push(69);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() + 1 - 1 - 1 - 1 - 1 + 1 + 63);
+            §§push((§§pop() + 46 + 43 - 1) * 86 * 50 - 35);
          }
       }
       
@@ -73,32 +74,32 @@ package com.dk.license
          §§push(0);
          if(_loc9_)
          {
-            §§push(--((§§pop() + 1) * 85));
+            §§push(§§pop() + 20 + 1 + 1);
          }
          var _loc3_:* = §§pop();
          §§push(0);
-         if(_loc9_)
+         if(_loc10_)
          {
-            §§push((-(§§pop() + 96 - 1) - 1) * 17 + 28);
+            §§push(§§pop() * 44 + 76 + 19);
          }
          var _loc4_:* = §§pop();
          §§push();
          §§push(36);
          if(_loc9_)
          {
-            §§push(-(§§pop() - 1) - 0 - 1);
+            §§push(-§§pop() + 1 - 1);
          }
          var _loc1_:Array = new §§pop().Array(§§pop());
          §§push(0);
          if(_loc9_)
          {
-            §§push(-((-§§pop() + 98 + 1) * 58) + 57 - 1);
+            §§push(-§§pop() + 1 - 1 - 1 - 98);
          }
          var _loc2_:* = §§pop();
          §§push(0);
          if(_loc9_)
          {
-            §§push(-(-(§§pop() + 1) * 19 - 1 - 75));
+            §§push(§§pop() - 115 + 1 + 1 + 1);
          }
          _loc3_ = §§pop();
          while(true)
@@ -107,7 +108,7 @@ package com.dk.license
             §§push(8);
             if(_loc9_)
             {
-               §§push(§§pop() - 64 - 48 - 1);
+               §§push(-((§§pop() - 94 - 1) * 106 + 46) - 0);
             }
             if(§§pop() >= §§pop())
             {
@@ -121,24 +122,24 @@ package com.dk.license
             §§push(16);
             if(_loc9_)
             {
-               §§push((§§pop() + 1 - 1 + 1 - 54) * 75 - 1 + 71);
+               §§push(-(§§pop() - 1) - 107 + 12 - 1 - 99 - 33);
             }
             §§pop()[§§pop()] = §§pop()[§§pop().floor(§§pop() * §§pop())];
             _loc3_++;
          }
          §§push(0);
-         if(_loc10_)
+         if(_loc9_)
          {
-            §§push(-(§§pop() + 28) + 1 - 1);
+            §§push(-(-(§§pop() - 44) + 1) + 1 + 1 - 1);
          }
          _loc3_ = §§pop();
          while(true)
          {
             §§push(_loc3_);
             §§push(3);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(((§§pop() + 1) * 85 - 1 + 1 - 1) * 59);
+               §§push((§§pop() + 1) * 6 * 98);
             }
             if(§§pop() >= §§pop())
             {
@@ -149,22 +150,22 @@ package com.dk.license
             §§push(45);
             if(_loc10_)
             {
-               §§push((§§pop() - 1) * 112 - 11 - 1 + 19);
+               §§push(--§§pop() + 40 - 1 + 1);
             }
             §§pop()[§§pop()] = §§pop();
             §§push(0);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(-(-§§pop() - 37) + 1 - 1 - 1 + 86);
+               §§push(-((§§pop() - 83 + 42 - 1) * 6 * 59 * 79));
             }
             _loc4_ = §§pop();
             while(true)
             {
                §§push(_loc4_);
                §§push(4);
-               if(_loc9_)
+               if(_loc10_)
                {
-                  §§push(-(§§pop() - 65 - 1 + 5 - 1 - 52));
+                  §§push(((§§pop() + 1) * 89 - 1 - 1 + 1 - 1) * 58);
                }
                if(§§pop() >= §§pop())
                {
@@ -178,7 +179,7 @@ package com.dk.license
                §§push(16);
                if(_loc9_)
                {
-                  §§push(§§pop() * 50 * 60 + 35 + 1 - 1 - 1);
+                  §§push(-(§§pop() + 1 + 1) + 14 - 97 + 28 - 1);
                }
                §§pop()[§§pop()] = §§pop()[§§pop().floor(§§pop() * §§pop())];
                _loc4_++;
@@ -190,37 +191,37 @@ package com.dk.license
          §§push(45);
          if(_loc10_)
          {
-            §§push(§§pop() + 81 - 1 - 3);
+            §§push((§§pop() - 108 - 67 - 1) * 30 - 1);
          }
          §§pop()[§§pop()] = §§pop();
          var _loc5_:Number = new Date().getTime();
          §§push("0000000");
          §§push(_loc5_);
          §§push(16);
-         if(_loc10_)
+         if(_loc9_)
          {
-            §§push(§§pop() + 1 + 88 + 44 + 1 + 1);
+            §§push(-(§§pop() - 16) - 23 - 1);
          }
          §§push(§§pop() + §§pop().toString(§§pop()).toUpperCase());
          §§push(-8);
          if(_loc10_)
          {
-            §§push((§§pop() * 34 - 1) * 72 - 1);
+            §§push((-(§§pop() + 107) * 68 - 54) * 3);
          }
          var _loc6_:String = §§pop().substr(§§pop());
          §§push(0);
          if(_loc10_)
          {
-            §§push(-(§§pop() - 1) - 1 - 1 - 101 + 1 - 82);
+            §§push(§§pop() + 1 - 106 + 89);
          }
          _loc3_ = §§pop();
          while(true)
          {
             §§push(_loc3_);
             §§push(8);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push((§§pop() + 50 + 1 + 1 - 1) * 21 - 71);
+               §§push(§§pop() * 64 - 1 + 83);
             }
             if(§§pop() >= §§pop())
             {
@@ -232,7 +233,7 @@ package com.dk.license
          §§push(0);
          if(_loc9_)
          {
-            §§push(§§pop() - 48 + 1 + 1);
+            §§push(--(§§pop() + 1) + 43);
          }
          _loc3_ = §§pop();
          while(true)
@@ -241,7 +242,7 @@ package com.dk.license
             §§push(4);
             if(_loc9_)
             {
-               §§push(-(-(§§pop() + 111 + 13 - 1) + 45) - 1);
+               §§push(((§§pop() - 99) * 32 * 24 + 88) * 85 * 39 - 96);
             }
             if(§§pop() >= §§pop())
             {
@@ -255,7 +256,7 @@ package com.dk.license
             §§push(16);
             if(_loc9_)
             {
-               §§push(-(-(-(§§pop() * 5) * 38) - 114) - 25);
+               §§push(--§§pop() - 67);
             }
             §§pop()[§§pop()] = §§pop()[§§pop().floor(§§pop() * §§pop())];
             _loc3_++;
@@ -269,19 +270,19 @@ package com.dk.license
          §§push(0);
          if(_loc8_)
          {
-            §§push(-(§§pop() - 65 - 1));
+            §§push(-(§§pop() - 81 + 8 - 1) + 1);
          }
          var _loc3_:uint = §§pop();
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() + 41 - 110) * 68);
+            §§push(-(§§pop() + 11 + 1 - 1 + 1) - 1);
          }
          var _loc4_:uint = §§pop();
          §§push(0);
-         if(_loc8_)
+         if(_loc9_)
          {
-            §§push(-(§§pop() + 1 - 101 + 1));
+            §§push(((§§pop() + 1) * 9 - 1) * 100);
          }
          var _loc5_:* = §§pop();
          if(param1 != null && §§pop() >= §§pop() && §§pop() >= §§pop())
@@ -290,28 +291,28 @@ package com.dk.license
             §§push(36);
             if(_loc8_)
             {
-               §§push(§§pop() * 53 - 18 - 85);
+               §§push(-(§§pop() * 90 - 101 - 1) - 81 + 1 + 1);
             }
             _loc2_ = new §§pop().Array(§§pop());
             §§push(0);
             if(_loc8_)
             {
-               §§push(-((§§pop() - 1) * 83 - 62));
+               §§push(-(-(§§pop() + 2) + 1 - 1 - 1));
             }
             _loc3_ = §§pop();
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() - 1 + 1 + 1 - 1);
+               §§push(-(§§pop() - 1 - 69) + 1 + 1 - 1 + 86);
             }
             _loc4_ = §§pop();
             while(true)
             {
                §§push(_loc4_);
                §§push(16);
-               if(_loc8_)
+               if(_loc9_)
                {
-                  §§push(((§§pop() + 46) * 41 + 109 - 113) * 94 * 51 - 84);
+                  §§push((§§pop() + 56 + 12 + 1) * 28);
                }
                if(§§pop() >= §§pop())
                {
@@ -319,18 +320,18 @@ package com.dk.license
                }
                §§push(_loc4_);
                §§push(4);
-               if(_loc8_)
+               if(_loc9_)
                {
-                  §§push(--(-(§§pop() - 75) * 32));
+                  §§push(§§pop() * 49 - 11 - 93 + 1 + 40 + 1 + 58);
                }
                if(§§pop() == §§pop() || §§pop() == §§pop() || §§pop() == §§pop() || §§pop() == §§pop())
                {
                   §§push(_loc2_);
                   §§push(_loc6_);
                   §§push(45);
-                  if(_loc8_)
+                  if(_loc9_)
                   {
-                     §§push((§§pop() - 1 + 1) * 107 * 14 + 1);
+                     §§push(-((§§pop() * 52 + 39) * 12 - 1) * 39);
                   }
                   §§pop()[§§pop()] = §§pop();
                }
@@ -340,15 +341,15 @@ package com.dk.license
                §§push(ALPHA_CHAR_CODES);
                §§push(_loc5_);
                §§push(240);
-               if(_loc9_)
+               if(_loc8_)
                {
-                  §§push((§§pop() - 1 + 1 + 96 + 1) * 15);
+                  §§push(-((§§pop() * 103 - 66 + 44) * 106 - 8 + 1));
                }
                §§push(§§pop() & §§pop());
                §§push(4);
                if(_loc8_)
                {
-                  §§push(§§pop() * 39 + 1 - 10 + 1 - 16);
+                  §§push(§§pop() - 1 + 101 + 45 + 1 + 1 - 1);
                }
                §§pop()[§§pop()] = §§pop()[§§pop() >>> §§pop()];
                §§push(_loc2_);
@@ -356,9 +357,9 @@ package com.dk.license
                §§push(ALPHA_CHAR_CODES);
                §§push(_loc5_);
                §§push(15);
-               if(_loc8_)
+               if(_loc9_)
                {
-                  §§push((-(§§pop() - 98) + 1 - 108 - 1 + 1) * 46);
+                  §§push((§§pop() + 1 + 97) * 106 + 79 - 1 - 28);
                }
                §§pop()[§§pop()] = §§pop()[§§pop() & §§pop()];
                _loc4_++;
@@ -373,7 +374,7 @@ package com.dk.license
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 1 + 96) * 2 + 1 + 1 - 116);
+            §§push(§§pop() * 62 + 1 - 1 + 1 - 1 + 57);
          }
          var _loc2_:uint = §§pop();
          var _loc3_:Number = NaN;
@@ -382,16 +383,16 @@ package com.dk.license
             §§push(0);
             if(_loc5_)
             {
-               §§push(-§§pop() * 61 - 56);
+               §§push((§§pop() + 1 - 36 - 1 + 1) * 97 - 36 - 1);
             }
             _loc2_ = §§pop();
             while(true)
             {
                §§push(_loc2_);
                §§push(36);
-               if(_loc5_)
+               if(_loc4_)
                {
-                  §§push(-§§pop() - 34 - 81 - 1);
+                  §§push(((§§pop() - 1) * 42 * 38 - 109 + 92) * 11 * 12);
                }
                if(§§pop() >= §§pop())
                {
@@ -402,15 +403,15 @@ package com.dk.license
                §§push(8);
                if(_loc5_)
                {
-                  §§push(-§§pop() - 1 - 71);
+                  §§push(-(§§pop() - 1) + 117);
                }
                if(§§pop() == §§pop() || §§pop() == §§pop() || §§pop() == §§pop() || §§pop() == §§pop())
                {
                   §§push(_loc3_);
                   §§push(45);
-                  if(_loc4_)
+                  if(_loc5_)
                   {
-                     §§push(---(§§pop() + 1 + 55 - 100) + 117);
+                     §§push((§§pop() - 1 + 38) * 41 + 1);
                   }
                   if(§§pop() != §§pop())
                   {
@@ -423,7 +424,7 @@ package com.dk.license
                   §§push(48);
                   if(_loc4_)
                   {
-                     §§push(((-§§pop() + 107) * 81 + 1 + 75 - 1) * 19);
+                     §§push(-(-§§pop() - 1) - 1 + 82);
                   }
                   if(§§pop() < §§pop() || §§pop() > §§pop() || §§pop() > §§pop() && §§pop() < §§pop())
                   {
@@ -441,31 +442,31 @@ package com.dk.license
       {
          var _loc2_:ByteArray = null;
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push(-(§§pop() - 1 + 30));
+            §§push(--(§§pop() - 1));
          }
          var _loc3_:uint = §§pop();
          var _loc4_:String = null;
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push(-(§§pop() + 91 - 117 - 1 + 1 + 1));
+            §§push((§§pop() - 1 + 1) * 96 * 23 - 1);
          }
          var _loc5_:uint = §§pop();
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push(-§§pop() - 1 + 1 + 1 - 3);
+            §§push(-(§§pop() - 1) - 20);
          }
          var _loc6_:uint = §§pop();
          if(isUID(param1))
          {
             _loc2_ = new ByteArray();
             §§push(0);
-            if(_loc8_)
+            if(_loc7_)
             {
-               §§push(§§pop() + 1 - 59 + 1 - 1);
+               §§push(--(-((§§pop() - 92) * 12) - 16) + 29);
             }
             _loc3_ = §§pop();
             while(_loc3_ < param1.length)
@@ -479,15 +480,15 @@ package com.dk.license
                   §§push(_loc2_);
                   §§push(_loc5_);
                   §§push(4);
-                  if(_loc7_)
+                  if(_loc8_)
                   {
-                     §§push(-(§§pop() * 56 * 58));
+                     §§push(-(§§pop() + 1 - 1) * 73 - 1 + 1);
                   }
                   §§push(§§pop() << §§pop() | _loc6_);
                   §§push(255);
-                  if(_loc7_)
+                  if(_loc8_)
                   {
-                     §§push(-(§§pop() - 95 - 1 - 30 + 46 - 1 + 1));
+                     §§push(§§pop() + 1 - 1 + 61 + 119);
                   }
                   §§pop().writeByte(§§pop() & §§pop());
                }
@@ -495,9 +496,9 @@ package com.dk.license
             }
             §§push(_loc2_);
             §§push(0);
-            if(_loc8_)
+            if(_loc7_)
             {
-               §§push(-(§§pop() - 1 - 71 - 30) * 65);
+               §§push((§§pop() - 1) * 30 - 1 + 59 + 1);
             }
             §§pop().position = §§pop();
             return _loc2_;
@@ -512,7 +513,7 @@ package com.dk.license
             §§push(0);
             if(_loc4_)
             {
-               §§push(§§pop() - 27 - 1 + 1 - 1);
+               §§push((§§pop() - 22) * 88 + 52);
             }
          }
          else if("a" === _loc2_)
@@ -520,23 +521,23 @@ package com.dk.license
             §§push(1);
             if(_loc4_)
             {
-               §§push(--(--§§pop() * 13) + 1 - 1);
+               §§push(-(§§pop() - 78 + 1) * 18 + 28);
             }
          }
          else if("B" === _loc2_)
          {
             §§push(2);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(---(§§pop() - 73) + 114);
+               §§push(---(-§§pop() - 1 + 1) - 98);
             }
          }
          else if("b" === _loc2_)
          {
             §§push(3);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push((§§pop() - 38) * 61 + 17);
+               §§push(§§pop() + 1 + 82 - 1 - 2 + 67 - 57);
             }
          }
          else if("C" === _loc2_)
@@ -544,7 +545,7 @@ package com.dk.license
             §§push(4);
             if(_loc3_)
             {
-               §§push((§§pop() * 80 + 1 + 1 + 104 + 88) * 119);
+               §§push((-§§pop() + 1 - 1 - 18 - 54) * 0);
             }
          }
          else if("c" === _loc2_)
@@ -552,7 +553,7 @@ package com.dk.license
             §§push(5);
             if(_loc3_)
             {
-               §§push(-((§§pop() * 90 - 1) * 22 - 67) + 1);
+               §§push(-(§§pop() - 40) + 77 - 1);
             }
          }
          else if("D" === _loc2_)
@@ -560,7 +561,7 @@ package com.dk.license
             §§push(6);
             if(_loc4_)
             {
-               §§push((§§pop() + 46 + 1 + 1 - 1 + 1) * 43);
+               §§push(-(§§pop() - 110 + 6 + 1) + 8);
             }
          }
          else if("d" === _loc2_)
@@ -568,7 +569,7 @@ package com.dk.license
             §§push(7);
             if(_loc3_)
             {
-               §§push(-§§pop() + 1 - 99 + 79 + 12);
+               §§push(-(-§§pop() + 89 - 21 + 104 - 75) + 100);
             }
          }
          else if("E" === _loc2_)
@@ -576,39 +577,39 @@ package com.dk.license
             §§push(8);
             if(_loc3_)
             {
-               §§push((-(§§pop() - 48) + 1 + 1 + 1) * 8 + 1);
+               §§push(§§pop() + 1 + 1 + 1 + 1 + 13 - 50 + 1);
             }
          }
          else if("e" === _loc2_)
          {
             §§push(9);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(-(-(§§pop() + 1) + 1 - 47 - 1) - 57);
+               §§push((-(§§pop() * 34) * 26 + 1 - 1 - 1) * 90);
             }
          }
          else if("F" === _loc2_)
          {
             §§push(10);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(§§pop() + 111 + 95 - 1 - 1 + 1);
+               §§push(-(-§§pop() + 16 + 70 + 17 + 1));
             }
          }
          else if("f" === _loc2_)
          {
             §§push(11);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(((§§pop() + 1 - 115 - 23) * 46 + 18 + 1) * 57);
+               §§push(-(§§pop() * 57 - 1) - 1 + 1 - 1);
             }
          }
          else
          {
             §§push(12);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(--(§§pop() - 1 - 99 - 1 + 1) - 1);
+               §§push(-(§§pop() - 1) - 32 + 47 + 1 + 66);
             }
          }
          switch(§§pop())
@@ -618,42 +619,42 @@ package com.dk.license
                §§push(10);
                if(_loc4_)
                {
-                  return §§pop() * 64 - 104 + 1 - 1;
+                  return ((-§§pop() + 1) * 60 - 33) * 112 * 79 - 105;
                }
             case 2:
             case 3:
                §§push(11);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  return §§pop() + 1 + 1 + 72 - 1 + 1 + 117;
+                  return §§pop() - 1 + 85 + 13 + 57 + 1;
                }
             case 4:
             case 5:
                §§push(12);
-               if(_loc4_)
+               if(_loc3_)
                {
-                  return -((-§§pop() + 5) * 45 + 65) - 111 - 108;
+                  return (-(§§pop() - 1) - 61 + 8) * 27 * 26;
                }
             case 6:
             case 7:
                §§push(13);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  return -((§§pop() - 6 - 1) * 56 - 1 - 1 + 1);
+                  return -(§§pop() - 14) - 18 - 1;
                }
             case 8:
             case 9:
                §§push(14);
-               if(_loc4_)
+               if(_loc3_)
                {
-                  return --(§§pop() * 111 + 39) - 22 - 7 + 1;
+                  return ---(-(§§pop() + 76) + 1) - 92;
                }
             case 10:
             case 11:
                §§push(15);
-               if(_loc3_)
+               if(_loc4_)
                {
-                  return §§pop() + 115 - 3 - 20 - 1 + 1;
+                  return (§§pop() + 1) * 67 * 4;
                }
             default:
                return new uint(param1);

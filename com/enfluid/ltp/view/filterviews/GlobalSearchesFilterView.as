@@ -2,13 +2,12 @@ package com.enfluid.ltp.view.filterviews
 {
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
    import mx.core.IFlexModuleFactory;
+   import spark.primitives.Rect;
    import mx.binding.Binding;
    import com.enfluid.ltp.model.DataModel;
-   import mx.containers.VDividedBox;
-   import mx.core.UIComponentDescriptor;
-   import com.enfluid.ltp.view.KeywordsDataGrid;
-   import com.enfluid.ltp.view.DebugPanel;
    import mx.core.mx_internal;
    import flash.utils.getDefinitionByName;
    
@@ -59,9 +58,9 @@ package com.enfluid.ltp.view.filterviews
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 1 + 75 + 108);
+            §§push((§§pop() + 1) * 66 * 35);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -96,9 +95,9 @@ package com.enfluid.ltp.view.filterviews
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(-(§§pop() * 22 - 70) * 28) - 119) * 119);
+            §§push(-§§pop() - 47 + 75);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -108,7 +107,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 21 - 22 - 48 + 1 - 42);
+            §§push((§§pop() + 4) * 14 + 64 + 6);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -118,7 +117,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) + 1);
+            §§push(§§pop() * 45 * 106 - 63);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -129,44 +128,44 @@ package com.enfluid.ltp.view.filterviews
          },"DataModel.instance.selectedKeywordCollection.project.globalSearchesFilterMin");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() - 1) * 43 - 1) * 97);
+            §§push((§§pop() * 13 - 1 + 1 - 12 - 8) * 92 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 51 - 1 + 1);
+            §§push((§§pop() + 1 - 1) * 71);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 36 * 26 * 23 * 92);
+            §§push((§§pop() + 74 - 79) * 107 * 11 + 1 - 1 - 6);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 1));
+            §§push(-(§§pop() - 1) + 103 - 21);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1) * 25);
+            §§push(-(§§pop() + 1) - 1 - 74);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 75 + 1 - 117) * 90);
+            §§push(-(§§pop() + 1) + 23 + 1 - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -179,35 +178,35 @@ package com.enfluid.ltp.view.filterviews
          §§push(3);
          if(_loc3_)
          {
-            §§push(--(--(§§pop() * 78) + 118 - 1));
+            §§push(-((§§pop() - 1 + 1) * 114));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-((-(§§pop() + 1 + 25) + 1) * 100 * 56));
+            §§push(-(-§§pop() - 1));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push(--(-(§§pop() * 64) + 109 - 1) + 95);
+            §§push(--(§§pop() + 1) - 22);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 77 + 1);
+            §§push(-(§§pop() + 33 - 33 + 1) - 85 - 4);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) + 1);
+            §§push(§§pop() - 54 + 1 + 1 - 66 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

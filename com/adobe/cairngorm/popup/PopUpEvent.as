@@ -2,6 +2,8 @@ package com.adobe.cairngorm.popup
 {
    import flash.events.Event;
    import mx.core.IFlexDisplayObject;
+   import spark.components.TextInput;
+   import mx.binding.BindingManager;
    
    public final class PopUpEvent extends Event
    {

@@ -1,13 +1,10 @@
 package hr.binaria.asx3m.converters.basic
 {
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.Link;
-   import mx.binding.Binding;
-   import com.hurlant.util.Memory;
-   
-   use namespace mx_internal;
+   import flash.events.MouseEvent;
+   import spark.components.Group;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.controller.common.ExportDataGridCSVCommand;
+   import com.enfluid.ltp.model.constants.Constants;
    
    public final class NumberConverter extends AbstractSingleValueConverter
    {

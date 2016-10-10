@@ -7,8 +7,8 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
    import com.enfluid.ltp.util.Util;
    import flash.utils.setTimeout;
    import com.enfluid.ltp.util.ProgressBarUtil;
-   import mx.binding.Binding;
    import com.enfluid.ltp.util.KeywordUtil;
+   import flash.events.MouseEvent;
    
    public final class FetchGoogleTitleCompetitionCommand extends FetchGoogleCommand implements IPhotonCommand, IResponder
    {
@@ -36,7 +36,7 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
          super.execute();
       }
       
-      override protected function calcUrl() : String
+      override protected function calcUrl(param1:Boolean) : String
       {
          return "http://www.google.com/search?hl=en&q=allintitle%3A" + this.keyword.keyword.replace(/ /g,"+");
       }
@@ -48,7 +48,7 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(§§pop() - 1 + 43) * 11);
+            §§push((--§§pop() - 1 - 1) * 95 + 72);
          }
          var _loc3_:* = §§pop();
          try
@@ -56,9 +56,9 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
             _loc1_ = scraper.getElementById("resultStats");
             §§push(_loc1_.innerText.split(" "));
             §§push(1);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(--§§pop() - 1);
+               §§push(-(§§pop() - 1 + 1 + 1) + 1 - 94);
             }
             _loc2_ = §§pop()[§§pop()];
             _loc3_ = int(int(KeywordUtil.removeNonNumericChars(_loc2_)));
@@ -69,9 +69,9 @@ package com.enfluid.ltp.controller.keywordresearch.titlecompetition
          if(!_loc2_)
          {
             §§push(-1);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push((-(§§pop() - 84) * 66 - 1) * 25 - 1);
+               §§push((§§pop() - 1) * 55 + 1 + 1);
             }
             _loc3_ = §§pop();
          }

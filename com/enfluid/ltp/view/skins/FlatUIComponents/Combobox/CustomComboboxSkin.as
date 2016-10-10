@@ -12,10 +12,6 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
    import spark.components.Scroller;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import system.data.Map;
-   import system.data.Iterator;
    import mx.binding.BindingManager;
    import mx.core.ClassFactory;
    import spark.skins.spark.DefaultItemRenderer;
@@ -102,9 +98,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-(§§pop() + 71) - 1) * 8) * 76);
+            §§push(-(§§pop() + 43 + 1) - 1);
          }
          §§pop().states = null;
       }
@@ -192,7 +188,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
                §§push(0);
                if(_loc4_)
                {
-                  §§push((§§pop() - 1) * 21 * 75 * 87);
+                  §§push((§§pop() - 1 + 91 - 1 + 1) * 87);
                }
                §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             }
@@ -200,9 +196,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
             {
                §§push(this.scroller);
                §§push(0);
-               if(_loc4_)
+               if(_loc5_)
                {
-                  §§push(§§pop() + 66 + 25 - 1 + 1);
+                  §§push(§§pop() + 7 + 29 + 1 - 1);
                }
                §§pop().minViewportInset = §§pop();
             }
@@ -218,7 +214,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
                §§push(1);
                if(_loc5_)
                {
-                  §§push((§§pop() + 70 + 1 + 54 + 86) * 110 - 1 - 1);
+                  §§push((-§§pop() - 1) * 86 - 1 - 1);
                }
                §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             }
@@ -226,9 +222,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
             {
                §§push(this.scroller);
                §§push(1);
-               if(_loc4_)
+               if(_loc5_)
                {
-                  §§push(-§§pop() + 1 + 1 + 45 + 65);
+                  §§push((§§pop() * 6 - 93 - 30 + 1) * 99 * 111 + 1);
                }
                §§pop().minViewportInset = §§pop();
             }
@@ -245,30 +241,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:PopUpAnchor = new PopUpAnchor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 102 + 78) * 66 - 1 + 39 + 1 - 1);
+            §§push(-(((-§§pop() - 40 + 1) * 78 + 1) * 40));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 37) * 64 - 1);
+            §§push(-(§§pop() - 113 - 1));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() * 41 - 19 - 6 + 23 - 0);
+            §§push((§§pop() + 98) * 65 - 1 + 38 + 20 + 56);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 81 + 45 - 1) * 104 - 1 - 1);
+            §§push(-((§§pop() + 115) * 72) - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.popUpPosition = "below";
@@ -309,66 +305,66 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:RectangularDropShadow = new RectangularDropShadow();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--§§pop() + 36 + 1) + 24 + 5);
+            §§push(-(§§pop() + 1 - 80));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 10 + 25 - 1) * 103);
+            §§push(-(§§pop() + 97 + 1 - 1 - 1 + 6));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(--§§pop() * 31 - 1) + 31);
+            §§push(-(§§pop() + 1) + 71 + 24);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 37 + 83 + 76);
+            §§push((§§pop() - 1 + 1 - 1 + 115 + 1) * 117);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-§§pop() * 91 + 112 - 111));
+            §§push(-(§§pop() + 1) + 28 + 93 + 90);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(20);
          if(_loc2_)
          {
-            §§push(§§pop() - 55 - 47 - 89 - 24 - 1 - 63);
+            §§push(-(-§§pop() - 13 - 98 - 1) + 83);
          }
          §§pop().blurX = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 1));
+            §§push(-(§§pop() - 1 + 1 + 1) + 1 - 99);
          }
          §§pop().blurY = §§pop();
          _loc1_.alpha = 0.45;
          §§push(_loc1_);
          §§push(7);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 - 65) * 17 - 103);
+            §§push((§§pop() - 1) * 48 * 87 + 1);
          }
          §§pop().distance = §§pop();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 - 1);
+            §§push(-(§§pop() + 1 - 1 - 1 + 77) + 57 + 35);
          }
          §§pop().angle = §§pop();
          _loc1_.id = "dropShadow";
@@ -386,30 +382,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 1 + 77) * 70);
+            §§push(-(§§pop() - 1 - 1) * 3);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() * 63 + 43 + 53);
+            §§push(-(-§§pop() + 65 - 1 + 9) - 21);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(-(§§pop() - 29) + 46) * 24 + 1);
+            §§push(-§§pop() + 1 - 38 + 104 + 1 + 83 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((---(§§pop() - 116) - 1 + 1) * 63);
+            §§push(§§pop() - 1 + 1 + 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._CustomComboboxSkin_SolidColor1_i();
@@ -426,7 +422,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(16771899);
          if(_loc3_)
          {
-            §§push(--(-(§§pop() * 62) + 26));
+            §§push(-§§pop() - 85 + 1 - 1 + 1 - 117 - 100);
          }
          §§pop().color = §§pop();
          this.bgFill = _loc1_;
@@ -441,28 +437,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(0);
          if(_loc2_)
          {
-            §§push(--(§§pop() - 1));
+            §§push(-(§§pop() + 116 + 58 + 1 + 98));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() + 1) * 96 + 1 - 69) * 11 * 24);
+            §§push(§§pop() - 36 - 1 - 47);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 + 105 - 17);
+            §§push((§§pop() - 90) * 18 - 1 - 86);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(((§§pop() + 85 + 32) * 101 + 93) * 10);
+            §§push(-(§§pop() + 1 + 92) - 93 + 87 - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.hasFocusableChildren = false;
@@ -470,7 +466,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 37 - 4) + 52 + 1);
+            §§push(((§§pop() + 46) * 27 + 1 + 1) * 43);
          }
          §§pop().minViewportInset = §§pop();
          _loc1_.viewport = this._CustomComboboxSkin_DataGroup1_i();
@@ -512,23 +508,23 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          _loc1_.horizontalAlign = "contentJustify";
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 84 - 15) * 64);
+            §§push((-(§§pop() * 14 * 57) - 1) * 49 - 79);
          }
          §§pop().gap = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 67 + 61 + 8) * 57 * 91));
+            §§push(§§pop() * 8 - 27 + 1 + 1 + 117);
          }
          §§pop().requestedMinRowCount = §§pop();
          §§push(_loc1_);
          §§push(6);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 99 + 1 - 101);
+            §§push(§§pop() + 1 - 52 - 47);
          }
          §§pop().requestedMaxRowCount = §§pop();
          return _loc1_;
@@ -541,35 +537,35 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(41);
          if(_loc2_)
          {
-            §§push((§§pop() * 56 - 32 - 1) * 65 + 77 + 1 + 1);
+            §§push(-(§§pop() + 21) + 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(((§§pop() + 1 + 30) * 111 - 1) * 82));
+            §§push(§§pop() - 1 - 91 - 14 - 105 - 40 - 81 - 31);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 19 + 1 - 1 + 17 + 70);
+            §§push(-(-(§§pop() - 104 + 1) - 14 + 1 - 1));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 15 + 1);
+            §§push(-(§§pop() - 82 - 44) - 62 - 49);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(--(-(-(§§pop() - 119) - 74) + 40));
+            §§push(-(§§pop() + 1) - 1 + 22);
          }
          §§pop().bottom = §§pop();
          _loc1_.focusEnabled = false;
@@ -592,28 +588,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 35 + 1) * 28 - 42);
+            §§push(-(§§pop() - 1 + 47 + 39 + 1 - 1 - 70));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(40);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1) * 109 - 102 - 96 + 117 - 1);
+            §§push(-§§pop() + 1 + 1 + 1 - 43 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(-§§pop() - 32) - 1 + 63) - 1);
+            §§push(-(§§pop() - 1 + 25 - 45));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((--§§pop() + 1 - 1) * 69 + 1 - 32);
+            §§push(-(§§pop() - 1 + 1 - 1));
          }
          §§pop().bottom = §§pop();
          _loc1_.setStyle("skinClass",FlatTextInputSkin);

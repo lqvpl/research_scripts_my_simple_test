@@ -1,12 +1,13 @@
 package system.serializers.eden
 {
+   import flash.events.MouseEvent;
+   import mx.graphics.GradientEntry;
    import system.eden;
    import system.Environment;
    import system.Arrays;
-   import mx.graphics.SolidColor;
-   import spark.components.Label;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.headers.CompetitorAnalysisHeaderRenderer;
+   import spark.effects.Rotate;
+   import mx.binding.BindingManager;
+   import spark.layouts.VerticalLayout;
    
    public final class BuiltinSerializer
    {
@@ -35,13 +36,13 @@ package system.serializers.eden
             §§push(0);
             if(_loc11_)
             {
-               §§push((§§pop() - 1 - 62 - 108 - 1 - 87) * 14);
+               §§push(-(-§§pop() * 30));
             }
             §§push(§§pop()[§§pop()]);
             §§push(0);
-            if(_loc10_)
+            if(_loc11_)
             {
-               §§push(--(§§pop() - 1 + 1 - 1) + 11);
+               §§push((§§pop() + 1) * 36 + 1 + 1 - 35 + 112 - 1);
             }
             if(§§pop() != §§pop())
             {
@@ -51,7 +52,7 @@ package system.serializers.eden
             §§push(0);
             if(_loc10_)
             {
-               §§push(-(§§pop() - 1) + 1 - 20);
+               §§push((-§§pop() + 38) * 29 * 1);
             }
             §§pop().splice(§§pop(),1);
          }
@@ -63,9 +64,9 @@ package system.serializers.eden
       {
          §§push(_loc2_);
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((-(§§pop() - 19) + 1) * 21 - 1);
+            §§push((§§pop() * 79 + 1 - 1) * 79);
          }
          var /*UnknownSlot*/:* = §§pop();
          var value:String = param1;
@@ -76,16 +77,16 @@ package system.serializers.eden
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() - 1 - 1));
+            §§push(--(§§pop() + 1 - 1 + 1));
          }
          var /*UnknownSlot*/:* = §§pop();
          var _toUnicodeNotation:Function = function(param1:int):String
          {
             §§push(param1);
             §§push(16);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(-(§§pop() - 1 - 10) + 1);
+               §§push(§§pop() - 1 + 45 - 104);
             }
             var _loc2_:String = §§pop().toString(§§pop());
             while(true)
@@ -94,7 +95,7 @@ package system.serializers.eden
                §§push(4);
                if(_loc3_)
                {
-                  §§push(-(((§§pop() - 1) * 5 - 1 + 1) * 77) - 47);
+                  §§push((§§pop() - 1) * 50 - 1 - 1 - 1 - 95 + 17);
                }
                if(§§pop() >= §§pop())
                {
@@ -110,9 +111,9 @@ package system.serializers.eden
             var code:int = value.charCodeAt(pos);
             §§push(code);
             §§push(255);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(§§pop() - 1 + 1 + 1 - 111 + 1);
+               §§push(-(§§pop() + 1 + 39) * 23 * 74 - 90 + 1);
             }
             if(§§pop() > §§pop())
             {
@@ -126,31 +127,31 @@ package system.serializers.eden
                   §§push(0);
                   if(_loc4_)
                   {
-                     §§push(-(-§§pop() + 1) * 63 - 68);
+                     §§push(§§pop() - 1 - 1 + 105);
                   }
                }
                else if("\t" === _loc3_)
                {
                   §§push(1);
-                  if(_loc4_)
+                  if(_loc5_)
                   {
-                     §§push((§§pop() + 99 + 1 + 1) * 74);
+                     §§push(-(§§pop() + 41) + 1);
                   }
                }
                else if("\n" === _loc3_)
                {
                   §§push(2);
-                  if(_loc4_)
+                  if(_loc5_)
                   {
-                     §§push(§§pop() - 1 - 1 + 1);
+                     §§push(-§§pop() + 74 + 47);
                   }
                }
                else if("\x0b" === _loc3_)
                {
                   §§push(3);
-                  if(_loc5_)
+                  if(_loc4_)
                   {
-                     §§push(-(--§§pop() - 52 - 56));
+                     §§push(((§§pop() + 1) * 0 + 52) * 111 * 58);
                   }
                }
                else if("\f" === _loc3_)
@@ -158,15 +159,15 @@ package system.serializers.eden
                   §§push(4);
                   if(_loc4_)
                   {
-                     §§push(§§pop() + 60 + 1 - 1 + 5);
+                     §§push((-(§§pop() + 38) + 41 + 1) * 91);
                   }
                }
                else if("\r" === _loc3_)
                {
                   §§push(5);
-                  if(_loc4_)
+                  if(_loc5_)
                   {
-                     §§push(§§pop() + 1 - 1 - 68 - 1);
+                     §§push(-(§§pop() + 1) + 100);
                   }
                }
                else if("\"" === _loc3_)
@@ -174,31 +175,31 @@ package system.serializers.eden
                   §§push(6);
                   if(_loc5_)
                   {
-                     §§push(((§§pop() - 102) * 57 + 1 + 115) * 106 + 60);
+                     §§push(-(§§pop() - 95 - 98 + 1 + 1));
                   }
                }
                else if("\'" === _loc3_)
                {
                   §§push(7);
-                  if(_loc4_)
+                  if(_loc5_)
                   {
-                     §§push(§§pop() - 57 - 78 + 1 + 83 + 1);
+                     §§push((-§§pop() * 43 - 87) * 97 - 1);
                   }
                }
                else if("\\" === _loc3_)
                {
                   §§push(8);
-                  if(_loc5_)
+                  if(_loc4_)
                   {
-                     §§push(-(§§pop() + 61 - 1 - 90 + 17));
+                     §§push(§§pop() + 1 - 75 + 1 + 99);
                   }
                }
                else
                {
                   §§push(9);
-                  if(_loc5_)
+                  if(_loc4_)
                   {
-                     §§push(-(§§pop() * 23 - 1 - 13) + 1 + 87 - 15);
+                     §§push((--(§§pop() + 1) * 30 + 23) * 31 * 55);
                   }
                }
                switch(§§pop())
@@ -246,7 +247,7 @@ package system.serializers.eden
          §§push(0);
          if(_loc9_)
          {
-            §§push(-§§pop() * 76 - 1);
+            §§push(-((§§pop() - 85) * 31 + 67));
          }
          for(_loc3_ in param1)
          {
@@ -262,7 +263,7 @@ package system.serializers.eden
                }
                else
                {
-                  _loc7_.prettyIndent = _loc7_.prettyIndent + 1;
+                  eden.prettyIndent++;
                   _loc2_.push(_loc3_ + ":" + eden.serialize(param1[_loc3_]));
                   eden.prettyIndent--;
                }
@@ -283,7 +284,7 @@ package system.serializers.eden
          §§push(0);
          if(_loc9_)
          {
-            §§push(-(§§pop() + 46 + 1));
+            §§push((§§pop() + 97 + 6 - 1) * 72 + 1 - 1 - 16);
          }
          var _loc4_:* = §§pop();
          while(_loc4_ < _loc3_)
@@ -298,7 +299,7 @@ package system.serializers.eden
             }
             else
             {
-               eden.prettyIndent++;
+               _loc6_.prettyIndent = _loc7_;
                _loc2_.push(eden.serialize(param1[_loc4_]));
                eden.prettyIndent--;
             }

@@ -2,8 +2,9 @@ package com.hurlant.crypto.prng
 {
    import com.hurlant.crypto.symmetric.IStreamCipher;
    import flash.utils.ByteArray;
+   import spark.effects.Fade;
+   import mx.binding.BindingManager;
    import com.hurlant.util.Memory;
-   import flash.events.MouseEvent;
    
    public final class ARC4 implements IPRNG, IStreamCipher
    {
@@ -37,34 +38,34 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(-(§§pop() - 104) - 109));
+            §§push(-(§§pop() - 99) * 113 + 1);
          }
          var _loc2_:* = §§pop();
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() + 1 + 1 + 55 - 1 - 1));
+            §§push((§§pop() + 1) * 66 + 1 + 1 - 10 + 1);
          }
          var _loc3_:* = §§pop();
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-((§§pop() * 73 + 1 - 33) * 57));
+            §§push(((§§pop() + 1) * 92 + 1 + 1) * 52 + 1);
          }
          var _loc4_:* = §§pop();
          §§push(0);
          if(_loc5_)
          {
-            §§push(-((-§§pop() * 20 * 80 + 113) * 20));
+            §§push(§§pop() * 98 + 97 - 38);
          }
          _loc2_ = §§pop();
          while(true)
          {
             §§push(_loc2_);
             §§push(256);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(-§§pop() - 1 + 1);
+               §§push(-(-§§pop() + 46));
             }
             if(§§pop() >= §§pop())
             {
@@ -74,24 +75,24 @@ package com.hurlant.crypto.prng
             _loc2_++;
          }
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-(-§§pop() * 102 - 1) + 1 + 21 + 1);
+            §§push((§§pop() - 1 + 1 + 1 + 1) * 119);
          }
          _loc3_ = §§pop();
          §§push(0);
          if(_loc6_)
          {
-            §§push(§§pop() - 92 - 1 - 1 + 43);
+            §§push(§§pop() + 1 - 1 - 1 - 67 + 72);
          }
          _loc2_ = §§pop();
          while(true)
          {
             §§push(_loc2_);
             §§push(256);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(-((§§pop() + 1) * 70 + 18) * 90 - 1);
+               §§push((-(§§pop() - 1) * 21 - 1) * 23);
             }
             if(§§pop() >= §§pop())
             {
@@ -99,9 +100,9 @@ package com.hurlant.crypto.prng
             }
             §§push(_loc3_ + S[_loc2_] + param1[_loc2_ % param1.length]);
             §§push(255);
-            if(_loc5_)
+            if(_loc6_)
             {
-               §§push(§§pop() * 82 * 44 - 1);
+               §§push(§§pop() * 67 - 1 + 1 - 1 - 1);
             }
             _loc3_ = §§pop() & §§pop();
             _loc4_ = int(S[_loc2_]);
@@ -111,16 +112,16 @@ package com.hurlant.crypto.prng
          }
          §§push(this);
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-((§§pop() + 1) * 49) + 32);
+            §§push(-(§§pop() - 67 + 80));
          }
          §§pop().i = §§pop();
          §§push(this);
          §§push(0);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push((§§pop() - 1 - 63) * 83);
+            §§push(-((§§pop() - 19) * 104 - 1));
          }
          §§pop().j = §§pop();
       }
@@ -128,9 +129,9 @@ package com.hurlant.crypto.prng
       public function next() : uint
       {
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 46) - 111) * 80 + 1 - 1);
+            §§push((§§pop() - 17 - 85 + 79) * 52 - 1 + 68);
          }
          var _loc1_:* = §§pop();
          §§push();
@@ -138,21 +139,21 @@ package com.hurlant.crypto.prng
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 72 + 51 + 1 - 84) - 68);
+            §§push(-(§§pop() * 88 * 108));
          }
          §§push(§§pop() + §§pop());
          §§push(255);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 26 - 1) - 1 + 1 - 92));
+            §§push(-(-(§§pop() + 0 + 1) - 99));
          }
          §§pop().i = §§pop() & §§pop();
          §§push();
          §§push(j + S[i]);
          §§push(255);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 40 + 5) - 1 + 111 - 98);
+            §§push(§§pop() - 1 + 56 + 1 - 1);
          }
          §§pop().j = §§pop() & §§pop();
          _loc1_ = int(S[i]);
@@ -161,9 +162,9 @@ package com.hurlant.crypto.prng
          §§push(S);
          §§push(_loc1_ + S[i]);
          §§push(255);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 1) + 118 - 63);
+            §§push(((§§pop() - 108) * 92 - 102) * 61);
          }
          return §§pop()[§§pop() & §§pop()];
       }
@@ -173,7 +174,7 @@ package com.hurlant.crypto.prng
          §§push(0);
          if(_loc5_)
          {
-            §§push(§§pop() + 61 + 55 - 1 + 17);
+            §§push((§§pop() - 1 + 1 + 1) * 44 + 1);
          }
          var _loc2_:uint = §§pop();
          while(_loc2_ < param1.length)
@@ -185,9 +186,9 @@ package com.hurlant.crypto.prng
       public function dispose() : void
       {
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 39 - 1) * 14));
+            §§push(§§pop() + 7 + 1 + 1 + 62 - 15 + 46);
          }
          var _loc1_:uint = §§pop();
          if(S != null)
@@ -195,7 +196,7 @@ package com.hurlant.crypto.prng
             §§push(0);
             if(_loc2_)
             {
-               §§push(§§pop() - 18 - 1 - 1 - 57);
+               §§push(§§pop() + 24 + 1 - 1);
             }
             _loc1_ = §§pop();
             while(_loc1_ < S.length)
@@ -206,7 +207,7 @@ package com.hurlant.crypto.prng
                §§push(256);
                if(_loc2_)
                {
-                  §§push((§§pop() - 19 + 26 - 55) * 10);
+                  §§push((-(-§§pop() - 1) * 39 - 45) * 61);
                }
                §§pop()[§§pop()] = §§pop() * §§pop();
                _loc1_++;
@@ -215,23 +216,23 @@ package com.hurlant.crypto.prng
             §§push(0);
             if(_loc2_)
             {
-               §§push(-(((§§pop() + 1 - 1) * 20 - 96) * 112 * 94));
+               §§push(§§pop() + 73 + 33 + 1 - 60);
             }
             §§pop().length = §§pop();
             S = null;
          }
          §§push(this);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() - 53) + 3 + 1 - 46);
+            §§push(§§pop() + 18 - 109 + 1);
          }
          §§pop().i = §§pop();
          §§push(this);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() - 1 - 1) - 1 - 1);
+            §§push((-(§§pop() - 1 - 76) * 1 + 1 + 1) * 109);
          }
          §§pop().j = §§pop();
          Memory.gc();
@@ -240,9 +241,9 @@ package com.hurlant.crypto.prng
       public final function getBlockSize() : uint
       {
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() * 41 + 1 - 98 - 87 + 1 - 1);
+            §§push(-(§§pop() + 1 + 100 + 84) + 1);
          }
          return §§pop();
       }

@@ -1,30 +1,33 @@
 package info.noirbizarre.airorm
 {
-   import com.enfluid.ltp.view.renderers.TabRenderer;
+   import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
+   import flash.events.SecurityErrorEvent;
+   import flash.events.OutputProgressEvent;
+   import com.adobe.cairngorm.observer.Observe;
    import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
    import flash.utils.getQualifiedClassName;
    import info.noirbizarre.airorm.utils.sql_db;
    import flash.net.registerClassAlias;
    import info.noirbizarre.airorm.utils.Reflection;
-   import com.hurlant.math.bi_internal;
+   import spark.components.HGroup;
+   import spark.primitives.Rect;
    import flash.data.SQLTableSchema;
    import flash.data.SQLConnection;
    import flash.data.SQLStatement;
    import flash.data.SQLColumnSchema;
    import flash.data.SQLSchemaResult;
-   import mx.core.mx_internal;
+   import spark.components.DataGrid;
+   import spark.components.GridColumnHeaderGroup;
+   import spark.components.gridClasses.IGridVisualElement;
+   import spark.components.gridClasses.GridColumn;
    import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.headers.target;
-   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.binding.Binding;
    import info.noirbizarre.airorm.utils.DB;
-   import flash.utils.Proxy;
+   import mx.graphics.SolidColor;
    
    use namespace sql_db;
-   use namespace bi_internal;
-   use namespace mx_internal;
    
    public final class ORM
    {
@@ -65,7 +68,7 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc4_)
          {
-            §§push(§§pop() * 29 + 103 - 1);
+            §§push(-(§§pop() - 1 - 21));
          }
          for each(_loc1_ in registeredClasses)
          {
@@ -119,34 +122,34 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc15_)
          {
-            §§push(---(§§pop() - 1) + 1 - 70 - 1);
+            §§push((§§pop() * 6 * 89 - 1) * 20);
          }
          for each(fkDef in foreignKeys)
          {
             §§push(_loc3_);
             §§push(0);
-            if(_loc14_)
+            if(_loc15_)
             {
-               §§push(((§§pop() - 1) * 84 - 1) * 4);
+               §§push((§§pop() + 108 - 1) * 92 * 80 - 92);
             }
             §§push(fkDef.arg.(@key == "className"));
             §§push(0);
             if(_loc15_)
             {
-               §§push(((§§pop() + 75) * 66 - 73 + 1 - 29) * 90 - 15);
+               §§push(-(-§§pop() * 36) - 1 - 1);
             }
             var /*UnknownSlot*/:* = §§pop()[§§pop()].@value;
             §§push(_loc3_);
             §§push(0);
-            if(_loc15_)
+            if(_loc14_)
             {
-               §§push(-((-(§§pop() + 1 - 1) - 30) * 52) + 1);
+               §§push((§§pop() - 12 + 1) * 83);
             }
             §§push(fkDef.arg.(@key == ""));
             §§push(0);
             if(_loc14_)
             {
-               §§push(-(-§§pop() + 1) - 87 + 98 + 1);
+               §§push(-(§§pop() * 92) + 52 + 1);
             }
             var /*UnknownSlot*/:* = §§pop()[§§pop()].@value;
             fk = <variable type="uint"/>;
@@ -155,9 +158,9 @@ package info.noirbizarre.airorm
          }
          §§push(_loc3_);
          §§push(0);
-         if(_loc14_)
+         if(_loc15_)
          {
-            §§push(§§pop() + 98 - 1 - 1 + 1);
+            §§push(-(§§pop() * 74 - 75 - 46 + 1 + 44 + 1));
          }
          var /*UnknownSlot*/:* = def.§*§.((localName() == "variable" || localName() == "accessor" && @access == "readwrite") && (@type == "String" || @type == "Number" || @type == "Boolean" || @type == "uint" || @type == "int" || @type == "Date" || @type == "flash.utils.ByteArray") && !(hasOwnProperty("metadata") && §§pop() > §§pop()));
          if(!schema)
@@ -169,9 +172,9 @@ package info.noirbizarre.airorm
          {
             fields = [];
             §§push(0);
-            if(_loc14_)
+            if(_loc15_)
             {
-               §§push(§§pop() * 85 - 111 - 1 + 97 + 1 - 1);
+               §§push(§§pop() + 115 + 1 + 1 + 1 + 11);
             }
             for each(field in publicVars)
             {
@@ -189,17 +192,17 @@ package info.noirbizarre.airorm
          else
          {
             §§push(0);
-            if(_loc15_)
+            if(_loc14_)
             {
-               §§push((§§pop() - 50 + 50 - 1) * 61 + 50 - 17);
+               §§push(§§pop() * 73 * 49 * 11 - 1);
             }
             for each(field in publicVars)
             {
                found = false;
                §§push(0);
-               if(_loc15_)
+               if(_loc14_)
                {
-                  §§push(-(§§pop() * 9 + 1) - 89);
+                  §§push(§§pop() - 1 - 70 - 46);
                }
                for each(column in schema.columns)
                {
@@ -222,7 +225,7 @@ package info.noirbizarre.airorm
          §§push(0);
          if(_loc14_)
          {
-            §§push((-(§§pop() + 1 - 88 + 57) + 76) * 103 - 1);
+            §§push(§§pop() - 77 - 1 - 1 + 77 + 1 - 1);
          }
          for each(field in joinVars)
          {
@@ -231,23 +234,23 @@ package info.noirbizarre.airorm
             §§push(0);
             if(_loc15_)
             {
-               §§push((§§pop() * 31 + 53 - 89 + 1 - 85) * 118 - 111);
+               §§push((-§§pop() + 63 - 90) * 111 + 71);
             }
             var /*UnknownSlot*/:* = field.arg.(@key == "className").@value;
             §§push(_loc3_);
             §§push(0);
             if(_loc15_)
             {
-               §§push(-(§§pop() * 80 - 1) + 1);
+               §§push(--§§pop() + 116);
             }
             var /*UnknownSlot*/:* = _loc6_.@value;
             objFK = ActiveRecord.schemaTranslation.getForeignKey(obj);
             otherFK = ActiveRecord.schemaTranslation.getForeignKey(other);
             §§push(_loc3_);
             §§push(0);
-            if(_loc14_)
+            if(_loc15_)
             {
-               §§push(-(§§pop() - 1) - 1);
+               §§push(§§pop() + 57 + 1 + 70 - 117 + 1 + 1 - 100);
             }
             var /*UnknownSlot*/:* = _loc6_.@value;
             tableName = ActiveRecord.schemaTranslation.getJoinTable(obj,prop,other,otherProp);

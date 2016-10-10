@@ -4,33 +4,33 @@ package com.enfluid.ltp.view.components
    import mx.binding.IWatcherSetupUtil2;
    import spark.components.TextArea;
    import mx.core.IFlexModuleFactory;
-   import system.hosts.HostID;
-   import system.Version;
-   import spark.effects.AddAction;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.model.DataModel;
    import flash.utils.Timer;
-   import spark.components.Label;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import flash.events.TimerEvent;
+   import mx.core.DeferredInstanceFromFunction;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
+   import mx.binding.BindingManager;
    import spark.events.PopUpEvent;
    import flash.events.Event;
    import spark.events.TextOperationEvent;
-   import com.hurlant.util.Memory;
    import mx.events.ResizeEvent;
-   import mx.states.Transition;
+   import mx.events.FlexEvent;
    import flash.events.FocusEvent;
-   import system.data.lists.ArrayList;
+   import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.util.Util;
+   import com.enfluid.ltp.controller.keywordresearch.keywordplanner.SubmitAndScrapeKeywordPlannerCommand;
+   import com.enfluid.ltp.controller.keywordresearch.SaveGlobalSearchesToServerCommand;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import spark.components.DataGroup;
    import mx.events.FlexMouseEvent;
-   import spark.components.HGroup;
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import mx.core.DeferredInstanceFromFunction;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.states.AddItems;
    import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
@@ -79,7 +79,7 @@ package com.enfluid.ltp.view.components
          §§push(1000);
          if(_loc4_)
          {
-            §§push((§§pop() - 46 - 103) * 106);
+            §§push((§§pop() + 2) * 12 * 46 + 1 - 1 - 1);
          }
          §§pop()._timer = new §§pop().Timer(§§pop() * §§pop());
          this._bindings = [];
@@ -111,7 +111,7 @@ package com.enfluid.ltp.view.components
          §§push(600);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 14) + 1 + 1);
+            §§push(--(§§pop() * 17) + 1 - 49);
          }
          §§pop().width = §§pop();
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._KeywordNotesCallout_Array1_c);
@@ -120,9 +120,9 @@ package com.enfluid.ltp.view.components
          this.addEventListener("close",this.___KeywordNotesCallout_CustomNoteCallout1_close);
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((--§§pop() * 74 - 87) * 72 - 1);
+            §§push(§§pop() * 92 + 101 + 112 + 78 - 108);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -159,9 +159,9 @@ package com.enfluid.ltp.view.components
          §§push(this.timerTickEvent);
          §§push(false);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(--(§§pop() * 47) + 1);
+            §§push(§§pop() + 56 + 1 - 80);
          }
          §§pop().addEventListener(§§pop(),§§pop(),§§pop(),§§pop(),true);
          this._timer.start();
@@ -209,16 +209,16 @@ package com.enfluid.ltp.view.components
          §§push(this);
          §§push(this.viewModel.keywordDataGrid.width);
          §§push(600);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(((-§§pop() + 1) * 50 - 113) * 38 - 23));
+            §§push((-(§§pop() + 1) - 1 - 28 + 57) * 23);
          }
          if(§§pop() > §§pop())
          {
             §§push(600);
-            if(_loc2_)
+            if(_loc3_)
             {
-               §§push(§§pop() - 47 + 74 + 1 + 110 - 0 + 51);
+               §§push(--(-(§§pop() - 17) * 88) * 99);
             }
             §§push(Number(§§pop()));
          }
@@ -240,16 +240,16 @@ package com.enfluid.ltp.view.components
          var _loc1_:TextArea = new TextArea();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 + 1) * 114);
+            §§push(§§pop() * 19 - 14 + 40);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 18 - 1 - 1 - 1 - 1 + 71);
+            §§push((-(-§§pop() + 1) - 1) * 38 + 8);
          }
          §§pop().height = §§pop();
          _loc1_.prompt = "Jot down some notes about this keyword.";
@@ -258,9 +258,9 @@ package com.enfluid.ltp.view.components
          §§push(_loc1_);
          §§push("borderColor");
          §§push(11184810);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 14 - 1 + 1 - 1) - 1 + 69);
+            §§push((§§pop() - 52 + 113 - 1 + 1) * 24);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.addEventListener("focusIn",this.__notesta_focusIn);
@@ -311,9 +311,9 @@ package com.enfluid.ltp.view.components
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() + 1 + 82) * 64 - 79) * 89 + 44 + 97);
+            §§push(-(§§pop() - 1 - 64 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

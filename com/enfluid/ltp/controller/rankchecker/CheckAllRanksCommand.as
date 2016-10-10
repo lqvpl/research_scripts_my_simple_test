@@ -2,9 +2,12 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.photon.controller.PhotonComplexCommand;
    import com.photon.controller.IPhotonCommand;
-   import spark.components.Image;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.DataModel;
+   import spark.components.HGroup;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.ViewModel;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    
    public final class CheckAllRanksCommand extends PhotonComplexCommand implements IPhotonCommand
    {
@@ -19,10 +22,14 @@ package com.enfluid.ltp.controller.rankchecker
          super();
          this.model.currentCheckAllRanksCommand = this;
          this.model.isCheckingRanks = true;
+         if(this.model.rankCheckItems.length)
+         {
+            new SetUserEvent("UserEvent.RankChecker.FetchRanks",{"NumberOfKeywords":this.model.rankCheckItems.length}).execute();
+         }
          §§push(0);
          if(_loc5_)
          {
-            §§push(-((§§pop() - 1) * 37));
+            §§push(-((--§§pop() - 1 - 1) * 67));
          }
          for each(_loc1_ in this.model.rankCheckItems)
          {

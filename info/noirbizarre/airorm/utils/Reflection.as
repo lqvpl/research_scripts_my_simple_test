@@ -1,17 +1,15 @@
 package info.noirbizarre.airorm.utils
 {
    import flash.utils.Dictionary;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import com.hurlant.util.Memory;
+   import flash.net.URLRequest;
+   import com.enfluid.ltp.model.constants.Constants;
    import flash.utils.getDefinitionByName;
    import flash.net.getClassByAlias;
    import flash.utils.describeType;
-   import flash.events.MouseEvent;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import mx.collections.ArrayCollection;
    import flash.utils.getQualifiedClassName;
+   import mx.events.FlexEvent;
+   import spark.primitives.Rect;
+   import mx.binding.BindingManager;
    
    public final class Reflection
    {
@@ -49,9 +47,9 @@ package info.noirbizarre.airorm.utils
          §§push(_loc2_);
          §§push(describeType(obj).factory);
          §§push(0);
-         if(_loc5_)
+         if(_loc4_)
          {
-            §§push(---§§pop() - 1);
+            §§push((-§§pop() - 89 + 101) * 10 * 44);
          }
          var /*UnknownSlot*/:* = §§pop()[§§pop()];
          cache[obj] = info;
@@ -67,15 +65,15 @@ package info.noirbizarre.airorm.utils
          info = describe(obj);
          §§push(_loc3_);
          §§push(0);
-         if(_loc9_)
+         if(_loc10_)
          {
-            §§push(-(§§pop() - 10 - 1 - 56 + 1) + 1);
+            §§push(§§pop() * 101 + 1 - 32 - 1 + 36);
          }
          §§push(info..§*§.(hasOwnProperty("@name") && @name == name));
          §§push(0);
          if(_loc9_)
          {
-            §§push(-(§§pop() - 1 - 1) + 1 - 1);
+            §§push((§§pop() - 64 + 102 - 1 + 1) * 94 - 60);
          }
          var /*UnknownSlot*/:* = §§pop()[§§pop()];
          if(!member && info.extendsClass.length())
@@ -84,9 +82,9 @@ package info.noirbizarre.airorm.utils
             §§push();
             §§push(info.extendsClass);
             §§push(0);
-            if(_loc10_)
+            if(_loc9_)
             {
-               §§push((§§pop() * 12 + 71) * 90);
+               §§push((§§pop() * 1 - 1 - 82 - 1) * 72);
             }
             var /*UnknownSlot*/:* = §§pop().getMember(§§pop()[§§pop()].@type,name);
          }
@@ -103,9 +101,9 @@ package info.noirbizarre.airorm.utils
          info = describe(obj);
          §§push(_loc4_);
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push(§§pop() * 61 + 1 + 2);
+            §§push(-((§§pop() * 119 - 1) * 78) + 1 + 38 + 9);
          }
          var /*UnknownSlot*/:* = info..metadata.(@name == metadataType);
          if(includeSuperClasses && info.extendsClass.length())
@@ -117,7 +115,7 @@ package info.noirbizarre.airorm.utils
             §§push(0);
             if(_loc11_)
             {
-               §§push(---§§pop() + 57 - 1 + 1);
+               §§push(--§§pop() * 79);
             }
             var /*UnknownSlot*/:* = §§pop() + §§pop().getMetadata(§§pop()[§§pop()].@type,metadataType,true);
          }
@@ -134,9 +132,9 @@ package info.noirbizarre.airorm.utils
          info = describe(obj);
          §§push(_loc4_);
          §§push(0);
-         if(_loc16_)
+         if(_loc15_)
          {
-            §§push(§§pop() - 40 - 1 + 1);
+            §§push(-(§§pop() * 79 + 10) + 21 - 1 - 1 - 1);
          }
          var /*UnknownSlot*/:* = info.§*§.(hasOwnProperty("metadata") && §§pop() > §§pop());
          if(includeSuperClasses && info.extendsClass.length())
@@ -148,7 +146,7 @@ package info.noirbizarre.airorm.utils
             §§push(0);
             if(_loc15_)
             {
-               §§push(-((§§pop() - 2 + 1 + 70) * 109));
+               §§push((§§pop() * 99 + 1 - 24 - 43) * 94 + 90 - 117);
             }
             var /*UnknownSlot*/:* = §§pop() + §§pop().getByMetadata(§§pop()[§§pop()].@type,metadataType,true);
          }
@@ -166,9 +164,9 @@ package info.noirbizarre.airorm.utils
          info = describe(obj);
          §§push(_loc5_);
          §§push(0);
-         if(_loc17_)
+         if(_loc16_)
          {
-            §§push(§§pop() - 92 - 38 + 100 + 99);
+            §§push(-((§§pop() - 29 - 1 - 13) * 84 - 1) + 71);
          }
          var /*UnknownSlot*/:* = info..metadata.(hasOwnProperty("arg") && §§pop() > §§pop());
          if(includeSuperClasses && info.extendsClass.length())
@@ -178,9 +176,9 @@ package info.noirbizarre.airorm.utils
             §§push();
             §§push(info.extendsClass);
             §§push(0);
-            if(_loc17_)
+            if(_loc16_)
             {
-               §§push(-§§pop() * 76 * 5 - 21);
+               §§push((§§pop() * 45 - 54 - 103 + 21 - 73) * 44 * 34);
             }
             var /*UnknownSlot*/:* = §§pop() + §§pop().getMetadataByArg(§§pop()[§§pop()].@type,argKey,argValue,true);
          }
@@ -204,15 +202,15 @@ package info.noirbizarre.airorm.utils
          §§push(1);
          if(_loc4_)
          {
-            §§push(-(-§§pop() - 22));
+            §§push(§§pop() * 66 - 112 - 55 + 1);
          }
          if(§§pop() == §§pop())
          {
             §§push(_loc2_);
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push(-((§§pop() + 1 + 1) * 56 + 1) * 110);
+               §§push(-((§§pop() - 107 - 1 - 26 - 1 - 67) * 51));
             }
             §§push(§§pop()[§§pop()]);
          }
@@ -220,9 +218,9 @@ package info.noirbizarre.airorm.utils
          {
             §§push(_loc2_);
             §§push(1);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(((-§§pop() + 1 - 13) * 23 + 1) * 16 + 1);
+               §§push(--§§pop() - 36);
             }
             §§push(§§pop()[§§pop()]);
          }

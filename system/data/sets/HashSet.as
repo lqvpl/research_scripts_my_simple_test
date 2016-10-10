@@ -1,9 +1,7 @@
 package system.data.sets
 {
    import system.data.Set;
-   import flash.utils.getQualifiedClassName;
-   import spark.events.TextOperationEvent;
-   import com.enfluid.ltp.model.vo.SeedKeywordVO;
+   import flash.events.Event;
    import system.data.maps.HashMap;
    
    public final class HashSet extends CoreSet implements Set

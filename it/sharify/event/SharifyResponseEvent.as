@@ -1,10 +1,6 @@
 package it.sharify.event
 {
    import flash.events.Event;
-   import mx.events.FlexEvent;
-   import flash.display.Sprite;
-   import mx.binding.utils.ChangeWatcher;
-   import flash.utils.ByteArray;
    
    public final class SharifyResponseEvent extends Event
    {

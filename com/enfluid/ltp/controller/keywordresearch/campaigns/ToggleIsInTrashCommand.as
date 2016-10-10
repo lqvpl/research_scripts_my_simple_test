@@ -2,13 +2,13 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.vo.KeywordVO;
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.model.vo.ProjectVO;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
+   import spark.components.Group;
+   import mx.binding.BindingManager;
    
    public final class ToggleIsInTrashCommand extends Command implements IPhotonCommand
    {
@@ -32,6 +32,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          if(this.keyword.isInTrash)
          {
             model.allTrashKeywords.addItemInPlace(this.keyword);
+            new SetUserEvent("UserEvent.Keyword.AddedToTrash").execute();
             if(this.keyword.project)
             {
                ProjectVO(this.keyword.project).keywords.moveKeywordToTrash(this.keyword);
@@ -48,6 +49,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          else
          {
             model.allTrashKeywords.removeItem(this.keyword);
+            new SetUserEvent("UserEvent.Keyword.RemovedFromTrash").execute();
             if(this.keyword.project)
             {
                ProjectVO(this.keyword.project).keywords.moveKeywordOutOfTrash(this.keyword);

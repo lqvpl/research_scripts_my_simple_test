@@ -3,8 +3,7 @@ package com.enfluid.ltp.model
    import com.photon.model.PhotonModel;
    import flash.events.EventDispatcher;
    import flash.events.IEventDispatcher;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import spark.components.HGroup;
    import mx.controls.HTML;
    import spark.components.NavigatorContent;
    import spark.components.DataGrid;
@@ -15,6 +14,7 @@ package com.enfluid.ltp.model
    import com.enfluid.ltp.model.vo.CompetitorColumnsVO;
    import spark.components.Image;
    import spark.components.Label;
+   import spark.components.Button;
    import mx.events.PropertyChangeEvent;
    
    public final class ViewModel extends PhotonModel
@@ -39,7 +39,7 @@ package com.enfluid.ltp.model
       
       private var _173194592domainCommandsToComplete:int;
       
-      private var _306555905goDaddyHTML:HTML;
+      private var _2039167869domizeHTML:HTML;
       
       private var _1994260092isProjectEditMode:Boolean = false;
       
@@ -58,8 +58,6 @@ package com.enfluid.ltp.model
       private var _1744606057showKeywordPlannerLoginPopup:Boolean = false;
       
       private var _503665461showManageGoogleCredentialsPopup:Boolean = false;
-      
-      private var _135085085showProxiesPopup:Boolean = false;
       
       private var _556742049showNotificationMessage:Boolean = false;
       
@@ -115,6 +113,20 @@ package com.enfluid.ltp.model
       
       private var _2029437585hasSubscribeToPlatinumError:Boolean = false;
       
+      private var _1910334305showProxiesCallout:Boolean = false;
+      
+      private var _1088468093missingAvgKCIcon:Button;
+      
+      private var _1355309668isFetchingBulk:Boolean;
+      
+      private var _639457829showMigrationPopup:Boolean;
+      
+      private var _154738003doingMajesticMigration:Boolean;
+      
+      private var _1256495075showMigrationButton:Boolean;
+      
+      private var _1875015359AdwordsRestricted:Boolean;
+      
       public function ViewModel()
       {
          this._2093369780keywordColumns = new KeywordColumnsVO();
@@ -129,63 +141,6 @@ package com.enfluid.ltp.model
       public static function get staticEventDispatcher() : IEventDispatcher
       {
          return _staticBindingEventDispatcher;
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get showNotificationMessage() : Boolean
-      {
-         return this._556742049showNotificationMessage;
-      }
-      
-      public function set showNotificationMessage(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._556742049showNotificationMessage;
-         if(_loc2_ !== param1)
-         {
-            this._556742049showNotificationMessage = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showNotificationMessage",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get hasSubscribeToPlatinumError() : Boolean
-      {
-         return this._2029437585hasSubscribeToPlatinumError;
-      }
-      
-      public function set hasSubscribeToPlatinumError(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._2029437585hasSubscribeToPlatinumError;
-         if(_loc2_ !== param1)
-         {
-            this._2029437585hasSubscribeToPlatinumError = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hasSubscribeToPlatinumError",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get domainCommandsCompleted() : int
-      {
-         return this._1393586239domainCommandsCompleted;
-      }
-      
-      public function set domainCommandsCompleted(param1:int) : void
-      {
-         var _loc2_:Object = this._1393586239domainCommandsCompleted;
-         if(_loc2_ !== param1)
-         {
-            this._1393586239domainCommandsCompleted = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domainCommandsCompleted",_loc2_,param1));
-            }
-         }
       }
       
       [Bindable(event="propertyChange")]
@@ -227,44 +182,6 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showSettingsCallout() : Boolean
-      {
-         return this._1061350960showSettingsCallout;
-      }
-      
-      public function set showSettingsCallout(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._1061350960showSettingsCallout;
-         if(_loc2_ !== param1)
-         {
-            this._1061350960showSettingsCallout = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showSettingsCallout",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get showNotificationTitle() : Boolean
-      {
-         return this._610753872showNotificationTitle;
-      }
-      
-      public function set showNotificationTitle(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._610753872showNotificationTitle;
-         if(_loc2_ !== param1)
-         {
-            this._610753872showNotificationTitle = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showNotificationTitle",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get showSEOMozPopup() : Boolean
       {
          return this._7795892showSEOMozPopup;
@@ -284,20 +201,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get competitorAnalysisGrid() : DataGrid
+      public function get isFetchingBulk() : Boolean
       {
-         return this._878159790competitorAnalysisGrid;
+         return this._1355309668isFetchingBulk;
       }
       
-      public function set competitorAnalysisGrid(param1:DataGrid) : void
+      public function set isFetchingBulk(param1:Boolean) : void
       {
-         var _loc2_:Object = this._878159790competitorAnalysisGrid;
+         var _loc2_:Object = this._1355309668isFetchingBulk;
          if(_loc2_ !== param1)
          {
-            this._878159790competitorAnalysisGrid = param1;
+            this._1355309668isFetchingBulk = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"competitorAnalysisGrid",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isFetchingBulk",_loc2_,param1));
             }
          }
       }
@@ -322,20 +239,476 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showGenerateKeywordsCallout() : Boolean
+      public function get dataToConvert() : int
       {
-         return this._890826548showGenerateKeywordsCallout;
+         return this._1778034222dataToConvert;
       }
       
-      public function set showGenerateKeywordsCallout(param1:Boolean) : void
+      public function set dataToConvert(param1:int) : void
       {
-         var _loc2_:Object = this._890826548showGenerateKeywordsCallout;
+         var _loc2_:Object = this._1778034222dataToConvert;
          if(_loc2_ !== param1)
          {
-            this._890826548showGenerateKeywordsCallout = param1;
+            this._1778034222dataToConvert = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showGenerateKeywordsCallout",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"dataToConvert",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get keywordPlannerHTML() : HTML
+      {
+         return this._1520998100keywordPlannerHTML;
+      }
+      
+      public function set keywordPlannerHTML(param1:HTML) : void
+      {
+         var _loc2_:Object = this._1520998100keywordPlannerHTML;
+         if(_loc2_ !== param1)
+         {
+            this._1520998100keywordPlannerHTML = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keywordPlannerHTML",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showUpgradeToPlatinumPopup() : Boolean
+      {
+         return this._384067386showUpgradeToPlatinumPopup;
+      }
+      
+      public function set showUpgradeToPlatinumPopup(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._384067386showUpgradeToPlatinumPopup;
+         if(_loc2_ !== param1)
+         {
+            this._384067386showUpgradeToPlatinumPopup = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showUpgradeToPlatinumPopup",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showDomainCaptcha() : Boolean
+      {
+         return this._1892677913showDomainCaptcha;
+      }
+      
+      public function set showDomainCaptcha(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1892677913showDomainCaptcha;
+         if(_loc2_ !== param1)
+         {
+            this._1892677913showDomainCaptcha = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showDomainCaptcha",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get allKeywordsTab() : TabRenderer
+      {
+         return this._1991041238allKeywordsTab;
+      }
+      
+      public function set allKeywordsTab(param1:TabRenderer) : void
+      {
+         var _loc2_:Object = this._1991041238allKeywordsTab;
+         if(_loc2_ !== param1)
+         {
+            this._1991041238allKeywordsTab = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"allKeywordsTab",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get AdwordsRestricted() : Boolean
+      {
+         return this._1875015359AdwordsRestricted;
+      }
+      
+      public function set AdwordsRestricted(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1875015359AdwordsRestricted;
+         if(_loc2_ !== param1)
+         {
+            this._1875015359AdwordsRestricted = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"AdwordsRestricted",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showKeywordPlannerLoginPopup() : Boolean
+      {
+         return this._1744606057showKeywordPlannerLoginPopup;
+      }
+      
+      public function set showKeywordPlannerLoginPopup(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1744606057showKeywordPlannerLoginPopup;
+         if(_loc2_ !== param1)
+         {
+            this._1744606057showKeywordPlannerLoginPopup = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showKeywordPlannerLoginPopup",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get conversionText() : String
+      {
+         return this._989627235conversionText;
+      }
+      
+      public function set conversionText(param1:String) : void
+      {
+         var _loc2_:Object = this._989627235conversionText;
+         if(_loc2_ !== param1)
+         {
+            this._989627235conversionText = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"conversionText",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get isProjectEditMode() : Boolean
+      {
+         return this._1994260092isProjectEditMode;
+      }
+      
+      public function set isProjectEditMode(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1994260092isProjectEditMode;
+         if(_loc2_ !== param1)
+         {
+            this._1994260092isProjectEditMode = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isProjectEditMode",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showMigrationButton() : Boolean
+      {
+         return this._1256495075showMigrationButton;
+      }
+      
+      public function set showMigrationButton(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1256495075showMigrationButton;
+         if(_loc2_ !== param1)
+         {
+            this._1256495075showMigrationButton = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showMigrationButton",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showEULAPopup() : Boolean
+      {
+         return this._26600662showEULAPopup;
+      }
+      
+      public function set showEULAPopup(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._26600662showEULAPopup;
+         if(_loc2_ !== param1)
+         {
+            this._26600662showEULAPopup = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showEULAPopup",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get resetKeywordScrollPosition() : Boolean
+      {
+         return this._668561584resetKeywordScrollPosition;
+      }
+      
+      public function set resetKeywordScrollPosition(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._668561584resetKeywordScrollPosition;
+         if(_loc2_ !== param1)
+         {
+            this._668561584resetKeywordScrollPosition = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"resetKeywordScrollPosition",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get keywordDataGrid() : KeywordsDataGridHeader
+      {
+         return this._1412918503keywordDataGrid;
+      }
+      
+      public function set keywordDataGrid(param1:KeywordsDataGridHeader) : void
+      {
+         var _loc2_:Object = this._1412918503keywordDataGrid;
+         if(_loc2_ !== param1)
+         {
+            this._1412918503keywordDataGrid = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keywordDataGrid",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get doingMajesticMigration() : Boolean
+      {
+         return this._154738003doingMajesticMigration;
+      }
+      
+      public function set doingMajesticMigration(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._154738003doingMajesticMigration;
+         if(_loc2_ !== param1)
+         {
+            this._154738003doingMajesticMigration = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"doingMajesticMigration",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showConvertingDBPopup() : Boolean
+      {
+         return this._642659618showConvertingDBPopup;
+      }
+      
+      public function set showConvertingDBPopup(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._642659618showConvertingDBPopup;
+         if(_loc2_ !== param1)
+         {
+            this._642659618showConvertingDBPopup = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showConvertingDBPopup",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get keywordColumns() : KeywordColumnsVO
+      {
+         return this._2093369780keywordColumns;
+      }
+      
+      public function set keywordColumns(param1:KeywordColumnsVO) : void
+      {
+         var _loc2_:Object = this._2093369780keywordColumns;
+         if(_loc2_ !== param1)
+         {
+            this._2093369780keywordColumns = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keywordColumns",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showLicensePopup() : Boolean
+      {
+         return this._214964360showLicensePopup;
+      }
+      
+      public function set showLicensePopup(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._214964360showLicensePopup;
+         if(_loc2_ !== param1)
+         {
+            this._214964360showLicensePopup = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showLicensePopup",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get captchaImageUrl() : String
+      {
+         return this._74961234captchaImageUrl;
+      }
+      
+      public function set captchaImageUrl(param1:String) : void
+      {
+         var _loc2_:Object = this._74961234captchaImageUrl;
+         if(_loc2_ !== param1)
+         {
+            this._74961234captchaImageUrl = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"captchaImageUrl",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showNotificationMessage() : Boolean
+      {
+         return this._556742049showNotificationMessage;
+      }
+      
+      public function set showNotificationMessage(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._556742049showNotificationMessage;
+         if(_loc2_ !== param1)
+         {
+            this._556742049showNotificationMessage = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showNotificationMessage",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get domainCommandsCompleted() : int
+      {
+         return this._1393586239domainCommandsCompleted;
+      }
+      
+      public function set domainCommandsCompleted(param1:int) : void
+      {
+         var _loc2_:Object = this._1393586239domainCommandsCompleted;
+         if(_loc2_ !== param1)
+         {
+            this._1393586239domainCommandsCompleted = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domainCommandsCompleted",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get hasSubscribeToPlatinumError() : Boolean
+      {
+         return this._2029437585hasSubscribeToPlatinumError;
+      }
+      
+      public function set hasSubscribeToPlatinumError(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._2029437585hasSubscribeToPlatinumError;
+         if(_loc2_ !== param1)
+         {
+            this._2029437585hasSubscribeToPlatinumError = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hasSubscribeToPlatinumError",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showProxiesCallout() : Boolean
+      {
+         return this._1910334305showProxiesCallout;
+      }
+      
+      public function set showProxiesCallout(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1910334305showProxiesCallout;
+         if(_loc2_ !== param1)
+         {
+            this._1910334305showProxiesCallout = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showProxiesCallout",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showNotificationTitle() : Boolean
+      {
+         return this._610753872showNotificationTitle;
+      }
+      
+      public function set showNotificationTitle(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._610753872showNotificationTitle;
+         if(_loc2_ !== param1)
+         {
+            this._610753872showNotificationTitle = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showNotificationTitle",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showSettingsCallout() : Boolean
+      {
+         return this._1061350960showSettingsCallout;
+      }
+      
+      public function set showSettingsCallout(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1061350960showSettingsCallout;
+         if(_loc2_ !== param1)
+         {
+            this._1061350960showSettingsCallout = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showSettingsCallout",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get competitorAnalysisGrid() : DataGrid
+      {
+         return this._878159790competitorAnalysisGrid;
+      }
+      
+      public function set competitorAnalysisGrid(param1:DataGrid) : void
+      {
+         var _loc2_:Object = this._878159790competitorAnalysisGrid;
+         if(_loc2_ !== param1)
+         {
+            this._878159790competitorAnalysisGrid = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"competitorAnalysisGrid",_loc2_,param1));
             }
          }
       }
@@ -355,6 +728,25 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"competitorAnalysisColumns",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get showGenerateKeywordsCallout() : Boolean
+      {
+         return this._890826548showGenerateKeywordsCallout;
+      }
+      
+      public function set showGenerateKeywordsCallout(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._890826548showGenerateKeywordsCallout;
+         if(_loc2_ !== param1)
+         {
+            this._890826548showGenerateKeywordsCallout = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showGenerateKeywordsCallout",_loc2_,param1));
             }
          }
       }
@@ -436,20 +828,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showCreateProjectCallout() : Boolean
+      public function get dataConverted() : int
       {
-         return this._1702579824showCreateProjectCallout;
+         return this._2139928840dataConverted;
       }
       
-      public function set showCreateProjectCallout(param1:Boolean) : void
+      public function set dataConverted(param1:int) : void
       {
-         var _loc2_:Object = this._1702579824showCreateProjectCallout;
+         var _loc2_:Object = this._2139928840dataConverted;
          if(_loc2_ !== param1)
          {
-            this._1702579824showCreateProjectCallout = param1;
+            this._2139928840dataConverted = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showCreateProjectCallout",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"dataConverted",_loc2_,param1));
             }
          }
       }
@@ -474,39 +866,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get dataConverted() : int
+      public function get showCreateProjectCallout() : Boolean
       {
-         return this._2139928840dataConverted;
+         return this._1702579824showCreateProjectCallout;
       }
       
-      public function set dataConverted(param1:int) : void
+      public function set showCreateProjectCallout(param1:Boolean) : void
       {
-         var _loc2_:Object = this._2139928840dataConverted;
+         var _loc2_:Object = this._1702579824showCreateProjectCallout;
          if(_loc2_ !== param1)
          {
-            this._2139928840dataConverted = param1;
+            this._1702579824showCreateProjectCallout = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"dataConverted",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get dataToConvert() : int
-      {
-         return this._1778034222dataToConvert;
-      }
-      
-      public function set dataToConvert(param1:int) : void
-      {
-         var _loc2_:Object = this._1778034222dataToConvert;
-         if(_loc2_ !== param1)
-         {
-            this._1778034222dataToConvert = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"dataToConvert",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showCreateProjectCallout",_loc2_,param1));
             }
          }
       }
@@ -550,20 +923,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get keywordPlannerHTML() : HTML
+      public function get domizeHTML() : HTML
       {
-         return this._1520998100keywordPlannerHTML;
+         return this._2039167869domizeHTML;
       }
       
-      public function set keywordPlannerHTML(param1:HTML) : void
+      public function set domizeHTML(param1:HTML) : void
       {
-         var _loc2_:Object = this._1520998100keywordPlannerHTML;
+         var _loc2_:Object = this._2039167869domizeHTML;
          if(_loc2_ !== param1)
          {
-            this._1520998100keywordPlannerHTML = param1;
+            this._2039167869domizeHTML = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keywordPlannerHTML",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"domizeHTML",_loc2_,param1));
             }
          }
       }
@@ -607,44 +980,6 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showUpgradeToPlatinumPopup() : Boolean
-      {
-         return this._384067386showUpgradeToPlatinumPopup;
-      }
-      
-      public function set showUpgradeToPlatinumPopup(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._384067386showUpgradeToPlatinumPopup;
-         if(_loc2_ !== param1)
-         {
-            this._384067386showUpgradeToPlatinumPopup = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showUpgradeToPlatinumPopup",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get showDomainCaptcha() : Boolean
-      {
-         return this._1892677913showDomainCaptcha;
-      }
-      
-      public function set showDomainCaptcha(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._1892677913showDomainCaptcha;
-         if(_loc2_ !== param1)
-         {
-            this._1892677913showDomainCaptcha = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showDomainCaptcha",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get application() : *
       {
          return this._1554253136application;
@@ -664,39 +999,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get allKeywordsTab() : TabRenderer
+      public function get missingAvgKCIcon() : Button
       {
-         return this._1991041238allKeywordsTab;
+         return this._1088468093missingAvgKCIcon;
       }
       
-      public function set allKeywordsTab(param1:TabRenderer) : void
+      public function set missingAvgKCIcon(param1:Button) : void
       {
-         var _loc2_:Object = this._1991041238allKeywordsTab;
+         var _loc2_:Object = this._1088468093missingAvgKCIcon;
          if(_loc2_ !== param1)
          {
-            this._1991041238allKeywordsTab = param1;
+            this._1088468093missingAvgKCIcon = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"allKeywordsTab",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get goDaddyHTML() : HTML
-      {
-         return this._306555905goDaddyHTML;
-      }
-      
-      public function set goDaddyHTML(param1:HTML) : void
-      {
-         var _loc2_:Object = this._306555905goDaddyHTML;
-         if(_loc2_ !== param1)
-         {
-            this._306555905goDaddyHTML = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"goDaddyHTML",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"missingAvgKCIcon",_loc2_,param1));
             }
          }
       }
@@ -721,58 +1037,20 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showKeywordPlannerLoginPopup() : Boolean
+      public function get showMigrationPopup() : Boolean
       {
-         return this._1744606057showKeywordPlannerLoginPopup;
+         return this._639457829showMigrationPopup;
       }
       
-      public function set showKeywordPlannerLoginPopup(param1:Boolean) : void
+      public function set showMigrationPopup(param1:Boolean) : void
       {
-         var _loc2_:Object = this._1744606057showKeywordPlannerLoginPopup;
+         var _loc2_:Object = this._639457829showMigrationPopup;
          if(_loc2_ !== param1)
          {
-            this._1744606057showKeywordPlannerLoginPopup = param1;
+            this._639457829showMigrationPopup = param1;
             if(this.hasEventListener("propertyChange"))
             {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showKeywordPlannerLoginPopup",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get conversionText() : String
-      {
-         return this._989627235conversionText;
-      }
-      
-      public function set conversionText(param1:String) : void
-      {
-         var _loc2_:Object = this._989627235conversionText;
-         if(_loc2_ !== param1)
-         {
-            this._989627235conversionText = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"conversionText",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get isProjectEditMode() : Boolean
-      {
-         return this._1994260092isProjectEditMode;
-      }
-      
-      public function set isProjectEditMode(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._1994260092isProjectEditMode;
-         if(_loc2_ !== param1)
-         {
-            this._1994260092isProjectEditMode = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isProjectEditMode",_loc2_,param1));
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showMigrationPopup",_loc2_,param1));
             }
          }
       }
@@ -816,82 +1094,6 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showEULAPopup() : Boolean
-      {
-         return this._26600662showEULAPopup;
-      }
-      
-      public function set showEULAPopup(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._26600662showEULAPopup;
-         if(_loc2_ !== param1)
-         {
-            this._26600662showEULAPopup = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showEULAPopup",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get resetKeywordScrollPosition() : Boolean
-      {
-         return this._668561584resetKeywordScrollPosition;
-      }
-      
-      public function set resetKeywordScrollPosition(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._668561584resetKeywordScrollPosition;
-         if(_loc2_ !== param1)
-         {
-            this._668561584resetKeywordScrollPosition = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"resetKeywordScrollPosition",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get showProxiesPopup() : Boolean
-      {
-         return this._135085085showProxiesPopup;
-      }
-      
-      public function set showProxiesPopup(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._135085085showProxiesPopup;
-         if(_loc2_ !== param1)
-         {
-            this._135085085showProxiesPopup = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showProxiesPopup",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get keywordDataGrid() : KeywordsDataGridHeader
-      {
-         return this._1412918503keywordDataGrid;
-      }
-      
-      public function set keywordDataGrid(param1:KeywordsDataGridHeader) : void
-      {
-         var _loc2_:Object = this._1412918503keywordDataGrid;
-         if(_loc2_ !== param1)
-         {
-            this._1412918503keywordDataGrid = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keywordDataGrid",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get ownKeywordsTab() : TabRenderer
       {
          return this._846772261ownKeywordsTab;
@@ -911,63 +1113,6 @@ package com.enfluid.ltp.model
       }
       
       [Bindable(event="propertyChange")]
-      public function get showConvertingDBPopup() : Boolean
-      {
-         return this._642659618showConvertingDBPopup;
-      }
-      
-      public function set showConvertingDBPopup(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._642659618showConvertingDBPopup;
-         if(_loc2_ !== param1)
-         {
-            this._642659618showConvertingDBPopup = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showConvertingDBPopup",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get keywordColumns() : KeywordColumnsVO
-      {
-         return this._2093369780keywordColumns;
-      }
-      
-      public function set keywordColumns(param1:KeywordColumnsVO) : void
-      {
-         var _loc2_:Object = this._2093369780keywordColumns;
-         if(_loc2_ !== param1)
-         {
-            this._2093369780keywordColumns = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keywordColumns",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get showLicensePopup() : Boolean
-      {
-         return this._214964360showLicensePopup;
-      }
-      
-      public function set showLicensePopup(param1:Boolean) : void
-      {
-         var _loc2_:Object = this._214964360showLicensePopup;
-         if(_loc2_ !== param1)
-         {
-            this._214964360showLicensePopup = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showLicensePopup",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get showReConvertingMessage() : Boolean
       {
          return this._2083725192showReConvertingMessage;
@@ -982,25 +1127,6 @@ package com.enfluid.ltp.model
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"showReConvertingMessage",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get captchaImageUrl() : String
-      {
-         return this._74961234captchaImageUrl;
-      }
-      
-      public function set captchaImageUrl(param1:String) : void
-      {
-         var _loc2_:Object = this._74961234captchaImageUrl;
-         if(_loc2_ !== param1)
-         {
-            this._74961234captchaImageUrl = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"captchaImageUrl",_loc2_,param1));
             }
          }
       }

@@ -1,9 +1,9 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
-   import com.enfluid.ltp.model.DataModel;
    import mx.collections.ArrayCollection;
    import mx.events.PropertyChangeEvent;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    
    [HasMany("keywords",property="domain",className="RTKeyword")]
    public dynamic class RTDomain extends ActiveRecord

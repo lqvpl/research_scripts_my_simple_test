@@ -5,56 +5,50 @@ package com.enfluid.ltp.view.popups
    import mx.binding.IWatcherSetupUtil2;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
-   import spark.components.PopUpAnchor;
-   import mx.binding.BindingManager;
-   import com.enfluid.ltp.model.DataModel;
-   import spark.layouts.VerticalLayout;
-   import flash.utils.setTimeout;
-   import mx.binding.Binding;
-   import flash.utils.Proxy;
-   import spark.components.Label;
-   import hr.binaria.asx3m.converters.IConverter;
-   import flash.utils.getDefinitionByName;
-   import flash.utils.getQualifiedClassName;
-   import spark.components.Group;
-   import mx.controls.HRule;
-   import spark.primitives.Rect;
-   import mx.controls.Spacer;
    import spark.components.Button;
    import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import com.enfluid.ltp.model.DataModel;
+   import spark.layouts.VerticalLayout;
+   import spark.components.Label;
    import flash.events.MouseEvent;
    import flash.net.navigateToURL;
    import flash.net.URLRequest;
-   import mx.core.mx_internal;
-   import com.enfluid.ltp.view.components.target;
-   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
+   import mx.rpc.IResponder;
+   import mx.binding.Binding;
+   import mx.collections.IList;
+   import mx.controls.HRule;
+   import mx.controls.Spacer;
+   import mx.events.FlexEvent;
    import com.enfluid.ltp.view.components.WarningInformationLabel;
-   import flash.events.Event;
-   import spark.events.TextOperationEvent;
-   import flash.data.SQLStatement;
-   import flash.data.SQLResult;
-   import flash.events.SQLErrorEvent;
-   import com.enfluid.ltp.model.ViewModel;
-   import com.enfluid.ltp.view.LeftRail;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.controller.rankchecker.SetupCheckYahooRanksCommand;
+   import com.enfluid.ltp.controller.rankchecker.SetupCheckGoogleRanksCommand;
+   import com.enfluid.ltp.controller.rankchecker.SetupCheckBingRanksCommand;
+   import flash.utils.getTimer;
+   import spark.components.ComboBox;
+   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
    import spark.components.Form;
+   import mx.formatters.DateFormatter;
    import mx.core.DeferredInstanceFromFunction;
    import spark.layouts.FormLayout;
-   import flash.filesystem.File;
-   import com.enfluid.ltp.model.vo.RTDomain;
-   import com.enfluid.ltp.model.vo.RTKeyword;
-   import com.enfluid.ltp.model.vo.RTRank;
-   import com.enfluid.ltp.util.Logger;
-   import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
+   import mx.graphics.SolidColor;
    import spark.components.HGroup;
    import spark.components.FormItem;
-   import hr.binaria.asx3m.core.MapBackedDataHolder;
-   import spark.effects.Fade;
-   import info.noirbizarre.airorm.utils.sql_db;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisGridColumn;
+   import spark.effects.easing.Power;
+   import mx.graphics.SolidColorStroke;
+   import com.enfluid.ltp.model.ViewModel;
    import com.enfluid.ltp.controller.common.SavePreferencesCommand;
+   import com.hurlant.math.BigInteger;
+   import spark.components.Image;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
+   import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
-   use namespace sql_db;
    
    public final class SeoMozKeyPopup extends TitleWindow implements IBindingClient
    {
@@ -82,7 +76,7 @@ package com.enfluid.ltp.view.popups
       
       public function SeoMozKeyPopup()
       {
-         var com.enfluid.ltp.view.popups.target:Object = null;
+         var target:Object = null;
          var watcherSetupUtilClass:Object = null;
          this._104069929model = DataModel.instance;
          this._bindings = [];
@@ -93,7 +87,7 @@ package com.enfluid.ltp.view.popups
          mx_internal::_document = this;
          var bindings:Array = this._SeoMozKeyPopup_bindingsSetup();
          var watchers:Array = [];
-         com.enfluid.ltp.view.popups.target = this;
+         target = this;
          if(_watcherSetupUtil == null)
          {
             watcherSetupUtilClass = getDefinitionByName("_com_enfluid_ltp_view_popups_SeoMozKeyPopupWatcherSetupUtil");
@@ -112,14 +106,14 @@ package com.enfluid.ltp.view.popups
          §§push(600);
          if(_loc3_)
          {
-            §§push((-§§pop() - 53) * 43 - 1 + 1 - 1);
+            §§push((§§pop() - 110 - 43 - 1) * 2);
          }
          §§pop().width = §§pop();
          §§push(this);
          §§push(550);
          if(_loc3_)
          {
-            §§push(((§§pop() + 12 - 73 - 85 + 53) * 51 - 1) * 84);
+            §§push(-§§pop() * 29 + 1);
          }
          §§pop().height = §§pop();
          this.title = "SEOmoz API Key Needed";
@@ -129,7 +123,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 95 - 1 + 53) * 66);
+            §§push(--(-(§§pop() - 1) + 112 + 1 - 1));
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -167,35 +161,35 @@ package com.enfluid.ltp.view.popups
          §§push(20);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 110) + 1);
+            §§push(-(§§pop() + 1 - 1) * 108 - 33);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 24 - 95) - 73);
+            §§push(-(§§pop() + 79 - 1 + 1));
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 22 - 64));
+            §§push(-(§§pop() - 17 - 38) - 118 + 50);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-§§pop() - 1 + 1) * 91) - 1 - 64);
+            §§push((-§§pop() - 1 + 56 - 1) * 60);
          }
          §§pop().paddingTop = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1) + 112 + 1 - 11 + 1));
+            §§push((-(§§pop() - 1) - 1 + 1 - 1) * 35);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -216,15 +210,15 @@ package com.enfluid.ltp.view.popups
          §§push(18);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 112 + 1 + 57);
+            §§push(§§pop() - 72 - 1 + 1 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("color");
          §§push(8947848);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 36 + 72 - 1);
+            §§push(-(§§pop() + 1) - 100);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -239,9 +233,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:HRule = new HRule();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 75 * 98 - 1 - 109);
+            §§push(-(§§pop() - 1 + 4 + 1 + 66) - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
@@ -249,7 +243,7 @@ package com.enfluid.ltp.view.popups
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() * 14 * 60 - 1);
+            §§push(§§pop() - 61 + 1 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -266,7 +260,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 + 10) * 106);
+            §§push((-(§§pop() - 1 + 1) - 82) * 112);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -281,18 +275,18 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(----§§pop());
+            §§push(§§pop() * 37 * 68 + 26);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "To continue fetching SEOmoz data, you\'ll need your own SEOmoz API Key. It\'s easy, free, and takes just a minute.";
          §§push(_loc1_);
          §§push("fontSize");
          §§push(12);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 32 + 1) * 43));
+            §§push(-(§§pop() * 18 + 104 + 15 - 2) + 6);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -309,7 +303,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 - 110);
+            §§push(--(-(§§pop() * 3 - 1) - 15) - 15);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.label = "Create an SEOmoz account and Generate API Key";
@@ -332,9 +326,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 59 - 38 - 74));
+            §§push(-§§pop() + 60 + 1 - 118 + 64 - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.label = "Already have an SEOmoz account? Generate an API Key now.";
@@ -358,9 +352,9 @@ package com.enfluid.ltp.view.popups
          _loc1_.label = "Long Tail Pro and Long Tail Platinum now require that each user provide their own SEOmoz API Key.  Previously, all users shared a single API Key, which meant that high usage by one user could cause other users to be blocked from accessing data.  Providing your own API Key ensures you continued access to SEOmoz data.";
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 66) + 1);
+            §§push(§§pop() + 1 - 2 + 2 + 1 - 59);
          }
          §§pop().percentWidth = §§pop();
          if(!_loc1_.document)
@@ -375,9 +369,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 68 + 19));
+            §§push(-(§§pop() - 1) + 1);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -394,17 +388,17 @@ package com.enfluid.ltp.view.popups
          §§push(_loc1_);
          §§push("fontSize");
          §§push(18);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 118 - 47 - 1 + 16);
+            §§push(-(-(-§§pop() * 7) + 59 + 106));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("color");
          §§push(8947848);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 + 1) - 1);
+            §§push(--((§§pop() - 97) * 41 - 88 - 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -421,7 +415,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 1 + 1) + 1 - 105 + 1);
+            §§push((-((§§pop() + 1) * 82) - 1 + 1 - 1) * 79);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
@@ -429,7 +423,7 @@ package com.enfluid.ltp.view.popups
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() - 3 - 58 + 42);
+            §§push(--(-((§§pop() * 3 - 54) * 68) + 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -446,7 +440,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() + 107 + 1 + 83 - 1 + 2 + 1);
+            §§push(-(-(§§pop() - 1) - 1 - 1 + 117) - 112);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.text = "Once you\'ve generated an API Key, enter your details below:";
@@ -455,7 +449,7 @@ package com.enfluid.ltp.view.popups
          §§push(12);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1 - 56) * 114));
+            §§push(§§pop() - 1 - 93 - 1 - 1 + 1 - 43 + 80);
          }
          §§pop().setStyle(§§pop(),§§pop());
          if(!_loc1_.document)
@@ -472,7 +466,7 @@ package com.enfluid.ltp.view.popups
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 48 - 101 + 107 - 36) + 1);
+            §§push((§§pop() - 1 - 1) * 60 - 37 + 18 - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.layout = this._SeoMozKeyPopup_FormLayout1_c();
@@ -489,9 +483,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:FormLayout = new FormLayout();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() - 89) - 1 - 83 - 72));
+            §§push(-(§§pop() - 1 + 1 + 71 - 1));
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -508,16 +502,16 @@ package com.enfluid.ltp.view.popups
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 112 - 90 - 1 + 31 - 1) - 76);
+            §§push(-(-(§§pop() - 1 + 32) - 1) - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 87) * 111 - 71));
+            §§push(§§pop() * 95 - 1 + 23);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._SeoMozKeyPopup_FormItem1_c(),this._SeoMozKeyPopup_FormItem2_c()];
@@ -535,7 +529,7 @@ package com.enfluid.ltp.view.popups
          §§push(50);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 23 + 110) + 1) * 33 + 119 + 35);
+            §§push(-§§pop() - 1 - 24);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.mxmlContentFactory = new DeferredInstanceFromFunction(this._SeoMozKeyPopup_Array4_c);
@@ -568,9 +562,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() + 1 + 87 + 1) - 94);
+            §§push(-(§§pop() + 91) - 1 - 23);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "accessID";
@@ -588,9 +582,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:FormItem = new FormItem();
          §§push(_loc1_);
          §§push(50);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 + 75);
+            §§push(-((§§pop() + 107 - 1 - 1) * 53 - 1 - 1));
          }
          §§pop().percentWidth = §§pop();
          _loc1_.mxmlContentFactory = new DeferredInstanceFromFunction(this._SeoMozKeyPopup_Array5_c);
@@ -623,9 +617,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 + 54);
+            §§push(-(-(§§pop() + 1 - 9 - 1) + 102) - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "secretKey";
@@ -643,9 +637,9 @@ package com.enfluid.ltp.view.popups
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 1 - 1 - 105 - 59) * 39));
+            §§push(§§pop() + 1 - 76 - 1 - 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.label = "Submit";
@@ -662,6 +656,7 @@ package com.enfluid.ltp.view.popups
       {
          ViewModel.instance.showSEOMozPopup = false;
          new SavePreferencesCommand().execute();
+         new SetUserEvent("UserEvent.PopUp.Moz.SubmitCredentials").execute();
       }
       
       private final function _SeoMozKeyPopup_bindingsSetup() : Array
@@ -671,7 +666,7 @@ package com.enfluid.ltp.view.popups
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 44 - 1);
+            §§push(((§§pop() - 113) * 26 - 1 - 27 + 118 + 1) * 107);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -680,9 +675,9 @@ package com.enfluid.ltp.view.popups
          },null,"accessID.text");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 43 - 15 - 95 + 1 + 50);
+            §§push((§§pop() - 1 + 5) * 10 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -693,7 +688,7 @@ package com.enfluid.ltp.view.popups
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 1) + 107 + 79 - 1 + 3);
+            §§push(---(§§pop() - 1 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -706,42 +701,42 @@ package com.enfluid.ltp.view.popups
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 28) + 1);
+            §§push((§§pop() + 1 - 1) * 60);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--((§§pop() * 79 + 79) * 92 * 110 + 1));
+            §§push(§§pop() * 91 - 73 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 76 * 102);
+            §§push(-(§§pop() - 1 + 58));
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-(-§§pop() - 1 - 115 - 1) - 56));
+            §§push(---((§§pop() + 36 - 1) * 67));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() - 8 - 1 - 56);
+            §§push(§§pop() - 92 - 1 - 1 - 39 - 1 - 1 + 51);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 113 + 56 - 63) * 41) * 59 + 1);
+            §§push(--(§§pop() + 69) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -754,35 +749,35 @@ package com.enfluid.ltp.view.popups
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 15 + 1) - 1);
+            §§push(-(§§pop() - 1 - 67 + 1 - 78 - 8) + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 73 + 99) * 69) + 83);
+            §§push(-§§pop() - 92 + 114);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 88) + 8 - 1);
+            §§push(---(-§§pop() + 10) - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 57 + 70 - 118 - 1 + 80 + 1 - 103);
+            §§push(-(§§pop() * 50 * 47) + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 59 + 1 - 72 + 23);
+            §§push(-§§pop() + 1 + 1 + 6 + 19 + 36);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

@@ -5,10 +5,11 @@ package com.enfluid.ltp.view.skins
    import mx.graphics.GradientEntry;
    import spark.primitives.Rect;
    import mx.core.IFlexModuleFactory;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
    import mx.binding.BindingManager;
    import mx.graphics.SolidColor;
    import mx.graphics.LinearGradientStroke;
-   import mx.graphics.RadialGradient;
    import spark.components.Label;
    import mx.events.PropertyChangeEvent;
    import mx.states.State;
@@ -43,14 +44,14 @@ package com.enfluid.ltp.view.skins
          §§push(21);
          if(_loc2_)
          {
-            §§push(--(§§pop() - 14 + 79 - 1));
+            §§push(-(-(§§pop() - 12 + 56) * 3 * 45 + 63));
          }
          §§pop().minWidth = §§pop();
          §§push(this);
          §§push(21);
          if(_loc2_)
          {
-            §§push(((-(§§pop() * 97) + 103 - 83) * 118 - 94) * 115);
+            §§push(§§pop() + 1 - 3 + 1 - 118);
          }
          §§pop().minHeight = §§pop();
          this.mxmlContent = [this._CalculateButtonSkin_Rect1_i(),this._CalculateButtonSkin_Rect2_i(),this._CalculateButtonSkin_Rect3_i(),this._CalculateButtonSkin_Label1_i()];
@@ -71,9 +72,9 @@ package com.enfluid.ltp.view.skins
          §§push("color");
          §§push("value");
          §§push(16777215);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() + 10 - 119 + 1 - 1);
+            §§push(-(§§pop() + 67 + 91 - 4) * 42);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -83,9 +84,9 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() * 45 - 26 - 1) * 101);
+            §§push((§§pop() + 1) * 103 - 90 - 0 - 1);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -97,7 +98,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc1_)
          {
-            §§push((§§pop() * 56 * 64 + 1) * 113 * 73 + 60);
+            §§push(-((--(§§pop() + 1 - 1) - 13) * 81));
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -107,9 +108,9 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 99);
+            §§push((-(§§pop() * 22) - 1) * 73);
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -125,7 +126,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 - 19) * 65 + 37 - 5 + 1 - 21);
+            §§push(--(§§pop() - 1));
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -137,7 +138,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() - 26 + 1 - 95 + 117) * 5 - 19);
+            §§push(-(§§pop() - 1 + 10 - 47 - 1) * 32);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -147,9 +148,9 @@ package com.enfluid.ltp.view.skins
          §§push("color");
          §§push("value");
          §§push(16777215);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() - 1 + 73) + 1);
+            §§push(-§§pop() * 96 - 1 + 119 + 1);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -161,7 +162,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc1_)
          {
-            §§push(§§pop() - 27 - 29 - 1 + 115);
+            §§push(-(§§pop() + 1) + 53 - 1 - 10 - 101 - 14);
          }
          §§pop().states = null;
       }
@@ -210,37 +211,37 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(-1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 67 + 72) + 21);
+            §§push(§§pop() + 1 - 1 - 117 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc3_)
          {
-            §§push(-§§pop() - 119 + 35);
+            §§push((§§pop() + 16) * 33 * 64 - 50);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 58) * 40 - 1 + 1) - 59 - 1);
+            §§push(-((-§§pop() - 1) * 115 - 1) + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 1) * 103 * 21 + 1) * 63 - 78);
+            §§push(-(§§pop() + 89 + 1 + 19));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 - 95 + 1 + 94 + 10 - 48 - 1);
+            §§push(-(§§pop() + 1 - 1 - 78 + 1));
          }
          §§pop().radiusX = §§pop();
          _loc1_.fill = this._CalculateButtonSkin_SolidColor1_c();
@@ -255,9 +256,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(14276567);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 28 - 1 - 78 + 103);
+            §§push((-(-§§pop() + 1 + 110) + 118) * 52);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.08;
@@ -271,35 +272,35 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 37 - 1 - 112 + 77));
+            §§push(§§pop() - 1 - 40 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 0 - 8 + 110 - 1) * 105);
+            §§push(-(-§§pop() + 1 - 1));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 47 + 1 + 1);
+            §§push(-§§pop() - 1 + 1 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() * 24 * 40 * 14);
+            §§push(-(-(§§pop() * 18 - 104) + 47));
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1) - 5);
+            §§push((-§§pop() - 46 - 42 - 107) * 112 - 104);
          }
          §§pop().radiusX = §§pop();
          _loc1_.fill = this._CalculateButtonSkin_SolidColor2_c();
@@ -314,9 +315,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(14276567);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1 - 1 - 61) * 85);
+            §§push(((§§pop() * 2 - 1) * 23 + 1) * 108 - 91);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.85;
@@ -330,49 +331,49 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 + 12);
+            §§push(-((§§pop() + 1 + 7) * 92) - 45);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 116 + 1 + 1 - 1);
+            §§push(-(§§pop() + 1) + 1 - 75 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 1 - 1);
+            §§push((§§pop() + 1 + 1) * 73);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 44) - 48 - 96);
+            §§push(§§pop() + 1 + 70 - 1 - 117);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(69);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 15 - 1) * 102 + 1);
+            §§push(-(§§pop() * 103 - 58 - 28) + 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(20);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 74 - 39);
+            §§push(§§pop() - 60 - 26 + 64 + 1 + 14 - 23 - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 + 47);
+            §§push(--§§pop() - 1 + 78 + 1);
          }
          §§pop().radiusX = §§pop();
          _loc1_.stroke = this._CalculateButtonSkin_LinearGradientStroke1_c();
@@ -389,14 +390,14 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc2_)
          {
-            §§push((§§pop() - 40 + 56 + 31) * 45 - 1);
+            §§push(-§§pop() - 45 + 1);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 59 - 1) - 1 - 34 - 4);
+            §§push(-((-(§§pop() + 59 - 1) * 48 - 112) * 20));
          }
          §§pop().weight = §§pop();
          _loc1_.entries = [this._CalculateButtonSkin_GradientEntry1_i(),this._CalculateButtonSkin_GradientEntry2_i()];
@@ -408,9 +409,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(15263719);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 81) * 4 * 16 + 27);
+            §§push(-§§pop() + 49 + 19 - 77);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.5625;
@@ -424,9 +425,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(15263719);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) + 20 - 1 - 1 - 90);
+            §§push((-(§§pop() - 1) + 1 + 58) * 81);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -442,49 +443,49 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() - 24 + 1 - 86 + 51) * 87);
+            §§push((-§§pop() - 25 + 1 - 1) * 7 - 70);
          }
          §§pop().maxDisplayedLines = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 2 - 1));
+            §§push(§§pop() + 43 - 113 + 45);
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1 + 1) + 15) - 1);
+            §§push(§§pop() - 1 - 1 + 1);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 + 1 - 1 + 84 + 1);
+            §§push(-(-§§pop() - 30));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(-§§pop() - 1 + 73);
+            §§push(--((§§pop() - 47) * 73 - 37));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() + 1) * 86 + 1 - 1 - 1);
+            §§push((§§pop() + 1 - 99 + 5) * 94);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 1) + 28 + 1);
+            §§push(-(-((§§pop() + 1) * 59 - 7) + 1) - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.setStyle("textAlign","center");

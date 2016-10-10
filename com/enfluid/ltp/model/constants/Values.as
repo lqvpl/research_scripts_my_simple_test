@@ -1,6 +1,6 @@
 package com.enfluid.ltp.model.constants
 {
-   import spark.primitives.Rect;
+   import mx.graphics.SolidColor;
    
    public final class Values
    {
@@ -17,6 +17,10 @@ package com.enfluid.ltp.model.constants
       
       public static const FETCHED:int = -6;
       
+      public static const COMPETITORS_BULK_FETCHING_DONE:int = -7;
+      
+      public static const CACHE_NULL_VALUE:int = -9;
+      
       public static const ERROR_DATE:Date = new §§pop().Date(§§pop());
       
       public static const NOT_FETCHED_DATE:Date = null;
@@ -25,9 +29,9 @@ package com.enfluid.ltp.model.constants
          §§push();
          §§push();
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(((§§pop() + 33) * 91 + 1) * 53 - 53 - 1);
+            §§push(-§§pop() - 67 - 1);
          }
       }
       

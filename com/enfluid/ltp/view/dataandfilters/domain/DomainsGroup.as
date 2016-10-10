@@ -7,25 +7,37 @@ package com.enfluid.ltp.view.dataandfilters.domain
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.vo.DomainExtensionOptions;
    import com.enfluid.ltp.model.DataModel;
-   import mx.graphics.LinearGradient;
    import mx.binding.BindingManager;
    import flash.events.Event;
-   import spark.components.TextInput;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
-   import spark.filters.DropShadowFilter;
-   import flash.events.MouseEvent;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import spark.components.Label;
+   import spark.primitives.Path;
+   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
+   import com.enfluid.ltp.util.Scraper;
+   import mx.rpc.http.HTTPService;
+   import spark.components.DataGroup;
    import mx.binding.Binding;
-   import spark.primitives.Rect;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisGridColumn;
    import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteOwnKeywordsCommand;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
+   import com.enfluid.ltp.model.vo.SeedKeywordVO;
+   import com.enfluid.ltp.util.Logger;
+   import com.photon.controller.PhotonCommand;
+   import com.enfluid.ltp.model.constants.Constants;
+   import com.enfluid.ltp.view.renderers.TabRenderer;
+   import mx.core.ClassFactory;
+   import spark.skins.spark.DefaultItemRenderer;
+   import mx.states.Transition;
+   import mx.core.mx_internal;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.CSSCondition;
    import mx.styles.CSSSelector;
    import com.enfluid.ltp.view.skins.ToggleSwitchSkin;
    import mx.events.PropertyChangeEvent;
+   import flash.utils.Dictionary;
+   import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
    
@@ -107,49 +119,49 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(100);
          if(_loc4_)
          {
-            §§push(-(§§pop() * 44 * 113 * 105 + 61 + 84 + 1));
+            §§push(§§pop() - 1 - 1 + 8 - 9 + 76);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(10);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 + 1 + 36);
+            §§push(§§pop() - 85 - 1 + 64 - 81);
          }
          §§pop().paddingBottom = §§pop();
          §§push(this);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 + 1) * 95 + 1);
+            §§push(-(-§§pop() - 1));
          }
          §§pop().paddingLeft = §§pop();
          §§push(this);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 51 - 63 - 107);
+            §§push(-§§pop() - 1 - 13);
          }
          §§pop().paddingRight = §§pop();
          §§push(this);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 50 - 83) + 114 - 55);
+            §§push(-(§§pop() - 41) + 52);
          }
          §§pop().paddingTop = §§pop();
          §§push(this);
          §§push(10);
          if(_loc4_)
          {
-            §§push(§§pop() - 111 + 105 - 1);
+            §§push(§§pop() * 98 * 55 + 39 + 1 - 1 - 1);
          }
          §§pop().verticalGap = §§pop();
          §§push(this);
          §§push(4);
          if(_loc4_)
          {
-            §§push(-(§§pop() + 96 - 1));
+            §§push(-(§§pop() * 109 + 58));
          }
          §§pop().requestedColumnCount = §§pop();
          this.mxmlContent = [this._DomainsGroup_ToggleSwitch1_i(),this._DomainsGroup_ToggleSwitch2_i(),this._DomainsGroup_ToggleSwitch3_i(),this._DomainsGroup_ToggleSwitch4_i(),this._DomainsGroup_ToggleSwitch5_i(),this._DomainsGroup_ToggleSwitch6_i(),this._DomainsGroup_ToggleSwitch7_i(),this._DomainsGroup_ToggleSwitch8_i(),this._DomainsGroup_ToggleSwitch9_i(),this._DomainsGroup_ToggleSwitch10_i(),this._DomainsGroup_ToggleSwitch11_i()];
@@ -157,7 +169,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 39) + 1) * 68);
+            §§push((-§§pop() + 15 + 1 + 1) * 24);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -204,7 +216,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 49 + 1) * 6 + 1 + 1 + 1));
+            §§push(-(§§pop() * 69 + 1 + 2) * 61 * 42 + 27);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -233,7 +245,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc3_)
          {
-            §§push(-(-§§pop() * 87 - 0 - 1));
+            §§push(§§pop() + 28 - 1 - 1 + 1 - 1 - 1 + 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -262,7 +274,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 1));
+            §§push(-§§pop() * 76 + 1 + 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -289,9 +301,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          var _loc1_:ToggleSwitch = new ToggleSwitch();
          §§push(_loc1_);
          §§push(55);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 31 + 4 + 1 - 26 - 1 + 43);
+            §§push((§§pop() + 1 + 23 - 1) * 94);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -320,7 +332,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 109 - 1) * 70);
+            §§push(§§pop() + 102 + 103 - 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -347,9 +359,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          var _loc1_:ToggleSwitch = new ToggleSwitch();
          §§push(_loc1_);
          §§push(42);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 1 - 4 + 78);
+            §§push((§§pop() - 104 - 91 - 1 + 12) * 5 - 85);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -378,7 +390,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 48);
+            §§push(§§pop() * 8 - 13 + 44 - 20 - 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -407,7 +419,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(55);
          if(_loc3_)
          {
-            §§push(--§§pop() - 1);
+            §§push((§§pop() - 14 + 43 + 89 - 65) * 90 + 1 - 68);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -436,7 +448,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 8 + 80 + 1 - 1 + 1);
+            §§push((§§pop() * 75 + 93 + 108) * 3 + 77 - 62);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -463,9 +475,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          var _loc1_:ToggleSwitch = new ToggleSwitch();
          §§push(_loc1_);
          §§push(42);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 34 - 1 + 1 - 1 - 1 + 1);
+            §§push(-(-§§pop() + 1));
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -494,7 +506,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(42);
          if(_loc3_)
          {
-            §§push((-(§§pop() + 1 - 1 - 1) + 48) * 94);
+            §§push((§§pop() + 1 + 1) * 100 + 1 + 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.styleName = "toggleSwitch";
@@ -523,7 +535,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 25 + 18 - 105);
+            §§push(--§§pop() - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -531,9 +543,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"_DomainsGroup_ToggleSwitch1.selected");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--§§pop() + 67 + 86);
+            §§push(-(-(§§pop() + 103 - 38) - 94) - 77);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -541,9 +553,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"_DomainsGroup_ToggleSwitch2.selected");
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() + 1) * 43 * 37 - 1 + 1);
+            §§push(§§pop() + 27 + 1 + 1 + 100);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -553,7 +565,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(3);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 113 + 33 - 1 + 46) - 27);
+            §§push((§§pop() + 35 - 115) * 39 + 12);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -563,7 +575,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(4);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 18) + 54 + 1) * 4);
+            §§push(--(-§§pop() + 7) * 79);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -573,7 +585,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 1) + 1);
+            §§push(-(§§pop() - 1) + 28 - 114);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -583,7 +595,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(6);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 97 + 119 - 16 + 1) + 34);
+            §§push(-(§§pop() + 1 - 51 + 35));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -593,7 +605,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(7);
          if(_loc2_)
          {
-            §§push((-((§§pop() + 1 - 25) * 8 - 1) + 1) * 49);
+            §§push(-(-(§§pop() - 40 - 105 - 118 + 78) * 70));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -601,9 +613,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"_DomainsGroup_ToggleSwitch8.selected");
          §§push(result);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() + 1 + 1 - 71) - 66 + 1);
+            §§push(-((§§pop() - 40) * 115 - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -613,7 +625,7 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(9);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 1));
+            §§push(((§§pop() + 58 + 49) * 86 - 1) * 24 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -621,9 +633,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"_DomainsGroup_ToggleSwitch10.selected");
          §§push(result);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(((§§pop() - 91) * 17 + 1 + 1) * 106));
+            §§push(-(((§§pop() + 1) * 8 + 118 + 1 + 1) * 86));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -631,9 +643,9 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },null,"_DomainsGroup_ToggleSwitch11.selected");
          §§push(result);
          §§push(11);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) - 1 + 99 - 1 - 1);
+            §§push((-§§pop() + 53 - 46 - 72 - 1) * 58);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -646,42 +658,42 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(11);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 1 + 1 - 1) * 114 + 69));
+            §§push((§§pop() * 33 + 1 - 65 + 1) * 85 + 36);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-§§pop() * 8 - 55) * 103 + 1 + 26));
+            §§push(§§pop() + 1 - 1 + 61 + 87 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 92 - 1);
+            §§push((§§pop() * 110 + 59) * 28);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(0);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 97) - 1 + 1 - 85);
+            §§push((§§pop() * 99 - 1) * 42 + 1 + 1 - 109);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(11);
          if(_loc3_)
          {
-            §§push(--§§pop() - 118 + 1 - 1 - 64 - 111);
+            §§push(-(-§§pop() * 92 + 102) * 115);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(12);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 70 - 1 - 32 + 60 + 66);
+            §§push((-§§pop() + 1) * 42 + 106 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -694,42 +706,42 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(12);
          if(_loc2_)
          {
-            §§push(--((§§pop() + 1) * 111 * 66 * 89 + 105));
+            §§push(-(§§pop() + 1 + 110) * 96 + 1 + 97);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 68 - 1 + 112) * 31));
+            §§push(-((§§pop() + 1) * 92 + 25 - 116 - 102) + 9);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 24) * 15) + 108 - 1 + 1);
+            §§push(§§pop() * 13 - 1 + 48 + 53);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() + 66) * 35 - 1);
+            §§push((§§pop() + 1 - 90 - 1) * 23);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((--§§pop() * 7 + 7) * 86 + 1));
+            §§push((-§§pop() + 1 + 50) * 33);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-§§pop() - 1) * 60 - 95 + 14));
+            §§push((--§§pop() - 100) * 45 - 39 + 16 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -740,44 +752,44 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },"domainsHyphenatedExtensions.org");
          §§push(result);
          §§push(13);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 99));
+            §§push(-(§§pop() * 62 - 21) - 1 + 1 + 11 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 1 - 1 - 1) * 15);
+            §§push(-(§§pop() * 37 + 1 - 110));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 + 1 + 30) * 64 + 1 + 1) * 76);
+            §§push(-(§§pop() + 40 + 1) - 44);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-§§pop() + 90 - 30) * 14));
+            §§push(§§pop() - 1 - 44 - 69);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(13);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 15 - 28) * 104);
+            §§push((§§pop() - 12 + 12) * 44);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(14);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 33 + 1 - 1);
+            §§push(-((§§pop() + 64) * 87 + 1) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -790,42 +802,42 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(14);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1 + 1 + 20) * 106) * 81 + 1);
+            §§push(§§pop() * 104 + 1 + 1 + 85 - 83 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--§§pop() * 101));
+            §§push((§§pop() + 117 + 1) * 41 * 93 + 92 + 37);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(--(§§pop() * 77) - 10 + 109 + 1 + 1);
+            §§push((§§pop() + 1) * 94 - 35 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(-((§§pop() * 55 * 17 - 119) * 21) + 99);
+            §§push(-(§§pop() + 1) + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(14);
          if(_loc2_)
          {
-            §§push(§§pop() * 46 * 45 + 1 - 78 + 6);
+            §§push(--(§§pop() - 1 - 1) + 1 - 67);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(15);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() - 15 - 1 + 1 - 1) + 1);
+            §§push(-(§§pop() + 1 - 35) + 102 - 87 + 67 - 100);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -836,44 +848,44 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },"domainsHyphenatedExtensions.co");
          §§push(result);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 1 - 1);
+            §§push(§§pop() + 1 + 44 - 65);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(4);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 57 - 1) * 118 - 30) + 1);
+            §§push(-(§§pop() + 1 - 26));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(4);
          if(_loc3_)
          {
-            §§push((§§pop() * 66 + 66 - 1) * 91 * 8 + 24);
+            §§push(-(§§pop() + 38) + 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(4);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 42 + 1 - 12) + 64 + 1);
+            §§push(-§§pop() + 78 - 44);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 60 - 39));
+            §§push(-(§§pop() - 1 - 1 + 1 + 1) - 1 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(16);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 90 + 32 - 1) + 1);
+            §§push(-(-§§pop() - 25));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -884,44 +896,44 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },"domainsHyphenatedExtensions.info");
          §§push(result);
          §§push(16);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 70 * 114 * 8 * 115);
+            §§push(-(-§§pop() + 30 + 1) + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 107 - 1);
+            §§push(-(-(-§§pop() * 17) + 38));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(5);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 - 1);
+            §§push((§§pop() - 19 + 1 - 1 + 16) * 88 + 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(5);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 112 - 1 - 1) * 95 - 39));
+            §§push((§§pop() + 103) * 115 * 4 + 66);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(16);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 0 + 1 - 1 + 29 + 1));
+            §§push(§§pop() - 1 - 107 + 1 + 105 - 42 - 1 + 24);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(17);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 23 - 28 + 1 + 94);
+            §§push(-(§§pop() - 1 - 1) - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -932,44 +944,44 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },"domainsHyphenatedExtensions.ca");
          §§push(result);
          §§push(17);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 1 + 1) * 44));
+            §§push(-(§§pop() + 1 + 1) - 3);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(6);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 45 - 1) * 68 - 1 - 46 - 1);
+            §§push(§§pop() - 1 + 1 + 16);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(6);
          if(_loc2_)
          {
-            §§push((§§pop() + 70 + 72 - 53 - 70) * 33);
+            §§push(§§pop() + 1 + 1 - 94 - 63);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(6);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 74 + 113 - 1 - 53);
+            §§push(§§pop() + 1 - 1 + 1 - 1 - 12);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(17);
          if(_loc3_)
          {
-            §§push((§§pop() + 84) * 59 * 89 - 109);
+            §§push(-(§§pop() - 17 - 11) + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(18);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 48);
+            §§push(-((§§pop() + 1 - 1 + 1 - 19) * 100));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -982,42 +994,42 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(18);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 + 91 + 32) * 86);
+            §§push(-§§pop() * 108 * 111 - 1 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(7);
          if(_loc3_)
          {
-            §§push(---((§§pop() + 99) * 34 + 75));
+            §§push(§§pop() - 1 + 1 - 94 - 15);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(7);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(-(§§pop() + 2 - 1) - 81) + 1) * 38);
+            §§push((-§§pop() - 1) * 16 - 1 - 52 + 84);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(7);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 76 + 12 - 58) * 77 + 19 + 61);
+            §§push(-(§§pop() + 1 - 90) - 18);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(18);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 57 - 69 + 1 + 1) + 1);
+            §§push(-(§§pop() + 30) - 1 + 55);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(19);
          if(_loc3_)
          {
-            §§push(§§pop() * 51 + 1 + 93 - 30 + 1 + 73);
+            §§push(§§pop() - 86 + 1 - 97);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1030,42 +1042,42 @@ package com.enfluid.ltp.view.dataandfilters.domain
          §§push(19);
          if(_loc3_)
          {
-            §§push(§§pop() - 101 - 1 + 1);
+            §§push(§§pop() - 1 - 1 - 21 + 1 - 115 - 119 - 72);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(8);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 + 1 + 27 + 46) + 1);
+            §§push(§§pop() + 1 - 25 + 89 - 36);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(8);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1 - 1 + 50) - 40));
+            §§push(§§pop() + 31 + 56 + 65 + 1 + 1 + 1 - 44);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(8);
          if(_loc3_)
          {
-            §§push(---§§pop() + 1 + 1 + 1 + 7);
+            §§push(§§pop() - 1 - 49 + 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(19);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 69 + 3 - 1 - 1 - 1 + 1);
+            §§push(§§pop() + 1 - 1 - 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(20);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 116 - 73));
+            §§push(---(§§pop() - 1 - 49 + 1 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1076,44 +1088,44 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },"domainsHyphenatedExtensions.nl");
          §§push(result);
          §§push(20);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 1 + 116 + 71 - 1);
+            §§push((§§pop() - 1 + 1) * 107 + 1 - 1 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(9);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 57 * 73 - 1 - 33 + 1));
+            §§push(-(§§pop() - 30 + 13));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(9);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 1 + 5) + 1) * 54);
+            §§push(-(§§pop() + 1 + 1) - 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(9);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 108 - 42 - 1);
+            §§push(§§pop() - 73 + 1 + 8);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(20);
          if(_loc2_)
          {
-            §§push(-((-((§§pop() - 1) * 15) - 47 - 34) * 86));
+            §§push(-((§§pop() - 112 - 101 - 10) * 112 + 1));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(21);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 99 + 1 - 1 + 1));
+            §§push(((§§pop() - 8 - 1 + 1) * 21 - 16) * 111 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -1124,37 +1136,37 @@ package com.enfluid.ltp.view.dataandfilters.domain
          },"domainsHyphenatedExtensions.dk");
          §§push(result);
          §§push(21);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 119 + 1 + 1);
+            §§push(§§pop() - 90 - 40 - 76);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 109 + 1) - 5);
+            §§push(§§pop() - 14 + 67 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 1) * 114 * 87 + 30 + 1);
+            §§push((§§pop() - 1 - 58) * 35 - 1 - 1 - 1);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 26 + 83) + 95);
+            §§push(§§pop() - 39 - 6 - 1);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(21);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 91 - 1 + 1);
+            §§push(--((§§pop() + 1 - 96 - 38) * 14 - 94));
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

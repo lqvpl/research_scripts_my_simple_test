@@ -1,11 +1,16 @@
 package com.enfluid.ltp.controller.keywordresearch.keywordplanner
 {
    import com.photon.controller.IPhotonCommand;
+   import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import com.enfluid.ltp.util.ProgressBarUtil;
    
    public final class SelectKeywordOptionsCommand extends KeywordPlannerCommand implements IPhotonCommand
    {
        
+      
+      private var seedKeyword:SeedKeywordVO;
+      
+      private var showRelatedKeywordsSwitch;
       
       private var showAdultIdeasSwitch;
       
@@ -13,9 +18,10 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       
       private var showKeywordsInMyPlanSwitch;
       
-      public function SelectKeywordOptionsCommand()
+      public function SelectKeywordOptionsCommand(param1:SeedKeywordVO)
       {
          super();
+         this.seedKeyword = param1;
       }
       
       public function execute() : void
@@ -28,11 +34,20 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       {
          var _loc1_:Boolean = false;
          var _loc2_:Boolean = scraper.hasTextOnPage("Show adult ideas");
+         var _loc3_:Boolean = scraper.hasTextOnPage("Only show closely related ideas");
          if(_loc2_ && !model.selectedProject.includeAdultAreas)
          {
             _loc1_ = true;
          }
          else if(!_loc2_ && model.selectedProject.includeAdultAreas)
+         {
+            _loc1_ = true;
+         }
+         if(_loc3_ && !this.seedKeyword.isRelatedKeywordsOnly)
+         {
+            _loc1_ = true;
+         }
+         else if(!_loc3_ && this.seedKeyword.isRelatedKeywordsOnly)
          {
             _loc1_ = true;
          }
@@ -70,10 +85,11 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       
       private final function findSwitches() : void
       {
+         this.showRelatedKeywordsSwitch = this.getSwitchDiv("Only show ideas closely related to my search terms");
          this.showAdultIdeasSwitch = this.getSwitchDiv("Show adult ideas");
          this.showKeywordsInMyAccountSwitch = this.getSwitchDiv("Show keywords in my account");
          this.showKeywordsInMyPlanSwitch = this.getSwitchDiv("Show keywords in my plan");
-         if(!this.showAdultIdeasSwitch || !this.showKeywordsInMyAccountSwitch || !this.showKeywordsInMyPlanSwitch)
+         if(!this.showAdultIdeasSwitch || !this.showKeywordsInMyAccountSwitch || !this.showKeywordsInMyPlanSwitch || !this.showRelatedKeywordsSwitch)
          {
             callDelayed(this.findSwitches);
          }
@@ -88,9 +104,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          var _loc2_:* = scraper.getElementByInnerText("div",param1,true);
          §§push(_loc2_.parentElement.firstChild.children);
          §§push(1);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((§§pop() - 39 + 1) * 37);
+            §§push(§§pop() + 101 - 100 - 53 - 98);
          }
          var _loc3_:* = §§pop()[§§pop()];
          if(!_loc3_)
@@ -100,7 +116,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push(1);
             if(_loc4_)
             {
-               §§push(-(--(§§pop() - 22) - 1));
+               §§push(-(§§pop() - 1 - 1) + 1);
             }
             _loc3_ = §§pop()[§§pop()];
          }
@@ -111,9 +127,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
       {
          §§push(param1.className.indexOf(" "));
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() - 1 + 1) * 43);
+            §§push(----§§pop() + 43 + 89 + 1);
          }
          if(§§pop() >= §§pop())
          {
@@ -146,6 +162,16 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          if(!this.isSwitchOn(this.showKeywordsInMyPlanSwitch))
          {
             scraper.click(this.showKeywordsInMyPlanSwitch);
+         }
+         callDelayed(this.setShowRelatedKeywords);
+      }
+      
+      private final function setShowRelatedKeywords() : void
+      {
+         var _loc1_:Boolean = this.isSwitchOn(this.showRelatedKeywordsSwitch);
+         if(_loc1_ != this.seedKeyword.isRelatedKeywordsOnly)
+         {
+            scraper.click(this.showRelatedKeywordsSwitch);
          }
          callDelayed(this.cleanup);
       }

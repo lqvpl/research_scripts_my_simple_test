@@ -1,9 +1,9 @@
 package com.hurlant.crypto.symmetric
 {
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import mx.core.FlexGlobals;
    import flash.utils.ByteArray;
    import com.hurlant.util.Memory;
-   import flash.utils.setTimeout;
-   import com.enfluid.ltp.util.Logger;
    
    public final class SimpleIVMode implements IMode, com.hurlant.crypto.symmetric.ICipher
    {
@@ -28,9 +28,9 @@ package com.hurlant.crypto.symmetric
          _loc2_.writeBytes(param1);
          §§push(param1);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((--(-(§§pop() - 6) - 15) + 42) * 25);
+            §§push(-((§§pop() + 1 + 1) * 27) + 1 - 66 - 1);
          }
          §§pop().position = §§pop();
          param1.writeBytes(_loc2_);
@@ -44,7 +44,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() - 1 + 1);
+            §§push(-((§§pop() - 1) * 92) + 46);
          }
          §§pop().writeBytes(§§pop(),§§pop(),getBlockSize());
          mode.IV = _loc2_;
@@ -55,7 +55,7 @@ package com.hurlant.crypto.symmetric
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 1) * 64 + 1 - 1);
+            §§push(-(-(§§pop() + 1) * 61 - 1) - 49);
          }
          §§pop().length = §§pop();
          param1.writeBytes(_loc2_);

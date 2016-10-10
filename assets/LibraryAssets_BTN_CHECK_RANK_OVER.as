@@ -1,7 +1,7 @@
 package assets
 {
    import mx.core.BitmapAsset;
-   import com.enfluid.ltp.view.renderers.TabRenderer;
+   import mx.graphics.SolidColor;
    import mx.binding.BindingManager;
    
    public final class LibraryAssets_BTN_CHECK_RANK_OVER extends BitmapAsset

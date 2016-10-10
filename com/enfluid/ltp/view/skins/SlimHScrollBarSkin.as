@@ -7,6 +7,9 @@ package com.enfluid.ltp.view.skins
    import mx.binding.BindingManager;
    import spark.components.HScrollBar;
    import mx.events.PropertyChangeEvent;
+   import hr.binaria.asx3m.annotations.Annotation;
+   import hr.binaria.asx3m.annotations.Annotated;
+   import com.enfluid.ltp.util.Logger;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -30,16 +33,16 @@ package com.enfluid.ltp.view.skins
          mx_internal::_document = this;
          §§push(this);
          §§push(6);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() - 92 + 66 + 52) + 1);
+            §§push(-(§§pop() - 106 + 95 + 1 - 55 - 1) * 14);
          }
          §§pop().minHeight = §§pop();
          §§push(this);
          §§push(35);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 80 + 2 - 1 + 0) - 1);
+            §§push(§§pop() - 82 + 86 - 1);
          }
          §§pop().minWidth = §§pop();
          this.mxmlContent = [this._SlimHScrollBarSkin_Button1_i(),this._SlimHScrollBarSkin_Button2_i()];
@@ -100,21 +103,21 @@ package com.enfluid.ltp.view.skins
          §§push(54);
          if(_loc3_)
          {
-            §§push(§§pop() + 56 - 1 - 92 + 1);
+            §§push(--§§pop() + 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(4);
          if(_loc2_)
          {
-            §§push((((§§pop() + 1) * 6 - 33 - 1) * 114 - 9) * 84);
+            §§push(§§pop() * 77 * 50 * 45 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 44 - 49 + 100) - 1);
+            §§push(-(§§pop() - 1 + 77));
          }
          §§pop().right = §§pop();
          _loc1_.focusEnabled = false;

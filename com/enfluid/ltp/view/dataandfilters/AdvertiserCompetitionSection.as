@@ -5,14 +5,15 @@ package com.enfluid.ltp.view.dataandfilters
    import mx.binding.IWatcherSetupUtil2;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
-   import spark.primitives.Rect;
+   import mx.events.FlexEvent;
+   import spark.components.CheckBox;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.view.filterviews.AdvertizerCompetitionFilterView;
    import mx.binding.Binding;
    import assets.TextAssets;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import spark.components.Label;
-   import mx.binding.BindingManager;
    import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
@@ -66,18 +67,19 @@ package com.enfluid.ltp.view.dataandfilters
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 1 - 21);
+            §§push(-(§§pop() + 1 + 28) - 1 + 93 - 23 - 72);
          }
          §§pop().percentWidth = §§pop();
          this.title = "Advertiser Competition";
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._AdvertiserCompetitionSection_Array1_c);
+         this.addEventListener("creationComplete",this.___AdvertiserCompetitionSection_CheckBoxCollapsiblePanel1_creationComplete);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-((§§pop() + 1) * 78));
+            §§push(§§pop() - 1 + 1 - 24);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -107,6 +109,22 @@ package com.enfluid.ltp.view.dataandfilters
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.AdvComp.Checked").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.Customize.AdvComp.Unchecked").execute();
+            }
+         });
+      }
+      
       private final function _AdvertiserCompetitionSection_Array1_c() : Array
       {
          var _loc1_:Array = [this._AdvertiserCompetitionSection_AdvertizerCompetitionFilterView1_c()];
@@ -124,6 +142,11 @@ package com.enfluid.ltp.view.dataandfilters
          return _loc1_;
       }
       
+      public final function ___AdvertiserCompetitionSection_CheckBoxCollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _AdvertiserCompetitionSection_bindingsSetup() : Array
       {
          var result:Array = [];
@@ -131,7 +154,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(0);
          if(_loc3_)
          {
-            §§push((-((§§pop() + 75) * 44) - 5 - 1) * 84);
+            §§push(-(§§pop() - 1 - 1 + 2 - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -142,7 +165,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 109 + 1 + 115 + 1) * 51);
+            §§push((§§pop() + 1 + 103) * 30);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -153,7 +176,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(2);
          if(_loc3_)
          {
-            §§push((-(-§§pop() - 71 + 1 + 33) + 40) * 38);
+            §§push(§§pop() + 1 + 1 + 78 + 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -163,7 +186,7 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 7) - 30 - 1);
+            §§push(--(§§pop() + 33 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
@@ -176,35 +199,35 @@ package com.enfluid.ltp.view.dataandfilters
          §§push(3);
          if(_loc2_)
          {
-            §§push(§§pop() + 18 + 117 - 26 + 1);
+            §§push(-((§§pop() + 1 + 1) * 77) - 1 + 1 + 49);
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(--§§pop() + 1 - 21 - 1 + 40));
+            §§push((((§§pop() - 90) * 90 + 1) * 93 - 114 + 1) * 32);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          §§push(result);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 43) * 39 - 1 + 33));
+            §§push((§§pop() + 43 - 1 + 1) * 23 + 1 - 73 - 11);
          }
          §§pop()[§§pop()].isTwoWayPrimary = true;
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 100 - 1 - 1);
+            §§push(-((§§pop() - 1 - 58) * 52 + 63));
          }
          §§push(§§pop()[§§pop()]);
          §§push(result);
          §§push(3);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 1) - 1 - 86 + 46 - 22));
+            §§push(--((§§pop() - 2) * 80) - 104 + 1);
          }
          §§pop().twoWayCounterpart = §§pop()[§§pop()];
          return result;

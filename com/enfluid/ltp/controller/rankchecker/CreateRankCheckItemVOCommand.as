@@ -2,10 +2,8 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import com.hurlant.math.BigInteger;
+   import mx.graphics.GradientEntry;
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
-   import spark.primitives.Rect;
-   import com.enfluid.ltp.view.components.Link;
    
    public final class CreateRankCheckItemVOCommand extends Command implements IPhotonCommand
    {

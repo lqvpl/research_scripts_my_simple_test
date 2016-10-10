@@ -1,26 +1,25 @@
 package com.dk.license
 {
-   import com.adobe.cairngorm.observer.Observe;
-   import mx.binding.BindingManager;
-   import flash.filesystem.File;
-   import flash.events.MouseEvent;
-   import mx.states.Transition;
-   import com.enfluid.ltp.model.vo.KeywordVO;
-   import flash.net.SharedObject;
    import mx.graphics.GradientEntry;
-   import mx.core.IFlexDisplayObject;
-   import hr.binaria.asx3m.annotations.Annotation;
-   import system.errors.NoSuchElementError;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import hr.binaria.asx3m.converters.IUnmarshallingContext;
-   import flash.utils.ByteArray;
+   import mx.binding.BindingManager;
+   import spark.effects.AddAction;
+   import flash.filesystem.File;
+   import mx.graphics.SolidColor;
+   import spark.components.Button;
+   import com.enfluid.ltp.view.skins.FindKeywordsButtonSkin;
+   import flash.utils.setTimeout;
+   import spark.primitives.Rect;
+   import flash.net.SharedObject;
+   import com.enfluid.ltp.model.constants.Values;
+   import hr.binaria.asx3m.mapper.IMapper;
+   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
+   import mx.events.FlexEvent;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
    import flash.filesystem.FileStream;
+   import flash.utils.ByteArray;
    import flash.filesystem.FileMode;
-   import mx.controls.Alert;
-   import system.serializers.§eden:release§.debug;
-   import system.serializers.eden.config;
-   import system.serializers.§eden:release§.tracePool;
-   import spark.components.Label;
+   import com.hurlant.util.Memory;
    
    public final class LicenseUtil
    {
@@ -135,7 +134,7 @@ package com.dk.license
          §§push(0);
          if(_loc9_)
          {
-            §§push(§§pop() + 86 + 92 - 1 + 70 - 43 - 1);
+            §§push(--(§§pop() - 1 + 1 + 1) - 1 - 37);
          }
          for each(_loc4_ in _loc1_)
          {
@@ -148,7 +147,7 @@ package com.dk.license
                   §§push(1);
                   if(_loc8_)
                   {
-                     §§push(-((-§§pop() + 1) * 63) * 74 + 1 + 106);
+                     §§push(--§§pop() + 98);
                   }
                   §§pop()[§§pop()] = §§pop();
                   _loc3_.push(_loc4_);
@@ -161,7 +160,7 @@ package com.dk.license
                   §§push(1);
                   if(_loc8_)
                   {
-                     §§push(--(§§pop() + 30));
+                     §§push(((§§pop() - 25 - 1 - 1 - 10) * 2 - 70) * 42);
                   }
                   §§pop()[§§pop()] = §§pop() + §§pop();
                }
@@ -169,16 +168,16 @@ package com.dk.license
          }
          §§push(_loc3_.length);
          §§push(1);
-         if(_loc9_)
+         if(_loc8_)
          {
-            §§push(((§§pop() - 95) * 89 - 1 - 1) * 20 - 102 + 1);
+            §§push(§§pop() - 1 - 1 + 106);
          }
          if(§§pop() > §§pop())
          {
             §§push(0);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push((-(-§§pop() * 12 + 107) + 1) * 2 + 81);
+               §§push(-((§§pop() - 1 + 49) * 100) + 104 - 111 - 59);
             }
             for each(_loc4_ in _loc3_)
             {
@@ -200,9 +199,9 @@ package com.dk.license
             §§push(this);
             §§push(_loc3_);
             §§push(0);
-            if(_loc9_)
+            if(_loc8_)
             {
-               §§push((§§pop() * 113 + 28 + 94 + 1 - 90) * 84);
+               §§push((-(§§pop() + 117) - 71 - 1 + 85) * 107 - 1);
             }
             §§pop()._regString = §§pop()[§§pop()];
             this.parseRegString();
@@ -225,14 +224,14 @@ package com.dk.license
             §§push(0);
             if(_loc2_)
             {
-               §§push((§§pop() - 1) * 35 + 1 + 1);
+               §§push((-§§pop() * 50 + 32 + 101) * 93);
             }
             §§pop()._guid = §§pop()[§§pop()];
             §§push(_loc1_);
             §§push(1);
             if(_loc3_)
             {
-               §§push(§§pop() + 1 - 1 + 53);
+               §§push(-(-§§pop() - 1));
             }
             if(§§pop()[§§pop()])
             {
@@ -241,7 +240,7 @@ package com.dk.license
                §§push(1);
                if(_loc2_)
                {
-                  §§push(-§§pop() + 1 + 1 + 1 - 1 - 77 - 1);
+                  §§push(-(§§pop() - 36 - 113 + 1) * 3 - 44 + 1);
                }
                §§pop().licenceKey = §§pop()[§§pop()];
             }
@@ -353,9 +352,9 @@ package com.dk.license
       {
          var _loc2_:* = "";
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push((§§pop() - 1) * 58 + 98 + 1);
+            §§push((-(§§pop() - 60) + 24 - 1) * 53);
          }
          var _loc3_:* = §§pop();
          while(_loc3_ < param1.length)

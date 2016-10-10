@@ -72,9 +72,9 @@ package com.enfluid.ltp.view.renderers
          this.mxmlContent = [this._DomainExtensionRenderer_Rect1_i(),this._DomainExtensionRenderer_Label1_i()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 94 + 98 - 26 + 61);
+            §§push((§§pop() * 36 - 89 - 35) * 53);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -109,44 +109,44 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 69 + 118 + 1 + 1 - 50 + 1);
+            §§push((§§pop() - 1 + 1) * 10 * 51 * 47 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() * 0 - 80) * 60) * 16 - 1);
+            §§push(-(-(§§pop() - 65 - 37) * 39));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 34) - 52 + 79);
+            §§push((-(§§pop() * 103) + 1) * 8 * 72 + 1 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 32 - 1 + 1 - 1);
+            §§push((§§pop() + 96 - 1 - 1 - 1) * 91 - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(((-(§§pop() - 1) - 1 + 83) * 12 + 42) * 35);
+            §§push(((§§pop() - 96 + 28) * 3 - 32 + 1 - 1) * 73);
          }
          §§pop().radiusX = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push((-(§§pop() + 1 - 118) * 33 + 31) * 97 + 17);
+            §§push((§§pop() * 115 + 1 - 118 + 1 - 5) * 73);
          }
          §§pop().radiusY = §§pop();
          _loc1_.fill = this._DomainExtensionRenderer_SolidColor1_i();
@@ -171,28 +171,28 @@ package com.enfluid.ltp.view.renderers
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 - 72);
+            §§push((§§pop() + 1 - 32 + 24) * 51 + 1 - 73);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 100 - 41) * 8) * 34 * 57 * 64);
+            §§push(((§§pop() - 1) * 97 + 1) * 56);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 - 30 + 1 - 82 + 68) + 1);
+            §§push((§§pop() - 115 + 5) * 35);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 111) * 8 + 39 + 1 + 1);
+            §§push(-((§§pop() - 11) * 51) * 67);
          }
          §§pop().bottom = §§pop();
          _loc1_.id = "_DomainExtensionRenderer_Label1";
@@ -210,9 +210,9 @@ package com.enfluid.ltp.view.renderers
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 63 - 1 + 66));
+            §§push((§§pop() - 1 - 39) * 85 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -222,7 +222,7 @@ package com.enfluid.ltp.view.renderers
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 25 + 80 + 18);
+            §§push(-(§§pop() - 110) * 63 - 85);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {
@@ -231,7 +231,7 @@ package com.enfluid.ltp.view.renderers
                §§push(3703986);
                if(_loc1_)
                {
-                  §§push(§§pop() + 73 + 1 - 1 + 20 + 117);
+                  §§push(§§pop() + 1 + 66 - 99 - 3 - 1 - 1);
                }
                §§push(uint(§§pop()));
             }
@@ -240,7 +240,7 @@ package com.enfluid.ltp.view.renderers
                §§push(15658734);
                if(_loc2_)
                {
-                  §§push(§§pop() + 1 - 1 + 103);
+                  §§push(-(§§pop() + 8 + 1 - 1 - 1));
                }
                §§push(uint(§§pop()));
             }
@@ -249,7 +249,7 @@ package com.enfluid.ltp.view.renderers
                §§push(14474460);
                if(_loc2_)
                {
-                  §§push(-(§§pop() - 1 - 1));
+                  §§push(§§pop() * 106 * 54 - 1);
                }
                §§push(uint(§§pop()));
             }
@@ -257,9 +257,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_DomainExtensionRenderer_SolidColor1.color");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 45 + 118) - 1);
+            §§push(-§§pop() - 71 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():uint
          {
@@ -268,7 +268,7 @@ package com.enfluid.ltp.view.renderers
                §§push(16777215);
                if(_loc2_)
                {
-                  §§push((-§§pop() - 1 + 1 - 80) * 43 * 95 * 76);
+                  §§push((-§§pop() + 1 + 1) * 87);
                }
                §§push(uint(§§pop()));
             }
@@ -277,16 +277,16 @@ package com.enfluid.ltp.view.renderers
                §§push(15094355);
                if(_loc1_)
                {
-                  §§push(§§pop() * 59 - 1 + 1 + 84);
+                  §§push(§§pop() * 53 + 114 - 1 - 33);
                }
                §§push(uint(§§pop()));
             }
             else
             {
                §§push(4207420);
-               if(_loc2_)
+               if(_loc1_)
                {
-                  §§push((-§§pop() - 1 - 1) * 64 + 1 + 1);
+                  §§push(-§§pop() + 43 - 1 + 84 - 39 - 28 - 1);
                }
                §§push(uint(§§pop()));
             }
@@ -299,14 +299,14 @@ package com.enfluid.ltp.view.renderers
          §§push(3);
          if(_loc2_)
          {
-            §§push(-((-§§pop() * 115 - 110 + 1) * 106 + 19));
+            §§push(--(§§pop() + 1 - 86 + 1 + 42) * 91);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_DomainExtensionRenderer_Label1.text","text");
          §§push(result);
          §§push(4);
          if(_loc3_)
          {
-            §§push(§§pop() + 75 + 1 + 1);
+            §§push((§§pop() + 1 - 1 + 118 - 1 + 1) * 17);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {

@@ -2,11 +2,8 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import system.numeric.Mathematics;
-   import com.enfluid.ltp.model.vo.ProjectVO;
-   import spark.effects.Rotate;
-   import mx.binding.BindingManager;
    import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.vo.ProjectVO;
    
    public final class AddProjectCommand extends Command implements IPhotonCommand
    {
@@ -24,10 +21,19 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
       {
          new CopyDefaultProjectConfigurationCommand(this.project).execute();
          model.projects.addItem(this.project);
+         if(this.project.country.amazonSite)
+         {
+            this.project.amazonKCEnabled = true;
+         }
+         else
+         {
+            this.project.amazonKCEnabled = false;
+         }
          this.project.save();
          new SelectProjectCommand(this.project).execute();
          viewModel.showCreateProjectCallout = false;
          viewModel.showGenerateKeywordsCallout = true;
+         model.projectTitle[this.project.id] = this.project.title;
          done();
       }
    }

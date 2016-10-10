@@ -5,17 +5,20 @@ package com.enfluid.ltp.view.skins
    import mx.graphics.GradientEntry;
    import mx.graphics.SolidColor;
    import mx.core.IFlexModuleFactory;
+   import mx.binding.Binding;
+   import mx.collections.IList;
    import spark.primitives.Rect;
-   import mx.binding.BindingManager;
-   import spark.effects.Resize;
-   import com.enfluid.ltp.util.ProgressBarUtil;
+   import com.enfluid.ltp.view.settings.SettingsUserAccountsSection;
    import mx.graphics.SolidColorStroke;
+   import mx.controls.Spacer;
+   import mx.binding.BindingManager;
+   import spark.components.Group;
    import mx.graphics.LinearGradient;
-   import spark.layouts.HorizontalLayout;
    import mx.graphics.LinearGradientStroke;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import flash.utils.ByteArray;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
-   import com.hurlant.util.Memory;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -61,7 +64,7 @@ package com.enfluid.ltp.view.skins
          §§push(13092807);
          if(_loc1_)
          {
-            §§push(§§pop() * 111 + 118 - 1 + 1);
+            §§push(§§pop() - 1 + 2 + 110 + 1);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -73,7 +76,7 @@ package com.enfluid.ltp.view.skins
          §§push(11711154);
          if(_loc2_)
          {
-            §§push(§§pop() * 28 + 1 - 96 + 1 - 1 + 74);
+            §§push((§§pop() + 1) * 117 - 1);
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -89,7 +92,7 @@ package com.enfluid.ltp.view.skins
          §§push(12303291);
          if(_loc2_)
          {
-            §§push(-§§pop() * 27 + 54);
+            §§push(§§pop() - 4 - 70 - 38 + 86 + 1);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -99,9 +102,9 @@ package com.enfluid.ltp.view.skins
          §§push("color");
          §§push("value");
          §§push(9145227);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(((-§§pop() - 76) * 85 + 1 + 58) * 85);
+            §§push((-(-(§§pop() - 2) + 1 - 25) - 1) * 61);
          }
          §§pop().states = null;
       }
@@ -134,42 +137,42 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() - 66) * 17 * 15);
+            §§push(-(-§§pop() + 1 + 21 - 0));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((-§§pop() + 80 + 1 + 1) * 11));
+            §§push((§§pop() + 4) * 36 - 11);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 8) - 94 + 1);
+            §§push(--§§pop() - 61 - 61 - 115 - 2 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 116) + 71);
+            §§push((-(§§pop() - 92) + 88) * 101);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(14);
          if(_loc2_)
          {
-            §§push(-(--(§§pop() - 70) * 3) + 93);
+            §§push((§§pop() - 106 + 1) * 9 + 70 - 68);
          }
          §§pop().minWidth = §§pop();
          §§push(_loc1_);
          §§push(6);
          if(_loc2_)
          {
-            §§push((§§pop() - 32 + 43 - 50) * 102);
+            §§push(-(-(§§pop() - 1 + 1) + 52) + 80);
          }
          §§pop().minHeight = §§pop();
          _loc1_.stroke = this._SlimHScrollBarThumbSkin_SolidColorStroke1_c();
@@ -183,16 +186,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColorStroke = new SolidColorStroke();
          §§push(_loc1_);
          §§push(6052956);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() - 92 + 44 + 1 + 76 + 30 - 1);
+            §§push((§§pop() + 1) * 73 - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 1 - 57) * 111 - 1 + 1);
+            §§push(§§pop() - 112 + 1 + 25);
          }
          §§pop().weight = §§pop();
          return _loc1_;
@@ -203,9 +206,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 74) - 1);
+            §§push(§§pop() - 1 + 1 - 1 + 88 + 1);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -216,30 +219,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 59 + 1 + 12 + 1 - 46);
+            §§push((§§pop() + 52) * 105 - 6);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 23 + 62 + 33));
+            §§push(--(§§pop() - 99 - 1 + 1 - 1) * 118);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 13 + 1 + 101);
+            §§push(-(§§pop() - 1 + 1 + 1 + 1 - 10) + 94);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push((--§§pop() - 3) * 96 - 1);
+            §§push((§§pop() * 36 + 113 + 33) * 77 - 1 - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._SlimHScrollBarThumbSkin_LinearGradient1_c();
@@ -254,7 +257,7 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 52 * 28 * 35 * 24));
+            §§push(-((§§pop() + 1 + 54) * 85 + 42 + 57));
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._SlimHScrollBarThumbSkin_GradientEntry1_i(),this._SlimHScrollBarThumbSkin_GradientEntry2_i()];
@@ -268,7 +271,7 @@ package com.enfluid.ltp.view.skins
          §§push(16448250);
          if(_loc3_)
          {
-            §§push((§§pop() - 30 + 1 - 1) * 4);
+            §§push((-§§pop() + 1 - 18 - 86) * 31 + 1);
          }
          §§pop().color = §§pop();
          this._SlimHScrollBarThumbSkin_GradientEntry1 = _loc1_;
@@ -283,7 +286,7 @@ package com.enfluid.ltp.view.skins
          §§push(15790320);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() * 105) + 91) + 24 - 1);
+            §§push(§§pop() + 26 - 1 - 1 + 1 + 5);
          }
          §§pop().color = §§pop();
          this._SlimHScrollBarThumbSkin_GradientEntry2 = _loc1_;
@@ -296,30 +299,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 38 + 101 + 1 + 1));
+            §§push(-(-(§§pop() - 1) * 106 + 41 + 73 + 1));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push((-(§§pop() * 83 + 1) + 1) * 95 + 58 - 1);
+            §§push((-(-§§pop() - 74) * 101 - 91 + 1) * 68);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 - 108 + 1) * 89 - 1) * 27);
+            §§push((§§pop() - 104) * 5 - 28 - 1 + 1 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(6);
          if(_loc2_)
          {
-            §§push((§§pop() - 1) * 53 - 16);
+            §§push(-(§§pop() - 20 + 1 + 61 + 1 - 33));
          }
          §§pop().height = §§pop();
          _loc1_.fill = this._SlimHScrollBarThumbSkin_SolidColor2_i();
@@ -334,7 +337,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(§§pop() - 117 + 1 + 1);
+            §§push(---(§§pop() * 41) + 10);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -348,30 +351,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((-§§pop() - 3) * 2 + 1 + 109) * 63);
+            §§push(-(§§pop() + 61 + 1) * 17);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 80 - 1 + 1) * 102 + 1);
+            §§push(-(§§pop() * 30) * 80);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 107 + 42 + 1);
+            §§push((§§pop() + 47 - 1 + 1) * 58 * 4 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 115) + 12 - 66);
+            §§push(§§pop() - 98 - 76 - 114 - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._SlimHScrollBarThumbSkin_LinearGradientStroke1_c();
@@ -386,14 +389,14 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 38) - 73) * 95);
+            §§push(-(-(§§pop() - 115) + 44) * 105);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() + 72 - 1) * 80 + 1);
+            §§push(-§§pop() * 67 + 1);
          }
          §§pop().weight = §§pop();
          _loc1_.entries = [this._SlimHScrollBarThumbSkin_GradientEntry3_i(),this._SlimHScrollBarThumbSkin_GradientEntry4_i()];
@@ -405,16 +408,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 62 + 77 - 44 - 1 + 1 + 1);
+            §§push(-(§§pop() * 75 + 1 + 6 + 1 - 15));
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 1 + 1 - 1) * 65 + 1 + 1);
+            §§push(--(§§pop() - 48 - 1) - 45 - 83 + 119);
          }
          §§pop().alpha = §§pop();
          this._SlimHScrollBarThumbSkin_GradientEntry3 = _loc1_;
@@ -429,7 +432,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 105 - 1) + 2);
+            §§push(-(§§pop() - 1 - 1 + 0 - 90 - 92 - 1));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.22;
@@ -445,28 +448,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1 + 117 - 115 + 1 + 1 - 1));
+            §§push(-(§§pop() + 61) * 71);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 + 23 - 108);
+            §§push(-(§§pop() - 81 - 1));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 104 + 1 - 100 - 1) + 1);
+            §§push(-(§§pop() - 51 - 49 + 1) * 10);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() + 16 + 1 - 1 + 1);
+            §§push(---(-§§pop() * 73) * 74 * 95);
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._SlimHScrollBarThumbSkin_SolidColor3_c();
@@ -481,7 +484,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 + 41);
+            §§push(-(§§pop() + 1) + 1 - 98 + 1 + 1 + 95);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;
@@ -495,28 +498,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 69) * 84 * 101);
+            §§push(-((§§pop() * 26 + 101 + 82 - 83) * 44));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 87 + 1 + 7) * 96);
+            §§push(§§pop() + 1 - 1 - 1 + 1 + 1 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() * 31 - 1));
+            §§push(-(§§pop() + 1) * 31 - 1 + 112 + 116 - 100);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() - 14 + 0 + 1 - 1 + 12);
+            §§push(-(§§pop() + 27 - 112 - 1 - 76) + 1 - 54);
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._SlimHScrollBarThumbSkin_SolidColor4_c();
@@ -531,7 +534,7 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(§§pop() + 70) + 1 + 1) * 77);
+            §§push(--((§§pop() + 1 + 82 + 117) * 1 - 58));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;
@@ -543,30 +546,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1) + 1 - 1 + 77);
+            §§push(§§pop() + 1 - 85 + 4 - 1 - 39);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 106) - 106 + 95 + 1);
+            §§push((§§pop() + 1 - 64 + 1) * 16 + 49 + 1 + 47);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) * 14);
+            §§push(-(-((§§pop() - 59) * 10 + 1) + 28) + 7);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 82 + 86 - 1);
+            §§push(-(§§pop() * 92 + 105 + 1) + 22 - 1 - 71);
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._SlimHScrollBarThumbSkin_SolidColor5_c();
@@ -579,9 +582,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 25) - 1);
+            §§push(-(--(§§pop() * 9) + 110) + 81 - 66);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;

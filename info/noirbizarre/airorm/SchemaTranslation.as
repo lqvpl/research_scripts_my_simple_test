@@ -1,21 +1,23 @@
 package info.noirbizarre.airorm
 {
-   import system.Reflection;
-   import system.eden;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
+   import spark.components.Label;
+   import mx.binding.BindingManager;
+   import mx.states.Transition;
    import info.noirbizarre.airorm.utils.Inflector;
+   import info.noirbizarre.airorm.utils.Reflection;
    import flash.utils.getQualifiedClassName;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.util.Util;
-   import com.enfluid.ltp.controller.keywordresearch.keywordplanner.SubmitAndScrapeKeywordPlannerCommand;
+   import com.enfluid.ltp.view.components.ProxiesGridColumn;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.model.DataModel;
-   import com.enfluid.ltp.model.ViewModel;
    import mx.core.mx_internal;
    import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.KeywordColumnRenderer;
-   import flash.utils.ByteArray;
+   import com.enfluid.ltp.view.dataandfilters.target;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import spark.layouts.VerticalLayout;
+   import mx.controls.HRule;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.components.Group;
    
    use namespace mx_internal;
    
@@ -40,7 +42,7 @@ package info.noirbizarre.airorm
          }
          if(param1 is Class)
          {
-            return Inflector.pluralize(info.noirbizarre.airorm.utils.Reflection.getShortClassName(param1));
+            return Inflector.pluralize(Reflection.getShortClassName(param1));
          }
          throw new AOError("Unhandled object type " + getQualifiedClassName(param1));
       }
@@ -58,7 +60,7 @@ package info.noirbizarre.airorm
          }
          if(param1 is String)
          {
-            return Inflector.lowerFirst(info.noirbizarre.airorm.utils.Reflection.getShortClassName(param1 as String)) + "_id";
+            return Inflector.lowerFirst(Reflection.getShortClassName(param1 as String)) + "_id";
          }
          if(param1 is ActiveRecord)
          {
@@ -66,7 +68,7 @@ package info.noirbizarre.airorm
          }
          if(param1 is Class)
          {
-            return Inflector.lowerFirst(info.noirbizarre.airorm.utils.Reflection.getShortClassName(param1)) + "_id";
+            return Inflector.lowerFirst(Reflection.getShortClassName(param1)) + "_id";
          }
          throw new AOError("Unhandled object type " + getQualifiedClassName(param1));
       }
@@ -85,7 +87,7 @@ package info.noirbizarre.airorm
          }
          else if(param1 is Class)
          {
-            _loc5_ = info.noirbizarre.airorm.utils.Reflection.getShortClassName(param1) + "_" + param2;
+            _loc5_ = Reflection.getShortClassName(param1) + "_" + param2;
          }
          else
          {
@@ -101,7 +103,7 @@ package info.noirbizarre.airorm
          }
          else if(param3 is Class)
          {
-            _loc6_ = info.noirbizarre.airorm.utils.Reflection.getShortClassName(param3) + "_" + param4;
+            _loc6_ = Reflection.getShortClassName(param3) + "_" + param4;
          }
          else
          {
@@ -119,18 +121,18 @@ package info.noirbizarre.airorm
       {
          var member:XML = null;
          var obj:Object = param1;
-         var members:XMLList = info.noirbizarre.airorm.utils.Reflection.getByMetadata(obj,"Timestamp");
+         var members:XMLList = Reflection.getByMetadata(obj,"Timestamp");
          §§push(0);
-         if(_loc15_)
+         if(_loc16_)
          {
-            §§push(§§pop() * 76 - 1 + 1 - 1 - 1);
+            §§push(-(--((§§pop() + 52) * 117) - 16 - 0));
          }
          for each(member in members)
          {
             §§push(0);
-            if(_loc16_)
+            if(_loc15_)
             {
-               §§push((§§pop() * 89 + 34) * 67);
+               §§push(-§§pop() + 92 - 1 + 9);
             }
             if(member.metadata.(@name == "Timestamp" && elements("arg").(@value == "creation").length()).length())
             {
@@ -144,18 +146,18 @@ package info.noirbizarre.airorm
       {
          var member:XML = null;
          var obj:Object = param1;
-         var members:XMLList = info.noirbizarre.airorm.utils.Reflection.getByMetadata(obj,"Timestamp");
+         var members:XMLList = Reflection.getByMetadata(obj,"Timestamp");
          §§push(0);
          if(_loc16_)
          {
-            §§push(-(§§pop() + 1 - 38 - 86) * 8 + 11);
+            §§push((§§pop() * 114 - 1 + 1 + 1) * 74);
          }
          for each(member in members)
          {
             §§push(0);
             if(_loc15_)
             {
-               §§push(--(§§pop() + 85 + 1));
+               §§push((-(-§§pop() + 1 + 1 - 1) - 1) * 96);
             }
             if(member.metadata.(@name == "Timestamp" && elements("arg").(@value == "modification").length()).length())
             {

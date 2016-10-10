@@ -149,6 +149,7 @@ package spark.components
          }
       }
       
+      [ArrayElementType("mx.core.IVisualElement")]
       public function set mxmlContent(param1:Array) : void
       {
          if(this.contentGroup)
@@ -174,6 +175,7 @@ package spark.components
          this.mxmlContent = param1;
       }
       
+      [ArrayElementType("mx.core.IVisualElement")]
       public function set mxmlContentFactory(param1:IDeferredInstance) : void
       {
          if(param1 == this._mxmlContentFactory)

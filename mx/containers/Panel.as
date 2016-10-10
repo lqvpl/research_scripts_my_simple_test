@@ -165,6 +165,7 @@ package mx.containers
          return _closeButtonStyleFilters;
       }
       
+      [ArrayElementType("mx.containers.utilityClasses.ConstraintColumn")]
       public function get constraintColumns() : Array
       {
          return this._constraintColumns;
@@ -189,6 +190,7 @@ package mx.containers
          }
       }
       
+      [ArrayElementType("mx.containers.utilityClasses.ConstraintRow")]
       public function get constraintRows() : Array
       {
          return this._constraintRows;

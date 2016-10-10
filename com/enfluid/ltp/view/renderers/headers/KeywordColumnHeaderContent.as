@@ -3,6 +3,7 @@ package com.enfluid.ltp.view.renderers.headers
    import com.enfluid.ltp.view.filterviews.FilterView;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import com.enfluid.ltp.view.components.HelpButton;
    import spark.components.Image;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
@@ -10,10 +11,14 @@ package com.enfluid.ltp.view.renderers.headers
    import com.enfluid.ltp.model.ViewModel;
    import flash.events.MouseEvent;
    import spark.events.TextOperationEvent;
+   import com.enfluid.ltp.util.KeywordUtil;
    import com.enfluid.ltp.model.constants.SpecialFilterConstants;
+   import spark.components.Group;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
    import mx.binding.BindingManager;
    import mx.binding.Binding;
+   import assets.TextAssets;
    import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
@@ -26,6 +31,8 @@ package com.enfluid.ltp.view.renderers.headers
       
       private static var _watcherSetupUtil:IWatcherSetupUtil2;
        
+      
+      public var _KeywordColumnHeaderContent_HelpButton1:HelpButton;
       
       private var _2046441454favoriteButton:Image;
       
@@ -80,16 +87,16 @@ package com.enfluid.ltp.view.renderers.headers
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-(§§pop() - 1) + 55) * 35 * 8 * 35 * 107);
+            §§push(-§§pop() * 11 + 4 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(5);
          if(_loc3_)
          {
-            §§push((§§pop() * 1 - 18 + 45 + 1) * 36 + 99);
+            §§push(§§pop() - 105 + 94 + 1);
          }
          §§pop().paddingRight = §§pop();
          this.verticalAlign = "baseline";
@@ -97,15 +104,15 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(2);
          if(_loc3_)
          {
-            §§push(§§pop() - 97 - 106 - 1);
+            §§push(§§pop() * 48 - 1 + 111);
          }
          §§pop().gap = §§pop();
-         this.mxmlContent = [this._KeywordColumnHeaderContent_TextInput1_i(),this._KeywordColumnHeaderContent_Image1_i(),this._KeywordColumnHeaderContent_Image2_i(),this._KeywordColumnHeaderContent_Image3_i()];
+         this.mxmlContent = [this._KeywordColumnHeaderContent_Group1_c(),this._KeywordColumnHeaderContent_Image1_i(),this._KeywordColumnHeaderContent_Image2_i(),this._KeywordColumnHeaderContent_Image3_i()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-§§pop() * 108 * 63 - 11);
+            §§push((-§§pop() - 94) * 31 - 30);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -143,9 +150,72 @@ package com.enfluid.ltp.view.renderers.headers
       
       protected final function filterTextInputChangeHandler(param1:TextOperationEvent) : void
       {
+         var _loc2_:Array = null;
+         var _loc3_:String = null;
          if(this.model.selectedKeywordCollection.project)
          {
             this.model.selectedKeywordCollection.project.keywordFilterText = this.filterTextInput.text;
+            this.model.selectedKeywordCollection.project.matchStrings = new Array();
+            this.model.selectedKeywordCollection.project.unMatchStrings = new Array();
+            §§push(this.filterTextInput.text.length);
+            §§push(0);
+            if(_loc7_)
+            {
+               §§push(-(-§§pop() - 58 + 71 - 67));
+            }
+            if(§§pop() > §§pop())
+            {
+               _loc2_ = this.filterTextInput.text.split(",");
+               §§push(0);
+               if(_loc6_)
+               {
+                  §§push(-(§§pop() - 1 + 1));
+               }
+               for each(_loc3_ in _loc2_)
+               {
+                  _loc3_ = KeywordUtil.stripBeginningAndEndingSpaces(_loc3_);
+                  _loc3_ = _loc3_.toLowerCase();
+                  §§push(_loc3_);
+                  §§push(0);
+                  if(_loc6_)
+                  {
+                     §§push(-(-§§pop() - 101 + 1 - 9 + 1));
+                  }
+                  if(§§pop().charAt(§§pop()) == "-")
+                  {
+                     §§push(_loc3_.length);
+                     §§push(1);
+                     if(_loc6_)
+                     {
+                        §§push(-(-§§pop() + 1 + 1 - 1 + 99));
+                     }
+                     if(§§pop() > §§pop())
+                     {
+                        §§push(_loc3_);
+                        §§push(1);
+                        if(_loc7_)
+                        {
+                           §§push(§§pop() + 1 + 105 - 1 + 44);
+                        }
+                        _loc3_ = §§pop().substr(§§pop(),_loc3_.length - 1);
+                        this.model.selectedKeywordCollection.project.unMatchStrings.push(_loc3_);
+                     }
+                  }
+                  else
+                  {
+                     §§push(_loc3_.length);
+                     §§push(0);
+                     if(_loc6_)
+                     {
+                        §§push(-(--§§pop() + 1 - 71) * 18 + 112);
+                     }
+                     if(§§pop() > §§pop())
+                     {
+                        this.model.selectedKeywordCollection.project.matchStrings.push(_loc3_);
+                     }
+                  }
+               }
+            }
          }
          refreshData();
       }
@@ -163,6 +233,24 @@ package com.enfluid.ltp.view.renderers.headers
          this.model.selectedKeywordCollection.refresh();
       }
       
+      private final function _KeywordColumnHeaderContent_Group1_c() : Group
+      {
+         var _loc1_:Group = new Group();
+         §§push(_loc1_);
+         §§push(100);
+         if(_loc2_)
+         {
+            §§push(§§pop() - 1 - 64 + 110 + 1 + 95);
+         }
+         §§pop().percentWidth = §§pop();
+         _loc1_.mxmlContent = [this._KeywordColumnHeaderContent_TextInput1_i(),this._KeywordColumnHeaderContent_HelpButton1_i()];
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         return _loc1_;
+      }
+      
       private final function _KeywordColumnHeaderContent_TextInput1_i() : TextInput
       {
          var _loc1_:TextInput = new TextInput();
@@ -170,23 +258,30 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 29 + 1 + 1 + 1 - 1 - 1);
+            §§push(-((§§pop() * 68 * 8 - 48) * 29));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(17);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 27 - 1 - 1));
+            §§push(-(-(-§§pop() - 1) - 1) - 1);
          }
          §§pop().height = §§pop();
+         §§push(_loc1_);
+         §§push(0);
+         if(_loc3_)
+         {
+            §§push(-((§§pop() * 24 + 33 - 1) * 1 * 30));
+         }
+         §§pop().left = §§pop();
          _loc1_.prompt = "Filter by Keyword";
          §§push(_loc1_);
          §§push("paddingTop");
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 35 + 1) + 88 - 6);
+            §§push(-(-(§§pop() + 1) + 1 + 71 - 1) * 7);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",FlatTextInputSkinSolo);
@@ -210,6 +305,55 @@ package com.enfluid.ltp.view.renderers.headers
       public final function __filterTextInput_click(param1:MouseEvent) : void
       {
          this.filterTextInputClickHandler(param1);
+      }
+      
+      private final function _KeywordColumnHeaderContent_HelpButton1_i() : HelpButton
+      {
+         var _loc1_:HelpButton = new HelpButton();
+         §§push(_loc1_);
+         §§push(11);
+         if(_loc3_)
+         {
+            §§push((§§pop() - 1 + 1 + 6) * 51);
+         }
+         §§pop().width = §§pop();
+         §§push(_loc1_);
+         §§push(11);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() * 40 - 1 - 89 + 1) * 17 - 1);
+         }
+         §§pop().height = §§pop();
+         §§push(_loc1_);
+         §§push(3);
+         if(_loc2_)
+         {
+            §§push(-((§§pop() + 81 - 67) * 39) - 105 + 1);
+         }
+         §§pop().right = §§pop();
+         §§push(_loc1_);
+         §§push(3);
+         if(_loc3_)
+         {
+            §§push(§§pop() + 4 - 7 - 1 - 1);
+         }
+         §§pop().top = §§pop();
+         §§push(_loc1_);
+         §§push("color");
+         §§push(12303291);
+         if(_loc3_)
+         {
+            §§push(-(--§§pop() - 105 - 1 - 12 - 115));
+         }
+         §§pop().setStyle(§§pop(),§§pop());
+         _loc1_.id = "_KeywordColumnHeaderContent_HelpButton1";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this._KeywordColumnHeaderContent_HelpButton1 = _loc1_;
+         BindingManager.executeBindings(this,"_KeywordColumnHeaderContent_HelpButton1",this._KeywordColumnHeaderContent_HelpButton1);
+         return _loc1_;
       }
       
       private final function _KeywordColumnHeaderContent_Image1_i() : Image
@@ -285,47 +429,69 @@ package com.enfluid.ltp.view.renderers.headers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 79) + 6 - 53);
+            §§push(-(-(((§§pop() - 1) * 78 + 23) * 69) + 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_KEYWORDS_FILTER_TITLE;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordColumnHeaderContent_HelpButton1.helpTitle");
+         §§push(result);
+         §§push(1);
+         if(_loc2_)
+         {
+            §§push((§§pop() - 1 - 1 + 119) * 94 + 1 - 20);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = TextAssets.HELP_KEYWORDS_FILTER_CONTENT;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordColumnHeaderContent_HelpButton1.helpContent");
+         §§push(result);
+         §§push(2);
+         if(_loc3_)
+         {
+            §§push(§§pop() - 88 + 76 + 1 - 38 + 47 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
             return model.selectedKeywordCollection.project.specialFilter == SpecialFilterConstants.TRASH?AssetsLibrary.TRASH_ICON_YELLOW:AssetsLibrary.TRASH_GRAY_ICON;
          },null,"trashButton.source");
          §§push(result);
-         §§push(1);
+         §§push(3);
          if(_loc3_)
          {
-            §§push(-§§pop() + 1 - 81 + 1 + 106 - 1);
+            §§push(-(((§§pop() - 99 + 37) * 57 - 18) * 50));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return !viewModel.selectedKeywordsTab.isFavoritesTab && !viewModel.selectedKeywordsTab.isTrashTab;
          },null,"trashButton.visible");
          §§push(result);
-         §§push(2);
-         if(_loc3_)
+         §§push(4);
+         if(_loc2_)
          {
-            §§push(((§§pop() - 1) * 46 + 53 - 1 - 109) * 101 - 63);
+            §§push(-((§§pop() + 1 + 94) * 57 - 1) * 110 + 40);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
             return model.selectedKeywordCollection.project.specialFilter == SpecialFilterConstants.FAVORITES?AssetsLibrary.YELLOW_STAR:AssetsLibrary.GREY_STAR;
          },null,"favoriteButton.source");
          §§push(result);
-         §§push(3);
-         if(_loc3_)
+         §§push(5);
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 69) * 65 + 1 - 112 + 52 + 1);
+            §§push(§§pop() * 35 - 32 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
             return !viewModel.selectedKeywordsTab.isFavoritesTab && !viewModel.selectedKeywordsTab.isTrashTab;
          },null,"favoriteButton.visible");
          §§push(result);
-         §§push(4);
-         if(_loc3_)
+         §§push(6);
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 - 1 - 1 + 40 - 67 + 4);
+            §§push((§§pop() + 109) * 32 * 92 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {

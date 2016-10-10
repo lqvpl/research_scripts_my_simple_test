@@ -33,9 +33,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
             §§push();
             §§push(done);
             §§push(5000);
-            if(_loc5_)
+            if(_loc4_)
             {
-               §§push(-(-(§§pop() - 1 - 51) - 57) * 19 + 1);
+               §§push(-(-§§pop() - 1));
             }
             §§pop().setTimeout(§§pop(),§§pop());
          }

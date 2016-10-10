@@ -7,6 +7,7 @@ package com.enfluid.ltp.view.skins
    import spark.components.Label;
    import spark.components.RichEditableText;
    import mx.core.IFlexModuleFactory;
+   import flash.events.Event;
    import mx.binding.BindingManager;
    import spark.components.TextInput;
    import mx.events.PropertyChangeEvent;
@@ -143,7 +144,7 @@ package com.enfluid.ltp.view.skins
             §§push(1);
             if(_loc5_)
             {
-               §§push((§§pop() - 95 - 1 + 1 + 53 - 1) * 9 * 119);
+               §§push((-§§pop() - 57 + 117) * 7);
             }
             §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             §§push(this.textDisplay);
@@ -151,7 +152,7 @@ package com.enfluid.ltp.view.skins
             §§push(1);
             if(_loc5_)
             {
-               §§push(§§pop() - 1 + 101 - 1 - 49);
+               §§push(-(-(§§pop() * 118 + 54) * 98 - 1));
             }
             §§pop().left = §§pop().right = §§pop();
             if(this.promptDisplay)
@@ -161,21 +162,21 @@ package com.enfluid.ltp.view.skins
                §§push(2);
                if(_loc5_)
                {
-                  §§push(-(§§pop() + 1 - 62) - 1 - 97);
+                  §§push(-§§pop() * 67 + 72);
                }
                §§push(§§pop() - §§pop());
                §§push(param2);
                §§push(2);
-               if(_loc6_)
+               if(_loc5_)
                {
-                  §§push(§§pop() + 115 - 101 + 1);
+                  §§push(-(§§pop() - 1 - 1 - 1) - 119 + 35);
                }
                §§pop().setLayoutBoundsSize(§§pop(),§§pop() - §§pop());
                §§push(this.promptDisplay);
                §§push(1);
-               if(_loc6_)
+               if(_loc5_)
                {
-                  §§push(-(--(-(§§pop() - 1) * 73) * 22));
+                  §§push(-((§§pop() + 58) * 40 - 1 + 1) - 59 - 1);
                }
                §§pop().setLayoutBoundsPosition(§§pop(),§§pop());
             }
@@ -190,7 +191,7 @@ package com.enfluid.ltp.view.skins
             §§push(0);
             if(_loc5_)
             {
-               §§push(-(§§pop() - 15 + 1 + 1 + 55) * 1);
+               §§push((-(§§pop() - 1) * 103 * 21 + 1) * 63 - 78);
             }
             §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             §§push(this.textDisplay);
@@ -198,7 +199,7 @@ package com.enfluid.ltp.view.skins
             §§push(0);
             if(_loc5_)
             {
-               §§push((§§pop() * 116 + 88 - 39 - 48) * 56);
+               §§push(§§pop() - 1 - 95 + 1 + 94 + 10 - 48 - 1);
             }
             §§pop().left = §§pop().right = §§pop();
             if(this.promptDisplay)
@@ -206,9 +207,9 @@ package com.enfluid.ltp.view.skins
                this.promptDisplay.setLayoutBoundsSize(param1,param2);
                §§push(this.promptDisplay);
                §§push(0);
-               if(_loc5_)
+               if(_loc6_)
                {
-                  §§push(-(-(§§pop() + 13) - 1) * 11 - 19 - 1);
+                  §§push(--(§§pop() - 1 - 28 - 1 - 78 + 103));
                }
                §§pop().setLayoutBoundsPosition(§§pop(),§§pop());
             }
@@ -286,30 +287,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 73 + 1 - 1);
+            §§push(-(§§pop() - 112 + 77));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 88 - 1 + 5) + 1);
+            §§push(-(§§pop() - 0 - 8 + 110 - 1) * 105);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 101 - 1 + 1);
+            §§push(§§pop() - 1 + 47 + 1 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 102 - 1 - 46 - 1) * 55 + 0);
+            §§push(§§pop() * 24 * 40 * 14);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._LTPComboBoxTextInputSkin_SolidColor1_i();
@@ -326,7 +327,7 @@ package com.enfluid.ltp.view.skins
          §§push(16777215);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 + 1) * 1 - 75 - 1);
+            §§push(-(-§§pop() - 5 - 53) - 1 - 1 - 61);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.85;
@@ -340,30 +341,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 86 - 85 + 58);
+            §§push(§§pop() - 1 - 67 - 111);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1 - 47) + 111 + 1);
+            §§push(-(§§pop() + 1) - 116 + 1 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 42 + 1 - 66 - 1 - 1);
+            §§push(§§pop() * 105 + 1 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 1);
+            §§push(-(§§pop() - 44) - 48 - 96);
          }
          §§pop().top = §§pop();
          _loc1_.fill = this._LTPComboBoxTextInputSkin_SolidColor2_c();
@@ -378,9 +379,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() + 1 - 4) - 1) + 1);
+            §§push(-(§§pop() - 1 - 1) * 102 + 1 - 0 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.12;
@@ -394,15 +395,15 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 22) * 15 + 1 - 17 + 1);
+            §§push(§§pop() - 1 - 1 + 1 - 1 + 1 + 47);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.lineBreak = "explicit";
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 66 - 63 - 117 - 1 - 1);
+            §§push(((-(§§pop() - 1) + 56 + 31) * 45 - 1) * 38);
          }
          §§pop().widthInChars = §§pop();
          _loc1_.id = "textDisplay";
@@ -423,7 +424,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc2_)
          {
-            §§push(((§§pop() - 49 + 92) * 48 - 55 - 1) * 21);
+            §§push(-§§pop() - 1 - 34 - 4 + 6 + 79 - 1);
          }
          §§pop().maxDisplayedLines = §§pop();
          _loc1_.mouseEnabled = false;

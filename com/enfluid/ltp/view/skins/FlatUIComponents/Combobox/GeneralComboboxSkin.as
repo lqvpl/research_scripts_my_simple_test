@@ -100,7 +100,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(1);
          if(_loc2_)
          {
-            §§push(--§§pop() + 1 - 39 + 76);
+            §§push(-(--(§§pop() + 1 + 1 + 1) + 94));
          }
          §§pop().states = null;
       }
@@ -188,7 +188,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
                §§push(0);
                if(_loc4_)
                {
-                  §§push(-((§§pop() + 1 + 1) * 68));
+                  §§push(-(-§§pop() - 117) + 1 + 1 - 1);
                }
                §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             }
@@ -198,7 +198,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
                §§push(0);
                if(_loc5_)
                {
-                  §§push((§§pop() + 1 - 91 + 39 - 41 + 1 + 102) * 7);
+                  §§push(-(§§pop() + 1) * 55 - 1 - 82);
                }
                §§pop().minViewportInset = §§pop();
             }
@@ -212,9 +212,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
                §§push(this.background);
                §§push(this.background);
                §§push(1);
-               if(_loc4_)
+               if(_loc5_)
                {
-                  §§push(§§pop() - 86 - 1 - 1);
+                  §§push(§§pop() * 25 * 30 * 0);
                }
                §§pop().left = §§pop().top = §§pop().right = §§pop().bottom = §§pop();
             }
@@ -224,7 +224,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
                §§push(1);
                if(_loc5_)
                {
-                  §§push(§§pop() + 1 + 1 - 45);
+                  §§push((§§pop() - 1) * 90 - 1 + 1);
                }
                §§pop().minViewportInset = §§pop();
             }
@@ -241,30 +241,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:PopUpAnchor = new PopUpAnchor();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 11) * 7 + 36 + 49 - 60 - 1 + 1);
+            §§push((§§pop() - 11 - 1 - 1 + 1) * 114 - 33 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 17 + 7 - 52) * 119 + 64 + 97);
+            §§push(-(§§pop() + 1) - 1 - 80 - 108);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 + 94);
+            §§push(§§pop() - 11 + 80 + 1 + 91 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 - 1 - 115);
+            §§push(-((§§pop() + 1 - 1) * 35));
          }
          §§pop().bottom = §§pop();
          _loc1_.popUpPosition = "below";
@@ -307,49 +307,49 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 1 + 1) + 1);
+            §§push((§§pop() + 28) * 17 - 1 + 20 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 81) * 105 + 1 + 22 - 14 - 50);
+            §§push(-(§§pop() + 110) + 6 - 1 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 89 + 72 - 95 + 48));
+            §§push((§§pop() + 79) * 62 + 78);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) * 51);
+            §§push(-(§§pop() * 82) + 1 + 51 + 82);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() - 59 - 1 - 72 + 1);
+            §§push(§§pop() + 9 - 119 - 1 - 1 - 51);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 1 - 1 - 1);
+            §§push(§§pop() - 1 + 1 - 91);
          }
          §§pop().blurX = §§pop();
          §§push(_loc1_);
          §§push(20);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 1 + 33) * 8 + 31));
+            §§push(-(§§pop() - 110) - 51 - 57 + 78);
          }
          §§pop().blurY = §§pop();
          _loc1_.alpha = 0.45;
@@ -357,14 +357,14 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(7);
          if(_loc2_)
          {
-            §§push(-§§pop() + 116 + 1);
+            §§push(§§pop() * 4 - 1 + 40);
          }
          §§pop().distance = §§pop();
          §§push(_loc1_);
          §§push(90);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 43 - 1 + 92 + 8 + 106 - 1 - 79);
+            §§push(-(§§pop() + 1 + 8));
          }
          §§pop().angle = §§pop();
          _loc1_.id = "dropShadow";
@@ -382,30 +382,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 106 + 33 - 1) + 1 + 117 - 48);
+            §§push(-§§pop() - 39 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 1) * 116 + 1);
+            §§push(-(§§pop() - 1) * 39 - 32 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(((§§pop() + 1) * 40 + 1) * 61 + 1);
+            §§push((-§§pop() - 1 + 1) * 82 + 102 + 1 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 1 + 1 - 103 + 1);
+            §§push(§§pop() - 62 - 1 - 15);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._GeneralComboboxSkin_SolidColor1_i();
@@ -422,7 +422,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(16771899);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 26 + 1 - 79 + 1));
+            §§push((-(§§pop() + 1 - 1) + 1) * 46);
          }
          §§pop().color = §§pop();
          this.bgFill = _loc1_;
@@ -437,28 +437,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 90 - 98 - 1) * 62 - 7 - 47);
+            §§push(-(§§pop() + 1 - 1) * 87);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 29 + 1) * 40 - 1 - 50 + 1);
+            §§push((§§pop() * 5 - 1) * 85);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 29 - 1) - 1);
+            §§push(-(§§pop() + 90 + 1 + 1) - 42);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 105 + 64);
+            §§push((§§pop() + 1 + 109 - 75) * 53 + 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.hasFocusableChildren = false;
@@ -466,7 +466,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() + 88 + 1 + 1 + 1);
+            §§push(§§pop() * 38 - 1 - 1);
          }
          §§pop().minViewportInset = §§pop();
          _loc1_.viewport = this._GeneralComboboxSkin_DataGroup1_i();
@@ -508,23 +508,23 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          _loc1_.horizontalAlign = "contentJustify";
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 0 + 1 - 93 + 1);
+            §§push(§§pop() * 58 * 46 + 1 - 1 - 1);
          }
          §§pop().gap = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() - 1) * 16 - 118 + 2 + 15 - 1);
+            §§push((-(§§pop() + 1 + 45) + 1 - 40) * 55);
          }
          §§pop().requestedMinRowCount = §§pop();
          §§push(_loc1_);
          §§push(12);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 115 + 1 - 59) * 46 - 1);
+            §§push((§§pop() - 37 + 1) * 37 + 8);
          }
          §§pop().requestedMaxRowCount = §§pop();
          return _loc1_;
@@ -535,37 +535,37 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(33);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 98) - 1) + 62 - 1 + 1);
+            §§push((§§pop() - 1) * 92 - 1 + 1 + 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(32);
          if(_loc2_)
          {
-            §§push(--((-§§pop() - 98) * 89));
+            §§push(§§pop() + 1 + 1 - 60 + 80 - 1 - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-§§pop() * 100 - 4) * 96);
+            §§push(§§pop() - 1 + 1 - 86);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((((§§pop() - 49) * 24 - 108) * 24 - 1 - 1) * 5);
+            §§push(§§pop() * 61 - 1 + 43);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 1) * 59 - 1);
+            §§push(-((§§pop() - 50) * 0));
          }
          §§pop().bottom = §§pop();
          _loc1_.focusEnabled = false;
@@ -586,30 +586,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.Combobox
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() * 73 * 66));
+            §§push((--(§§pop() * 103) + 4 + 1) * 42);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 1 + 1) + 119 + 1));
+            §§push((§§pop() + 79) * 73 + 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) - 1);
+            §§push((-((§§pop() + 100) * 1) * 109 - 110 + 1) * 7);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 102 + 98 + 81 + 14 - 109);
+            §§push(-(-§§pop() * 27) + 1 + 81 + 1 - 92);
          }
          §§pop().bottom = §§pop();
          _loc1_.setStyle("skinClass",FlatTextInputSkin);

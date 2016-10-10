@@ -5,14 +5,11 @@ package com.enfluid.ltp.util
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.model.vo.AllFavoritesProjectVO;
-   import com.enfluid.ltp.model.vo.AllTrashProjectVO;
-   import spark.layouts.VerticalLayout;
-   import com.enfluid.ltp.model.constants.Values;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import mx.graphics.SolidColor;
    import mx.binding.BindingManager;
-   import mx.graphics.LinearGradient;
-   import spark.effects.Resize;
-   import mx.controls.Spacer;
+   import com.enfluid.ltp.model.vo.AllTrashProjectVO;
+   import com.enfluid.ltp.model.constants.Values;
+   import mx.effects.Fade;
    import flash.utils.ByteArray;
    
    public final class KeywordFetcherUtil
@@ -36,7 +33,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc9_)
          {
-            §§push(-(§§pop() + 1) - 1 + 41 - 1 - 1);
+            §§push(§§pop() + 1 + 40 + 46 - 51 - 95);
          }
          for each(_loc4_ in _loc3_)
          {
@@ -62,9 +59,9 @@ package com.enfluid.ltp.util
          var _loc3_:AllFavoritesProjectVO = null;
          var _loc1_:ArrayCollection = new ArrayCollection(keyword.findBySQLWithoutParams("SELECT * FROM KeywordVOs WHERE isFavorite = true;"));
          §§push(0);
-         if(_loc6_)
+         if(_loc7_)
          {
-            §§push(-(§§pop() * 82 - 1 + 21 + 1));
+            §§push(-((-((§§pop() * 106 + 1) * 22) + 96) * 44));
          }
          for each(_loc2_ in _loc1_)
          {
@@ -75,7 +72,7 @@ package com.enfluid.ltp.util
          §§push(1);
          if(_loc6_)
          {
-            §§push((-(§§pop() - 90 + 45) + 32 + 1) * 51);
+            §§push(§§pop() * 68 + 65 + 104);
          }
          _loc3_ = §§pop().find(§§pop()) as AllFavoritesProjectVO;
          if(!_loc3_)
@@ -95,7 +92,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc7_)
          {
-            §§push((-((§§pop() + 84) * 2) + 52 - 18 - 11) * 112);
+            §§push(-(§§pop() * 76) + 66);
          }
          for each(_loc2_ in _loc1_)
          {
@@ -106,7 +103,7 @@ package com.enfluid.ltp.util
          §§push(1);
          if(_loc6_)
          {
-            §§push((-(§§pop() + 1) + 12 - 1) * 49);
+            §§push(-(§§pop() - 1) + 118 + 1 - 1);
          }
          _loc3_ = §§pop().find(§§pop()) as AllTrashProjectVO;
          if(!_loc3_)
@@ -124,20 +121,30 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 96 + 1 - 1) * 100));
+            §§push((-(-(§§pop() - 1) * 14) - 83) * 44);
          }
          if(§§pop() < §§pop())
          {
             param1.avgKC = Values.NOT_FETCHED;
+         }
+         §§push(param1.amazonKC);
+         §§push(0);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() + 1 - 1) - 45 - 10 - 1);
+         }
+         if(§§pop() < §§pop())
+         {
+            param1.amazonKC = Values.NOT_FETCHED;
          }
       }
       
       public static function useExistingKeyword(param1:KeywordVO, param2:ArrayCollection) : KeywordVO
       {
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(((§§pop() * 96 - 47 + 1) * 1 + 1 - 1) * 55);
+            §§push(§§pop() * 103 + 71 + 30);
          }
          var _loc4_:* = §§pop();
          var _loc3_:KeywordVO = keywordIDMap[param1.id];
@@ -152,6 +159,7 @@ package com.enfluid.ltp.util
          {
             keywordIDMap[param1.id] = param1;
             resetAvgKC(param1);
+            param1.amazonKC = int(param1.amazonKC) || int(Values.NOT_FETCHED);
          }
          return param1;
       }

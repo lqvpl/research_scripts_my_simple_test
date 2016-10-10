@@ -2,14 +2,14 @@ package com.enfluid.ltp.view.skins
 {
    import spark.primitives.Rect;
    import spark.components.gridClasses.IGridVisualElement;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.common.SavePreferencesCommand;
    import mx.graphics.SolidColorStroke;
    import spark.components.Grid;
-   import com.enfluid.ltp.model.vo.ProjectVO;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.AddProjectCommand;
-   import spark.components.DataGrid;
+   import spark.components.Button;
    import mx.binding.BindingManager;
+   import spark.components.DataGrid;
    import mx.events.PropertyChangeEvent;
-   import flash.events.Event;
    
    public final class KeywordDataGridSkinInnerClass1 extends Rect implements IGridVisualElement
    {
@@ -43,14 +43,14 @@ package com.enfluid.ltp.view.skins
          §§push(92159);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 - 89) * 102);
+            §§push(-(-(§§pop() + 32 + 58) - 1));
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 - 1 - 115);
+            §§push(--((§§pop() * 68 - 19 - 71) * 14));
          }
          §§pop().weight = §§pop();
          this.caretIndicatorFill = _loc1_;

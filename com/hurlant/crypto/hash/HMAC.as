@@ -1,8 +1,6 @@
 package com.hurlant.crypto.hash
 {
-   import flash.utils.setTimeout;
    import flash.utils.ByteArray;
-   import flash.utils.Endian;
    
    public final class HMAC implements IHMAC
    {
@@ -25,7 +23,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 1 - 22) * 87);
+            §§push(§§pop() - 109 + 76 + 119 - 92);
          }
          if(§§pop() != §§pop())
          {
@@ -33,7 +31,7 @@ package com.hurlant.crypto.hash
             §§push(8);
             if(_loc1_)
             {
-               §§push(§§pop() * 108 - 6 - 14);
+               §§push((§§pop() + 47 - 1) * 87);
             }
             return §§pop() / §§pop();
          }
@@ -59,7 +57,7 @@ package com.hurlant.crypto.hash
             §§push(0);
             if(_loc9_)
             {
-               §§push(-(§§pop() * 111 - 40));
+               §§push((§§pop() + 1 - 1 - 81) * 56 + 1 - 1);
             }
             §§pop()[§§pop()] = §§pop();
          }
@@ -68,7 +66,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc9_)
          {
-            §§push(-((§§pop() - 1) * 109 * 107) - 1 - 1 - 18);
+            §§push(---§§pop() + 1 - 1);
          }
          var _loc6_:uint = §§pop();
          while(_loc6_ < _loc3_.length)
@@ -79,7 +77,7 @@ package com.hurlant.crypto.hash
             §§push(54);
             if(_loc9_)
             {
-               §§push(§§pop() + 0 - 1 + 19 - 70 + 8 + 44);
+               §§push((§§pop() + 1) * 111 * 88 - 1 + 104 - 1);
             }
             §§pop()[§§pop()] = §§pop() ^ §§pop();
             §§push(_loc5_);
@@ -88,7 +86,7 @@ package com.hurlant.crypto.hash
             §§push(92);
             if(_loc9_)
             {
-               §§push(-(-(§§pop() + 1) * 21) + 1);
+               §§push((-§§pop() - 86) * 62 + 43 + 1 + 93);
             }
             §§pop()[§§pop()] = §§pop() ^ §§pop();
             _loc6_++;
@@ -103,7 +101,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc9_)
          {
-            §§push(-(--(§§pop() * 25 * 107) * 47));
+            §§push(-(§§pop() - 1) * 50 + 35 - 27 - 1 - 102);
          }
          if(§§pop() > §§pop() && §§pop() < §§pop() * _loc8_.length)
          {
@@ -112,7 +110,7 @@ package com.hurlant.crypto.hash
             §§push(8);
             if(_loc9_)
             {
-               §§push(-(§§pop() - 1 + 90) * 34);
+               §§push(-(§§pop() + 1) - 8);
             }
             §§pop().length = §§pop() / §§pop();
          }
@@ -126,7 +124,7 @@ package com.hurlant.crypto.hash
          §§push(0);
          if(_loc1_)
          {
-            §§push(-(§§pop() + 1) * 83 - 81);
+            §§push(-§§pop() + 112 + 9);
          }
          return §§pop() + (§§pop() > §§pop()?bits + "-":"") + hash.toString();
       }
@@ -136,9 +134,9 @@ package com.hurlant.crypto.hash
          hash = null;
          §§push();
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 107) * 49 + 60));
+            §§push(-(-§§pop() - 1 - 1) - 1 - 1);
          }
          §§pop().bits = §§pop();
       }

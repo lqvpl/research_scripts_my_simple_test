@@ -12,22 +12,28 @@ package com.enfluid.ltp.view
    import spark.components.DataGroup;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import com.enfluid.ltp.controller.keywordresearch.campaigns.AddSeedKeywordsCommand;
    import spark.events.TextOperationEvent;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import spark.layouts.VerticalLayout;
    import mx.states.Transition;
+   import flash.utils.ByteArray;
    import mx.effects.Sequence;
+   import mx.binding.Binding;
+   import assets.TextAssets;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
+   import com.enfluid.ltp.assets.AssetsLibrary;
    import mx.effects.Parallel;
    import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
    import spark.components.VGroup;
    import com.enfluid.ltp.view.skins.FlatTextInputSkin;
-   import mx.events.FlexEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
    import com.enfluid.ltp.view.skins.MinimalFlatButtonSkin;
-   import flash.events.MouseEvent;
    import mx.core.ClassFactory;
    import com.enfluid.ltp.view.renderers.PendingSeedKeywordItemRenderer;
-   import mx.binding.Binding;
    import mx.collections.IList;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
@@ -109,6 +115,7 @@ package com.enfluid.ltp.view
          this.transitions = [this._KeywordPlannerSection_Transition1_c()];
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._KeywordPlannerSection_Array5_c);
          this.currentState = "normal";
+         this.addEventListener("creationComplete",this.___KeywordPlannerSection_CollapsiblePanel1_creationComplete);
          states = [new State({
             "name":"normal",
             "overrides":[new SetProperty().initializeFromObject({
@@ -132,7 +139,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc4_)
          {
-            §§push(§§pop() * 73 * 28 + 73 + 95);
+            §§push((§§pop() - 1 - 1) * 86 * 35 * 98 - 98);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -162,6 +169,22 @@ package com.enfluid.ltp.view
          super.initialize();
       }
       
+      protected final function initPanel(param1:FlexEvent) : void
+      {
+         var event:FlexEvent = param1;
+         addEventListener("collapsedChanged",function():void
+         {
+            if(!collapsed)
+            {
+               new SetUserEvent("UserEvent.FindKeywords.AddSeed.Opened").execute();
+            }
+            else
+            {
+               new SetUserEvent("UserEvent.FindKeywords.AddSeed.Closed").execute();
+            }
+         });
+      }
+      
       private final function addSeedKeywords() : void
       {
          if(this.addSeedKeywordsBTN.enabled)
@@ -178,16 +201,16 @@ package com.enfluid.ltp.view
          var _loc5_:SeedKeywordVO = null;
          var _loc2_:Array = this.mySeedKeywordsInput.text.replace(this.regexpNewLine,",").split(this.regexpComa);
          §§push(0);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(--§§pop() + 1);
+            §§push(-(§§pop() + 1 - 40 + 71));
          }
          for each(_loc3_ in _loc2_)
          {
             §§push(0);
             if(_loc11_)
             {
-               §§push(-((§§pop() * 13 + 1) * 72) - 14 + 99);
+               §§push((-(-§§pop() - 1) - 104 - 1) * 25);
             }
             for each(_loc4_ in this.model.selectedProject.seedKeywords)
             {
@@ -201,7 +224,7 @@ package com.enfluid.ltp.view
             §§push(0);
             if(_loc10_)
             {
-               §§push(((§§pop() + 113) * 37 - 1 - 49) * 8);
+               §§push(-(-§§pop() - 41) - 1);
             }
             for each(_loc5_ in this.model.selectedProject.pendingSeedKeywords)
             {
@@ -219,7 +242,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc11_)
          {
-            §§push(---(§§pop() - 1) + 22 + 1);
+            §§push(-(-(-((§§pop() + 113) * 36) - 87) * 63));
          }
          §§pop().enabled = §§pop() > §§pop()?true:false;
       }
@@ -229,30 +252,30 @@ package com.enfluid.ltp.view
          var _loc1_:VerticalLayout = new VerticalLayout();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 4 - 1));
+            §§push(-(§§pop() * 16 + 2 + 7 + 63) - 1);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1) - 1 - 77);
+            §§push(--(§§pop() * 58 * 111 + 74) - 26 - 104);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push((§§pop() + 1) * 116 + 112);
+            §§push(§§pop() - 112 - 33 + 1 + 1);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1) * 48 - 87) * 65 * 45 + 1 - 1);
+            §§push(-(§§pop() - 1 - 1));
          }
          §§pop().paddingTop = §§pop();
          return _loc1_;
@@ -274,7 +297,7 @@ package com.enfluid.ltp.view
          §§push(1000);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1 - 1) * 1) * 22);
+            §§push(-(-((§§pop() + 1 - 33) * 57) - 23));
          }
          §§pop().duration = §§pop();
          _loc1_.children = [this._KeywordPlannerSection_Parallel1_c()];
@@ -296,7 +319,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 50) * 90 + 102);
+            §§push(-((§§pop() + 113) * 20));
          }
          §§pop().xTo = §§pop();
          this._KeywordPlannerSection_Move1 = _loc1_;
@@ -315,16 +338,16 @@ package com.enfluid.ltp.view
          var _loc1_:VGroup = new VGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 48 - 27));
+            §§push(---(§§pop() + 1) * 102 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1) * 53 - 1 + 29);
+            §§push(§§pop() + 21 + 1 - 96 - 92 - 1 - 1 + 43);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._KeywordPlannerSection_Label1_i(),this._KeywordPlannerSection_HGroup1_i()];
@@ -343,9 +366,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("color");
          §§push(15671585);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1 - 73) - 9) + 1 - 27);
+            §§push(-(-§§pop() * 44 - 1 + 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("verticalAlign","middle");
@@ -366,21 +389,21 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) - 1);
+            §§push(-(§§pop() + 18) * 90);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc3_)
          {
-            §§push(--(§§pop() + 98 - 43) - 1 - 1);
+            §§push(-((§§pop() - 1 + 1) * 49) + 32 - 1 + 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 57) - 1 + 1);
+            §§push(((§§pop() - 1) * 83 + 1) * 83);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._KeywordPlannerSection_TextInput1_i(),this._KeywordPlannerSection_Button1_i()];
@@ -399,16 +422,16 @@ package com.enfluid.ltp.view
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 9 - 1 + 56 + 1 + 1);
+            §§push((§§pop() - 111) * 80 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-§§pop() - 19 + 114);
+            §§push(§§pop() - 97 + 42 - 1);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.prompt = "Add a seed keyword...";
@@ -440,16 +463,16 @@ package com.enfluid.ltp.view
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(40);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1 + 21 + 1 + 106) * 27));
+            §§push(-(-(§§pop() + 1 + 1) + 26 - 1));
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 116 + 1));
+            §§push(-(§§pop() - 92) - 1 + 86 - 40 + 5);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.enabled = false;
@@ -459,7 +482,7 @@ package com.enfluid.ltp.view
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 69) * 21);
+            §§push(-(§§pop() + 111 - 98) + 68);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -485,23 +508,23 @@ package com.enfluid.ltp.view
          var _loc1_:DataGroup = new DataGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 1 + 1 - 1 - 1 - 16);
+            §§push(§§pop() - 63 - 1 + 36 + 61 + 55 - 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 35 - 65 - 1) * 38 * 77 - 87));
+            §§push((§§pop() + 60 + 115 - 1 - 1) * 14);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(25);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 116 - 2 + 1 + 43);
+            §§push((§§pop() + 1 - 18 - 1 - 1 - 57 - 1) * 61);
          }
          §§pop().minHeight = §§pop();
          _loc1_.itemRenderer = this._KeywordPlannerSection_ClassFactory1_c();
@@ -529,6 +552,11 @@ package com.enfluid.ltp.view
          return _loc1_;
       }
       
+      public final function ___KeywordPlannerSection_CollapsiblePanel1_creationComplete(param1:FlexEvent) : void
+      {
+         this.initPanel(param1);
+      }
+      
       private final function _KeywordPlannerSection_bindingsSetup() : Array
       {
          var result:Array = [];
@@ -536,14 +564,14 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1) - 76 + 100);
+            §§push(-§§pop() + 104 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordPlannerSection_Move1.target","errorPrompt");
          §§push(result);
          §§push(1);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 33 - 8) + 112);
+            §§push((§§pop() + 1 - 96) * 112 * 94);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -553,7 +581,7 @@ package com.enfluid.ltp.view
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() + 74 + 1) * 102 + 1);
+            §§push(-(--§§pop() - 53) + 3 + 1 - 46);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {

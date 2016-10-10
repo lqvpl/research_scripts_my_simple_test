@@ -2,28 +2,27 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
 {
    import spark.skins.SparkSkin;
    import mx.core.IStateClient2;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
-   import mx.binding.Binding;
    import mx.graphics.SolidColor;
    import spark.primitives.Path;
    import mx.graphics.GradientEntry;
    import mx.core.IFlexModuleFactory;
+   import hr.binaria.asx3m.mapper.IMapper;
    import spark.primitives.Rect;
    import mx.graphics.SolidColorStroke;
-   import flash.events.Event;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
+   import com.enfluid.ltp.view.LeftRail;
+   import flash.events.ContextMenuEvent;
+   import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
+   import flash.desktop.Clipboard;
+   import flash.desktop.ClipboardFormats;
    import mx.binding.BindingManager;
+   import spark.layouts.VerticalLayout;
    import mx.graphics.RadialGradient;
+   import spark.components.HGroup;
+   import spark.components.Group;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
-   import spark.components.Group;
    import mx.states.State;
    import mx.states.SetProperty;
-   
-   use namespace mx_internal;
    
    public final class FlatUIScrollBarUpButton extends SparkSkin implements IStateClient2
    {
@@ -77,9 +76,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push("color");
          §§push("value");
          §§push(13491687);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-(§§pop() * 3) + 95 + 41));
+            §§push(-(-(§§pop() + 95) + 38) - 5 - 1);
          }
          §§pop().states = null;
       }
@@ -120,44 +119,44 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-§§pop() * 5 - 76 - 73) * 115 + 1));
+            §§push((§§pop() + 1 + 10) * 60 + 16 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-§§pop() + 84 - 18));
+            §§push(--(§§pop() + 1) - 24);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(18);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 81 + 36 + 1) - 1);
+            §§push((§§pop() - 1 + 1 + 7 + 57) * 46);
          }
          §§pop().minWidth = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 96 + 1 + 33) * 56 - 25);
+            §§push(-((§§pop() - 75) * 34 * 105 - 114 + 1));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(((§§pop() + 8) * 47 - 1 - 1 + 1) * 112 + 116);
+            §§push((-§§pop() + 52 + 53) * 37);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(18);
          if(_loc2_)
          {
-            §§push((§§pop() - 21) * 72 * 48);
+            §§push(--§§pop() - 75 - 1);
          }
          §§pop().minHeight = §§pop();
          _loc1_.stroke = this._FlatUIScrollBarUpButton_SolidColorStroke1_c();
@@ -173,7 +172,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(14146011);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 92) * 99);
+            §§push((§§pop() - 91 - 95 + 95 + 1 + 1) * 109 - 35);
          }
          §§pop().color = §§pop();
          _loc1_.weight = 0.5;
@@ -187,7 +186,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(16645629);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 70 + 102 - 1 + 105));
+            §§push((§§pop() - 1) * 20 - 7);
          }
          §§pop().color = §§pop();
          this._FlatUIScrollBarUpButton_SolidColor1 = _loc1_;
@@ -202,28 +201,28 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() + 25 + 112) * 36);
+            §§push((§§pop() * 91 * 109 + 9) * 61 * 44 + 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(§§pop() * 105 + 1 + 94 - 3 - 1);
+            §§push(-(§§pop() + 1) - 111);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 1 + 0) * 52);
+            §§push(--(§§pop() + 13 - 1) - 1 + 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(6);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 14) - 1) * 93 * 45);
+            §§push(§§pop() * 3 + 1 + 1 - 1);
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._FlatUIScrollBarUpButton_SolidColor2_i();
@@ -238,7 +237,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 70 + 5 - 1 + 1 + 1 - 1));
+            §§push(-(--§§pop() + 25));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -252,16 +251,16 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:Path = new Path();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 68 + 77);
+            §§push(-(§§pop() - 100 + 108 + 1 + 6));
          }
          §§pop().horizontalCenter = §§pop();
          §§push(_loc1_);
          §§push(-1);
          if(_loc2_)
          {
-            §§push(-((-§§pop() - 56 + 1) * 18 - 1) - 44);
+            §§push(-§§pop() * 52 - 55 + 1 - 69 + 103);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.data = "M 3.5 0.0 L 7.0 7.0 L 0.0 7.0 L 3.5 0.0";
@@ -277,16 +276,16 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:RadialGradient = new RadialGradient();
          §§push(_loc1_);
          §§push(90);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() * 34) + 1);
+            §§push(-(§§pop() + 1 + 106) - 58);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 92) * 40));
+            §§push((§§pop() * 22 + 1 - 49) * 106);
          }
          §§pop().focalPointRatio = §§pop();
          _loc1_.entries = [this._FlatUIScrollBarUpButton_GradientEntry1_i(),this._FlatUIScrollBarUpButton_GradientEntry2_i()];
@@ -298,9 +297,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(13158600);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 4 - 1 + 1 - 47 - 1) - 31);
+            §§push(-(-((§§pop() - 23) * 63 - 1) - 1));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.65;
@@ -314,9 +313,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(13158600);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() * 45 - 27) * 39 - 1 + 59) * 26);
+            §§push(-((§§pop() + 1 + 1) * 65 + 1 - 30));
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.8;

@@ -2,10 +2,11 @@ package com.enfluid.ltp.controller.competitoranalysis
 {
    import com.photon.controller.PhotonComplexCommand;
    import com.photon.controller.IPhotonCommand;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.model.vo.KeywordVO;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.SetDefaultConfigurationCommand;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
-   import mx.graphics.GradientEntry;
-   import mx.binding.BindingManager;
+   import flash.events.Event;
    import com.enfluid.ltp.util.Util;
    
    public final class SetupFetchPageRankCommand extends PhotonComplexCommand implements IPhotonCommand
@@ -29,7 +30,7 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(0);
          if(_loc4_)
          {
-            §§push((-(§§pop() - 4) + 1 - 1) * 43 + 3);
+            §§push(-(-§§pop() - 1 + 1 + 1));
          }
          for each(_loc1_ in this.keyword.competitorURLs)
          {
@@ -48,15 +49,15 @@ package com.enfluid.ltp.controller.competitoranalysis
          §§push(1);
          if(_loc5_)
          {
-            §§push(-((§§pop() - 110 - 38) * 45) * 35 + 1);
+            §§push((§§pop() + 1 + 54) * 9 * 28 + 33 + 35);
          }
          §§pop().pageRankAvg = §§pop().calcCompAnalysisAvg(§§pop(),§§pop(),§§pop());
          if(this.saveOnDone)
          {
             §§push(0);
-            if(_loc6_)
+            if(_loc5_)
             {
-               §§push(-§§pop() + 1 - 1);
+               §§push(-§§pop() * 106 + 1);
             }
             for each(_loc2_ in this.keyword.competitorURLs)
             {

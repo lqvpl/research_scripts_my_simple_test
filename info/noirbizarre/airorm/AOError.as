@@ -1,6 +1,7 @@
 package info.noirbizarre.airorm
 {
-   import mx.graphics.SolidColorStroke;
+   import spark.primitives.BitmapImage;
+   import mx.binding.BindingManager;
    
    public final class AOError extends Error
    {

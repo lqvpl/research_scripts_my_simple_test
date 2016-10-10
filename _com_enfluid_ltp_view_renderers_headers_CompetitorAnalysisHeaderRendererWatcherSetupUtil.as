@@ -21,14 +21,16 @@ package
       
       public function setup(param1:Object, param2:Function, param3:Function, param4:Array, param5:Array) : void
       {
-         param5[0] = new PropertyWatcher("column",{"columnChanged":true},[param4[0],param4[1],param4[2]],param2);
+         param5[0] = new PropertyWatcher("column",{"columnChanged":true},[param4[0],param4[1],param4[2],param4[3],param4[4]],param2);
+         param5[2] = new PropertyWatcher("linkable",{"propertyChange":true},[param4[1],param4[2]],null);
          param5[1] = new PropertyWatcher("align",{"propertyChange":true},[param4[0]],null);
-         param5[2] = new PropertyWatcher("helpTitle",{"propertyChange":true},[param4[1]],null);
-         param5[3] = new PropertyWatcher("helpContent",{"propertyChange":true},[param4[2]],null);
+         param5[3] = new PropertyWatcher("helpTitle",{"propertyChange":true},[param4[3]],null);
+         param5[4] = new PropertyWatcher("helpContent",{"propertyChange":true},[param4[4]],null);
          param5[0].updateParent(param1);
-         param5[0].addChild(param5[1]);
          param5[0].addChild(param5[2]);
+         param5[0].addChild(param5[1]);
          param5[0].addChild(param5[3]);
+         param5[0].addChild(param5[4]);
       }
    }
 }

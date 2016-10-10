@@ -1,5 +1,9 @@
 package com.enfluid.ltp.assets
 {
+   import spark.components.Label;
+   import mx.binding.BindingManager;
+   import com.enfluid.ltp.view.CompetitorAnalysisView;
+   
    public final class AssetsLibrary
    {
       
@@ -68,6 +72,8 @@ package com.enfluid.ltp.assets
       public static const HAND_CURSOR_ICON:Class = AssetsLibrary_HAND_CURSOR_ICON;
       
       public static const LOCK:Class = AssetsLibrary_LOCK;
+      
+      public static const KEYWORDS_COLUMNS:Class = AssetsLibrary_KEYWORDS_COLUMNS;
        
       
       public function AssetsLibrary()

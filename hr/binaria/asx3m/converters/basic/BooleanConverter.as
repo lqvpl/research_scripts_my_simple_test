@@ -1,8 +1,9 @@
 package hr.binaria.asx3m.converters.basic
 {
-   import mx.graphics.SolidColor;
-   import mx.graphics.GradientEntry;
+   import spark.primitives.Rect;
    import mx.binding.BindingManager;
+   import flash.events.MouseEvent;
+   import flash.utils.ByteArray;
    
    public final class BooleanConverter extends AbstractSingleValueConverter
    {

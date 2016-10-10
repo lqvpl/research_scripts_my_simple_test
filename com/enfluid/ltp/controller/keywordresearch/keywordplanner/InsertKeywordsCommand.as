@@ -23,7 +23,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(0);
          if(_loc7_)
          {
-            §§push(-(-(§§pop() - 115) - 85 - 5) + 35 + 1);
+            §§push((§§pop() + 1 - 1) * 66);
          }
          for each(_loc2_ in _loc1_)
          {

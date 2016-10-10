@@ -2,22 +2,11 @@ package system.data.stacks
 {
    import system.data.collections.ArrayCollection;
    import system.data.Stack;
-   import com.enfluid.ltp.model.DataModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.dataandfilters.domain.target;
-   import com.enfluid.ltp.view.dataandfilters.domain.DomainAvailabilitySection;
-   import mx.core.DeferredInstanceFromFunction;
-   import mx.binding.Binding;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import system.data.Map;
-   import system.data.Iterator;
    import flash.events.MouseEvent;
-   import spark.components.Label;
-   import mx.binding.BindingManager;
-   
-   use namespace mx_internal;
+   import com.enfluid.ltp.model.constants.Values;
+   import system.errors.NoSuchElementError;
+   import flash.utils.setTimeout;
+   import mx.graphics.LinearGradient;
    
    public final class ArrayStack extends ArrayCollection implements Stack
    {

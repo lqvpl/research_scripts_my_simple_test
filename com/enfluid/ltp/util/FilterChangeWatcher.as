@@ -1,10 +1,16 @@
 package com.enfluid.ltp.util
 {
-   import spark.components.Label;
-   import spark.components.Image;
-   import mx.binding.BindingManager;
    import mx.binding.utils.ChangeWatcher;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.renderers.headers.target;
+   import com.enfluid.ltp.view.renderers.headers.SelectColumnsHeaderRenderer;
+   import mx.states.State;
+   import mx.states.SetProperty;
+   import mx.binding.Binding;
    import com.enfluid.ltp.model.vo.ProjectVO;
+   
+   use namespace mx_internal;
    
    public final class FilterChangeWatcher
    {
@@ -16,7 +22,7 @@ package com.enfluid.ltp.util
       
       private var watcher:ChangeWatcher;
       
-      public function FilterChangeWatcher(param1:ProjectVO, param2:String, param3:Function, param4:Function)
+      public function FilterChangeWatcher(param1:ProjectVO, param2:*, param3:Function, param4:Function)
       {
          super();
          this.functionToAdd = param3;

@@ -5,8 +5,12 @@ package com.enfluid.ltp.controller.filesystem
    import flash.filesystem.File;
    import flash.filesystem.FileStream;
    import flash.errors.IOError;
-   import com.enfluid.ltp.view.components.FormattedSelfAdjustingLabel;
-   import mx.binding.BindingManager;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.gridClasses.GridColumn;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import com.enfluid.ltp.view.renderers.CalculatableValueGroup;
    import flash.filesystem.FileMode;
    import mx.controls.Alert;
    
@@ -40,16 +44,16 @@ package com.enfluid.ltp.controller.filesystem
             Alert.okLabel = "OK";
             §§push(Alert);
             §§push(130);
-            if(_loc4_)
+            if(_loc3_)
             {
-               §§push(§§pop() * 111 + 48 + 1);
+               §§push(-(§§pop() * 89 + 85) - 1 + 1);
             }
             §§pop().buttonWidth = §§pop();
             §§push(Alert);
             §§push(30);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push((§§pop() + 1 - 1) * 15 * 72);
+               §§push((§§pop() + 53 + 12) * 49 + 103 + 74 - 68);
             }
             §§pop().buttonHeight = §§pop();
             Alert.show("ISSUE SAVING PREFERENCE FILE " + ioe.message);

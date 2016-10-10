@@ -13,24 +13,25 @@ package com.enfluid.ltp.view
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
    import mx.events.FlexEvent;
-   import spark.components.HGroup;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.vo.ProjectVO;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
    import com.enfluid.ltp.controller.keywordresearch.QuickAddAndAnalyzeCommand;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
    import mx.graphics.SolidColor;
+   import system.data.lists.ArrayList;
    import mx.controls.Spacer;
-   import com.enfluid.ltp.view.skins.GeneralComboBoxButtonSkin;
+   import spark.components.HGroup;
+   import spark.components.Label;
    import com.enfluid.ltp.view.skins.FindKeywordsButtonSkin;
    import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.constants.SpecialFilterConstants;
    import com.enfluid.ltp.view.skins.FlatTextInputSkin;
    import com.enfluid.ltp.view.skins.MinimalFlatButtonSkin;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import mx.collections.ArrayCollection;
    import com.enfluid.ltp.view.components.SlimScroller;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import mx.core.ClassFactory;
    import spark.layouts.VerticalLayout;
-   import system.data.lists.ArrayList;
    import mx.binding.Binding;
    import com.enfluid.ltp.util.KeywordArrayCollection;
    import mx.collections.IList;
@@ -120,21 +121,21 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() + 93 + 1 - 46 + 1));
+            §§push(§§pop() - 1 + 87 + 1 - 1);
          }
          §§pop().paddingRight = §§pop();
          §§push(this);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 79);
+            §§push((§§pop() + 94 + 1) * 112);
          }
          §§pop().paddingTop = §§pop();
          §§push(this);
          §§push(5);
          if(_loc3_)
          {
-            §§push((§§pop() * 116 * 95 - 100) * 65);
+            §§push(-(§§pop() - 71 - 110 - 1) - 1);
          }
          §§pop().gap = §§pop();
          this.mxmlContent = [this._LeftRail_Rect1_i(),this._LeftRail_SelectProjectSection1_c(),this._LeftRail_Spacer1_c(),this._LeftRail_HGroup1_c(),this._LeftRail_Spacer2_c(),this._LeftRail_HGroup2_c(),this._LeftRail_Spacer3_c(),this._LeftRail_TabRenderer1_i(),this._LeftRail_SlimScroller1_c(),this._LeftRail_TabRenderer3_i(),this._LeftRail_TabRenderer4_i(),this._LeftRail_Spacer5_c()];
@@ -145,7 +146,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 73 + 1) * 68 * 66) - 43);
+            §§push(§§pop() + 1 + 88 + 1 - 73);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -211,6 +212,7 @@ package com.enfluid.ltp.view
             return;
          }
          new QuickAddAndAnalyzeCommand(this.quickAddTI.text).execute();
+         new SetUserEvent("UserEvent.Keyword.QuickAdd",{"keyword":this.quickAddTI.text}).execute();
          this.quickAddTI.text = "";
       }
       
@@ -248,7 +250,7 @@ package com.enfluid.ltp.view
          §§push(16777215);
          if(_loc2_)
          {
-            §§push((§§pop() * 36 + 66) * 19 + 1 + 12);
+            §§push((§§pop() - 18 + 1) * 49 - 1 + 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -270,9 +272,9 @@ package com.enfluid.ltp.view
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--((§§pop() - 17 - 35) * 6) + 87 - 1);
+            §§push(-((§§pop() + 13) * 57) - 1 - 28);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -287,23 +289,23 @@ package com.enfluid.ltp.view
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 103 - 39 + 117);
+            §§push(-(§§pop() + 91) - 45 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() - 1));
+            §§push(-((§§pop() + 115 + 20) * 43 - 3) - 42 - 1);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 8) * 33 - 51 + 1 - 1);
+            §§push((§§pop() + 1) * 15 - 9 - 1 - 13);
          }
          §§pop().paddingRight = §§pop();
          _loc1_.mxmlContent = [this._LeftRail_Button1_i()];
@@ -319,16 +321,16 @@ package com.enfluid.ltp.view
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() - 42 + 1 + 83));
+            §§push(§§pop() - 1 + 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(60);
          if(_loc3_)
          {
-            §§push(§§pop() * 104 + 1 - 71 - 37 - 56 + 1 + 1);
+            §§push(§§pop() - 1 - 24 + 1);
          }
          §§pop().height = §§pop();
          _loc1_.label = "Find Keywords";
@@ -354,9 +356,9 @@ package com.enfluid.ltp.view
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(5);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 91 - 1) * 9 - 70 + 32) * 51);
+            §§push(-(§§pop() + 103 - 14) + 1 - 12);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -373,35 +375,35 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc2_)
          {
-            §§push((§§pop() - 117 + 1) * 51 + 16);
+            §§push((§§pop() - 71 - 1 + 102 + 1 - 47) * 18 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() * 64 - 50 - 28) - 1) * 115);
+            §§push((§§pop() - 76 + 1 + 1) * 10 - 1 - 25 - 1);
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 111 + 89 + 1 + 19) + 107);
+            §§push(-(-(§§pop() + 1) + 92 + 1) + 1);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 78 + 1) + 1);
+            §§push(-(§§pop() + 25 - 1) + 81 - 1);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(-§§pop() + 1 + 110) + 118) * 52);
+            §§push(-(§§pop() * 66 + 79) * 74 + 1 - 38);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._LeftRail_TextInput1_i(),this._LeftRail_Button2_i()];
@@ -417,16 +419,16 @@ package com.enfluid.ltp.view
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 40 + 1);
+            §§push(-(-§§pop() - 1));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-§§pop() + 1 - 1));
+            §§push(§§pop() * 67 + 12 - 27);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.prompt = "Quick Add & Analyze";
@@ -454,14 +456,14 @@ package com.enfluid.ltp.view
          §§push(40);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 12);
+            §§push(§§pop() + 1 - 1 - 1 + 90 + 50 - 48 - 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-(§§pop() - 104) + 47) + 1 + 76);
+            §§push(--§§pop() - 33 + 47);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.label = "Add";
@@ -470,7 +472,7 @@ package com.enfluid.ltp.view
          §§push(16777215);
          if(_loc2_)
          {
-            §§push((§§pop() - 42 - 107) * 112 - 104);
+            §§push(-(§§pop() + 1 - 1));
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -496,9 +498,9 @@ package com.enfluid.ltp.view
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1 - 1) * 23 + 1) * 108);
+            §§push(§§pop() + 107 - 68 + 1 + 1 - 1);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -530,14 +532,14 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 44 + 7) * 92) - 45 + 107);
+            §§push(-(-(§§pop() - 1 + 1 + 91) - 21) + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 - 75 + 1 - 1 - 104 + 1) * 73);
+            §§push(--§§pop() - 84 - 1 - 1 - 1);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.viewport = this._LeftRail_VGroup2_i();
@@ -553,30 +555,30 @@ package com.enfluid.ltp.view
          var _loc1_:VGroup = new VGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 70 - 1 - 117 + 1 - 119 - 97));
+            §§push(-(§§pop() + 54 + 1));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 1) + 1 - 60 - 26);
+            §§push(§§pop() * 110 * 118 + 88 + 1 + 1 - 1 - 1);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(§§pop() + 1 + 14 - 23 - 1 + 1));
+            §§push(-((§§pop() + 1) * 113 * 100 * 98 - 89 + 1));
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(4);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() + 78 + 1) + 115) - 45);
+            §§push(((-§§pop() + 104 - 1) * 16 - 29 - 1) * 11);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._LeftRail_DataGroup1_i(),this._LeftRail_TabRenderer2_i(),this._LeftRail_Spacer4_c()];
@@ -597,7 +599,7 @@ package com.enfluid.ltp.view
          §§push(100);
          if(_loc3_)
          {
-            §§push(-((-(§§pop() + 59 - 1) * 48 - 112) * 20));
+            §§push(--(§§pop() - 66));
          }
          §§pop().percentWidth = §§pop();
          _loc1_.itemRenderer = this._LeftRail_ClassFactory1_c();
@@ -605,9 +607,9 @@ package com.enfluid.ltp.view
          §§push(_loc1_);
          §§push("rollOverColor");
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 49);
+            §§push(§§pop() - 57 + 73 + 1 + 108);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_LeftRail_DataGroup1";
@@ -635,28 +637,28 @@ package com.enfluid.ltp.view
          §§push(3);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 1) * 72 - 1) + 1);
+            §§push(-(§§pop() - 77 + 1) * 90);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 81 - 1 - 1 + 1) - 25);
+            §§push(§§pop() - 21 - 1 + 67 - 31);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 7 - 70) - 48);
+            §§push(-(-§§pop() - 43 + 83 - 45 - 1 + 1));
          }
          §§pop().paddingTop = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 108 - 1));
+            §§push(-(§§pop() * 24 * 52) + 79);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -684,7 +686,7 @@ package com.enfluid.ltp.view
          §§push(5);
          if(_loc2_)
          {
-            §§push((-(-(§§pop() + 115) - 30) - 37 - 47) * 73);
+            §§push(-(§§pop() * 80) - 1 - 1 + 1 - 86 - 23);
          }
          §§pop().width = §§pop();
          if(!_loc1_.document)
@@ -729,9 +731,9 @@ package com.enfluid.ltp.view
          var _loc1_:Spacer = new Spacer();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 74 - 99 + 5) * 94);
+            §§push((-§§pop() * 76 + 1) * 59);
          }
          §§pop().height = §§pop();
          if(!_loc1_.document)
@@ -753,7 +755,7 @@ package com.enfluid.ltp.view
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 79 - 94 + 1) - 1);
+            §§push(§§pop() * 29 * 115 - 60);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -761,9 +763,9 @@ package com.enfluid.ltp.view
          },null,"_LeftRail_Observe1.source");
          §§push(result);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 12);
+            §§push(-(-(§§pop() - 82 - 1) + 2) + 20 - 89);
          }
          §§pop()[§§pop()] = new Binding(this,function():Function
          {
@@ -773,7 +775,7 @@ package com.enfluid.ltp.view
          §§push(2);
          if(_loc3_)
          {
-            §§push(-§§pop() * 3 * 45 + 63);
+            §§push(§§pop() * 79 + 1 + 86 - 46 + 1 + 69);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -781,9 +783,9 @@ package com.enfluid.ltp.view
          },null,"_LeftRail_Observe2.source");
          §§push(result);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 56 - 3 + 1 - 118) * 47 + 67);
+            §§push(-((§§pop() - 34 + 88) * 18 * 108));
          }
          §§pop()[§§pop()] = new Binding(this,function():Function
          {
@@ -793,7 +795,7 @@ package com.enfluid.ltp.view
          §§push(4);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 4) * 42 - 62);
+            §§push(--(§§pop() * 111 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -803,7 +805,7 @@ package com.enfluid.ltp.view
          §§push(5);
          if(_loc2_)
          {
-            §§push(§§pop() - 55 + 31 + 15 + 64 + 1);
+            §§push(§§pop() - 84 + 1 - 1 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Number
          {
@@ -811,9 +813,9 @@ package com.enfluid.ltp.view
          },null,"_LeftRail_Rect1.height");
          §§push(result);
          §§push(6);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-((-§§pop() - 13) * 81) - 46) * 22);
+            §§push(§§pop() + 13 + 1 + 1 + 29);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -821,7 +823,7 @@ package com.enfluid.ltp.view
             §§push(0);
             if(_loc1_)
             {
-               §§push(§§pop() - 1 - 94 - 1);
+               §§push(-(-(§§pop() - 27) - 35) * 66);
             }
             return §§pop() > §§pop();
          },null,"_LeftRail_Button2.enabled");
@@ -829,7 +831,7 @@ package com.enfluid.ltp.view
          §§push(7);
          if(_loc2_)
          {
-            §§push(§§pop() * 73 + 1 - 1);
+            §§push(§§pop() * 96 - 48 + 107);
          }
          §§pop()[§§pop()] = new Binding(this,function():KeywordArrayCollection
          {
@@ -839,7 +841,7 @@ package com.enfluid.ltp.view
          §§push(8);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 1) - 1);
+            §§push(-(§§pop() + 1 + 102 + 1) - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {
@@ -847,9 +849,9 @@ package com.enfluid.ltp.view
          },null,"_LeftRail_DataGroup1.dataProvider");
          §§push(result);
          §§push(9);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 47 - 1));
+            §§push(-(§§pop() + 1 + 100 - 103) - 52 + 60);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -859,7 +861,7 @@ package com.enfluid.ltp.view
          §§push(10);
          if(_loc3_)
          {
-            §§push(-(-§§pop() - 1) * 96 - 1);
+            §§push(§§pop() + 1 + 8 + 13 + 44 - 1 - 33);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -869,7 +871,7 @@ package com.enfluid.ltp.view
          §§push(11);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1 - 1) * 110) + 53 - 1 - 10);
+            §§push(-(§§pop() * 20 * 46) + 1 + 66);
          }
          §§pop()[§§pop()] = new Binding(this,function():KeywordArrayCollection
          {
@@ -877,9 +879,9 @@ package com.enfluid.ltp.view
          },null,"_LeftRail_TabRenderer2.keywords");
          §§push(result);
          §§push(12);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 14) * 66 - 1 + 1);
+            §§push(§§pop() - 1 + 1 - 59 - 1 + 103 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Class
          {
@@ -889,7 +891,7 @@ package com.enfluid.ltp.view
          §§push(13);
          if(_loc3_)
          {
-            §§push(-§§pop() + 1 - 1);
+            §§push(§§pop() + 14 + 1 + 82 - 27 + 105);
          }
          §§pop()[§§pop()] = new Binding(this,function():KeywordArrayCollection
          {
@@ -897,9 +899,9 @@ package com.enfluid.ltp.view
          },null,"_LeftRail_TabRenderer3.keywords");
          §§push(result);
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 10 - 40 - 45) + 119);
+            §§push(§§pop() * 51 + 1 - 1 - 1 + 108);
          }
          §§pop()[§§pop()] = new Binding(this,function():Class
          {
@@ -909,7 +911,7 @@ package com.enfluid.ltp.view
          §§push(15);
          if(_loc2_)
          {
-            §§push((§§pop() - 1 + 17) * 42);
+            §§push(-(§§pop() + 1 + 2 + 107 + 1 - 58) - 69);
          }
          §§pop()[§§pop()] = new Binding(this,function():KeywordArrayCollection
          {

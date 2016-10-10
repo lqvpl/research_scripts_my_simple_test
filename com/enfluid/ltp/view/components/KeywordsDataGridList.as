@@ -3,6 +3,7 @@ package com.enfluid.ltp.view.components
    import spark.components.List;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.binding.BindingManager;
    import com.adobe.cairngorm.observer.ObserveValue;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
@@ -10,11 +11,19 @@ package com.enfluid.ltp.view.components
    import com.enfluid.ltp.util.KeywordArrayCollection;
    import com.enfluid.ltp.model.ViewModel;
    import spark.events.IndexChangeEvent;
-   import spark.primitives.BitmapImage;
-   import mx.binding.BindingManager;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import spark.components.Group;
+   import flash.events.Event;
+   import spark.components.CheckBox;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.gridClasses.GridColumn;
+   import com.enfluid.ltp.model.vo.DomainsVO;
+   import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import com.enfluid.ltp.view.renderers.CalculatableValueGroup;
    import mx.core.ClassFactory;
    import com.enfluid.ltp.view.renderers.KeywordItemRenderer;
-   import mx.binding.Binding;
+   import com.hurlant.math.BigInteger;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import flash.utils.getDefinitionByName;
@@ -79,7 +88,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 1);
+            §§push(-(§§pop() + 1 + 1 + 1) + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -140,9 +149,9 @@ package com.enfluid.ltp.view.components
       {
          §§push(layout);
          §§push(0);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() + 61 + 1) * 63 - 109) * 12 * 14);
+            §§push(((§§pop() + 1 - 95) * 92 + 1 - 1) * 103 - 1);
          }
          §§pop().verticalScrollPosition = §§pop();
       }
@@ -170,7 +179,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 1) * 82 - 79);
+            §§push(-((-(§§pop() * 11) + 1 - 115) * 27) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -180,7 +189,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() - 84) * 74 * 41);
+            §§push(--(§§pop() - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Function
          {

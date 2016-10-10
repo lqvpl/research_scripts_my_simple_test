@@ -25,22 +25,28 @@ package
          param5[7] = new PropertyWatcher("includeInLayout",{"includeInLayoutChanged":true},[param4[4],param4[5],param4[6],param4[7]],null);
          param5[4] = new PropertyWatcher("missingDataIcon",{"propertyChange":true},[param4[4],param4[5]],param2);
          param5[5] = new PropertyWatcher("includeInLayout",{"includeInLayoutChanged":true},[param4[4],param4[5]],null);
-         param5[0] = new PropertyWatcher("column",{"columnChanged":true},[param4[0],param4[1],param4[2],param4[3],param4[6],param4[7],param4[8],param4[9],param4[10]],param2);
+         param5[0] = new PropertyWatcher("column",{"columnChanged":true},[param4[0],param4[1],param4[2],param4[3],param4[6],param4[7],param4[8],param4[9],param4[10],param4[11],param4[13]],param2);
          param5[3] = new PropertyWatcher("showProgressSpinner",{"propertyChange":true},[param4[2],param4[3],param4[8],param4[9],param4[10]],null);
-         param5[8] = new PropertyWatcher("showWarningIcon",{"propertyChange":true},[param4[6],param4[7]],null);
+         param5[10] = new PropertyWatcher("showWarningIcon",{"propertyChange":true},[param4[6],param4[7]],null);
          param5[1] = new PropertyWatcher("helpTitle",{"propertyChange":true},[param4[0]],null);
          param5[2] = new PropertyWatcher("helpContent",{"propertyChange":true},[param4[1]],null);
-         param5[9] = new PropertyWatcher("showEditIcon",{"propertyChange":true},[param4[6],param4[7]],null);
+         param5[12] = new PropertyWatcher("showCancelIcon",{"propertyChange":true},[param4[6],param4[7],param4[8],param4[10],param4[11],param4[13]],null);
+         param5[11] = new PropertyWatcher("showEditIcon",{"propertyChange":true},[param4[6],param4[7]],null);
+         param5[8] = new PropertyWatcher("cancelIcon",{"propertyChange":true},[param4[4],param4[5]],param2);
+         param5[9] = new PropertyWatcher("includeInLayout",{"includeInLayoutChanged":true},[param4[4],param4[5]],null);
          param5[6].updateParent(param1);
          param5[6].addChild(param5[7]);
          param5[4].updateParent(param1);
          param5[4].addChild(param5[5]);
          param5[0].updateParent(param1);
          param5[0].addChild(param5[3]);
-         param5[0].addChild(param5[8]);
+         param5[0].addChild(param5[10]);
          param5[0].addChild(param5[1]);
          param5[0].addChild(param5[2]);
-         param5[0].addChild(param5[9]);
+         param5[0].addChild(param5[12]);
+         param5[0].addChild(param5[11]);
+         param5[8].updateParent(param1);
+         param5[8].addChild(param5[9]);
       }
    }
 }

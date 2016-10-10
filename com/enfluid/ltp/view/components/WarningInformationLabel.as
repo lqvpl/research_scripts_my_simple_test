@@ -3,26 +3,24 @@ package com.enfluid.ltp.view.components
    import spark.components.Group;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
-   import hr.binaria.asx3m.mapper.IMapper;
    import spark.primitives.BitmapImage;
    import spark.components.Label;
    import mx.core.IFlexModuleFactory;
    import flash.display.Bitmap;
+   import spark.primitives.Rect;
    import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
    import flash.events.Event;
-   import mx.core.mx_internal;
-   import spark.components.supportClasses.InteractionState;
-   import mx.controls.Spacer;
+   import flash.events.KeyboardEvent;
+   import flash.ui.Keyboard;
+   import flash.events.MouseEvent;
    import mx.binding.Binding;
    import com.enfluid.ltp.assets.AssetsLibrary;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import com.enfluid.ltp.model.DataModel;
+   import mx.events.FlexEvent;
+   import spark.primitives.RectangularDropShadow;
    import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.dataandfilters.target;
-   import com.enfluid.ltp.view.dataandfilters.NumWordsSection;
-   import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
    
@@ -80,9 +78,9 @@ package com.enfluid.ltp.view.components
          this.mxmlContent = [this._WarningInformationLabel_Rect1_c(),this._WarningInformationLabel_BitmapImage1_i(),this._WarningInformationLabel_Label1_i()];
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-§§pop() - 1 + 72 + 1 + 1);
+            §§push(§§pop() * 65 - 1 - 1 - 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -139,28 +137,28 @@ package com.enfluid.ltp.view.components
          §§push(100);
          if(_loc3_)
          {
-            §§push(-(-§§pop() + 1 - 44 + 1) - 1);
+            §§push((-(§§pop() + 67) + 1 + 1 + 1) * 9 - 51);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 31 + 1 + 1 + 69);
+            §§push(-(§§pop() * 89 + 1 - 1) * 11);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push((§§pop() * 4 - 1 + 1) * 45 + 1 - 1);
+            §§push(-§§pop() + 1 + 1 + 1 - 1);
          }
          §§pop().alpha = §§pop();
          §§push(_loc1_);
          §§push(5);
          if(_loc2_)
          {
-            §§push((-((-(§§pop() * 2) + 1) * 110) - 27) * 106);
+            §§push((-((§§pop() - 0) * 96 + 78) + 1 - 1) * 69);
          }
          §§pop().radiusX = §§pop();
          _loc1_.fill = this._WarningInformationLabel_SolidColor1_c();
@@ -175,7 +173,7 @@ package com.enfluid.ltp.view.components
          §§push(3244479);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 - 54 - 1);
+            §§push((§§pop() * 108 - 1 + 96) * 23 * 20 - 1);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -186,30 +184,30 @@ package com.enfluid.ltp.view.components
          var _loc1_:BitmapImage = new BitmapImage();
          §§push(_loc1_);
          §§push(20);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() * 11 + 49 + 1);
+            §§push(-(§§pop() + 17 - 26) * 49);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(20);
          if(_loc2_)
          {
-            §§push(-§§pop() - 1 - 96 - 94 - 1);
+            §§push(-(§§pop() + 66 - 32 - 31 - 1));
          }
          §§pop().height = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 63) - 1 + 1);
+            §§push(§§pop() + 1 - 1 - 103 - 69);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(2);
          if(_loc2_)
          {
-            §§push(§§pop() * 74 + 89 + 98 + 1 - 7);
+            §§push(-(§§pop() - 0) + 1);
          }
          §§pop().top = §§pop();
          _loc1_.smooth = true;
@@ -224,24 +222,24 @@ package com.enfluid.ltp.view.components
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() + 60) * 47 - 1 + 52 - 17 - 112);
+            §§push(-(§§pop() - 1 - 1 + 1) - 1 - 81);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() * 105 - 1) * 23);
+            §§push((§§pop() + 1 + 1) * 14 * 109);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
          §§push("color");
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 - 101) * 104);
+            §§push(§§pop() - 1 + 1 - 1 + 96 - 0);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -249,7 +247,7 @@ package com.enfluid.ltp.view.components
          §§push(25);
          if(_loc2_)
          {
-            §§push(§§pop() - 1 + 101 - 1 - 38);
+            §§push(-(-(§§pop() * 33) - 40) - 1 + 67);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -257,15 +255,15 @@ package com.enfluid.ltp.view.components
          §§push(10);
          if(_loc3_)
          {
-            §§push(§§pop() + 46 - 1 - 1);
+            §§push(§§pop() * 66 - 1 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingTop");
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 86 + 1 + 1 - 1) - 25);
+            §§push(§§pop() - 65 - 56 - 70 - 103);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("lineBreak","toFit");
@@ -286,7 +284,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 46) * 1 - 1 + 69 - 1 + 61));
+            §§push(-§§pop() + 69 + 1 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -294,9 +292,9 @@ package com.enfluid.ltp.view.components
          },null,"_WarningInformationLabel_BitmapImage1.source");
          §§push(result);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 41 - 1 + 83 + 1);
+            §§push(§§pop() + 1 - 1 - 1 + 1 + 55 - 68 + 64);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -307,14 +305,14 @@ package com.enfluid.ltp.view.components
          §§push(2);
          if(_loc3_)
          {
-            §§push((§§pop() - 1 - 14) * 1 + 27 + 1);
+            §§push(§§pop() - 1 - 53 - 50 + 23 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():int
          {
             §§push(-1);
             if(_loc1_)
             {
-               §§push((§§pop() - 1) * 32 - 99 - 1 - 1 + 57);
+               §§push(-(§§pop() - 1) - 34 + 22 + 1);
             }
             return §§pop();
          },null,"mylabel.maxDisplayedLines");

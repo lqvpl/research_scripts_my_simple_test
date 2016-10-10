@@ -3,35 +3,36 @@ package com.enfluid.ltp.view.RankChecker
    import com.enfluid.ltp.view.containers.CollapsiblePanel;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
-   import spark.effects.Move;
-   import mx.binding.BindingManager;
    import spark.components.ComboBox;
-   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
+   import mx.binding.Binding;
    import mx.utils.StringUtil;
    import com.enfluid.ltp.util.KeywordUtil;
    import com.enfluid.ltp.controller.rankchecker.AddRankCheckItemCommand;
    import flash.events.Event;
-   import spark.primitives.Rect;
+   import mx.effects.Sequence;
    import spark.layouts.VerticalLayout;
    import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.CustomComboboxSkin;
+   import mx.binding.BindingManager;
    import flash.events.TextEvent;
-   import mx.graphics.SolidColor;
    import spark.components.HGroup;
+   import mx.graphics.SolidColor;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
    import mx.events.FlexEvent;
    import spark.components.Button;
+   import flash.net.navigateToURL;
+   import flash.net.URLRequest;
    import com.enfluid.ltp.view.skins.MinimalFlatButtonSkin;
-   import flash.events.MouseEvent;
-   import mx.binding.Binding;
+   import spark.primitives.Rect;
    import mx.collections.IList;
-   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
-   import flash.utils.ByteArray;
-   import flash.utils.getDefinitionByName;
    import mx.core.DeferredInstanceFromFunction;
    
    use namespace mx_internal;
@@ -91,18 +92,18 @@ package com.enfluid.ltp.view.RankChecker
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-(-(§§pop() - 103) * 37) + 115) * 107);
+            §§push((-(§§pop() * 51) * 20 + 61 + 1) * 3);
          }
          §§pop().percentWidth = §§pop();
          this.layout = this._AddRankCheckerItemPanel_VerticalLayout1_c();
          this.mxmlContentFactory = new DeferredInstanceFromFunction(this._AddRankCheckerItemPanel_Array1_c);
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-((§§pop() + 1) * 99 + 1) + 63);
+            §§push(--§§pop() - 17 + 86 + 1);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -163,37 +164,37 @@ package com.enfluid.ltp.view.RankChecker
          var _loc1_:VerticalLayout = new VerticalLayout();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 103 + 106 - 118 - 1));
+            §§push((§§pop() - 1 - 1) * 40 + 1 + 1 - 18 - 1);
          }
          §§pop().paddingBottom = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc2_)
          {
-            §§push((-(§§pop() * 100 * 9 - 1) - 1) * 85);
+            §§push(-(-§§pop() * 31 * 85 + 93) * 13 - 27);
          }
          §§pop().paddingLeft = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-((-§§pop() - 1) * 114 - 1));
+            §§push(-(§§pop() - 56 - 1 - 1) + 62 + 74);
          }
          §§pop().paddingRight = §§pop();
          §§push(_loc1_);
          §§push(10);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 82 + 116) - 1);
+            §§push(§§pop() - 116 + 93 - 1 + 1);
          }
          §§pop().paddingTop = §§pop();
          §§push(_loc1_);
          §§push(10);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 1 - 1) + 1);
+            §§push((-(-§§pop() + 48) + 9 - 1 + 1) * 80);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -210,16 +211,16 @@ package com.enfluid.ltp.view.RankChecker
          var _loc1_:ComboBox = new ComboBox();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 105 - 29 + 1 + 6 + 105);
+            §§push(-(§§pop() + 110 + 107 + 110 + 20 + 1));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--§§pop() - 68 + 1);
+            §§push(§§pop() * 49 * 9 * 96);
          }
          §§pop().height = §§pop();
          _loc1_.prompt = "Enter a Domain, URL or Partial URL";
@@ -252,23 +253,23 @@ package com.enfluid.ltp.view.RankChecker
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-(§§pop() - 69) - 10) * 12);
+            §§push(-(§§pop() - 1) + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1 + 85 - 100) - 11 - 67 + 1);
+            §§push((§§pop() - 1 + 102 - 1 - 10 - 1) * 57 + 65);
          }
          §§pop().percentHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 + 1 + 1 - 1) * 2);
+            §§push((§§pop() + 1 - 1 + 45 - 1) * 117 + 1);
          }
          §§pop().gap = §§pop();
          _loc1_.mxmlContent = [this._AddRankCheckerItemPanel_TextInput1_i(),this._AddRankCheckerItemPanel_Button1_c()];
@@ -284,16 +285,16 @@ package com.enfluid.ltp.view.RankChecker
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 66) * 35 - 1) + 82 - 54);
+            §§push((-(§§pop() * 6 + 69) * 116 + 48) * 79 + 64);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(32);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(--(§§pop() + 1) - 55));
+            §§push((-(§§pop() + 83 + 1 - 90) + 15 - 78) * 6);
          }
          §§pop().height = §§pop();
          _loc1_.prompt = "Enter a Search Term";
@@ -319,25 +320,25 @@ package com.enfluid.ltp.view.RankChecker
          var _loc1_:Button = new Button();
          §§push(_loc1_);
          §§push(40);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 + 6) * 43);
+            §§push((§§pop() + 118) * 63 * 0 + 1);
          }
          §§pop().width = §§pop();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 75 - 103 + 64 + 11 + 1);
+            §§push((-§§pop() - 1 - 14 + 1) * 59 + 20);
          }
          §§pop().percentHeight = §§pop();
          _loc1_.label = "Add";
          §§push(_loc1_);
          §§push("color");
          §§push(16777215);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-§§pop() + 1 + 74 - 1 + 106 - 111 + 1);
+            §§push(§§pop() + 93 - 54 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("fontWeight","bold");
@@ -362,7 +363,7 @@ package com.enfluid.ltp.view.RankChecker
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 + 1 - 30 - 40 + 111 + 62);
+            §§push(§§pop() * 71 + 1 + 1 - 47 + 22);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {

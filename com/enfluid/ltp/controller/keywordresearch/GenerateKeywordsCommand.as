@@ -1,23 +1,27 @@
 package com.enfluid.ltp.controller.keywordresearch
 {
    import com.photon.controller.PhotonComplexCommand;
-   import mx.events.FlexEvent;
+   import mx.states.State;
+   import mx.states.SetProperty;
    import com.enfluid.ltp.model.DataModel;
    import com.enfluid.ltp.model.ViewModel;
-   import spark.components.HGroup;
+   import spark.components.Group;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import spark.effects.Rotate;
+   import mx.binding.BindingManager;
+   import mx.effects.Sequence;
    import com.enfluid.ltp.model.constants.Constants;
    import com.enfluid.ltp.util.Util;
    import com.enfluid.ltp.controller.keywordresearch.keywordplanner.SubmitAndScrapeKeywordPlannerCommand;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import com.enfluid.ltp.view.dataandfilters.NumWordsSection;
    import flash.utils.Dictionary;
    import com.enfluid.ltp.util.KeywordUtil;
+   import system.errors.ConcurrencyError;
+   import flash.errors.IllegalOperationError;
+   import flash.utils.ByteArray;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
    import com.enfluid.ltp.controller.keywordresearch.keywordplanner.FetchGlobalSearchVolumeCommand;
    import com.enfluid.ltp.controller.keywordresearch.domainavailability.SetupCheckDomainsCommand;
    import com.enfluid.ltp.controller.keywordresearch.titlecompetition.SetupFetchTitleCompetitionCommand;
-   import com.enfluid.ltp.util.ProgressBarUtil;
    
    public final class GenerateKeywordsCommand extends PhotonComplexCommand
    {
@@ -36,9 +40,9 @@ package com.enfluid.ltp.controller.keywordresearch
          this.viewModel.headerState = Constants.HEADER_STATE_INPROGRESS;
          var _loc1_:Array = this.model.selectedProject.pendingSeedKeywords.source.slice();
          §§push(0);
-         if(_loc6_)
+         if(_loc5_)
          {
-            §§push(-(§§pop() * 25) * 45 * 118 + 1 - 54);
+            §§push(---§§pop());
          }
          for each(_loc2_ in _loc1_)
          {
@@ -73,9 +77,9 @@ package com.enfluid.ltp.controller.keywordresearch
       {
          §§push(commandList.length);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(§§pop() + 1 - 1 + 38 + 1 + 1 + 1);
+            §§push(-(§§pop() + 107 + 1) - 4 + 65 + 96);
          }
          if(§§pop() == §§pop())
          {
@@ -98,7 +102,7 @@ package com.enfluid.ltp.controller.keywordresearch
          §§push(0);
          if(_loc6_)
          {
-            §§push(-(§§pop() - 96) * 25);
+            §§push(-(-(§§pop() - 1) + 1));
          }
          if(§§pop() > §§pop())
          {
@@ -108,9 +112,9 @@ package com.enfluid.ltp.controller.keywordresearch
             }
             _loc2_ = Util.divideKeywordsIntoGroups(_loc1_);
             §§push(0);
-            if(_loc7_)
+            if(_loc6_)
             {
-               §§push((§§pop() - 1) * 10 - 1);
+               §§push((§§pop() + 27) * 27 + 1 - 60);
             }
             for each(_loc3_ in _loc2_)
             {
@@ -128,16 +132,16 @@ package com.enfluid.ltp.controller.keywordresearch
          §§push(0);
          if(_loc10_)
          {
-            §§push(-(-§§pop() - 1 - 58 + 81) * 94);
+            §§push(-(-(§§pop() * 29 * 68) - 39));
          }
          var _loc8_:* = §§pop();
          var _loc1_:Array = this.model.selectedProject.pendingOwnKeywords.split("\n");
          var _loc2_:Array = new Array();
          var _loc3_:Dictionary = new Dictionary();
          §§push(0);
-         if(_loc10_)
+         if(_loc9_)
          {
-            §§push(-(§§pop() * 44 - 1 - 17 - 1) + 49 - 1);
+            §§push((--§§pop() - 88) * 90 * 99);
          }
          var _loc7_:* = §§pop();
          while(_loc7_ < _loc1_.length)
@@ -147,7 +151,7 @@ package com.enfluid.ltp.controller.keywordresearch
             §§push(0);
             if(_loc10_)
             {
-               §§push((§§pop() * 46 - 1 + 1) * 62 + 1);
+               §§push((-§§pop() - 117 - 76) * 8 - 34);
             }
             _loc8_ = §§pop();
             while(_loc8_ < _loc5_.length)
@@ -164,7 +168,7 @@ package com.enfluid.ltp.controller.keywordresearch
             §§push(0);
             if(_loc9_)
             {
-               §§push(§§pop() - 1 - 1 + 1 + 74);
+               §§push(-(§§pop() + 111) + 73 - 24 - 43);
             }
             if(§§pop() > §§pop())
             {

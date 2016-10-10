@@ -1,8 +1,8 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
+   import mx.graphics.LinearGradient;
    import info.noirbizarre.airorm.ORM;
-   import com.hurlant.math.BigInteger;
    import com.enfluid.ltp.model.vo.ProjectVO;
    import com.enfluid.ltp.model.vo.DefaultConfigVO;
    import com.enfluid.ltp.model.vo.SeedKeywordVO;
@@ -11,7 +11,6 @@ package com.enfluid.ltp.controller.common
    import com.enfluid.ltp.model.vo.AllFavoritesProjectVO;
    import com.enfluid.ltp.model.vo.AllTrashProjectVO;
    import com.enfluid.ltp.model.vo.ProxyVO;
-   import flash.utils.ByteArray;
    
    public final class SetupDBCommand extends Command implements IPhotonCommand
    {

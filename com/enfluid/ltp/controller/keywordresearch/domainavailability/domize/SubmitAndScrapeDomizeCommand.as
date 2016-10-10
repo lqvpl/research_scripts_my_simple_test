@@ -7,6 +7,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
    import mx.core.FlexGlobals;
    import com.enfluid.ltp.util.Logger;
    import com.enfluid.ltp.model.constants.DomainStatuses;
+   import com.enfluid.ltp.util.Util;
    
    public final class SubmitAndScrapeDomizeCommand extends DomizeCommand implements IPhotonCommand
    {
@@ -24,9 +25,12 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
       
       private var _textArea;
       
+      private var domainsToSave:Array;
+      
       public function SubmitAndScrapeDomizeCommand(param1:Array)
       {
          this.domainsToScrape = [];
+         this.domainsToSave = [];
          this.domains = param1;
          super();
       }
@@ -61,9 +65,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          var _loc4_:* = undefined;
          var _loc2_:* = scraper.getElementsByClassName("err");
          §§push(0);
-         if(_loc8_)
+         if(_loc9_)
          {
-            §§push((§§pop() - 1) * 64 * 92);
+            §§push(--§§pop() + 14);
          }
          for each(_loc3_ in _loc2_)
          {
@@ -81,22 +85,22 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          §§push(0);
          if(_loc9_)
          {
-            §§push((§§pop() + 1 - 78 + 1) * 66 * 112 - 41);
+            §§push((-(§§pop() * 13 - 1) - 12) * 74 - 1);
          }
          if(§§pop() > §§pop() && §§pop() < §§pop())
          {
             §§push();
             §§push(this.ensureAllDomainsLoaded);
             §§push(100);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(§§pop() + 96 - 1 - 28 + 85);
+               §§push((§§pop() + 1 + 119 - 1 + 1) * 114);
             }
             §§push(param1);
             §§push(1);
             if(_loc9_)
             {
-               §§push((--§§pop() + 1) * 22 + 1);
+               §§push(--((§§pop() + 61) * 31) + 19);
             }
             §§pop().setTimeout(§§pop(),§§pop(),§§pop() + §§pop());
          }
@@ -104,9 +108,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          {
             §§push(_loc2_.length);
             §§push(0);
-            if(_loc8_)
+            if(_loc9_)
             {
-               §§push(--§§pop() - 104 - 1 + 1 + 88 - 1);
+               §§push(§§pop() + 1 - 1 - 67 - 80 - 71 - 1 + 43);
             }
             if(§§pop() == §§pop())
             {
@@ -119,7 +123,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
                §§push(250);
                if(_loc9_)
                {
-                  §§push(§§pop() + 1 - 108 + 1 - 48 - 38 + 1);
+                  §§push(§§pop() - 1 - 14 + 52 + 1 + 26 - 1);
                }
                §§pop().callDelayed(§§pop(),§§pop());
             }
@@ -131,9 +135,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          var _loc1_:DomainsVO = null;
          §§push(this.domains.length);
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(--(§§pop() * 1) + 9 - 80);
+            §§push(-(§§pop() + 109 + 37));
          }
          if(§§pop() > §§pop())
          {
@@ -143,9 +147,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
             §§push(scraper);
             §§push(this.textArea);
             §§push(0);
-            if(_loc4_)
+            if(_loc5_)
             {
-               §§push(-(((§§pop() - 69) * 55 + 8 - 1) * 48 - 1));
+               §§push(-(§§pop() - 1 + 1 + 1 + 1) - 1 + 1);
             }
             §§pop().fireKeyDown(§§pop(),§§pop(),§§pop());
             §§push(scraper);
@@ -153,7 +157,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
             §§push(0);
             if(_loc5_)
             {
-               §§push((-(§§pop() - 1) + 1 + 32) * 16);
+               §§push(-(-(§§pop() * 58 * 41 - 111) + 1) + 27);
             }
             §§pop().fireKeyUp(§§pop(),§§pop(),§§pop());
             FlexGlobals.topLevelApplication.callLater(this.insertKeyword);
@@ -170,9 +174,9 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          var _loc4_:* = undefined;
          var _loc5_:String = null;
          §§push(0);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(-(-§§pop() * 96));
+            §§push((§§pop() + 1 + 6 + 103 - 1) * 21);
          }
          var _loc6_:* = §§pop();
          var _loc2_:* = scraper.getElementById("dmz" + param1.domainWithoutExtension);
@@ -185,7 +189,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
          §§push(0);
          if(_loc10_)
          {
-            §§push((§§pop() * 16 - 1 - 73) * 51 + 1 - 45);
+            §§push(((§§pop() - 1 + 1) * 80 - 1) * 49);
          }
          for each(_loc4_ in _loc3_)
          {
@@ -199,15 +203,15 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
                      §§push(0);
                      if(_loc10_)
                      {
-                        §§push(-(§§pop() * 83 + 86 + 1 - 67 + 1 + 114));
+                        §§push(§§pop() - 48 + 1 + 1 - 112);
                      }
                   }
                   else if("u" === _loc9_)
                   {
                      §§push(1);
-                     if(_loc11_)
+                     if(_loc10_)
                      {
-                        §§push(-(§§pop() + 47) + 1 - 74 + 1);
+                        §§push(-(§§pop() - 1 + 1) * 30);
                      }
                   }
                   else if("s" === _loc9_)
@@ -215,15 +219,15 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
                      §§push(2);
                      if(_loc10_)
                      {
-                        §§push((§§pop() + 106 - 1 - 1) * 13 * 78);
+                        §§push((-(§§pop() - 60 - 1 + 1) + 1 + 1) * 46);
                      }
                   }
                   else if("err" === _loc9_)
                   {
                      §§push(3);
-                     if(_loc11_)
+                     if(_loc10_)
                      {
-                        §§push(§§pop() + 1 - 1 - 1);
+                        §§push(-(§§pop() * 31 - 68));
                      }
                   }
                   else
@@ -231,7 +235,7 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
                      §§push(4);
                      if(_loc10_)
                      {
-                        §§push((§§pop() + 0 + 1 - 112) * 90 + 108 - 1 - 17);
+                        §§push(§§pop() - 1 + 14 + 1 - 1);
                      }
                   }
                   switch(§§pop())
@@ -259,28 +263,28 @@ package com.enfluid.ltp.controller.keywordresearch.domainavailability.domize
                continue;
             }
          }
-         param1.save();
       }
       
       private final function scrapeDomains() : void
       {
          var _loc1_:DomainsVO = null;
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(§§pop() * 71 * 65 + 100 - 1 - 80);
+            §§push(-(§§pop() - 2 + 73 - 44));
          }
          for each(_loc1_ in this.domainsToScrape)
          {
             this.scrapeDomain(_loc1_);
          }
          this.clickClear();
+         Util.saveDomains(this.domainsToScrape);
          §§push();
          §§push(done);
          §§push(500);
          if(_loc4_)
          {
-            §§push(-(§§pop() + 92 + 1) + 38);
+            §§push(-(-§§pop() * 13) * 1 * 68);
          }
          §§pop().callDelayed(§§pop(),§§pop());
       }

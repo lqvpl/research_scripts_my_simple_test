@@ -1,8 +1,7 @@
 package assets
 {
    import mx.core.BitmapAsset;
-   import mx.core.ClassFactory;
-   import spark.skins.spark.DefaultItemRenderer;
+   import com.enfluid.ltp.util.Logger;
    
    public final class LibraryAssets_YAHOO extends BitmapAsset
    {

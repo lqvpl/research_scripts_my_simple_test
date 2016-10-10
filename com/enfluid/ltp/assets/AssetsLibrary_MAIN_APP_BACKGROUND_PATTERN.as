@@ -1,10 +1,10 @@
 package com.enfluid.ltp.assets
 {
    import mx.core.BitmapAsset;
+   import spark.layouts.VerticalLayout;
+   import mx.binding.BindingManager;
    import flash.events.MouseEvent;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteOwnKeywordsCommand;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
-   import com.enfluid.ltp.model.vo.SeedKeywordVO;
+   import hr.binaria.asx3m.annotations.Annotation;
    
    public final class AssetsLibrary_MAIN_APP_BACKGROUND_PATTERN extends BitmapAsset
    {

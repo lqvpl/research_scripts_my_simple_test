@@ -1,6 +1,7 @@
 package it.sharify
 {
    import flash.events.EventDispatcher;
+   import com.enfluid.ltp.util.Logger;
    import flash.events.Event;
    import flash.system.ApplicationDomain;
    import com.hurlant.util.Hex;

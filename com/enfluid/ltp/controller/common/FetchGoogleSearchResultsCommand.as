@@ -2,23 +2,28 @@ package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
    import mx.rpc.IResponder;
-   import flash.utils.ByteArray;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.model.vo.CountryVO;
    import com.enfluid.ltp.model.vo.LanguageVO;
-   import com.enfluid.ltp.util.Util;
-   import com.enfluid.ltp.model.constants.Constants;
-   import flash.utils.setTimeout;
-   import com.enfluid.ltp.model.constants.RankCheckConstants;
-   import spark.components.CheckBox;
+   import mx.graphics.SolidColor;
    import mx.binding.BindingManager;
-   import flash.filesystem.File;
-   import com.enfluid.ltp.model.vo.RTDomain;
-   import com.enfluid.ltp.model.vo.RTKeyword;
-   import com.enfluid.ltp.model.vo.RTRank;
-   import com.enfluid.ltp.util.Logger;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.constants.Constants;
+   import com.enfluid.ltp.util.MajesticUtils;
+   import mx.rpc.http.HTTPService;
+   import mx.rpc.Responder;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
-   import spark.components.Group;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.dataandfilters.target;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import mx.events.FlexEvent;
+   import flash.utils.getTimer;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   
+   use namespace mx_internal;
    
    public class FetchGoogleSearchResultsCommand extends FetchGoogleCommand implements IPhotonCommand, IResponder
    {
@@ -48,17 +53,18 @@ package com.enfluid.ltp.controller.common
          super.execute();
       }
       
+      override protected function calcUrl(param1:Boolean) : String
+      {
+         var _loc2_:String = !!param1?"https://":"http://";
+         _loc2_ = _loc2_ + ("www.google." + this.country.domainExtension + "/search?pws=0&q=" + encodeURI(this.keywordString.replace(/ /g,"+")) + "&hl=" + this.language.code + "&ie=UTF-8&gbv=1");
+         if(this.start)
+         {
+            _loc2_ = _loc2_ + ("&start=" + this.start);
+         }
+         return _loc2_;
+      }
+      
       override protected function calcCaptchaUrl() : String
-      {
-         return "https://www.google." + this.country.domainExtension;
-      }
-      
-      override protected function calcUrl() : String
-      {
-         return "https://www.google." + this.country.domainExtension + "/search?pws=0&q=" + encodeURI(this.keywordString.replace(/ /g,"+")) + "&start=" + this.start + "&hl=" + this.language.code;
-      }
-      
-      override protected function captchaImageUrl() : String
       {
          return "https://www.google." + this.country.domainExtension;
       }
@@ -70,7 +76,7 @@ package com.enfluid.ltp.controller.common
          §§push(0);
          if(_loc11_)
          {
-            §§push(-((§§pop() + 1 - 1 + 1) * 32 - 12) + 1);
+            §§push(§§pop() + 60 + 1 + 113 - 74);
          }
          var _loc5_:* = §§pop();
          var _loc6_:CompetitorUrlVO = null;
@@ -83,13 +89,13 @@ package com.enfluid.ltp.controller.common
          §§push(1);
          if(_loc10_)
          {
-            §§push((§§pop() * 5 + 10 - 1 - 9) * 16 + 114);
+            §§push(-(§§pop() + 22 - 1));
          }
          var _loc2_:* = §§pop();
          §§push(0);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(-(§§pop() - 19) + 103);
+            §§push(§§pop() - 1 - 103 - 88);
          }
          for each(_loc3_ in _loc1_)
          {
@@ -99,9 +105,9 @@ package com.enfluid.ltp.controller.common
                _loc5_ = int(_loc4_.indexOf("/url?q="));
                §§push(_loc5_);
                §§push(-1);
-               if(_loc10_)
+               if(_loc11_)
                {
-                  §§push(§§pop() - 31 + 1 + 1 - 1 + 1 - 4 + 11);
+                  §§push(-(§§pop() - 1) - 1 - 86);
                }
                if(§§pop() == §§pop())
                {
@@ -109,9 +115,9 @@ package com.enfluid.ltp.controller.common
                }
                §§push(_loc5_);
                §§push(0);
-               if(_loc10_)
+               if(_loc11_)
                {
-                  §§push(§§pop() - 1 - 1 + 70 + 1 + 1 - 119);
+                  §§push(-(-((§§pop() - 1 + 1) * 101) + 1));
                }
                if(§§pop() >= §§pop())
                {
@@ -119,9 +125,9 @@ package com.enfluid.ltp.controller.common
                   {
                      §§push(_loc3_.parentNode.parentNode.innerText.indexOf("Disclaimer"));
                      §§push(-1);
-                     if(_loc11_)
+                     if(_loc10_)
                      {
-                        §§push(-(§§pop() + 59) + 39 + 1);
+                        §§push((§§pop() - 51) * 47 + 1);
                      }
                      if(§§pop() != §§pop() && §§pop() != §§pop() && §§pop() != §§pop())
                      {
@@ -130,17 +136,17 @@ package com.enfluid.ltp.controller.common
                      §§push(_loc4_);
                      §§push(_loc5_);
                      §§push(7);
-                     if(_loc10_)
+                     if(_loc11_)
                      {
-                        §§push(-(-(§§pop() * 41) - 29 + 1 - 115));
+                        §§push(§§pop() * 8 * 20 - 66 + 39 - 87 - 1 + 1);
                      }
                      _loc4_ = §§pop().substr(§§pop() + §§pop());
                      _loc5_ = int(_loc4_.indexOf("&"));
                      §§push(_loc4_);
                      §§push(0);
-                     if(_loc10_)
+                     if(_loc11_)
                      {
-                        §§push(§§pop() + 89 - 1 - 85 + 10);
+                        §§push((-((-(§§pop() * 20) - 1) * 79) - 84) * 71);
                      }
                      _loc4_ = §§pop().substr(§§pop(),_loc5_);
                      _loc4_ = unescape(_loc4_);
@@ -184,9 +190,9 @@ package com.enfluid.ltp.controller.common
       {
          §§push(param1.parentNode.nextSibling.innerHTML.indexOf("color=\"green\""));
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 80) + 117 - 100 - 92 - 73);
+            §§push(-(§§pop() * 59 * 0 * 31) + 40 - 1 + 1);
          }
          if(§§pop() >= §§pop())
          {

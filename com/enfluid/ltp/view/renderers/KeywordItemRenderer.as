@@ -31,16 +31,23 @@ package com.enfluid.ltp.view.renderers
    import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
    import flash.desktop.Clipboard;
    import flash.desktop.ClipboardFormats;
+   import com.enfluid.ltp.model.constants.Values;
    import mx.binding.BindingManager;
    import mx.effects.Sequence;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
+   import system.data.stacks.ArrayStack;
+   import system.data.lists.ArrayList;
+   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import hr.binaria.asx3m.converters.IMarshallingContext;
    import mx.binding.Binding;
    import spark.components.gridClasses.GridColumn;
    import com.enfluid.ltp.model.vo.DomainsVO;
    import com.enfluid.ltp.model.vo.DomainExtensionOptions;
+   import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import mx.core.DeferredInstanceFromFunction;
+   import spark.components.Image;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import flash.utils.getDefinitionByName;
    import mx.states.State;
    import mx.states.AddItems;
    
@@ -54,7 +61,9 @@ package com.enfluid.ltp.view.renderers
       
       public var _KeywordItemRenderer_AddAction1:AddAction;
       
-      public var _KeywordItemRenderer_AvgKCRendererGroup1:com.enfluid.ltp.view.renderers.AvgKCRendererGroup;
+      public var _KeywordItemRenderer_CalculatableValueGroup1:com.enfluid.ltp.view.renderers.CalculatableValueGroup;
+      
+      public var _KeywordItemRenderer_CalculatableValueGroup2:com.enfluid.ltp.view.renderers.CalculatableValueGroup;
       
       public var _KeywordItemRenderer_Fade1:Fade;
       
@@ -130,6 +139,10 @@ package com.enfluid.ltp.view.renderers
       
       private var _1313897455topBottomPadding:int = 10;
       
+      private var _1356814210AdWordsRestrictedToolTip:String = "";
+      
+      private var _62434079AdWordsRestrictedGlobalToolTip:String = "";
+      
       mx_internal var _bindings:Array;
       
       mx_internal var _watchers:Array;
@@ -171,7 +184,7 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc4_)
          {
-            §§push(--(§§pop() - 31 - 69));
+            §§push(-(§§pop() - 44) * 3 - 21);
          }
          §§pop().percentWidth = §§pop();
          this.transitions = [this._KeywordItemRenderer_Transition1_i(),this._KeywordItemRenderer_Transition2_i()];
@@ -194,7 +207,7 @@ package com.enfluid.ltp.view.renderers
          §§push(30);
          if(_loc3_)
          {
-            §§push(--§§pop() + 55);
+            §§push(-((-(§§pop() - 29) + 98) * 28));
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -206,7 +219,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 - 1 + 1);
+            §§push((§§pop() + 1) * 71 * 23 * 16 + 108 - 78 - 1);
          }
          §§push(new §§pop().State(null));
          §§push();
@@ -231,9 +244,9 @@ package com.enfluid.ltp.view.renderers
          §§push("paddingBottom");
          §§push("value");
          §§push(10);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(--(§§pop() + 2) + 1 - 1);
+            §§push(-((§§pop() - 1) * 56));
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -245,7 +258,7 @@ package com.enfluid.ltp.view.renderers
          §§push(5);
          if(_loc4_)
          {
-            §§push(-(§§pop() + 25 - 54) * 77 + 22 + 13);
+            §§push(-(§§pop() * 13 * 55 + 1) + 1 - 45 + 57);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -255,9 +268,9 @@ package com.enfluid.ltp.view.renderers
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((§§pop() * 46 + 88 + 92 - 1) * 69 + 1);
+            §§push(§§pop() - 1 - 1 - 1);
          }
          §§pop().states = null;
          BindingManager.executeBindings(this,"_KeywordItemRenderer_SetProperty1",this._KeywordItemRenderer_SetProperty1);
@@ -265,7 +278,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() + 117) - 1 + 1 + 26);
+            §§push(§§pop() - 78 - 99 + 1 + 92);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -313,7 +326,7 @@ package com.enfluid.ltp.view.renderers
             this.keyword = KeywordVO(param1);
             this.transitions = [this.openingTransition,this.closingTransition];
          }
-         if(this.keyword && this.viewModel.selectedKeywordsTab.isFavoritesTab && this.keyword.projectTitle == null)
+         if(this.keyword && this.viewModel.selectedKeywordsTab.isFavoritesTab)
          {
             this.keyword.projectTitle = this.model.projectTitle[this.keyword.projectID] == null?"-":this.model.projectTitle[this.keyword.projectID];
          }
@@ -345,7 +358,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 85) + 81);
+            §§push(§§pop() - 101 + 96 - 80);
          }
          if(§§pop() <= §§pop() && §§pop() <= §§pop() || !this.keyword.domainsExact.domainWithoutExtension && !this.keyword.domainsHyphenated.domainWithoutExtension)
          {
@@ -355,7 +368,6 @@ package com.enfluid.ltp.view.renderers
             }
             return;
          }
-         this.calloutCloseHandler();
          if(this.domainsExact.domainRendererWidth > this.domainsExact.width || this.domainsHyphenated.domainRendererWidth > this.domainsHyphenated.width)
          {
             if(!this.isdomainsRendererCallout)
@@ -363,14 +375,6 @@ package com.enfluid.ltp.view.renderers
                this.domainRendererCallout = new DomainRendererCallout();
                this.isdomainsRendererCallout = true;
                this.domainRendererCallout.keyword = this.keyword;
-               §§push(this.domainRendererCallout);
-               §§push(this.domainRendererCallout.x);
-               §§push(15);
-               if(_loc2_)
-               {
-                  §§push(-§§pop() + 1 - 51 + 99);
-               }
-               §§pop().customArrowX = §§pop() + §§pop();
                this.domainRendererCallout.open(this.domainRendererGroup);
             }
          }
@@ -457,6 +461,38 @@ package com.enfluid.ltp.view.renderers
          Clipboard.generalClipboard.setData(ClipboardFormats.TEXT_FORMAT,_loc3_);
       }
       
+      private final function calcSearchesLabel(param1:KeywordVO, param2:String) : *
+      {
+         if(param2 == "local")
+         {
+            if(param1.localSearches != Values.NOT_FETCHED)
+            {
+               if(param1.isGoogleRestrictedSearches)
+               {
+                  this.AdWordsRestrictedToolTip = "This is the search volume range. The exact volume is not available due to the data restriction on your AdWords account.";
+                  return param1.localSearchesRange;
+               }
+               this.AdWordsRestrictedToolTip = "";
+               return param1.localSearches;
+            }
+            return Values.NOT_FETCHED;
+         }
+         if(param2 == "global")
+         {
+            if(param1.globalSearches != Values.NOT_FETCHED)
+            {
+               if(param1.isGoogleRestrictedSearches)
+               {
+                  this.AdWordsRestrictedGlobalToolTip = "This is the search volume range. The exact volume is not available due to the data restriction on your AdWords account.";
+                  return param1.globalSearchesRange;
+               }
+               this.AdWordsRestrictedToolTip = "";
+               return param1.globalSearches;
+            }
+            return Values.NOT_FETCHED;
+         }
+      }
+      
       private final function _KeywordItemRenderer_Power1_i() : Power
       {
          var _loc1_:Power = new Power();
@@ -464,7 +500,7 @@ package com.enfluid.ltp.view.renderers
          §§push(4);
          if(_loc2_)
          {
-            §§push(-(--§§pop() - 1 - 1) - 106 + 21);
+            §§push(-(§§pop() * 116 + 1 - 1));
          }
          §§pop().exponent = §§pop();
          this.powerEasing = _loc1_;
@@ -505,7 +541,7 @@ package com.enfluid.ltp.view.renderers
          §§push(400);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1) + 102);
+            §§push((§§pop() * 59 - 86 - 40 + 92) * 84);
          }
          §§pop().duration = §§pop();
          this._KeywordItemRenderer_Resize1 = _loc1_;
@@ -520,7 +556,7 @@ package com.enfluid.ltp.view.renderers
          §§push(200);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 9 - 1 - 1 + 1) - 1);
+            §§push((-§§pop() + 72) * 41 - 1 - 22 - 1 + 11);
          }
          §§pop().duration = §§pop();
          this._KeywordItemRenderer_Fade1 = _loc1_;
@@ -551,9 +587,9 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:Fade = new Fade();
          §§push(_loc1_);
          §§push(200);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--((-§§pop() - 57) * 41) + 1);
+            §§push(((§§pop() + 59) * 101 + 1) * 32 - 1 + 52);
          }
          §§pop().duration = §§pop();
          this._KeywordItemRenderer_Fade2 = _loc1_;
@@ -568,7 +604,7 @@ package com.enfluid.ltp.view.renderers
          §§push(200);
          if(_loc3_)
          {
-            §§push(§§pop() - 11 + 58 - 1 + 1 - 7);
+            §§push(§§pop() + 85 - 75 + 52 - 1);
          }
          §§pop().duration = §§pop();
          this._KeywordItemRenderer_Resize2 = _loc1_;
@@ -592,7 +628,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(-(-§§pop() - 58) + 1) - 1 - 1);
+            §§push((§§pop() - 90 + 54 + 1 + 1) * 61);
          }
          §§pop().gap = §§pop();
          this._KeywordItemRenderer_VerticalLayout1 = _loc1_;
@@ -607,9 +643,9 @@ package com.enfluid.ltp.view.renderers
          §§push(_loc1_);
          §§push("color");
          §§push(1851498);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(--§§pop() - 1));
+            §§push(-(((§§pop() + 1) * 10 - 1 - 22 + 1) * 110));
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -617,7 +653,7 @@ package com.enfluid.ltp.view.renderers
          §§push(11);
          if(_loc3_)
          {
-            §§push(((§§pop() + 84) * 69 * 35 - 1 + 35) * 29);
+            §§push((§§pop() + 1) * 90 * 118);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -625,7 +661,7 @@ package com.enfluid.ltp.view.renderers
          §§push(5);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1) - 40 + 1);
+            §§push((§§pop() + 46 + 1 - 1) * 7);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -633,7 +669,7 @@ package com.enfluid.ltp.view.renderers
          §§push(5);
          if(_loc2_)
          {
-            §§push(-(-§§pop() + 1) - 14);
+            §§push(§§pop() - 57 - 77 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_KeywordItemRenderer_Label1";
@@ -655,7 +691,7 @@ package com.enfluid.ltp.view.renderers
          §§push(1851498);
          if(_loc3_)
          {
-            §§push((§§pop() - 1 - 11 + 1) * 83 + 1 - 16 - 1);
+            §§push(§§pop() - 88 + 114 - 1 + 80 + 83);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
@@ -663,23 +699,23 @@ package com.enfluid.ltp.view.renderers
          §§push(11);
          if(_loc3_)
          {
-            §§push(((§§pop() - 1) * 46 - 1 - 1) * 93);
+            §§push((§§pop() - 1 + 27) * 12 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingLeft");
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 13 - 1 + 2 + 14 - 1);
+            §§push(-(§§pop() + 1) - 1 + 56 - 5);
          }
          §§pop().setStyle(§§pop(),§§pop());
          §§push(_loc1_);
          §§push("paddingTop");
          §§push(5);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 50 + 1 + 45 + 11) * 47 * 5);
+            §§push((---§§pop() * 52 + 1) * 74 + 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.id = "_KeywordItemRenderer_Label2";
@@ -697,35 +733,35 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:HGroup = new HGroup();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 1 + 1) * 110 * 17) + 107 - 1);
+            §§push(-(§§pop() + 73 + 78) - 1 - 16);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(30);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1 - 1) * 10) - 26 - 44 - 82);
+            §§push(-§§pop() - 85 + 1);
          }
          §§pop().height = §§pop();
          _loc1_.horizontalAlign = "left";
          _loc1_.verticalAlign = "middle";
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 91 + 1 + 80 - 9);
+            §§push(-(-(§§pop() - 21) + 12) + 1);
          }
          §§pop().verticalCenter = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 18 + 22 + 53) * 73) * 48);
+            §§push((-(-(§§pop() * 49) - 64) + 15) * 21);
          }
          §§pop().gap = §§pop();
-         _loc1_.mxmlContent = [this._KeywordItemRenderer_KeywordColumnRenderer1_i(),this._KeywordItemRenderer_SelfAdjustingLabel1_i(),this._KeywordItemRenderer_SelfAdjustingLabel2_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel1_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel2_i(),this._KeywordItemRenderer_SelfAdjustingLabel3_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel3_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel4_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel5_i(),this._KeywordItemRenderer_SelfAdjustingGroup1_i(),this._KeywordItemRenderer_AvgKCRendererGroup1_i()];
+         _loc1_.mxmlContent = [this._KeywordItemRenderer_KeywordColumnRenderer1_i(),this._KeywordItemRenderer_SelfAdjustingLabel1_i(),this._KeywordItemRenderer_SelfAdjustingLabel2_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel1_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel2_i(),this._KeywordItemRenderer_SelfAdjustingLabel3_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel3_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel4_i(),this._KeywordItemRenderer_FormattedSelfAdjustingLabel5_i(),this._KeywordItemRenderer_SelfAdjustingGroup1_i(),this._KeywordItemRenderer_CalculatableValueGroup1_i(),this._KeywordItemRenderer_CalculatableValueGroup2_i()];
          _loc1_.id = "rowGroup";
          if(!_loc1_.document)
          {
@@ -858,8 +894,8 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:SelfAdjustingGroup = new SelfAdjustingGroup();
          _loc1_.layout = this._KeywordItemRenderer_VerticalLayout2_c();
          _loc1_.mxmlContent = [this._KeywordItemRenderer_DomainRenderer1_i(),this._KeywordItemRenderer_DomainRenderer2_i()];
-         _loc1_.addEventListener("mouseMove",this.__domainRendererGroup_mouseMove);
          _loc1_.addEventListener("rollOut",this.__domainRendererGroup_rollOut);
+         _loc1_.addEventListener("rollOver",this.__domainRendererGroup_rollOver);
          _loc1_.id = "domainRendererGroup";
          if(!_loc1_.document)
          {
@@ -878,7 +914,7 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 + 1 + 6) * 97);
+            §§push(-(-§§pop() - 1 + 1 - 1) + 87);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -891,7 +927,7 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 77 - 63 - 50 + 1) * 36) * 16);
+            §§push((§§pop() - 52 - 117 + 1 - 38 - 1) * 76 * 15);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "domainsExact";
@@ -909,9 +945,9 @@ package com.enfluid.ltp.view.renderers
          var _loc1_:com.enfluid.ltp.view.renderers.DomainRenderer = new com.enfluid.ltp.view.renderers.DomainRenderer();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 + 47 + 33) * 50 + 1 - 1);
+            §§push(§§pop() * 67 - 1 - 8 + 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          _loc1_.id = "domainsHyphenated";
@@ -924,26 +960,39 @@ package com.enfluid.ltp.view.renderers
          return _loc1_;
       }
       
-      public final function __domainRendererGroup_mouseMove(param1:MouseEvent) : void
-      {
-         this.domainsGroup_rollOverHandler(param1);
-      }
-      
       public final function __domainRendererGroup_rollOut(param1:MouseEvent) : void
       {
          this.calloutCloseHandler(param1);
       }
       
-      private final function _KeywordItemRenderer_AvgKCRendererGroup1_i() : com.enfluid.ltp.view.renderers.AvgKCRendererGroup
+      public final function __domainRendererGroup_rollOver(param1:MouseEvent) : void
       {
-         var _loc1_:com.enfluid.ltp.view.renderers.AvgKCRendererGroup = new com.enfluid.ltp.view.renderers.AvgKCRendererGroup();
-         _loc1_.id = "_KeywordItemRenderer_AvgKCRendererGroup1";
+         this.domainsGroup_rollOverHandler(param1);
+      }
+      
+      private final function _KeywordItemRenderer_CalculatableValueGroup1_i() : com.enfluid.ltp.view.renderers.CalculatableValueGroup
+      {
+         var _loc1_:com.enfluid.ltp.view.renderers.CalculatableValueGroup = new com.enfluid.ltp.view.renderers.CalculatableValueGroup();
+         _loc1_.id = "_KeywordItemRenderer_CalculatableValueGroup1";
          if(!_loc1_.document)
          {
             _loc1_.document = this;
          }
-         this._KeywordItemRenderer_AvgKCRendererGroup1 = _loc1_;
-         BindingManager.executeBindings(this,"_KeywordItemRenderer_AvgKCRendererGroup1",this._KeywordItemRenderer_AvgKCRendererGroup1);
+         this._KeywordItemRenderer_CalculatableValueGroup1 = _loc1_;
+         BindingManager.executeBindings(this,"_KeywordItemRenderer_CalculatableValueGroup1",this._KeywordItemRenderer_CalculatableValueGroup1);
+         return _loc1_;
+      }
+      
+      private final function _KeywordItemRenderer_CalculatableValueGroup2_i() : com.enfluid.ltp.view.renderers.CalculatableValueGroup
+      {
+         var _loc1_:com.enfluid.ltp.view.renderers.CalculatableValueGroup = new com.enfluid.ltp.view.renderers.CalculatableValueGroup();
+         _loc1_.id = "_KeywordItemRenderer_CalculatableValueGroup2";
+         if(!_loc1_.document)
+         {
+            _loc1_.document = this;
+         }
+         this._KeywordItemRenderer_CalculatableValueGroup2 = _loc1_;
+         BindingManager.executeBindings(this,"_KeywordItemRenderer_CalculatableValueGroup2",this._KeywordItemRenderer_CalculatableValueGroup2);
          return _loc1_;
       }
       
@@ -954,9 +1003,10 @@ package com.enfluid.ltp.view.renderers
          §§push(100);
          if(_loc3_)
          {
-            §§push(§§pop() - 99 - 1 - 108 - 83 + 54);
+            §§push((§§pop() + 26) * 31 * 79 + 1 - 51);
          }
          §§pop().percentWidth = §§pop();
+         _loc1_.addEventListener("show",this.__caView_show);
          _loc1_.id = "caView";
          if(!_loc1_.document)
          {
@@ -965,6 +1015,10 @@ package com.enfluid.ltp.view.renderers
          this.caView = _loc1_;
          BindingManager.executeBindings(this,"caView",this.caView);
          return _loc1_;
+      }
+      
+      public final function __caView_show(param1:FlexEvent) : void
+      {
       }
       
       public final function ___KeywordItemRenderer_LTPItemRenderer1_creationComplete(param1:FlexEvent) : void
@@ -989,15 +1043,15 @@ package com.enfluid.ltp.view.renderers
          §§push(0);
          if(_loc3_)
          {
-            §§push(§§pop() + 33 + 1 + 73);
+            §§push(-(§§pop() - 45 - 1 + 1 + 1) + 47);
          }
          §§pop()[§§pop()] = new Binding(this,function():*
          {
             §§push(caView.height);
             §§push(45);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(§§pop() * 32 + 88 - 1 + 1 + 1);
+               §§push((§§pop() + 46 - 1) * 26 * 59);
             }
             return §§pop() + §§pop();
          },null,"_KeywordItemRenderer_SetProperty1.value");
@@ -1005,7 +1059,7 @@ package com.enfluid.ltp.view.renderers
          §§push(1);
          if(_loc2_)
          {
-            §§push(((§§pop() - 1 - 26) * 44 + 108 + 114) * 20 - 1);
+            §§push(-(§§pop() + 1 + 98 + 59) + 1 + 24 - 3);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1016,14 +1070,14 @@ package com.enfluid.ltp.view.renderers
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 111 + 1 - 107 - 1 + 1));
+            §§push(-(§§pop() + 94) * 20);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_AddAction1.target","caView");
          §§push(result);
          §§push(3);
          if(_loc3_)
          {
-            §§push(§§pop() + 1 + 59 + 35 + 109);
+            §§push(-(§§pop() * 26 + 62) + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1031,51 +1085,51 @@ package com.enfluid.ltp.view.renderers
          },null,"_KeywordItemRenderer_Resize1.target");
          §§push(result);
          §§push(4);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 1));
+            §§push(§§pop() + 86 + 1 + 1 - 93 + 1 - 37);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_Resize1.easer","powerEasing");
          §§push(result);
          §§push(5);
          if(_loc2_)
          {
-            §§push(--§§pop() - 1 - 16);
+            §§push(--§§pop() - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_Fade1.easer","powerEasing");
          §§push(result);
          §§push(6);
          if(_loc3_)
          {
-            §§push(-(§§pop() * 7 * 36) - 1 + 29 - 1);
+            §§push(-(§§pop() - 1 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_Fade1.target","caView");
          §§push(result);
          §§push(7);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 37) - 1) * 57 - 80);
+            §§push(((§§pop() - 1 - 1) * 24 + 109) * 82 - 107 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_Fade2.target","caView");
          §§push(result);
          §§push(8);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 82));
+            §§push((§§pop() + 1) * 112 - 1 + 105);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_Fade2.easer","powerEasing");
          §§push(result);
          §§push(9);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 41) * 41 - 1 - 106) - 102);
+            §§push(§§pop() + 104 - 1 - 8);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_Resize2.easer","powerEasing");
          §§push(result);
          §§push(10);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 + 1 + 24);
+            §§push(§§pop() + 1 - 68 - 1 + 1 + 16 + 6 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Object
          {
@@ -1085,14 +1139,14 @@ package com.enfluid.ltp.view.renderers
          §§push(11);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 1 + 1) + 1);
+            §§push((-(§§pop() - 1 + 1) + 1 + 105) * 69);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_KeywordItemRenderer_RemoveAction1.target","caView");
          §§push(result);
          §§push(12);
          if(_loc2_)
          {
-            §§push(-§§pop() + 60 + 1);
+            §§push(§§pop() + 1 + 1 + 73);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1100,9 +1154,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_KeywordItemRenderer_Label1.includeInLayout");
          §§push(result);
          §§push(13);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 114 - 50 + 1 + 1 - 105) * 57);
+            §§push(--(§§pop() - 95 - 1) + 40);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1110,9 +1164,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_KeywordItemRenderer_Label1.visible");
          §§push(result);
          §§push(14);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(((§§pop() + 1) * 115 - 1 - 1) * 70 - 1);
+            §§push((§§pop() + 112) * 61 + 20 - 1 + 1 - 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1122,7 +1176,7 @@ package com.enfluid.ltp.view.renderers
          §§push(15);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 21) + 34);
+            §§push(--(§§pop() + 1 + 18 + 75) + 1 - 117);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1132,7 +1186,7 @@ package com.enfluid.ltp.view.renderers
          §§push(16);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) + 84 + 115 - 1);
+            §§push((§§pop() - 29 - 1 + 1 - 46 - 1) * 55);
          }
          §§pop()[§§pop()] = new Binding(this,function():KeywordVO
          {
@@ -1142,7 +1196,7 @@ package com.enfluid.ltp.view.renderers
          §§push(17);
          if(_loc2_)
          {
-            §§push(-(§§pop() * 47 + 1 - 1 + 1 - 78 - 1));
+            §§push(§§pop() * 15 - 1 + 95);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -1152,7 +1206,7 @@ package com.enfluid.ltp.view.renderers
          §§push(18);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 57 - 1) - 26 - 1 + 105);
+            §§push(-(-§§pop() * 92 + 99) + 23 - 1 + 29);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
@@ -1160,9 +1214,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_KeywordItemRenderer_KeywordColumnRenderer1.column");
          §§push(result);
          §§push(19);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 1 - 1 + 1));
+            §§push(--(§§pop() + 64 + 32 - 1 + 89) - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1173,7 +1227,7 @@ package com.enfluid.ltp.view.renderers
          §§push(20);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 63 - 1) * 56 - 9 - 1 - 27);
+            §§push(-(§§pop() + 103 + 97 - 76) + 33);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
@@ -1183,7 +1237,7 @@ package com.enfluid.ltp.view.renderers
          §§push(21);
          if(_loc2_)
          {
-            §§push(§§pop() * 87 + 48 + 38);
+            §§push((-(§§pop() - 1) + 1 - 16) * 117 - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1192,9 +1246,9 @@ package com.enfluid.ltp.view.renderers
          },null,"_KeywordItemRenderer_SelfAdjustingLabel2.text");
          §§push(result);
          §§push(22);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-§§pop() * 25 - 32) * 28 + 1 + 30);
+            §§push(-((-§§pop() + 1) * 15 - 45 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
@@ -1204,49 +1258,71 @@ package com.enfluid.ltp.view.renderers
          §§push(23);
          if(_loc2_)
          {
-            §§push(--(§§pop() + 99 - 79 - 1 - 69));
+            §§push(-((§§pop() + 106 - 1 + 1) * 118));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
-            var _loc1_:* = keyword.localSearches;
+            var _loc1_:* = calcSearchesLabel(keyword,"local");
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel1.text");
          §§push(result);
          §§push(24);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 79 - 111 - 23 - 8);
+            §§push(-((§§pop() * 82 - 1) * 44 - 85) + 1 + 8);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = AdWordsRestrictedToolTip;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel1.toolTip");
+         §§push(result);
+         §§push(25);
+         if(_loc2_)
+         {
+            §§push(--(§§pop() + 1 + 4));
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.localSearches;
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel1.column");
          §§push(result);
-         §§push(25);
-         if(_loc2_)
-         {
-            §§push(-(-(§§pop() + 44) - 106 - 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():String
-         {
-            var _loc1_:* = keyword.globalSearches;
-            return _loc1_ == undefined?null:String(_loc1_);
-         },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel2.text");
-         §§push(result);
          §§push(26);
          if(_loc3_)
          {
-            §§push(((§§pop() - 1 + 1 - 1) * 48 + 92) * 61);
+            §§push(---(§§pop() + 5 - 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = calcSearchesLabel(keyword,"global");
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel2.text");
+         §§push(result);
+         §§push(27);
+         if(_loc3_)
+         {
+            §§push(§§pop() + 91 + 1 - 71 + 55);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = AdWordsRestrictedGlobalToolTip;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel2.toolTip");
+         §§push(result);
+         §§push(28);
+         if(_loc2_)
+         {
+            §§push(§§pop() + 51 - 48 + 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.globalSearches;
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel2.column");
          §§push(result);
-         §§push(27);
-         if(_loc3_)
+         §§push(29);
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 51) - 1 + 1);
+            §§push(-§§pop() - 1 + 1 + 1 - 106);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1254,20 +1330,20 @@ package com.enfluid.ltp.view.renderers
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_KeywordItemRenderer_SelfAdjustingLabel3.text");
          §§push(result);
-         §§push(28);
+         §§push(30);
          if(_loc2_)
          {
-            §§push(--(§§pop() - 39 + 1 - 64 - 1) - 1);
+            §§push(((§§pop() - 85) * 119 + 1) * 110 - 80 - 89);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.advertizerCompetition;
          },null,"_KeywordItemRenderer_SelfAdjustingLabel3.column");
          §§push(result);
-         §§push(29);
+         §§push(31);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 36 + 1));
+            §§push(-((§§pop() * 39 - 112 - 78) * 19));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1275,20 +1351,20 @@ package com.enfluid.ltp.view.renderers
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel3.text");
          §§push(result);
-         §§push(30);
+         §§push(32);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() + 58 + 1 - 26 - 24) - 1));
+            §§push(-(-§§pop() + 1 - 57 - 1) - 108);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.numWords;
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel3.column");
          §§push(result);
-         §§push(31);
+         §§push(33);
          if(_loc2_)
          {
-            §§push(--§§pop() * 112);
+            §§push(-(§§pop() - 54 - 1) - 29 - 93);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1296,20 +1372,20 @@ package com.enfluid.ltp.view.renderers
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel4.text");
          §§push(result);
-         §§push(32);
-         if(_loc3_)
+         §§push(34);
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 1) + 13 - 53));
+            §§push(§§pop() + 1 - 1 + 1 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.googleTitleCompetition;
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel4.column");
          §§push(result);
-         §§push(33);
+         §§push(35);
          if(_loc3_)
          {
-            §§push(§§pop() - 29 + 1 - 1 - 1 - 1);
+            §§push((§§pop() + 6 - 55 + 58 - 78) * 13);
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {
@@ -1317,100 +1393,172 @@ package com.enfluid.ltp.view.renderers
             return _loc1_ == undefined?null:String(_loc1_);
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel5.text");
          §§push(result);
-         §§push(34);
+         §§push(36);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1));
+            §§push(-(-§§pop() * 81) - 1 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.bingTitleCompetition;
          },null,"_KeywordItemRenderer_FormattedSelfAdjustingLabel5.column");
          §§push(result);
-         §§push(35);
-         if(_loc3_)
+         §§push(37);
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 72 + 56) * 75);
+            §§push((§§pop() - 113 - 1 + 1) * 100 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():GridColumn
          {
             return viewModel.keywordColumns.domainAvailability;
          },null,"domainRendererGroup.column");
          §§push(result);
-         §§push(36);
+         §§push(38);
          if(_loc3_)
          {
-            §§push((§§pop() + 1 + 1 + 113 - 1) * 66);
+            §§push(-(§§pop() * 27 + 52 - 1) * 22 * 13);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainsVO
          {
             return keyword.domainsExact;
          },null,"domainsExact.domainsVO");
          §§push(result);
-         §§push(37);
-         if(_loc3_)
+         §§push(39);
+         if(_loc2_)
          {
-            §§push(((§§pop() + 1 + 54) * 75 + 16 - 1) * 104 + 1);
+            §§push(-§§pop() * 26 - 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {
             return model.selectedKeywordCollection.project.domainsExactMatchExtensions;
          },null,"domainsExact.options");
          §§push(result);
-         §§push(38);
+         §§push(40);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 1) * 82);
+            §§push(§§pop() * 47 + 1 - 1 + 77 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainsVO
          {
             return keyword.domainsHyphenated;
          },null,"domainsHyphenated.domainsVO");
          §§push(result);
-         §§push(39);
+         §§push(41);
          if(_loc3_)
          {
-            §§push(-(-(-§§pop() + 1) * 31) * 111 * 93);
+            §§push((§§pop() - 58 - 3 - 107) * 85);
          }
          §§pop()[§§pop()] = new Binding(this,function():DomainExtensionOptions
          {
             return model.selectedKeywordCollection.project.domainsHyphenatedExtensions;
          },null,"domainsHyphenated.options");
          §§push(result);
-         §§push(40);
+         §§push(42);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 1) + 13);
+            §§push((§§pop() - 1 - 1 - 1) * 26 + 1 + 1);
          }
-         §§pop()[§§pop()] = new Binding(this,function():GridColumn
+         §§pop()[§§pop()] = new Binding(this,function():int
          {
-            return viewModel.keywordColumns.avgKC;
-         },null,"_KeywordItemRenderer_AvgKCRendererGroup1.column");
-         §§push(result);
-         §§push(41);
-         if(_loc3_)
-         {
-            §§push(-§§pop() + 1 + 1 + 1 - 1);
-         }
-         §§pop()[§§pop()] = new Binding(this,function():Boolean
-         {
-            return isRolledOver;
-         },null,"_KeywordItemRenderer_AvgKCRendererGroup1.isRolledOverRow");
-         §§push(result);
-         §§push(42);
-         if(_loc3_)
-         {
-            §§push(-(§§pop() - 30 - 71 - 1 - 1));
-         }
-         §§pop()[§§pop()] = new Binding(this,function():KeywordVO
-         {
-            return keyword;
-         },null,"_KeywordItemRenderer_AvgKCRendererGroup1.keyword");
+            return keyword.amazonKC;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup1.value");
          §§push(result);
          §§push(43);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 20 + 1) - 102) * 54 + 1 - 107);
+            §§push(-§§pop() - 1 - 1 - 1 + 113 - 1 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():GridColumn
+         {
+            return viewModel.keywordColumns.amazonKC;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup1.column");
+         §§push(result);
+         §§push(44);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() + 1 - 1) - 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return isRolledOver;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup1.isRolledOverRow");
+         §§push(result);
+         §§push(45);
+         if(_loc3_)
+         {
+            §§push(-((§§pop() - 30 + 9) * 70) * 52);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = CalculatableValueGroup.TYPE_AMAZON_KC;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordItemRenderer_CalculatableValueGroup1.type");
+         §§push(result);
+         §§push(46);
+         if(_loc3_)
+         {
+            §§push(--(§§pop() + 1) - 95);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():KeywordVO
+         {
+            return keyword;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup1.keyword");
+         §§push(result);
+         §§push(47);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 1 + 106 - 1 - 1 - 1 + 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():int
+         {
+            return keyword.avgKC;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup2.value");
+         §§push(result);
+         §§push(48);
+         if(_loc3_)
+         {
+            §§push(§§pop() + 74 - 78 - 93 + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():GridColumn
+         {
+            return viewModel.keywordColumns.avgKC;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup2.column");
+         §§push(result);
+         §§push(49);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() - 1) + 1);
+         }
+         §§pop()[§§pop()] = new Binding(this,function():Boolean
+         {
+            return isRolledOver;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup2.isRolledOverRow");
+         §§push(result);
+         §§push(50);
+         if(_loc2_)
+         {
+            §§push(-(§§pop() - 82 - 56 - 89 + 1 - 24));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():String
+         {
+            var _loc1_:* = CalculatableValueGroup.TYPE_AVG_KC;
+            return _loc1_ == undefined?null:String(_loc1_);
+         },null,"_KeywordItemRenderer_CalculatableValueGroup2.type");
+         §§push(result);
+         §§push(51);
+         if(_loc3_)
+         {
+            §§push(-(§§pop() - 106 - 1));
+         }
+         §§pop()[§§pop()] = new Binding(this,function():KeywordVO
+         {
+            return keyword;
+         },null,"_KeywordItemRenderer_CalculatableValueGroup2.keyword");
+         §§push(result);
+         §§push(52);
+         if(_loc3_)
+         {
+            §§push((§§pop() + 1 + 1 + 1 - 1) * 0 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():KeywordVO
          {
@@ -1776,6 +1924,44 @@ package com.enfluid.ltp.view.renderers
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"topBottomPadding",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      private function get AdWordsRestrictedToolTip() : String
+      {
+         return this._1356814210AdWordsRestrictedToolTip;
+      }
+      
+      private function set AdWordsRestrictedToolTip(param1:String) : void
+      {
+         var _loc2_:Object = this._1356814210AdWordsRestrictedToolTip;
+         if(_loc2_ !== param1)
+         {
+            this._1356814210AdWordsRestrictedToolTip = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"AdWordsRestrictedToolTip",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      private function get AdWordsRestrictedGlobalToolTip() : String
+      {
+         return this._62434079AdWordsRestrictedGlobalToolTip;
+      }
+      
+      private function set AdWordsRestrictedGlobalToolTip(param1:String) : void
+      {
+         var _loc2_:Object = this._62434079AdWordsRestrictedGlobalToolTip;
+         if(_loc2_ !== param1)
+         {
+            this._62434079AdWordsRestrictedGlobalToolTip = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"AdWordsRestrictedGlobalToolTip",_loc2_,param1));
             }
          }
       }

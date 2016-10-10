@@ -1,15 +1,19 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import spark.primitives.Path;
-   import mx.binding.BindingManager;
-   import mx.graphics.SolidColor;
+   import com.enfluid.ltp.util.MajesticUtils;
+   import mx.rpc.http.HTTPService;
+   import flash.filesystem.File;
+   import mx.controls.Alert;
    import com.enfluid.ltp.model.ViewModel;
-   import com.enfluid.ltp.util.FileSystemOperations;
-   import com.enfluid.ltp.model.constants.Constants;
    import com.enfluid.ltp.util.Util;
+   import com.enfluid.ltp.model.constants.Constants;
+   import com.enfluid.ltp.util.FileSystemOperations;
    import com.enfluid.ltp.util.BlowFishUtil;
    import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisContentComponent;
+   import mx.binding.BindingManager;
+   import spark.primitives.RectangularDropShadow;
    
    public final class LoadRegistrationStatusCommand extends Command implements IPhotonCommand
    {
@@ -26,6 +30,11 @@ package com.enfluid.ltp.controller.common
          var decrypted:String = null;
          var xml:XML = null;
          ViewModel.instance.startupText = "Checking Registration...";
+         var file:File = Util.getRegistrationStatusFolder().resolvePath(Constants.REG_FILE_NAME);
+         if(!file.exists)
+         {
+            model.isFirstTimeUser = true;
+         }
          try
          {
             encrypted = FileSystemOperations.instance.read(Constants.REG_FILE_NAME,Util.getRegistrationStatusFolder());

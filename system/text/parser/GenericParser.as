@@ -16,9 +16,9 @@ package system.text.parser
          _source = param1;
          §§push();
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-((-§§pop() + 35) * 40 + 1) * 3);
+            §§push(-§§pop() * 47 - 1 - 1);
          }
          §§pop().pos = §§pop();
          ch = "";
@@ -38,15 +38,15 @@ package system.text.parser
       {
          §§push(param1);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 - 1 + 68);
+            §§push(-§§pop() - 46 + 1);
          }
          §§push(§§pop().charCodeAt(§§pop()));
          §§push(255);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((-(§§pop() + 1) + 23 + 1) * 118));
+            §§push(-(§§pop() + 1 + 35));
          }
          return §§pop() > §§pop();
       }
@@ -60,15 +60,15 @@ package system.text.parser
       {
          §§push(param1);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 1 - 92 - 4 + 1);
+            §§push(-(§§pop() * 93 + 49 - 2));
          }
          §§push(§§pop().charCodeAt(§§pop()));
          §§push(255);
          if(_loc3_)
          {
-            §§push(-((§§pop() + 1) * 69) - 1 - 67 - 84);
+            §§push(§§pop() * 48 * 34 - 1 - 23 - 49);
          }
          return §§pop() <= §§pop();
       }

@@ -1,12 +1,14 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
-   import com.enfluid.ltp.model.constants.RankCheckConstants;
-   import spark.effects.Resize;
-   import mx.binding.BindingManager;
+   import com.hurlant.math.BigInteger;
+   import com.hurlant.math.bi_internal;
    import com.enfluid.ltp.util.KeywordArrayCollection;
+   import spark.filters.DropShadowFilter;
    import mx.events.PropertyChangeEvent;
-   import mx.events.FlexEvent;
+   import hr.binaria.asx3m.annotations.Annotation;
+   
+   use namespace bi_internal;
    
    [BelongsTo("project",className="ProjectVO")]
    public dynamic class SeedKeywordVO extends ActiveRecord
@@ -18,6 +20,8 @@ package com.enfluid.ltp.model.vo
       private var _2133274738includeKeywords:String;
       
       private var _814408215keyword:String;
+      
+      private var _777053001isRelatedKeywordsOnly:Boolean = false;
       
       private var _523149226keywords:KeywordArrayCollection;
       
@@ -95,6 +99,25 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"keyword",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get isRelatedKeywordsOnly() : Boolean
+      {
+         return this._777053001isRelatedKeywordsOnly;
+      }
+      
+      public function set isRelatedKeywordsOnly(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._777053001isRelatedKeywordsOnly;
+         if(_loc2_ !== param1)
+         {
+            this._777053001isRelatedKeywordsOnly = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"isRelatedKeywordsOnly",_loc2_,param1));
             }
          }
       }

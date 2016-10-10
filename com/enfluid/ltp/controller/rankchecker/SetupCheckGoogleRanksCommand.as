@@ -2,9 +2,7 @@ package com.enfluid.ltp.controller.rankchecker
 {
    import com.photon.controller.PhotonComplexCommand;
    import com.photon.controller.IPhotonCommand;
-   import system.serializers.eden.config;
-   import spark.layouts.HorizontalLayout;
-   import com.enfluid.ltp.model.vo.KeywordVO;
+   import mx.graphics.SolidColor;
    import mx.events.FlexEvent;
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
    import com.enfluid.ltp.model.DataModel;
@@ -18,9 +16,9 @@ package com.enfluid.ltp.controller.rankchecker
          var _loc1_:RankCheckItemVO = null;
          super();
          §§push(0);
-         if(_loc4_)
+         if(_loc5_)
          {
-            §§push(§§pop() + 28 + 1 - 1 - 113 + 25);
+            §§push((-(§§pop() - 30) * 9 - 1) * 32);
          }
          for each(_loc1_ in DataModel.instance.rankCheckItems)
          {

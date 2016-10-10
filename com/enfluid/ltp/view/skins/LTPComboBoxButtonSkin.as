@@ -8,15 +8,11 @@ package com.enfluid.ltp.view.skins
    import mx.core.IFlexModuleFactory;
    import mx.binding.BindingManager;
    import mx.graphics.SolidColor;
-   import hr.binaria.asx3m.mapper.IMapper;
    import mx.graphics.RadialGradient;
-   import spark.components.Image;
-   import spark.effects.Fade;
-   import com.enfluid.ltp.view.renderers.DomainRenderer;
+   import spark.layouts.VerticalLayout;
+   import com.adobe.cairngorm.observer.Observe;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -48,14 +44,14 @@ package com.enfluid.ltp.view.skins
          §§push(19);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 1 - 16 - 112) * 27 - 54 - 40);
+            §§push((§§pop() - 26 + 1 - 95 + 117) * 5 - 19);
          }
          §§pop().minWidth = §§pop();
          §§push(this);
          §§push(23);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 77 + 1) * 113) - 1);
+            §§push(-(§§pop() - 1 + 73) + 1);
          }
          §§pop().minHeight = §§pop();
          this.mxmlContent = [this._LTPComboBoxButtonSkin_Rect1_i(),this._LTPComboBoxButtonSkin_Rect2_i(),this._LTPComboBoxButtonSkin_Path1_i()];
@@ -86,7 +82,7 @@ package com.enfluid.ltp.view.skins
          §§push(1);
          if(_loc1_)
          {
-            §§push(-(§§pop() + 65 - 100 - 30 + 73));
+            §§push(§§pop() - 27 - 29 - 1 + 115);
          }
          §§push(§§pop().initializeFromObject(null));
          §§push(new SetProperty());
@@ -96,9 +92,9 @@ package com.enfluid.ltp.view.skins
          §§push("alpha");
          §§push("value");
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-((§§pop() + 14) * 110) * 97 - 1 - 1);
+            §§push((-(§§pop() - 8) + 1) * 49 - 1);
          }
          §§pop().states = null;
       }
@@ -139,28 +135,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(§§pop() * 18) - 1) * 72 - 71 - 60);
+            §§push((-((§§pop() + 1 + 51) * 87) + 1) * 2);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() - 15 - 73 - 1));
+            §§push(-(-(§§pop() + 1) + 1 + 1));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(-(§§pop() - 18) - 108 + 1) - 73);
+            §§push(-§§pop() - 1 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) + 1);
+            §§push(§§pop() + 1 + 1 - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._LTPComboBoxButtonSkin_SolidColor1_c();
@@ -175,9 +171,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 4 - 1 + 29);
+            §§push(-(§§pop() + 1 - 1) - 1 + 73 + 58);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -190,28 +186,28 @@ package com.enfluid.ltp.view.skins
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-§§pop() - 70 + 1 - 23 + 108) + 1);
+            §§push(§§pop() + 1 + 1 - 1);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 55) * 78 * 34);
+            §§push(-(§§pop() * 94 - 1));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 30 + 80 - 1 - 1 - 1 - 81 - 112);
+            §§push(-((§§pop() + 1) * 44 + 1) - 14 + 79);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 36 - 59 + 49 - 1 - 90);
+            §§push(-((-§§pop() - 69) * 97));
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._LTPComboBoxButtonSkin_SolidColor2_c();
@@ -226,9 +222,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() - 1 - 3 - 1 - 1 - 1));
+            §§push(-((-(§§pop() * 17) - 94) * 115));
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -240,9 +236,9 @@ package com.enfluid.ltp.view.skins
          _loc1_.right = 10.5;
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 101 - 1) * 27 - 24 - 1 - 1);
+            §§push(§§pop() - 119 + 1 - 1);
          }
          §§pop().verticalCenter = §§pop();
          _loc1_.data = "M 0 0 L 15 0 L 8 10 L 0 0";
@@ -260,7 +256,7 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc3_)
          {
-            §§push((--(§§pop() - 1) - 34) * 35 * 3);
+            §§push(-((§§pop() - 1 - 26 - 1) * 101 - 1) * 56);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._LTPComboBoxButtonSkin_GradientEntry1_i(),this._LTPComboBoxButtonSkin_GradientEntry2_i()];
@@ -272,9 +268,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(13158600);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 117 + 112 + 1);
+            §§push((§§pop() * 113 * 73 + 60) * 90 + 1);
          }
          §§pop().color = §§pop();
          this.arrowFill1 = _loc1_;
@@ -289,7 +285,7 @@ package com.enfluid.ltp.view.skins
          §§push(13158600);
          if(_loc3_)
          {
-            §§push((§§pop() + 104 - 1 + 47) * 58 + 1 - 36 - 1);
+            §§push((§§pop() - 24 - 1 - 19) * 65 + 37 - 5 + 1);
          }
          §§pop().color = §§pop();
          this.arrowFill2 = _loc1_;

@@ -2,21 +2,17 @@ package com.enfluid.ltp.view.skins
 {
    import spark.components.supportClasses.Skin;
    import mx.core.IStateClient2;
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
    import spark.components.Group;
    import mx.core.IFlexModuleFactory;
    import spark.primitives.Rect;
    import mx.graphics.SolidColor;
-   import mx.core.IFlexDisplayObject;
-   import spark.primitives.BitmapImage;
-   import mx.binding.BindingManager;
+   import mx.binding.Binding;
    import mx.graphics.LinearGradient;
    import mx.graphics.GradientEntry;
-   import mx.events.CloseEvent;
-   import com.adobe.cairngorm.popup.PopUpEvent;
-   import mx.managers.PopUpManager;
+   import com.enfluid.ltp.util.ProgressBarUtil;
+   import mx.binding.BindingManager;
    import spark.layouts.VerticalLayout;
+   import spark.components.HGroup;
    import spark.components.SkinnableContainer;
    import mx.events.PropertyChangeEvent;
    import mx.states.State;
@@ -70,30 +66,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(§§pop() - 57) - 1) * 86);
+            §§push(§§pop() * 83 - 1 - 52);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((-(§§pop() + 1 - 82) + 115) * 117);
+            §§push((§§pop() + 76 - 109) * 106);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() * 97 + 1 - 117) * 2);
+            §§push((§§pop() + 1 + 106) * 62);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 29 - 1 + 1 + 1);
+            §§push((§§pop() + 1 - 85 + 88) * 40 + 1 - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._BorderContainerYellowShadowSkin_SolidColor1_c();
@@ -106,9 +102,9 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--§§pop() + 1 + 1 - 74 + 31);
+            §§push(-((§§pop() - 85) * 15) * 21);
          }
          §§pop().color = §§pop();
          return _loc1_;
@@ -121,14 +117,14 @@ package com.enfluid.ltp.view.skins
          §§push(100);
          if(_loc3_)
          {
-            §§push((-(§§pop() + 1) - 1 - 1 - 27 + 98) * 29);
+            §§push(§§pop() - 1 - 39 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(8);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 53 + 118 + 1);
+            §§push((-§§pop() - 14 - 1 - 1) * 84);
          }
          §§pop().height = §§pop();
          _loc1_.fill = this._BorderContainerYellowShadowSkin_LinearGradient1_c();
@@ -143,7 +139,7 @@ package com.enfluid.ltp.view.skins
          §§push(90);
          if(_loc2_)
          {
-            §§push((-(§§pop() * 50 - 1) - 1 - 3) * 24 - 62);
+            §§push((§§pop() + 29 + 117 + 110 + 1) * 60 + 1);
          }
          §§pop().rotation = §§pop();
          _loc1_.entries = [this._BorderContainerYellowShadowSkin_GradientEntry1_c(),this._BorderContainerYellowShadowSkin_GradientEntry2_c()];
@@ -157,14 +153,14 @@ package com.enfluid.ltp.view.skins
          §§push(16760088);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1) * 64 + 1));
+            §§push(--(§§pop() + 1) * 81 + 83 - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 37) + 119 + 1 + 1 - 17);
+            §§push(-((§§pop() * 46 + 76 - 44) * 119));
          }
          §§pop().alpha = §§pop();
          return _loc1_;
@@ -177,14 +173,14 @@ package com.enfluid.ltp.view.skins
          §§push(16760088);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 35 + 1 + 71 - 1 - 1) * 26));
+            §§push(§§pop() - 1 + 114 - 21 - 38 + 48);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((-§§pop() + 1 + 78) * 31 - 1 + 47));
+            §§push(§§pop() + 1 - 1 + 55 - 1);
          }
          §§pop().alpha = §§pop();
          return _loc1_;
@@ -195,30 +191,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Group = new Group();
          §§push(_loc1_);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() * 27 - 1 + 48) * 91 - 59 - 96 - 1);
+            §§push(-(-(§§pop() - 1) - 115 - 10));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(15);
          if(_loc3_)
          {
-            §§push((§§pop() - 1) * 67 * 81);
+            §§push(§§pop() * 45 - 35 - 82 - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(15);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 1) + 99) * 26 + 10);
+            §§push((-§§pop() - 1) * 114 - 27 + 95);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(15);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 77 - 1 + 28 - 1 - 45 - 40);
+            §§push((§§pop() + 1 - 1 - 1) * 30 - 1 + 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.layout = this._BorderContainerYellowShadowSkin_VerticalLayout1_c();

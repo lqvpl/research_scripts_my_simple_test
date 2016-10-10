@@ -1,25 +1,37 @@
 package hr.binaria.asx3m.core
 {
    import hr.binaria.asx3m.converters.IUnmarshallingContext;
-   import spark.primitives.Rect;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
+   import mx.core.ClassFactory;
+   import com.enfluid.ltp.view.renderers.headers.ProxiesHeaderRenderer;
+   import mx.controls.Spacer;
    import hr.binaria.asx3m.mapper.IMapper;
-   import spark.components.HGroup;
    import hr.binaria.asx3m.converters.IConverter;
-   import com.enfluid.ltp.view.components.ToggleSwitch;
-   import com.enfluid.ltp.util.Util;
+   import com.enfluid.ltp.model.DataModel;
+   import com.enfluid.ltp.model.ViewModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.target;
+   import com.enfluid.ltp.view.ProxiesCallout;
+   import mx.core.DeferredInstanceFromFunction;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.view.LeftRail;
+   import spark.primitives.Rect;
+   import flash.utils.ByteArray;
+   import com.hurlant.math.BigInteger;
    import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import mx.graphics.GradientEntry;
-   import mx.states.State;
-   import mx.states.SetProperty;
+   import flash.utils.Endian;
    import flash.utils.getQualifiedClassName;
    import hr.binaria.asx3m.converters.IDataHolder;
-   import mx.graphics.SolidColorStroke;
+   import spark.effects.Resize;
+   import mx.binding.BindingManager;
    import system.data.Iterator;
    import system.data.stacks.ArrayStack;
+   import spark.components.VGroup;
    import hr.binaria.asx3m.converters.IConverterLookup;
-   import flash.utils.ByteArray;
+   import com.photon.controller.PhotonCommand;
+   import mx.effects.Parallel;
+   
+   use namespace mx_internal;
    
    public final class TreeUnmarshaller implements IUnmarshallingContext
    {
@@ -74,9 +86,9 @@ package hr.binaria.asx3m.core
       {
          §§push(types.size());
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push((§§pop() + 32) * 32 * 6 + 10 + 1 - 1);
+            §§push(-(((§§pop() - 1) * 101 * 107 + 70) * 42));
          }
          return §§pop() == §§pop()?_root:null;
       }

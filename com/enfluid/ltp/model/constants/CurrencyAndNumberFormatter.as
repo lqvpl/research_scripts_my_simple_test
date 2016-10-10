@@ -1,16 +1,19 @@
 package com.enfluid.ltp.model.constants
 {
+   import spark.components.Label;
+   import mx.binding.BindingManager;
    import mx.formatters.CurrencyFormatter;
    import com.enfluid.ltp.model.DataModel;
    import spark.formatters.NumberFormatter;
-   import com.enfluid.ltp.util.BlowFishUtil;
-   import com.enfluid.ltp.util.Util;
-   import com.enfluid.ltp.controller.filesystem.SaveStringToDiskCommand;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.components.majestic.target;
+   import com.enfluid.ltp.view.components.majestic.CompetitorMajesticAnalysisHeaderComponent;
+   import mx.binding.Binding;
    import flash.utils.ByteArray;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import system.data.Map;
-   import system.data.Iterator;
+   import mx.graphics.GradientEntry;
+   
+   use namespace mx_internal;
    
    public final class CurrencyAndNumberFormatter
    {
@@ -60,7 +63,7 @@ package com.enfluid.ltp.model.constants
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1) * 12) * 0 - 90 + 79);
+            §§push(-((§§pop() - 32 - 85) * 118 * 94 - 19) + 1);
          }
          if(§§pop() < §§pop())
          {
@@ -76,7 +79,7 @@ package com.enfluid.ltp.model.constants
          §§push(0);
          if(_loc4_)
          {
-            §§push(--§§pop() - 1 - 45 - 57 + 13);
+            §§push(§§pop() + 1 + 1 - 1);
          }
          if(§§pop() < §§pop())
          {

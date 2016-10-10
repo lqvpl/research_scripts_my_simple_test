@@ -1,12 +1,20 @@
 package hr.binaria.asx3m.converters.reflection
 {
    import hr.binaria.asx3m.converters.IConverter;
+   import flash.events.MouseEvent;
    import hr.binaria.asx3m.mapper.IMapper;
    import hr.binaria.asx3m.io.IHierarchicalStreamReader;
    import hr.binaria.asx3m.converters.IUnmarshallingContext;
    import flash.utils.describeType;
    import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
    import hr.binaria.asx3m.converters.IMarshallingContext;
+   import flash.filesystem.File;
+   import com.enfluid.ltp.model.vo.RTDomain;
+   import com.enfluid.ltp.model.vo.RTKeyword;
+   import com.enfluid.ltp.model.vo.RTRank;
+   import com.enfluid.ltp.util.Logger;
+   import com.enfluid.ltp.controller.common.SaveRegistrationStatusCommand;
+   import flash.utils.setTimeout;
    
    public final class ReflectionConverter implements IConverter
    {
@@ -70,9 +78,9 @@ package hr.binaria.asx3m.converters.reflection
          var _loc3_:XML = null;
          var _loc4_:XML = null;
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push(-(-(§§pop() + 1) + 1));
+            §§push(-(§§pop() * 84 - 68) * 110 + 1);
          }
          for each(_loc3_ in param2.elements("variable"))
          {
@@ -82,9 +90,9 @@ package hr.binaria.asx3m.converters.reflection
             }
          }
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push(-§§pop() + 23 - 1 + 50 + 6 - 1);
+            §§push((-§§pop() - 1 + 28) * 85 + 1 + 15);
          }
          for each(_loc4_ in param2.elements("accessor"))
          {
@@ -108,9 +116,9 @@ package hr.binaria.asx3m.converters.reflection
          var _loc7_:Object = null;
          var _loc4_:XML = describeType(param1);
          §§push(0);
-         if(_loc11_)
+         if(_loc10_)
          {
-            §§push(§§pop() + 73 + 52 - 117 - 1 - 1 - 28 + 54);
+            §§push(§§pop() + 83 - 1 + 1 - 1 - 62 + 119 + 1);
          }
          for each(_loc5_ in _loc4_.elements("variable"))
          {
@@ -127,9 +135,9 @@ package hr.binaria.asx3m.converters.reflection
             }
          }
          §§push(0);
-         if(_loc10_)
+         if(_loc11_)
          {
-            §§push(§§pop() - 18 + 20 + 97);
+            §§push(-(§§pop() + 72) - 1);
          }
          for each(_loc5_ in _loc4_.elements("accessor"))
          {

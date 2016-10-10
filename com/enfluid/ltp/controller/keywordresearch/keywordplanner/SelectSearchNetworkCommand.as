@@ -2,6 +2,9 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
 {
    import com.photon.controller.IPhotonCommand;
    import com.enfluid.ltp.util.ProgressBarUtil;
+   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
+   import hr.binaria.asx3m.converters.IMarshallingContext;
+   import mx.collections.ArrayCollection;
    
    public final class SelectSearchNetworkCommand extends KeywordPlannerCommand implements IPhotonCommand
    {
@@ -53,7 +56,7 @@ package com.enfluid.ltp.controller.keywordresearch.keywordplanner
          §§push(2);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 17 + 91 + 32));
+            §§push((§§pop() * 107 * 75 + 1) * 109 - 24 + 1);
          }
          §§pop().findAndClickEditPencilUnderTargetingSection(§§pop());
       }

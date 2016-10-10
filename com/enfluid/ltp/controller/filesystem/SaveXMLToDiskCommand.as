@@ -5,7 +5,7 @@ package com.enfluid.ltp.controller.filesystem
    import flash.filesystem.File;
    import flash.filesystem.FileStream;
    import flash.errors.IOError;
-   import spark.components.Image;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
    import mx.binding.BindingManager;
    import flash.filesystem.FileMode;
    import mx.controls.Alert;
@@ -44,14 +44,14 @@ package com.enfluid.ltp.controller.filesystem
             §§push(130);
             if(_loc4_)
             {
-               §§push(-(§§pop() * 91) + 116);
+               §§push(-§§pop() * 100 + 1);
             }
             §§pop().buttonWidth = §§pop();
             §§push(Alert);
             §§push(30);
-            if(_loc3_)
+            if(_loc4_)
             {
-               §§push(-(-§§pop() * 13 + 85) + 72);
+               §§push(§§pop() * 10 - 1 - 46 - 1);
             }
             §§pop().buttonHeight = §§pop();
             Alert.show("ISSUE SAVING PREFERENCE FILE " + ioe.message);

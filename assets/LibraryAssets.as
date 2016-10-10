@@ -1,7 +1,8 @@
 package assets
 {
-   import com.enfluid.ltp.view.filterviews.LocalSearchesFilterView;
-   import mx.binding.Binding;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
+   import spark.primitives.Rect;
    
    public final class LibraryAssets
    {

@@ -51,6 +51,7 @@ package mx.core
          this.layoutObject.target = this;
       }
       
+      [ArrayElementType("mx.containers.utilityClasses.ConstraintColumn")]
       public function get constraintColumns() : Array
       {
          return this._constraintColumns;
@@ -75,6 +76,7 @@ package mx.core
          }
       }
       
+      [ArrayElementType("mx.containers.utilityClasses.ConstraintRow")]
       public function get constraintRows() : Array
       {
          return this._constraintRows;

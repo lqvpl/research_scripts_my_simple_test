@@ -2,40 +2,37 @@ package
 {
    import spark.components.supportClasses.Skin;
    import mx.core.IStateClient2;
-   import spark.effects.Move;
-   import mx.binding.BindingManager;
-   import spark.components.HGroup;
+   import flash.events.MouseEvent;
    import spark.components.Group;
    import mx.core.IFlexModuleFactory;
-   import flash.events.Event;
-   import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import flash.events.MouseEvent;
+   import com.enfluid.ltp.view.renderers.DomainExtensionRenderer;
+   import mx.binding.BindingManager;
    import spark.primitives.Rect;
-   import mx.graphics.LinearGradient;
-   import mx.core.DeferredInstanceFromFunction;
-   import com.enfluid.ltp.model.ViewModel;
+   import com.enfluid.ltp.model.vo.RankCheckItemVO;
    import com.enfluid.ltp.model.DataModel;
-   import mx.core.mx_internal;
-   import flash.utils.getDefinitionByName;
-   import com.enfluid.ltp.view.renderers.target;
-   import com.enfluid.ltp.view.renderers.KeywordItemRenderer;
-   import mx.states.State;
-   import mx.states.SetProperty;
-   import mx.states.AddItems;
-   import mx.binding.Binding;
+   import com.enfluid.ltp.controller.rankchecker.CheckGoogleRankCommand;
+   import mx.events.FlexEvent;
+   import mx.graphics.LinearGradient;
+   import flash.events.EventDispatcher;
+   import spark.components.HGroup;
    import mx.graphics.GradientEntry;
-   import spark.effects.AddAction;
-   import com.enfluid.ltp.view.components.FilterGridColumn;
-   import com.enfluid.ltp.model.vo.KeywordVO;
+   import spark.components.TextInput;
+   import com.enfluid.ltp.view.skins.FlatTextInputSkin;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchSiteAgeCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.CalcAllMajesticCompetitorAverage;
+   import com.enfluid.ltp.controller.competitoranalysis.CalcAllCompetitorAnalysisAverages;
+   import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchPageRankCommand;
    import spark.layouts.VerticalLayout;
    import spark.components.Application;
    import mx.events.PropertyChangeEvent;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.GeneralFlatButtonSkin;
-   import com.enfluid.ltp.view.renderers.KeywordColumnRenderer;
-   
-   use namespace mx_internal;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.rankchecker.SaveRankItemsCommand;
+   import com.enfluid.ltp.model.vo.KeywordVO;
+   import mx.states.State;
    
    public final class LTPSkin extends Skin implements IStateClient2
    {
@@ -88,28 +85,28 @@ package
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() * 62 * 97 + 1) * 65 * 52 - 100);
+            §§push(-(§§pop() + 114) + 75 + 116 - 11);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() + 97 + 29) * 88 - 1);
+            §§push(§§pop() + 19 - 1 + 1 + 111);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() * 61 + 74 + 106 - 108 + 1) * 63);
+            §§push((§§pop() - 1) * 43 - 73 + 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(((§§pop() - 101) * 73 - 94) * 1) * 17 - 7);
+            §§push(-((§§pop() * 86 - 1) * 22 * 30) - 91 - 56);
          }
          §§pop().bottom = §§pop();
          _loc1_.fill = this._LTPSkin_LinearGradient1_c();
@@ -129,16 +126,16 @@ package
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(8781);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 29 + 1 - 94);
+            §§push(§§pop() - 116 - 52 + 1 - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() + 1 - 1 + 1);
+            §§push(-§§pop() - 1 + 1 + 1);
          }
          §§pop().ratio = §§pop();
          return _loc1_;
@@ -149,9 +146,9 @@ package
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(4950448);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() + 12) * 106) + 52);
+            §§push((-(§§pop() * 66) + 33) * 8);
          }
          §§pop().color = §§pop();
          _loc1_.ratio = 0.35;
@@ -163,9 +160,9 @@ package
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(4950448);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1) + 106);
+            §§push((§§pop() + 1) * 104 + 36 - 66);
          }
          §§pop().color = §§pop();
          _loc1_.ratio = 0.65;
@@ -177,16 +174,16 @@ package
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(8781);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() + 1 + 108 - 20);
+            §§push(-§§pop() * 67 - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc2_)
          {
-            §§push(-§§pop() * 24 + 106);
+            §§push(-(-(§§pop() - 1) - 68) * 80);
          }
          §§pop().ratio = §§pop();
          return _loc1_;
@@ -199,42 +196,42 @@ package
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() * 95 + 1) * 78 - 1) - 95 - 47);
+            §§push(§§pop() - 1 + 114 + 58);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) + 10);
+            §§push((--§§pop() + 1) * 62 * 97);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 22 + 1 + 16) * 109);
+            §§push(-(-(§§pop() * 95) - 100));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(--(-(§§pop() + 1) * 91 + 1));
+            §§push((§§pop() - 24) * 28 * 88);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-((§§pop() - 32) * 101) - 1) + 116 - 13);
+            §§push(-§§pop() * 61 + 74);
          }
          §§pop().minHeight = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() + 1 - 1 - 5 + 55 - 1) * 77);
+            §§push((§§pop() - 108 + 1) * 63 + 1);
          }
          §§pop().minWidth = §§pop();
          _loc1_.id = "contentGroup";

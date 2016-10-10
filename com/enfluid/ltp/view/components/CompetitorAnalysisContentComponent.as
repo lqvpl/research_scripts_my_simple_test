@@ -3,18 +3,17 @@ package com.enfluid.ltp.view.components
    import spark.components.DataGroup;
    import mx.binding.IBindingClient;
    import mx.binding.IWatcherSetupUtil2;
+   import mx.graphics.GradientEntry;
+   import mx.binding.BindingManager;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import mx.collections.IList;
    import mx.collections.ArrayCollection;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
-   import spark.primitives.Line;
+   import spark.primitives.Rect;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
    import mx.core.ClassFactory;
    import com.enfluid.ltp.view.renderers.CompetitorAnalysisListItemRenderer;
    import spark.layouts.VerticalLayout;
-   import spark.components.Label;
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
@@ -70,18 +69,18 @@ package com.enfluid.ltp.view.components
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(§§pop() - 1 - 1));
+            §§push(-(§§pop() * 66) * 60);
          }
          §§pop().percentHeight = §§pop();
          this.itemRenderer = this._CompetitorAnalysisContentComponent_ClassFactory1_c();
          this.layout = this._CompetitorAnalysisContentComponent_VerticalLayout1_c();
          §§push(_loc1_);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(§§pop() * 92 * 76 + 68);
+            §§push((§§pop() - 1 - 92) * 82);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -118,7 +117,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(§§pop() - 1 + 1));
+            §§push(§§pop() - 6 - 86 - 104);
          }
          var _loc2_:* = §§pop();
          while(true)
@@ -127,7 +126,7 @@ package com.enfluid.ltp.view.components
             §§push(10);
             if(_loc5_)
             {
-               §§push(-(§§pop() - 1 + 67) - 1 + 1 + 1);
+               §§push((§§pop() * 1 + 94) * 43 - 109 - 1 + 1);
             }
             if(§§pop() >= §§pop())
             {
@@ -164,7 +163,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(-(§§pop() * 44) - 74 + 1 + 2) - 93);
+            §§push((§§pop() + 38 - 1 - 92 - 17 + 81) * 111 - 36);
          }
          §§pop().gap = §§pop();
          return _loc1_;
@@ -177,7 +176,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 35 - 47 - 0 - 40 + 17) - 1);
+            §§push(-(§§pop() - 77 + 115) * 70 + 1);
          }
          §§pop()[§§pop()] = new Binding(this,function():IList
          {

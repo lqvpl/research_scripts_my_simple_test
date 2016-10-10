@@ -1,10 +1,8 @@
 package com.enfluid.ltp.view.containers
 {
-   import mx.states.State;
-   import mx.states.SetProperty;
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.view.skins.CheckBoxCollapsiblePanelSkin;
-   import spark.components.Group;
+   import mx.graphics.GradientEntry;
    import mx.binding.BindingManager;
    import mx.events.PropertyChangeEvent;
    

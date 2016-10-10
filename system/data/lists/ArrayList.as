@@ -6,6 +6,8 @@ package system.data.lists
    import system.Reflection;
    import system.data.ListIterator;
    import system.data.iterators.ArrayListIterator;
+   import spark.components.Image;
+   import mx.binding.BindingManager;
    
    public final class ArrayList extends ArrayCollection implements List
    {
@@ -22,9 +24,9 @@ package system.data.lists
          }
          §§push();
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 + 20 - 29);
+            §§push(((§§pop() + 1 - 1 - 117) * 27 - 80) * 21);
          }
          §§pop()._modCount = §§pop();
       }
@@ -59,7 +61,7 @@ package system.data.lists
          §§push(1);
          if(_loc7_)
          {
-            §§push(§§pop() - 89 + 6 - 38 + 1);
+            §§push((§§pop() - 1 - 1) * 66 - 1 - 67 - 119);
          }
          if(§§pop() > §§pop())
          {
@@ -68,9 +70,9 @@ package system.data.lists
          else
          {
             §§push(1);
-            if(_loc6_)
+            if(_loc7_)
             {
-               §§push(§§pop() + 111 + 1 - 1);
+               §§push(-(§§pop() - 1) - 1 + 1);
             }
          }
          param2 = §§pop();
@@ -155,7 +157,7 @@ package system.data.lists
          §§push(0);
          if(_loc5_)
          {
-            §§push(--(§§pop() + 1 - 1 + 1));
+            §§push(§§pop() - 1 - 1 + 1);
          }
          §§pop().splice(§§pop(),§§pop(),param2);
       }

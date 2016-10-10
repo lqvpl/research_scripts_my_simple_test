@@ -1,10 +1,7 @@
 package system.data.collections
 {
    import system.formatters.Formattable;
-   import flash.utils.ByteArray;
    import system.data.Collection;
-   import spark.primitives.BitmapImage;
-   import mx.binding.BindingManager;
    
    public final class CollectionFormatter implements Formattable
    {
@@ -21,15 +18,15 @@ package system.data.collections
          var _loc3_:Collection = null;
          var _loc4_:Array = null;
          §§push(0);
-         if(_loc8_)
+         if(_loc7_)
          {
-            §§push((§§pop() * 31 + 96 - 1 + 1 + 1) * 65);
+            §§push(§§pop() * 5 - 1 + 50);
          }
          var _loc5_:* = §§pop();
          §§push(0);
          if(_loc7_)
          {
-            §§push(-(§§pop() - 99) * 108);
+            §§push(--(-§§pop() + 114 - 55) - 111);
          }
          var _loc6_:* = §§pop();
          if(param1 != null && param1 is Collection)
@@ -40,7 +37,7 @@ package system.data.collections
             §§push(0);
             if(_loc8_)
             {
-               §§push((-(-§§pop() - 1 + 1) + 1) * 26 + 73);
+               §§push(-(§§pop() - 1) - 1);
             }
             if(§§pop() > §§pop())
             {

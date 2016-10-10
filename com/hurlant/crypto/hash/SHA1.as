@@ -1,7 +1,5 @@
 package com.hurlant.crypto.hash
 {
-   import mx.collections.XMLListCollection;
-   
    public final class SHA1 extends SHABase implements IHash
    {
       
@@ -21,53 +19,53 @@ package com.hurlant.crypto.hash
       override protected function core(param1:Array, param2:uint) : Array
       {
          §§push(0);
-         if(_loc17_)
+         if(_loc18_)
          {
-            §§push(§§pop() - 99 + 57 + 12);
+            §§push(§§pop() * 95 + 86 + 34 + 40 - 9);
          }
          var _loc10_:uint = §§pop();
          §§push(0);
          if(_loc17_)
          {
-            §§push((§§pop() - 1) * 88 + 1 + 15 + 1 + 27 + 1);
+            §§push(§§pop() * 107 + 97 + 1 - 76 + 41 + 1 + 77);
          }
          var _loc11_:uint = §§pop();
          §§push(0);
-         if(_loc18_)
+         if(_loc17_)
          {
-            §§push(-((§§pop() - 1) * 19));
+            §§push(-(§§pop() + 11 - 1) - 41);
          }
          var _loc12_:uint = §§pop();
          §§push(0);
          if(_loc17_)
          {
-            §§push(-§§pop() * 117 - 100);
+            §§push(-(§§pop() - 1 + 31 + 22) - 119);
          }
          var _loc13_:uint = §§pop();
          §§push(0);
          if(_loc17_)
          {
-            §§push(-(§§pop() * 58) + 33 - 31);
+            §§push(((§§pop() + 34 - 54 - 5) * 115 + 1) * 13);
          }
          var _loc14_:uint = §§pop();
          §§push(0);
          if(_loc18_)
          {
-            §§push((-§§pop() + 1 + 1 + 74) * 96);
+            §§push(§§pop() + 1 - 1 + 1);
          }
          var _loc15_:uint = §§pop();
          §§push(0);
-         if(_loc17_)
+         if(_loc18_)
          {
-            §§push((§§pop() + 1 - 1) * 110);
+            §§push(§§pop() - 32 + 1 + 1 + 1 + 112 + 1);
          }
          var _loc16_:uint = §§pop();
          §§push(param1);
          §§push(param2);
          §§push(5);
-         if(_loc18_)
+         if(_loc17_)
          {
-            §§push((§§pop() - 1 + 1 + 28 - 1) * 7);
+            §§push((§§pop() - 117) * 108 + 7);
          }
          §§push(§§pop() >> §§pop());
          §§push(param1);
@@ -75,53 +73,53 @@ package com.hurlant.crypto.hash
          §§push(5);
          if(_loc18_)
          {
-            §§push((§§pop() + 8) * 57 * 29 - 84 - 1 - 1 - 1);
+            §§push(-(§§pop() + 1) * 65);
          }
          §§push(§§pop()[§§pop() >> §§pop()]);
          §§push(128);
-         if(_loc18_)
+         if(_loc17_)
          {
-            §§push(§§pop() - 26 - 1 - 1);
+            §§push(--((-§§pop() + 1 - 1) * 84) + 1);
          }
          §§push(24);
          §§push(param2);
          §§push(32);
          if(_loc17_)
          {
-            §§push((§§pop() - 32) * 115 * 59 + 31 + 1 - 1);
+            §§push((-(§§pop() + 1) - 1) * 117 - 1 + 63 + 62);
          }
          §§pop()[§§pop()] = §§pop() | §§pop() << §§pop() - §§pop() % §§pop();
          §§push(param1);
          §§push(param2);
          §§push(64);
-         if(_loc17_)
+         if(_loc18_)
          {
-            §§push((§§pop() + 1 + 93) * 47);
+            §§push((-§§pop() - 1 - 92 + 1 + 1) * 21);
          }
          §§push(§§pop() + §§pop());
          §§push(9);
          if(_loc17_)
          {
-            §§push((§§pop() + 54) * 106 * 57);
+            §§push(-(-(-§§pop() + 19) + 86 - 1));
          }
          §§push(§§pop() >> §§pop());
          §§push(4);
          if(_loc18_)
          {
-            §§push(-(-(§§pop() - 92) - 34 - 94));
+            §§push(§§pop() * 11 + 63 - 103);
          }
          §§push(§§pop() << §§pop());
          §§push(15);
          if(_loc18_)
          {
-            §§push(-(§§pop() - 12) + 37);
+            §§push(-(-§§pop() - 1));
          }
          §§pop()[§§pop() + §§pop()] = param2;
          var _loc3_:Array = [];
          §§push(1732584193);
          if(_loc18_)
          {
-            §§push((§§pop() + 1 + 11) * 15);
+            §§push(-(§§pop() + 1 - 1));
          }
          var _loc4_:uint = §§pop();
          var _loc5_:uint = 4023233417;
@@ -129,14 +127,14 @@ package com.hurlant.crypto.hash
          §§push(271733878);
          if(_loc18_)
          {
-            §§push(§§pop() + 90 - 74 + 13);
+            §§push((§§pop() - 19 + 1 - 34 - 1 + 1) * 55 - 10);
          }
          var _loc7_:uint = §§pop();
          var _loc8_:uint = 3285377520;
          §§push(0);
-         if(_loc17_)
+         if(_loc18_)
          {
-            §§push((-(§§pop() + 36) + 1 + 1) * 19);
+            §§push(-(-§§pop() - 1 - 1) + 95 + 79);
          }
          var _loc9_:uint = §§pop();
          while(_loc9_ < param1.length)
@@ -147,9 +145,9 @@ package com.hurlant.crypto.hash
             _loc13_ = _loc7_;
             _loc14_ = _loc8_;
             §§push(0);
-            if(_loc18_)
+            if(_loc17_)
             {
-               §§push(-(-(-§§pop() * 67) * 59 - 36));
+               §§push(-(-(§§pop() * 116) - 68 + 25) + 1);
             }
             _loc15_ = §§pop();
             while(true)
@@ -158,7 +156,7 @@ package com.hurlant.crypto.hash
                §§push(80);
                if(_loc18_)
                {
-                  §§push(--§§pop() + 88);
+                  §§push((§§pop() - 55 - 1) * 78);
                }
                if(§§pop() >= §§pop())
                {
@@ -166,9 +164,9 @@ package com.hurlant.crypto.hash
                }
                §§push(_loc15_);
                §§push(16);
-               if(_loc18_)
+               if(_loc17_)
                {
-                  §§push((§§pop() + 60 + 1 + 45 + 1 - 8) * 39);
+                  §§push((-§§pop() * 112 + 8 + 1) * 82 - 73 - 99);
                }
                if(§§pop() < §§pop())
                {
@@ -182,17 +180,17 @@ package com.hurlant.crypto.hash
                   §§push(_loc3_);
                   §§push(_loc15_);
                   §§push(3);
-                  if(_loc18_)
+                  if(_loc17_)
                   {
-                     §§push(--(§§pop() + 1) - 1 - 112 + 1);
+                     §§push(§§pop() + 1 + 17 + 117);
                   }
                   §§push(§§pop()[§§pop() - §§pop()]);
                   §§push(_loc3_);
                   §§push(_loc15_);
                   §§push(8);
-                  if(_loc17_)
+                  if(_loc18_)
                   {
-                     §§push(-(-(§§pop() - 66) * 37 + 107));
+                     §§push(§§pop() * 81 + 44 + 1);
                   }
                   §§push(§§pop() ^ §§pop()[§§pop() - §§pop()]);
                   §§push(_loc3_);
@@ -200,30 +198,30 @@ package com.hurlant.crypto.hash
                   §§push(14);
                   if(_loc17_)
                   {
-                     §§push((--(§§pop() * 113 - 1) - 110) * 65);
+                     §§push((§§pop() * 12 + 1) * 76 + 1 - 1 - 76 - 1);
                   }
                   §§push(§§pop() ^ §§pop()[§§pop() - §§pop()]);
                   §§push(_loc3_);
                   §§push(_loc15_);
                   §§push(16);
-                  if(_loc18_)
+                  if(_loc17_)
                   {
-                     §§push(-(§§pop() * 68 + 1) - 1 - 81 + 1);
+                     §§push(-(§§pop() * 78 * 102 + 108) + 3);
                   }
                   §§push(§§pop() ^ §§pop()[§§pop() - §§pop()]);
                   §§push(1);
                   if(_loc17_)
                   {
-                     §§push(§§pop() + 13 + 1 + 5);
+                     §§push((§§pop() + 1 + 1) * 24 - 29 - 100 - 1);
                   }
                   §§pop()[§§pop()] = §§pop().rol(§§pop(),§§pop());
                }
                §§push();
                §§push(_loc4_);
                §§push(5);
-               if(_loc17_)
+               if(_loc18_)
                {
-                  §§push(--((§§pop() + 106 - 53 + 1) * 117));
+                  §§push(§§pop() - 1 + 70 + 82 + 99 + 1 + 50);
                }
                _loc16_ = §§pop().rol(§§pop(),§§pop()) + ft(_loc15_,_loc5_,_loc6_,_loc7_) + _loc8_ + _loc3_[_loc15_] + kt(_loc15_);
                _loc8_ = _loc7_;
@@ -233,7 +231,7 @@ package com.hurlant.crypto.hash
                §§push(30);
                if(_loc18_)
                {
-                  §§push(§§pop() + 1 + 1 + 42);
+                  §§push((§§pop() + 1 + 11) * 27 - 1 - 91 + 25 - 1);
                }
                _loc6_ = §§pop().rol(§§pop(),§§pop());
                _loc5_ = _loc4_;
@@ -247,9 +245,9 @@ package com.hurlant.crypto.hash
             _loc8_ = _loc8_ + _loc14_;
             §§push(_loc9_);
             §§push(16);
-            if(_loc17_)
+            if(_loc18_)
             {
-               §§push((-(-§§pop() - 24) + 1) * 2 + 1);
+               §§push(§§pop() - 1 + 1 - 1);
             }
             _loc9_ = §§pop() + §§pop();
          }
@@ -260,16 +258,16 @@ package com.hurlant.crypto.hash
       {
          §§push(param1);
          §§push(20);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() + 1) - 43 - 101) * 26);
+            §§push((§§pop() * 84 + 111 + 1 - 1 - 1) * 5);
          }
          if(§§pop() < §§pop())
          {
             §§push(1518500249);
             if(_loc2_)
             {
-               §§push(§§pop() + 1 - 1 + 1 - 1 + 1 - 75 - 105);
+               §§push(-(§§pop() + 1) * 37);
             }
             §§push(uint(§§pop()));
          }
@@ -279,14 +277,14 @@ package com.hurlant.crypto.hash
             §§push(40);
             if(_loc3_)
             {
-               §§push((§§pop() + 1) * 16 + 1 - 3);
+               §§push((-(-§§pop() - 37) + 1) * 77);
             }
             if(§§pop() < §§pop())
             {
                §§push(1859775393);
                if(_loc3_)
                {
-                  §§push(-(§§pop() + 48) - 109 + 76 + 119 - 92);
+                  §§push(--(-(§§pop() * 28) + 97));
                }
                §§push(uint(§§pop()));
             }
@@ -296,7 +294,7 @@ package com.hurlant.crypto.hash
                §§push(60);
                if(_loc2_)
                {
-                  §§push((§§pop() + 47 - 1) * 87);
+                  §§push(-§§pop() - 69 + 1 + 69 + 1);
                }
                §§push(§§pop() < §§pop()?uint(2400959708):uint(3395469782));
             }
@@ -313,9 +311,9 @@ package com.hurlant.crypto.hash
       {
          §§push(param1);
          §§push(20);
-         if(_loc5_)
+         if(_loc6_)
          {
-            §§push(-((§§pop() - 1 - 81) * 56 + 1 - 1));
+            §§push(§§pop() + 1 - 1 - 1 + 95);
          }
          if(§§pop() < §§pop())
          {
@@ -325,7 +323,7 @@ package com.hurlant.crypto.hash
          §§push(40);
          if(_loc6_)
          {
-            §§push((--§§pop() + 1 - 1 + 1) * 116);
+            §§push(§§pop() + 13 + 1 + 24 - 28 + 93 - 1);
          }
          if(§§pop() < §§pop())
          {
@@ -335,7 +333,7 @@ package com.hurlant.crypto.hash
          §§push(60);
          if(_loc6_)
          {
-            §§push(§§pop() * 88 - 1 + 104 - 1);
+            §§push(§§pop() + 30 + 2 + 1 - 100);
          }
          if(§§pop() < §§pop())
          {
@@ -351,7 +349,7 @@ package com.hurlant.crypto.hash
          §§push(32);
          if(_loc3_)
          {
-            §§push((§§pop() - 86) * 62 + 43);
+            §§push(§§pop() + 18 + 25 - 10 - 104);
          }
          return §§pop() | §§pop() >>> §§pop() - param2;
       }

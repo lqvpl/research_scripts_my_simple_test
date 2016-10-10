@@ -2,16 +2,29 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
 {
    import spark.skins.SparkSkin;
    import mx.core.IStateClient2;
+   import com.enfluid.ltp.model.constants.Values;
    import mx.graphics.GradientEntry;
    import mx.graphics.SolidColor;
    import mx.core.IFlexModuleFactory;
+   import flash.text.Font;
+   import flash.utils.ByteArray;
+   import flash.system.System;
+   import flash.system.Capabilities;
+   import flash.utils.getTimer;
    import spark.primitives.Rect;
    import mx.graphics.SolidColorStroke;
+   import com.enfluid.ltp.view.components.ToggleSwitch;
    import mx.binding.BindingManager;
+   import spark.components.Label;
+   import com.enfluid.ltp.view.components.CustomRect;
+   import spark.components.Group;
+   import spark.primitives.Path;
    import mx.graphics.LinearGradientStroke;
-   import spark.components.HGroup;
+   import spark.formatters.NumberFormatter;
+   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
    import spark.components.Button;
    import mx.events.PropertyChangeEvent;
+   import mx.effects.Parallel;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -69,9 +82,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push("color");
          §§push("value");
          §§push(13491687);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(((-(§§pop() - 80) + 1) * 59 + 51) * 106);
+            §§push((§§pop() + 81 + 1) * 21);
          }
          §§pop().states = null;
       }
@@ -104,42 +117,42 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(0);
          if(_loc2_)
          {
-            §§push(§§pop() * 88 - 1 + 1 + 49);
+            §§push(-§§pop() * 117 * 74);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((((§§pop() - 90) * 90 + 1) * 93 - 114 + 1) * 32);
+            §§push(-(-(-(-§§pop() * 52) + 29) + 1));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push((§§pop() + 43 - 1 + 1) * 23 + 1 - 73 - 11);
+            §§push(§§pop() + 59 + 1 - 42);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc2_)
          {
-            §§push(-((§§pop() - 1 - 58) * 52 + 63));
+            §§push((§§pop() - 1 - 8 + 3 - 1) * 112);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(18);
          if(_loc2_)
          {
-            §§push(--((§§pop() - 2) * 80) - 104 + 1);
+            §§push((§§pop() - 1 - 1) * 7 - 99 - 10 - 1 - 47);
          }
          §§pop().minWidth = §§pop();
          §§push(_loc1_);
          §§push(18);
          if(_loc3_)
          {
-            §§push(-(§§pop() - 1 + 30 - 49));
+            §§push(-§§pop() * 58 - 1 + 1 + 1);
          }
          §§pop().minHeight = §§pop();
          _loc1_.stroke = this._FlatUIScrollBarThumb_SolidColorStroke1_c();
@@ -155,7 +168,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(14146011);
          if(_loc2_)
          {
-            §§push(-(§§pop() + 28) - 1 + 93 - 23 - 72);
+            §§push((§§pop() + 10) * 65 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.weight = 0.5;
@@ -167,9 +180,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:SolidColor = new SolidColor();
          §§push(_loc1_);
          §§push(16645630);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 - 24 - 1 - 16 + 84 - 75);
+            §§push(-(-(§§pop() + 1 + 69) - 1) * 75);
          }
          §§pop().color = §§pop();
          this._FlatUIScrollBarThumb_SolidColor1 = _loc1_;
@@ -182,30 +195,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(1);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 1 - 113 - 112);
+            §§push(--(-(§§pop() * 44) * 22));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(((§§pop() * 25 + 1) * 2 + 21 + 1) * 89 - 83);
+            §§push(-(§§pop() - 4) - 29 - 1 + 36);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 1 + 1 - 1 - 1 - 100 + 119 + 86);
+            §§push(--(§§pop() - 46 + 1 + 53) * 13 - 1);
          }
          §§pop().bottom = §§pop();
          §§push(_loc1_);
          §§push(6);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--(§§pop() + 28 + 85 - 1 - 1) - 1);
+            §§push(-(-((§§pop() + 53) * 6) + 1 + 1 - 1));
          }
          §§pop().width = §§pop();
          _loc1_.fill = this._FlatUIScrollBarThumb_SolidColor2_i();
@@ -220,7 +233,7 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(16777215);
          if(_loc2_)
          {
-            §§push(-((-((§§pop() - 1) * 95) + 1) * 72));
+            §§push((-(§§pop() + 116) - 77 + 1) * 5 - 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.75;
@@ -234,30 +247,30 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:Rect = new Rect();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((-§§pop() + 11 - 1 - 1) * 88 - 95);
+            §§push(-((§§pop() * 79 + 1) * 24 + 1));
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((-(§§pop() - 111) - 53) * 100);
+            §§push((§§pop() - 13) * 28 - 1);
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(1);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-((§§pop() - 88 - 46 - 27 + 6) * 42 + 73));
+            §§push(-(-§§pop() + 1 + 67 - 73));
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(3);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 94) - 1);
+            §§push(-(§§pop() + 47) - 1);
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._FlatUIScrollBarThumb_LinearGradientStroke1_c();
@@ -272,14 +285,14 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(90);
          if(_loc2_)
          {
-            §§push(-((§§pop() + 1 + 64) * 80) - 41);
+            §§push(§§pop() - 31 - 88 - 106 - 18);
          }
          §§pop().rotation = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push((§§pop() * 109 - 1) * 83);
+            §§push(-(§§pop() - 70) + 1 - 97 + 1 + 105 + 1);
          }
          §§pop().weight = §§pop();
          _loc1_.entries = [this._FlatUIScrollBarThumb_GradientEntry1_i(),this._FlatUIScrollBarThumb_GradientEntry2_i()];
@@ -293,14 +306,14 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          §§push(16777215);
          if(_loc3_)
          {
-            §§push(§§pop() + 12 + 109 - 84);
+            §§push(§§pop() - 1 - 1 + 97);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(1);
          if(_loc3_)
          {
-            §§push(§§pop() * 64 + 1 + 1 - 39);
+            §§push(-((§§pop() - 6 - 1) * 79) * 111 - 25 - 1);
          }
          §§pop().alpha = §§pop();
          this._FlatUIScrollBarThumb_GradientEntry1 = _loc1_;
@@ -313,9 +326,9 @@ package com.enfluid.ltp.view.skins.FlatUIComponents.ScrollPane
          var _loc1_:GradientEntry = new GradientEntry();
          §§push(_loc1_);
          §§push(16777215);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push((§§pop() - 1 - 106) * 59);
+            §§push(§§pop() - 83 - 91 + 1);
          }
          §§pop().color = §§pop();
          _loc1_.alpha = 0.22;

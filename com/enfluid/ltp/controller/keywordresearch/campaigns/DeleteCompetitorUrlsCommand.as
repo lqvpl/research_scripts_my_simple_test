@@ -2,19 +2,12 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import flash.data.SQLResult;
    import com.enfluid.ltp.model.vo.KeywordVO;
-   import hr.binaria.asx3m.converters.reflection.IReflectionProvider;
-   import hr.binaria.asx3m.mapper.IMapper;
-   import hr.binaria.asx3m.io.IHierarchicalStreamDriver;
-   import hr.binaria.asx3m.core.TreeMarshallingStrategy;
-   import hr.binaria.asx3m.core.DefaultConverterLookup;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
    import mx.collections.ArrayCollection;
-   import com.enfluid.ltp.view.dataandfilters.AdvertiserCompetitionSection;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
-   import hr.binaria.asx3m.converters.IUnmarshallingContext;
-   import system.data.maps.HashMap;
+   import mx.graphics.SolidColor;
+   import mx.binding.BindingManager;
    
    public final class DeleteCompetitorUrlsCommand extends Command implements IPhotonCommand
    {
@@ -60,7 +53,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(0);
          if(_loc8_)
          {
-            §§push((§§pop() - 7 - 88 - 1 + 1) * 85);
+            §§push((-§§pop() - 37) * 46 * 99 * 37 + 1);
          }
          if(§§pop() == §§pop())
          {
@@ -70,7 +63,7 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
          §§push(0);
          if(_loc8_)
          {
-            §§push(-((§§pop() + 1) * 100 - 108 - 1));
+            §§push(-((-(-§§pop() * 101) * 46 - 57) * 44));
          }
          for each(_loc3_ in _loc1_)
          {

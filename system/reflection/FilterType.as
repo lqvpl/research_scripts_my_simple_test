@@ -1,6 +1,9 @@
 package system.reflection
 {
    import system.Enum;
+   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
+   import hr.binaria.asx3m.converters.IUnmarshallingContext;
+   import system.data.maps.HashMap;
    
    public final class FilterType extends Enum
    {
@@ -19,37 +22,37 @@ package system.reflection
          §§push();
          §§push(system.reflection.FilterType);
          §§push(0);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-§§pop() - 1 - 5 - 20 + 1 - 1);
+            §§push((-§§pop() + 103 + 1 - 112) * 57 - 88 + 1);
          }
          §§push();
          §§push(system.reflection.FilterType);
          §§push(1);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 1 - 1) + 1);
+            §§push((§§pop() * 1 - 1) * 52 + 1 + 1 - 1);
          }
          §§push();
          §§push(system.reflection.FilterType);
          §§push(2);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(-§§pop() + 1 - 107));
+            §§push((§§pop() - 1 - 32 + 45) * 108 + 47 - 1);
          }
          §§push();
          §§push(system.reflection.FilterType);
          §§push(16);
          if(_loc1_)
          {
-            §§push(--(§§pop() * 47 + 98 - 81 - 1));
+            §§push(§§pop() * 37 + 93 - 1);
          }
          §§push();
          §§push(system.reflection.FilterType);
          §§push(256);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-((§§pop() - 67) * 86 * 109 - 1 + 100 + 82));
+            §§push(§§pop() - 20 + 1 + 1 - 1);
          }
       }
       

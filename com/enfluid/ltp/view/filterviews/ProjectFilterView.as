@@ -1,25 +1,28 @@
 package com.enfluid.ltp.view.filterviews
 {
-   import flash.events.Event;
+   import mx.managers.PopUpManager;
+   import com.adobe.cairngorm.popup.PopUpEvent;
+   import mx.events.CloseEvent;
    import spark.components.TextInput;
    import mx.core.IFlexModuleFactory;
-   import spark.components.Group;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.DataModel;
    import spark.events.TextOperationEvent;
-   import spark.components.BorderContainer;
-   import mx.core.DeferredInstanceFromFunction;
+   import mx.events.FlexEvent;
    import flash.events.MouseEvent;
-   import spark.primitives.Rect;
-   import mx.binding.Binding;
-   import spark.effects.easing.IEaser;
-   import spark.effects.easing.EaseInOutBase;
+   import com.enfluid.ltp.model.vo.KeywordVO;
    import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
-   import spark.components.Button;
-   import com.enfluid.ltp.view.skins.GeneralComboBoxButtonSkin;
-   import mx.states.Transition;
+   import mx.binding.BindingManager;
+   import mx.binding.Binding;
+   import com.enfluid.ltp.assets.AssetsLibrary;
+   import com.enfluid.ltp.model.ViewModel;
+   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import com.enfluid.ltp.view.renderers.majestic.target;
+   import com.enfluid.ltp.view.renderers.majestic.CompetitorAnalysisListItemRenderer;
+   import mx.states.State;
    import mx.events.PropertyChangeEvent;
-   import system.serializers.§eden:release§.debug;
+   
+   use namespace mx_internal;
    
    public final class ProjectFilterView extends FilterView
    {
@@ -38,16 +41,16 @@ package com.enfluid.ltp.view.filterviews
          mx_internal::_document = this;
          §§push(this);
          §§push(100);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-((§§pop() + 1 + 1 + 1 + 86) * 108));
+            §§push(§§pop() - 88 - 1 + 1);
          }
          §§pop().percentWidth = §§pop();
          §§push(this);
          §§push(5);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-§§pop() + 1 - 93 - 1);
+            §§push(-(§§pop() * 106 - 1 + 1));
          }
          §§pop().paddingRight = §§pop();
          this.verticalAlign = "baseline";
@@ -98,16 +101,16 @@ package com.enfluid.ltp.view.filterviews
          var _loc1_:TextInput = new TextInput();
          §§push(_loc1_);
          §§push(100);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() - 1) - 43 + 1 + 26 - 75);
+            §§push(--((-§§pop() + 31) * 16 - 14));
          }
          §§pop().percentWidth = §§pop();
          §§push(_loc1_);
          §§push(17);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-§§pop() * 113 * 107 - 33 - 1);
+            §§push((§§pop() - 9) * 116 - 72 - 33 + 1 + 1);
          }
          §§pop().height = §§pop();
          _loc1_.prompt = "Filter by Project";
@@ -116,7 +119,7 @@ package com.enfluid.ltp.view.filterviews
          §§push(3);
          if(_loc2_)
          {
-            §§push((-(§§pop() - 1 - 97) + 1 - 1) * 82 + 85);
+            §§push(§§pop() + 1 - 1 - 1);
          }
          §§pop().setStyle(§§pop(),§§pop());
          _loc1_.setStyle("skinClass",FlatTextInputSkinSolo);

@@ -1,10 +1,8 @@
 package com.enfluid.ltp.controller.rankchecker
 {
    import com.enfluid.ltp.controller.common.FetchGoogleSearchResultsCommand;
-   import mx.binding.Binding;
-   import flash.utils.Proxy;
+   import flash.events.MouseEvent;
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
-   import mx.graphics.SolidColor;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
    import com.enfluid.ltp.model.constants.Constants;
    import com.enfluid.ltp.model.constants.RankCheckConstants;
@@ -30,7 +28,7 @@ package com.enfluid.ltp.controller.rankchecker
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() + 29 + 29) * 0 - 51 + 1);
+            §§push(-§§pop() + 64 + 104);
          }
          §§pop().start = §§pop();
       }
@@ -47,7 +45,7 @@ package com.enfluid.ltp.controller.rankchecker
          §§push(0);
          if(_loc5_)
          {
-            §§push(-(--(-§§pop() + 70) * 114) - 1);
+            §§push((§§pop() * 49 - 1 - 1) * 15);
          }
          var _loc3_:* = §§pop();
          while(_loc3_ < results.length)
@@ -67,7 +65,7 @@ package com.enfluid.ltp.controller.rankchecker
                §§push(1);
                if(_loc6_)
                {
-                  §§push((§§pop() * 9 + 48) * 116 * 103 - 1);
+                  §§push(-§§pop() + 102 + 37);
                }
                §§pop().googleRank = §§pop().String(§§pop() + §§pop());
                this.rankCheckItem.googlePage = _loc4_.url;
@@ -86,21 +84,21 @@ package com.enfluid.ltp.controller.rankchecker
          §§push(1);
          if(_loc1_)
          {
-            §§push(--§§pop() * 118 * 103);
+            §§push(§§pop() * 92 - 1 + 0);
          }
          §§push(Math);
-         §§push(Math.random() * model.avgDelayBetweenGoogleRequests);
+         §§push(Math.random() * model.preferences.googleRequestAvgDelay);
          §§push(1000);
          if(_loc2_)
          {
-            §§push((--§§pop() + 37 + 1 + 1 - 111) * 43);
+            §§push((§§pop() * 97 - 1 + 1) * 52 - 1 + 1);
          }
          §§push(§§pop().round(§§pop() * §§pop()));
-         §§push(model.avgDelayBetweenGoogleRequests);
+         §§push(model.preferences.googleRequestAvgDelay);
          §§push(500);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(-(§§pop() * 71 + 71 + 1));
+            §§push(-(-§§pop() + 1) * 116 + 76 - 24);
          }
          return §§pop().max(§§pop(),§§pop() + §§pop() * §§pop());
       }

@@ -1,13 +1,10 @@
 package com.enfluid.ltp.controller.common
 {
    import com.photon.controller.IPhotonCommand;
-   import flash.events.MouseEvent;
    import com.enfluid.ltp.model.vo.ProxyVO;
-   import mx.utils.StringUtil;
-   import flash.utils.setTimeout;
-   import com.enfluid.ltp.model.constants.Values;
    import mx.collections.ArrayCollection;
-   import flash.display.Graphics;
+   import flash.utils.ByteArray;
+   import com.adobe.utils.StringUtil;
    
    public final class LoadProxiesCommand extends Command implements IPhotonCommand
    {

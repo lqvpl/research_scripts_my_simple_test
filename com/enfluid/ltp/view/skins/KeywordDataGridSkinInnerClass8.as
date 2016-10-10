@@ -3,10 +3,8 @@ package com.enfluid.ltp.view.skins
    import spark.components.Group;
    import mx.core.IFlexModuleFactory;
    import spark.primitives.Line;
+   import flash.events.MouseEvent;
    import mx.graphics.SolidColorStroke;
-   import spark.effects.Fade;
-   import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
    import mx.events.PropertyChangeEvent;
    
    public final class KeywordDataGridSkinInnerClass8 extends Group
@@ -44,30 +42,30 @@ package com.enfluid.ltp.view.skins
          var _loc1_:Line = new Line();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() * 54 + 71 + 1 - 74 + 114 + 1);
+            §§push((-§§pop() + 24 - 98) * 39 - 45 - 25);
          }
          §§pop().left = §§pop();
          §§push(_loc1_);
          §§push(0);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(--§§pop() * 32 + 1);
+            §§push(-(§§pop() - 63) - 1);
          }
          §§pop().right = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push(-((§§pop() - 1 - 1 + 1 - 1) * 15) - 1);
+            §§push(-((-§§pop() + 1 + 43 - 1 - 1) * 85));
          }
          §§pop().top = §§pop();
          §§push(_loc1_);
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(-§§pop() - 57 - 1) - 1) * 45 * 60);
+            §§push(§§pop() - 98 - 69 - 71);
          }
          §§pop().bottom = §§pop();
          _loc1_.stroke = this._KeywordDataGridSkinInnerClass8_SolidColorStroke1_c();
@@ -80,16 +78,16 @@ package com.enfluid.ltp.view.skins
          var _loc1_:SolidColorStroke = new SolidColorStroke();
          §§push(_loc1_);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() + 1 - 14) * 79);
+            §§push(-((§§pop() + 1) * 97) - 1);
          }
          §§pop().color = §§pop();
          §§push(_loc1_);
          §§push(2);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push(§§pop() - 1 + 1 - 33 + 1 + 14 - 48 - 41);
+            §§push(--§§pop() + 70 - 1);
          }
          §§pop().weight = §§pop();
          _loc1_.caps = "square";

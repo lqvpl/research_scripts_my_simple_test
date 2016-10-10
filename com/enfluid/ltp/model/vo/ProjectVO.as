@@ -1,14 +1,16 @@
 package com.enfluid.ltp.model.vo
 {
    import info.noirbizarre.airorm.ActiveRecord;
+   import mx.controls.HRule;
+   import mx.rpc.http.HTTPService;
    import com.enfluid.ltp.model.constants.Countries;
    import com.enfluid.ltp.model.constants.Languages;
    import com.enfluid.ltp.util.KeywordArrayCollection;
    import mx.collections.ArrayCollection;
    import com.enfluid.ltp.util.KeywordFetcherUtil;
    import mx.events.PropertyChangeEvent;
-   import mx.core.ClassFactory;
-   import com.enfluid.ltp.view.renderers.CompetitorAnalysisListItemRenderer;
+   import spark.components.Group;
+   import mx.binding.BindingManager;
    
    [HasMany("seedKeywordsList",property="project",className="SeedKeywordVO")]
    [HasMany("keywordsList",property="project",className="KeywordVO")]
@@ -66,19 +68,17 @@ package com.enfluid.ltp.model.vo
       
       private var _540842989googleTitleCompEnabled:Boolean = false;
       
-      private var _686392127googleTitleCompAvgDelay:int = 5;
-      
       private var _308806644googleTitleCompFilterMin:int = 0;
       
       private var _308806882googleTitleCompFilterMax:int = 0;
       
       private var _1278688282bingTitleCompEnabled:Boolean = false;
       
-      private var _1257286680bingTitleCompAvgDelay:int = 0;
-      
       private var _209055315bingTitleCompFilterMin:int = 0;
       
       private var _209055077bingTitleCompFilterMax:int = 0;
+      
+      private var _1809573189amazonKCEnabled:Boolean = true;
       
       private var _340517870domainsEnabled:Boolean = false;
       
@@ -94,15 +94,25 @@ package com.enfluid.ltp.model.vo
       
       private var _962865335numWordsFilterMax:int = 0;
       
+      private var _711657282amazonKCFilterMin:int = 0;
+      
+      private var _711657520amazonKCFilterMax:int = 0;
+      
       private var _1862932272avgKCFilterMin:int = 0;
       
       private var _1862932034avgKCFilterMax:int = 0;
       
       private var _365485136competitorURLs:ArrayCollection;
       
+      private var _896505829source:String;
+      
       private var _1205564302keywordFilterText:String = "";
       
       private var _561781570projectFilterText:String = "";
+      
+      private var _544028419matchStrings:Array;
+      
+      private var _1610084810unMatchStrings:Array;
       
       private var _1272460911specialFilter:int = 0;
       
@@ -113,6 +123,8 @@ package com.enfluid.ltp.model.vo
          this._988173943domainsExactMatchExtensions = new com.enfluid.ltp.model.vo.DomainExtensionOptions();
          this._2064930375domainsHyphenatedExtensions = new com.enfluid.ltp.model.vo.DomainExtensionOptions();
          this._365485136competitorURLs = new ArrayCollection();
+         this._544028419matchStrings = new Array();
+         this._1610084810unMatchStrings = new Array();
          super();
       }
       
@@ -666,25 +678,6 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
-      public function get googleTitleCompAvgDelay() : int
-      {
-         return this._686392127googleTitleCompAvgDelay;
-      }
-      
-      public function set googleTitleCompAvgDelay(param1:int) : void
-      {
-         var _loc2_:Object = this._686392127googleTitleCompAvgDelay;
-         if(_loc2_ !== param1)
-         {
-            this._686392127googleTitleCompAvgDelay = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"googleTitleCompAvgDelay",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get googleTitleCompFilterMin() : int
       {
          return this._308806644googleTitleCompFilterMin;
@@ -742,25 +735,6 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
-      public function get bingTitleCompAvgDelay() : int
-      {
-         return this._1257286680bingTitleCompAvgDelay;
-      }
-      
-      public function set bingTitleCompAvgDelay(param1:int) : void
-      {
-         var _loc2_:Object = this._1257286680bingTitleCompAvgDelay;
-         if(_loc2_ !== param1)
-         {
-            this._1257286680bingTitleCompAvgDelay = param1;
-            if(this.hasEventListener("propertyChange"))
-            {
-               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bingTitleCompAvgDelay",_loc2_,param1));
-            }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get bingTitleCompFilterMin() : int
       {
          return this._209055315bingTitleCompFilterMin;
@@ -794,6 +768,25 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bingTitleCompFilterMax",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get amazonKCEnabled() : Boolean
+      {
+         return this._1809573189amazonKCEnabled;
+      }
+      
+      public function set amazonKCEnabled(param1:Boolean) : void
+      {
+         var _loc2_:Object = this._1809573189amazonKCEnabled;
+         if(_loc2_ !== param1)
+         {
+            this._1809573189amazonKCEnabled = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonKCEnabled",_loc2_,param1));
             }
          }
       }
@@ -962,6 +955,44 @@ package com.enfluid.ltp.model.vo
       }
       
       [Bindable(event="propertyChange")]
+      public function get amazonKCFilterMin() : int
+      {
+         return this._711657282amazonKCFilterMin;
+      }
+      
+      public function set amazonKCFilterMin(param1:int) : void
+      {
+         var _loc2_:Object = this._711657282amazonKCFilterMin;
+         if(_loc2_ !== param1)
+         {
+            this._711657282amazonKCFilterMin = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonKCFilterMin",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get amazonKCFilterMax() : int
+      {
+         return this._711657520amazonKCFilterMax;
+      }
+      
+      public function set amazonKCFilterMax(param1:int) : void
+      {
+         var _loc2_:Object = this._711657520amazonKCFilterMax;
+         if(_loc2_ !== param1)
+         {
+            this._711657520amazonKCFilterMax = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"amazonKCFilterMax",_loc2_,param1));
+            }
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
       public function get avgKCFilterMin() : int
       {
          return this._1862932272avgKCFilterMin;
@@ -1018,6 +1049,25 @@ package com.enfluid.ltp.model.vo
          }
       }
       
+      [Bindable(event="propertyChange")]
+      public function get source() : String
+      {
+         return this._896505829source;
+      }
+      
+      public function set source(param1:String) : void
+      {
+         var _loc2_:Object = this._896505829source;
+         if(_loc2_ !== param1)
+         {
+            this._896505829source = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"source",_loc2_,param1));
+            }
+         }
+      }
+      
       [NotPersisted]
       [Bindable(event="propertyChange")]
       public function get keywordFilterText() : String
@@ -1054,6 +1104,46 @@ package com.enfluid.ltp.model.vo
             if(this.hasEventListener("propertyChange"))
             {
                this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"projectFilterText",_loc2_,param1));
+            }
+         }
+      }
+      
+      [NotPersisted]
+      [Bindable(event="propertyChange")]
+      public function get matchStrings() : Array
+      {
+         return this._544028419matchStrings;
+      }
+      
+      public function set matchStrings(param1:Array) : void
+      {
+         var _loc2_:Object = this._544028419matchStrings;
+         if(_loc2_ !== param1)
+         {
+            this._544028419matchStrings = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"matchStrings",_loc2_,param1));
+            }
+         }
+      }
+      
+      [NotPersisted]
+      [Bindable(event="propertyChange")]
+      public function get unMatchStrings() : Array
+      {
+         return this._1610084810unMatchStrings;
+      }
+      
+      public function set unMatchStrings(param1:Array) : void
+      {
+         var _loc2_:Object = this._1610084810unMatchStrings;
+         if(_loc2_ !== param1)
+         {
+            this._1610084810unMatchStrings = param1;
+            if(this.hasEventListener("propertyChange"))
+            {
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"unMatchStrings",_loc2_,param1));
             }
          }
       }

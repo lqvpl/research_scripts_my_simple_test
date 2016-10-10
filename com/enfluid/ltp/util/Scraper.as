@@ -1,32 +1,43 @@
 package com.enfluid.ltp.util
 {
-   import flash.html.HTMLLoader;
-   import spark.components.Scroller;
+   import com.enfluid.ltp.view.components.CompetitorAnalysisGridColumn;
    import mx.binding.BindingManager;
-   import spark.components.VGroup;
-   import spark.components.Label;
-   import spark.components.Image;
-   import mx.binding.Binding;
-   import mx.collections.IList;
-   import flash.events.MouseEvent;
+   import com.enfluid.ltp.view.components.Link;
+   import flash.html.HTMLLoader;
+   import spark.primitives.Rect;
+   import mx.core.mx_internal;
    import flash.events.Event;
-   import mx.controls.Spacer;
+   import mx.states.Transition;
+   import system.serializers.§eden:release§.debug;
+   import system.text.parser.GenericParser;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.EmptyTrashCommand;
+   import system.eden;
+   import system.Environment;
+   import system.Arrays;
+   import spark.components.CheckBox;
+   import mx.effects.Sequence;
+   import spark.components.Label;
+   import mx.graphics.SolidColor;
+   import spark.components.ComboBox;
+   import com.enfluid.ltp.view.skins.FlatUIComponents.Combobox.GeneralComboboxSkin;
    import mx.core.ClassFactory;
    import com.enfluid.ltp.view.renderers.DeleteColumnRenderer;
-   import mx.graphics.GradientEntry;
-   import mx.graphics.SolidColor;
-   import spark.layouts.HorizontalLayout;
+   import com.enfluid.ltp.view.skins.KeywordDataGridSkinInnerClass2;
+   import com.enfluid.ltp.controller.calqio.SetUserEvent;
+   import com.enfluid.ltp.model.constants.Values;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.AnalyzeMajesticCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchSiteAgeCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.majestic.CalcAllMajesticCompetitorAverage;
+   import com.enfluid.ltp.controller.competitoranalysis.CalcAllCompetitorAnalysisAverages;
+   import com.enfluid.ltp.controller.competitoranalysis.AnalyzeCompetitionCommand;
+   import com.enfluid.ltp.controller.competitoranalysis.SetupFetchPageRankCommand;
    import flash.ui.Keyboard;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteOwnKeywordsCommand;
-   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
-   import com.enfluid.ltp.model.vo.SeedKeywordVO;
-   import hr.binaria.asx3m.converters.IConverter;
-   import hr.binaria.asx3m.core.ConversionException;
-   import com.enfluid.ltp.controller.common.LoadRegistrationStatusCommand;
-   import com.enfluid.ltp.controller.licensing.ValidateDKLicenseCommand;
-   import com.enfluid.ltp.controller.licensing.ValidateSharifyLicenseCommand;
-   import com.enfluid.ltp.controller.licensing.VerifyPlatinumSubscriptionCommand;
-   import com.enfluid.ltp.model.DataModel;
+   import spark.effects.easing.Power;
+   import com.hurlant.crypto.rsa.RSAKey;
+   import com.hurlant.math.BigInteger;
+   
+   use namespace mx_internal;
    
    public final class Scraper
    {
@@ -121,14 +132,14 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc3_)
          {
-            §§push(((§§pop() + 37 + 85 - 1 + 1) * 28 - 14) * 7);
+            §§push(§§pop() * 67 + 95 + 111);
          }
          §§push(§§pop());
          §§push(§§pop());
          §§push(0);
          if(_loc3_)
          {
-            §§push(-§§pop() + 57 + 29);
+            §§push((§§pop() * 17 * 2 + 1) * 54);
          }
          §§push(§§pop());
          §§push(false);
@@ -138,7 +149,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc4_)
          {
-            §§push(-(((§§pop() - 83 + 66) * 34 + 42 - 1) * 74));
+            §§push(-((§§pop() + 106) * 100 + 1) * 77 - 98);
          }
          §§pop().initMouseEvent(§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),null);
          param1.dispatchEvent(_loc2_);
@@ -153,16 +164,16 @@ package com.enfluid.ltp.util
          §§push(true);
          §§push(this.doc.defaultView);
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push((§§pop() * 107 + 65) * 114 + 112);
+            §§push(-(§§pop() - 105 - 1) - 94);
          }
          §§push(§§pop());
          §§push(§§pop());
          §§push(0);
          if(_loc3_)
          {
-            §§push((§§pop() - 43 - 87) * 99 * 10 + 1 - 62 + 1);
+            §§push(-((§§pop() + 21 - 1 - 108) * 33));
          }
          §§push(§§pop());
          §§push(false);
@@ -172,7 +183,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc4_)
          {
-            §§push(-§§pop() - 1 - 70 + 1);
+            §§push(-(-(§§pop() + 83 + 21) + 59 + 26) * 70);
          }
          §§pop().initMouseEvent(§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),null);
          param1.dispatchEvent(_loc2_);
@@ -187,16 +198,16 @@ package com.enfluid.ltp.util
          §§push(true);
          §§push(this.doc.defaultView);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(-(-(§§pop() + 1) + 89 - 29 + 85));
+            §§push(-(-(§§pop() + 1 - 1) - 80 - 1));
          }
          §§push(§§pop());
          §§push(§§pop());
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(--(§§pop() * 1));
+            §§push(§§pop() * 70 + 107 + 1 - 59);
          }
          §§push(§§pop());
          §§push(false);
@@ -204,9 +215,9 @@ package com.enfluid.ltp.util
          §§push(false);
          §§push(false);
          §§push(0);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push((-§§pop() + 116 - 1 - 1 - 105) * 71);
+            §§push(-(§§pop() + 1) + 80 - 115 + 51 - 44);
          }
          §§pop().initMouseEvent(§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),§§pop(),null);
          param1.dispatchEvent(_loc2_);
@@ -220,7 +231,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc9_)
          {
-            §§push(§§pop() + 1 - 1 + 1 - 1);
+            §§push(§§pop() - 1 + 1 + 1 + 54 + 118 - 1);
          }
          for each(_loc5_ in _loc3_)
          {
@@ -230,7 +241,7 @@ package com.enfluid.ltp.util
                §§push(0);
                if(_loc9_)
                {
-                  §§push(-((§§pop() - 1) * 34 + 97 + 1 - 42));
+                  §§push(-(-(§§pop() + 1) + 1 - 1 + 58));
                }
                if(§§pop() >= §§pop())
                {
@@ -259,7 +270,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc10_)
          {
-            §§push(§§pop() * 65 - 76 + 1 - 1 - 1);
+            §§push((§§pop() * 23 - 43 + 1) * 116 - 1 - 9);
          }
          for each(_loc5_ in _loc4_)
          {
@@ -293,9 +304,9 @@ package com.enfluid.ltp.util
          {
             _loc7_ = [];
             §§push(0);
-            if(_loc13_)
+            if(_loc12_)
             {
-               §§push(§§pop() * 85 * 12 + 23 - 91 - 1);
+               §§push(-(§§pop() + 1 - 27 - 5));
             }
             for each(_loc8_ in _loc5_)
             {
@@ -306,7 +317,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc12_)
          {
-            §§push((§§pop() - 1 - 74 + 45) * 23 + 1);
+            §§push(-((§§pop() - 25) * 17 + 119));
          }
          for each(_loc6_ in _loc5_)
          {
@@ -354,7 +365,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc8_)
          {
-            §§push(§§pop() + 1 - 1 + 1);
+            §§push(§§pop() + 1 + 0 - 1);
          }
          for each(_loc4_ in _loc3_)
          {
@@ -380,7 +391,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc9_)
          {
-            §§push((-§§pop() - 1) * 16 * 92 + 1);
+            §§push(-§§pop() * 71 + 1 - 49);
          }
          for each(_loc4_ in _loc3_)
          {
@@ -406,7 +417,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc8_)
          {
-            §§push(-(§§pop() * 99 - 112 + 1 - 1) + 1);
+            §§push(§§pop() - 90 + 1 + 109 - 1 + 3);
          }
          for each(_loc4_ in _loc3_)
          {
@@ -414,11 +425,43 @@ package com.enfluid.ltp.util
             {
                §§push(_loc4_.innerText.indexOf(param2));
                §§push(-1);
-               if(_loc9_)
+               if(_loc8_)
                {
-                  §§push(§§pop() * 19 - 38 - 1 + 116 - 1 + 58 - 4);
+                  §§push(-(§§pop() + 1) * 75 + 49 - 1);
                }
                if(§§pop() > §§pop() && this.isVisible(_loc4_))
+               {
+                  return _loc4_;
+               }
+            }
+            catch(err:Error)
+            {
+               continue;
+            }
+         }
+         return null;
+      }
+      
+      public final function getVisibleDataElementContainingInnerText(param1:String, param2:String) : *
+      {
+         var _loc4_:* = undefined;
+         var _loc3_:* = this.getElementsByTagName(param1);
+         §§push(0);
+         if(_loc9_)
+         {
+            §§push(--(§§pop() - 71 + 30));
+         }
+         for each(_loc4_ in _loc3_)
+         {
+            try
+            {
+               §§push(_loc4_.innerText.indexOf(param2));
+               §§push(-1);
+               if(_loc8_)
+               {
+                  §§push((-(§§pop() + 113) - 1 + 1 - 0) * 70);
+               }
+               if(§§pop() > §§pop() && this.isVisibleAndNotDebug(_loc4_))
                {
                   return _loc4_;
                }
@@ -437,7 +480,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc3_)
          {
-            §§push(-(§§pop() + 1) - 1 + 57);
+            §§push(--(§§pop() + 1 - 30 - 1) + 1);
          }
          if(§§pop() >= §§pop())
          {
@@ -450,9 +493,9 @@ package com.enfluid.ltp.util
       {
          §§push(param1.innerText.indexOf(param2));
          §§push(0);
-         if(_loc4_)
+         if(_loc3_)
          {
-            §§push(-(§§pop() - 1) * 30);
+            §§push(-(-(§§pop() + 107) - 78) * 84 + 1 + 44);
          }
          if(§§pop() >= §§pop())
          {
@@ -474,6 +517,19 @@ package com.enfluid.ltp.util
       {
          param2.value = param1;
          this.fireChange(param2);
+      }
+      
+      public final function isVisibleAndNotDebug(param1:*) : Boolean
+      {
+         while(param1.parentNode)
+         {
+            if(param1.style && §§pop() >= §§pop() || param1.id == "gwt-debug-leftHeaderTable")
+            {
+               return false;
+            }
+            param1 = param1.parentNode;
+         }
+         return true;
       }
       
       public final function isVisible(param1:*) : Boolean
@@ -504,7 +560,7 @@ package com.enfluid.ltp.util
          §§push(0);
          if(_loc4_)
          {
-            §§push((§§pop() - 5 + 112 + 15) * 61);
+            §§push(-(§§pop() + 1 + 1 + 104 + 1 - 73) - 20);
          }
          var _loc3_:* = §§pop();
          while(_loc3_ < param2.childNodes.length)

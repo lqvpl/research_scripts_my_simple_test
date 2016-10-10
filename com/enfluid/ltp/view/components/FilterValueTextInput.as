@@ -7,14 +7,13 @@ package com.enfluid.ltp.view.components
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.view.skins.FlatUIComponents.TextInput.FlatTextInputSkinSolo;
    import flash.events.Event;
+   import system.data.Map;
    import spark.events.TextOperationEvent;
-   import spark.primitives.Rect;
-   import spark.effects.Rotate;
-   import mx.binding.BindingManager;
    import mx.binding.Binding;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
    import mx.graphics.SolidColor;
+   import flash.utils.ByteArray;
    import flash.utils.getDefinitionByName;
    import mx.states.State;
    import mx.states.SetProperty;
@@ -69,9 +68,9 @@ package com.enfluid.ltp.view.components
          mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
          §§push(this);
          §§push(100);
-         if(_loc3_)
+         if(_loc4_)
          {
-            §§push(§§pop() + 1 - 1 + 1);
+            §§push(-(§§pop() + 1) + 81);
          }
          §§pop().percentWidth = §§pop();
          this.addEventListener("change",this.___FilterValueTextInput_TextInput1_change);
@@ -92,7 +91,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc3_)
          {
-            §§push((-(§§pop() - 1) * 114 + 67 - 9) * 103);
+            §§push((§§pop() + 10 + 1) * 109 + 50);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -165,9 +164,9 @@ package com.enfluid.ltp.view.components
          if(this.text == ".")
          {
             §§push(0);
-            if(_loc4_)
+            if(_loc3_)
             {
-               return -§§pop() * 13 - 1 + 114 + 12;
+               return §§pop() + 1 - 5 - 83 - 118;
             }
          }
          _loc2_ = Number(this.text);
@@ -176,7 +175,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc3_)
             {
-               return §§pop() * 58 + 1 + 1 - 54 - 1;
+               return -(§§pop() + 1) - 115;
             }
          }
          return _loc2_;
@@ -192,9 +191,9 @@ package com.enfluid.ltp.view.components
          var result:Array = [];
          §§push(result);
          §§push(0);
-         if(_loc2_)
+         if(_loc3_)
          {
-            §§push((§§pop() - 79 - 1) * 24 + 84 - 1 - 67);
+            §§push(-(§§pop() * 87 + 12 - 48 - 76));
          }
          §§pop()[§§pop()] = new Binding(this,function():String
          {

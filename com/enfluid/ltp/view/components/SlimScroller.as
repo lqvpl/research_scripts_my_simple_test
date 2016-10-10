@@ -1,11 +1,10 @@
 package com.enfluid.ltp.view.components
 {
    import spark.components.Scroller;
-   import mx.binding.BindingManager;
-   import spark.events.GridEvent;
-   import mx.collections.SortField;
-   import mx.collections.Sort;
-   import mx.collections.ArrayCollection;
+   import flash.events.MouseEvent;
+   import com.enfluid.ltp.model.ViewModel;
+   import com.enfluid.ltp.model.DataModel;
+   import mx.controls.Spacer;
    
    public final class SlimScroller extends Scroller
    {

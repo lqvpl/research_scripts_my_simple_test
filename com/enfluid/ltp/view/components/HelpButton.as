@@ -7,20 +7,21 @@ package com.enfluid.ltp.view.components
    import mx.core.IFlexModuleFactory;
    import com.enfluid.ltp.view.skins.HelpButtonSkin;
    import spark.components.VGroup;
-   import hr.binaria.asx3m.io.IHierarchicalStreamReader;
+   import spark.components.supportClasses.LabelPlacement;
+   import com.adobe.cairngorm.observer.Observe;
    import mx.binding.BindingManager;
-   import flash.utils.ByteArray;
+   import mx.graphics.GradientEntry;
+   import com.enfluid.ltp.util.ProgressBarUtil;
    import flash.events.MouseEvent;
-   import spark.components.HGroup;
    import mx.events.FlexEvent;
-   import hr.binaria.asx3m.io.IHierarchicalStreamWriter;
-   import hr.binaria.asx3m.converters.IMarshallingContext;
-   import system.data.Map;
-   import system.data.Iterator;
+   import flash.events.Event;
+   import com.enfluid.ltp.controller.keywordresearch.campaigns.DeleteSeedKeywordCommand;
+   import hr.binaria.asx3m.mapper.IMapper;
    import mx.binding.Binding;
    import com.enfluid.ltp.model.DataModel;
    import mx.core.mx_internal;
    import mx.events.PropertyChangeEvent;
+   import com.enfluid.ltp.view.filterviews.BingTitleCompetitionFilterView;
    import flash.utils.getDefinitionByName;
    
    use namespace mx_internal;
@@ -85,7 +86,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc4_)
          {
-            §§push((-((§§pop() - 1) * 57 - 114) - 1) * 104);
+            §§push(((-§§pop() * 94 + 80) * 32 - 88) * 18);
          }
          var /*UnknownSlot*/:* = uint(§§pop());
          while(i < bindings.length)
@@ -154,9 +155,9 @@ package com.enfluid.ltp.view.components
          var _loc1_:Label = new Label();
          §§push(_loc1_);
          §§push(200);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(-(-(-(§§pop() - 1) + 59) * 98) + 109);
+            §§push(-(-§§pop() + 1 + 1) - 1 - 79 - 1);
          }
          §§pop().maxWidth = §§pop();
          _loc1_.id = "_HelpButton_Label2";
@@ -193,7 +194,7 @@ package com.enfluid.ltp.view.components
          §§push(0);
          if(_loc2_)
          {
-            §§push(--((§§pop() + 1 + 1 - 1) * 23));
+            §§push(-(§§pop() - 35 - 67 - 43 + 1));
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -203,7 +204,7 @@ package com.enfluid.ltp.view.components
          §§push(1);
          if(_loc2_)
          {
-            §§push(--((§§pop() + 20 + 1 + 94) * 35));
+            §§push((-§§pop() + 1) * 31 * 36 - 57 - 106 + 83);
          }
          §§pop()[§§pop()] = new Binding(this,function():Boolean
          {
@@ -211,16 +212,16 @@ package com.enfluid.ltp.view.components
          },null,"this.visible");
          §§push(result);
          §§push(2);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 6 + 110 - 81 + 1);
+            §§push(-§§pop() - 1 + 75 + 79);
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_HelpButton_Label1.text","helpTitle");
          §§push(result);
          §§push(3);
-         if(_loc3_)
+         if(_loc2_)
          {
-            §§push(§§pop() + 30 - 86 + 66);
+            §§push(-(((§§pop() - 1) * 50 - 36) * 34 + 1 - 1));
          }
          §§pop()[§§pop()] = new Binding(this,null,null,"_HelpButton_Label2.text","helpContent");
          return result;

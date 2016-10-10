@@ -2,13 +2,14 @@ package com.enfluid.ltp.controller.keywordresearch.campaigns
 {
    import com.enfluid.ltp.controller.common.Command;
    import com.photon.controller.IPhotonCommand;
-   import mx.graphics.SolidColor;
-   import mx.binding.BindingManager;
-   import com.enfluid.ltp.model.vo.ProjectVO;
-   import mx.binding.Binding;
-   import com.enfluid.ltp.assets.AssetsLibrary;
-   import com.enfluid.ltp.model.vo.DefaultConfigVO;
+   import spark.components.DataGrid;
+   import spark.components.GridColumnHeaderGroup;
+   import spark.components.gridClasses.IGridVisualElement;
+   import spark.components.gridClasses.GridColumn;
    import flash.events.Event;
+   import com.enfluid.ltp.model.vo.ProjectVO;
+   import flash.utils.ByteArray;
+   import com.enfluid.ltp.model.vo.DefaultConfigVO;
    
    public final class SetDefaultConfigurationCommand extends Command implements IPhotonCommand
    {

@@ -3,9 +3,6 @@ package com.enfluid.ltp.view.skins
    import spark.skins.SparkButtonSkin;
    import mx.core.IStateClient2;
    import mx.core.IFlexModuleFactory;
-   import spark.events.DropDownEvent;
-   import flash.events.MouseEvent;
-   import com.enfluid.ltp.model.ViewModel;
    import mx.states.State;
    import mx.states.SetProperty;
    
@@ -25,16 +22,16 @@ package com.enfluid.ltp.view.skins
          mx_internal::_document = this;
          §§push(this);
          §§push(21);
-         if(_loc1_)
+         if(_loc2_)
          {
-            §§push(§§pop() - 94 - 1 - 89);
+            §§push((-(-(§§pop() + 51 + 112) - 57) - 59) * 89);
          }
          §§pop().minHeight = §§pop();
          §§push(this);
          §§push(21);
-         if(_loc2_)
+         if(_loc1_)
          {
-            §§push(-(§§pop() + 83 - 21));
+            §§push(§§pop() + 1 + 42 - 82 + 1 + 1 + 18);
          }
          §§pop().minWidth = §§pop();
          this.buttonMode = true;

@@ -1,7 +1,7 @@
 package com.enfluid.ltp.assets
 {
    import mx.core.BitmapAsset;
-   import spark.components.Group;
+   import mx.graphics.LinearGradient;
    
    public final class AssetsLibrary_NOTE_ICON extends BitmapAsset
    {

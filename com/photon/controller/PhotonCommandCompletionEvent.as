@@ -1,6 +1,8 @@
 package com.photon.controller
 {
    import flash.events.Event;
+   import com.enfluid.ltp.model.vo.CompetitorUrlVO;
+   import com.enfluid.ltp.model.constants.Values;
    
    public final class PhotonCommandCompletionEvent extends Event
    {

@@ -7,13 +7,10 @@ package com.enfluid.ltp.view.components
    import spark.components.supportClasses.TextBase;
    import flash.geom.Point;
    import spark.components.supportClasses.InteractionStateDetector;
-   import mx.graphics.GradientEntry;
+   import mx.graphics.LinearGradient;
    import spark.components.ResizeMode;
    import spark.components.supportClasses.InteractionState;
    import mx.events.PropertyChangeEvent;
-   import spark.primitives.Rect;
-   import mx.binding.BindingManager;
-   import mx.graphics.SolidColor;
    
    use namespace mx_internal;
    
@@ -297,9 +294,9 @@ package com.enfluid.ltp.view.components
       override mx_internal function drawBackground() : void
       {
          §§push(0);
-         if(_loc9_)
+         if(_loc10_)
          {
-            §§push(-(§§pop() - 2) - 54 + 36);
+            §§push(§§pop() - 1 - 1 - 79 - 1 - 119);
          }
          var _loc3_:uint = §§pop();
          var _loc7_:Array = null;
@@ -358,9 +355,9 @@ package com.enfluid.ltp.view.components
          if(_loc4_)
          {
             §§push(1);
-            if(_loc10_)
+            if(_loc9_)
             {
-               §§push((§§pop() - 1 - 1 + 1 + 1 + 1 + 88) * 101);
+               §§push((§§pop() + 1) * 35 + 22 - 64 - 65 + 22 - 113);
             }
             §§push(Number(§§pop()));
          }
@@ -369,7 +366,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc10_)
             {
-               §§push(-(§§pop() + 1) - 1);
+               §§push(-§§pop() + 1 - 61);
             }
             §§push(Number(§§pop()));
          }
@@ -378,9 +375,9 @@ package com.enfluid.ltp.view.components
          {
             §§push(graphics);
             §§push(1);
-            if(_loc9_)
+            if(_loc10_)
             {
-               §§push(-(§§pop() * 26 * 96 + 1) * 0 * 61);
+               §§push(-(§§pop() + 1 + 49));
             }
             §§pop().lineStyle(§§pop(),getStyle("selectionColor"));
             graphics.drawRect(0.5,0.5,_loc1_ - 1,_loc2_ - 1);
@@ -392,7 +389,7 @@ package com.enfluid.ltp.view.components
             §§push(0);
             if(_loc10_)
             {
-               §§push(--(-§§pop() - 1) - 1 + 74);
+               §§push((§§pop() - 1 - 1 + 87 - 1 + 1) * 25 + 33);
             }
             §§pop().drawRect(§§pop(),§§pop(),_loc1_,_loc2_);
          }

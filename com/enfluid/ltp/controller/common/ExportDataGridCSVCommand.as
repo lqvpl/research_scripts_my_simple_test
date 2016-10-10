@@ -3,10 +3,9 @@ package com.enfluid.ltp.controller.common
    import com.photon.controller.IPhotonCommand;
    import mx.collections.IList;
    import flash.filesystem.File;
-   import mx.collections.XMLListCollection;
+   import spark.components.gridClasses.GridLayer;
+   import flash.events.MouseEvent;
    import mx.controls.Alert;
-   import spark.components.gridClasses.GridColumn;
-   import mx.binding.BindingManager;
    import com.enfluid.ltp.model.vo.KeywordVO;
    import com.enfluid.ltp.model.vo.CompetitorUrlVO;
    import com.enfluid.ltp.model.vo.RankCheckItemVO;
@@ -16,9 +15,6 @@ package com.enfluid.ltp.controller.common
    import com.enfluid.ltp.model.constants.Constants;
    import com.enfluid.ltp.util.FileSystemOperations;
    import com.enfluid.ltp.model.constants.CurrencyAndNumberFormatter;
-   import mx.graphics.SolidColor;
-   import mx.states.State;
-   import mx.states.SetProperty;
    
    public final class ExportDataGridCSVCommand extends Command implements IPhotonCommand
    {
@@ -32,15 +28,12 @@ package com.enfluid.ltp.controller.common
       
       private var file:File;
       
-      private var domainsFetched:Array;
-      
       private var domainsList:Array;
       
       private var cnf:CurrencyAndNumberFormatter;
       
       public function ExportDataGridCSVCommand(param1:IList, param2:String, param3:String = "")
       {
-         this.domainsFetched = [];
          this.domainsList = ["com","net","org","co","info","ca","co.uk","com.au","de","nl","dk"];
          this.cnf = new CurrencyAndNumberFormatter();
          super();
@@ -62,14 +55,14 @@ package com.enfluid.ltp.controller.common
             §§push(130);
             if(_loc1_)
             {
-               §§push(-(§§pop() - 87 - 78 + 1) * 18);
+               §§push(---(§§pop() - 3) + 44);
             }
             §§pop().buttonWidth = §§pop();
             §§push(Alert);
             §§push(30);
-            if(_loc2_)
+            if(_loc1_)
             {
-               §§push(--(-(§§pop() * 49) - 1 + 1));
+               §§push(-(-§§pop() - 87 - 110) + 0 - 1);
             }
             §§pop().buttonHeight = §§pop();
             Alert.show("There are no results to store!");
@@ -82,8 +75,10 @@ package com.enfluid.ltp.controller.common
          var _loc4_:Array = null;
          var _loc5_:CompetitorUrlVO = null;
          var _loc6_:Array = null;
-         var _loc7_:RankCheckItemVO = null;
+         var _loc7_:CompetitorUrlVO = null;
          var _loc8_:Array = null;
+         var _loc9_:RankCheckItemVO = null;
+         var _loc10_:Array = null;
          var _loc1_:CSV = new CSV();
          _loc1_.headerOverwrite = true;
          _loc1_.fieldSeperator = ",";
@@ -93,9 +88,9 @@ package com.enfluid.ltp.controller.common
          {
             _loc1_.header = this.getHeaders();
             §§push(0);
-            if(_loc12_)
+            if(_loc14_)
             {
-               §§push(§§pop() + 1 - 1 + 1 + 82 - 1 - 2);
+               §§push(--(§§pop() * 115 + 14));
             }
             for each(_loc3_ in this.exportData)
             {
@@ -108,47 +103,78 @@ package com.enfluid.ltp.controller.common
          {
             if(this.exportType == Constants.COMPETITOR)
             {
-               _loc1_.header = ["Title","URL","KC-Keyword","PA-Page Authority","PL-Page Links","JPL-Juice Page Link","DA-Domain Authority","MR-MOZ Rank","PR-Page Rank","SA-Site Age"];
-               §§push(0);
-               if(_loc11_)
+               if(model.selectedProject.source != "majestic")
                {
-                  §§push((§§pop() - 57 - 1) * 34 + 1 - 1);
+                  _loc1_.header = ["Title","URL","KC-Keyword","PA-Page Authority","PL-Page Links","JPL-Juice Page Link","DA-Domain Authority","MR-MOZ Rank","PR-Page Rank","SA-Site Age"];
+                  §§push(0);
+                  if(_loc13_)
+                  {
+                     §§push(-(§§pop() + 1) + 1);
+                  }
+                  for each(_loc5_ in this.exportData)
+                  {
+                     _loc6_ = [];
+                     _loc6_.push(_loc5_.title);
+                     _loc6_.push(_loc5_.url);
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.keywordCompetitiveness));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.pageAuthority));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.seomozLinks));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.juiceLinks));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.domainAuthority));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.mozRank));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.pageRank));
+                     _loc6_.push(this.cnf.formattedNumberValue(_loc5_.siteAge));
+                     _loc6_.push("");
+                     _loc1_.addRecordSet(_loc6_);
+                  }
                }
-               for each(_loc5_ in this.exportData)
+               else
                {
-                  _loc6_ = [];
-                  _loc6_.push(_loc5_.title);
-                  _loc6_.push(_loc5_.url);
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.keywordCompetitiveness));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.pageAuthority));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.seomozLinks));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.juiceLinks));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.domainAuthority));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.mozRank));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.pageRank));
-                  _loc6_.push(this.cnf.formattedNumberValue(_loc5_.siteAge));
-                  _loc6_.push("");
-                  _loc1_.addRecordSet(_loc6_);
+                  _loc1_.header = ["Title","URL","KC-Keyword","Trust Flow","Citation Flow","Domain Trust Flow","Domain Citation Flow","External Backlinks","Referring Domains","Edu/Gov Backlinks","Internal Links","Indexed URLs","Site Age"];
+                  §§push(0);
+                  if(_loc14_)
+                  {
+                     §§push(((§§pop() - 39) * 47 + 96 + 43) * 9);
+                  }
+                  for each(_loc7_ in this.exportData)
+                  {
+                     _loc8_ = [];
+                     _loc8_.push(_loc7_.title);
+                     _loc8_.push(_loc7_.url);
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.majestic_kc));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.trust_flow));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.citation_flow));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.domain_trust));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.domain_citation));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.external_backlinks));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.referring_domains));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.ext_backlinks_edu + _loc7_.ext_backlinks_gov));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.internal_links));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.indexed_urls));
+                     _loc8_.push(this.cnf.formattedNumberValue(_loc7_.siteAge));
+                     _loc8_.push("");
+                     _loc1_.addRecordSet(_loc8_);
+                  }
                }
             }
             else if(this.exportType == Constants.RANK_CHECKER)
             {
                _loc1_.header = ["Domain Or Url ","Search Term","Google","Yahoo!","Bing"];
                §§push(0);
-               if(_loc12_)
+               if(_loc14_)
                {
-                  §§push(--(-((§§pop() - 54) * 0) * 1));
+                  §§push(§§pop() + 51 - 1 - 1 - 64 - 44);
                }
-               for each(_loc7_ in this.exportData)
+               for each(_loc9_ in this.exportData)
                {
-                  _loc8_ = [];
-                  _loc8_.push(_loc7_.domain);
-                  _loc8_.push(_loc7_.searchTerm);
-                  _loc8_.push(_loc7_.googleRank);
-                  _loc8_.push(_loc7_.yahooRank);
-                  _loc8_.push(_loc7_.bingRank);
-                  _loc8_.push("");
-                  _loc1_.addRecordSet(_loc8_);
+                  _loc10_ = [];
+                  _loc10_.push(_loc9_.domain);
+                  _loc10_.push(_loc9_.searchTerm);
+                  _loc10_.push(_loc9_.googleRank);
+                  _loc10_.push(_loc9_.yahooRank);
+                  _loc10_.push(_loc9_.bingRank);
+                  _loc10_.push("");
+                  _loc1_.addRecordSet(_loc10_);
                }
             }
          }
@@ -157,73 +183,15 @@ package com.enfluid.ltp.controller.common
          FileSystemOperations.instance.writeFileInUserSelectedLocation(_loc2_,this.fileName + ".csv",true);
       }
       
-      private final function getDomainsExactStatus(param1:int) : String
-      {
-         var _loc2_:String = "";
-         §§push(param1);
-         §§push(1);
-         if(_loc3_)
-         {
-            §§push(§§pop() + 1 + 103 + 1);
-         }
-         if(§§pop() == §§pop())
-         {
-            _loc2_ = "AVAILABLE";
-         }
-         else
-         {
-            §§push(param1);
-            §§push(0);
-            if(_loc3_)
-            {
-               §§push(-(§§pop() + 1) + 8 - 1);
-            }
-            if(§§pop() == §§pop())
-            {
-               _loc2_ = "NOT_FETCHED";
-            }
-            else
-            {
-               §§push(param1);
-               §§push(-1);
-               if(_loc3_)
-               {
-                  §§push(-(§§pop() + 89 - 21 + 104 - 75));
-               }
-               if(§§pop() == §§pop())
-               {
-                  _loc2_ = "UNAVAILABLE";
-               }
-               else
-               {
-                  §§push(param1);
-                  §§push(-100);
-                  if(_loc3_)
-                  {
-                     §§push(§§pop() - 84 + 1 + 1);
-                  }
-                  if(§§pop() == §§pop())
-                  {
-                     _loc2_ = "";
-                  }
-               }
-            }
-         }
-         return _loc2_;
-      }
-      
       private final function getHeaders() : Array
       {
-         var _loc2_:String = null;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = false;
-         var _loc5_:KeywordVO = null;
          var _loc1_:Array = [];
          _loc1_.push("Keywords");
          if(viewModel.selectedKeywordsTab.isFavoritesTab)
          {
             _loc1_.push("Project");
          }
+         _loc1_.push("Notes");
          _loc1_.push("Suggested Bid");
          _loc1_.push("Local Searches");
          _loc1_.push("Global Searches");
@@ -235,58 +203,23 @@ package com.enfluid.ltp.controller.common
          {
             _loc1_.push("Avg. KC");
          }
-         §§push(0);
-         if(_loc10_)
-         {
-            §§push(-((§§pop() - 115 + 1 + 1 + 69) * 34));
-         }
-         for each(_loc2_ in this.domainsList)
-         {
-            _loc3_ = false;
-            _loc4_ = false;
-            §§push(0);
-            if(_loc10_)
-            {
-               §§push((§§pop() + 1 - 1 - 1) * 90);
-            }
-            for each(_loc5_ in this.exportData)
-            {
-               if(_loc3_ && _loc4_)
-               {
-                  break;
-               }
-               if(!_loc3_ && _loc5_.domainsExact && §§pop() != §§pop() && §§pop() != §§pop())
-               {
-                  _loc3_ = true;
-               }
-               if(!_loc4_ && _loc5_.domainsHyphenated && §§pop() != §§pop() && §§pop() != §§pop())
-               {
-                  _loc4_ = true;
-               }
-            }
-            if(_loc3_)
-            {
-               this.domainsFetched.push(_loc2_);
-            }
-            if(_loc4_)
-            {
-               this.domainsFetched.push(_loc2_ + " Hyphenated");
-            }
-         }
-         _loc1_ = _loc1_.concat(this.domainsFetched);
+         _loc1_.push("Available Exact Match Domains");
+         _loc1_.push("Available Hyphenated Domains");
          return _loc1_;
       }
       
       private final function getRecordSet(param1:KeywordVO) : Array
       {
-         var _loc3_:String = null;
-         var _loc4_:String = null;
+         var _loc5_:String = null;
          var _loc2_:Array = [];
+         var _loc3_:* = "";
+         var _loc4_:* = "";
          _loc2_.push(param1.strippedKeyword);
          if(viewModel.selectedKeywordsTab.isFavoritesTab)
          {
             _loc2_.push(param1.projectTitle);
          }
+         _loc2_.push(param1.notes);
          if(param1.suggestedBidString == null || param1.suggestedBidString == "–")
          {
             _loc2_.push("");
@@ -313,38 +246,23 @@ package com.enfluid.ltp.controller.common
             _loc2_.push(this.cnf.formattedNumberValue(param1.avgKC));
          }
          §§push(0);
-         if(_loc7_)
+         if(_loc8_)
          {
-            §§push(-(-§§pop() + 75) + 1 - 1);
+            §§push(-(§§pop() * 100 + 109) + 10 + 47 - 71);
          }
-         for each(_loc3_ in this.domainsFetched)
+         for each(_loc5_ in this.domainsList)
          {
-            _loc3_ = _loc3_.replace(".","");
-            _loc4_ = "";
-            §§push(_loc3_.indexOf("Hyphenated"));
-            §§push(-1);
-            if(_loc8_)
+            if(param1.domainsExact && §§pop() == §§pop())
             {
-               §§push(--(§§pop() + 1 - 44));
+               _loc3_ = _loc3_ + "." + _loc5_ + " ";
             }
-            if(§§pop() == §§pop() && param1.domainsExact)
+            if(param1.domainsHyphenated && §§pop() == §§pop())
             {
-               _loc4_ = this.getDomainsExactStatus(param1.domainsExact[_loc3_]);
+               _loc4_ = _loc4_ + "." + _loc5_ + " ";
             }
-            else if(param1.domainsHyphenated)
-            {
-               §§push(this);
-               §§push(param1.domainsHyphenated);
-               §§push(_loc3_);
-               §§push(0);
-               if(_loc7_)
-               {
-                  §§push(§§pop() + 96 - 1 + 1);
-               }
-               _loc4_ = §§pop().getDomainsExactStatus(§§pop()[§§pop().substr(§§pop(),_loc3_.indexOf(" "))]);
-            }
-            _loc2_.push(_loc4_);
          }
+         _loc2_.push(_loc3_);
+         _loc2_.push(_loc4_);
          _loc2_.push("");
          return _loc2_;
       }
